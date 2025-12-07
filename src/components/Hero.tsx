@@ -57,12 +57,29 @@ const Hero: React.FC<HeroProps> = ({
             
             {/* Bio Text */}
             <div className="flex flex-col justify-center">
-              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8 font-serif">Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people first experience. 
+              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8 font-serif">Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people first experience. 
 
 
 She blends product strategy, behavior-driven design, and emotional insight to create solutions that help people feel supported, empowered, and understood.
 
 Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.</p>
+              
+              {/* Expertise Cards */}
+              <div className="grid grid-cols-3 gap-3 mb-8">
+                <div className="bg-secondary/50 rounded-2xl p-4 text-center">
+                  <span className="text-2xl md:text-3xl font-serif text-foreground">4+</span>
+                  <p className="text-xs md:text-sm text-muted-foreground mt-1">Years Experience</p>
+                </div>
+                <div className="bg-secondary/50 rounded-2xl p-4 text-center">
+                  <span className="text-sm md:text-base font-medium text-foreground">Healthcare</span>
+                  <p className="text-xs md:text-sm text-muted-foreground mt-1">Industry Focus</p>
+                </div>
+                <div className="bg-secondary/50 rounded-2xl p-4 text-center">
+                  <span className="text-sm md:text-base font-medium text-foreground">B2B & B2C</span>
+                  <p className="text-xs md:text-sm text-muted-foreground mt-1">Mobile & Web</p>
+                </div>
+              </div>
+
               <button onClick={() => {
               const contact = document.getElementById('contact');
               if (contact) {
