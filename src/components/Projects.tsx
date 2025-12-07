@@ -30,20 +30,20 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   ];
 
   return (
-    <section id="projects" className={cn('py-20 md:py-28 bg-background', className)}>
-      <div className="container mx-auto px-6 max-w-4xl">
+    <section id="projects" className={cn('py-16 md:py-24 bg-background', className)}>
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-serif font-medium text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-serif font-medium text-center mb-12">
             Recent work
           </h2>
         </FadeIn>
 
-        <div className="space-y-16">
+        <div className="space-y-8">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 100}>
               <Link
                 to={project.link}
-                className="group grid md:grid-cols-2 gap-6 md:gap-12 items-center"
+                className="group grid md:grid-cols-2 gap-6 md:gap-10 items-center"
               >
                 {/* Project Image */}
                 <div className={cn(
@@ -57,12 +57,12 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                   />
                 </div>
                 
-                {/* Project Details */}
+                {/* Project Details - Card Style */}
                 <div className={cn(
-                  "space-y-6",
+                  "bg-card rounded-3xl p-6 md:p-8 border border-border shadow-sm",
                   index % 2 === 1 && "md:order-1"
                 )}>
-                  <h3 className="text-xl md:text-2xl font-serif leading-relaxed group-hover:text-muted-foreground transition-colors">
+                  <h3 className="text-lg md:text-xl font-serif leading-relaxed group-hover:text-muted-foreground transition-colors mb-6">
                     {project.title}
                   </h3>
                   <div className="flex flex-wrap gap-2">

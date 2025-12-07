@@ -8,8 +8,8 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
-    <section className={cn('pt-32 pb-20 md:pt-40 md:pb-28 bg-background', className)}>
-      <div className="container mx-auto px-6 max-w-4xl">
+    <section className={cn('pt-28 pb-16 md:pt-36 md:pb-24 bg-background', className)}>
+      <div className="container mx-auto px-4 md:px-8 max-w-6xl">
         {/* Hero Image with Overlay Text */}
         <FadeIn>
           <div className="relative rounded-3xl overflow-hidden mb-16">
