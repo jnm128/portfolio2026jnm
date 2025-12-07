@@ -2,25 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { ChevronDown } from 'lucide-react';
-
 interface HeroProps {
   className?: string;
 }
-
 const heroImages = ["/lovable-uploads/a0278ce1-b82d-4ed6-a186-14a9503ef65c.png", "/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png", "/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png", "/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png"];
-
 const Hero: React.FC<HeroProps> = ({
   className
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % heroImages.length);
     }, 4000);
     return () => clearInterval(interval);
   }, []);
-
   return <section className={cn('pt-20 pb-8 md:pt-24 md:pb-12 bg-background min-h-[calc(100vh-80px)] flex flex-col', className)}>
       <div className="container mx-auto px-2 md:px-4 max-w-7xl flex-1 flex flex-col">
         {/* Hero Image Slideshow with Overlay Text */}
@@ -42,10 +37,10 @@ const Hero: React.FC<HeroProps> = ({
           
           {/* Scroll indicator */}
           <div className="flex justify-center mt-6">
-            <button 
-              onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-              className="flex flex-col items-center gap-1 text-muted-foreground hover:text-foreground transition-colors animate-bounce"
-            >
+            <button onClick={() => window.scrollTo({
+            top: window.innerHeight - 80,
+            behavior: 'smooth'
+          })} className="flex flex-col items-center gap-1 text-muted-foreground hover:text-foreground transition-colors animate-bounce">
               <span className="text-xs uppercase tracking-widest">Scroll</span>
               <ChevronDown className="w-5 h-5" />
             </button>
@@ -62,9 +57,10 @@ const Hero: React.FC<HeroProps> = ({
             
             {/* Bio Text */}
             <div className="flex flex-col justify-center">
-              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8 font-serif">
-                Joanna Minott is a creative director specializing in brand identity and visual storytelling. Her work emerges intuitively with emotional depth to create meaningful connections between brands and audiences.
-              </p>
+              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8 font-serif">Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people first experience. specializing in brand identity and visual storytelling. 
+
+
+She blends product strategy, behavior-driven design, and emotional insight to create solutions that help people feel supported, empowered, and understood—especially within healthcare and wellness. Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.</p>
               <button onClick={() => {
               const contact = document.getElementById('contact');
               if (contact) {
