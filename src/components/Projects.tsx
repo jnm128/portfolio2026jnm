@@ -38,30 +38,30 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           </h2>
         </FadeIn>
 
-        <div className="space-y-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 100}>
               <Link
                 to={project.link}
                 className="group block relative"
               >
-                {/* Large Image Card */}
-                <div className="relative rounded-2xl overflow-hidden">
+                {/* Image Card */}
+                <div className="relative rounded-xl overflow-hidden">
                   <img 
                     src={project.image}
                     alt={project.title}
-                    className="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   
                   {/* Text Card Overlay */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-5 border border-border shadow-lg">
-                      <h3 className="text-sm md:text-base font-serif leading-relaxed group-hover:text-muted-foreground transition-colors mb-3">
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <div className="bg-card/95 backdrop-blur-sm rounded-xl p-4 border border-border shadow-lg">
+                      <h3 className="text-xs md:text-sm font-serif leading-relaxed group-hover:text-muted-foreground transition-colors mb-2 line-clamp-2">
                         {project.title}
                       </h3>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.5">
                         {project.tags.map((tag) => (
-                          <span key={tag} className="pill-tag text-xs">
+                          <span key={tag} className="pill-tag text-[10px] px-2 py-0.5">
                             {tag}
                           </span>
                         ))}
