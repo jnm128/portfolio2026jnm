@@ -57,7 +57,7 @@ const Hero: React.FC<HeroProps> = ({
             
             {/* Bio Text */}
             <div className="flex flex-col justify-center">
-              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8 font-serif">Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people first experience. specializing in brand identity and visual storytelling. 
+              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8 font-serif">Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people first experience.
 
 
 She blends product strategy, behavior-driven design, and emotional insight to create solutions that help people feel supported, empowered, and understood—especially within healthcare and wellness. Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.</p>
