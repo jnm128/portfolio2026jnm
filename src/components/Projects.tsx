@@ -11,7 +11,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   const projects = [
     {
       title: "Shipping colleague facing design experience with CVS Health",
-      image: "/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png",
+      image: "/lovable-uploads/cvs-health-project.png",
       tags: ["Product Design", "Healthcare"],
       link: "/case-study/mindful-wellness"
     },
