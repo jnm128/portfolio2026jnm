@@ -53,11 +53,11 @@ const Hero: React.FC<HeroProps> = ({
         </FadeIn>
 
         {/* About Section with Profile */}
-        <FadeIn delay={200}>
+        <FadeIn delay={200} className="mt-16 md:mt-24">
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
             {/* Profile Image */}
             <div className="relative">
-              <img alt="Joanna Minott" className="w-full max-w-sm rounded-3xl object-cover aspect-[4/5]" src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg" />
+              <img alt="Joanna Minott" className="w-full max-w-md rounded-3xl object-cover aspect-[4/5]" src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg" />
             </div>
             
             {/* Bio Text */}
