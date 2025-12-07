@@ -29,19 +29,19 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
         {/* About Section with Profile */}
         <FadeIn delay={200}>
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
-            {/* Profile Image */}
-            <div className="relative">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+            {/* Circular Profile Image */}
+            <div className="flex-shrink-0">
               <img 
                 src="/lovable-uploads/386cbd65-beb9-499d-b28b-fbc8f39e12ba.png"
                 alt="Joanna Minott"
-                className="w-full max-w-sm rounded-3xl object-cover aspect-[4/5]"
+                className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover"
               />
             </div>
             
             {/* Bio Text */}
             <div className="flex flex-col justify-center">
-              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8 font-serif">
+              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6 font-serif">
                 Joanna Minott is a creative director specializing in brand identity and visual storytelling. Her work emerges intuitively with emotional depth to create meaningful connections between brands and audiences.
               </p>
               <button 

@@ -38,39 +38,35 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           </h2>
         </FadeIn>
 
-        <div className="space-y-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 100}>
               <Link
                 to={project.link}
-                className="group grid md:grid-cols-2 gap-6 md:gap-10 items-center"
+                className="group block relative"
               >
-                {/* Project Image */}
-                <div className={cn(
-                  "relative rounded-2xl overflow-hidden",
-                  index % 2 === 1 && "md:order-2"
-                )}>
+                {/* Large Image Card */}
+                <div className="relative rounded-2xl overflow-hidden">
                   <img 
                     src={project.image}
                     alt={project.title}
-                    className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                </div>
-                
-                {/* Project Details - Card Style */}
-                <div className={cn(
-                  "bg-card rounded-3xl p-6 md:p-8 border border-border shadow-sm",
-                  index % 2 === 1 && "md:order-1"
-                )}>
-                  <h3 className="text-lg md:text-xl font-serif leading-relaxed group-hover:text-muted-foreground transition-colors mb-6">
-                    {project.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="pill-tag text-xs">
-                        {tag}
-                      </span>
-                    ))}
+                  
+                  {/* Text Card Overlay */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-5 border border-border shadow-lg">
+                      <h3 className="text-sm md:text-base font-serif leading-relaxed group-hover:text-muted-foreground transition-colors mb-3">
+                        {project.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                          <span key={tag} className="pill-tag text-xs">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Link>
