@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
             {/* Profile Image */}
             <div className="relative">
-              <img alt="Joanna Minott" className="w-full max-w-md rounded-3xl object-cover aspect-[4/4]" src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg" />
+              <img alt="Joanna Minott" className="w-full max-w-md rounded-3xl object-cover aspect-[5/6]" src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg" />
             </div>
             
             {/* Bio Text */}
