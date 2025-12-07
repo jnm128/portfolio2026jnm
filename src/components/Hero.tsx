@@ -1,123 +1,63 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
-import { Link } from 'lucide-react';
 
 interface HeroProps {
   className?: string;
 }
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
-  const images = [
-    {
-      src: "/lovable-uploads/d420d81a-29f7-443d-a5d4-41738981faf0.png",
-      alt: "Benefits & Work Mobile App"
-    },
-    {
-      src: "/lovable-uploads/a2893621-b3fe-4c05-8536-a4dc33d5c068.png", 
-      alt: "Hiking Dashboard Mobile App"
-    },
-    {
-      src: "/lovable-uploads/c87f6fc1-f6b9-4455-9286-430a9a6c7c48.png",
-      alt: "Trail Discovery Mobile App"
-    },
-    {
-      src: "/lovable-uploads/d2e22d48-0d10-4fcf-8c79-f62cf08b5e87.png",
-      alt: "Trail Details Mobile App"
-    }
-  ];
-
-  const handleViewWork = () => {
-    // Scroll to projects section
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      window.scrollTo({
-        top: projectsSection.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  const handleGetQuote = () => {
-    // Open freelance website in new tab
-    window.open('https://www.yourfreelancewebsite.com', '_blank');
-  };
-
   return (
-    <section className={cn('relative min-h-screen flex items-center bg-gray-50 overflow-hidden', className)}>
-      {/* Left Scrolling Column */}
-      <div className="absolute left-8 top-0 bottom-0 z-10 pointer-events-none w-[200px]">
-        <div className="flex flex-col gap-8 animate-[scroll-up_20s_linear_infinite]">
-          {/* First set of images */}
-          {images.slice(0, 2).map((image, index) => (
+    <section className={cn('pt-32 pb-20 md:pt-40 md:pb-28 bg-background', className)}>
+      <div className="container mx-auto px-6 max-w-4xl">
+        {/* Hero Image with Overlay Text */}
+        <FadeIn>
+          <div className="relative rounded-3xl overflow-hidden mb-16">
             <img 
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              className="w-full h-auto object-contain rounded-lg shadow-lg"
+              src="/lovable-uploads/a0278ce1-b82d-4ed6-a186-14a9503ef65c.png"
+              alt="Sunset over mountains"
+              className="w-full aspect-[4/3] object-cover"
             />
-          ))}
-          {/* Duplicate for seamless loop */}
-          {images.slice(0, 2).map((image, index) => (
-            <img 
-              key={`duplicate-${index}`}
-              src={image.src}
-              alt={image.alt}
-              className="w-full h-auto object-contain rounded-lg shadow-lg"
-            />
-          ))}
-        </div>
-      </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12 md:right-12">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-white leading-snug max-w-md">
+                Health focused Product building grounded in clarity and emotion.
+              </h1>
+            </div>
+          </div>
+        </FadeIn>
 
-      {/* Right Scrolling Column */}
-      <div className="absolute right-8 top-0 bottom-0 z-10 pointer-events-none w-[200px]">
-        <div className="flex flex-col gap-8 animate-[scroll-down_20s_linear_infinite]">
-          {/* First set of images */}
-          {images.slice(2, 4).map((image, index) => (
-            <img 
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              className="w-full h-auto object-contain rounded-lg shadow-lg"
-            />
-          ))}
-          {/* Duplicate for seamless loop */}
-          {images.slice(2, 4).map((image, index) => (
-            <img 
-              key={`duplicate-${index}`}
-              src={image.src}
-              alt={image.alt}
-              className="w-full h-auto object-contain rounded-lg shadow-lg"
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 md:px-6 py-20 md:py-32 relative z-20 max-w-4xl">
-        <div className="max-w-3xl mx-auto text-center">
-          <FadeIn delay={200}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-gray-900 leading-tight mb-6">
-              <div className="flex flex-col">
-                <span>Human-Centered</span>
-                <span>Health-Focused</span>
-                <span>Research-Backed</span>
-                <span><em>Results-Driven</em></span>
-              </div>
-            </h1>
-          </FadeIn>
-
-          <FadeIn delay={500}>
-            <div className="flex justify-center">
+        {/* About Section with Profile */}
+        <FadeIn delay={200}>
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
+            {/* Profile Image */}
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/386cbd65-beb9-499d-b28b-fbc8f39e12ba.png"
+                alt="Joanna Minott"
+                className="w-full max-w-sm rounded-3xl object-cover aspect-[4/5]"
+              />
+            </div>
+            
+            {/* Bio Text */}
+            <div className="flex flex-col justify-center">
+              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8 font-serif">
+                Joanna Minott is a creative director specializing in brand identity and visual storytelling. Her work emerges intuitively with emotional depth to create meaningful connections between brands and audiences.
+              </p>
               <button 
-                onClick={handleViewWork}
-                className="inline-flex items-center justify-center px-8 py-3 bg-gray-900 text-white font-medium text-lg hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                onClick={() => {
+                  const contact = document.getElementById('contact');
+                  if (contact) {
+                    window.scrollTo({ top: contact.offsetTop - 80, behavior: 'smooth' });
+                  }
+                }}
+                className="pill-tag self-start"
               >
-                View Work
+                Connect
               </button>
             </div>
-          </FadeIn>
-        </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

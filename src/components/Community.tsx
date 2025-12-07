@@ -1,61 +1,43 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
-import { Card, CardContent } from '@/components/ui/card';
 
 interface CommunityProps {
   className?: string;
 }
 
 const Community: React.FC<CommunityProps> = ({ className }) => {
-  const pillars = [
-    {
-      title: "Community",
-      description: "Community before investing - connecting promising entrepreneurs with dedicated events"
-    },
-    {
-      title: "Media",
-      description: "Media + content to build the narrative around technology and diverse teams - and help them build momentum"
-    }
-  ];
-
   return (
-    <section id="community" className={cn('py-20 bg-gray-50', className)}>
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto mb-16">
-          <FadeIn>
-            <div className="bg-white px-6 py-3 rounded-lg shadow-sm border border-gray-200 inline-block mb-12 mx-auto">
-              <span className="text-base text-gray-700 font-medium">
-                Hi, I'm Joanna Minott, a UX designer at CVS Health
-              </span>
+    <section id="community" className={cn('py-20 md:py-28 bg-background', className)}>
+      <div className="container mx-auto px-6 max-w-6xl">
+        <FadeIn>
+          <h2 className="text-3xl md:text-4xl font-serif font-medium text-center mb-16">
+            Building community
+          </h2>
+        </FadeIn>
+
+        <FadeIn delay={100}>
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            {/* Text Content */}
+            <div className="space-y-6">
+              <h3 className="text-2xl md:text-3xl font-serif leading-relaxed">
+                She's also building the next big ux design community
+              </h3>
+              <button className="pill-tag">
+                Join
+              </button>
             </div>
-          </FadeIn>
-          
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-serif mb-8 text-center">Community and Media</h2>
-          </FadeIn>
-          
-          <FadeIn delay={100}>
-            <p className="text-xl text-center mb-12">
-              We want to unlock new diverse team formation by bringing the powers of community and media.
-              With media and community events, we will be connecting with future entrepreneurs earlier.
-            </p>
-          </FadeIn>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {pillars.map((pillar, index) => (
-            <FadeIn key={index} delay={150 + index * 50}>
-              <Card className="border-0 shadow-sm h-full">
-                <CardContent className="p-8">
-                  <h3 className="text-xl font-medium mb-4 font-serif">{pillar.title}</h3>
-                  <p className="text-muted-foreground">{pillar.description}</p>
-                </CardContent>
-              </Card>
-            </FadeIn>
-          ))}
-        </div>
+            
+            {/* Community Image */}
+            <div className="relative rounded-3xl overflow-hidden">
+              <img 
+                src="/lovable-uploads/47f9a1d0-4458-400a-8fc0-79adf093cf18.png"
+                alt="UX Design Community"
+                className="w-full aspect-[4/3] object-cover"
+              />
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
