@@ -25,7 +25,7 @@ const Hero: React.FC<HeroProps> = ({
       <div className="container mx-auto px-4 md:px-8 max-w-6xl flex-1 flex flex-col">
         {/* Hero Image Slideshow with Overlay Text */}
         <FadeIn className="flex-1 flex flex-col">
-          <div className="relative rounded-3xl overflow-hidden flex-1 max-h-[70vh]">
+          <div className="relative rounded-3xl overflow-hidden flex-1 max-h-[80vh]">
             {heroImages.map((image, index) => <img key={image} src={image} alt={`Hero slide ${index + 1}`} className={cn("w-full h-full object-cover transition-opacity duration-1000 absolute inset-0", index === currentIndex ? "opacity-100" : "opacity-0")} />)}
             <img src={heroImages[0]} alt="Hero placeholder" className="w-full h-full object-cover invisible" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 via-50% to-transparent" />
