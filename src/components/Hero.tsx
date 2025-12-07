@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({
           <div className="relative rounded-3xl overflow-hidden flex-1 max-h-[50vh]">
             {heroImages.map((image, index) => <img key={image} src={image} alt={`Hero slide ${index + 1}`} className={cn("w-full h-full object-cover transition-opacity duration-1000 absolute inset-0", index === currentIndex ? "opacity-100" : "opacity-0")} />)}
             <img src={heroImages[0]} alt="Hero placeholder" className="w-full h-full object-cover invisible" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 via-50% to-transparent" />
             <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12 md:right-12">
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-white leading-snug max-w-md">
                 Health focused Product building grounded in clarity and emotion.
