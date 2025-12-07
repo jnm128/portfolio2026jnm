@@ -38,7 +38,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           </h2>
         </FadeIn>
 
-        <div className="flex flex-col gap-6 max-w-2xl mx-auto">
+        <div className="flex flex-col gap-6">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 100}>
               <Link
