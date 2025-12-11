@@ -48,7 +48,7 @@ const Index = () => {
       <Footer />
       
       {/* Frosted glass bottom overlay */}
-      <div className="fixed bottom-0 left-0 right-0 h-20 pointer-events-none z-40 bg-gradient-to-t from-background/60 via-background/20 via-50% to-transparent backdrop-blur-md" />
+      <div className="fixed bottom-0 left-0 right-0 h-20 pointer-events-none z-40 bg-gradient-to-t from-background/60 via-background/20 via-50% to-transparent backdrop-blur-sm" />
     </main>
   );
 };
