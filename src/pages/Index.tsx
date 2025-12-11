@@ -46,6 +46,9 @@ const Index = () => {
       <About />
       <Contact />
       <Footer />
+      
+      {/* Frosted glass bottom overlay */}
+      <div className="fixed bottom-0 left-0 right-0 h-24 pointer-events-none z-40 bg-gradient-to-t from-background/80 via-background/40 to-transparent backdrop-blur-sm" />
     </main>
   );
 };
