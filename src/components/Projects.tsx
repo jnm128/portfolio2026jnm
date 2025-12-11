@@ -38,34 +38,36 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           </h2>
         </FadeIn>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-12">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 100}>
               <Link
                 to={project.link}
-                className="group block relative"
+                className="group block"
               >
-                {/* Image Card */}
-                <div className="relative rounded-xl overflow-hidden">
-                  <img 
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
+                  {/* Text Content - Left */}
+                  <div className="md:w-1/3 order-2 md:order-1">
+                    <h3 className="text-lg md:text-xl font-serif leading-relaxed group-hover:text-muted-foreground transition-colors mb-3">
+                      {project.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="pill-tag text-xs px-3 py-1">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                   
-                  {/* Text Card Overlay */}
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <div className="bg-card/95 backdrop-blur-sm rounded-xl p-4 border border-border shadow-lg">
-                      <h3 className="text-xs md:text-sm font-serif leading-relaxed group-hover:text-muted-foreground transition-colors mb-2 line-clamp-2">
-                        {project.title}
-                      </h3>
-                      <div className="flex flex-wrap gap-1.5">
-                        {project.tags.map((tag) => (
-                          <span key={tag} className="pill-tag text-[10px] px-2 py-0.5">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+                  {/* Image - Right */}
+                  <div className="md:w-2/3 order-1 md:order-2">
+                    <div className="relative rounded-xl overflow-hidden">
+                      <img 
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                     </div>
                   </div>
                 </div>
