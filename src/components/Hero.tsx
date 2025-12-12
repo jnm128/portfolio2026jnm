@@ -15,6 +15,22 @@ const Hero: React.FC<HeroProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHeadshotFlipped, setIsHeadshotFlipped] = useState(false);
 
+  // Auto-flip headshot on load to signal interactivity
+  useEffect(() => {
+    const flipTimer = setTimeout(() => {
+      setIsHeadshotFlipped(true);
+    }, 1500);
+    
+    const flipBackTimer = setTimeout(() => {
+      setIsHeadshotFlipped(false);
+    }, 3000);
+
+    return () => {
+      clearTimeout(flipTimer);
+      clearTimeout(flipBackTimer);
+    };
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % heroImages.length);
