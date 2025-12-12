@@ -26,6 +26,12 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       image: "/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png",
       tags: ["Brand Identity", "Mobile App"],
       link: "/case-study/creative-studio"
+    },
+    {
+      title: "Reimagining digital banking for the next generation",
+      image: "/lovable-uploads/62126c48-0026-4214-b2f5-0221d25a88f4.png",
+      tags: ["Fintech", "Product Design"],
+      link: "/case-study/digital-banking"
     }
   ];
 
