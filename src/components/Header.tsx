@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { Link, useLocation } from 'react-router-dom';
 
 interface HeaderProps {
   className?: string;
@@ -8,6 +9,8 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,11 +37,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   };
 
   const menuItems = [
-    { label: 'Work', id: 'projects' },
-    { label: 'About', id: 'about' },
-    { label: 'Connect', id: 'contact' },
-    { label: 'Book Club', id: 'community' },
-    { label: 'For Fun', id: 'testimonials' },
+    { label: 'Work', id: 'projects', type: 'scroll' },
+    { label: 'Book Club', id: 'community', type: 'scroll' },
+    { label: 'For Fun', id: 'testimonials', type: 'scroll' },
+    { label: 'Connect', id: '/contact', type: 'link' },
   ];
 
   return (
@@ -63,13 +65,33 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {menuItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-            >
-              {item.label}
-            </button>
+            item.type === 'link' ? (
+              <Link
+                key={item.id}
+                to={item.id}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              isHomePage ? (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <Link
+                  key={item.id}
+                  to={`/#${item.id}`}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
+                  {item.label}
+                </Link>
+              )
+            )
           ))}
         </nav>
         
@@ -105,13 +127,35 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         <div className="absolute inset-0 bg-background" />
         <nav className="relative z-10 flex flex-col items-center gap-8 pt-12">
           {menuItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className="text-2xl font-serif text-foreground hover:text-muted-foreground transition-colors"
-            >
-              {item.label}
-            </button>
+            item.type === 'link' ? (
+              <Link
+                key={item.id}
+                to={item.id}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-2xl font-serif text-foreground hover:text-muted-foreground transition-colors"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              isHomePage ? (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-2xl font-serif text-foreground hover:text-muted-foreground transition-colors"
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <Link
+                  key={item.id}
+                  to={`/#${item.id}`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-2xl font-serif text-foreground hover:text-muted-foreground transition-colors"
+                >
+                  {item.label}
+                </Link>
+              )
+            )
           ))}
         </nav>
       </div>

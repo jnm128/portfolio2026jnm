@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import CaseStudyMindfulWellness from "./pages/CaseStudyMindfulWellness";
 import CaseStudyArtisanMarketplace from "./pages/CaseStudyArtisanMarketplace";
 import CaseStudyCreativeStudio from "./pages/CaseStudyCreativeStudio";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/case-study/mindful-wellness" element={<CaseStudyMindfulWellness />} />
           <Route path="/case-study/artisan-marketplace" element={<CaseStudyArtisanMarketplace />} />
           <Route path="/case-study/creative-studio" element={<CaseStudyCreativeStudio />} />
