@@ -2,20 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { ChevronDown } from 'lucide-react';
+
 interface HeroProps {
   className?: string;
 }
+
 const heroImages = ["/lovable-uploads/a0278ce1-b82d-4ed6-a186-14a9503ef65c.png", "/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png", "/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png", "/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png"];
+
 const Hero: React.FC<HeroProps> = ({
   className
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHeadshotFlipped, setIsHeadshotFlipped] = useState(false);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % heroImages.length);
     }, 4000);
     return () => clearInterval(interval);
   }, []);
+
   return <section className={cn('pt-20 pb-8 md:pt-24 md:pb-12 bg-background min-h-[calc(100vh-80px)] flex flex-col', className)}>
       <div className="container mx-auto px-2 md:px-4 max-w-7xl flex-1 flex flex-col">
         {/* Hero Image Slideshow with Overlay Text */}
@@ -50,9 +56,63 @@ const Hero: React.FC<HeroProps> = ({
         {/* About Section with Profile */}
         <FadeIn delay={200} className="mt-16 md:mt-24">
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
-            {/* Profile Image */}
+            {/* Flippable Profile Image */}
             <div className="relative">
-              <img alt="Joanna Minott" className="w-full max-w-md rounded-3xl object-cover aspect-[5/6]" src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg" />
+              <div 
+                className="relative w-full max-w-md aspect-[5/6] cursor-pointer group"
+                onClick={() => setIsHeadshotFlipped(!isHeadshotFlipped)}
+              >
+                <div
+                  className="relative w-full h-full transition-transform duration-700"
+                  style={{
+                    transformStyle: 'preserve-3d',
+                    transform: isHeadshotFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                  }}
+                >
+                  {/* Front - Work */}
+                  <div
+                    className="absolute inset-0 rounded-3xl overflow-hidden"
+                    style={{ backfaceVisibility: 'hidden' }}
+                  >
+                    <img 
+                      alt="Joanna Minott - Work" 
+                      className="w-full h-full object-cover" 
+                      src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg" 
+                    />
+                    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+                      <span className="bg-background/90 backdrop-blur-sm text-foreground text-xs px-3 py-1.5 rounded-full font-medium">
+                        Work Mode
+                      </span>
+                      <span className="bg-background/90 backdrop-blur-sm text-muted-foreground text-xs px-3 py-1.5 rounded-full">
+                        Click to flip →
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Back - Fun */}
+                  <div
+                    className="absolute inset-0 rounded-3xl overflow-hidden"
+                    style={{ 
+                      backfaceVisibility: 'hidden',
+                      transform: 'rotateY(180deg)'
+                    }}
+                  >
+                    <img 
+                      alt="Joanna Minott - Fun" 
+                      className="w-full h-full object-cover" 
+                      src="/lovable-uploads/5a9395ab-beb1-4008-81f7-f0981a3ef0bd.png" 
+                    />
+                    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+                      <span className="bg-background/90 backdrop-blur-sm text-foreground text-xs px-3 py-1.5 rounded-full font-medium">
+                        Fun Mode
+                      </span>
+                      <span className="bg-background/90 backdrop-blur-sm text-muted-foreground text-xs px-3 py-1.5 rounded-full">
+                        ← Click to flip
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             
             {/* Bio Text */}
