@@ -4,7 +4,7 @@ import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
 import Testimonials from '@/components/Testimonials';
 import Community from '@/components/Community';
-import About from '@/components/About';
+
 import DesignPhilosophy from '@/components/DesignPhilosophy';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
@@ -41,7 +41,6 @@ const Index = () => {
       <Header />
       <Hero />
       <Projects />
-      <About />
       <Testimonials />
       <DesignPhilosophy />
       <Community />
