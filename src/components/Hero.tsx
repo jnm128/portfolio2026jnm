@@ -14,18 +14,25 @@ const Hero: React.FC<HeroProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHeadshotFlipped, setIsHeadshotFlipped] = useState(false);
+  const [isWiggling, setIsWiggling] = useState(false);
 
-  // Auto-flip headshot on load to signal interactivity
+  // Auto-wiggle then flip headshot on load to signal interactivity
   useEffect(() => {
+    const wiggleTimer = setTimeout(() => {
+      setIsWiggling(true);
+    }, 1000);
+
     const flipTimer = setTimeout(() => {
+      setIsWiggling(false);
       setIsHeadshotFlipped(true);
-    }, 1500);
+    }, 2000);
     
     const flipBackTimer = setTimeout(() => {
       setIsHeadshotFlipped(false);
-    }, 3000);
+    }, 3500);
 
     return () => {
+      clearTimeout(wiggleTimer);
       clearTimeout(flipTimer);
       clearTimeout(flipBackTimer);
     };
@@ -75,7 +82,10 @@ const Hero: React.FC<HeroProps> = ({
             {/* Flippable Profile Image */}
             <div className="relative">
               <div 
-                className="relative w-full max-w-md aspect-[5/6] cursor-pointer group"
+                className={cn(
+                  "relative w-full max-w-md aspect-[5/6] cursor-pointer group",
+                  isWiggling && "animate-wiggle"
+                )}
                 onClick={() => setIsHeadshotFlipped(!isHeadshotFlipped)}
               >
                 <div
