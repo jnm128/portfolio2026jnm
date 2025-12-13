@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
-import { ChevronDown } from 'lucide-react';
+
 
 interface HeroProps {
   className?: string;
@@ -56,17 +56,6 @@ const Hero: React.FC<HeroProps> = ({
             <div className="absolute bottom-4 right-8 md:right-12 flex gap-2">
               {heroImages.map((_, index) => <button key={index} onClick={() => setCurrentIndex(index)} className={cn("w-2 h-2 rounded-full transition-all", index === currentIndex ? "bg-white" : "bg-white/40")} />)}
             </div>
-          </div>
-          
-          {/* Scroll indicator */}
-          <div className="flex justify-center mt-6">
-            <button onClick={() => window.scrollTo({
-            top: window.innerHeight - 80,
-            behavior: 'smooth'
-          })} className="flex flex-col items-center gap-1 text-muted-foreground hover:text-foreground transition-colors animate-bounce">
-              <span className="text-xs uppercase tracking-widest">Scroll</span>
-              <ChevronDown className="w-5 h-5" />
-            </button>
           </div>
         </FadeIn>
 
