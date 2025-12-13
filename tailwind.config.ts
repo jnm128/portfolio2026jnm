@@ -71,6 +71,14 @@ export default {
 					100: 'hsl(40 33% 96%)',
 					200: 'hsl(40 25% 92%)',
 					300: 'hsl(40 20% 85%)',
+				},
+				surface: {
+					1: 'hsl(var(--surface-1))',
+					2: 'hsl(var(--surface-2))',
+					3: 'hsl(var(--surface-3))',
+					4: 'hsl(var(--surface-4))',
+					5: 'hsl(var(--surface-5))',
+					6: 'hsl(var(--surface-6))',
 				}
 			},
 			borderRadius: {

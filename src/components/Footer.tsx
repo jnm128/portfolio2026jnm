@@ -21,7 +21,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
   };
 
   return (
-    <footer className={cn('py-12 md:py-16 bg-background border-t border-border', className)}>
+    <footer className={cn('py-12 md:py-16 bg-surface-6 text-surface-1 border-t border-surface-5', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           {/* Logo & Copyright */}
@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             >
               MINO.
             </button>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-surface-1/60">
               &copy; {new Date().getFullYear()} All rights reserved.
             </p>
           </div>
@@ -41,19 +41,19 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <nav className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm">
             <button
               onClick={() => scrollToSection('projects')} 
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-surface-1/60 hover:text-surface-1 transition-colors"
             >
               Work
             </button>
             <button
               onClick={() => scrollToSection('about')} 
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-surface-1/60 hover:text-surface-1 transition-colors"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection('contact')} 
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-surface-1/60 hover:text-surface-1 transition-colors"
             >
               Connect
             </button>
@@ -61,7 +61,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-surface-1/60 hover:text-surface-1 transition-colors"
             >
               LinkedIn
             </a>
