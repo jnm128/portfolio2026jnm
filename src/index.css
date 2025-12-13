@@ -33,6 +33,14 @@
     --ring: 0 0% 9%;
 
     --radius: 0.5rem;
+    
+    /* Progressive background shades - light to dark */
+    --surface-1: 40 33% 96%;
+    --surface-2: 40 25% 90%;
+    --surface-3: 35 20% 82%;
+    --surface-4: 30 15% 70%;
+    --surface-5: 20 10% 25%;
+    --surface-6: 0 0% 12%;
 
     --sidebar-background: 40 33% 96%;
     --sidebar-foreground: 0 0% 9%;
@@ -72,6 +80,14 @@
     --border: 0 0% 20%;
     --input: 0 0% 20%;
     --ring: 40 33% 96%;
+    
+    /* Progressive background shades - already dark */
+    --surface-1: 0 0% 9%;
+    --surface-2: 0 0% 11%;
+    --surface-3: 0 0% 13%;
+    --surface-4: 0 0% 15%;
+    --surface-5: 0 0% 17%;
+    --surface-6: 0 0% 9%;
   }
 }
 
