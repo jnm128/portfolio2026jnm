@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import BrandLogos from '@/components/BrandLogos';
 import Projects from '@/components/Projects';
 import Testimonials from '@/components/Testimonials';
 import Community from '@/components/Community';
@@ -40,6 +41,7 @@ const Index = () => {
       <ScrollAnimations />
       <Header />
       <Hero />
+      <BrandLogos />
       <Projects />
       <Testimonials />
       <DesignPhilosophy />

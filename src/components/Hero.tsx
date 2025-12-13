@@ -144,20 +144,12 @@ She blends product strategy, behavior-driven design, and emotional insight to cr
 
 Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.</p>
               
-              {/* Expertise Cards */}
-              <div className="grid grid-cols-3 gap-3 mb-8">
-                <div className="bg-secondary/50 rounded-2xl p-4 text-center">
-                  <span className="text-2xl md:text-3xl font-serif text-foreground">4+</span>
-                  <p className="text-xs md:text-sm text-muted-foreground mt-1">Years Experience</p>
-                </div>
-                <div className="bg-secondary/50 rounded-2xl p-4 text-center">
-                  <span className="text-sm md:text-base font-medium text-foreground">Healthcare</span>
-                  <p className="text-xs md:text-sm text-muted-foreground mt-1">Industry Focus</p>
-                </div>
-                <div className="bg-secondary/50 rounded-2xl p-4 text-center">
-                  <span className="text-sm md:text-base font-medium text-foreground">B2B & B2C</span>
-                  <p className="text-xs md:text-sm text-muted-foreground mt-1">Mobile & Web</p>
-                </div>
+              {/* Expertise Tags */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                <span className="bg-secondary/50 rounded-full px-3 py-1.5 text-xs text-foreground">4+ Years</span>
+                <span className="bg-secondary/50 rounded-full px-3 py-1.5 text-xs text-foreground">Healthcare</span>
+                <span className="bg-secondary/50 rounded-full px-3 py-1.5 text-xs text-foreground">B2B & B2C</span>
+                <span className="bg-secondary/50 rounded-full px-3 py-1.5 text-xs text-foreground">Mobile & Web</span>
               </div>
 
               <button onClick={() => {
