@@ -21,7 +21,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
   };
 
   return (
-    <footer className={cn('py-12 md:py-16 bg-surface-6 text-surface-1 border-t border-surface-5', className)}>
+    <footer className={cn('py-12 md:py-16 bg-surface-6 text-surface-1 rounded-t-[2.5rem] md:rounded-t-[4rem] -mt-8 relative z-50', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           {/* Logo & Copyright */}
