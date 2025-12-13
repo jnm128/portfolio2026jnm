@@ -146,10 +146,11 @@ Her work focuses on aligning business goals with human needs to drive clarity, e
               
               {/* Expertise Tags */}
               <div className="flex flex-wrap gap-2 mb-8">
-                <span className="bg-secondary/50 rounded-full px-3 py-1.5 text-xs text-foreground">4+ Years</span>
-                <span className="bg-secondary/50 rounded-full px-3 py-1.5 text-xs text-foreground">Healthcare</span>
-                <span className="bg-secondary/50 rounded-full px-3 py-1.5 text-xs text-foreground">B2B & B2C</span>
-                <span className="bg-secondary/50 rounded-full px-3 py-1.5 text-xs text-foreground">Mobile & Web</span>
+                <span className="bg-secondary/50 rounded-full px-4 py-2 text-sm text-foreground">4+ Years</span>
+                <span className="bg-secondary/50 rounded-full px-4 py-2 text-sm text-foreground">Healthcare</span>
+                <span className="bg-secondary/50 rounded-full px-4 py-2 text-sm text-foreground">B2B & B2C</span>
+                <span className="bg-secondary/50 rounded-full px-4 py-2 text-sm text-foreground">Mobile & Web</span>
+                <span className="bg-secondary/50 rounded-full px-4 py-2 text-sm text-foreground">Enterprise Systems</span>
               </div>
 
               <button onClick={() => {
