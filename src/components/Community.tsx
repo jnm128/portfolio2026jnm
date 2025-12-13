@@ -8,7 +8,7 @@ interface CommunityProps {
 
 const Community: React.FC<CommunityProps> = ({ className }) => {
   return (
-    <section id="community" className={cn('py-16 md:py-24 bg-surface-5 text-surface-1', className)}>
+    <section id="community" className={cn('py-16 md:py-24 bg-surface-5 text-surface-1 rounded-t-[2.5rem] md:rounded-t-[4rem] -mt-8 relative z-40', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <FadeIn>
           <h2 className="text-3xl md:text-4xl font-serif font-medium text-center mb-16">
