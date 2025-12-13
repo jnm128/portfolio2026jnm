@@ -126,12 +126,18 @@ const Hero: React.FC<HeroProps> = ({
             
             {/* Bio Text */}
             <div className="flex flex-col justify-center">
-              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8 font-serif">Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people first experience. 
-
-
-She blends product strategy, behavior-driven design, and emotional insight to create solutions that help people feel supported, empowered, and understood.
-
-Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.</p>
+              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6 font-serif">
+                Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences.
+              </p>
+              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6 font-serif">
+                She blends product strategy, behavior-driven design, and emotional insight to create solutions that help people feel supported, empowered, and understood.
+              </p>
+              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6 font-serif">
+                Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed mb-8">
+                With a background spanning healthcare technology, fintech, and consumer products, Joanna brings a unique perspective to every project. She believes that great design is invisible—it simply works, allowing people to focus on what matters most to them.
+              </p>
               
               {/* Expertise Tags */}
               <div className="flex flex-wrap gap-2 mb-8">
