@@ -38,45 +38,48 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   return (
     <section id="projects" className={cn('py-16 md:py-24 bg-surface-1 rounded-t-[2.5rem] md:rounded-t-[4rem] relative z-10', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+        <FadeIn>
+          <h2 className="text-3xl md:text-4xl font-serif font-medium mb-12">
+            Recent work
+          </h2>
+        </FadeIn>
+
         <div className="flex flex-col gap-12">
-          {projects.map((project, index) => {
-            const isEven = index % 2 === 0;
-            return (
-              <FadeIn key={project.title} delay={index * 100}>
-                <Link
-                  to={project.link}
-                  className="group block"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
-                    {/* Text Content */}
-                    <div className={cn("md:w-1/3 order-2", isEven ? "md:order-1" : "md:order-2")}>
-                      <h3 className="text-lg md:text-xl font-serif leading-relaxed group-hover:text-muted-foreground transition-colors mb-3">
-                        {project.title}
-                      </h3>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <span key={tag} className="pill-tag text-xs px-3 py-1">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    {/* Image */}
-                    <div className={cn("md:w-2/3 order-1", isEven ? "md:order-2" : "md:order-1")}>
-                      <div className="relative rounded-xl overflow-hidden">
-                        <img 
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
+          {projects.map((project, index) => (
+            <FadeIn key={project.title} delay={index * 100}>
+              <Link
+                to={project.link}
+                className="group block"
+              >
+                <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
+                  {/* Text Content - Left */}
+                  <div className="md:w-1/3 order-2 md:order-1">
+                    <h3 className="text-lg md:text-xl font-serif leading-relaxed group-hover:text-muted-foreground transition-colors mb-3">
+                      {project.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="pill-tag text-xs px-3 py-1">
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                </Link>
-              </FadeIn>
-            );
-          })}
+                  
+                  {/* Image - Right */}
+                  <div className="md:w-2/3 order-1 md:order-2">
+                    <div className="relative rounded-xl overflow-hidden">
+                      <img 
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </FadeIn>
+          ))}
         </div>
       </div>
     </section>
