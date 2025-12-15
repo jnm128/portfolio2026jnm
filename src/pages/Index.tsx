@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import IntroBlurb from '@/components/IntroBlurb';
 import Projects from '@/components/Projects';
+import About from '@/components/About';
 import Testimonials from '@/components/Testimonials';
-import Community from '@/components/Community';
-
 import DesignPhilosophy from '@/components/DesignPhilosophy';
+import Community from '@/components/Community';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 
@@ -40,12 +41,13 @@ const Index = () => {
       <ScrollAnimations />
       <Header />
       <Hero />
+      <IntroBlurb />
       <Projects />
+      <About />
       <Testimonials />
       <DesignPhilosophy />
       <Community />
       <Footer />
-      
     </main>
   );
 };

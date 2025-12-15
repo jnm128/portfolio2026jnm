@@ -45,22 +45,23 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
   };
 
   return (
-    <section id="philosophy" className={cn('py-16 md:py-24 bg-surface-3 rounded-t-[2.5rem] md:rounded-t-[4rem] -mt-8 relative z-30', className)}>
+    <section id="philosophy" className={cn('py-16 md:py-24 bg-surface-4 rounded-b-[2.5rem] md:rounded-b-[4rem] mb-8 relative z-40', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-serif font-medium text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-medium mb-4">
             Design Philosophy
           </h2>
-          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+          <div className="border-b border-border/40 mb-4" />
+          <p className="text-muted-foreground max-w-2xl mb-12">
             Click to flip and discover the principles that guide every project
           </p>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {philosophies.map((philosophy, index) => (
             <FadeIn key={philosophy.title} delay={index * 100}>
               <div
-                className="relative h-[220px] cursor-pointer perspective-1000"
+                className="relative h-[280px] md:h-[320px] cursor-pointer perspective-1000"
                 onClick={() => toggleFlip(index)}
               >
                 <div
@@ -75,24 +76,24 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
                 >
                   {/* Front of card */}
                   <div
-                    className="absolute inset-0 p-6 rounded-2xl border border-border bg-card flex flex-col items-center justify-center text-center backface-hidden"
+                    className="absolute inset-0 p-8 rounded-2xl border border-border bg-card flex flex-col items-center justify-center text-center backface-hidden"
                     style={{ backfaceVisibility: 'hidden' }}
                   >
-                    <span className="text-4xl mb-4">{philosophy.icon}</span>
-                    <h3 className="text-xl font-serif font-medium">{philosophy.title}</h3>
-                    <span className="text-xs text-muted-foreground mt-2">Click to flip</span>
+                    <span className="text-5xl md:text-6xl mb-6">{philosophy.icon}</span>
+                    <h3 className="text-2xl font-serif font-medium">{philosophy.title}</h3>
+                    <span className="text-xs text-muted-foreground mt-4">Click to flip</span>
                   </div>
                   
                   {/* Back of card */}
                   <div
-                    className="absolute inset-0 p-6 rounded-2xl border border-primary/30 bg-primary/5 flex flex-col justify-center backface-hidden"
+                    className="absolute inset-0 p-8 rounded-2xl border border-primary/30 bg-primary/5 flex flex-col justify-center backface-hidden"
                     style={{ 
                       backfaceVisibility: 'hidden',
                       transform: 'rotateY(180deg)'
                     }}
                   >
-                    <h4 className="text-sm font-medium text-primary mb-3">{philosophy.title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <h4 className="text-base font-medium text-primary mb-4">{philosophy.title}</h4>
+                    <p className="text-base text-muted-foreground leading-relaxed">
                       {philosophy.description}
                     </p>
                   </div>

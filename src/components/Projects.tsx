@@ -36,24 +36,21 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   ];
 
   return (
-    <section id="projects" className={cn('py-16 md:py-24 bg-surface-1 rounded-t-[2.5rem] md:rounded-t-[4rem] relative z-10', className)}>
+    <section id="projects" className={cn('py-16 md:py-24 bg-surface-1 rounded-b-[2.5rem] md:rounded-b-[4rem] mb-8 relative z-10', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-serif font-medium mb-12">
-            Recent work
-          </h2>
-        </FadeIn>
-
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-16">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 100}>
               <Link
                 to={project.link}
                 className="group block"
               >
-                <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
-                  {/* Text Content - Left */}
-                  <div className="md:w-1/3 order-2 md:order-1">
+                <div className={cn(
+                  "flex flex-col md:flex-row md:items-center gap-6 md:gap-12",
+                  index % 2 === 1 && "md:flex-row-reverse"
+                )}>
+                  {/* Text Content */}
+                  <div className="md:w-1/4">
                     <h3 className="text-lg md:text-xl font-serif leading-relaxed group-hover:text-muted-foreground transition-colors mb-3">
                       {project.title}
                     </h3>
@@ -66,13 +63,13 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                     </div>
                   </div>
                   
-                  {/* Image - Right */}
-                  <div className="md:w-2/3 order-1 md:order-2">
+                  {/* Image */}
+                  <div className="md:w-3/4">
                     <div className="relative rounded-xl overflow-hidden">
                       <img 
                         src={project.image}
                         alt={project.title}
-                        className="w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full aspect-[16/9] object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                   </div>
