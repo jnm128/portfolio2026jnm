@@ -19,7 +19,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   }, []);
 
   return (
-    <section className={cn('pt-20 pb-8 md:pt-24 md:pb-12 bg-background', className)}>
+    <section className={cn('pt-20 pb-8 md:pt-24 md:pb-12 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-50', className)}>
       <div className="container mx-auto px-2 md:px-4 max-w-7xl">
         {/* Hero Image Slideshow with Overlay Text */}
         <FadeIn>
