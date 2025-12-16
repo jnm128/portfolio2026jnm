@@ -19,11 +19,11 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   }, []);
 
   return (
-    <section className={cn('pt-20 pb-8 md:pt-24 md:pb-12 bg-background min-h-[90vh] flex flex-col', className)}>
-      <div className="container mx-auto px-2 md:px-4 max-w-7xl flex-1 flex flex-col">
+    <section className={cn('pt-20 pb-8 md:pt-24 md:pb-12 bg-background', className)}>
+      <div className="container mx-auto px-2 md:px-4 max-w-7xl">
         {/* Hero Image Slideshow with Overlay Text */}
-        <FadeIn className="flex-1 flex flex-col">
-          <div className="relative rounded-3xl overflow-hidden flex-1 min-h-[85vh]">
+        <FadeIn>
+          <div className="relative rounded-3xl overflow-hidden h-[65vh]">
             {heroImages.map((image, index) => (
               <img 
                 key={image} 
