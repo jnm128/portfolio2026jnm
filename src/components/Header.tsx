@@ -57,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         {/* Logo */}
         <button 
           onClick={() => scrollToSection('home')}
-          className="text-2xl font-serif font-semibold tracking-tight"
+          className="text-2xl font-serif font-semibold tracking-tight animate-natural-fall"
         >
           MINO.
         </button>
