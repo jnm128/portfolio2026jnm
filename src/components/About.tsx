@@ -27,7 +27,7 @@ const About: React.FC<AboutProps> = ({ className }) => {
   }, []);
 
   return (
-    <section id="about" className={cn('py-16 md:py-24 bg-surface-2 rounded-b-[2.5rem] md:rounded-b-[4rem] mb-8 relative z-20', className)}>
+    <section id="about" className={cn('py-16 md:py-24 bg-surface-2 rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-20', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <FadeIn>
           <h2 className="text-3xl md:text-4xl font-serif font-medium mb-4">

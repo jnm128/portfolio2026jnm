@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       <div className="container mx-auto px-2 md:px-4 max-w-7xl">
         {/* Hero Image Slideshow with Overlay Text */}
         <FadeIn>
-          <div className="relative rounded-3xl overflow-hidden h-[65vh]">
+          <div className="relative rounded-3xl overflow-hidden h-[70vh]">
             {heroImages.map((image, index) => (
               <img 
                 key={image} 

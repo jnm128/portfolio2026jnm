@@ -10,11 +10,11 @@ interface IntroBlurbProps {
 const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
   return (
     <section className={cn('py-12 md:py-16 bg-background', className)}>
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+      <div className="container mx-auto px-6 max-w-6xl">
         <FadeIn>
-          <div className="flex items-center justify-end gap-4">
-            <Sparkles className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-            <p className="text-lg md:text-xl text-muted-foreground font-serif text-right max-w-xl">
+          <div className="flex items-center gap-6">
+            <Sparkles className="w-6 h-6 text-muted-foreground flex-shrink-0" />
+            <p className="text-xl md:text-2xl text-muted-foreground font-serif max-w-xl">
               Crafting thoughtful digital experiences that put people first.
             </p>
           </div>
