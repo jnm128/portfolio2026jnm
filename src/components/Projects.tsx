@@ -36,7 +36,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   ];
 
   return (
-    <section id="projects" className={cn('py-16 md:py-24 bg-surface-1 rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-10', className)}>
+    <section id="projects" className={cn('py-16 md:py-24 bg-surface-1 rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-10 -mt-8', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <div className="flex flex-col gap-24">
           {projects.map((project, index) => (
