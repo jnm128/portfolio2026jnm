@@ -38,12 +38,12 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   return (
     <section id="projects" className={cn('py-16 md:py-24 bg-surface-1 rounded-b-[2.5rem] md:rounded-b-[4rem] mb-8 relative z-10', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        <div className="flex flex-col gap-16">
+        <div className="flex flex-col gap-24">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 100}>
               <Link
                 to={project.link}
-                className="group block"
+                className="group block transition-transform duration-300 hover:-translate-y-1"
               >
                 <div className={cn(
                   "flex flex-col md:flex-row md:items-center gap-6 md:gap-12",
@@ -69,7 +69,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                       <img 
                         src={project.image}
                         alt={project.title}
-                        className="w-full aspect-[16/9] object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full aspect-[16/9] object-cover"
                       />
                     </div>
                   </div>
