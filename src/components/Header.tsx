@@ -38,9 +38,9 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
   const menuItems = [
     { label: 'Work', id: 'projects', type: 'scroll' },
+    { label: 'About', id: 'about', type: 'scroll' },
     { label: 'Book Club', id: 'community', type: 'scroll' },
-    { label: 'For Fun', id: 'testimonials', type: 'scroll' },
-    { label: 'Connect', id: '/contact', type: 'link' },
+    { label: 'Get in Touch', id: '/contact', type: 'link' },
   ];
 
   return (
