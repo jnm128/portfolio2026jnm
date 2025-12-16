@@ -9,7 +9,7 @@ interface IntroBlurbProps {
 
 const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
   return (
-    <section className={cn('py-12 md:py-16 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-40 -mt-8', className)}>
+    <section className={cn('py-12 md:py-16 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-40 -mt-12', className)}>
       <div className="container mx-auto px-6 max-w-6xl">
         <FadeIn>
           <div className="flex items-center gap-6">
