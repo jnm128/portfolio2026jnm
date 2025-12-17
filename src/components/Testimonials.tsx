@@ -34,7 +34,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
 
   return (
     <section id="testimonials" className={cn('py-16 md:py-24 bg-surface-3 rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-10 -mt-12', className)}>
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+      <div className="container mx-auto px-4 md:px-6 max-w-[1600px]">
         <FadeIn>
           <h2 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
             <span className="relative flex items-center justify-center w-3 h-3">

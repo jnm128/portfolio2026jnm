@@ -29,7 +29,7 @@ const About: React.FC<AboutProps> = ({ className }) => {
 
   return (
     <section id="about" className={cn('py-16 md:py-24 bg-surface-2 rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-20 -mt-12', className)}>
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+      <div className="container mx-auto px-4 md:px-6 max-w-[1600px]">
         <FadeIn>
           <h2 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
             <span className="relative flex items-center justify-center w-3 h-3">
@@ -117,11 +117,11 @@ const About: React.FC<AboutProps> = ({ className }) => {
               </p>
               {/* Expertise Tags */}
               <div className="flex flex-wrap gap-2 mb-8">
-                <span className="bg-white border border-border rounded-full px-4 py-2 text-sm text-foreground">4+ Years</span>
-                <span className="bg-white border border-border rounded-full px-4 py-2 text-sm text-foreground">Healthcare</span>
-                <span className="bg-white border border-border rounded-full px-4 py-2 text-sm text-foreground">B2B & B2C</span>
-                <span className="bg-white border border-border rounded-full px-4 py-2 text-sm text-foreground">Mobile & Web</span>
-                <span className="bg-white border border-border rounded-full px-4 py-2 text-sm text-foreground">Enterprise Systems</span>
+                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">4+ Years</span>
+                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">Healthcare</span>
+                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">B2B & B2C</span>
+                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">Mobile & Web</span>
+                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">Enterprise Systems</span>
               </div>
 
               <button onClick={() => {
