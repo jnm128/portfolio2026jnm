@@ -55,7 +55,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
               <div className="group block transition-transform duration-300 hover:-translate-y-1">
-                <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
+                <div className="flex flex-col-reverse md:flex-row md:items-center gap-6 md:gap-12">
                   {/* Text Content */}
                   <div className="md:w-1/5">
                     <Link to={project.link}>
