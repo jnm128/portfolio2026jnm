@@ -117,11 +117,11 @@ const About: React.FC<AboutProps> = ({ className }) => {
               </p>
               {/* Expertise Tags */}
               <div className="flex flex-wrap gap-2 mb-8">
-                <span className="bg-secondary border border-border rounded-full px-4 py-2 text-sm text-foreground">4+ Years</span>
-                <span className="bg-secondary border border-border rounded-full px-4 py-2 text-sm text-foreground">Healthcare</span>
-                <span className="bg-secondary border border-border rounded-full px-4 py-2 text-sm text-foreground">B2B & B2C</span>
-                <span className="bg-secondary border border-border rounded-full px-4 py-2 text-sm text-foreground">Mobile & Web</span>
-                <span className="bg-secondary border border-border rounded-full px-4 py-2 text-sm text-foreground">Enterprise Systems</span>
+                <span className="bg-white border border-border rounded-full px-4 py-2 text-sm text-foreground">4+ Years</span>
+                <span className="bg-white border border-border rounded-full px-4 py-2 text-sm text-foreground">Healthcare</span>
+                <span className="bg-white border border-border rounded-full px-4 py-2 text-sm text-foreground">B2B & B2C</span>
+                <span className="bg-white border border-border rounded-full px-4 py-2 text-sm text-foreground">Mobile & Web</span>
+                <span className="bg-white border border-border rounded-full px-4 py-2 text-sm text-foreground">Enterprise Systems</span>
               </div>
 
               <button onClick={() => {
