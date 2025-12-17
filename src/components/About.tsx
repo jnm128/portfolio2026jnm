@@ -41,7 +41,7 @@ const About: React.FC<AboutProps> = ({ className }) => {
         </FadeIn>
 
         <FadeIn delay={200}>
-          <div className="max-w-5xl">
+          <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-start">
             {/* Flippable Profile Image */}
             <div className="relative">
