@@ -30,7 +30,7 @@ const About: React.FC<AboutProps> = ({ className }) => {
     <section id="about" className={cn('py-16 md:py-24 bg-surface-2 rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-20 -mt-12', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-serif font-medium mb-4">
+          <h2 className="text-2xl md:text-3xl font-serif font-medium mb-4">
             About
           </h2>
           <div className="border-b border-border/40 mb-12" />
@@ -111,10 +111,6 @@ const About: React.FC<AboutProps> = ({ className }) => {
               <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6 font-serif">
                 Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.
               </p>
-              <p className="text-base text-muted-foreground leading-relaxed mb-8">
-                With a background spanning healthcare technology, fintech, and consumer products, Joanna brings a unique perspective to every project. She believes that great design is invisible—it simply works, allowing people to focus on what matters most to them.
-              </p>
-              
               {/* Expertise Tags */}
               <div className="flex flex-wrap gap-2 mb-8">
                 <span className="bg-secondary/50 rounded-full px-4 py-2 text-sm text-foreground">4+ Years</span>
