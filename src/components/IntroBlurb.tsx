@@ -29,9 +29,23 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
               <p className="text-base md:text-lg text-muted-foreground font-serif">
                 Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.
               </p>
-              <span className="bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground w-fit">
-                Currently designing for CVS Health
-              </span>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground">
+                  Currently designing for CVS Health
+                </span>
+                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">
+                  4+ Years Experience
+                </span>
+                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">
+                  Healthcare & Enterprise
+                </span>
+                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">
+                  B2B & B2C
+                </span>
+                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">
+                  Mobile & Web
+                </span>
+              </div>
             </div>
           </div>
         </FadeIn>
