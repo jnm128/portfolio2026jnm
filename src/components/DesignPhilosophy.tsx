@@ -77,11 +77,11 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
           </FadeIn>
 
           <CollapsibleContent className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12">
               {philosophies.map((philosophy, index) => (
                 <FadeIn key={philosophy.title} delay={index * 100}>
                   <div
-                    className="relative h-[280px] md:h-[320px] cursor-pointer perspective-1000"
+                    className="relative h-[220px] md:h-[240px] cursor-pointer perspective-1000"
                     onClick={() => toggleFlip(index)}
                   >
                     <div
@@ -96,24 +96,24 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
                     >
                       {/* Front of card */}
                       <div
-                        className="absolute inset-0 p-8 rounded-2xl border border-border bg-card flex flex-col items-center justify-center text-center backface-hidden"
+                        className="absolute inset-0 p-6 rounded-2xl border border-border bg-card flex flex-col items-center justify-center text-center backface-hidden"
                         style={{ backfaceVisibility: 'hidden' }}
                       >
-                        <span className="text-5xl md:text-6xl mb-6">{philosophy.icon}</span>
-                        <h3 className="text-2xl font-serif font-medium">{philosophy.title}</h3>
-                        <span className="text-xs text-muted-foreground mt-4">Click to flip</span>
+                        <span className="text-3xl md:text-4xl mb-4">{philosophy.icon}</span>
+                        <h3 className="text-lg font-serif font-medium">{philosophy.title}</h3>
+                        <span className="text-xs text-muted-foreground mt-3">Click to flip</span>
                       </div>
                       
                       {/* Back of card */}
                       <div
-                        className="absolute inset-0 p-8 rounded-2xl border border-primary/30 bg-primary/5 flex flex-col justify-center backface-hidden"
+                        className="absolute inset-0 p-5 rounded-2xl border border-primary/30 bg-primary/5 flex flex-col justify-center backface-hidden"
                         style={{ 
                           backfaceVisibility: 'hidden',
                           transform: 'rotateY(180deg)'
                         }}
                       >
-                        <h4 className="text-base font-medium text-primary mb-4">{philosophy.title}</h4>
-                        <p className="text-base text-muted-foreground leading-relaxed">
+                        <h4 className="text-sm font-medium text-primary mb-2">{philosophy.title}</h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           {philosophy.description}
                         </p>
                       </div>
