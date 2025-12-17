@@ -11,7 +11,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
       <div className="container mx-auto px-6 max-w-6xl">
         <FadeIn>
           <div className="flex items-center gap-6 md:gap-8">
-            <div className="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden flex-shrink-0">
+            <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden flex-shrink-0">
               <img alt="Joanna Minott" src="/lovable-uploads/joanna-intro-profile.png" className="w-full h-full object-cover object-top" />
             </div>
             <div className="w-px h-12 bg-border/60" />
