@@ -76,8 +76,8 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                     
                     {/* Timeline Collapsible */}
                     <Collapsible>
-                      <CollapsibleTrigger className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full border-b border-border pb-2 mb-2">
-                        <ChevronDown className="w-4 h-4 transition-transform data-[state=open]:rotate-180" />
+                      <CollapsibleTrigger className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full border-b border-border pb-2 mb-2">
+                        <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                         <span>Timeline</span>
                       </CollapsibleTrigger>
                       <CollapsibleContent className="pl-6 text-sm text-foreground mb-3">
@@ -91,8 +91,8 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                     
                     {/* Impact Collapsible */}
                     <Collapsible>
-                      <CollapsibleTrigger className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full border-b border-border pb-2 mb-2">
-                        <ChevronDown className="w-4 h-4 transition-transform data-[state=open]:rotate-180" />
+                      <CollapsibleTrigger className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full border-b border-border pb-2 mb-2">
+                        <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                         <span>Impact</span>
                       </CollapsibleTrigger>
                       <CollapsibleContent className="pl-6 text-sm text-foreground mb-4">
