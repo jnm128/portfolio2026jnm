@@ -42,7 +42,7 @@ const About: React.FC<AboutProps> = ({ className }) => {
 
         <FadeIn delay={200}>
           <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-start">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Flippable Profile Image */}
             <div className="relative">
               <div 
@@ -118,11 +118,11 @@ const About: React.FC<AboutProps> = ({ className }) => {
               </p>
               {/* Expertise Tags */}
               <div className="flex flex-wrap gap-2 mb-8">
-                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">4+ Years</span>
-                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">Healthcare</span>
-                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">B2B & B2C</span>
-                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">Mobile & Web</span>
-                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">Enterprise Systems</span>
+                <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">4+ Years</span>
+                <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">Healthcare</span>
+                <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">B2B & B2C</span>
+                <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">Mobile & Web</span>
+                <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">Enterprise Systems</span>
               </div>
 
               <button onClick={() => {
