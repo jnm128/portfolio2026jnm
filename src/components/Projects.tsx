@@ -8,6 +8,13 @@ interface ProjectsProps {
   className?: string;
 }
 
+const PulsingCircle = () => (
+  <span className="relative flex items-center justify-center w-3 h-3">
+    <Circle className="w-3 h-3 fill-current relative z-10" />
+    <span className="absolute inset-0 rounded-full bg-current animate-pulse-ring" />
+  </span>
+);
+
 const Projects: React.FC<ProjectsProps> = ({ className }) => {
   const projects = [
     {
@@ -41,7 +48,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <FadeIn>
           <h2 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
-            <Circle className="w-3 h-3 fill-current" />
+            <PulsingCircle />
             Recent Work
           </h2>
         </FadeIn>
@@ -52,12 +59,9 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                 to={project.link}
                 className="group block transition-transform duration-300 hover:-translate-y-1"
               >
-                <div className={cn(
-                  "flex flex-col md:flex-row md:items-center gap-6 md:gap-12",
-                  index % 2 === 1 && "md:flex-row-reverse"
-                )}>
+                <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
                   {/* Text Content */}
-                  <div className="md:w-1/4">
+                  <div className="md:w-1/5">
                     <h3 className="text-lg md:text-xl font-serif leading-relaxed group-hover:text-muted-foreground transition-colors mb-3">
                       {project.title}
                     </h3>
@@ -70,8 +74,8 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                     </div>
                   </div>
                   
-                  {/* Image */}
-                  <div className="md:w-3/4">
+                  {/* Image - Larger */}
+                  <div className="md:w-4/5">
                     <div className="relative rounded-xl overflow-hidden">
                       <img 
                         src={project.image}
