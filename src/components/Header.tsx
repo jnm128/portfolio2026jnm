@@ -141,7 +141,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           <Link
             to="/contact"
             className="bg-foreground text-background px-5 py-2 rounded-full text-sm font-medium 
-                       hover:bg-background hover:text-foreground border-2 border-foreground hover:border
+                       hover:bg-background hover:text-foreground border border-foreground
                        transition-all duration-300"
           >
             Get in Touch
@@ -234,7 +234,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             to="/contact"
             onClick={() => setIsMobileMenuOpen(false)}
             className="bg-foreground text-background px-6 py-3 rounded-full text-xl font-serif
-                       hover:bg-background hover:text-foreground border-2 border-foreground hover:border
+                       hover:bg-background hover:text-foreground border border-foreground
                        transition-all duration-300"
           >
             Get in Touch
