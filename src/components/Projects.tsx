@@ -65,7 +65,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 100}>
               <div className="group block transition-transform duration-300 hover:-translate-y-1">
-                <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-12">
+                <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
                   {/* Text Content */}
                   <div className="md:w-1/5">
                     <Link to={project.link}>
@@ -76,7 +76,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                     
                     {/* Timeline Collapsible */}
                     <Collapsible>
-                      <CollapsibleTrigger className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full border-b border-border pb-2 mb-2">
+                      <CollapsibleTrigger className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full border-b border-muted-foreground/30 pb-2 mb-2">
                         <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                         <span>Timeline</span>
                       </CollapsibleTrigger>
@@ -91,7 +91,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                     
                     {/* Impact Collapsible */}
                     <Collapsible>
-                      <CollapsibleTrigger className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full border-b border-border pb-2 mb-2">
+                      <CollapsibleTrigger className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full border-b border-muted-foreground/30 pb-2 mb-2">
                         <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                         <span>Impact</span>
                       </CollapsibleTrigger>
