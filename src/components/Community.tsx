@@ -2,6 +2,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { Circle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface CommunityProps {
   className?: string;
@@ -28,9 +29,12 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
               <h3 className="text-2xl md:text-3xl font-serif leading-relaxed">
                 She's also building the next big ux design community
               </h3>
-              <button className="inline-flex items-center px-4 py-2 bg-surface-1 text-surface-6 text-sm font-medium rounded-full transition-colors hover:bg-surface-1/90">
-                Join
-              </button>
+              <Link 
+                to="/book-club"
+                className="inline-flex items-center px-4 py-2 bg-surface-1 text-surface-6 text-sm font-medium rounded-full transition-colors hover:bg-surface-1/90"
+              >
+                Learn More
+              </Link>
             </div>
             
             {/* Community Image */}

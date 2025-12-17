@@ -46,10 +46,15 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
               <img alt="Joanna Minott" className="w-full h-full object-cover object-top scale-[1.3] origin-top" src="/lovable-uploads/d4672c8b-3f01-49ed-87bd-6ff86c784c77.png" />
             </div>
             <div className="w-px h-16 bg-border/60 flex-shrink-0" />
-            <div className="flex flex-col gap-3">
-              <p className="text-base md:text-lg text-muted-foreground font-serif">
-                Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.
-              </p>
+            <div className="flex flex-col gap-4">
+              <div className="space-y-2">
+                <p className="text-lg md:text-xl text-foreground font-serif">
+                  Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences.
+                </p>
+                <p className="text-lg md:text-xl text-foreground font-serif">
+                  With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.
+                </p>
+              </div>
               <div ref={chipsRef} className="flex flex-wrap gap-2">
                 <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '0ms' }}>
                   Currently designing for CVS Health
