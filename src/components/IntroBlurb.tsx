@@ -15,7 +15,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
               <img alt="Joanna Minott" className="w-full h-full object-cover object-top" src="/lovable-uploads/d4672c8b-3f01-49ed-87bd-6ff86c784c77.png" />
             </div>
             <div className="w-px h-12 bg-border/60" />
-            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground font-serif">
+            <p className="text-base md:text-lg text-muted-foreground font-serif">
               Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.
             </p>
           </div>
