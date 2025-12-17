@@ -1,7 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Link, useLocation } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
+// Working Lottie animation URLs
+const BOOK_LOTTIE_URL = "https://lottie.host/4db68bbd-31f6-4cd8-84eb-189de081159a/IGmMCqhzpt.lottie";
+const CAMERA_LOTTIE_URL = "https://lottie.host/b5a5e2d8-0b1a-4e0c-9b3a-3c4e1b6a8f9d/camera.lottie";
 
 interface HeaderProps {
   className?: string;
@@ -12,10 +16,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
-  
-  // Lottie refs for controlling animations
-  const bookLottieRef = useRef<any>(null);
-  const cameraLottieRef = useRef<any>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,26 +41,38 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
     }
   };
 
-  const handleBookHover = (isEntering: boolean) => {
-    if (bookLottieRef.current) {
-      if (isEntering) {
-        bookLottieRef.current.seek(0);
-        bookLottieRef.current.play();
-      } else {
-        bookLottieRef.current.stop();
-      }
-    }
-  };
+  // Reusable Lottie nav link component
+  const LottieNavItem = ({ 
+    label, 
+    lottieUrl, 
+    onClick, 
+    href 
+  }: { 
+    label: string; 
+    lottieUrl: string; 
+    onClick?: () => void; 
+    href?: string;
+  }) => {
+    const content = (
+      <>
+        <div className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -ml-1">
+          <DotLottieReact
+            src={lottieUrl}
+            loop={false}
+            autoplay={false}
+            playOnHover={true}
+          />
+        </div>
+        <span>{label}</span>
+      </>
+    );
 
-  const handleCameraHover = (isEntering: boolean) => {
-    if (cameraLottieRef.current) {
-      if (isEntering) {
-        cameraLottieRef.current.seek(0);
-        cameraLottieRef.current.play();
-      } else {
-        cameraLottieRef.current.stop();
-      }
+    const className = "relative group text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-2";
+
+    if (href) {
+      return <Link to={href} className={className}>{content}</Link>;
     }
+    return <button onClick={onClick} className={className}>{content}</button>;
   };
 
   return (
@@ -101,79 +113,21 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             </Link>
           )}
 
-          {/* About - Camera flash on hover */}
-          {isHomePage ? (
-            <button
-              onClick={() => scrollToSection('about')}
-              onMouseEnter={() => handleCameraHover(true)}
-              onMouseLeave={() => handleCameraHover(false)}
-              className="relative group text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-2"
-            >
-              <div className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -ml-1">
-                <DotLottieReact
-                  src="https://lottie.host/d2b12c2d-5c5a-4d67-9147-9a4ccf44c4c5/vRFzZwlhyK.lottie"
-                  loop={false}
-                  autoplay={false}
-                  dotLottieRefCallback={(ref) => { cameraLottieRef.current = ref; }}
-                />
-              </div>
-              <span>About</span>
-            </button>
-          ) : (
-            <Link
-              to="/#about"
-              onMouseEnter={() => handleCameraHover(true)}
-              onMouseLeave={() => handleCameraHover(false)}
-              className="relative group text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-2"
-            >
-              <div className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -ml-1">
-                <DotLottieReact
-                  src="https://lottie.host/d2b12c2d-5c5a-4d67-9147-9a4ccf44c4c5/vRFzZwlhyK.lottie"
-                  loop={false}
-                  autoplay={false}
-                  dotLottieRefCallback={(ref) => { cameraLottieRef.current = ref; }}
-                />
-              </div>
-              <span>About</span>
-            </Link>
-          )}
+          {/* About - Camera animation on hover */}
+          <LottieNavItem
+            label="About"
+            lottieUrl={CAMERA_LOTTIE_URL}
+            onClick={isHomePage ? () => scrollToSection('about') : undefined}
+            href={isHomePage ? undefined : "/#about"}
+          />
 
-          {/* Book Club - Book icon animation */}
-          {isHomePage ? (
-            <button
-              onClick={() => scrollToSection('community')}
-              onMouseEnter={() => handleBookHover(true)}
-              onMouseLeave={() => handleBookHover(false)}
-              className="relative group text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-2"
-            >
-              <div className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -ml-1">
-                <DotLottieReact
-                  src="https://lottie.host/79b22f9c-9c8e-4a66-8e3f-9c9c9c9c9c9c/book.lottie"
-                  loop={false}
-                  autoplay={false}
-                  dotLottieRefCallback={(ref) => { bookLottieRef.current = ref; }}
-                />
-              </div>
-              <span>Book Club</span>
-            </button>
-          ) : (
-            <Link
-              to="/#community"
-              onMouseEnter={() => handleBookHover(true)}
-              onMouseLeave={() => handleBookHover(false)}
-              className="relative group text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-2"
-            >
-              <div className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -ml-1">
-                <DotLottieReact
-                  src="https://lottie.host/79b22f9c-9c8e-4a66-8e3f-9c9c9c9c9c9c/book.lottie"
-                  loop={false}
-                  autoplay={false}
-                  dotLottieRefCallback={(ref) => { bookLottieRef.current = ref; }}
-                />
-              </div>
-              <span>Book Club</span>
-            </Link>
-          )}
+          {/* Book Club - Book animation on hover */}
+          <LottieNavItem
+            label="Book Club"
+            lottieUrl={BOOK_LOTTIE_URL}
+            onClick={isHomePage ? () => scrollToSection('community') : undefined}
+            href={isHomePage ? undefined : "/#community"}
+          />
 
           {/* Get in Touch - Black to white button */}
           <Link
