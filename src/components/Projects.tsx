@@ -47,15 +47,13 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   return (
     <section id="projects" className={cn('py-16 md:py-24 bg-muted rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-30 -mt-12', className)}>
       <div className="container mx-auto px-4 md:px-6 max-w-[1600px]">
-        <FadeIn>
-          <h2 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
-            <PulsingCircle />
-            Recent Work
-          </h2>
-        </FadeIn>
+        <h2 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
+          <PulsingCircle />
+          Recent Work
+        </h2>
         <div className="flex flex-col gap-24">
           {projects.map((project, index) => (
-            <FadeIn key={project.title} delay={index * 100}>
+            <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
               <div className="group block transition-transform duration-300 hover:-translate-y-1">
                 <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
                   {/* Text Content */}
