@@ -12,18 +12,21 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
       quote: "Joanna has an incredible ability to translate complex requirements into elegant, user-friendly designs. Her work on our healthcare platform exceeded all expectations.",
       author: "Sarah Chen",
       role: "Product Manager",
+      company: "HealthTech Solutions",
       initials: "SC"
     },
     {
       quote: "Working with Joanna was transformative for our product. She brought clarity to our vision and delivered designs that truly resonate with our users.",
       author: "Michael Torres",
       role: "VP of Product",
+      company: "Finova",
       initials: "MT"
     },
     {
       quote: "Joanna's user-centered approach and attention to detail made all the difference. She doesn't just design—she solves real problems with empathy and precision.",
       author: "Emily Rodriguez",
       role: "Design Director",
+      company: "CreativeWorks",
       initials: "ER"
     }
   ];
@@ -51,7 +54,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-sm font-medium">{testimonial.author}</span>
-                    <span className="text-xs text-muted-foreground">{testimonial.role}</span>
+                    <span className="text-xs text-muted-foreground">{testimonial.role}, {testimonial.company}</span>
                   </div>
                 </div>
               </div>
