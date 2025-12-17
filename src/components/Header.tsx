@@ -137,13 +137,22 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             </Link>
           )}
 
-          {/* Book Club - links to dedicated page */}
-          <Link
-            to="/book-club"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-          >
-            Book Club
-          </Link>
+          {/* Book Club - scrolls to community section */}
+          {isHomePage ? (
+            <button
+              onClick={() => scrollToSection('community')}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+            >
+              Book Club
+            </button>
+          ) : (
+            <Link
+              to="/#community"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+            >
+              Book Club
+            </Link>
+          )}
 
           {/* Get in Touch - Black to white button */}
           <Link
@@ -221,13 +230,22 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             </Link>
           )}
           
-          <Link
-            to="/book-club"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-2xl font-serif text-foreground hover:text-muted-foreground transition-colors"
-          >
-            Book Club
-          </Link>
+          {isHomePage ? (
+            <button
+              onClick={() => scrollToSection('community')}
+              className="text-2xl font-serif text-foreground hover:text-muted-foreground transition-colors"
+            >
+              Book Club
+            </button>
+          ) : (
+            <Link
+              to="/#community"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-2xl font-serif text-foreground hover:text-muted-foreground transition-colors"
+            >
+              Book Club
+            </Link>
+          )}
           
           <Link
             to="/contact"
