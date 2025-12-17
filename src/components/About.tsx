@@ -41,7 +41,8 @@ const About: React.FC<AboutProps> = ({ className }) => {
         </FadeIn>
 
         <FadeIn delay={200}>
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
+          <div className="max-w-5xl">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-start">
             {/* Flippable Profile Image */}
             <div className="relative">
               <div 
@@ -136,6 +137,7 @@ const About: React.FC<AboutProps> = ({ className }) => {
                 Connect
               </button>
             </div>
+          </div>
           </div>
         </FadeIn>
       </div>
