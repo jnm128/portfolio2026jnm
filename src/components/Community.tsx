@@ -13,7 +13,10 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <FadeIn>
           <h2 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
-            <Circle className="w-3 h-3 fill-current" />
+            <span className="relative flex items-center justify-center w-3 h-3">
+              <Circle className="w-3 h-3 fill-current relative z-10" />
+              <span className="absolute inset-0 rounded-full bg-current animate-pulse-ring" />
+            </span>
             Building community
           </h2>
         </FadeIn>
