@@ -30,19 +30,19 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
                 Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground">
+                <span className="bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground opacity-0 animate-fade-in" style={{ animationDelay: '0ms', animationFillMode: 'forwards' }}>
                   Currently designing for CVS Health
                 </span>
-                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">
+                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0 animate-fade-in" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
                   4+ Years Experience
                 </span>
-                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">
+                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0 animate-fade-in" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
                   Healthcare & Enterprise
                 </span>
-                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">
+                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0 animate-fade-in" style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
                   B2B & B2C
                 </span>
-                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">
+                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0 animate-fade-in" style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
                   Mobile & Web
                 </span>
               </div>
