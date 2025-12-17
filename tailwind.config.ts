@@ -198,7 +198,7 @@ export default {
 						transform: 'translateX(0)'
 					}
 				},
-				'cursor-pulse': {
+			'cursor-pulse': {
 					'0%': {
 						transform: 'scale(1)'
 					},
@@ -207,6 +207,16 @@ export default {
 					},
 					'100%': {
 						transform: 'scale(1)'
+					}
+				},
+				'page-enter': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
 					}
 				}
 			},
@@ -222,7 +232,8 @@ export default {
 				'collapsible-down': 'collapsible-down 0.2s ease-out',
 				'collapsible-up': 'collapsible-up 0.2s ease-out',
 				'slide-in-left': 'slide-in-left 0.4s ease-out forwards',
-				'cursor-pulse': 'cursor-pulse 0.15s ease-out'
+				'cursor-pulse': 'cursor-pulse 0.15s ease-out',
+				'page-enter': 'page-enter 0.4s ease-out forwards'
 			}
 		}
 	},
