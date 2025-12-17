@@ -22,7 +22,7 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
         </FadeIn>
 
         <FadeIn delay={100}>
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             {/* Text Content */}
             <div className="space-y-6">
               <h3 className="text-2xl md:text-3xl font-serif leading-relaxed">
@@ -33,12 +33,12 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
               </button>
             </div>
             
-            {/* Community Image - Larger */}
+            {/* Community Image */}
             <div className="relative rounded-3xl overflow-hidden">
               <img 
                 src="/lovable-uploads/47f9a1d0-4458-400a-8fc0-79adf093cf18.png"
                 alt="UX Design Community"
-                className="w-full aspect-[16/10] object-cover"
+                className="w-full aspect-[3/2] object-cover"
               />
             </div>
           </div>
