@@ -88,9 +88,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         {/* Logo */}
         <button 
           onClick={() => scrollToSection('home')}
-          className="text-2xl font-serif font-semibold tracking-tight animate-natural-fall"
+          className="text-2xl font-serif font-semibold tracking-tight flex"
         >
-          MINO.
+          {'MINO.'.split('').map((letter, index) => (
+            <span 
+              key={index} 
+              className="animate-natural-fall"
+              style={{ animationDelay: `${index * 80}ms` }}
+            >
+              {letter}
+            </span>
+          ))}
         </button>
         
         {/* Desktop Navigation */}
@@ -141,7 +149,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           <Link
             to="/contact"
             className="bg-foreground text-background px-5 py-2 rounded-full text-sm font-medium 
-                       hover:bg-background hover:text-foreground border border-foreground
+                       hover:bg-background hover:text-foreground border border-foreground hover:border-border
                        transition-all duration-300"
           >
             Get in Touch
@@ -234,7 +242,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             to="/contact"
             onClick={() => setIsMobileMenuOpen(false)}
             className="bg-foreground text-background px-6 py-3 rounded-full text-xl font-serif
-                       hover:bg-background hover:text-foreground border border-foreground
+                       hover:bg-background hover:text-foreground border border-foreground hover:border-border
                        transition-all duration-300"
           >
             Get in Touch
