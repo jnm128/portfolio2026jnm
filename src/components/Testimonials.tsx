@@ -32,6 +32,15 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
     }
   ];
 
+  const brands = [
+    "CVS Health",
+    "Viveka Health",
+    "HealthTech Solutions",
+    "Finova",
+    "CreativeWorks",
+    "MedTech Inc"
+  ];
+
   return (
     <section id="testimonials" className={cn('py-16 md:py-24 bg-surface-3 rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-10 -mt-12', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
@@ -40,6 +49,25 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
             <Circle className="w-3 h-3 fill-current" />
             What's it like working with Joanna?
           </h2>
+        </FadeIn>
+
+        {/* Trusted By Marquee */}
+        <FadeIn delay={50}>
+          <div className="mb-12">
+            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-4">Trusted by</p>
+            <div className="relative overflow-hidden">
+              <div className="flex animate-marquee">
+                {[...brands, ...brands].map((brand, index) => (
+                  <span 
+                    key={index} 
+                    className="text-lg md:text-xl font-serif text-foreground/70 whitespace-nowrap px-8"
+                  >
+                    {brand}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         </FadeIn>
 
         <div className="grid md:grid-cols-3 gap-6">
