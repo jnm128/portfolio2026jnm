@@ -51,7 +51,12 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
           <h2 className="text-xl md:text-2xl font-serif font-medium mb-4">
             Design Philosophy
           </h2>
-          <div className="border-b border-border/40 mb-4" />
+          <div 
+            className="border-b border-border/40 mb-4" 
+            data-section-divider
+            aria-hidden="true"
+            role="presentation"
+          />
           <p className="text-muted-foreground max-w-2xl mb-12">
             Click to flip and discover the principles that guide every project
           </p>
