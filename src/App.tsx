@@ -13,6 +13,7 @@ import BookClub from "./pages/BookClub";
 import CustomCursor from "./components/CustomCursor";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
+import Header from "./components/Header";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <Header />
         <PageTransition>
           <Routes>
             <Route path="/" element={<Index />} />
