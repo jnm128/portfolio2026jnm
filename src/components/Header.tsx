@@ -4,7 +4,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 // Working Lottie animation URLs
-const BOOK_LOTTIE_URL = "https://lottie.host/4db68bbd-31f6-4cd8-84eb-189de081159a/IGmMCqhzpt.lottie";
 const CAMERA_LOTTIE_URL = "https://lottie.host/b5a5e2d8-0b1a-4e0c-9b3a-3c4e1b6a8f9d/camera.lottie";
 
 interface HeaderProps {
@@ -121,13 +120,22 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             href={isHomePage ? undefined : "/#about"}
           />
 
-          {/* Book Club - Book animation on hover */}
-          <LottieNavItem
-            label="Book Club"
-            lottieUrl={BOOK_LOTTIE_URL}
-            onClick={isHomePage ? () => scrollToSection('community') : undefined}
-            href={isHomePage ? undefined : "/#community"}
-          />
+          {/* Book Club - simple transition */}
+          {isHomePage ? (
+            <button
+              onClick={() => scrollToSection('community')}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+            >
+              Book Club
+            </button>
+          ) : (
+            <Link
+              to="/#community"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+            >
+              Book Club
+            </Link>
+          )}
 
           {/* Get in Touch - Black to white button */}
           <Link
