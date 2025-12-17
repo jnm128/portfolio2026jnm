@@ -20,7 +20,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
               />
             </div>
             <div className="w-px h-12 bg-border/60" />
-            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground font-serif max-w-4xl">
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground font-serif">
               Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.
             </p>
           </div>
