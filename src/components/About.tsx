@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
+import { Circle } from 'lucide-react';
 
 interface AboutProps {
   className?: string;
@@ -30,15 +31,10 @@ const About: React.FC<AboutProps> = ({ className }) => {
     <section id="about" className={cn('py-16 md:py-24 bg-surface-2 rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-20 -mt-12', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <FadeIn>
-          <h2 className="text-xl md:text-2xl font-serif font-medium mb-4">
+          <h2 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
+            <Circle className="w-3 h-3 fill-current" />
             About
           </h2>
-          <div 
-            className="border-b border-background/60 mb-12" 
-            data-section-divider
-            aria-hidden="true"
-            role="presentation"
-          />
         </FadeIn>
 
         <FadeIn delay={200}>

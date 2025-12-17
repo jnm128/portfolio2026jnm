@@ -2,6 +2,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import FadeIn from './animations/FadeIn';
+import { Circle } from 'lucide-react';
 
 interface ProjectsProps {
   className?: string;
@@ -39,13 +40,10 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     <section id="projects" className={cn('py-16 md:py-24 bg-muted rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-30 -mt-12', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <FadeIn>
-          <h2 className="text-xl md:text-2xl font-serif font-medium mb-4">Recent Work</h2>
-          <div 
-            className="border-b border-background/60 mb-12" 
-            data-section-divider
-            aria-hidden="true"
-            role="presentation"
-          />
+          <h2 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
+            <Circle className="w-3 h-3 fill-current" />
+            Recent Work
+          </h2>
         </FadeIn>
         <div className="flex flex-col gap-24">
           {projects.map((project, index) => (
