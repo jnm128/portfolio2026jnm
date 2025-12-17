@@ -41,7 +41,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         <FadeIn>
           <h2 className="text-xl md:text-2xl font-serif font-medium mb-4">Recent Work</h2>
           <div 
-            className="border-b border-border/60 mb-12" 
+            className="border-b border-background/60 mb-12" 
             data-section-divider
             aria-hidden="true"
             role="presentation"

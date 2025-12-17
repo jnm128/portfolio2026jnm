@@ -52,7 +52,7 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
             Design Philosophy
           </h2>
           <div 
-            className="border-b border-border/60 mb-12" 
+            className="border-b border-background/60 mb-12" 
             data-section-divider
             aria-hidden="true"
             role="presentation"
