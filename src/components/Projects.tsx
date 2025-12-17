@@ -39,7 +39,8 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     <section id="projects" className={cn('py-16 md:py-24 bg-muted rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-30 -mt-12', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <FadeIn>
-          <h2 className="text-sm uppercase tracking-wider text-muted-foreground mb-12 pb-3 border-b border-border/40">Recent Work</h2>
+          <h2 className="text-xl md:text-2xl font-serif font-medium mb-4">Recent Work</h2>
+          <div className="border-b border-border/40 mb-12" />
         </FadeIn>
         <div className="flex flex-col gap-24">
           {projects.map((project, index) => (

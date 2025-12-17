@@ -30,7 +30,7 @@ const About: React.FC<AboutProps> = ({ className }) => {
     <section id="about" className={cn('py-16 md:py-24 bg-surface-2 rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-20 -mt-12', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <FadeIn>
-          <h2 className="text-2xl md:text-3xl font-serif font-medium mb-4">
+          <h2 className="text-xl md:text-2xl font-serif font-medium mb-4">
             About
           </h2>
           <div className="border-b border-border/40 mb-12" />

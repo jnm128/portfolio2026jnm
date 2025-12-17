@@ -11,7 +11,7 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
     <section id="community" className={cn('py-16 md:py-24 bg-surface-6 text-surface-1 relative z-[1] -mt-12', className)}>
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <FadeIn>
-          <h2 className="text-2xl md:text-3xl font-serif font-medium mb-4">
+          <h2 className="text-xl md:text-2xl font-serif font-medium mb-4">
             Building community
           </h2>
           <div className="border-b border-surface-1/40 mb-12" />
