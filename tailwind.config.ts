@@ -188,7 +188,7 @@ export default {
 						opacity: '0'
 					}
 				},
-				'slide-in-left': {
+			'slide-in-left': {
 					'0%': {
 						opacity: '0',
 						transform: 'translateX(-20px)'
@@ -196,6 +196,17 @@ export default {
 					'100%': {
 						opacity: '1',
 						transform: 'translateX(0)'
+					}
+				},
+				'cursor-pulse': {
+					'0%': {
+						transform: 'scale(1)'
+					},
+					'50%': {
+						transform: 'scale(0.7)'
+					},
+					'100%': {
+						transform: 'scale(1)'
 					}
 				}
 			},
@@ -210,7 +221,8 @@ export default {
 				'pulse-ring': 'pulse-ring 2s ease-out infinite',
 				'collapsible-down': 'collapsible-down 0.2s ease-out',
 				'collapsible-up': 'collapsible-up 0.2s ease-out',
-				'slide-in-left': 'slide-in-left 0.4s ease-out forwards'
+				'slide-in-left': 'slide-in-left 0.4s ease-out forwards',
+				'cursor-pulse': 'cursor-pulse 0.15s ease-out'
 			}
 		}
 	},

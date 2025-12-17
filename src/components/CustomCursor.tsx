@@ -4,6 +4,7 @@ const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isClicking, setIsClicking] = useState(false);
 
   const updatePosition = useCallback((e: MouseEvent) => {
     setPosition({ x: e.clientX, y: e.clientY });
@@ -17,10 +18,14 @@ const CustomCursor = () => {
 
     const handleMouseEnter = () => setIsVisible(true);
     const handleMouseLeave = () => setIsVisible(false);
+    const handleMouseDown = () => setIsClicking(true);
+    const handleMouseUp = () => setIsClicking(false);
 
     window.addEventListener('mousemove', updatePosition);
     document.addEventListener('mouseenter', handleMouseEnter);
     document.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mouseup', handleMouseUp);
 
     // Add hover detection for interactive elements
     const addHoverListeners = () => {
@@ -40,6 +45,8 @@ const CustomCursor = () => {
       window.removeEventListener('mousemove', updatePosition);
       document.removeEventListener('mouseenter', handleMouseEnter);
       document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('mouseup', handleMouseUp);
       observer.disconnect();
     };
   }, [updatePosition]);
@@ -51,9 +58,10 @@ const CustomCursor = () => {
 
   return (
     <div
-      className={`fixed pointer-events-none z-[9999] rounded-full border-2 border-foreground
+      className={`fixed pointer-events-none z-[9999] rounded-full bg-foreground
                   transition-all duration-150 ease-out
-                  ${isHovering ? 'scale-150 bg-foreground/10' : 'scale-100'}
+                  ${isHovering ? 'scale-150 opacity-80' : 'scale-100'}
+                  ${isClicking ? 'animate-cursor-pulse' : ''}
                   ${isVisible ? 'opacity-100' : 'opacity-0'}`}
       style={{
         left: position.x - 10,
