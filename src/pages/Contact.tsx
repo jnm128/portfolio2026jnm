@@ -1,27 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Mail, Linkedin, Calendar } from 'lucide-react';
+import { Mail, Linkedin, Calendar } from 'lucide-react';
 import FadeIn from '@/components/animations/FadeIn';
 
 const Contact = () => {
   return (
     <main className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 py-4 bg-background/95 backdrop-blur-sm">
-        <div className="container mx-auto px-6 flex items-center justify-between max-w-6xl">
-          <Link to="/" className="text-2xl font-serif font-semibold tracking-tight">
-            MINO.
-          </Link>
-          <Link 
-            to="/" 
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back
-          </Link>
-        </div>
-      </header>
-
       {/* Content */}
       <div className="pt-32 pb-24 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">

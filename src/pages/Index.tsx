@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import IntroBlurb from '@/components/IntroBlurb';
 import Projects from '@/components/Projects';
@@ -39,7 +38,6 @@ const Index = () => {
   return (
     <main className="relative">
       <ScrollAnimations />
-      <Header />
       <Hero />
       <IntroBlurb />
       <Projects />
