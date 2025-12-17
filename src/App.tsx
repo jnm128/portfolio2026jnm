@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import BookClub from "./pages/BookClub";
 import CustomCursor from "./components/CustomCursor";
 import ScrollToTop from "./components/ScrollToTop";
+import PageTransition from "./components/PageTransition";
 
 const queryClient = new QueryClient();
 
@@ -23,16 +24,18 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/book-club" element={<BookClub />} />
-          <Route path="/case-study/mindful-wellness" element={<CaseStudyMindfulWellness />} />
-          <Route path="/case-study/artisan-marketplace" element={<CaseStudyArtisanMarketplace />} />
-          <Route path="/case-study/creative-studio" element={<CaseStudyCreativeStudio />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <PageTransition>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/book-club" element={<BookClub />} />
+            <Route path="/case-study/mindful-wellness" element={<CaseStudyMindfulWellness />} />
+            <Route path="/case-study/artisan-marketplace" element={<CaseStudyArtisanMarketplace />} />
+            <Route path="/case-study/creative-studio" element={<CaseStudyCreativeStudio />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </PageTransition>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
