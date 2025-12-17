@@ -1,8 +1,10 @@
 import { useEffect, useState, useCallback } from 'react';
 
+type HoverType = 'default' | 'interactive' | 'image' | 'text';
+
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  const [hoverType, setHoverType] = useState<HoverType>('default');
   const [isVisible, setIsVisible] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
 
@@ -27,12 +29,30 @@ const CustomCursor = () => {
     window.addEventListener('mousedown', handleMouseDown);
     window.addEventListener('mouseup', handleMouseUp);
 
-    // Add hover detection for interactive elements
+    // Add hover detection for different element types
     const addHoverListeners = () => {
+      // Interactive elements (buttons, links)
       const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select');
       interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => setIsHovering(true));
-        el.addEventListener('mouseleave', () => setIsHovering(false));
+        el.addEventListener('mouseenter', () => setHoverType('interactive'));
+        el.addEventListener('mouseleave', () => setHoverType('default'));
+      });
+
+      // Image elements
+      const imageElements = document.querySelectorAll('img, [data-cursor="image"], .cursor-image');
+      imageElements.forEach(el => {
+        el.addEventListener('mouseenter', () => setHoverType('image'));
+        el.addEventListener('mouseleave', () => setHoverType('default'));
+      });
+
+      // Text elements (paragraphs, headings, spans with substantial text)
+      const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, li, blockquote, [data-cursor="text"]');
+      textElements.forEach(el => {
+        // Only add to elements that aren't inside interactive elements
+        if (!el.closest('a, button, [role="button"]')) {
+          el.addEventListener('mouseenter', () => setHoverType('text'));
+          el.addEventListener('mouseleave', () => setHoverType('default'));
+        }
       });
     };
 
@@ -56,18 +76,54 @@ const CustomCursor = () => {
     return null;
   }
 
+  // Cursor styles based on hover type
+  const getCursorStyles = () => {
+    switch (hoverType) {
+      case 'interactive':
+        return {
+          className: 'scale-150 opacity-80 rounded-full',
+          width: 20,
+          height: 20,
+          offset: 10,
+        };
+      case 'image':
+        return {
+          className: 'scale-125 rounded-sm',
+          width: 24,
+          height: 24,
+          offset: 12,
+        };
+      case 'text':
+        return {
+          className: 'rounded-full',
+          width: 3,
+          height: 24,
+          offset: 1.5,
+        };
+      default:
+        return {
+          className: 'scale-100 rounded-full',
+          width: 20,
+          height: 20,
+          offset: 10,
+        };
+    }
+  };
+
+  const styles = getCursorStyles();
+
   return (
     <div
-      className={`fixed pointer-events-none z-[9999] rounded-full bg-foreground
+      className={`fixed pointer-events-none z-[9999] bg-foreground
                   transition-all duration-150 ease-out
-                  ${isHovering ? 'scale-150 opacity-80' : 'scale-100'}
+                  ${styles.className}
                   ${isClicking ? 'animate-cursor-pulse' : ''}
                   ${isVisible ? 'opacity-100' : 'opacity-0'}`}
       style={{
-        left: position.x - 10,
-        top: position.y - 10,
-        width: 20,
-        height: 20,
+        left: position.x - styles.offset,
+        top: position.y - (hoverType === 'text' ? 12 : styles.offset),
+        width: styles.width,
+        height: styles.height,
       }}
     />
   );
