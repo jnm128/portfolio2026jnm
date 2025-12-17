@@ -17,7 +17,7 @@ const PulsingCircle = () => (
 
 const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
+  const [flippedCard, setFlippedCard] = useState<number | null>(null);
 
   const philosophies = [
     {
@@ -43,15 +43,7 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
   ];
 
   const toggleFlip = (index: number) => {
-    setFlippedCards(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(index)) {
-        newSet.delete(index);
-      } else {
-        newSet.add(index);
-      }
-      return newSet;
-    });
+    setFlippedCard(prev => prev === index ? null : index);
   };
 
   return (
@@ -87,11 +79,11 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
                     <div
                       className={cn(
                         "relative w-full h-full transition-transform duration-500 transform-style-3d",
-                        flippedCards.has(index) && "rotate-y-180"
+                        flippedCard === index && "rotate-y-180"
                       )}
                       style={{
                         transformStyle: 'preserve-3d',
-                        transform: flippedCards.has(index) ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                        transform: flippedCard === index ? 'rotateY(180deg)' : 'rotateY(0deg)',
                       }}
                     >
                       {/* Front of card */}
