@@ -1,13 +1,23 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
+
 interface IntroBlurbProps {
   className?: string;
 }
-const IntroBlurb: React.FC<IntroBlurbProps> = ({
-  className
-}) => {
-  return <section className={cn('py-12 md:py-16 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-40 -mt-12', className)}>
+
+const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
+  const brands = [
+    "CVS Health",
+    "Viveka Health",
+    "HealthTech Solutions",
+    "Finova",
+    "CreativeWorks",
+    "MedTech Inc"
+  ];
+
+  return (
+    <section className={cn('py-12 md:py-16 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-40 -mt-12', className)}>
       <div className="container mx-auto px-6 max-w-6xl">
         <FadeIn>
           <div className="flex items-start gap-6 md:gap-8">
@@ -25,7 +35,28 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
             </div>
           </div>
         </FadeIn>
+
+        {/* Trusted By Marquee */}
+        <FadeIn delay={100}>
+          <div className="mt-12">
+            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-4">Trusted by</p>
+            <div className="relative overflow-hidden">
+              <div className="flex animate-marquee">
+                {[...brands, ...brands].map((brand, index) => (
+                  <span 
+                    key={index} 
+                    className="text-lg md:text-xl font-serif text-foreground/70 whitespace-nowrap px-8"
+                  >
+                    {brand}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </FadeIn>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default IntroBlurb;
