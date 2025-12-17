@@ -34,7 +34,7 @@ const About: React.FC<AboutProps> = ({ className }) => {
             About
           </h2>
           <div 
-            className="border-b border-current mb-12" 
+            className="border-b border-foreground/50 mb-12" 
             data-section-divider
             aria-hidden="true"
             role="presentation"
