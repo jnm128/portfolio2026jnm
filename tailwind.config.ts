@@ -178,7 +178,7 @@ export default {
 						opacity: '1'
 					}
 				},
-				'collapsible-up': {
+			'collapsible-up': {
 					from: {
 						height: 'var(--radix-collapsible-content-height)',
 						opacity: '1'
@@ -186,6 +186,16 @@ export default {
 					to: {
 						height: '0',
 						opacity: '0'
+					}
+				},
+				'slide-in-left': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(-20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateX(0)'
 					}
 				}
 			},
@@ -199,7 +209,8 @@ export default {
 			'marquee': 'marquee 20s linear infinite',
 				'pulse-ring': 'pulse-ring 2s ease-out infinite',
 				'collapsible-down': 'collapsible-down 0.2s ease-out',
-				'collapsible-up': 'collapsible-up 0.2s ease-out'
+				'collapsible-up': 'collapsible-up 0.2s ease-out',
+				'slide-in-left': 'slide-in-left 0.4s ease-out forwards'
 			}
 		}
 	},
