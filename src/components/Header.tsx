@@ -53,7 +53,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         className
       )}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between max-w-6xl">
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between max-w-[1600px]">
         {/* Logo */}
         <button 
           onClick={() => scrollToSection('home')}
