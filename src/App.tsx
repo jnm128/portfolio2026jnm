@@ -11,6 +11,7 @@ import CaseStudyCreativeStudio from "./pages/CaseStudyCreativeStudio";
 import Contact from "./pages/Contact";
 import BookClub from "./pages/BookClub";
 import CustomCursor from "./components/CustomCursor";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/contact" element={<Contact />} />
