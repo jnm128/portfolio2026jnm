@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 
@@ -7,6 +7,27 @@ interface IntroBlurbProps {
 }
 
 const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const chipsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (chipsRef.current) {
+      observer.observe(chipsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const brands = [
     "CVS Health",
     "Viveka Health",
@@ -29,20 +50,20 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
               <p className="text-base md:text-lg text-muted-foreground font-serif">
                 Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.
               </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground opacity-0 animate-slide-in-left" style={{ animationDelay: '0ms' }}>
+              <div ref={chipsRef} className="flex flex-wrap gap-2">
+                <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '0ms' }}>
                   Currently designing for CVS Health
                 </span>
-                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0 animate-slide-in-left" style={{ animationDelay: '100ms' }}>
+                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '100ms' }}>
                   4+ Years Experience
                 </span>
-                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0 animate-slide-in-left" style={{ animationDelay: '200ms' }}>
+                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '200ms' }}>
                   Healthcare & Enterprise
                 </span>
-                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0 animate-slide-in-left" style={{ animationDelay: '300ms' }}>
+                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '300ms' }}>
                   B2B & B2C
                 </span>
-                <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0 animate-slide-in-left" style={{ animationDelay: '400ms' }}>
+                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '400ms' }}>
                   Mobile & Web
                 </span>
               </div>
