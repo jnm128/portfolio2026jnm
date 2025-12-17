@@ -38,19 +38,19 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
   ];
 
   return (
-    <section className={cn('py-12 md:py-16 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-40 -mt-12', className)}>
+    <section className={cn('py-8 md:py-16 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-40 -mt-12', className)}>
       <div className="container mx-auto px-4 md:px-6 max-w-[1600px]">
         <FadeIn>
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8">
-            <div className="w-16 h-16 md:w-24 md:h-24 aspect-square rounded-full overflow-hidden flex-shrink-0">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
+            <div className="w-20 h-20 md:w-24 md:h-24 aspect-square rounded-full overflow-hidden flex-shrink-0">
               <img alt="Joanna Minott" className="w-full h-full object-cover object-top scale-[1.3] origin-top" src="/lovable-uploads/d4672c8b-3f01-49ed-87bd-6ff86c784c77.png" />
             </div>
             <div className="hidden md:block w-px h-16 bg-border/60 flex-shrink-0" />
             <div className="flex flex-col gap-4 text-center md:text-left">
-              <p className="text-lg md:text-xl text-foreground font-serif">
+              <p className="text-base md:text-xl text-foreground font-serif leading-relaxed">
                 Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.
               </p>
-              <div ref={chipsRef} className="flex flex-wrap gap-2">
+              <div ref={chipsRef} className="flex flex-wrap gap-2 justify-center md:justify-start">
                 <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '0ms' }}>
                   Currently designing for CVS Health
                 </span>

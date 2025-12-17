@@ -189,9 +189,11 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       {/* Mobile Menu */}
       <div 
         className={cn(
-          "fixed inset-0 z-40 md:hidden pt-20",
+          "fixed left-0 right-0 bottom-0 z-50 md:hidden",
           "transition-all duration-300 ease-in-out",
-          isMobileMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+          isMobileMenuOpen 
+            ? "top-[72px] pointer-events-auto opacity-100" 
+            : "top-full pointer-events-none opacity-0"
         )}
       >
         <div className="absolute inset-0 bg-background" />
