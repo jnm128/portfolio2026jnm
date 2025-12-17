@@ -15,7 +15,7 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
             Building community
           </h2>
           <div 
-            className="border-b border-surface-1/40 mb-12" 
+            className="border-b border-current mb-12" 
             data-section-divider
             aria-hidden="true"
             role="presentation"
