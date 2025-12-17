@@ -125,7 +125,7 @@ export default {
 						transform: 'translateY(0)'
 					}
 				},
-				'wiggle': {
+			'wiggle': {
 					'0%, 100%': {
 						transform: 'rotateY(0deg)'
 					},
@@ -135,14 +135,25 @@ export default {
 					'75%': {
 						transform: 'rotateY(8deg)'
 					}
+				},
+				'expand-width': {
+					'0%': {
+						transform: 'scaleX(0)',
+						transformOrigin: 'left'
+					},
+					'100%': {
+						transform: 'scaleX(1)',
+						transformOrigin: 'left'
+					}
 				}
 			},
-			animation: {
+		animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out forwards',
 				'fade-in-up': 'fade-in-up 0.7s ease-out forwards',
-				'wiggle': 'wiggle 0.5s ease-in-out 2'
+				'wiggle': 'wiggle 0.5s ease-in-out 2',
+				'expand-width': 'expand-width 0.8s ease-out forwards'
 			}
 		}
 	},

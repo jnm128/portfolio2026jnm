@@ -83,6 +83,34 @@ const ScrollAnimations = () => {
       });
     }, 100);
 
+    // Observe divider lines for expand animation
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    const dividerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const element = entry.target as HTMLElement;
+            if (!prefersReducedMotion) {
+              element.classList.add('animate-expand-width');
+              element.classList.remove('scale-x-0');
+            } else {
+              element.classList.remove('scale-x-0');
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    // Setup divider lines
+    const dividers = document.querySelectorAll('[data-section-divider]');
+    dividers.forEach((divider) => {
+      const element = divider as HTMLElement;
+      element.classList.add('scale-x-0', 'origin-left');
+      dividerObserver.observe(element);
+    });
+
     // Parallax effect for hero background
     const handleScroll = () => {
       const scrolled = window.pageYOffset;
@@ -100,6 +128,7 @@ const ScrollAnimations = () => {
       observer.disconnect();
       packageObserver.disconnect();
       projectObserver.disconnect();
+      dividerObserver.disconnect();
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);

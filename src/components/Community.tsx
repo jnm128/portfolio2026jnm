@@ -14,7 +14,12 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
           <h2 className="text-xl md:text-2xl font-serif font-medium mb-4">
             Building community
           </h2>
-          <div className="border-b border-surface-1/40 mb-12" />
+          <div 
+            className="border-b border-surface-1/40 mb-12" 
+            data-section-divider
+            aria-hidden="true"
+            role="presentation"
+          />
         </FadeIn>
 
         <FadeIn delay={100}>

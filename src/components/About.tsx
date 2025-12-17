@@ -33,7 +33,12 @@ const About: React.FC<AboutProps> = ({ className }) => {
           <h2 className="text-xl md:text-2xl font-serif font-medium mb-4">
             About
           </h2>
-          <div className="border-b border-border/40 mb-12" />
+          <div 
+            className="border-b border-border/40 mb-12" 
+            data-section-divider
+            aria-hidden="true"
+            role="presentation"
+          />
         </FadeIn>
 
         <FadeIn delay={200}>
