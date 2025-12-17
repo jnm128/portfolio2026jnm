@@ -41,14 +41,6 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       link: "/case-study/creative-studio",
       timeline: ["3 months"],
       impact: ["Launched MVP with 10k+ downloads in first month"]
-    },
-    {
-      title: "Reimagining digital banking for the next generation",
-      image: "/lovable-uploads/62126c48-0026-4214-b2f5-0221d25a88f4.png",
-      tags: ["Fintech", "Product Design"],
-      link: "/case-study/digital-banking",
-      timeline: ["8 months"],
-      impact: ["Increased user engagement by 45%", "Reduced onboarding drop-off by 30%"]
     }
   ];
 
