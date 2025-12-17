@@ -88,10 +88,10 @@ const CustomCursor = () => {
         };
       case 'image':
         return {
-          className: 'scale-125 rounded-sm',
-          width: 24,
-          height: 24,
-          offset: 12,
+          className: 'scale-125 rounded-full',
+          width: 20,
+          height: 20,
+          offset: 10,
         };
       case 'text':
         return {
