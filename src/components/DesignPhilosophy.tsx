@@ -52,14 +52,11 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
             Design Philosophy
           </h2>
           <div 
-            className="border-b border-border/40 mb-4" 
+            className="border-b border-foreground mb-12" 
             data-section-divider
             aria-hidden="true"
             role="presentation"
           />
-          <p className="text-muted-foreground max-w-2xl mb-12">
-            Click to flip and discover the principles that guide every project
-          </p>
         </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
