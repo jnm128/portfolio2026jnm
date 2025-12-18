@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { Circle, ChevronDown } from 'lucide-react';
@@ -15,12 +15,8 @@ const PulsingCircle = () => (
 );
 
 const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
-  const [dragDistance, setDragDistance] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
   const [isRevealed, setIsRevealed] = useState(false);
   const [flippedCard, setFlippedCard] = useState<number | null>(null);
-  const startYRef = useRef<number>(0);
-  const indicatorRef = useRef<HTMLDivElement>(null);
 
   const philosophies = [
     {
@@ -49,45 +45,11 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
     setFlippedCard(prev => prev === index ? null : index);
   };
 
-  const REVEAL_THRESHOLD = 60; // pixels to drag down to reveal
-
-  const handleDragStart = useCallback((clientY: number) => {
-    setIsDragging(true);
-    startYRef.current = clientY;
-  }, []);
-
-  const handleDragMove = useCallback((clientY: number) => {
-    if (!isDragging) return;
-    const distance = Math.max(0, clientY - startYRef.current);
-    setDragDistance(distance);
-  }, [isDragging]);
-
-  const handleDragEnd = useCallback(() => {
-    setIsDragging(false);
-    if (dragDistance > REVEAL_THRESHOLD) {
-      setIsRevealed(true);
-    }
-    setDragDistance(0);
-  }, [dragDistance]);
-
-  // Mouse events
-  const onMouseDown = (e: React.MouseEvent) => handleDragStart(e.clientY);
-  const onMouseMove = (e: React.MouseEvent) => handleDragMove(e.clientY);
-  const onMouseUp = () => handleDragEnd();
-  const onMouseLeave = () => { if (isDragging) handleDragEnd(); };
-
-  // Touch events
-  const onTouchStart = (e: React.TouchEvent) => handleDragStart(e.touches[0].clientY);
-  const onTouchMove = (e: React.TouchEvent) => handleDragMove(e.touches[0].clientY);
-  const onTouchEnd = () => handleDragEnd();
-
-  // Reset to closed state
+  const handleReveal = () => setIsRevealed(true);
   const handleReset = () => {
     setIsRevealed(false);
     setFlippedCard(null);
   };
-
-  const dragProgress = Math.min(dragDistance / REVEAL_THRESHOLD, 1);
 
   return (
     <section id="philosophy" className={cn('py-16 md:py-24 bg-surface-4 rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-[5] -mt-8 md:-mt-16', className)}>
@@ -108,32 +70,15 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
             )}
           </div>
 
-          {/* Small Drag-Down Indicator */}
+          {/* Click to Reveal Indicator */}
           {!isRevealed && (
-            <div 
-              ref={indicatorRef}
-              className={cn(
-                "inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/40 cursor-grab select-none transition-all",
-                isDragging && "cursor-grabbing bg-secondary/60"
-              )}
-              style={{
-                transform: `translateY(${dragDistance}px)`,
-                opacity: 1 - (dragProgress * 0.3)
-              }}
-              onMouseDown={onMouseDown}
-              onMouseMove={onMouseMove}
-              onMouseUp={onMouseUp}
-              onMouseLeave={onMouseLeave}
-              onTouchStart={onTouchStart}
-              onTouchMove={onTouchMove}
-              onTouchEnd={onTouchEnd}
+            <button 
+              onClick={handleReveal}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/40 hover:bg-secondary/60 transition-all cursor-pointer"
             >
-              <ChevronDown className={cn(
-                "w-4 h-4 text-muted-foreground transition-transform",
-                !isDragging && "animate-bounce"
-              )} />
-              <span className="text-sm text-muted-foreground">Drag down</span>
-            </div>
+              <ChevronDown className="w-4 h-4 text-muted-foreground animate-bounce" />
+              <span className="text-sm text-muted-foreground">Click to reveal</span>
+            </button>
           )}
         </FadeIn>
 
