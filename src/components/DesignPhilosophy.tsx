@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
-import { Circle, ChevronDown } from 'lucide-react';
+import { Circle, Plus } from 'lucide-react';
 
 interface DesignPhilosophyProps {
   className?: string;
@@ -60,26 +60,16 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
               <PulsingCircle />
               Design Philosophy
             </h2>
-            {isRevealed && (
-              <button 
-                onClick={handleReset}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Hide
-              </button>
-            )}
-          </div>
-
-          {/* Click to Reveal Indicator */}
-          {!isRevealed && (
             <button 
-              onClick={handleReveal}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/40 hover:bg-secondary/60 transition-all cursor-pointer"
+              onClick={isRevealed ? handleReset : handleReveal}
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-secondary/40 hover:bg-secondary/60 transition-all"
             >
-              <ChevronDown className="w-4 h-4 text-muted-foreground animate-bounce" />
-              <span className="text-sm text-muted-foreground">Click to reveal</span>
+              <Plus className={cn(
+                "w-4 h-4 text-muted-foreground transition-transform duration-300",
+                isRevealed && "rotate-45"
+              )} />
             </button>
-          )}
+          </div>
         </FadeIn>
 
         {/* Revealed Content */}
