@@ -76,7 +76,7 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
         <div 
           className="overflow-hidden transition-all duration-500 ease-out"
           style={{
-            maxHeight: isRevealed ? '600px' : '0px',
+            maxHeight: isRevealed ? '1200px' : '0px',
             opacity: isRevealed ? 1 : 0,
             transform: `translateY(${isRevealed ? 0 : -20}px)`
           }}
