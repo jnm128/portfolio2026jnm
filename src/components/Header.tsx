@@ -195,7 +195,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       {/* Mobile Menu */}
       <div 
         className={cn(
-          "fixed left-0 right-0 bottom-0 z-50 md:hidden",
+          "fixed left-0 right-0 bottom-0 z-[55] md:hidden",
           "transition-all duration-300 ease-in-out",
           isMobileMenuOpen 
             ? "top-[72px] pointer-events-auto opacity-100" 
