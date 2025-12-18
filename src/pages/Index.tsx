@@ -36,7 +36,7 @@ const Index = () => {
   }, []);
   
   return (
-    <main className="relative">
+    <main className="relative bg-surface-6">
       <ScrollAnimations />
       <Hero />
       <IntroBlurb />
