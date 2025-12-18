@@ -59,7 +59,7 @@ const About: React.FC<AboutProps> = ({ className }) => {
                 href="https://www.linkedin.com/in/joannaminott"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pill-tag self-start"
+                className="pill-tag self-start w-full sm:w-auto justify-center"
               >
                 Connect on LinkedIn
               </a>
