@@ -77,7 +77,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
                 <div className="w-16 h-16 aspect-square rounded-full overflow-hidden flex-shrink-0">
-                  <img alt="Joanna Minott" className="w-full h-full object-contain" src="/lovable-uploads/d4672c8b-3f01-49ed-87bd-6ff86c784c77.png" />
+                  <img alt="Joanna Minott" className="w-full h-full object-contain" src="/lovable-uploads/a16192bc-fdaf-45c8-9788-1f5e9a9b973d.png" />
                 </div>
                 <div className="w-px h-10 bg-border/60 flex-shrink-0" />
                 <div className="flex flex-wrap gap-2 items-center">
