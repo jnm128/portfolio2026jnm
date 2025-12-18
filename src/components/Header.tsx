@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Link, useLocation } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
@@ -13,6 +13,8 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
+  const [headerHeight, setHeaderHeight] = useState(0);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
@@ -23,6 +25,23 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useLayoutEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+
+    const update = () => setHeaderHeight(el.getBoundingClientRect().height);
+    update();
+
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+
+    window.addEventListener('resize', update);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('resize', update);
+    };
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -83,6 +102,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
     <>
       <header
+        ref={headerRef}
         className={cn(
           'fixed top-0 left-0 right-0 z-[60] transition-all duration-300',
           isScrolled 
@@ -195,13 +215,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       </header>
       
       {/* Mobile Menu - Outside header for proper stacking context */}
-      <div 
+      <div
+        style={{
+          top: headerHeight,
+          height: headerHeight ? `calc(100vh - ${headerHeight}px)` : '100vh',
+        }}
         className={cn(
-          "fixed left-0 right-0 bottom-0 z-[100] md:hidden bg-background",
-          "transition-all duration-300 ease-in-out",
-          isMobileMenuOpen 
-            ? `${isScrolled ? "top-[72px]" : "top-[88px]"} pointer-events-auto opacity-100`
-            : "top-full pointer-events-none opacity-0"
+          "fixed left-0 right-0 z-[100] md:hidden bg-background",
+          "transition-[transform,opacity] duration-300 ease-in-out will-change-transform",
+          isMobileMenuOpen
+            ? "translate-y-0 pointer-events-auto opacity-100"
+            : "-translate-y-full pointer-events-none opacity-0"
         )}
       >
         <nav className="flex flex-col items-center gap-8 pt-12">
