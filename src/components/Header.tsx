@@ -113,20 +113,37 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between max-w-[1600px]">
           {/* Logo */}
-          <button 
-            onClick={() => scrollToSection('home')}
-            className="text-2xl font-serif font-semibold tracking-tight flex"
-          >
-            {'MINO.'.split('').map((letter, index) => (
-              <span 
-                key={index} 
-                className="animate-natural-fall"
-                style={{ animationDelay: `${index * 80}ms` }}
-              >
-                {letter}
-              </span>
-            ))}
-          </button>
+          {location.pathname === '/contact' || location.pathname === '/book-club' ? (
+            <Link 
+              to="/"
+              className="text-2xl font-serif font-semibold tracking-tight flex"
+            >
+              {'MINO.'.split('').map((letter, index) => (
+                <span 
+                  key={index} 
+                  className="animate-natural-fall"
+                  style={{ animationDelay: `${index * 80}ms` }}
+                >
+                  {letter}
+                </span>
+              ))}
+            </Link>
+          ) : (
+            <button 
+              onClick={() => scrollToSection('home')}
+              className="text-2xl font-serif font-semibold tracking-tight flex"
+            >
+              {'MINO.'.split('').map((letter, index) => (
+                <span 
+                  key={index} 
+                  className="animate-natural-fall"
+                  style={{ animationDelay: `${index * 80}ms` }}
+                >
+                  {letter}
+                </span>
+              ))}
+            </button>
+          )}
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
