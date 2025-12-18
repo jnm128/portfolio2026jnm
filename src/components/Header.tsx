@@ -81,121 +81,123 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   };
 
   return (
-    <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-[60] transition-all duration-300',
-        isScrolled 
-          ? 'py-4 bg-background/95 backdrop-blur-sm'
-          : 'py-6 bg-background',
-        className
-      )}
-    >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between max-w-[1600px]">
-        {/* Logo */}
-        <button 
-          onClick={() => scrollToSection('home')}
-          className="text-2xl font-serif font-semibold tracking-tight flex"
-        >
-          {'MINO.'.split('').map((letter, index) => (
-            <span 
-              key={index} 
-              className="animate-natural-fall"
-              style={{ animationDelay: `${index * 80}ms` }}
-            >
-              {letter}
-            </span>
-          ))}
-        </button>
-        
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          {/* Work - simple transition */}
-          {isHomePage ? (
-            <button
-              onClick={() => scrollToSection('projects')}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-            >
-              Work
-            </button>
-          ) : (
-            <Link
-              to="/#projects"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-            >
-              Work
-            </Link>
-          )}
-
-          {/* About - simple transition for consistent spacing */}
-          {isHomePage ? (
-            <button
-              onClick={() => scrollToSection('about')}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-            >
-              About
-            </button>
-          ) : (
-            <Link
-              to="/#about"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-            >
-              About
-            </Link>
-          )}
-
-          {/* Book Club - scrolls to community section */}
-          {isHomePage ? (
-            <button
-              onClick={() => scrollToSection('community')}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-            >
-              Book Club
-            </button>
-          ) : (
-            <Link
-              to="/#community"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-            >
-              Book Club
-            </Link>
-          )}
-
-          {/* Get in Touch - Black to white button */}
-          <Link
-            to="/contact"
-            className="bg-foreground text-background px-5 py-2 rounded-full text-sm font-medium 
-                       hover:bg-background hover:text-foreground border border-foreground hover:border-border
-                       transition-all duration-300"
+    <>
+      <header
+        className={cn(
+          'fixed top-0 left-0 right-0 z-[60] transition-all duration-300',
+          isScrolled 
+            ? 'py-4 bg-background/95 backdrop-blur-sm'
+            : 'py-6 bg-background',
+          className
+        )}
+      >
+        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between max-w-[1600px]">
+          {/* Logo */}
+          <button 
+            onClick={() => scrollToSection('home')}
+            className="text-2xl font-serif font-semibold tracking-tight flex"
           >
-            Get in Touch
-          </Link>
-        </nav>
-        
-        {/* Mobile menu button */}
-        <button 
-          className="md:hidden relative w-6 h-6 flex flex-col justify-center items-center"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className={cn(
-            "block w-5 h-0.5 bg-foreground transition-all duration-300",
-            isMobileMenuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
-          )} />
-          <span className={cn(
-            "block w-5 h-0.5 bg-foreground transition-all duration-300",
-            isMobileMenuOpen ? "opacity-0" : ""
-          )} />
-          <span className={cn(
-            "block w-5 h-0.5 bg-foreground transition-all duration-300",
-            isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
-          )} />
-        </button>
-      </div>
+            {'MINO.'.split('').map((letter, index) => (
+              <span 
+                key={index} 
+                className="animate-natural-fall"
+                style={{ animationDelay: `${index * 80}ms` }}
+              >
+                {letter}
+              </span>
+            ))}
+          </button>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            {/* Work - simple transition */}
+            {isHomePage ? (
+              <button
+                onClick={() => scrollToSection('projects')}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+              >
+                Work
+              </button>
+            ) : (
+              <Link
+                to="/#projects"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+              >
+                Work
+              </Link>
+            )}
+
+            {/* About - simple transition for consistent spacing */}
+            {isHomePage ? (
+              <button
+                onClick={() => scrollToSection('about')}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+              >
+                About
+              </button>
+            ) : (
+              <Link
+                to="/#about"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+              >
+                About
+              </Link>
+            )}
+
+            {/* Book Club - scrolls to community section */}
+            {isHomePage ? (
+              <button
+                onClick={() => scrollToSection('community')}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+              >
+                Book Club
+              </button>
+            ) : (
+              <Link
+                to="/#community"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+              >
+                Book Club
+              </Link>
+            )}
+
+            {/* Get in Touch - Black to white button */}
+            <Link
+              to="/contact"
+              className="bg-foreground text-background px-5 py-2 rounded-full text-sm font-medium 
+                         hover:bg-background hover:text-foreground border border-foreground hover:border-border
+                         transition-all duration-300"
+            >
+              Get in Touch
+            </Link>
+          </nav>
+          
+          {/* Mobile menu button */}
+          <button 
+            className="md:hidden relative w-6 h-6 flex flex-col justify-center items-center"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={cn(
+              "block w-5 h-0.5 bg-foreground transition-all duration-300",
+              isMobileMenuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
+            )} />
+            <span className={cn(
+              "block w-5 h-0.5 bg-foreground transition-all duration-300",
+              isMobileMenuOpen ? "opacity-0" : ""
+            )} />
+            <span className={cn(
+              "block w-5 h-0.5 bg-foreground transition-all duration-300",
+              isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
+            )} />
+          </button>
+        </div>
+      </header>
       
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Outside header for proper stacking context */}
       <div 
         className={cn(
-          "fixed left-0 right-0 bottom-0 z-[55] md:hidden bg-background",
+          "fixed left-0 right-0 bottom-0 z-[100] md:hidden bg-background",
           "transition-all duration-300 ease-in-out",
           isMobileMenuOpen 
             ? "top-[72px] pointer-events-auto opacity-100" 
@@ -265,7 +267,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           </Link>
         </nav>
       </div>
-    </header>
+    </>
   );
 };
 
