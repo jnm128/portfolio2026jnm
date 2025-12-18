@@ -133,11 +133,11 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
           <div className="mt-12">
             <p className="text-xs text-muted-foreground uppercase tracking-wider mb-4">Trusted by</p>
             <div className="relative overflow-hidden">
-              <div className="flex animate-marquee">
-                {[...brands, ...brands].map((brand, index) => (
+              <div className="flex animate-marquee whitespace-nowrap">
+                {[...brands, ...brands, ...brands, ...brands].map((brand, index) => (
                   <span 
                     key={index} 
-                    className="text-lg md:text-xl font-serif text-foreground/70 whitespace-nowrap px-8"
+                    className="text-lg md:text-xl font-serif text-foreground/70 px-8"
                   >
                     {brand}
                   </span>
