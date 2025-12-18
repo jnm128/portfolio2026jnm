@@ -32,10 +32,9 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
   const brands = [
     "CVS Health",
     "Viveka Health",
-    "HealthTech Solutions",
-    "Finova",
-    "CreativeWorks",
-    "MedTech Inc"
+    "Nitelyfe",
+    "Synchronyx",
+    "Adrianne Arsht Center"
   ];
 
   return (
