@@ -302,7 +302,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             onClick={() => setIsMobileMenuOpen(false)}
             className="w-full max-w-xs bg-foreground text-background px-6 py-3 rounded-full text-xl font-serif text-center
                        hover:bg-background hover:text-foreground border border-foreground hover:border-border
-                       transition-all duration-300"
+                       transition-all duration-300 active:scale-95"
           >
             Get in Touch
           </Link>
