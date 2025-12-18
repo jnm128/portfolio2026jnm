@@ -99,6 +99,32 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
     return <button onClick={onClick} className={className}>{content}</button>;
   };
 
+  // Reusable mobile nav link component
+  const MobileNavLink = ({ 
+    label, 
+    sectionId, 
+    href 
+  }: { 
+    label: string; 
+    sectionId?: string; 
+    href?: string;
+  }) => {
+    const linkClassName = "text-lg font-medium text-foreground hover:text-muted-foreground transition-colors";
+
+    if (isHomePage && sectionId) {
+      return (
+        <button onClick={() => scrollToSection(sectionId)} className={linkClassName}>
+          {label}
+        </button>
+      );
+    }
+    return (
+      <Link to={href || `/#${sectionId}`} onClick={() => setIsMobileMenuOpen(false)} className={linkClassName}>
+        {label}
+      </Link>
+    );
+  };
+
   return (
     <>
       <header
@@ -245,57 +271,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             : "-translate-y-full pointer-events-none opacity-0"
         )}
       >
-        <nav className="flex flex-col items-center gap-8 pt-12">
-          {isHomePage ? (
-            <button
-              onClick={() => scrollToSection('projects')}
-              className="text-2xl font-medium text-foreground hover:text-muted-foreground transition-colors"
-            >
-              Work
-            </button>
-          ) : (
-            <Link
-              to="/#projects"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-medium text-foreground hover:text-muted-foreground transition-colors"
-            >
-              Work
-            </Link>
-          )}
-          
-          {isHomePage ? (
-            <button
-              onClick={() => scrollToSection('about')}
-              className="text-2xl font-medium text-foreground hover:text-muted-foreground transition-colors"
-            >
-              About
-            </button>
-          ) : (
-            <Link
-              to="/#about"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-medium text-foreground hover:text-muted-foreground transition-colors"
-            >
-              About
-            </Link>
-          )}
-          
-          {isHomePage ? (
-            <button
-              onClick={() => scrollToSection('community')}
-              className="text-2xl font-medium text-foreground hover:text-muted-foreground transition-colors"
-            >
-              Book Club
-            </button>
-          ) : (
-            <Link
-              to="/#community"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-medium text-foreground hover:text-muted-foreground transition-colors"
-            >
-              Book Club
-            </Link>
-          )}
+        <nav className="flex flex-col items-center gap-6 pt-12">
+          <MobileNavLink label="Work" sectionId="projects" />
+          <MobileNavLink label="About" sectionId="about" />
+          <MobileNavLink label="Book Club" sectionId="community" />
           
           <Link
             to="/contact"
