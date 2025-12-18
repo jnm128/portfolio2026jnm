@@ -249,7 +249,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           {isHomePage ? (
             <button
               onClick={() => scrollToSection('projects')}
-              className="text-2xl font-serif text-foreground hover:text-muted-foreground transition-colors"
+              className="text-2xl font-medium text-foreground hover:text-muted-foreground transition-colors"
             >
               Work
             </button>
@@ -257,7 +257,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             <Link
               to="/#projects"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-serif text-foreground hover:text-muted-foreground transition-colors"
+              className="text-2xl font-medium text-foreground hover:text-muted-foreground transition-colors"
             >
               Work
             </Link>
@@ -266,7 +266,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           {isHomePage ? (
             <button
               onClick={() => scrollToSection('about')}
-              className="text-2xl font-serif text-foreground hover:text-muted-foreground transition-colors"
+              className="text-2xl font-medium text-foreground hover:text-muted-foreground transition-colors"
             >
               About
             </button>
@@ -274,7 +274,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             <Link
               to="/#about"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-serif text-foreground hover:text-muted-foreground transition-colors"
+              className="text-2xl font-medium text-foreground hover:text-muted-foreground transition-colors"
             >
               About
             </Link>
@@ -283,7 +283,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           {isHomePage ? (
             <button
               onClick={() => scrollToSection('community')}
-              className="text-2xl font-serif text-foreground hover:text-muted-foreground transition-colors"
+              className="text-2xl font-medium text-foreground hover:text-muted-foreground transition-colors"
             >
               Book Club
             </button>
@@ -291,7 +291,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             <Link
               to="/#community"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-serif text-foreground hover:text-muted-foreground transition-colors"
+              className="text-2xl font-medium text-foreground hover:text-muted-foreground transition-colors"
             >
               Book Club
             </Link>
