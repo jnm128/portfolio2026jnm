@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
-import { Circle, GripVertical } from 'lucide-react';
+import { Circle, ChevronDown } from 'lucide-react';
 
 interface DesignPhilosophyProps {
   className?: string;
@@ -15,11 +15,12 @@ const PulsingCircle = () => (
 );
 
 const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
-  const [dragProgress, setDragProgress] = useState(0);
+  const [dragDistance, setDragDistance] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isRevealed, setIsRevealed] = useState(false);
   const [flippedCard, setFlippedCard] = useState<number | null>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
+  const startYRef = useRef<number>(0);
+  const indicatorRef = useRef<HTMLDivElement>(null);
 
   const philosophies = [
     {
@@ -48,57 +49,45 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
     setFlippedCard(prev => prev === index ? null : index);
   };
 
-  const calculateProgress = useCallback((clientX: number) => {
-    if (!trackRef.current) return 0;
-    const rect = trackRef.current.getBoundingClientRect();
-    const x = clientX - rect.left;
-    const progress = Math.max(0, Math.min(100, (x / rect.width) * 100));
-    return progress;
+  const REVEAL_THRESHOLD = 60; // pixels to drag down to reveal
+
+  const handleDragStart = useCallback((clientY: number) => {
+    setIsDragging(true);
+    startYRef.current = clientY;
   }, []);
 
-  const handleDragStart = useCallback((clientX: number) => {
-    setIsDragging(true);
-    const progress = calculateProgress(clientX);
-    setDragProgress(progress);
-  }, [calculateProgress]);
-
-  const handleDragMove = useCallback((clientX: number) => {
+  const handleDragMove = useCallback((clientY: number) => {
     if (!isDragging) return;
-    const progress = calculateProgress(clientX);
-    setDragProgress(progress);
-  }, [isDragging, calculateProgress]);
+    const distance = Math.max(0, clientY - startYRef.current);
+    setDragDistance(distance);
+  }, [isDragging]);
 
   const handleDragEnd = useCallback(() => {
     setIsDragging(false);
-    // Snap to revealed if dragged past 40%
-    if (dragProgress > 40) {
-      setDragProgress(100);
+    if (dragDistance > REVEAL_THRESHOLD) {
       setIsRevealed(true);
-    } else {
-      setDragProgress(0);
-      setIsRevealed(false);
     }
-  }, [dragProgress]);
+    setDragDistance(0);
+  }, [dragDistance]);
 
   // Mouse events
-  const onMouseDown = (e: React.MouseEvent) => handleDragStart(e.clientX);
-  const onMouseMove = (e: React.MouseEvent) => handleDragMove(e.clientX);
+  const onMouseDown = (e: React.MouseEvent) => handleDragStart(e.clientY);
+  const onMouseMove = (e: React.MouseEvent) => handleDragMove(e.clientY);
   const onMouseUp = () => handleDragEnd();
   const onMouseLeave = () => { if (isDragging) handleDragEnd(); };
 
   // Touch events
-  const onTouchStart = (e: React.TouchEvent) => handleDragStart(e.touches[0].clientX);
-  const onTouchMove = (e: React.TouchEvent) => handleDragMove(e.touches[0].clientX);
+  const onTouchStart = (e: React.TouchEvent) => handleDragStart(e.touches[0].clientY);
+  const onTouchMove = (e: React.TouchEvent) => handleDragMove(e.touches[0].clientY);
   const onTouchEnd = () => handleDragEnd();
 
   // Reset to closed state
   const handleReset = () => {
-    setDragProgress(0);
     setIsRevealed(false);
     setFlippedCard(null);
   };
 
-  const revealProgress = isRevealed ? 100 : dragProgress;
+  const dragProgress = Math.min(dragDistance / REVEAL_THRESHOLD, 1);
 
   return (
     <section id="philosophy" className={cn('py-16 md:py-24 bg-surface-4 rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-[5] -mt-8 md:-mt-16', className)}>
@@ -119,64 +108,42 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
             )}
           </div>
 
-          {/* Drag Track */}
-          <div 
-            ref={trackRef}
-            className={cn(
-              "relative h-12 rounded-full bg-secondary/50 cursor-grab select-none overflow-hidden",
-              isDragging && "cursor-grabbing"
-            )}
-            onMouseDown={onMouseDown}
-            onMouseMove={onMouseMove}
-            onMouseUp={onMouseUp}
-            onMouseLeave={onMouseLeave}
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
-          >
-            {/* Progress Fill */}
+          {/* Small Drag-Down Indicator */}
+          {!isRevealed && (
             <div 
-              className="absolute inset-y-0 left-0 bg-primary/20 transition-all duration-150 ease-out"
-              style={{ 
-                width: `${revealProgress}%`,
-                transitionDuration: isDragging ? '0ms' : '300ms'
-              }}
-            />
-            
-            {/* Track Label */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <span className={cn(
-                "text-sm text-muted-foreground transition-opacity duration-300",
-                revealProgress > 20 && "opacity-0"
-              )}>
-                Drag to reveal →
-              </span>
-            </div>
-
-            {/* Draggable Thumb */}
-            <div 
+              ref={indicatorRef}
               className={cn(
-                "absolute top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card border-2 border-primary shadow-lg flex items-center justify-center transition-all",
-                isDragging ? "scale-110" : "scale-100"
+                "inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/40 cursor-grab select-none transition-all",
+                isDragging && "cursor-grabbing bg-secondary/60"
               )}
-              style={{ 
-                left: `calc(${revealProgress}% - 20px)`,
-                transitionDuration: isDragging ? '0ms' : '300ms',
-                transitionProperty: 'left, transform'
+              style={{
+                transform: `translateY(${dragDistance}px)`,
+                opacity: 1 - (dragProgress * 0.3)
               }}
+              onMouseDown={onMouseDown}
+              onMouseMove={onMouseMove}
+              onMouseUp={onMouseUp}
+              onMouseLeave={onMouseLeave}
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
             >
-              <GripVertical className="w-4 h-4 text-primary" />
+              <ChevronDown className={cn(
+                "w-4 h-4 text-muted-foreground transition-transform",
+                !isDragging && "animate-bounce"
+              )} />
+              <span className="text-sm text-muted-foreground">Drag down</span>
             </div>
-          </div>
+          )}
         </FadeIn>
 
         {/* Revealed Content */}
         <div 
           className="overflow-hidden transition-all duration-500 ease-out"
           style={{
-            maxHeight: revealProgress > 40 ? '600px' : '0px',
-            opacity: revealProgress > 40 ? 1 : 0,
-            transform: `translateY(${revealProgress > 40 ? 0 : -20}px)`
+            maxHeight: isRevealed ? '600px' : '0px',
+            opacity: isRevealed ? 1 : 0,
+            transform: `translateY(${isRevealed ? 0 : -20}px)`
           }}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-8">
