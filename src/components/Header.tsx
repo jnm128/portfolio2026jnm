@@ -30,12 +30,18 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
     if (id === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
+      // Immediately set scrolled state since we're navigating to a section
+      setIsScrolled(true);
       const element = document.getElementById(id);
       if (element) {
         window.scrollTo({
           top: element.offsetTop - 80,
           behavior: 'smooth'
         });
+        // Verify scroll position after animation completes
+        setTimeout(() => {
+          setIsScrolled(window.scrollY > 10);
+        }, 500);
       }
     }
   };
