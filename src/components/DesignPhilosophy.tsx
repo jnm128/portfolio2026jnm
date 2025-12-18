@@ -62,8 +62,11 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
             </h2>
             <button 
               onClick={isRevealed ? handleReset : handleReveal}
-              className="w-8 h-8 flex items-center justify-center rounded-full bg-secondary/40 hover:bg-secondary/60 transition-all"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/40 hover:bg-secondary/60 transition-all"
             >
+              <span className="text-xs text-muted-foreground">
+                {isRevealed ? 'Close' : 'Open'}
+              </span>
               <Plus className={cn(
                 "w-4 h-4 text-muted-foreground transition-transform duration-300",
                 isRevealed && "rotate-45"
