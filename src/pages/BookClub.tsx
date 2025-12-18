@@ -42,7 +42,7 @@ const BookClub: React.FC = () => {
       
       {/* Hero Section */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-surface-6 text-surface-1">
-        <div className="container mx-auto px-4 md:px-6 max-w-[1600px]">
+        <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
             <div className="max-w-3xl">
               <div className="flex items-center gap-3 mb-6">
@@ -68,7 +68,7 @@ const BookClub: React.FC = () => {
 
       {/* Features Section */}
       <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6 max-w-[1600px]">
+        <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="p-6 rounded-2xl bg-secondary/30 border border-border">
@@ -99,7 +99,7 @@ const BookClub: React.FC = () => {
 
       {/* Digital Bookshelf */}
       <section className="py-16 md:py-24 bg-muted">
-        <div className="container mx-auto px-4 md:px-6 max-w-[1600px]">
+        <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
             <h2 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
               <span className="relative flex items-center justify-center w-3 h-3">
@@ -146,7 +146,7 @@ const BookClub: React.FC = () => {
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-surface-6 text-surface-1">
-        <div className="container mx-auto px-4 md:px-6 max-w-[1600px]">
+        <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-serif font-medium mb-6">

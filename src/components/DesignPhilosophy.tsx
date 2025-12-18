@@ -57,7 +57,7 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
       isRevealed ? 'py-16 md:py-24' : 'pt-14 md:pt-20 pb-8 md:pb-12',
       className
     )}>
-      <div className="container mx-auto px-4 md:px-6 max-w-[1600px]">
+      <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
           <div className={cn("flex items-center justify-between", isRevealed && "mb-6")}>
             <h2 className="text-xl md:text-2xl font-serif font-medium flex items-center gap-3">

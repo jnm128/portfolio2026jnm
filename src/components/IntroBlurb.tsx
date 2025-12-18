@@ -26,7 +26,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
   }, []);
   const brands = ["CVS Health", "Viveka Health", "Nitelyfe", "Synchronyx", "The Adrianne Arsht Center"];
   return <section className={cn('py-8 md:py-16 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-40 -mt-8 md:-mt-16', className)}>
-      <div className="container mx-auto px-4 md:px-6 max-w-[1600px]">
+      <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
           {/* Observer marker - always visible */}
           <div ref={chipsRef} className="h-0 w-0" aria-hidden="true" />
