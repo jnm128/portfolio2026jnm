@@ -125,17 +125,14 @@ const About: React.FC<AboutProps> = ({ className }) => {
                 <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">Enterprise Systems</span>
               </div>
 
-              <button onClick={() => {
-                const contact = document.getElementById('contact');
-                if (contact) {
-                  window.scrollTo({
-                    top: contact.offsetTop - 80,
-                    behavior: 'smooth'
-                  });
-                }
-              }} className="pill-tag self-start">
-                Connect
-              </button>
+              <a 
+                href="https://www.linkedin.com/in/joannaminott"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill-tag self-start"
+              >
+                Connect on LinkedIn
+              </a>
             </div>
           </div>
           </div>
