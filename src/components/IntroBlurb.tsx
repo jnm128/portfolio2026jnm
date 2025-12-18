@@ -34,7 +34,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
     "Viveka Health",
     "Nitelyfe",
     "Synchronyx",
-    "Adrianne Arsht Center"
+    "The Adrianne Arsht Center"
   ];
 
   return (
