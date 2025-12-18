@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { Circle } from 'lucide-react';
@@ -8,25 +8,6 @@ interface AboutProps {
 }
 
 const About: React.FC<AboutProps> = ({ className }) => {
-  const [isHeadshotFlipped, setIsHeadshotFlipped] = useState(false);
-  const [isWiggling, setIsWiggling] = useState(false);
-
-  // Auto-wiggle headshot on load to signal interactivity
-  useEffect(() => {
-    const wiggleTimer = setTimeout(() => {
-      setIsWiggling(true);
-    }, 1000);
-
-    const stopWiggleTimer = setTimeout(() => {
-      setIsWiggling(false);
-    }, 2000);
-
-    return () => {
-      clearTimeout(wiggleTimer);
-      clearTimeout(stopWiggleTimer);
-    };
-  }, []);
-
   return (
     <section id="about" className={cn('py-16 md:py-24 bg-surface-2 rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-20 -mt-8 md:-mt-16', className)}>
       <div className="container mx-auto px-4 md:px-6 max-w-[1600px]">
@@ -43,65 +24,14 @@ const About: React.FC<AboutProps> = ({ className }) => {
         <FadeIn delay={200}>
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
-            {/* Flippable Profile Image */}
-            <div className="relative">
-              <div 
-                className={cn(
-                  "relative w-full max-w-lg aspect-[5/6] cursor-pointer group",
-                  isWiggling && "animate-wiggle"
-                )}
-                onClick={() => setIsHeadshotFlipped(!isHeadshotFlipped)}
-              >
-                <div
-                  className="relative w-full h-full transition-transform duration-700"
-                  style={{
-                    transformStyle: 'preserve-3d',
-                    transform: isHeadshotFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
-                  }}
-                >
-                  {/* Front - Work */}
-                  <div
-                    className="absolute inset-0 rounded-3xl overflow-hidden"
-                    style={{ backfaceVisibility: 'hidden' }}
-                  >
-                    <img 
-                      alt="Joanna Minott - Work" 
-                      className="w-full h-full object-cover" 
-                      src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg" 
-                    />
-                    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
-                      <span className="bg-background/90 backdrop-blur-sm text-foreground text-xs px-3 py-1.5 rounded-full font-medium">
-                        Work Mode
-                      </span>
-                      <span className="bg-background/90 backdrop-blur-sm text-muted-foreground text-xs px-3 py-1.5 rounded-full">
-                        Click to flip →
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {/* Back - Fun */}
-                  <div
-                    className="absolute inset-0 rounded-3xl overflow-hidden"
-                    style={{ 
-                      backfaceVisibility: 'hidden',
-                      transform: 'rotateY(180deg)'
-                    }}
-                  >
-                    <img 
-                      alt="Joanna Minott - Fun" 
-                      className="w-full h-full object-cover" 
-                      src="/lovable-uploads/5a9395ab-beb1-4008-81f7-f0981a3ef0bd.png" 
-                    />
-                    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
-                      <span className="bg-background/90 backdrop-blur-sm text-foreground text-xs px-3 py-1.5 rounded-full font-medium">
-                        Fun Mode
-                      </span>
-                      <span className="bg-background/90 backdrop-blur-sm text-muted-foreground text-xs px-3 py-1.5 rounded-full">
-                        ← Click to flip
-                      </span>
-                    </div>
-                  </div>
-                </div>
+            {/* Profile Image */}
+            <div className="relative w-full max-w-lg aspect-[5/6]">
+              <div className="rounded-3xl overflow-hidden h-full">
+                <img 
+                  alt="Joanna Minott" 
+                  className="w-full h-full object-cover" 
+                  src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg" 
+                />
               </div>
             </div>
             
