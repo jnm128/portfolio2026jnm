@@ -195,15 +195,14 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       {/* Mobile Menu */}
       <div 
         className={cn(
-          "fixed left-0 right-0 bottom-0 z-[55] md:hidden",
+          "fixed left-0 right-0 bottom-0 z-[55] md:hidden bg-background",
           "transition-all duration-300 ease-in-out",
           isMobileMenuOpen 
             ? "top-[72px] pointer-events-auto opacity-100" 
             : "top-full pointer-events-none opacity-0"
         )}
       >
-        <div className="absolute inset-0 bg-background" />
-        <nav className="relative z-10 flex flex-col items-center gap-8 pt-12">
+        <nav className="flex flex-col items-center gap-8 pt-12">
           {isHomePage ? (
             <button
               onClick={() => scrollToSection('projects')}
