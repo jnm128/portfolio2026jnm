@@ -77,7 +77,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
               Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.
             </p>
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 aspect-square rounded-full overflow-hidden flex-shrink-0">
+              <div className="w-16 h-16 aspect-square rounded-full overflow-hidden flex-shrink-0">
                 <img alt="Joanna Minott" className="w-full h-full object-contain" src="/lovable-uploads/d4672c8b-3f01-49ed-87bd-6ff86c784c77.png" />
               </div>
               <div className="w-px h-10 bg-border/60 flex-shrink-0" />
