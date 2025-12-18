@@ -40,7 +40,7 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
               </h3>
               <Link 
                 to="/book-club"
-                className="inline-flex items-center justify-center w-full sm:w-auto px-4 py-2 bg-surface-1 text-surface-6 text-sm font-medium rounded-full transition-all hover:bg-surface-1/90 active:scale-95"
+                className="inline-flex items-center justify-center w-full sm:w-auto px-5 py-2 bg-surface-1 text-surface-6 text-sm font-medium rounded-full transition-all hover:bg-surface-1/90 active:scale-95"
               >
                 Learn More
               </Link>
