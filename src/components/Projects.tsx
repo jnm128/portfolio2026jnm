@@ -23,24 +23,21 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       image: "/lovable-uploads/cvs-health-project.png",
       tags: ["Product Design", "Healthcare"],
       link: "/case-study/mindful-wellness",
-      timeline: ["6 months"],
-      impact: ["Reduced user errors by 40%", "Increased task completion rate by 25%"]
+      tldr: ["6 month engagement", "Reduced user errors by 40%", "Increased task completion rate by 25%"]
     },
     {
       title: "Building cost transparency between families, insurance and businesses with Viveka Health",
       image: "/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png",
       tags: ["UX Research", "Strategy"],
       link: "/case-study/artisan-marketplace",
-      timeline: ["4 months"],
-      impact: ["Improved cost transparency by 60%", "Reduced customer support tickets by 35%"]
+      tldr: ["4 month engagement", "Improved cost transparency by 60%", "Reduced customer support tickets by 35%"]
     },
     {
       title: "Building the next night life ecosystem",
       image: "/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png",
       tags: ["Brand Identity", "Mobile App"],
       link: "/case-study/creative-studio",
-      timeline: ["3 months"],
-      impact: ["Launched MVP with 10k+ downloads in first month"]
+      tldr: ["3 month engagement", "Launched MVP with 10k+ downloads in first month"]
     }
   ];
 
@@ -64,30 +61,15 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                       </h3>
                     </Link>
                     
-                    {/* Timeline Collapsible */}
+                    {/* TLDR Collapsible */}
                     <Collapsible>
                       <CollapsibleTrigger className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full border-b border-muted-foreground/30 pb-2 mb-2">
                         <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
-                        <span>Timeline</span>
-                      </CollapsibleTrigger>
-                      <CollapsibleContent className="pl-6 text-sm text-foreground mb-3">
-                        <ul className="list-disc list-inside space-y-1">
-                          {project.timeline.map((item, i) => (
-                            <li key={i}>{item}</li>
-                          ))}
-                        </ul>
-                      </CollapsibleContent>
-                    </Collapsible>
-                    
-                    {/* Impact Collapsible */}
-                    <Collapsible>
-                      <CollapsibleTrigger className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full border-b border-muted-foreground/30 pb-2 mb-2">
-                        <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
-                        <span>Impact</span>
+                        <span>TLDR</span>
                       </CollapsibleTrigger>
                       <CollapsibleContent className="pl-6 text-sm text-foreground mb-4">
                         <ul className="list-disc list-inside space-y-1">
-                          {project.impact.map((item, i) => (
+                          {project.tldr.map((item, i) => (
                             <li key={i}>{item}</li>
                           ))}
                         </ul>
