@@ -200,7 +200,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           "fixed left-0 right-0 bottom-0 z-[100] md:hidden bg-background",
           "transition-all duration-300 ease-in-out",
           isMobileMenuOpen 
-            ? "top-[72px] pointer-events-auto opacity-100" 
+            ? `${isScrolled ? "top-[72px]" : "top-[88px]"} pointer-events-auto opacity-100`
             : "top-full pointer-events-none opacity-0"
         )}
       >
