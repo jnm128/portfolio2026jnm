@@ -54,7 +54,7 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
   return (
     <section id="philosophy" className={cn(
       'bg-surface-4 rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-[5] -mt-8 md:-mt-16 transition-all duration-500',
-      isRevealed ? 'py-16 md:py-24' : 'py-10 md:py-14',
+      isRevealed ? 'py-16 md:py-24' : 'pt-14 md:pt-20 pb-8 md:pb-12',
       className
     )}>
       <div className="container mx-auto px-4 md:px-6 max-w-[1600px]">
