@@ -156,10 +156,10 @@ const BookClub: React.FC = () => {
                 Join a growing community of designers who believe in the power of continuous learning and shared insights.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="w-full sm:w-auto px-8 py-3 bg-surface-1 text-surface-6 font-medium rounded-full transition-all hover:bg-surface-1/90 hover:scale-105">
+                <button className="w-full sm:w-auto px-8 py-3 bg-surface-1 text-surface-6 font-medium rounded-full transition-all hover:bg-surface-1/90 hover:scale-105 active:scale-95">
                   Join the Community
                 </button>
-                <button className="w-full sm:w-auto px-8 py-3 bg-transparent text-surface-1 font-medium rounded-full border border-surface-1/30 transition-all hover:bg-surface-1/10">
+                <button className="w-full sm:w-auto px-8 py-3 bg-transparent text-surface-1 font-medium rounded-full border border-surface-1/30 transition-all hover:bg-surface-1/10 active:scale-95">
                   Learn More
                 </button>
               </div>
