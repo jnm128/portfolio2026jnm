@@ -53,19 +53,19 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
                 Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.
               </p>
               <div ref={chipsRef} className="flex flex-wrap gap-2 justify-start">
-                <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '0ms' }}>
+                <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '0ms' }}>
                   Currently designing for CVS Health
                 </span>
-                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '100ms' }}>
+                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '100ms' }}>
                   4+ Years Experience
                 </span>
-                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '200ms' }}>
+                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '200ms' }}>
                   Healthcare & Enterprise
                 </span>
-                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '300ms' }}>
+                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '300ms' }}>
                   B2B & B2C
                 </span>
-                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '400ms' }}>
+                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '400ms' }}>
                   Mobile & Web
                 </span>
               </div>
@@ -82,13 +82,14 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
                 </div>
                 <div className="w-px h-10 bg-border/60 flex-shrink-0" />
                 <div ref={chipsRef} className="flex flex-wrap gap-2 items-center">
-                  <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '0ms' }}>
+                  <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '0ms' }}>
                     Currently designing for CVS Health
                   </span>
                   <button 
                     onClick={() => setCredentialsExpanded(!credentialsExpanded)}
                     className={cn(
-                      "bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground transition-colors opacity-0",
+                      "bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground transition-colors",
+                      !isVisible && "opacity-0",
                       isVisible && "animate-slide-in-left",
                       credentialsExpanded && "bg-secondary/50"
                     )}
