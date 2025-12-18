@@ -45,7 +45,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   ];
 
   return (
-    <section id="projects" className={cn('py-16 md:py-24 bg-muted rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-30 -mt-12', className)}>
+    <section id="projects" className={cn('py-16 md:py-24 bg-muted rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-30 -mt-8 md:-mt-16', className)}>
       <div className="container mx-auto px-4 md:px-6 max-w-[1600px]">
         <h2 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
           <PulsingCircle />
