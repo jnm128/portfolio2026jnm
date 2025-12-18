@@ -52,18 +52,16 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               About
             </button>
             <button
-              onClick={() => scrollToSection('contact')} 
+              onClick={() => scrollToSection('community')} 
               className="text-surface-1/60 hover:text-surface-1 transition-colors"
             >
-              Connect
+              Book Club
             </button>
             <a 
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/contact"
               className="text-surface-1/60 hover:text-surface-1 transition-colors"
             >
-              LinkedIn
+              Get in Touch
             </a>
           </nav>
         </div>
