@@ -56,16 +56,16 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
                 <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '0ms' }}>
                   Currently designing for CVS Health
                 </span>
-                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '100ms' }}>
+                <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '100ms' }}>
                   4+ Years Experience
                 </span>
-                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '200ms' }}>
+                <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '200ms' }}>
                   Healthcare & Enterprise
                 </span>
-                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '300ms' }}>
+                <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '300ms' }}>
                   B2B & B2C
                 </span>
-                <span className={cn("bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '400ms' }}>
+                <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{ animationDelay: '400ms' }}>
                   Mobile & Web
                 </span>
               </div>
@@ -88,10 +88,10 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
                   <button 
                     onClick={() => setCredentialsExpanded(!credentialsExpanded)}
                     className={cn(
-                      "bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground transition-colors",
+                      "bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground transition-colors",
                       !isVisible && "opacity-0",
                       isVisible && "animate-slide-in-left",
-                      credentialsExpanded && "bg-secondary/50"
+                      credentialsExpanded && "bg-secondary/80"
                     )}
                     style={{ animationDelay: '100ms' }}
                   >
@@ -103,16 +103,16 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
               {/* Expandable Credentials */}
               {credentialsExpanded && (
                 <div className="flex flex-wrap gap-2 pl-[76px] animate-fade-in">
-                  <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">
+                  <span className="bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground">
                     4+ Years Experience
                   </span>
-                  <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">
+                  <span className="bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground">
                     Healthcare & Enterprise
                   </span>
-                  <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">
+                  <span className="bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground">
                     B2B & B2C
                   </span>
-                  <span className="bg-secondary/30 rounded-full px-3 py-1 text-xs text-muted-foreground">
+                  <span className="bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground">
                     Mobile & Web
                   </span>
                 </div>
