@@ -24,7 +24,13 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
     }
     return () => observer.disconnect();
   }, []);
-  const brands = ["CVS Health", "Viveka Health", "Nitelyfe", "Synchronyx", "The Adrianne Arsht Center"];
+  const logos = [
+    { src: "/logos/cvs-health.png", alt: "CVS Health" },
+    { src: "/logos/viveka.png", alt: "Viveka Health" },
+    { src: "/logos/nitelyfe.png", alt: "NiteLyfe" },
+    { src: "/logos/synchronyx.png", alt: "Synchronyx" },
+    { src: "/logos/arsht-center.png", alt: "Adrienne Arsht Center" },
+  ];
   return <section className={cn('py-8 md:py-16 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-40 -mt-8 md:-mt-16', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
@@ -123,10 +129,15 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
           <div className="mt-12">
             <p className="text-xs text-muted-foreground uppercase tracking-wider mb-4">Trusted by</p>
             <div className="relative overflow-hidden">
-              <div className="flex animate-marquee whitespace-nowrap">
-                {[...brands, ...brands, ...brands, ...brands].map((brand, index) => <span key={index} className="text-lg md:text-xl font-serif text-foreground/70 px-8">
-                    {brand}
-                  </span>)}
+              <div className="flex animate-marquee whitespace-nowrap items-center">
+                {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
+                  <img 
+                    key={index}
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-8 md:h-10 w-auto px-8 object-contain grayscale brightness-0 opacity-70"
+                  />
+                ))}
               </div>
             </div>
           </div>
