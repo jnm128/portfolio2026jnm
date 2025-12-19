@@ -125,7 +125,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
     sectionId?: string;
     isBookClubNavOnBookClubPage?: boolean;
   }) => {
-    const linkClassName = "w-full max-w-xs bg-background text-foreground px-6 py-3 rounded-full text-sm font-medium text-center border border-border hover:border-foreground transition-all duration-300 active:scale-95";
+    const linkClassName = "text-lg font-medium text-foreground hover:text-muted-foreground transition-colors";
 
     // Special case: Book Club nav on Book Club page - refresh
     if (isBookClubNavOnBookClubPage) {
