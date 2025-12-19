@@ -25,7 +25,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
     return () => observer.disconnect();
   }, []);
   const logos: { src: string; alt: string; height?: string }[] = [
-    { src: "/logos/cvs-health.png", alt: "CVS Health" },
+    { src: "/logos/cvs-health.png?v=2", alt: "CVS Health" },
     { src: "/logos/viveka.png?v=2", alt: "Viveka Health" },
     { src: "/logos/synchronyx.png", alt: "Synchronyx", height: "h-4 md:h-5" },
     { src: "/logos/arsht-center.png", alt: "Adrienne Arsht Center" },
