@@ -75,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       if (element) {
         window.scrollTo({
           top: element.offsetTop - 80,
-          behavior: 'smooth'
+          behavior: 'instant'
         });
       }
     }, 100);
