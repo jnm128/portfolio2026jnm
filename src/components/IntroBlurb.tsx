@@ -26,7 +26,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
   }, []);
   const logos = [
     { src: "/logos/cvs-health.png", alt: "CVS Health" },
-    { src: "/logos/viveka.png", alt: "Viveka Health" },
+    { src: "/logos/viveka.png?v=2", alt: "Viveka Health" },
     { src: "/logos/synchronyx.png", alt: "Synchronyx" },
     { src: "/logos/arsht-center.png", alt: "Adrienne Arsht Center" },
   ];
