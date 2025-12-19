@@ -24,10 +24,10 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
     }
     return () => observer.disconnect();
   }, []);
-  const logos = [
+  const logos: { src: string; alt: string; height?: string }[] = [
     { src: "/logos/cvs-health.png", alt: "CVS Health" },
     { src: "/logos/viveka.png?v=2", alt: "Viveka Health" },
-    { src: "/logos/synchronyx.png", alt: "Synchronyx" },
+    { src: "/logos/synchronyx.png", alt: "Synchronyx", height: "h-4 md:h-5" },
     { src: "/logos/arsht-center.png", alt: "Adrienne Arsht Center" },
   ];
   return <section className={cn('py-8 md:py-16 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-40 -mt-8 md:-mt-16', className)}>
@@ -134,7 +134,10 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
                     key={index}
                     src={logo.src}
                     alt={logo.alt}
-                    className="h-6 md:h-8 w-auto px-6 md:px-10 object-contain grayscale brightness-0 opacity-60"
+                    className={cn(
+                      logo.height || "h-6 md:h-8",
+                      "w-auto px-6 md:px-10 object-contain grayscale brightness-0 opacity-60"
+                    )}
                   />
                 ))}
               </div>
