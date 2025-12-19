@@ -43,7 +43,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
             </div>
             <div className="w-px h-16 bg-border/60 flex-shrink-0" />
             <div className="flex flex-col gap-4 text-left">
-              <p className="text-xl text-foreground font-serif leading-relaxed">
+              <p className="text-xl text-foreground leading-relaxed">
                 Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.
               </p>
               <div className="flex flex-wrap gap-2 justify-start">
@@ -117,7 +117,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
             </div>
             
             {/* Bio Text - Below */}
-            <p className="text-base text-foreground font-serif leading-relaxed">
+            <p className="text-base text-foreground leading-relaxed">
               Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.
             </p>
           </div>
