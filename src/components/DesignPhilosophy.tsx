@@ -16,7 +16,7 @@ const PulsingCircle = () => (
 
 const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
   const [isRevealed, setIsRevealed] = useState(false);
-  const [flippedCard, setFlippedCard] = useState<number | null>(null);
+  const [activeCard, setActiveCard] = useState(0);
 
   const philosophies = [
     {
@@ -41,14 +41,12 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
     }
   ];
 
-  const toggleFlip = (index: number) => {
-    setFlippedCard(prev => prev === index ? null : index);
-  };
+  const activePhilosophy = philosophies[activeCard];
 
   const handleReveal = () => setIsRevealed(true);
   const handleReset = () => {
     setIsRevealed(false);
-    setFlippedCard(null);
+    setActiveCard(0);
   };
 
   return (
@@ -83,55 +81,67 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
         <div 
           className="overflow-hidden transition-all duration-500 ease-out"
           style={{
-            maxHeight: isRevealed ? '1200px' : '0px',
+            maxHeight: isRevealed ? '800px' : '0px',
             opacity: isRevealed ? 1 : 0,
             transform: `translateY(${isRevealed ? 0 : -20}px)`
           }}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-8">
-            {philosophies.map((philosophy, index) => (
-              <FadeIn key={philosophy.title} delay={index * 100}>
-                <div
-                  className="relative h-[220px] md:h-[240px] cursor-pointer perspective-1000"
-                  onClick={() => toggleFlip(index)}
-                >
-                  <div
-                    className={cn(
-                      "relative w-full h-full transition-transform duration-500 transform-style-3d",
-                      flippedCard === index && "rotate-y-180"
-                    )}
-                    style={{
-                      transformStyle: 'preserve-3d',
-                      transform: flippedCard === index ? 'rotateY(180deg)' : 'rotateY(0deg)',
-                    }}
-                  >
-                    {/* Front of card */}
-                    <div
-                      className="absolute inset-0 p-6 rounded-2xl border border-border bg-card flex flex-col items-center justify-center text-center backface-hidden"
-                      style={{ backfaceVisibility: 'hidden' }}
-                    >
-                      <span className="text-3xl md:text-4xl mb-4">{philosophy.icon}</span>
-                      <h3 className="text-lg font-serif font-medium">{philosophy.title}</h3>
-                      <span className="text-xs text-muted-foreground mt-3">Click to flip</span>
-                    </div>
-                    
-                    {/* Back of card */}
-                    <div
-                      className="absolute inset-0 p-5 rounded-2xl border border-primary/30 bg-primary/5 flex flex-col justify-center backface-hidden"
-                      style={{ 
-                        backfaceVisibility: 'hidden',
-                        transform: 'rotateY(180deg)'
-                      }}
-                    >
-                      <h4 className="text-sm font-medium text-primary mb-2">{philosophy.title}</h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {philosophy.description}
-                      </p>
-                    </div>
+          <div className="mt-8 space-y-6">
+            {/* Expanded Card - Active Philosophy */}
+            <FadeIn>
+              <div 
+                className="relative p-8 md:p-10 rounded-2xl bg-primary/5 border border-primary/20 transition-all duration-500"
+                key={activeCard}
+              >
+                <div className="flex flex-col md:flex-row md:items-start gap-6">
+                  <span className="text-4xl md:text-5xl">{activePhilosophy.icon}</span>
+                  <div className="flex-1">
+                    <h3 className="text-2xl md:text-3xl font-serif font-medium mb-4 text-primary">
+                      {activePhilosophy.title}
+                    </h3>
+                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                      {activePhilosophy.description}
+                    </p>
                   </div>
                 </div>
-              </FadeIn>
-            ))}
+                
+                {/* Card indicator */}
+                <div className="absolute bottom-4 right-6 text-xs text-muted-foreground/60">
+                  {activeCard + 1} / {philosophies.length}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Collapsed Cards Row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+              {philosophies.map((philosophy, index) => (
+                <button
+                  key={philosophy.title}
+                  onClick={() => setActiveCard(index)}
+                  className={cn(
+                    "p-4 md:p-5 rounded-xl text-left transition-all duration-300 group",
+                    activeCard === index
+                      ? "bg-primary/10 border border-primary/30 scale-[1.02]"
+                      : "bg-card border border-border hover:bg-secondary/50 hover:border-border/80"
+                  )}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className={cn(
+                      "text-xl md:text-2xl transition-transform duration-300",
+                      activeCard === index && "scale-110"
+                    )}>
+                      {philosophy.icon}
+                    </span>
+                    <span className={cn(
+                      "text-sm md:text-base font-medium transition-colors duration-300",
+                      activeCard === index ? "text-primary" : "text-foreground/80 group-hover:text-foreground"
+                    )}>
+                      {philosophy.title}
+                    </span>
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
