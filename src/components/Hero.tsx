@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import FadeIn from './animations/FadeIn';
+import PopIn from './animations/PopIn';
 
 interface HeroProps {
   className?: string;
@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     <section className={cn('pt-20 pb-8 md:pt-24 md:pb-12 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-50', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         {/* Hero Image Slideshow with Overlay Text */}
-        <FadeIn>
+        <PopIn>
           <div className="relative rounded-3xl overflow-hidden h-[50vh] md:h-[70vh] lg:h-[80vh]">
             {heroImages.map((image, index) => (
               <img 
@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               ))}
             </div>
           </div>
-        </FadeIn>
+        </PopIn>
       </div>
     </section>
   );
