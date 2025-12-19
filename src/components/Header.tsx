@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 // Working Lottie animation URLs
@@ -16,7 +16,9 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   const headerRef = useRef<HTMLElement | null>(null);
   const [headerHeight, setHeaderHeight] = useState(0);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
+  const isBookClubPage = location.pathname === '/book-club';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,6 +67,20 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
     }
   };
 
+  const navigateAndScroll = (sectionId: string) => {
+    setIsMobileMenuOpen(false);
+    navigate('/');
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        window.scrollTo({
+          top: element.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  };
+
   // Reusable Lottie nav link component
   const LottieNavItem = ({ 
     label, 
@@ -102,15 +118,31 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   // Reusable mobile nav link component
   const MobileNavLink = ({ 
     label, 
-    sectionId, 
-    href 
+    sectionId,
+    isBookClubNavOnBookClubPage = false
   }: { 
     label: string; 
-    sectionId?: string; 
-    href?: string;
+    sectionId?: string;
+    isBookClubNavOnBookClubPage?: boolean;
   }) => {
     const linkClassName = "text-lg font-medium text-foreground hover:text-muted-foreground transition-colors";
 
+    // Special case: Book Club nav on Book Club page - refresh
+    if (isBookClubNavOnBookClubPage) {
+      return (
+        <button 
+          onClick={() => {
+            setIsMobileMenuOpen(false);
+            window.location.reload();
+          }} 
+          className={linkClassName}
+        >
+          {label}
+        </button>
+      );
+    }
+
+    // On home page: scroll to section
     if (isHomePage && sectionId) {
       return (
         <button onClick={() => scrollToSection(sectionId)} className={linkClassName}>
@@ -118,11 +150,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         </button>
       );
     }
-    return (
-      <Link to={href || `/#${sectionId}`} onClick={() => setIsMobileMenuOpen(false)} className={linkClassName}>
-        {label}
-      </Link>
-    );
+
+    // On other pages: navigate to home and scroll
+    if (sectionId) {
+      return (
+        <button onClick={() => navigateAndScroll(sectionId)} className={linkClassName}>
+          {label}
+        </button>
+      );
+    }
+
+    return null;
   };
 
   return (
@@ -173,56 +211,37 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {/* Work - simple transition */}
-            {isHomePage ? (
-              <button
-                onClick={() => scrollToSection('projects')}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
-                Work
-              </button>
-            ) : (
-              <Link
-                to="/#projects"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
-                Work
-              </Link>
-            )}
+            {/* Work */}
+            <button
+              onClick={() => isHomePage ? scrollToSection('projects') : navigateAndScroll('projects')}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+            >
+              Work
+            </button>
 
-            {/* About - simple transition for consistent spacing */}
-            {isHomePage ? (
-              <button
-                onClick={() => scrollToSection('about')}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
-                About
-              </button>
-            ) : (
-              <Link
-                to="/#about"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
-                About
-              </Link>
-            )}
+            {/* About */}
+            <button
+              onClick={() => isHomePage ? scrollToSection('about') : navigateAndScroll('about')}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+            >
+              About
+            </button>
 
-            {/* Book Club - scrolls to community section */}
-            {isHomePage ? (
-              <button
-                onClick={() => scrollToSection('community')}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
-                Book Club
-              </button>
-            ) : (
-              <Link
-                to="/#community"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
-                Book Club
-              </Link>
-            )}
+            {/* Book Club */}
+            <button
+              onClick={() => {
+                if (isBookClubPage) {
+                  window.location.reload();
+                } else if (isHomePage) {
+                  scrollToSection('community');
+                } else {
+                  navigateAndScroll('community');
+                }
+              }}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+            >
+              Book Club
+            </button>
 
             {/* Get in Touch - Black to white button */}
             <Link
@@ -274,7 +293,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         <nav className="flex flex-col items-center gap-6 pt-12">
           <MobileNavLink label="Work" sectionId="projects" />
           <MobileNavLink label="About" sectionId="about" />
-          <MobileNavLink label="Book Club" sectionId="community" />
+          <MobileNavLink label="Book Club" sectionId="community" isBookClubNavOnBookClubPage={isBookClubPage} />
           
           <Link
             to="/contact"
