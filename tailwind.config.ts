@@ -228,6 +228,7 @@ export default {
 				'wiggle': 'wiggle 0.5s ease-in-out 2',
 				'expand-width': 'expand-width 0.8s ease-out forwards',
 			'marquee': 'marquee 20s linear infinite',
+			'marquee-fast': 'marquee 10s linear infinite',
 				'pulse-ring': 'pulse-ring 2s ease-out infinite',
 				'collapsible-down': 'collapsible-down 0.2s ease-out',
 				'collapsible-up': 'collapsible-up 0.2s ease-out',

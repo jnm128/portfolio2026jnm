@@ -128,7 +128,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
           <div className="mt-12">
             <p className="text-xs text-muted-foreground uppercase tracking-wider mb-4">Trusted by</p>
             <div className="relative overflow-hidden">
-              <div className="flex animate-marquee whitespace-nowrap items-center">
+              <div className="flex animate-marquee-fast md:animate-marquee whitespace-nowrap items-center">
                 {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
                   <img 
                     key={index}
