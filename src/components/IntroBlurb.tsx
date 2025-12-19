@@ -135,7 +135,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
                     key={index}
                     src={logo.src}
                     alt={logo.alt}
-                    className="h-8 md:h-10 w-auto px-8 object-contain grayscale brightness-0 opacity-70"
+                    className="h-6 md:h-8 w-auto px-6 md:px-10 object-contain grayscale brightness-0 opacity-60"
                   />
                 ))}
               </div>
