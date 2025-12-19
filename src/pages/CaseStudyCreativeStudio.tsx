@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
+import PopIn from '@/components/animations/PopIn';
 
 const CaseStudyCreativeStudio = () => {
   return (
@@ -12,14 +13,14 @@ const CaseStudyCreativeStudio = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+        <PopIn className="absolute inset-0 -z-10">
           <img 
             src="/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
             alt="Creative Studio Brand Identity" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40"></div>
-        </div>
+        </PopIn>
         
         <div className="container mx-auto px-4 md:px-6 py-20 md:py-32 relative z-10">
           <FadeIn>
@@ -131,6 +132,8 @@ const CaseStudyCreativeStudio = () => {
                 <div className="text-center">
                   <FadeIn delay={100}>
                     <h3 className="text-xl font-medium mb-6 text-gray-800">Brand Identity System</h3>
+                  </FadeIn>
+                  <PopIn delay={100}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
                       <img 
                         src="/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
@@ -138,13 +141,15 @@ const CaseStudyCreativeStudio = () => {
                         className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
                       />
                     </div>
-                  </FadeIn>
+                  </PopIn>
                 </div>
 
                 {/* Website Design */}
                 <div className="text-center">
                   <FadeIn delay={200}>
                     <h3 className="text-xl font-medium mb-6 text-gray-800">Website Design</h3>
+                  </FadeIn>
+                  <PopIn delay={200}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
                       <img 
                         src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" 
@@ -152,13 +157,15 @@ const CaseStudyCreativeStudio = () => {
                         className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
                       />
                     </div>
-                  </FadeIn>
+                  </PopIn>
                 </div>
 
                 {/* Portfolio Showcase */}
                 <div className="text-center">
                   <FadeIn delay={300}>
                     <h3 className="text-xl font-medium mb-6 text-gray-800">Portfolio Showcase</h3>
+                  </FadeIn>
+                  <PopIn delay={300}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
                       <img 
                         src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80" 
@@ -166,7 +173,7 @@ const CaseStudyCreativeStudio = () => {
                         className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
                       />
                     </div>
-                  </FadeIn>
+                  </PopIn>
                 </div>
               </div>
             </FadeIn>

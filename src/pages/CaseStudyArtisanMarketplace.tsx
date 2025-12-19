@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
+import PopIn from '@/components/animations/PopIn';
 
 const CaseStudyArtisanMarketplace = () => {
   return (
@@ -12,14 +13,14 @@ const CaseStudyArtisanMarketplace = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+        <PopIn className="absolute inset-0 -z-10">
           <img 
             src="/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png" 
             alt="Artisan Marketplace Platform" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40"></div>
-        </div>
+        </PopIn>
         
         <div className="container mx-auto px-4 md:px-6 py-20 md:py-32 relative z-10">
           <FadeIn>
@@ -130,6 +131,8 @@ const CaseStudyArtisanMarketplace = () => {
                 <div className="text-center">
                   <FadeIn delay={100}>
                     <h3 className="text-xl font-medium mb-6 text-gray-800">E-commerce Platform</h3>
+                  </FadeIn>
+                  <PopIn delay={100}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
                       <img 
                         src="/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png" 
@@ -137,13 +140,15 @@ const CaseStudyArtisanMarketplace = () => {
                         className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
                       />
                     </div>
-                  </FadeIn>
+                  </PopIn>
                 </div>
 
                 {/* Product Gallery */}
                 <div className="text-center">
                   <FadeIn delay={200}>
                     <h3 className="text-xl font-medium mb-6 text-gray-800">Product Gallery & Details</h3>
+                  </FadeIn>
+                  <PopIn delay={200}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
                       <img 
                         src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=1200&q=80" 
@@ -151,13 +156,15 @@ const CaseStudyArtisanMarketplace = () => {
                         className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
                       />
                     </div>
-                  </FadeIn>
+                  </PopIn>
                 </div>
 
                 {/* Artisan Profiles */}
                 <div className="text-center">
                   <FadeIn delay={300}>
                     <h3 className="text-xl font-medium mb-6 text-gray-800">Artisan Profile Pages</h3>
+                  </FadeIn>
+                  <PopIn delay={300}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
                       <img 
                         src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80" 
@@ -165,7 +172,7 @@ const CaseStudyArtisanMarketplace = () => {
                         className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
                       />
                     </div>
-                  </FadeIn>
+                  </PopIn>
                 </div>
               </div>
             </FadeIn>

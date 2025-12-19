@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
+import PopIn from '@/components/animations/PopIn';
 
 const CaseStudyMindfulWellness = () => {
   return (
@@ -12,14 +13,14 @@ const CaseStudyMindfulWellness = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+        <PopIn className="absolute inset-0 -z-10">
           <img 
             src="/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png" 
             alt="Mindful Wellness Platform" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40"></div>
-        </div>
+        </PopIn>
         
         <div className="container mx-auto px-4 md:px-6 py-20 md:py-32 relative z-10">
           <FadeIn>
@@ -131,6 +132,8 @@ const CaseStudyMindfulWellness = () => {
                 <div className="text-center">
                   <FadeIn delay={100}>
                     <h3 className="text-xl font-medium mb-6 text-gray-800">Mobile App Interface</h3>
+                  </FadeIn>
+                  <PopIn delay={100}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
                       <img 
                         src="/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png" 
@@ -138,13 +141,15 @@ const CaseStudyMindfulWellness = () => {
                         className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
                       />
                     </div>
-                  </FadeIn>
+                  </PopIn>
                 </div>
 
                 {/* Web Platform Dashboard */}
                 <div className="text-center">
                   <FadeIn delay={200}>
                     <h3 className="text-xl font-medium mb-6 text-gray-800">Web Platform Dashboard</h3>
+                  </FadeIn>
+                  <PopIn delay={200}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
                       <img 
                         src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80" 
@@ -152,13 +157,15 @@ const CaseStudyMindfulWellness = () => {
                         className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
                       />
                     </div>
-                  </FadeIn>
+                  </PopIn>
                 </div>
 
                 {/* User Journey Flow */}
                 <div className="text-center">
                   <FadeIn delay={300}>
                     <h3 className="text-xl font-medium mb-6 text-gray-800">User Journey & Flow</h3>
+                  </FadeIn>
+                  <PopIn delay={300}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
                       <img 
                         src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=1200&q=80" 
@@ -166,7 +173,7 @@ const CaseStudyMindfulWellness = () => {
                         className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
                       />
                     </div>
-                  </FadeIn>
+                  </PopIn>
                 </div>
               </div>
             </FadeIn>

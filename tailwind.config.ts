@@ -218,6 +218,16 @@ export default {
 						opacity: '1',
 						transform: 'translateY(0)'
 					}
+				},
+				'pop-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'scale(0.85)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					}
 				}
 			},
 			animation: {
@@ -234,8 +244,9 @@ export default {
 				'collapsible-up': 'collapsible-up 0.2s ease-out',
 				'slide-in-left': 'slide-in-left 0.4s ease-out forwards',
 				'cursor-pulse': 'cursor-pulse 0.15s ease-out',
-				'page-enter': 'page-enter 0.4s ease-out forwards'
-			}
+				'page-enter': 'page-enter 0.4s ease-out forwards',
+				'pop-in': 'pop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
+		}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
