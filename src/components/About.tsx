@@ -53,6 +53,7 @@ const About: React.FC<AboutProps> = ({ className }) => {
                 <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">B2B & B2C</span>
                 <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">Mobile & Web</span>
                 <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">Enterprise Systems</span>
+                <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">Based in Miami, FL</span>
               </div>
 
               <a 
