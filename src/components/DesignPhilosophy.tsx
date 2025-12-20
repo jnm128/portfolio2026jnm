@@ -10,7 +10,7 @@ interface DesignPhilosophyProps {
 const PulsingCircle = () => (
   <span className="relative flex items-center justify-center w-3 h-3">
     <Circle className="w-3 h-3 fill-current relative z-10" />
-    <span className="absolute inset-0 rounded-full bg-current animate-pulse-ring" />
+    <span className="absolute inset-0 rounded-full bg-current animate-pulse-ring opacity-50" />
   </span>
 );
 
@@ -88,29 +88,27 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
         >
           <div className="mt-8 space-y-6">
             {/* Expanded Card - Active Philosophy */}
-            <FadeIn>
-              <div 
-                className="relative p-8 md:p-10 rounded-2xl bg-primary/5 border border-primary/20 transition-all duration-500"
-                key={activeCard}
-              >
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  <span className="text-4xl md:text-5xl">{activePhilosophy.icon}</span>
-                  <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl font-serif font-medium mb-4 text-primary">
-                      {activePhilosophy.title}
-                    </h3>
-                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                      {activePhilosophy.description}
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Card indicator */}
-                <div className="absolute bottom-4 right-6 text-xs text-muted-foreground/60">
-                  {activeCard + 1} / {philosophies.length}
+            <div 
+              className="relative p-8 md:p-10 rounded-2xl bg-primary/5 border border-primary/20 animate-card-slide-up"
+              key={activeCard}
+            >
+              <div className="flex flex-col md:flex-row md:items-start gap-6">
+                <span className="text-4xl md:text-5xl transition-transform duration-300">{activePhilosophy.icon}</span>
+                <div className="flex-1">
+                  <h3 className="text-2xl md:text-3xl font-serif font-medium mb-4 text-primary">
+                    {activePhilosophy.title}
+                  </h3>
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                    {activePhilosophy.description}
+                  </p>
                 </div>
               </div>
-            </FadeIn>
+              
+              {/* Card indicator */}
+              <div className="absolute bottom-4 right-6 text-xs text-muted-foreground/60">
+                {activeCard + 1} / {philosophies.length}
+              </div>
+            </div>
 
             {/* Collapsed Cards Row */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
@@ -121,8 +119,8 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
                   className={cn(
                     "p-4 md:p-5 rounded-xl text-left transition-all duration-300 group",
                     activeCard === index
-                      ? "bg-primary/10 border border-primary/30 scale-[1.02]"
-                      : "bg-card border border-border hover:bg-secondary/50 hover:border-border/80"
+                      ? "bg-primary/10 border border-primary/30 animate-card-pop"
+                      : "bg-card border border-border hover:bg-secondary/50 hover:border-border/80 hover:scale-[1.02]"
                   )}
                 >
                   <div className="flex items-center gap-3">
