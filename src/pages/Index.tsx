@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import Hero from '@/components/Hero';
 import IntroBlurb from '@/components/IntroBlurb';
 import Projects from '@/components/Projects';
-import About from '@/components/About';
 import Testimonials from '@/components/Testimonials';
 import DesignPhilosophy from '@/components/DesignPhilosophy';
 import Community from '@/components/Community';
@@ -41,7 +40,6 @@ const Index = () => {
       <Hero />
       <IntroBlurb />
       <Projects />
-      <About />
       <Testimonials />
       <DesignPhilosophy />
       <Community />
