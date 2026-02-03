@@ -220,12 +220,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             </button>
 
             {/* About */}
-            <Link
-              to="/about"
+            <button
+              onClick={() => isHomePage ? scrollToSection('about') : navigateAndScroll('about')}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               About
-            </Link>
+            </button>
 
             {/* Book Club */}
             <button
@@ -292,13 +292,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       >
         <nav className="flex flex-col items-center gap-6 pt-12">
           <MobileNavLink label="Work" sectionId="projects" />
-          <Link
-            to="/about"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors"
-          >
-            About
-          </Link>
+          <MobileNavLink label="About" sectionId="about" />
           <MobileNavLink label="Book Club" sectionId="community" isBookClubNavOnBookClubPage={isBookClubPage} />
           
           <Link

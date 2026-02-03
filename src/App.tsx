@@ -10,7 +10,6 @@ import CaseStudyArtisanMarketplace from "./pages/CaseStudyArtisanMarketplace";
 import CaseStudyCreativeStudio from "./pages/CaseStudyCreativeStudio";
 import Contact from "./pages/Contact";
 import BookClub from "./pages/BookClub";
-import About from "./pages/About";
 import CustomCursor from "./components/CustomCursor";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
@@ -30,7 +29,6 @@ const App = () => (
         <PageTransition>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/book-club" element={<BookClub />} />
             <Route path="/case-study/mindful-wellness" element={<CaseStudyMindfulWellness />} />
