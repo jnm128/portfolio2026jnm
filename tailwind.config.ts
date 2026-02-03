@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 		fontFamily: {
-			sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-			serif: ['Fraunces', 'Georgia', 'serif'],
+			sans: ['Source Sans 3', 'system-ui', 'sans-serif'],
+			serif: ['Outfit', 'system-ui', 'sans-serif'],
 		},
 			colors: {
 				border: 'hsl(var(--border))',
