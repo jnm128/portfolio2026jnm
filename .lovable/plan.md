@@ -1,52 +1,54 @@
 
-## Typography Update: Fraunces + Plus Jakarta Sans
+
+## Typography Update: Outfit + Source Sans 3
 
 ### Overview
-Replace the current font pairing (Cormorant Garamond + Inter) with a more modern healthcare/wellness-focused combination:
-- **Fraunces** for headings - A soft, organic serif with variable optical sizing
-- **Plus Jakarta Sans** for body text - A clean, friendly geometric sans-serif
+Replace the current font pairing (Fraunces + Plus Jakarta Sans) with a tech-forward, modern combination:
+- **Outfit** for headings - A clean, geometric sans-serif with a modern tech aesthetic
+- **Source Sans 3** for body text - Adobe's open-source workhorse, highly readable and professional
 
 ### Files to Modify
 
 #### 1. index.html (Google Fonts link)
-Replace the current font import with:
+Replace the current font import (line 12) with:
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 ```
 
 #### 2. tailwind.config.ts (Font family definitions)
 Update the fontFamily configuration (lines 21-24):
 ```typescript
 fontFamily: {
-  sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-  serif: ['Fraunces', 'Georgia', 'serif'],
+  sans: ['Source Sans 3', 'system-ui', 'sans-serif'],
+  serif: ['Outfit', 'system-ui', 'sans-serif'],
 },
 ```
 
+**Note:** Even though Outfit is a sans-serif font, we're keeping it in the `serif` slot because the existing codebase uses `font-serif` for all headings. This maintains consistency without requiring changes to component files.
+
 ### Technical Details
 
-**Fraunces Font Features:**
-- Variable font with optical sizing (opsz) for better rendering at different sizes
-- Weights: 400 (regular), 500 (medium), 600 (semibold), 700 (bold)
-- Italic variants included for emphasis
-- Soft, approachable character with subtle quirks
+**Outfit Font Features:**
+- Weights: 400-700 for headings
+- Geometric, clean letterforms
+- Modern, tech-forward appearance
+- Excellent for large display text
 
-**Plus Jakarta Sans Font Features:**
-- Weights: 300-700 for flexibility
-- Geometric but warm - perfect for healthcare/wellness
-- Excellent readability at all sizes
-- Clean, modern appearance
+**Source Sans 3 Font Features:**
+- Weights: 300-700 plus italics
+- Adobe's first open-source typeface
+- Optimized for UI and long-form reading
+- Professional, trustworthy appearance
+- Excellent x-height for readability
 
 ### What Changes Automatically
 
-Since the fonts use the existing `font-serif` and `font-sans` utility classes, all components will automatically use the new fonts:
+All components using the existing font utility classes will automatically update:
+- **Headings** (Hero, About, Projects, etc.): Use `font-serif` → now Outfit
+- **Body text**: Uses `font-sans` → now Source Sans 3
+- **Navigation, buttons, labels**: Default sans-serif → Source Sans 3
 
-- **Headings** (h1-h6): Already use `font-serif` via base styles in index.css
-- **Hero title**: Uses `font-serif` class explicitly
-- **Section titles**: Use `font-serif` class (About, Projects, etc.)
-- **Body text**: Uses default `font-sans` (inherited from body)
-- **Navigation & buttons**: Use sans-serif by default
+### Visual Impact
 
-### No Component Changes Needed
+This pairing creates a more tech-forward, innovative aesthetic compared to the current Fraunces + Plus Jakarta Sans combo - better suited for a UX designer working in healthcare tech innovation.
 
-The existing codebase already properly uses `font-serif` for headings and defaults to sans-serif for body text, so swapping the font definitions will cascade throughout the entire site automatically.
