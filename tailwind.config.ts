@@ -18,10 +18,10 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-				serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-			},
+		fontFamily: {
+			sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+			serif: ['Fraunces', 'Georgia', 'serif'],
+		},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
