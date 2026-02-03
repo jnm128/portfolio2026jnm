@@ -24,13 +24,29 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
     }
     return () => observer.disconnect();
   }, []);
-  const logos: { src: string; alt: string; height?: string }[] = [
-    { src: "/logos/cvs-health.png?v=2", alt: "CVS Health", height: "h-3 md:h-4" },
-    { src: "/logos/viveka.png?v=2", alt: "Viveka Health" },
-    { src: "/logos/csl-behring.png", alt: "CSL Behring", height: "h-6 md:h-8" },
-    { src: "/logos/synchronyx.png", alt: "Synchronyx", height: "h-4 md:h-5" },
-    { src: "/logos/arsht-center.png", alt: "Adrienne Arsht Center" },
-  ];
+  const logos: {
+    src: string;
+    alt: string;
+    height?: string;
+  }[] = [{
+    src: "/logos/cvs-health.png?v=2",
+    alt: "CVS Health",
+    height: "h-3 md:h-4"
+  }, {
+    src: "/logos/viveka.png?v=2",
+    alt: "Viveka Health"
+  }, {
+    src: "/logos/csl-behring.png",
+    alt: "CSL Behring",
+    height: "h-6 md:h-8"
+  }, {
+    src: "/logos/synchronyx.png",
+    alt: "Synchronyx",
+    height: "h-4 md:h-5"
+  }, {
+    src: "/logos/arsht-center.png",
+    alt: "Adrienne Arsht Center"
+  }];
   return <section className={cn('py-8 md:py-16 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-40 -mt-8 md:-mt-16', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
@@ -44,9 +60,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
             </div>
             <div className="w-px h-16 bg-border/60 flex-shrink-0" />
             <div className="flex flex-col gap-4 text-left">
-              <p className="text-xl text-foreground leading-relaxed">
-                Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.
-              </p>
+              <p className="text-xl text-foreground leading-relaxed font-serif">Joanna Minott is a user experience designer at CVS Health who transforms complex systems into intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.</p>
               <div className="flex flex-wrap gap-2 justify-start">
                 <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{
                 animationDelay: '0ms'
@@ -130,17 +144,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
             <p className="text-xs text-muted-foreground uppercase tracking-wider mb-4">Trusted by</p>
             <div className="relative overflow-hidden">
               <div className="flex animate-marquee-fast md:animate-marquee whitespace-nowrap items-center">
-                {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
-                  <img 
-                    key={index}
-                    src={logo.src}
-                    alt={logo.alt}
-                    className={cn(
-                      logo.height || "h-6 md:h-8",
-                      "w-auto px-6 md:px-10 object-contain grayscale brightness-0 opacity-60"
-                    )}
-                  />
-                ))}
+                {[...logos, ...logos, ...logos, ...logos].map((logo, index) => <img key={index} src={logo.src} alt={logo.alt} className={cn(logo.height || "h-6 md:h-8", "w-auto px-6 md:px-10 object-contain grayscale brightness-0 opacity-60")} />)}
               </div>
             </div>
           </div>
