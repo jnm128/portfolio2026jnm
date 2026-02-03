@@ -38,7 +38,7 @@ const About: React.FC<AboutProps> = ({
               <p className="text-base md:text-xl text-foreground leading-relaxed mb-6 font-serif">
                 She blends product strategy, behavior-driven design, and emotional insight to create solutions that help people feel supported, empowered, and understood.
               </p>
-              <p className="text-base md:text-xl text-foreground leading-relaxed mb-6">
+              <p className="text-base md:text-xl text-foreground leading-relaxed mb-6 font-serif">
                 Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.
               </p>
               {/* Expertise Tags */}
