@@ -35,7 +35,7 @@ const About: React.FC<AboutProps> = ({
               <p className="text-base md:text-xl text-foreground leading-relaxed mb-6 font-serif">
                 Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences.
               </p>
-              <p className="text-base md:text-xl text-foreground leading-relaxed mb-6">
+              <p className="text-base md:text-xl text-foreground leading-relaxed mb-6 font-serif">
                 She blends product strategy, behavior-driven design, and emotional insight to create solutions that help people feel supported, empowered, and understood.
               </p>
               <p className="text-base md:text-xl text-foreground leading-relaxed mb-6">
