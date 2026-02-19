@@ -38,8 +38,8 @@ const Index = () => {
   return (
     <main className="relative bg-surface-6">
       <ScrollAnimations />
-      <Hero />
       <IntroBlurb />
+      <Hero />
       <Projects />
       <About />
       <Testimonials />
