@@ -9,7 +9,6 @@ import CaseStudyMindfulWellness from "./pages/CaseStudyMindfulWellness";
 import CaseStudyArtisanMarketplace from "./pages/CaseStudyArtisanMarketplace";
 import CaseStudyCreativeStudio from "./pages/CaseStudyCreativeStudio";
 import Contact from "./pages/Contact";
-import AboutPage from "./pages/About";
 import BookClub from "./pages/BookClub";
 import CustomCursor from "./components/CustomCursor";
 import ScrollToTop from "./components/ScrollToTop";
@@ -31,7 +30,6 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<AboutPage />} />
             <Route path="/book-club" element={<BookClub />} />
             <Route path="/case-study/mindful-wellness" element={<CaseStudyMindfulWellness />} />
             <Route path="/case-study/artisan-marketplace" element={<CaseStudyArtisanMarketplace />} />
