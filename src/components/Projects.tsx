@@ -2,18 +2,10 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import FadeIn from './animations/FadeIn';
-import { Circle } from 'lucide-react';
 
 interface ProjectsProps {
   className?: string;
 }
-
-const PulsingCircle = () => (
-  <span className="relative flex items-center justify-center w-3 h-3">
-    <Circle className="w-3 h-3 fill-current relative z-10" />
-    <span className="absolute inset-0 rounded-full bg-current animate-pulse-ring" />
-  </span>
-);
 
 const Projects: React.FC<ProjectsProps> = ({ className }) => {
   const projects = [
@@ -38,10 +30,9 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   ];
 
   return (
-    <section id="projects" className={cn('py-16 md:py-24 bg-muted rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-30 -mt-8 md:-mt-16', className)}>
+    <section id="projects" className={cn('py-16 md:py-24 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
-        <h2 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
-          <PulsingCircle />
+        <h2 className="text-[14px] text-center font-medium mb-12 uppercase tracking-wider text-muted-foreground">
           Recent Work
         </h2>
         <div className="flex flex-col gap-24">
@@ -51,18 +42,11 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                 "flex flex-col gap-6 md:gap-12",
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               )}>
-                {/* Image */}
                 <Link to={project.link} className="md:w-3/5">
                   <div className="rounded-xl overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full aspect-[16/9] object-cover"
-                    />
+                    <img src={project.image} alt={project.title} className="w-full aspect-[16/9] object-cover" />
                   </div>
                 </Link>
-
-                {/* Text Content */}
                 <div className="md:w-2/5 flex flex-col justify-center">
                   <Link to={project.link}>
                     <h3 className="text-lg md:text-xl font-serif font-medium leading-relaxed mb-4 hover:text-muted-foreground transition-colors">
@@ -72,10 +56,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
                     {project.description}
                   </p>
-                  <Link
-                    to={project.link}
-                    className="text-sm font-medium text-accent-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
-                  >
+                  <Link to={project.link} className="text-sm font-medium text-accent-foreground hover:text-foreground transition-colors inline-flex items-center gap-1">
                     View case study →
                   </Link>
                 </div>

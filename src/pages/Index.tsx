@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import BioBlurb from '@/components/BioBlurb';
 import Hero from '@/components/Hero';
 import IntroBlurb from '@/components/IntroBlurb';
 import Projects from '@/components/Projects';
@@ -12,30 +13,25 @@ const Index = () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
         const targetId = this.getAttribute('href')?.substring(1);
         if (!targetId) return;
-        
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
+          window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
         }
       });
     });
-    
     return () => {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.removeEventListener('click', function (e) {});
       });
     };
   }, []);
-  
+
   return (
-    <main className="relative bg-surface-6">
+    <main className="relative bg-[#F8F6F1]">
       <ScrollAnimations />
+      <BioBlurb />
       <Hero />
       <IntroBlurb />
       <Projects />

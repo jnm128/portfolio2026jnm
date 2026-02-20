@@ -19,7 +19,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   }, []);
 
   return (
-    <section className={cn('pt-20 pb-8 md:pt-24 md:pb-12 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-50', className)}>
+    <section className={cn('py-8 md:py-12 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         {/* Hero Image Slideshow with Overlay Text */}
         <PopIn>
