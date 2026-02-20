@@ -1,53 +1,40 @@
 
 
-## Redesign Recent Work Section with Alternating Layout
+## Move Blurb Above Hero and Unify Background Colors
 
 ### Overview
-Rebuild the Recent Work section to match the reference image, with each project card alternating the position of image and text (odd cards: image left/text right, even cards: text left/image right).
+Split the IntroBlurb into two parts: the bio text moves above the Hero as its own section, while the "Trusted by" marquee stays in its current position below the Hero. All sections get the same background color (#F8F6F1). Section titles become 14px, center-aligned, and lose the animated pulsing circle.
 
-### Layout Per Card
+### Changes
 
-Each card is a horizontal row split roughly 60/40:
-- **Image side (~3/5)**: Large rounded project image
-- **Text side (~2/5)**: Vertically centered block with:
-  - Project title (bold heading)
-  - Short description paragraph (2-3 sentences)
-  - "View case study ->" CTA link in accent color
+#### 1. Create new `BioBlurb` component (`src/components/BioBlurb.tsx`)
+- Extract the profile image + bio text from IntroBlurb into a standalone section
+- Rendered above the Hero in the page layout
+- Same container/padding conventions as other sections
 
-### Alternating Pattern
-- **Card 1 (index 0)**: Image left, text right
-- **Card 2 (index 1)**: Text left, image right
-- **Card 3 (index 2)**: Image left, text right
-- Controlled via `index % 2 === 0` to flip `md:flex-row` vs `md:flex-row-reverse`
+#### 2. Update `IntroBlurb.tsx`
+- Remove the bio text (desktop and mobile layouts)
+- Keep only the "Trusted by" marquee
+- Remove unused state/refs (`isVisible`, `credentialsExpanded`, `chipsRef`, IntersectionObserver)
 
-On mobile, all cards stack as image on top, text below (consistent `flex-col`).
+#### 3. Update `Index.tsx` page order
+- New order: BioBlurb -> Hero -> IntroBlurb (marquee only) -> Projects -> Testimonials -> Community -> Footer
 
-### What Gets Removed
-- Collapsible TLDR sections
-- Pill tags
-- `Collapsible`, `CollapsibleContent`, `CollapsibleTrigger`, `ChevronDown` imports
+#### 4. Unify background color to `#F8F6F1` across all sections
+- Hero, IntroBlurb, Projects, Testimonials, Community all get `bg-[#F8F6F1]`
+- Remove the stacking/overlap rounded-bottom styles (`rounded-b-[2.5rem]`, `-mt-8`, varying z-indexes) since everything is one continuous background now
 
-### What Gets Added
-- `description` field on each project object (short paragraph about the work)
-- "View case study ->" CTA link per card
-- Alternating flex direction based on index
+#### 5. Update section titles (Projects, Testimonials, Community)
+- Remove the `PulsingCircle` component and all inline pulsing circle markup
+- Change title styling to `text-[14px] text-center` (centered, 14px)
+- Remove `flex items-center gap-3` layout (no longer needed without the circle icon)
 
-### File Modified
-**`src/components/Projects.tsx`** - single file change:
-
-1. Remove unused imports (Collapsible components, ChevronDown)
-2. Add `description` string to each project in the data array
-3. Rebuild card markup:
-   - Outer flex uses `index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'`
-   - Image container: `md:w-3/5`, rounded-xl overflow-hidden
-   - Text container: `md:w-2/5`, flex column with vertical centering (`justify-center`)
-   - Title, description paragraph, and CTA link
-4. Remove tags and TLDR rendering entirely
-
-### Visual Result
-```text
-Card 1:  [  IMAGE  ] [ Title + Desc + CTA ]
-Card 2:  [ Title + Desc + CTA ] [  IMAGE  ]
-Card 3:  [  IMAGE  ] [ Title + Desc + CTA ]
-```
+### Files Modified
+- **`src/components/BioBlurb.tsx`** (new) - Bio text extracted from IntroBlurb
+- **`src/components/IntroBlurb.tsx`** - Strip bio, keep marquee only
+- **`src/pages/Index.tsx`** - Reorder components, add BioBlurb
+- **`src/components/Hero.tsx`** - Change bg to `#F8F6F1`, remove rounded-bottom/overlap
+- **`src/components/Projects.tsx`** - Bg to `#F8F6F1`, 14px centered title, remove PulsingCircle
+- **`src/components/Testimonials.tsx`** - Same title and bg changes
+- **`src/components/Community.tsx`** - Same title and bg changes
 
