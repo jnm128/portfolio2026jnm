@@ -61,74 +61,17 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
             <div className="w-px h-16 bg-border/60 flex-shrink-0" />
             <div className="flex flex-col gap-4 text-left">
               <p className="text-xl text-foreground leading-relaxed font-serif">Joanna Minott is a user experience designer at CVS Health who transforms complex systems into intuitive, people-first experiences. With a focus on healthcare and enterprise solutions, she crafts designs that balance business goals with genuine user needs.</p>
-              <div className="flex flex-wrap gap-2 justify-start">
-                <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{
-                animationDelay: '0ms'
-              }}>
-                  Currently @ CVS Health
-                </span>
-                <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{
-                animationDelay: '100ms'
-              }}>
-                  4+ Years Experience
-                </span>
-                <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{
-                animationDelay: '200ms'
-              }}>
-                  Healthcare & Enterprise
-                </span>
-                <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{
-                animationDelay: '300ms'
-              }}>
-                  B2B & B2C
-                </span>
-                <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{
-                animationDelay: '400ms'
-              }}>
-                  Mobile & Web
-                </span>
-              </div>
             </div>
           </div>
 
           {/* Mobile Layout */}
           <div className="flex flex-col gap-4 md:hidden">
             {/* Profile + Credentials Row - Above Text */}
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3">
-                <div className="w-16 h-16 aspect-square rounded-full overflow-hidden flex-shrink-0">
-                  <img alt="Joanna Minott" className="w-full h-full object-contain" src="/lovable-uploads/a16192bc-fdaf-45c8-9788-1f5e9a9b973d.png" />
-                </div>
-                <div className="w-px h-10 bg-border/60 flex-shrink-0" />
-                <div className="flex flex-wrap gap-2 items-center">
-                  <span className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground", !isVisible && "opacity-0", isVisible && "animate-slide-in-left")} style={{
-                  animationDelay: '0ms'
-                }}>
-                    Currently @ CVS Health
-                  </span>
-                  <button onClick={() => setCredentialsExpanded(!credentialsExpanded)} className={cn("bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground transition-colors", !isVisible && "opacity-0", isVisible && "animate-slide-in-left", credentialsExpanded && "bg-secondary/80")} style={{
-                  animationDelay: '100ms'
-                }}>
-                    {credentialsExpanded ? 'View less' : 'View more'}
-                  </button>
-                </div>
+            <div className="flex items-center gap-3">
+              <div className="w-16 h-16 aspect-square rounded-full overflow-hidden flex-shrink-0">
+                <img alt="Joanna Minott" className="w-full h-full object-contain" src="/lovable-uploads/a16192bc-fdaf-45c8-9788-1f5e9a9b973d.png" />
               </div>
-              
-              {/* Expandable Credentials */}
-              {credentialsExpanded && <div className="flex flex-wrap gap-2 pl-[76px] animate-fade-in">
-                  <span className="bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground">
-                    4+ Years Experience
-                  </span>
-                  <span className="bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground">
-                    Healthcare & Enterprise
-                  </span>
-                  <span className="bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground">
-                    B2B & B2C
-                  </span>
-                  <span className="bg-secondary/60 rounded-full px-3 py-1 text-xs text-foreground">
-                    Mobile & Web
-                  </span>
-                </div>}
+              <div className="w-px h-10 bg-border/60 flex-shrink-0" />
             </div>
             
             {/* Bio Text - Below */}
