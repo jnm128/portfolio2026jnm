@@ -35,7 +35,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
     <section id="testimonials" className={cn('py-16 md:py-24 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
-          <h2 className="text-[14px] text-left font-medium mb-12 uppercase tracking-wider text-muted-foreground">
+          <h2 className="text-[14px] text-center font-medium mb-12 uppercase tracking-wider text-muted-foreground">
             What's it like working with Joanna?
           </h2>
         </FadeIn>
