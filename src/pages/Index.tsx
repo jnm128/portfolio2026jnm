@@ -5,6 +5,7 @@ import IntroBlurb from '@/components/IntroBlurb';
 import Projects from '@/components/Projects';
 import Testimonials from '@/components/Testimonials';
 import Community from '@/components/Community';
+import Collab from '@/components/Collab';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 
@@ -37,6 +38,7 @@ const Index = () => {
       <Projects />
       <Testimonials />
       <Community />
+      <Collab />
       <Footer />
     </main>
   );
