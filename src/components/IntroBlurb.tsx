@@ -20,7 +20,9 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
           <div>
-            
+            <p className="text-[14px] text-center font-medium mb-6 uppercase tracking-wider text-muted-foreground">
+              Trusted by teams building the next frontier.
+            </p>
             <div className="relative overflow-hidden">
               <div className="flex animate-marquee-fast md:animate-marquee whitespace-nowrap items-center">
                 {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
