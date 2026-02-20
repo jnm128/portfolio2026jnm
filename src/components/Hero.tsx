@@ -36,12 +36,6 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               />
             ))}
             <img src={heroImages[0]} alt="Hero placeholder" className="w-full h-full object-cover invisible" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 via-50% to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12 md:right-12">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-white leading-snug max-w-md">
-                Health focused Product building grounded in clarity and emotion.
-              </h1>
-            </div>
             {/* Slide indicators */}
             <div className="absolute bottom-4 right-8 md:right-12 flex gap-2">
               {heroImages.map((_, index) => (
