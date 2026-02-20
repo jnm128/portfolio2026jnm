@@ -47,7 +47,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({
     src: "/logos/arsht-center.png",
     alt: "Adrienne Arsht Center"
   }];
-  return <section className={cn('py-8 md:py-16 bg-background rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-40 -mt-8 md:-mt-16', className)}>
+  return <section className={cn('py-8 md:py-16 bg-background relative z-40', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
           {/* Observer marker - always visible */}
