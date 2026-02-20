@@ -11,13 +11,18 @@ const BioBlurb: React.FC<BioBlurbProps> = ({ className }) => {
     <section className={cn('pt-20 pb-0 md:pt-24 md:pb-0 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
-          <div className="flex flex-col gap-4 text-left">
-            <p className="text-base md:text-xl text-foreground leading-relaxed font-serif">
-              Joanna Minott, Product designer
-            </p>
-            <p className="text-base md:text-xl text-foreground leading-relaxed font-serif">
-              I build software and digital experiences that feel more human.
-            </p>
+          <div className="flex items-start gap-4 text-left">
+            <div className="w-14 h-14 md:w-16 md:h-16 aspect-square rounded-full overflow-hidden flex-shrink-0">
+              <img alt="Joanna Minott" className="w-full h-full object-contain" src="/lovable-uploads/eb1b0dd0-17c0-45f1-9ebe-cc16e594b15b.png" />
+            </div>
+            <div className="flex flex-col gap-1">
+              <p className="text-base md:text-xl text-foreground leading-relaxed font-serif">
+                Joanna Minott, Product designer
+              </p>
+              <p className="text-base md:text-xl text-foreground leading-relaxed font-serif">
+                I build software and digital experiences that feel more human.
+              </p>
+            </div>
           </div>
         </FadeIn>
       </div>
