@@ -2,19 +2,12 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import FadeIn from './animations/FadeIn';
-import { Circle, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from './ui/collapsible';
 
 interface ProjectsProps {
   className?: string;
 }
-
-const PulsingCircle = () => (
-  <span className="relative flex items-center justify-center w-3 h-3">
-    <Circle className="w-3 h-3 fill-current relative z-10" />
-    <span className="absolute inset-0 rounded-full bg-current animate-pulse-ring" />
-  </span>
-);
 
 const Projects: React.FC<ProjectsProps> = ({ className }) => {
   const projects = [
@@ -42,19 +35,29 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   ];
 
   return (
-    <section id="projects" className={cn('py-16 md:py-24 bg-muted rounded-b-[2.5rem] md:rounded-b-[4rem] relative z-30 -mt-8 md:-mt-16', className)}>
+    <section id="projects" className={cn('py-16 md:py-24 bg-muted relative z-30', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
-        <h2 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
-          <PulsingCircle />
+        <h2 className="text-sm md:text-base font-medium text-muted-foreground uppercase tracking-wider mb-12 text-center">
           Recent Work
         </h2>
         <div className="flex flex-col gap-24">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
               <div className="group block">
-                <div className="flex flex-col-reverse md:flex-row md:items-center gap-6 md:gap-12">
-                  {/* Text Content */}
-                  <div className="md:w-1/5">
+                <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
+                  {/* Image - Left */}
+                  <Link to={project.link} className="md:w-3/5">
+                    <div className="relative rounded-xl overflow-hidden">
+                      <img 
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full aspect-[16/9] object-cover"
+                      />
+                    </div>
+                  </Link>
+                  
+                  {/* Text Content - Right */}
+                  <div className="md:w-2/5">
                     <Link to={project.link}>
                       <h3 className="text-lg md:text-xl font-serif leading-relaxed group-hover:text-muted-foreground transition-colors mb-4">
                         {project.title}
@@ -76,7 +79,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                       </CollapsibleContent>
                     </Collapsible>
 
-                    {/* Tags - moved below collapsibles */}
+                    {/* Tags */}
                     <div className="flex flex-wrap gap-2 mt-4">
                       {project.tags.map((tag) => (
                         <span key={tag} className="pill-tag text-xs px-3 py-1">
@@ -85,17 +88,6 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                       ))}
                     </div>
                   </div>
-                  
-                  {/* Image - Larger */}
-                  <Link to={project.link} className="md:w-4/5">
-                    <div className="relative rounded-xl overflow-hidden">
-                      <img 
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full aspect-[16/9] object-cover"
-                      />
-                    </div>
-                  </Link>
                 </div>
               </div>
             </FadeIn>
