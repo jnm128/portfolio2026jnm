@@ -32,9 +32,6 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   return (
     <section id="projects" className={cn('py-16 md:py-24 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
-        <h2 className="text-[14px] text-left font-medium mb-12 uppercase tracking-wider text-muted-foreground">
-          Recent Work
-        </h2>
         <div className="flex flex-col gap-24">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
