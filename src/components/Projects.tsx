@@ -2,8 +2,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import FadeIn from './animations/FadeIn';
-import { Circle, ChevronDown } from 'lucide-react';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from './ui/collapsible';
+import { Circle } from 'lucide-react';
 
 interface ProjectsProps {
   className?: string;
@@ -20,24 +19,21 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   const projects = [
     {
       title: "Shipping colleague facing design experience with CVS Health",
+      description: "Led end-to-end product design for an internal tools platform, reducing user errors by 40% and increasing task completion rates across key workflows.",
       image: "/lovable-uploads/cvs-health-project.png",
-      tags: ["Product Design", "Healthcare"],
       link: "/case-study/mindful-wellness",
-      tldr: ["6 month engagement", "Reduced user errors by 40%", "Increased task completion rate by 25%"]
     },
     {
       title: "Building cost transparency between families, insurance and businesses with Viveka Health",
+      description: "Designed a transparent pricing experience that bridges families, insurers, and providers — improving cost clarity by 60% and reducing support tickets by 35%.",
       image: "/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png",
-      tags: ["UX Research", "Strategy"],
       link: "/case-study/artisan-marketplace",
-      tldr: ["4 month engagement", "Improved cost transparency by 60%", "Reduced customer support tickets by 35%"]
     },
     {
       title: "Building the next night life ecosystem",
+      description: "Created the brand identity and mobile app experience for a nightlife platform, launching an MVP that reached 10k+ downloads in its first month.",
       image: "/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png",
-      tags: ["Brand Identity", "Mobile App"],
       link: "/case-study/creative-studio",
-      tldr: ["3 month engagement", "Launched MVP with 10k+ downloads in first month"]
     }
   ];
 
@@ -51,50 +47,36 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         <div className="flex flex-col gap-24">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
-              <div className="group block">
-                <div className="flex flex-col-reverse md:flex-row md:items-center gap-6 md:gap-12">
-                  {/* Text Content */}
-                  <div className="md:w-1/5">
-                    <Link to={project.link}>
-                      <h3 className="text-lg md:text-xl font-serif leading-relaxed group-hover:text-muted-foreground transition-colors mb-4">
-                        {project.title}
-                      </h3>
-                    </Link>
-                    
-                    {/* TLDR Collapsible */}
-                    <Collapsible>
-                      <CollapsibleTrigger className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full border-b border-muted-foreground/30 pb-2 mb-2">
-                        <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
-                        <span>TLDR</span>
-                      </CollapsibleTrigger>
-                      <CollapsibleContent className="pl-6 text-sm text-foreground mb-4">
-                        <ul className="list-disc list-inside space-y-1">
-                          {project.tldr.map((item, i) => (
-                            <li key={i}>{item}</li>
-                          ))}
-                        </ul>
-                      </CollapsibleContent>
-                    </Collapsible>
-
-                    {/* Tags - moved below collapsibles */}
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="pill-tag text-xs px-3 py-1">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+              <div className={cn(
+                "flex flex-col gap-6 md:gap-12",
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              )}>
+                {/* Image */}
+                <Link to={project.link} className="md:w-3/5">
+                  <div className="rounded-xl overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full aspect-[16/9] object-cover"
+                    />
                   </div>
-                  
-                  {/* Image - Larger */}
-                  <Link to={project.link} className="md:w-4/5">
-                    <div className="relative rounded-xl overflow-hidden">
-                      <img 
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full aspect-[16/9] object-cover"
-                      />
-                    </div>
+                </Link>
+
+                {/* Text Content */}
+                <div className="md:w-2/5 flex flex-col justify-center">
+                  <Link to={project.link}>
+                    <h3 className="text-lg md:text-xl font-serif font-medium leading-relaxed mb-4 hover:text-muted-foreground transition-colors">
+                      {project.title}
+                    </h3>
+                  </Link>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+                  <Link
+                    to={project.link}
+                    className="text-sm font-medium text-accent-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
+                  >
+                    View case study →
                   </Link>
                 </div>
               </div>
