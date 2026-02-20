@@ -11,12 +11,6 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
   return (
     <section id="community" className={cn('py-16 md:py-24 bg-surface-6 text-surface-1', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
-        <FadeIn>
-          <h2 className="text-[14px] text-center font-medium mb-12 uppercase tracking-wider text-muted-foreground">
-            Building community
-          </h2>
-        </FadeIn>
-
         <FadeIn delay={100}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="relative rounded-3xl overflow-hidden order-first md:order-last">

@@ -12,7 +12,7 @@ const Collab: React.FC<CollabProps> = ({ className }) => {
     <section className={cn('py-24 md:py-32 bg-surface-6 text-surface-1', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
-          <div className="flex flex-col gap-6 max-w-2xl">
+          <div className="flex flex-col gap-6 items-center text-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight">
               Interested in collaborating?
             </h2>
