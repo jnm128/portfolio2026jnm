@@ -42,12 +42,14 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   ];
 
   return (
-    <section id="projects" className={cn('py-16 md:py-24 bg-[#F8F6F1]', className)}>
+    <section id="projects" className={cn('py-12 md:py-20 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
+        {/* Section label */}
+        <p className="text-xs uppercase tracking-widest text-muted-foreground text-center mb-3">Selected Work</p>
         {/* Header with centered title and archives toggle */}
-        <div className="flex items-center justify-between mb-12">
+        <div className="flex items-center justify-between mb-8">
           <div className="flex-1" />
-          <h2 className="text-2xl md:text-3xl font-serif font-medium text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-medium text-center">
             {activeTab === 'recent' ? 'Recent Work' : 'Archives'}
           </h2>
           <div className="flex-1 flex justify-end items-center gap-3">
@@ -70,7 +72,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         </div>
 
         {activeTab === 'recent' ? (
-        <div className="flex flex-col gap-24">
+        <div className="flex flex-col gap-16">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
               <div className="bg-white/60 rounded-2xl p-6 md:p-8">
