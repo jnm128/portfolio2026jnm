@@ -2,30 +2,23 @@
 
 ## Summary
 
-Add left-aligned "Recent Work" and "Archives" tabs above the projects section. The "Recent Work" tab shows the existing case study cards. The "Archives" tab shows a clean list/table of past projects with columns: Project Name, Company, Role, and Team.
+Replace the current font pairing (Outfit + Source Sans 3) with **Inter Tight** (headings) and **Inter** (body text), updating the Google Fonts link and Tailwind config.
 
 ---
 
-### What You'll See
+### What Changes
 
-- Two tab labels ("Recent Work" and "Archives") left-aligned above the project cards
-- Clicking "Recent Work" shows the current case study cards (no change)
-- Clicking "Archives" shows a minimal list view with project details in rows
-- The active tab will be visually distinguished (e.g. bolder text or underline)
+- **Headings** (`font-serif` class): Outfit --> Inter Tight
+- **Body text** (`font-sans` class): Source Sans 3 --> Inter
+
+No component files need changes since they already use `font-serif` and `font-sans` classes throughout.
 
 ---
 
 ### Technical Details
 
-**File: `src/components/Projects.tsx`**
-
-1. Import `useState` from React
-2. Add a tab state (`"recent"` | `"archives"`)
-3. Add an archives data array with fields: `name`, `company`, `role`, `team`
-4. Render two left-aligned tab buttons above the content area, styled minimally (text buttons with an active underline)
-5. Conditionally render:
-   - **Recent Work tab**: existing case study cards (unchanged)
-   - **Archives tab**: a list of rows, each in a `bg-white/60 rounded-2xl` card showing project name, company, role, and team in a horizontal layout
-
-No new files or dependencies needed -- simple `useState` toggle with inline tab styling (no Radix Tabs needed for this minimal design).
+| File | Change |
+|---|---|
+| `index.html` line 12 | Update Google Fonts URL to load `Inter` and `Inter+Tight` with appropriate weights |
+| `tailwind.config.ts` lines 22-23 | Change `sans` to `['Inter', 'system-ui', 'sans-serif']` and `serif` to `['Inter Tight', 'system-ui', 'sans-serif']` |
 
