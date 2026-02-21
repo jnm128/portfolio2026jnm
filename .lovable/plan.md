@@ -1,32 +1,31 @@
 
 
-## Summary of Changes
+## Summary
 
-Three components updated to restyle the community section, update testimonials title, and add subtle card backgrounds.
+Add left-aligned "Recent Work" and "Archives" tabs above the projects section. The "Recent Work" tab shows the existing case study cards. The "Archives" tab shows a clean list/table of past projects with columns: Project Name, Company, Role, and Team.
 
-### 1. Community Section — Restructure to match case study layout
-- Change from the current 2-column grid to match the Projects section's alternating image/text layout
-- Image on one side (3/5 width), text on the other (2/5 width) with title, description, and "Learn More" link
-- Wrap in a subtle card background (`bg-white/60 rounded-2xl p-6 md:p-8`)
+---
 
-### 2. Testimonials — Update title text and size
-- Replace "What's it like working with Joanna?" with **"Bringing people and ideas together at scale"**
-- Increase font size from `text-[14px]` to `text-2xl md:text-3xl` with serif font
-- Remove uppercase styling to match the new larger treatment
+### What You'll See
 
-### 3. Projects (Case Studies) — Add dim card backgrounds
-- Wrap each project item in a subtle card container (`bg-white/60 rounded-2xl p-6 md:p-8`)
-
-### 4. Community — Add dim card background
-- Same subtle card treatment as case studies (`bg-white/60 rounded-2xl p-6 md:p-8`)
+- Two tab labels ("Recent Work" and "Archives") left-aligned above the project cards
+- Clicking "Recent Work" shows the current case study cards (no change)
+- Clicking "Archives" shows a minimal list view with project details in rows
+- The active tab will be visually distinguished (e.g. bolder text or underline)
 
 ---
 
 ### Technical Details
 
-| File | Change |
-|---|---|
-| `Testimonials.tsx` line 38 | Change title text and increase font size to `text-2xl md:text-3xl font-serif`, remove uppercase |
-| `Projects.tsx` lines 38-60 | Wrap each project's inner content in a `bg-white/60 rounded-2xl p-6 md:p-8` container |
-| `Community.tsx` lines 14-34 | Restructure to match case study layout (image left/right + text), wrap in dim card bg |
+**File: `src/components/Projects.tsx`**
+
+1. Import `useState` from React
+2. Add a tab state (`"recent"` | `"archives"`)
+3. Add an archives data array with fields: `name`, `company`, `role`, `team`
+4. Render two left-aligned tab buttons above the content area, styled minimally (text buttons with an active underline)
+5. Conditionally render:
+   - **Recent Work tab**: existing case study cards (unchanged)
+   - **Archives tab**: a list of rows, each in a `bg-white/60 rounded-2xl` card showing project name, company, role, and team in a horizontal layout
+
+No new files or dependencies needed -- simple `useState` toggle with inline tab styling (no Radix Tabs needed for this minimal design).
 
