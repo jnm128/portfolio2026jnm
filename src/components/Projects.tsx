@@ -44,22 +44,29 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   return (
     <section id="projects" className={cn('py-16 md:py-24 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
-        {/* Tabs */}
-        <div className="flex gap-6 mb-12">
-          {(['recent', 'archives'] as Tab[]).map((tab) => (
+        {/* Header with centered title and archives toggle */}
+        <div className="flex items-center justify-between mb-12">
+          <div className="flex-1" />
+          <h2 className="text-2xl md:text-3xl font-serif font-medium text-center">
+            {activeTab === 'recent' ? 'Recent Work' : 'Archives'}
+          </h2>
+          <div className="flex-1 flex justify-end items-center gap-3">
+            <span className="text-sm text-muted-foreground">Archives</span>
             <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => setActiveTab(activeTab === 'recent' ? 'archives' : 'recent')}
               className={cn(
-                'text-sm md:text-base font-medium pb-1 border-b-2 transition-colors',
-                activeTab === tab
-                  ? 'border-foreground text-foreground'
-                  : 'border-transparent text-muted-foreground hover:text-foreground'
+                'relative w-11 h-6 rounded-full transition-colors',
+                activeTab === 'archives' ? 'bg-foreground' : 'bg-muted-foreground/30'
               )}
             >
-              {tab === 'recent' ? 'Recent Work' : 'Archives'}
+              <span
+                className={cn(
+                  'absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white transition-transform',
+                  activeTab === 'archives' && 'translate-x-5'
+                )}
+              />
             </button>
-          ))}
+          </div>
         </div>
 
         {activeTab === 'recent' ? (
