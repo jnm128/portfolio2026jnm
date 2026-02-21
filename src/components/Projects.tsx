@@ -35,27 +35,29 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         <div className="flex flex-col gap-24">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
-              <div className={cn(
-                "flex flex-col gap-6 md:gap-12",
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              )}>
-                <Link to={project.link} className="md:w-3/5">
-                  <div className="rounded-xl overflow-hidden">
-                    <img src={project.image} alt={project.title} className="w-full aspect-[16/9] object-cover" />
+              <div className="bg-white/60 rounded-2xl p-6 md:p-8">
+                <div className={cn(
+                  "flex flex-col gap-6 md:gap-12",
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                )}>
+                  <Link to={project.link} className="md:w-3/5">
+                    <div className="rounded-xl overflow-hidden">
+                      <img src={project.image} alt={project.title} className="w-full aspect-[16/9] object-cover" />
+                    </div>
+                  </Link>
+                  <div className="md:w-2/5 flex flex-col justify-center">
+                    <Link to={project.link}>
+                      <h3 className="text-lg md:text-xl font-serif font-medium leading-relaxed mb-4 hover:text-muted-foreground transition-colors">
+                        {project.title}
+                      </h3>
+                    </Link>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+                      {project.description}
+                    </p>
+                    <Link to={project.link} className="text-sm font-medium text-accent-foreground hover:text-foreground transition-colors inline-flex items-center gap-1">
+                      View case study →
+                    </Link>
                   </div>
-                </Link>
-                <div className="md:w-2/5 flex flex-col justify-center">
-                  <Link to={project.link}>
-                    <h3 className="text-lg md:text-xl font-serif font-medium leading-relaxed mb-4 hover:text-muted-foreground transition-colors">
-                      {project.title}
-                    </h3>
-                  </Link>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-                  <Link to={project.link} className="text-sm font-medium text-accent-foreground hover:text-foreground transition-colors inline-flex items-center gap-1">
-                    View case study →
-                  </Link>
                 </div>
               </div>
             </FadeIn>

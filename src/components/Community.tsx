@@ -12,24 +12,31 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
     <section id="community" className={cn('py-16 md:py-24 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn delay={100}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div className="relative rounded-3xl overflow-hidden order-first md:order-last">
-              <img 
-                src="/lovable-uploads/47f9a1d0-4458-400a-8fc0-79adf093cf18.png"
-                alt="UX Design Community"
-                className="w-full aspect-[3/2] object-cover"
-              />
-            </div>
-            <div className="space-y-6">
-              <h3 className="text-2xl md:text-3xl font-serif leading-relaxed">
-                She's also building the next big ux design community
-              </h3>
-              <Link 
-                to="/book-club"
-                className="inline-flex items-center justify-center px-5 py-2 bg-foreground text-background text-sm font-medium rounded-full transition-all hover:opacity-90 active:scale-95"
-              >
-                Learn More
-              </Link>
+          <div className="bg-white/60 rounded-2xl p-6 md:p-8">
+            <div className="flex flex-col gap-6 md:gap-12 md:flex-row">
+              <div className="md:w-3/5">
+                <div className="rounded-xl overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/47f9a1d0-4458-400a-8fc0-79adf093cf18.png"
+                    alt="UX Design Community"
+                    className="w-full aspect-[16/9] object-cover"
+                  />
+                </div>
+              </div>
+              <div className="md:w-2/5 flex flex-col justify-center">
+                <h3 className="text-lg md:text-xl font-serif font-medium leading-relaxed mb-4">
+                  She's also building the next big ux design community
+                </h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+                  A space for designers to connect, share ideas, and grow together through curated conversations and resources.
+                </p>
+                <Link 
+                  to="/book-club"
+                  className="text-sm font-medium text-accent-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
+                >
+                  Learn More →
+                </Link>
+              </div>
             </div>
           </div>
         </FadeIn>
