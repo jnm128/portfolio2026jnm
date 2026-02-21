@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import FadeIn from './animations/FadeIn';
@@ -7,7 +7,19 @@ interface ProjectsProps {
   className?: string;
 }
 
+type Tab = 'recent' | 'archives';
+
 const Projects: React.FC<ProjectsProps> = ({ className }) => {
+  const [activeTab, setActiveTab] = useState<Tab>('recent');
+
+  const archives = [
+    { name: 'Design System Overhaul', company: 'CSL Behring', role: 'Lead Designer', team: 'Product & Engineering' },
+    { name: 'Patient Portal Redesign', company: 'Adrienne Arsht Center', role: 'UX Designer', team: 'Digital Experience' },
+    { name: 'Mobile App MVP', company: 'Synchronyx', role: 'Product Designer', team: 'Founding Team' },
+    { name: 'E-Commerce Platform', company: 'Freelance', role: 'UI/UX Designer', team: 'Solo' },
+    { name: 'Internal Dashboard', company: 'CVS Health', role: 'Senior Designer', team: 'Enterprise Tools' },
+  ];
+
   const projects = [
     {
       title: "Shipping colleague facing design experience with CVS Health",
@@ -32,6 +44,25 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   return (
     <section id="projects" className={cn('py-16 md:py-24 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
+        {/* Tabs */}
+        <div className="flex gap-6 mb-12">
+          {(['recent', 'archives'] as Tab[]).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={cn(
+                'text-sm md:text-base font-medium pb-1 border-b-2 transition-colors',
+                activeTab === tab
+                  ? 'border-foreground text-foreground'
+                  : 'border-transparent text-muted-foreground hover:text-foreground'
+              )}
+            >
+              {tab === 'recent' ? 'Recent Work' : 'Archives'}
+            </button>
+          ))}
+        </div>
+
+        {activeTab === 'recent' ? (
         <div className="flex flex-col gap-24">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
@@ -63,6 +94,22 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
             </FadeIn>
           ))}
         </div>
+        ) : (
+        <div className="flex flex-col gap-4">
+          {archives.map((item, index) => (
+            <FadeIn key={item.name} delay={index * 50} duration={400} threshold={0.05}>
+              <div className="bg-white/60 rounded-2xl p-5 md:p-6">
+                <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
+                  <h3 className="font-serif font-medium text-base md:text-lg md:w-2/5">{item.name}</h3>
+                  <span className="text-sm text-muted-foreground md:w-1/5">{item.company}</span>
+                  <span className="text-sm text-muted-foreground md:w-1/5">{item.role}</span>
+                  <span className="text-sm text-muted-foreground md:w-1/5">{item.team}</span>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+        )}
       </div>
     </section>
   );
