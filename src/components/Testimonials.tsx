@@ -32,10 +32,11 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
   ];
 
   return (
-    <section id="testimonials" className={cn('py-16 md:py-24 bg-[#F8F6F1]', className)}>
+    <section id="testimonials" className={cn('py-12 md:py-20 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
-          <h2 className="text-2xl md:text-3xl text-center font-serif mb-12 text-foreground">
+          <p className="text-xs uppercase tracking-widest text-muted-foreground text-center mb-3">Kind Words</p>
+          <h2 className="text-2xl md:text-3xl text-center font-serif mb-8 text-foreground">
             Bringing people and ideas together at scale
           </h2>
         </FadeIn>
