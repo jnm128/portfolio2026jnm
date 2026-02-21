@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 		fontFamily: {
-			sans: ['Source Sans 3', 'system-ui', 'sans-serif'],
-			serif: ['Outfit', 'system-ui', 'sans-serif'],
+		sans: ['Inter', 'system-ui', 'sans-serif'],
+			serif: ['Inter Tight', 'system-ui', 'sans-serif'],
 		},
 			colors: {
 				border: 'hsl(var(--border))',
