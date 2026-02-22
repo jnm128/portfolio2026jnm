@@ -21,6 +21,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
     <section className={cn('pt-20 md:pt-24 pb-6 md:pb-8 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
+        <h1 className="text-2xl md:text-3xl font-serif text-foreground mb-4">Joanna Minott, <span className="text-muted-foreground">UX Designer</span></h1>
         <PopIn>
           <div className="relative rounded-3xl overflow-hidden h-[50vh] md:h-[70vh] lg:h-[80vh]">
             {heroImages.map((image, index) => (
