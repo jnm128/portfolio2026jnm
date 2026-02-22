@@ -36,19 +36,14 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             ))}
             <img src={heroImages[0]} alt="Hero placeholder" className="w-full h-full object-cover invisible" />
             {/* Bio overlay card */}
-            <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 bg-white/20 backdrop-blur-md rounded-2xl p-4 md:p-5 max-w-md">
-              <div className="flex items-start gap-3">
+            <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 bg-[#F8F6F1]/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 max-w-md">
+              <div className="flex items-center gap-3">
                 <div className="w-12 h-12 aspect-square rounded-full overflow-hidden flex-shrink-0">
                   <img alt="Joanna Minott" className="w-full h-full object-contain" src="/lovable-uploads/eb1b0dd0-17c0-45f1-9ebe-cc16e594b15b.png" />
                 </div>
-                <div className="flex flex-col gap-0">
-                  <p className="text-sm md:text-base text-white leading-relaxed font-serif">
-                    Product designer by day, community builder by night
-                  </p>
-                  <p className="text-sm md:text-base text-white leading-relaxed font-serif">
-                    I build software and digital experiences that feel more human.
-                  </p>
-                </div>
+                <p className="text-sm md:text-base text-foreground leading-relaxed font-serif">
+                  Product designer by day, community builder by night
+                </p>
               </div>
             </div>
             {/* Slide indicators */}
