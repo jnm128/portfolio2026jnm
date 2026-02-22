@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import BioBlurb from '@/components/BioBlurb';
 import Hero from '@/components/Hero';
 import IntroBlurb from '@/components/IntroBlurb';
 import Projects from '@/components/Projects';
@@ -32,7 +31,6 @@ const Index = () => {
   return (
     <main className="relative bg-[#F8F6F1]">
       <ScrollAnimations />
-      <BioBlurb />
       <Hero />
       <IntroBlurb />
       <Projects />
