@@ -21,7 +21,10 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
     <section className={cn('pt-20 md:pt-24 pb-6 md:pb-8 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
-        <h1 className="text-2xl md:text-3xl font-serif text-foreground mb-4">Joanna Minott, <span className="text-muted-foreground">UX Designer</span></h1>
+        <h1 className="text-2xl md:text-3xl font-serif text-foreground mb-2">Joanna Minott, <span className="text-muted-foreground">UX Designer</span></h1>
+        <p className="text-base md:text-lg text-muted-foreground font-serif mb-6 max-w-2xl">
+          Product designer by day, community builder by night. I build software and digital experiences that connect people and spark meaningful change.
+        </p>
         <PopIn>
           <div className="relative rounded-3xl overflow-hidden h-[50vh] md:h-[70vh] lg:h-[80vh]">
             {heroImages.map((image, index) => (
@@ -36,17 +39,6 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               />
             ))}
             <img src={heroImages[0]} alt="Hero placeholder" className="w-full h-full object-cover invisible" />
-            {/* Bio overlay card */}
-            <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 bg-[#F8F6F1]/80 backdrop-blur-sm rounded-2xl p-4 md:p-5 max-w-md">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 aspect-square rounded-full overflow-hidden flex-shrink-0">
-                  <img alt="Joanna Minott" className="w-full h-full object-contain" src="/lovable-uploads/eb1b0dd0-17c0-45f1-9ebe-cc16e594b15b.png" />
-                </div>
-                <p className="text-sm md:text-base text-foreground leading-relaxed font-serif">
-                  Product designer by day, community builder by night
-                </p>
-              </div>
-            </div>
             {/* Slide indicators */}
             <div className="absolute bottom-4 right-8 md:right-12 flex gap-2">
               {heroImages.map((_, index) => (
