@@ -38,6 +38,12 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       description: "Created the brand identity and mobile app experience for a nightlife platform, launching an MVP that reached 10k+ downloads in its first month.",
       image: "/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png",
       link: "/case-study/creative-studio",
+    },
+    {
+      title: "Modernizing medicine adherence from web to native mobile with Tappt Health",
+      description: "Led the migration of a web-based medication adherence platform to a native mobile experience for Synchronyx, improving patient engagement and daily active usage by 50%.",
+      image: "/lovable-uploads/tappt-health-project.png",
+      link: "/case-study/creative-studio",
     }
   ];
 
