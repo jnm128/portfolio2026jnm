@@ -22,7 +22,7 @@ const DarkSection: React.FC = () => {
     <section
       ref={sectionRef}
       className="transition-colors duration-1000"
-      style={{ backgroundColor: isVisible ? '#000' : '#F8F6F1' }}
+      style={{ backgroundColor: isVisible ? '#171717' : '#F8F6F1' }}
     >
       <Testimonials />
       <Community />
