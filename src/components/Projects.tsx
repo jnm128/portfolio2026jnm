@@ -48,7 +48,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         <div className="flex items-center justify-between mb-8">
           <p className="text-xs uppercase tracking-widest text-muted-foreground">Selected Work</p>
           <div className="flex items-center gap-3">
-            <span className="text-sm text-muted-foreground">Archives</span>
+            <span className="text-sm text-muted-foreground">{activeTab === 'archives' ? 'Recents' : 'Archives'}</span>
             <button
               onClick={() => setActiveTab(activeTab === 'recent' ? 'archives' : 'recent')}
               className="relative w-14 h-6 flex items-center cursor-pointer"
