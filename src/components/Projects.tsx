@@ -54,10 +54,10 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
               className="relative w-14 h-6 flex items-center cursor-pointer"
               aria-label="Toggle between recent and archives"
             >
-              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-foreground/20" />
+              <div className={cn("absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] transition-colors duration-400", activeTab === 'archives' ? 'bg-foreground' : 'bg-foreground/20')} />
               <div
                 className={cn(
-                  'absolute w-5 h-5 rounded-full border-2 border-foreground bg-background transition-all duration-400 ease-out',
+                  'absolute w-5 h-5 rounded-full bg-foreground transition-all duration-400 ease-out',
                   activeTab === 'archives'
                     ? 'left-[calc(100%-1.25rem)]'
                     : 'left-0'
