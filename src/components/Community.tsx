@@ -9,10 +9,7 @@ interface CommunityProps {
 
 const Community: React.FC<CommunityProps> = ({ className }) => {
   return (
-    <section
-      id="community"
-      className={cn('py-12 md:py-20 bg-black', className)}
-    >
+    <div id="community" className={cn('py-12 md:py-20', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn delay={100}>
           <p className="text-xs uppercase tracking-widest mb-4 text-white/60">Community</p>
@@ -45,7 +42,7 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
           </div>
         </FadeIn>
       </div>
-    </section>
+    </div>
   );
 };
 
