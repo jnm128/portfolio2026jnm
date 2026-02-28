@@ -111,15 +111,20 @@ const ScrollAnimations = () => {
       dividerObserver.observe(element);
     });
 
-    // Parallax effect for hero background
+    // Parallax effect for hero background (RAF-throttled)
+    let ticking = false;
     const handleScroll = () => {
-      const scrolled = window.pageYOffset;
-      const heroSection = document.querySelector('section:first-child');
-      const heroImage = heroSection?.querySelector('img');
-      
-      if (heroImage) {
-        heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
-      }
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const scrolled = window.pageYOffset;
+        const heroSection = document.querySelector('section:first-child');
+        const heroImage = heroSection?.querySelector('img');
+        if (heroImage) {
+          heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+        }
+        ticking = false;
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
