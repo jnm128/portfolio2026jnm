@@ -1,46 +1,52 @@
 
 
-## One-Time Dark Mode Fade at Kind Words, Then Stay Dark
+## Unified Dark Section with Single Fade-to-Black
 
 ### Concept
 
-The fade-to-black transition happens **once** when the Testimonials ("Kind Words") section scrolls into view. After that, everything below -- Community, Collab, and Footer -- is permanently dark with no fade effect. Cards in both Testimonials and Community use `#F8F6F1` as their background color.
+Wrap **Testimonials**, **Community**, and **Collab** inside a single parent wrapper that owns the scroll-triggered fade-to-black transition. Each child component becomes a simple content block within this wrapper -- no individual background colors or fade logic.
 
 ### Changes
 
-**1. `src/components/Testimonials.tsx`**
-- Keep the existing `IntersectionObserver` + `isVisible` fade logic (this is the only section that fades)
-- Change card backgrounds from `bg-white/10` to `bg-[#F8F6F1]` (cream color)
-- Card text (title, quote, author) should use dark text colors since cards are now light
-- Avatar circles and other card internals revert to dark-on-light styling within cards
-- Section-level text ("Kind Words" label, headline) remains white when visible
-- Navigation arrows remain white-themed
+**1. Create `src/components/DarkSection.tsx`** (new wrapper component)
+- Contains a single `<section>` with `IntersectionObserver` logic (threshold 0.15)
+- Background transitions from `#F8F6F1` to `#000` once on scroll
+- Renders `<Testimonials />`, `<Community />`, and `<Collab />` as children inside it
 
-**2. `src/components/Community.tsx`**
-- Remove the `IntersectionObserver` and `isVisible` logic entirely
-- Make the section permanently dark: `bg-black` with white text
-- Change card background from `bg-white/10` to `bg-[#F8F6F1]`
-- Card text uses dark colors (since cards are cream-colored)
-- Section label, heading, and "Learn More" link stay white (outside cards)
+**2. `src/components/Testimonials.tsx`**
+- Remove the `IntersectionObserver`, `useRef`, `useState`, and `useEffect` scroll logic
+- Remove the `<section>` wrapper -- render a `<div>` instead (since the parent handles the section)
+- Remove all background color / transition styles from the component
+- Keep text always in "dark mode" style (white labels/headlines, cream cards)
+- Cards stay `bg-[#F8F6F1]` with dark text
 
-**3. `src/components/Collab.tsx`**
-- Already dark-themed (`bg-surface-6 text-surface-1`) -- no changes needed, it naturally continues the dark flow
+**3. `src/components/Community.tsx`**
+- Remove `bg-black` from the section -- change to a `<div>` with no background
+- Keep text in white/dark-mode style (labels, headings)
+- Card stays `bg-[#F8F6F1]` with dark text
 
-**4. `src/components/Footer.tsx`**
-- Already dark-themed (`bg-surface-6 text-surface-1`) -- no changes needed
+**4. `src/components/Collab.tsx`**
+- Remove `bg-surface-6 text-surface-1` -- change to a `<div>` with no background
+- Update text to use white colors directly (`text-white`, `text-white/70`)
+- Update button to `bg-white text-black` instead of `bg-surface-1 text-surface-6`
 
-### Visual Flow Summary
+**5. `src/pages/Index.tsx`**
+- Replace the three separate `<Testimonials />`, `<Community />`, `<Collab />` with a single `<DarkSection />` that renders all three inside it
+
+### Visual Flow
 
 ```text
-Hero / IntroBlurb / Projects  -->  #F8F6F1 (cream, light mode)
-                                      |
-                              [scroll fade transition]
-                                      |
-Kind Words (Testimonials)     -->  fades to #000 (one-time)
-Community                     -->  always #000
-Collab                        -->  always dark (bg-surface-6)
-Footer                        -->  always dark (bg-surface-6)
+Hero / IntroBlurb / Projects   -->  #F8F6F1 (cream)
+                                       |
+                               [single fade transition]
+                                       |
+DarkSection wrapper            -->  fades to #000
+  - Testimonials (Kind Words)
+  - Community
+  - Collab (Interested in collaborating?)
+                                       |
+Footer                         -->  bg-black (stays dark)
 ```
 
-Cards in both Testimonials and Community sections will be `#F8F6F1` with dark text, providing contrast against the black section backgrounds.
+The fade happens once when the unified dark section enters the viewport, and all three sub-sections live inside it on a shared black background.
 
