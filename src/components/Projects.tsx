@@ -51,15 +51,16 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
             <span className="text-sm text-muted-foreground">Archives</span>
             <button
               onClick={() => setActiveTab(activeTab === 'recent' ? 'archives' : 'recent')}
-              className={cn(
-                'relative w-11 h-6 rounded-full transition-colors',
-                activeTab === 'archives' ? 'bg-foreground' : 'bg-muted-foreground/30'
-              )}
+              className="relative w-14 h-6 flex items-center cursor-pointer"
+              aria-label="Toggle between recent and archives"
             >
-              <span
+              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-foreground/20" />
+              <div
                 className={cn(
-                  'absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white transition-transform',
-                  activeTab === 'archives' && 'translate-x-5'
+                  'absolute w-5 h-5 rounded-full border-2 border-foreground bg-background transition-all duration-400 ease-out',
+                  activeTab === 'archives'
+                    ? 'left-[calc(100%-1.25rem)]'
+                    : 'left-0'
                 )}
               />
             </button>
