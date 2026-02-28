@@ -46,16 +46,12 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         {/* Section label */}
         <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Selected Work</p>
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl md:text-4xl font-serif font-medium">
-            {activeTab === 'recent' ? 'Recent Work' : 'Archives'}
-          </h2>
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-end mb-8">
             <span className="text-sm text-muted-foreground">Archives</span>
             <button
               onClick={() => setActiveTab(activeTab === 'recent' ? 'archives' : 'recent')}
               className={cn(
-                'relative w-11 h-6 rounded-full transition-colors',
+                'relative w-11 h-6 rounded-full transition-colors ml-3',
                 activeTab === 'archives' ? 'bg-foreground' : 'bg-muted-foreground/30'
               )}
             >
@@ -66,7 +62,6 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                 )}
               />
             </button>
-          </div>
         </div>
 
         {activeTab === 'recent' ? (
