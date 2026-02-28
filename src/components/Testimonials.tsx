@@ -100,18 +100,18 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
         <div className="grid md:grid-cols-3 gap-6">
           {visibleTestimonials.map((testimonial, index) => (
             <FadeIn key={currentIndex + index} delay={index * 80}>
-              <div className={cn("rounded-2xl p-6 space-y-4 h-full transition-colors duration-1000", isVisible ? "bg-white/10" : "bg-white/60")}>
-                <h3 className={cn("text-base font-serif font-medium transition-colors duration-1000", isVisible ? "text-white" : "text-foreground")}>{testimonial.title}</h3>
-                <p className={cn("text-sm leading-relaxed transition-colors duration-1000", isVisible ? "text-white/70" : "text-muted-foreground")}>
+              <div className="rounded-2xl p-6 space-y-4 h-full bg-[#F8F6F1]">
+                <h3 className="text-base font-serif font-medium text-foreground">{testimonial.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   "{testimonial.quote}"
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className={cn("w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-1000", isVisible ? "bg-white" : "bg-foreground")}>
-                    <span className={cn("text-sm font-medium transition-colors duration-1000", isVisible ? "text-black" : "text-background")}>{testimonial.initials}</span>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-foreground">
+                    <span className="text-sm font-medium text-background">{testimonial.initials}</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className={cn("text-sm font-medium transition-colors duration-1000", isVisible ? "text-white" : "text-foreground")}>{testimonial.author}</span>
-                    <span className={cn("text-xs transition-colors duration-1000", isVisible ? "text-white/50" : "text-muted-foreground")}>{testimonial.role}, {testimonial.company}</span>
+                    <span className="text-sm font-medium text-foreground">{testimonial.author}</span>
+                    <span className="text-xs text-muted-foreground">{testimonial.role}, {testimonial.company}</span>
                   </div>
                 </div>
               </div>
