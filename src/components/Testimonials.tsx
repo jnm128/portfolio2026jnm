@@ -18,11 +18,12 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [animKey, setAnimKey] = useState(0);
   const cardsPerView = 3;
   const maxIndex = Math.max(0, testimonials.length - cardsPerView);
 
-  const prev = () => setCurrentIndex((i) => Math.max(0, i - 1));
-  const next = () => setCurrentIndex((i) => Math.min(maxIndex, i + 1));
+  const prev = () => { setCurrentIndex((i) => Math.max(0, i - 1)); setAnimKey((k) => k + 1); };
+  const next = () => { setCurrentIndex((i) => Math.min(maxIndex, i + 1)); setAnimKey((k) => k + 1); };
 
   const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + cardsPerView);
 
@@ -38,7 +39,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
 
         <div className="grid md:grid-cols-3 gap-6">
           {visibleTestimonials.map((testimonial, index) => (
-            <FadeIn key={currentIndex + index} delay={index * 80}>
+            <FadeIn key={`${animKey}-${index}`} delay={index * 150} duration={500}>
               <div className="rounded-2xl p-6 space-y-4 h-full bg-[#F8F6F1]">
                 <h3 className="text-base font-serif font-medium text-foreground">{testimonial.title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">"{testimonial.quote}"</p>
