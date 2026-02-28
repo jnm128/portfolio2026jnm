@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import Hero from '@/components/Hero';
 import IntroBlurb from '@/components/IntroBlurb';
 import Projects from '@/components/Projects';
-import Testimonials from '@/components/Testimonials';
-import Community from '@/components/Community';
-import Collab from '@/components/Collab';
+import DarkSection from '@/components/DarkSection';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 
@@ -34,9 +32,7 @@ const Index = () => {
       <Hero />
       <IntroBlurb />
       <Projects />
-      <Testimonials />
-      <Community />
-      <Collab />
+      <DarkSection />
       <Footer />
     </main>
   );
