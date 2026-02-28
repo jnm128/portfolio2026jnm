@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -8,6 +8,20 @@ interface TestimonialsProps {
 }
 
 const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const testimonials = [
     {
       title: "Transforming complex into elegant",
@@ -69,11 +83,16 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
   const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + cardsPerView);
 
   return (
-    <section id="testimonials" className={cn('py-12 md:py-20 bg-[#F8F6F1]', className)}>
+    <section
+      ref={sectionRef}
+      id="testimonials"
+      className={cn('py-12 md:py-20 transition-colors duration-1000', className)}
+      style={{ backgroundColor: isVisible ? '#000' : '#F8F6F1' }}
+    >
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
-          <p className="text-xs uppercase tracking-widest text-muted-foreground text-center mb-3">Kind Words</p>
-          <h2 className="text-2xl md:text-3xl text-center font-serif mb-8 text-foreground">
+          <p className={cn("text-xs uppercase tracking-widest text-center mb-3 transition-colors duration-1000", isVisible ? "text-white/60" : "text-muted-foreground")}>Kind Words</p>
+          <h2 className={cn("text-2xl md:text-3xl text-center font-serif mb-8 transition-colors duration-1000", isVisible ? "text-white" : "text-foreground")}>
             Bringing people and ideas together at scale
           </h2>
         </FadeIn>
@@ -81,18 +100,18 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
         <div className="grid md:grid-cols-3 gap-6">
           {visibleTestimonials.map((testimonial, index) => (
             <FadeIn key={currentIndex + index} delay={index * 80}>
-              <div className="bg-white/60 rounded-2xl p-6 space-y-4 h-full">
-                <h3 className="text-base font-serif font-medium text-foreground">{testimonial.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
+              <div className={cn("rounded-2xl p-6 space-y-4 h-full transition-colors duration-1000", isVisible ? "bg-white/10" : "bg-white/60")}>
+                <h3 className={cn("text-base font-serif font-medium transition-colors duration-1000", isVisible ? "text-white" : "text-foreground")}>{testimonial.title}</h3>
+                <p className={cn("text-sm leading-relaxed transition-colors duration-1000", isVisible ? "text-white/70" : "text-muted-foreground")}>
                   "{testimonial.quote}"
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-foreground flex items-center justify-center flex-shrink-0">
-                    <span className="text-background text-sm font-medium">{testimonial.initials}</span>
+                  <div className={cn("w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-1000", isVisible ? "bg-white" : "bg-foreground")}>
+                    <span className={cn("text-sm font-medium transition-colors duration-1000", isVisible ? "text-black" : "text-background")}>{testimonial.initials}</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-sm font-medium">{testimonial.author}</span>
-                    <span className="text-xs text-muted-foreground">{testimonial.role}, {testimonial.company}</span>
+                    <span className={cn("text-sm font-medium transition-colors duration-1000", isVisible ? "text-white" : "text-foreground")}>{testimonial.author}</span>
+                    <span className={cn("text-xs transition-colors duration-1000", isVisible ? "text-white/50" : "text-muted-foreground")}>{testimonial.role}, {testimonial.company}</span>
                   </div>
                 </div>
               </div>
@@ -104,14 +123,22 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
           <button
             onClick={prev}
             disabled={currentIndex === 0}
-            className="w-9 h-9 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-foreground hover:text-background transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-foreground"
+            className={cn("w-9 h-9 rounded-full border flex items-center justify-center transition-colors duration-1000 disabled:opacity-30",
+              isVisible
+                ? "border-white/30 text-white hover:bg-white hover:text-black"
+                : "border-foreground/20 hover:bg-foreground hover:text-background"
+            )}
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
             onClick={next}
             disabled={currentIndex >= maxIndex}
-            className="w-9 h-9 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-foreground hover:text-background transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-foreground"
+            className={cn("w-9 h-9 rounded-full border flex items-center justify-center transition-colors duration-1000 disabled:opacity-30",
+              isVisible
+                ? "border-white/30 text-white hover:bg-white hover:text-black"
+                : "border-foreground/20 hover:bg-foreground hover:text-background"
+            )}
           >
             <ChevronRight className="w-4 h-4" />
           </button>
