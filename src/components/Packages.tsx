@@ -124,26 +124,22 @@ const Packages: React.FC<PackagesProps> = ({ className }) => {
               One-Time Projects
             </span>
             
-            {/* Custom Linear Toggle */}
-            <div 
-              className="relative w-16 h-6 bg-gray-200 cursor-pointer transition-all duration-300"
+            {/* Custom Line & Circle Toggle */}
+            <button 
+              className="relative w-14 h-6 flex items-center cursor-pointer"
               onClick={() => setShowRetainer(!showRetainer)}
+              aria-label="Toggle between project and retainer packages"
             >
+              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-foreground/20" />
               <div 
                 className={cn(
-                  "absolute inset-0 transition-colors duration-300",
-                  showRetainer && "bg-orangery-500"
-                )}
-              />
-              <div 
-                className={cn(
-                  "absolute top-1 w-4 h-4 bg-white border-2 rounded-full shadow-sm transition-all duration-300 z-10",
+                  "absolute w-5 h-5 rounded-full border-2 border-foreground bg-background transition-all duration-400 ease-out",
                   showRetainer 
-                    ? "left-10 border-orangery-500" 
-                    : "left-1 border-gray-400"
+                    ? "left-[calc(100%-1.25rem)]" 
+                    : "left-0"
                 )}
               />
-            </div>
+            </button>
 
             <span className={cn("text-sm font-medium transition-colors", showRetainer && "text-orangery-600")}>
               Ongoing Retainer
