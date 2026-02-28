@@ -2,17 +2,28 @@
 
 ## Summary
 
-Add a two-sentence headline/subheading below the "Joanna Minott, UX Designer" title, and remove the frosted overlay card from the hero image.
+Restyle the Projects section header to match the Community section's left-aligned pattern, instead of the current centered layout. The "Selected Work" eyebrow label and "Recent Work" / "Archives" title will be left-aligned, with the archives toggle moved to the right on the same row as the eyebrow or title.
 
 ---
 
-### Changes
+### What Changes
 
-**File: `src/components/Hero.tsx`**
+**Current**: "Selected Work" label is centered, "Recent Work" title is centered with spacer divs, and the archives toggle sits to the far right.
 
-1. Add a two-sentence subtitle paragraph below the h1, using the existing bio text ("Product designer by day, community builder by night") plus the second line that was previously removed ("I build software and digital experiences that connect people and spark meaningful change."). Style it as `text-base md:text-lg text-muted-foreground font-serif mb-6 max-w-2xl`.
+**After**: The layout matches Community's style -- left-aligned eyebrow label on top, left-aligned title below, with the archives toggle still accessible on the right side of the title row.
 
-2. Remove the entire overlay card div (the `absolute bottom-6 left-6` container with profile image and text).
+---
 
-No new files or dependencies needed.
+### Technical Details
+
+**File: `src/components/Projects.tsx`**
+
+1. Change the "Selected Work" label from `text-center mb-3` to `mb-4` (left-aligned, matching Community's eyebrow style)
+
+2. Simplify the header row: remove the `flex-1` spacer div, left-align the h2 (remove `text-center`), and keep the archives toggle on the right using `justify-between`:
+   - `<div className="flex items-center justify-between mb-8">`
+   - `<h2>` directly (no spacer before it), left-aligned
+   - Archives toggle stays in its `flex items-center gap-3` wrapper on the right
+
+No new files or dependencies.
 
