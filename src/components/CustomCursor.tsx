@@ -29,37 +29,21 @@ const CustomCursor = () => {
     window.addEventListener('mousedown', handleMouseDown);
     window.addEventListener('mouseup', handleMouseUp);
 
-    // Add hover detection for different element types
-    const addHoverListeners = () => {
-      // Interactive elements (buttons, links)
-      const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select');
-      interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => setHoverType('interactive'));
-        el.addEventListener('mouseleave', () => setHoverType('default'));
-      });
-
-      // Image elements
-      const imageElements = document.querySelectorAll('img, [data-cursor="image"], .cursor-image');
-      imageElements.forEach(el => {
-        el.addEventListener('mouseenter', () => setHoverType('image'));
-        el.addEventListener('mouseleave', () => setHoverType('default'));
-      });
-
-      // Text elements (paragraphs, headings, spans with substantial text)
-      const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, li, blockquote, [data-cursor="text"]');
-      textElements.forEach(el => {
-        // Only add to elements that aren't inside interactive elements
-        if (!el.closest('a, button, [role="button"]')) {
-          el.addEventListener('mouseenter', () => setHoverType('text'));
-          el.addEventListener('mouseleave', () => setHoverType('default'));
-        }
-      });
+    // Event delegation - single listener instead of per-element
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest('a, button, [role="button"], input, textarea, select')) {
+        setHoverType('interactive');
+      } else if (target.closest('img, [data-cursor="image"], .cursor-image')) {
+        setHoverType('image');
+      } else if (target.closest('p, h1, h2, h3, h4, h5, h6, span, li, blockquote, [data-cursor="text"]')) {
+        setHoverType('text');
+      } else {
+        setHoverType('default');
+      }
     };
 
-    // Initial setup and re-run on DOM changes
-    addHoverListeners();
-    const observer = new MutationObserver(addHoverListeners);
-    observer.observe(document.body, { childList: true, subtree: true });
+    document.addEventListener('mouseover', handleMouseOver);
 
     return () => {
       window.removeEventListener('mousemove', updatePosition);
@@ -67,7 +51,7 @@ const CustomCursor = () => {
       document.removeEventListener('mouseleave', handleMouseLeave);
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
-      observer.disconnect();
+      document.removeEventListener('mouseover', handleMouseOver);
     };
   }, [updatePosition]);
 
