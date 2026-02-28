@@ -22,9 +22,17 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     <section className={cn('pt-20 md:pt-24 pb-6 md:pb-8 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <h1 className="text-2xl md:text-3xl font-serif text-foreground mb-2">Joanna Minott, <span className="text-muted-foreground">UX Designer</span></h1>
-        <p className="text-base md:text-lg text-muted-foreground font-serif mb-6 max-w-2xl">
+        <p className="text-base md:text-lg text-muted-foreground font-serif mb-4 max-w-2xl">
           Product designer by day, community builder by night. I build software and digital experiences that connect people and spark meaningful change.
         </p>
+        <a
+          href="/joanna-minott-resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity mb-6"
+        >
+          View Resume →
+        </a>
         <PopIn>
           <div className="relative rounded-3xl overflow-hidden h-[50vh] md:h-[70vh] lg:h-[80vh]">
             {heroImages.map((image, index) => (
