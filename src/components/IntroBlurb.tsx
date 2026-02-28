@@ -35,16 +35,6 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
                 ))}
               </div>
             </div>
-            <div className="flex justify-center mt-8">
-              <a
-                href="/joanna-minott-resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium text-accent-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
-              >
-                View Resume →
-              </a>
-            </div>
           </div>
         </FadeIn>
       </div>
