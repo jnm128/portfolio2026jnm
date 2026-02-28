@@ -71,17 +71,17 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         <div className="flex flex-col gap-16">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
-              <div className="bg-white/60 rounded-2xl p-6 md:p-8">
+              <div className="bg-white/60 rounded-2xl p-8 md:p-12">
                 <div className={cn(
-                  "flex flex-col gap-6 md:gap-12",
+                  "flex flex-col gap-8 md:gap-16",
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 )}>
-                  <Link to={project.link} className="md:w-3/5">
+                  <Link to={project.link} className="md:w-2/3">
                     <div className="rounded-xl overflow-hidden">
                       <img src={project.image} alt={project.title} className="w-full aspect-[16/9] object-cover" />
                     </div>
                   </Link>
-                  <div className="md:w-2/5 flex flex-col justify-center">
+                  <div className="md:w-1/3 flex flex-col justify-center">
                     <Link to={project.link}>
                       <h3 className="text-lg md:text-xl font-serif font-medium leading-relaxed mb-4 hover:text-muted-foreground transition-colors">
                         {project.title}
