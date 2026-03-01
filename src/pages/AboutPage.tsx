@@ -1,15 +1,15 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
 import { ExternalLink, Play, Pause, BookOpen, Music } from 'lucide-react';
 
 const playlist = [
-  { title: "Clair de Lune", artist: "Debussy", src: "" },
-  { title: "Golden Hour", artist: "JVKE", src: "" },
-  { title: "Electric Feel", artist: "MGMT", src: "" },
-  { title: "Sunset Lover", artist: "Petit Biscuit", src: "" },
-  { title: "Breathe", artist: "Télépopmusik", src: "" },
+  { title: "Clair de Lune", artist: "Debussy", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
+  { title: "Golden Hour", artist: "JVKE", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
+  { title: "Electric Feel", artist: "MGMT", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" },
+  { title: "Sunset Lover", artist: "Petit Biscuit", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" },
+  { title: "Breathe", artist: "Télépopmusik", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" },
 ];
 
 const currentRead = {
@@ -19,22 +19,47 @@ const currentRead = {
   note: "A practical guide to designing beautiful interfaces — currently inspiring how I approach layout, spacing, and visual hierarchy in my daily work.",
 };
 
+const CIRCLE_RADIUS = 14;
+const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * CIRCLE_RADIUS;
+
 const AboutPage = () => {
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+  const [audioProgress, setAudioProgress] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const togglePlay = (index: number) => {
+  const togglePlay = useCallback((index: number) => {
     if (playingIndex === index) {
       audioRef.current?.pause();
       setPlayingIndex(null);
-    } else {
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-      // Placeholder — no actual audio src yet
-      setPlayingIndex(index);
+      setAudioProgress(0);
+      return;
     }
-  };
+
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.removeEventListener('timeupdate', () => {});
+    }
+
+    const audio = new Audio(playlist[index].src);
+    audioRef.current = audio;
+    setPlayingIndex(index);
+    setAudioProgress(0);
+
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration) {
+        setAudioProgress((audio.currentTime / audio.duration) * 100);
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      setPlayingIndex(null);
+      setAudioProgress(0);
+    });
+
+    audio.play();
+  }, [playingIndex]);
+
+  const dashOffset = CIRCLE_CIRCUMFERENCE - (audioProgress / 100) * CIRCLE_CIRCUMFERENCE;
 
   return (
     <main className="relative bg-[#F8F6F1]">
@@ -42,12 +67,6 @@ const AboutPage = () => {
       <div className="pt-28 md:pt-36">
         {/* Hero / Intro */}
         <section className="container mx-auto px-6 md:px-10 max-w-[1600px] pb-16 md:pb-24">
-          <FadeIn>
-            <h1 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
-              About
-            </h1>
-          </FadeIn>
-
           <FadeIn delay={200}>
             <div className="max-w-5xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
@@ -64,6 +83,9 @@ const AboutPage = () => {
 
                 {/* Bio Text */}
                 <div className="flex flex-col justify-center">
+                  <h1 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
+                    About
+                  </h1>
                   <p className="text-base md:text-xl text-foreground leading-relaxed mb-6 font-serif">
                     Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences.
                   </p>
@@ -119,14 +141,37 @@ const AboutPage = () => {
                       <div className="flex items-center gap-3">
                         <button
                           onClick={() => togglePlay(i)}
-                          className="w-8 h-8 rounded-full border border-border/60 flex items-center justify-center 
-                                     hover:bg-foreground hover:text-background transition-all duration-200 shrink-0"
+                          className="relative w-9 h-9 flex items-center justify-center shrink-0"
                           aria-label={playingIndex === i ? `Pause ${track.title}` : `Play ${track.title}`}
                         >
+                          <svg width="36" height="36" className="absolute inset-0">
+                            {/* Background circle */}
+                            <circle
+                              cx="18" cy="18" r={CIRCLE_RADIUS}
+                              fill="none"
+                              stroke="hsl(var(--border))"
+                              strokeWidth="2"
+                              opacity={0.6}
+                            />
+                            {/* Progress arc */}
+                            {playingIndex === i && (
+                              <circle
+                                cx="18" cy="18" r={CIRCLE_RADIUS}
+                                fill="none"
+                                stroke="hsl(var(--foreground))"
+                                strokeWidth="2"
+                                strokeDasharray={CIRCLE_CIRCUMFERENCE}
+                                strokeDashoffset={dashOffset}
+                                strokeLinecap="round"
+                                transform="rotate(-90 18 18)"
+                                className="transition-[stroke-dashoffset] duration-200"
+                              />
+                            )}
+                          </svg>
                           {playingIndex === i ? (
-                            <Pause className="w-3.5 h-3.5" />
+                            <Pause className="w-3.5 h-3.5 relative z-10" />
                           ) : (
-                            <Play className="w-3.5 h-3.5 ml-0.5" />
+                            <Play className="w-3.5 h-3.5 ml-0.5 relative z-10" />
                           )}
                         </button>
                         <span className="text-base font-serif text-foreground">{track.title}</span>
