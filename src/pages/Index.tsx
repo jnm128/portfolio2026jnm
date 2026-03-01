@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Hero from '@/components/Hero';
 import IntroBlurb from '@/components/IntroBlurb';
 import Projects from '@/components/Projects';
+import AboutSection from '@/components/AboutSection';
 import DarkSection from '@/components/DarkSection';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
@@ -32,6 +33,7 @@ const Index = () => {
       <Hero />
       <IntroBlurb />
       <Projects />
+      <AboutSection />
       <DarkSection />
       <Footer />
     </main>
