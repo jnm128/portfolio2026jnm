@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback } from 'react';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
-import { ExternalLink, Play, Pause, BookOpen, Music } from 'lucide-react';
+import { ExternalLink, Play, Pause, BookOpen, Music, PenLine } from 'lucide-react';
 
 const playlist = [
   { title: "Clair de Lune", artist: "Debussy", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
@@ -18,6 +18,27 @@ const currentRead = {
   cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546225037i/43190966.jpg",
   note: "A practical guide to designing beautiful interfaces — currently inspiring how I approach layout, spacing, and visual hierarchy in my daily work.",
 };
+
+const linkedinPosts = [
+  {
+    category: "UX Strategy",
+    title: "Why simplicity is the hardest design problem to solve",
+    excerpt: "Most teams confuse simplicity with removing features. Real simplicity means making complex workflows feel effortless.",
+    url: "https://www.linkedin.com/in/joannaminott",
+  },
+  {
+    category: "Design Leadership",
+    title: "The gap between user research and product decisions",
+    excerpt: "We collect insights but rarely close the loop. Here's a framework I use to turn research into actionable design direction.",
+    url: "https://www.linkedin.com/in/joannaminott",
+  },
+  {
+    category: "Healthcare UX",
+    title: "Designing for trust in digital health experiences",
+    excerpt: "In healthcare, every interaction carries emotional weight. How we handle uncertainty in UI can make or break patient confidence.",
+    url: "https://www.linkedin.com/in/joannaminott",
+  },
+];
 
 const CIRCLE_RADIUS = 14;
 const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * CIRCLE_RADIUS;
@@ -120,6 +141,41 @@ const AboutPage = () => {
               </div>
             </div>
           </FadeIn>
+        </section>
+
+        {/* Writing / LinkedIn Posts */}
+        <section className="container mx-auto px-6 md:px-10 max-w-[1600px] pb-16 md:pb-24">
+          <div className="max-w-5xl mx-auto">
+            <FadeIn delay={250}>
+              <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6 flex items-center gap-2">
+                <PenLine className="w-4 h-4" />
+                Writing
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {linkedinPosts.map((post, i) => (
+                  <div
+                    key={i}
+                    className="rounded-2xl border border-border/60 bg-background/40 p-6 flex flex-col justify-between"
+                  >
+                    <div>
+                      <span className="text-xs uppercase tracking-widest text-muted-foreground">{post.category}</span>
+                      <p className="text-base font-serif text-foreground mt-2 mb-3 leading-snug">{post.title}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">{post.excerpt}</p>
+                    </div>
+                    <a
+                      href={post.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm text-foreground mt-4 hover:opacity-70 transition-opacity"
+                    >
+                      Read on LinkedIn
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
         </section>
 
         {/* Playlist & Current Read — Stacked */}
