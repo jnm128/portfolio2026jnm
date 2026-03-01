@@ -56,12 +56,10 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           Product designer by day, community builder by night. I build software and digital experiences that connect people and spark meaningful change.
         </p>
         <a
-          href="/joanna-minott-resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/work-experience"
           className="inline-flex items-center gap-2 bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity mb-6"
         >
-          View Resume →
+          View Work Experience →
         </a>
         <PopIn>
           <div ref={imageWrapperRef} className="relative rounded-3xl overflow-hidden h-[50vh] md:h-[70vh] lg:h-[80vh]">
