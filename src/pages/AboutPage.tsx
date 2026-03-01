@@ -1,24 +1,41 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
-import { Circle, Music, BookOpen, ExternalLink } from 'lucide-react';
+import { ExternalLink, Play, Pause, BookOpen, Music } from 'lucide-react';
 
 const playlist = [
-  { title: "Clair de Lune", artist: "Debussy" },
-  { title: "Golden Hour", artist: "JVKE" },
-  { title: "Electric Feel", artist: "MGMT" },
-  { title: "Sunset Lover", artist: "Petit Biscuit" },
-  { title: "Breathe", artist: "Télépopmusik" },
+  { title: "Clair de Lune", artist: "Debussy", src: "" },
+  { title: "Golden Hour", artist: "JVKE", src: "" },
+  { title: "Electric Feel", artist: "MGMT", src: "" },
+  { title: "Sunset Lover", artist: "Petit Biscuit", src: "" },
+  { title: "Breathe", artist: "Télépopmusik", src: "" },
 ];
 
 const currentRead = {
   title: "Refactoring UI",
   author: "Adam Wathan & Steve Schoger",
+  cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546225037i/43190966.jpg",
   note: "A practical guide to designing beautiful interfaces — currently inspiring how I approach layout, spacing, and visual hierarchy in my daily work.",
 };
 
 const AboutPage = () => {
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const togglePlay = (index: number) => {
+    if (playingIndex === index) {
+      audioRef.current?.pause();
+      setPlayingIndex(null);
+    } else {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+      // Placeholder — no actual audio src yet
+      setPlayingIndex(index);
+    }
+  };
+
   return (
     <main className="relative bg-[#F8F6F1]">
       <ScrollAnimations />
@@ -26,11 +43,7 @@ const AboutPage = () => {
         {/* Hero / Intro */}
         <section className="container mx-auto px-6 md:px-10 max-w-[1600px] pb-16 md:pb-24">
           <FadeIn>
-            <h1 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
-              <span className="relative flex items-center justify-center w-3 h-3">
-                <Circle className="w-3 h-3 fill-current relative z-10" />
-                <span className="absolute inset-0 rounded-full bg-current animate-pulse-ring" />
-              </span>
+            <h1 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
               About
             </h1>
           </FadeIn>
@@ -87,9 +100,9 @@ const AboutPage = () => {
           </FadeIn>
         </section>
 
-        {/* Playlist & Current Read */}
+        {/* Playlist & Current Read — Stacked */}
         <section className="container mx-auto px-6 md:px-10 max-w-[1600px] pb-20 md:pb-28">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
+          <div className="max-w-5xl mx-auto space-y-16">
             {/* Work Playlist */}
             <FadeIn delay={300}>
               <div>
@@ -101,9 +114,23 @@ const AboutPage = () => {
                   {playlist.map((track, i) => (
                     <li
                       key={i}
-                      className="flex items-baseline justify-between py-3 border-b border-border/60"
+                      className="flex items-center justify-between py-3.5 border-b border-border/60 group"
                     >
-                      <span className="text-base font-serif text-foreground">{track.title}</span>
+                      <div className="flex items-center gap-3">
+                        <button
+                          onClick={() => togglePlay(i)}
+                          className="w-8 h-8 rounded-full border border-border/60 flex items-center justify-center 
+                                     hover:bg-foreground hover:text-background transition-all duration-200 shrink-0"
+                          aria-label={playingIndex === i ? `Pause ${track.title}` : `Play ${track.title}`}
+                        >
+                          {playingIndex === i ? (
+                            <Pause className="w-3.5 h-3.5" />
+                          ) : (
+                            <Play className="w-3.5 h-3.5 ml-0.5" />
+                          )}
+                        </button>
+                        <span className="text-base font-serif text-foreground">{track.title}</span>
+                      </div>
                       <span className="text-sm text-muted-foreground ml-4 shrink-0">{track.artist}</span>
                     </li>
                   ))}
@@ -118,16 +145,25 @@ const AboutPage = () => {
                   <BookOpen className="w-4 h-4" />
                   Current Read
                 </h2>
-                <div className="rounded-2xl border border-border/60 p-6 bg-background/40">
-                  <p className="text-lg md:text-xl font-serif text-foreground mb-1">
-                    {currentRead.title}
-                  </p>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    by {currentRead.author}
-                  </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed font-serif">
-                    {currentRead.note}
-                  </p>
+                <div className="rounded-2xl border border-border/60 p-6 bg-background/40 flex gap-6 items-start">
+                  <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src={currentRead.cover}
+                      alt={currentRead.title}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-lg md:text-xl font-serif text-foreground mb-1">
+                      {currentRead.title}
+                    </p>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      by {currentRead.author}
+                    </p>
+                    <p className="text-sm text-muted-foreground leading-relaxed font-serif">
+                      {currentRead.note}
+                    </p>
+                  </div>
                 </div>
               </div>
             </FadeIn>
