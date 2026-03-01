@@ -1,32 +1,35 @@
 
 
-## Why the page is lagging
+## Three Changes
 
-Two components are causing significant performance issues:
-
-### 1. CustomCursor - Memory leak from MutationObserver
-The `MutationObserver` on line 61 watches the entire DOM (`childList: true, subtree: true`) and re-runs `addHoverListeners()` on every single DOM mutation. Each call adds **new** event listeners to every `a`, `button`, `p`, `h1`, `span`, `img`, etc. without removing the old ones. This causes hundreds of duplicate listeners to pile up, triggering excessive React re-renders (`setHoverType` called many times per mouse movement).
-
-**Fix:** Use event delegation instead -- attach a single `mouseover` listener on `document.body` and check `e.target` to determine hover type. Remove the MutationObserver entirely.
-
-### 2. ScrollAnimations - Unthrottled parallax scroll handler
-The `handleScroll` function runs on every scroll event and directly sets `style.transform` on the hero image. This causes layout recalculations on every frame during scrolling.
-
-**Fix:** Wrap the scroll handler in `requestAnimationFrame` to limit it to once per frame, preventing redundant style recalculations.
-
----
-
-### Technical changes
-
-**File: `src/components/CustomCursor.tsx`**
-- Remove `addHoverListeners()` function and the `MutationObserver`
-- Replace with a single `mouseover` event listener on `document` using event delegation
-- Check `e.target.closest()` to determine if hovering over interactive, image, or text elements
-- This eliminates all duplicate listeners and the expensive DOM-wide observer
+### 1. Fix hero image shifting on scroll
+The parallax effect in `ScrollAnimations.tsx` (line 124) applies `translateY(scrolled * 0.3)` to the hero image, causing it to visibly shift downward as you scroll. This will be **removed entirely** so the hero image stays fixed in place.
 
 **File: `src/components/animations/ScrollAnimations.tsx`**
-- Wrap the `handleScroll` callback in `requestAnimationFrame` with a guard flag to skip redundant frames
-- This limits style updates to ~60fps max instead of potentially hundreds per second
+- Remove the entire hero parallax scroll handler block (lines 114-130) and the corresponding `removeEventListener` in the cleanup
 
-These two changes will eliminate the lag without any visual difference.
+### 2. Hero image expands to fill margins on scroll
+As the user scrolls down, the hero image container will grow from its current padded/rounded state to full-width with no border-radius.
+
+**File: `src/components/Hero.tsx`**
+- Add a `useRef` on the image container div
+- Add a scroll listener that maps `scrollY` (0-300px) to:
+  - Horizontal padding: 24px (mobile) / 40px (desktop) down to 0
+  - Border-radius: 24px down to 0
+- Apply via direct DOM style manipulation (no re-renders) with `requestAnimationFrame` throttling
+
+### 3. New "About" section before Testimonials
+A new component inserted between Projects and DarkSection.
+
+**File: `src/components/AboutSection.tsx`** (new)
+- Headline: "Design, Tech & Intention"
+- Body paragraph about a research-rooted process
+- Two-column grid:
+  - **Services**: UX/UI Design, Web Design, Brand Identity, UX Audits
+  - **Skills**: Figma, Prototyping, User Research, Design Systems, HTML/CSS, React
+- Cream background (#F8F6F1) matching the rest of the light sections
+- Uses existing `FadeIn` animation wrapper
+
+**File: `src/pages/Index.tsx`**
+- Import and add `<AboutSection />` between `<Projects />` and `<DarkSection />`
 
