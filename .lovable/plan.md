@@ -1,32 +1,26 @@
 
 
-## About Page Updates
+## Add Writing / LinkedIn Posts Section
 
-### 1. Circular progress indicator inside the play/pause button
-Replace the current flat play/pause button with an SVG circle progress ring. When a track is playing, an SVG `<circle>` with `stroke-dasharray` and `stroke-dashoffset` will render around the button, visually filling as the audio progresses. The Play/Pause icon sits in the center.
+Add a new "Writing" section with 3 featured LinkedIn post cards, placed between the Hero/Intro section and the Work Playlist section.
 
-**Technical approach:**
-- Add `audioProgress` state (0-100) and attach a `timeupdate` listener on the `HTMLAudioElement` to update it
-- Replace the button's border with an SVG overlay containing two circles: a background track circle and a foreground progress circle
-- The progress circle uses `stroke-dashoffset` calculated from the progress percentage
-- When not playing, just show the normal border circle with the Play icon
-- Add real audio sources (SoundHelix free samples) so playback actually works
+### Design
+- Section header styled consistently: uppercase tracking-widest with a `PenLine` icon (from lucide-react), matching the "Work Playlist" and "Current Read" headers
+- 3 cards in a responsive grid (`grid-cols-1 md:grid-cols-3`)
+- Each card includes:
+  - A topic/category tag (e.g., "UX Strategy", "Design Leadership")
+  - Post title in serif font
+  - Brief excerpt (1-2 lines, truncated)
+  - "Read on LinkedIn" link with an ExternalLink icon
+- Cards use `rounded-2xl border border-border/60 bg-background/40 p-6` to match the Current Read card styling
+- Wrapped in a `FadeIn` animation with delay between Hero (200) and Playlist (300), so delay 250
 
-### 2. Move "About" title into the paragraph content area
-Remove the standalone `<h1>About</h1>` that sits above the grid. Instead, place it as the first element inside the bio text column (right side), before the first paragraph. It keeps the same serif styling.
-
-### 3. Keep layout: image left, text right
-The current layout already has image on the left and text on the right. This will remain unchanged -- the user confirmed "right align text and left align image" meaning text on the right, image on the left (current state).
+### Data
+A `linkedinPosts` array with 3 placeholder entries, each containing `category`, `title`, `excerpt`, and `url` fields. URLs will point to linkedin.com as placeholders for now.
 
 ### File changes
 
 **`src/pages/AboutPage.tsx`**
-- Add `audioProgress` state and `timeupdate` event handling in `togglePlay`
-- Update playlist `src` fields with SoundHelix MP3 URLs
-- Remove the standalone `<h1>About</h1>` block (lines 45-49)
-- Add `<h1>About</h1>` as first child inside the bio text div (line 66)
-- Replace the play/pause button markup with an SVG-based circular progress button:
-  - 36x36 SVG with a background circle (`stroke: border color`) and a progress arc (`stroke: foreground`, dashoffset based on progress)
-  - Play/Pause icon centered inside via absolute positioning
-  - Progress arc only visible when that track is the active one
-
+- Import `PenLine` from lucide-react
+- Add `linkedinPosts` data array above the component
+- Insert a new `<section>` block between the Hero section (ends line 123) and the Playlist section (starts line 126), containing the header and a 3-column card grid
