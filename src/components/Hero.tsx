@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import PopIn from './animations/PopIn';
 
@@ -10,6 +10,8 @@ const heroImages = ["/lovable-uploads/luffu-hero.png"];
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,9 +20,37 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const progress = Math.min(window.scrollY / 300, 1);
+        const container = containerRef.current;
+        const wrapper = imageWrapperRef.current;
+        if (container) {
+          const isMd = window.innerWidth >= 768;
+          const maxPad = isMd ? 40 : 24;
+          const pad = maxPad * (1 - progress);
+          container.style.paddingLeft = `${pad}px`;
+          container.style.paddingRight = `${pad}px`;
+        }
+        if (wrapper) {
+          const radius = 24 * (1 - progress);
+          wrapper.style.borderRadius = `${radius}px`;
+        }
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className={cn('pt-20 md:pt-24 pb-6 md:pb-8 bg-[#F8F6F1]', className)}>
-      <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
+      <div ref={containerRef} className="mx-auto max-w-[1600px] px-6 md:px-10">
         <h1 className="text-2xl md:text-3xl font-serif text-foreground mb-2">Joanna Minott, <span className="text-muted-foreground">UX Designer</span></h1>
         <p className="text-base md:text-lg text-muted-foreground font-serif mb-4 max-w-2xl">
           Product designer by day, community builder by night. I build software and digital experiences that connect people and spark meaningful change.
@@ -34,7 +64,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           View Resume →
         </a>
         <PopIn>
-          <div className="relative rounded-3xl overflow-hidden h-[50vh] md:h-[70vh] lg:h-[80vh]">
+          <div ref={imageWrapperRef} className="relative rounded-3xl overflow-hidden h-[50vh] md:h-[70vh] lg:h-[80vh]">
             {heroImages.map((image, index) => (
               <img 
                 key={image} 
@@ -47,7 +77,6 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               />
             ))}
             <img src={heroImages[0]} alt="Hero placeholder" className="w-full h-full object-cover invisible" />
-            {/* Slide indicators */}
             <div className="absolute bottom-4 right-8 md:right-12 flex gap-2">
               {heroImages.map((_, index) => (
                 <button 

@@ -111,30 +111,11 @@ const ScrollAnimations = () => {
       dividerObserver.observe(element);
     });
 
-    // Parallax effect for hero background (RAF-throttled)
-    let ticking = false;
-    const handleScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const scrolled = window.pageYOffset;
-        const heroSection = document.querySelector('section:first-child');
-        const heroImage = heroSection?.querySelector('img');
-        if (heroImage) {
-          heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
-        }
-        ticking = false;
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
     return () => {
       observer.disconnect();
       packageObserver.disconnect();
       projectObserver.disconnect();
       dividerObserver.disconnect();
-      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
