@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import PopIn from './animations/PopIn';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 interface HeroProps {
   className?: string;
@@ -56,62 +55,12 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <p className="text-base md:text-lg text-muted-foreground font-serif mb-4 max-w-2xl">
           Product designer by day, community builder by night. I build software and digital experiences that connect people and spark meaningful change.
         </p>
-        <Sheet>
-          <SheetTrigger asChild>
-            <button className="inline-flex items-center gap-2 bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity mb-6">
-              View Work Experience →
-            </button>
-          </SheetTrigger>
-          <SheetContent className="w-full sm:max-w-lg bg-[#F8F6F1] overflow-y-auto">
-            <SheetHeader className="mb-8">
-              <SheetTitle className="text-2xl font-serif text-foreground">Joanna Minott</SheetTitle>
-              <p className="text-muted-foreground font-serif text-sm">UX Designer, Miami, FL</p>
-              <p className="text-muted-foreground font-serif text-sm">joannaminott.com</p>
-            </SheetHeader>
-
-            <div className="space-y-12 px-1">
-              <div>
-                <h3 className="text-sm font-semibold text-foreground mb-5">Work Experience</h3>
-                <div className="space-y-6">
-                  {[
-                    { period: '2024 — Now', title: 'UX Designer at CVS Health', location: 'Remote' },
-                    { period: '2024 — Now', title: 'Freelance UX Designer', location: 'Remote' },
-                    { period: '2023 — 2024', title: 'Product Designer at Viveka Health', location: 'Miami, FL' },
-                    { period: '2023 — 2023', title: 'Product Designer at Adriene Arsht Center', location: 'Miami, FL' },
-                    { period: '2022 — 2022', title: 'Web Designer at CSL Behring', location: 'Remote' },
-                    { period: '2021 — 2021', title: 'UX Designer at The Gordon Center for Simulation and Innovation in Medical Education', location: 'Miami, FL' },
-                  ].map((item, i) => (
-                    <div key={i} className="grid grid-cols-[120px_1fr] gap-3">
-                      <span className="text-xs text-muted-foreground font-serif whitespace-nowrap">{item.period}</span>
-                      <div>
-                        <p className="text-sm text-foreground font-serif leading-relaxed">{item.title}</p>
-                        <p className="text-xs text-muted-foreground font-serif">{item.location}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-semibold text-foreground mb-5">Education</h3>
-                <div className="space-y-6">
-                  {[
-                    { period: '2022 — 2024', title: 'Masters in Fine Arts Interactive Media at The University of Miami', location: 'Miami, FL' },
-                    { period: '2018 — 2022', title: 'Bachelors in Arts Computer Science at The University of Miami', location: 'Miami, FL' },
-                  ].map((item, i) => (
-                    <div key={i} className="grid grid-cols-[120px_1fr] gap-3">
-                      <span className="text-xs text-muted-foreground font-serif whitespace-nowrap">{item.period}</span>
-                      <div>
-                        <p className="text-sm text-foreground font-serif leading-relaxed">{item.title}</p>
-                        <p className="text-xs text-muted-foreground font-serif">{item.location}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </SheetContent>
-        </Sheet>
+        <a
+          href="/work-experience"
+          className="inline-flex items-center gap-2 bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity mb-6"
+        >
+          View Work Experience →
+        </a>
         <PopIn>
           <div ref={imageWrapperRef} className="relative rounded-3xl overflow-hidden h-[50vh] md:h-[70vh] lg:h-[80vh]">
             {heroImages.map((image, index) => (
