@@ -1,35 +1,32 @@
 
 
-## Three Changes
+## About Page Updates
 
-### 1. Fix hero image shifting on scroll
-The parallax effect in `ScrollAnimations.tsx` (line 124) applies `translateY(scrolled * 0.3)` to the hero image, causing it to visibly shift downward as you scroll. This will be **removed entirely** so the hero image stays fixed in place.
+### 1. Circular progress indicator inside the play/pause button
+Replace the current flat play/pause button with an SVG circle progress ring. When a track is playing, an SVG `<circle>` with `stroke-dasharray` and `stroke-dashoffset` will render around the button, visually filling as the audio progresses. The Play/Pause icon sits in the center.
 
-**File: `src/components/animations/ScrollAnimations.tsx`**
-- Remove the entire hero parallax scroll handler block (lines 114-130) and the corresponding `removeEventListener` in the cleanup
+**Technical approach:**
+- Add `audioProgress` state (0-100) and attach a `timeupdate` listener on the `HTMLAudioElement` to update it
+- Replace the button's border with an SVG overlay containing two circles: a background track circle and a foreground progress circle
+- The progress circle uses `stroke-dashoffset` calculated from the progress percentage
+- When not playing, just show the normal border circle with the Play icon
+- Add real audio sources (SoundHelix free samples) so playback actually works
 
-### 2. Hero image expands to fill margins on scroll
-As the user scrolls down, the hero image container will grow from its current padded/rounded state to full-width with no border-radius.
+### 2. Move "About" title into the paragraph content area
+Remove the standalone `<h1>About</h1>` that sits above the grid. Instead, place it as the first element inside the bio text column (right side), before the first paragraph. It keeps the same serif styling.
 
-**File: `src/components/Hero.tsx`**
-- Add a `useRef` on the image container div
-- Add a scroll listener that maps `scrollY` (0-300px) to:
-  - Horizontal padding: 24px (mobile) / 40px (desktop) down to 0
-  - Border-radius: 24px down to 0
-- Apply via direct DOM style manipulation (no re-renders) with `requestAnimationFrame` throttling
+### 3. Keep layout: image left, text right
+The current layout already has image on the left and text on the right. This will remain unchanged -- the user confirmed "right align text and left align image" meaning text on the right, image on the left (current state).
 
-### 3. New "About" section before Testimonials
-A new component inserted between Projects and DarkSection.
+### File changes
 
-**File: `src/components/AboutSection.tsx`** (new)
-- Headline: "Design, Tech & Intention"
-- Body paragraph about a research-rooted process
-- Two-column grid:
-  - **Services**: UX/UI Design, Web Design, Brand Identity, UX Audits
-  - **Skills**: Figma, Prototyping, User Research, Design Systems, HTML/CSS, React
-- Cream background (#F8F6F1) matching the rest of the light sections
-- Uses existing `FadeIn` animation wrapper
-
-**File: `src/pages/Index.tsx`**
-- Import and add `<AboutSection />` between `<Projects />` and `<DarkSection />`
+**`src/pages/AboutPage.tsx`**
+- Add `audioProgress` state and `timeupdate` event handling in `togglePlay`
+- Update playlist `src` fields with SoundHelix MP3 URLs
+- Remove the standalone `<h1>About</h1>` block (lines 45-49)
+- Add `<h1>About</h1>` as first child inside the bio text div (line 66)
+- Replace the play/pause button markup with an SVG-based circular progress button:
+  - 36x36 SVG with a background circle (`stroke: border color`) and a progress arc (`stroke: foreground`, dashoffset based on progress)
+  - Play/Pause icon centered inside via absolute positioning
+  - Progress arc only visible when that track is the active one
 
