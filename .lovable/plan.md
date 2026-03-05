@@ -1,13 +1,20 @@
 
 
-## Plan: Reduce About section top padding
+## Plan: Add consistent bottom padding to Testimonials and Community sections
 
-The top padding (`pt-16 md:pt-24`) creates too much white space above the heading. Reducing it will balance the section better.
+Both sections currently use tight padding that doesn't match the rest of the page.
 
-### Change
+### Current vs Proposed
 
-**`src/components/AboutSection.tsx`** (line 9)
-- Change `pt-16 md:pt-24 pb-24 md:pb-32` → `pt-10 md:pt-16 pb-24 md:pb-32`
+| Section | Current | Proposed |
+|---------|---------|----------|
+| **Testimonials** | `pt-12 pb-6 md:pt-20 md:pb-10` | `pt-12 pb-12 md:pt-20 md:pb-20` |
+| **Community** | `pt-6 pb-12 md:pt-10 md:pb-20` | `pt-12 pb-12 md:pt-20 md:pb-20` |
 
-This reduces the top gap while keeping the generous bottom padding.
+This gives both sections symmetric `py-12 md:py-20` padding, matching the standard section spacing noted in the design system.
+
+### Files
+
+- **`src/components/Testimonials.tsx`** — update padding classes
+- **`src/components/Community.tsx`** — update padding classes
 
