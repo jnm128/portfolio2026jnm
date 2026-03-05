@@ -28,7 +28,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
   const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + cardsPerView);
 
   return (
-    <div id="testimonials" className={cn('pt-12 pb-6 md:pt-20 md:pb-10', className)}>
+    <div id="testimonials" className={cn('pt-12 pb-12 md:pt-20 md:pb-20', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
           <div className="flex items-end justify-between mb-8">
