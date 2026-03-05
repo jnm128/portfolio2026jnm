@@ -1,18 +1,14 @@
 
 
-## Plan: White cards for Writing & Current Read, bigger Current Read section
+## Plan: Adjust Current Read sizing, remove shadow, add centered heading
 
 ### Changes to `src/pages/AboutPage.tsx`
 
-**1. Writing cards** — Change `bg-white/5 border-white/10` to `bg-white` with dark text styling. Update inner text colors from `text-white` / `text-white/40` / `text-white/60` to `text-foreground` / `text-muted-foreground`. Update link color similarly.
+**1. Add centered heading** — Insert a heading above the dark section content, styled like the IntroBlurb marquee heading: `text-[14px] text-center font-medium uppercase tracking-wider text-white/60 mb-10` with text "Get to know your favorite designer".
 
-**2. Current Read card** — Change `bg-white/5 border-white/10` to `bg-white` with dark text. Update text colors to match. Increase book image size from `w-24 md:w-32` to `w-36 md:w-48` and add padding (`p-8`) for a more spacious feel.
+**2. Reduce Current Read image size** — Change `w-36 md:w-48` back to `w-24 md:w-32`.
 
-**3. Text color updates within white cards:**
-- Category labels: `text-muted-foreground`
-- Titles: `text-foreground`
-- Excerpts/notes: `text-muted-foreground`
-- Links: `text-foreground`
+**3. Remove shadow** — Remove `shadow-xl` from the book image container.
 
 ### Files modified
 - `src/pages/AboutPage.tsx`
