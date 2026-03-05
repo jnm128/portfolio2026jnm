@@ -120,7 +120,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           </div>
           {archives.map((item, index) => (
             <FadeIn key={item.name} delay={index * 50} duration={400} threshold={0.05}>
-              <div className="flex flex-col md:flex-row md:items-center py-4 border-b border-foreground/10 gap-1 md:gap-0">
+              <div className={cn("flex flex-col md:flex-row md:items-center py-4 border-b border-foreground/10 gap-1 md:gap-0", index % 2 === 1 && "bg-foreground/[0.03]")}>
                 <Link to={item.link} className="md:w-[28%] font-medium text-sm hover:underline underline-offset-4 transition-colors inline-flex items-center gap-1.5">
                   {item.name}
                   <ExternalLink size={14} className="text-muted-foreground" />
