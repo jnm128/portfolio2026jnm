@@ -156,18 +156,18 @@ const AboutPage = () => {
                   {linkedinPosts.map((post, i) => (
                     <div
                       key={i}
-                      className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col justify-between"
+                      className="rounded-2xl border border-border/60 bg-white p-6 flex flex-col justify-between"
                     >
                       <div>
-                        <span className="text-xs uppercase tracking-widest text-white/40">{post.category}</span>
-                        <p className="text-base font-serif text-white mt-2 mb-3 leading-snug">{post.title}</p>
-                        <p className="text-sm text-white/60 leading-relaxed line-clamp-2">{post.excerpt}</p>
+                        <span className="text-xs uppercase tracking-widest text-muted-foreground">{post.category}</span>
+                        <p className="text-base font-serif text-foreground mt-2 mb-3 leading-snug">{post.title}</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">{post.excerpt}</p>
                       </div>
                       <a
                         href={post.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm text-white mt-4 hover:opacity-70 transition-opacity"
+                        className="inline-flex items-center gap-1.5 text-sm text-foreground mt-4 hover:opacity-70 transition-opacity"
                       >
                         Read on LinkedIn
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -231,8 +231,8 @@ const AboutPage = () => {
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
                     Current Read
                   </h2>
-                  <div className="rounded-2xl border border-white/10 p-6 bg-white/5 flex gap-6 items-start">
-                    <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden shadow-md">
+                  <div className="rounded-2xl border border-border/60 p-8 bg-white flex gap-8 items-start">
+                    <div className="w-36 md:w-48 shrink-0 rounded-lg overflow-hidden shadow-xl">
                       <img
                         src={currentRead.cover}
                         alt={currentRead.title}
@@ -240,13 +240,13 @@ const AboutPage = () => {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-lg md:text-xl font-serif text-white mb-1">
+                      <p className="text-lg md:text-xl font-serif text-foreground mb-1">
                         {currentRead.title}
                       </p>
-                      <p className="text-sm text-white/60 mb-4">
+                      <p className="text-sm text-muted-foreground mb-4">
                         by {currentRead.author}
                       </p>
-                      <p className="text-sm text-white/60 leading-relaxed font-serif">
+                      <p className="text-sm text-muted-foreground leading-relaxed font-serif">
                         {currentRead.note}
                       </p>
                     </div>
