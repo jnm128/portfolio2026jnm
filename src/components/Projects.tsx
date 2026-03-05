@@ -13,11 +13,11 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   const [activeTab, setActiveTab] = useState<Tab>('recent');
 
   const archives = [
-    { name: 'Design System Overhaul', company: 'CSL Behring', role: 'Lead Designer', team: 'Product & Engineering' },
-    { name: 'Patient Portal Redesign', company: 'Adrienne Arsht Center', role: 'UX Designer', team: 'Digital Experience' },
-    { name: 'Mobile App MVP', company: 'Synchronyx', role: 'Product Designer', team: 'Founding Team' },
-    { name: 'E-Commerce Platform', company: 'Freelance', role: 'UI/UX Designer', team: 'Solo' },
-    { name: 'Internal Dashboard', company: 'CVS Health', role: 'Senior Designer', team: 'Enterprise Tools' },
+    { name: 'Design System Overhaul', company: 'CSL Behring', focusArea: 'Design Systems', industry: 'Biotech', role: 'Lead Designer', year: '2023', link: '/case-study/mindful-wellness' },
+    { name: 'Patient Portal Redesign', company: 'Adrienne Arsht Center', focusArea: 'UX Research', industry: 'Arts & Culture', role: 'UX Designer', year: '2022', link: '/case-study/artisan-marketplace' },
+    { name: 'Mobile App MVP', company: 'Synchronyx', focusArea: 'Product Strategy', industry: 'Health Tech', role: 'Product Designer', year: '2021', link: '/case-study/creative-studio' },
+    { name: 'E-Commerce Platform', company: 'Freelance', focusArea: 'UI Design', industry: 'Retail', role: 'UI/UX Designer', year: '2020', link: '/case-study/creative-studio' },
+    { name: 'Internal Dashboard', company: 'CVS Health', focusArea: 'Enterprise UX', industry: 'Healthcare', role: 'Senior Designer', year: '2019', link: '/case-study/mindful-wellness' },
   ];
 
   const projects = [
@@ -107,16 +107,27 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           ))}
         </div>
         ) : (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col">
+          {/* Header */}
+          <div className="hidden md:flex items-center py-3 border-b border-foreground/20 text-xs uppercase tracking-wider text-muted-foreground">
+            <span className="w-[28%]">Project Name</span>
+            <span className="w-[18%]">Company / Org</span>
+            <span className="w-[16%]">Focus Area</span>
+            <span className="w-[14%]">Industry</span>
+            <span className="w-[14%]">Role</span>
+            <span className="w-[10%] text-right">Year</span>
+          </div>
           {archives.map((item, index) => (
             <FadeIn key={item.name} delay={index * 50} duration={400} threshold={0.05}>
-              <div className="bg-white/60 rounded-2xl p-5 md:p-6">
-                <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
-                  <h3 className="font-serif font-medium text-base md:text-lg md:w-2/5">{item.name}</h3>
-                  <span className="text-sm text-muted-foreground md:w-1/5">{item.company}</span>
-                  <span className="text-sm text-muted-foreground md:w-1/5">{item.role}</span>
-                  <span className="text-sm text-muted-foreground md:w-1/5">{item.team}</span>
-                </div>
+              <div className="flex flex-col md:flex-row md:items-center py-4 border-b border-foreground/10 gap-1 md:gap-0">
+                <Link to={item.link} className="md:w-[28%] font-medium text-sm hover:underline underline-offset-4 transition-colors">
+                  {item.name}
+                </Link>
+                <span className="text-sm text-muted-foreground md:w-[18%]">{item.company}</span>
+                <span className="text-sm text-muted-foreground md:w-[16%]">{item.focusArea}</span>
+                <span className="text-sm text-muted-foreground md:w-[14%]">{item.industry}</span>
+                <span className="text-sm text-muted-foreground md:w-[14%]">{item.role}</span>
+                <span className="text-sm text-muted-foreground md:w-[10%] md:text-right">{item.year}</span>
               </div>
             </FadeIn>
           ))}
