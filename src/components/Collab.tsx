@@ -9,7 +9,7 @@ interface CollabProps {
 
 const Collab: React.FC<CollabProps> = ({ className }) => {
   return (
-    <div className={cn('py-24 md:py-32', className)}>
+    <div className={cn('py-16 md:py-24', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
           <div className="flex flex-col gap-6 items-center text-center">
