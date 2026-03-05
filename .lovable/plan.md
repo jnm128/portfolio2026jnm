@@ -1,13 +1,13 @@
 
 
-## Plan: Three small updates
+## Plan: Reduce About section top padding
 
-**`src/components/AboutSection.tsx`**
-- Increase bottom padding from `pb-20 md:pb-28` → `pb-24 md:pb-32`
+The top padding (`pt-16 md:pt-24`) creates too much white space above the heading. Reducing it will balance the section better.
 
-**`src/components/Testimonials.tsx`**
-- Change "Kind Words" → "Testimonials"
+### Change
 
-**`src/components/Hero.tsx`**
-- Change button text "Work Experience" → "Resume"
+**`src/components/AboutSection.tsx`** (line 9)
+- Change `pt-16 md:pt-24 pb-24 md:pb-32` → `pt-10 md:pt-16 pb-24 md:pb-32`
+
+This reduces the top gap while keeping the generous bottom padding.
 
