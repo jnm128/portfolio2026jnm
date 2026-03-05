@@ -143,120 +143,117 @@ const AboutPage = () => {
           </FadeIn>
         </section>
 
-        {/* Writing / LinkedIn Posts */}
-        <section className="container mx-auto px-6 md:px-10 max-w-[1600px] pb-16 md:pb-24">
-          <div className="max-w-5xl mx-auto">
-            <FadeIn delay={250}>
-              <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">
-                Writing
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {linkedinPosts.map((post, i) => (
-                  <div
-                    key={i}
-                    className="rounded-2xl border border-border/60 bg-white/60 p-6 flex flex-col justify-between"
-                  >
-                    <div>
-                      <span className="text-xs uppercase tracking-widest text-muted-foreground">{post.category}</span>
-                      <p className="text-base font-serif text-foreground mt-2 mb-3 leading-snug">{post.title}</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">{post.excerpt}</p>
-                    </div>
-                    <a
-                      href={post.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm text-foreground mt-4 hover:opacity-70 transition-opacity"
-                    >
-                      Read on LinkedIn
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        </section>
-
-        {/* Playlist & Current Read — Stacked */}
-        <section className="container mx-auto px-6 md:px-10 max-w-[1600px] pb-20 md:pb-28">
-          <div className="max-w-5xl mx-auto space-y-16">
-            {/* Work Playlist */}
-            <FadeIn delay={300}>
-              <div>
-                <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">
-                  Work Playlist
+        {/* Writing, Work Playlist & Current Read — Combined Dark Section */}
+        <section className="bg-[#171717] text-white py-16 md:py-24">
+          <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
+            <div className="max-w-5xl mx-auto space-y-16">
+              {/* Writing / LinkedIn Posts */}
+              <FadeIn delay={250}>
+                <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
+                  Writing
                 </h2>
-                <ul className="space-y-0">
-                  {playlist.map((track, i) => (
-                    <li
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {linkedinPosts.map((post, i) => (
+                    <div
                       key={i}
-                      className={`flex items-center justify-between py-3.5 border-b border-border/60 group ${i % 2 === 0 ? 'bg-white/60' : ''}`}
+                      className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col justify-between"
                     >
-                      <div className="flex items-center gap-3">
-                        <button
-                          onClick={() => togglePlay(i)}
-                          className="relative w-7 h-7 flex items-center justify-center shrink-0 rounded-full bg-background border border-border text-foreground"
-                          aria-label={playingIndex === i ? `Pause ${track.title}` : `Play ${track.title}`}
-                        >
-                          <svg width="28" height="28" className="absolute inset-0">
-                            {/* Progress arc */}
-                            {playingIndex === i && (
-                              <circle
-                                cx="18" cy="18" r={CIRCLE_RADIUS}
-                                fill="none"
-                                stroke="hsl(var(--background))"
-                                strokeWidth="2"
-                                strokeDasharray={CIRCLE_CIRCUMFERENCE}
-                                strokeDashoffset={dashOffset}
-                                strokeLinecap="round"
-                                transform="rotate(-90 18 18)"
-                                className="transition-[stroke-dashoffset] duration-200"
-                              />
-                            )}
-                          </svg>
-                          {playingIndex === i ? (
-                            <Pause className="w-3 h-3 relative z-10 fill-current" />
-                          ) : (
-                            <Play className="w-3 h-3 ml-0.5 relative z-10 fill-current" />
-                          )}
-                        </button>
-                        <span className="text-base font-serif text-foreground">{track.title}</span>
+                      <div>
+                        <span className="text-xs uppercase tracking-widest text-white/40">{post.category}</span>
+                        <p className="text-base font-serif text-white mt-2 mb-3 leading-snug">{post.title}</p>
+                        <p className="text-sm text-white/60 leading-relaxed line-clamp-2">{post.excerpt}</p>
                       </div>
-                      <span className="text-sm text-muted-foreground ml-4 shrink-0">{track.artist}</span>
-                    </li>
+                      <a
+                        href={post.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm text-white mt-4 hover:opacity-70 transition-opacity"
+                      >
+                        Read on LinkedIn
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
                   ))}
-                </ul>
-              </div>
-            </FadeIn>
+                </div>
+              </FadeIn>
 
-            {/* Current Read */}
-            <FadeIn delay={400}>
-              <div>
-                <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">
-                  Current Read
-                </h2>
-                <div className="rounded-2xl border border-border/60 p-6 bg-white/60 flex gap-6 items-start">
-                  <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden shadow-md">
-                    <img
-                      src={currentRead.cover}
-                      alt={currentRead.title}
-                      className="w-full h-auto object-cover"
-                    />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-lg md:text-xl font-serif text-foreground mb-1">
-                      {currentRead.title}
-                    </p>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      by {currentRead.author}
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed font-serif">
-                      {currentRead.note}
-                    </p>
+              {/* Work Playlist */}
+              <FadeIn delay={300}>
+                <div>
+                  <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
+                    Work Playlist
+                  </h2>
+                  <ul className="space-y-0">
+                    {playlist.map((track, i) => (
+                      <li
+                        key={i}
+                        className={`flex items-center justify-between py-3.5 px-4 border-b border-white/10 group ${i % 2 === 0 ? 'bg-white/[0.07]' : ''}`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <button
+                            onClick={() => togglePlay(i)}
+                            className="relative w-7 h-7 flex items-center justify-center shrink-0 rounded-full bg-white/10 border border-white/20 text-white"
+                            aria-label={playingIndex === i ? `Pause ${track.title}` : `Play ${track.title}`}
+                          >
+                            <svg width="28" height="28" className="absolute inset-0">
+                              {playingIndex === i && (
+                                <circle
+                                  cx="18" cy="18" r={CIRCLE_RADIUS}
+                                  fill="none"
+                                  stroke="white"
+                                  strokeWidth="2"
+                                  strokeDasharray={CIRCLE_CIRCUMFERENCE}
+                                  strokeDashoffset={dashOffset}
+                                  strokeLinecap="round"
+                                  transform="rotate(-90 18 18)"
+                                  className="transition-[stroke-dashoffset] duration-200"
+                                />
+                              )}
+                            </svg>
+                            {playingIndex === i ? (
+                              <Pause className="w-3 h-3 relative z-10 fill-current" />
+                            ) : (
+                              <Play className="w-3 h-3 ml-0.5 relative z-10 fill-current" />
+                            )}
+                          </button>
+                          <span className="text-base font-serif text-white">{track.title}</span>
+                        </div>
+                        <span className="text-sm text-white/60 ml-4 shrink-0">{track.artist}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </FadeIn>
+
+              {/* Current Read */}
+              <FadeIn delay={400}>
+                <div>
+                  <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
+                    Current Read
+                  </h2>
+                  <div className="rounded-2xl border border-white/10 p-6 bg-white/5 flex gap-6 items-start">
+                    <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden shadow-md">
+                      <img
+                        src={currentRead.cover}
+                        alt={currentRead.title}
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-lg md:text-xl font-serif text-white mb-1">
+                        {currentRead.title}
+                      </p>
+                      <p className="text-sm text-white/60 mb-4">
+                        by {currentRead.author}
+                      </p>
+                      <p className="text-sm text-white/60 leading-relaxed font-serif">
+                        {currentRead.note}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
           </div>
         </section>
       </div>
