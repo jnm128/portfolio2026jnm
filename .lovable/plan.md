@@ -1,28 +1,19 @@
 
 
-## Changes
+## Problem
 
-### 1. Work Experience as a side panel
-Convert the "View Work Experience" button from a link (`/work-experience`) to a button that opens a right-side panel. The panel will slide in from the right, covering ~50% width on desktop, full width on mobile. No scrim/overlay behind it. A back arrow at the top-left of the panel closes it and returns to home.
+The WorkExperiencePanel renders inside `Hero` → `PageTransition`, which creates a stacking context via its animation. This prevents the panel's `z-[200]` from layering above the Header's `z-[60]`.
 
-**Implementation:**
-- **`src/components/WorkExperiencePanel.tsx`** (new): A fixed right-side panel component containing the work experience content (pulled from `WorkExperience.tsx` data). Includes:
-  - Fixed positioning with `right-0`, slide-in animation
-  - Back arrow button (ArrowLeft icon) at top-left to close
-  - No overlay/scrim — the main page remains visible behind
-  - `z-50` to sit above content
-  - Cream background matching the site
+## Solution
 
-- **`src/components/Hero.tsx`**: Change the `<a href="/work-experience">` to a `<button>` that toggles panel open state. Lift state or use a simple local state + render the panel component.
+Use `createPortal` from `react-dom` to render the panel directly into `document.body`, escaping the stacking context. Also remove the Back button per previous request.
 
-- **`src/App.tsx`**: Optionally keep the `/work-experience` route for direct access, but the primary interaction becomes the side panel from the hero.
+### Changes
 
-### 2. Testimonial arrows moved to top with frost/contrast
-Move the navigation arrows from bottom-right to the top of the testimonials section, aligned right next to the heading area. Add a frosted glass effect and higher contrast styling.
+**`src/components/WorkExperiencePanel.tsx`:**
+1. Import `createPortal` from `react-dom`
+2. Wrap returned JSX in `createPortal(..., document.body)`
+3. Remove Back button, keep only X close button right-aligned
 
-**File: `src/components/Testimonials.tsx`**
-- Move the arrow buttons `div` from after the grid (line 60) to between the heading and the grid
-- Position them `flex justify-end` in the header area, inline with or just below the title
-- Add frosted glass styling: `backdrop-blur-md bg-white/10 border border-white/20 rounded-full`
-- Increase contrast: `text-white hover:bg-white/20` with stronger border visibility
+That's it — the panel keeps its existing `z-[200]`, `fixed`, `w-full md:w-1/2` classes and will now properly overlay the nav.
 
