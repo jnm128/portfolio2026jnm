@@ -2,16 +2,21 @@
 
 ## Plan
 
-Add "Recent" and "Past" labels flanking the toggle switch in the Projects section.
+Update the Past/archives list in `src/components/Projects.tsx` to a minimal table-style layout with column headers and expanded data fields.
 
-**`src/components/Projects.tsx`** (lines ~68-80):
+### Data changes
+- Update the `archives` array to include new fields: `focusArea`, `industry`, `year`, and `link` (to case study page)
+- Fields: Project Name, Company/Org, Focus Area, Industry, Role, Year
 
-Replace the current toggle area (which has label on the left and toggle on the right) with:
-- "Recent" label on the left of the toggle
-- The circle-and-line toggle in the middle
-- "Past" label on the right of the toggle
-- Active label gets highlighted styling, inactive gets muted
-- Toggle semantics: left position = "recent", right position = "archives" (past)
+### Layout changes
+- Add a header row with column labels: Project Name, Company / Org, Focus Area, Industry, Role, Year — styled as small uppercase muted text
+- Each row becomes a simple border-bottom row (no card backgrounds, no rounded corners, no padding boxes)
+- Project name becomes a `<Link>` to the case study page with hover underline
+- Remove `bg-white/60 rounded-2xl p-5 md:p-6` wrapper per row — replace with a simple `py-4 border-b border-foreground/10` divider style
+- Keep the flex-based column layout (no actual `<table>` element) for responsive control
 
-The existing dynamic label ("Recents"/"Archives") will be removed and replaced with the two fixed labels.
+### Minimal style
+- Header: `text-xs uppercase tracking-wider text-muted-foreground` with bottom border
+- Rows: clean text, no background, thin bottom border only
+- Name column: `font-medium` with link styling
 
