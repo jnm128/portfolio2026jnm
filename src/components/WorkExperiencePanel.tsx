@@ -39,8 +39,9 @@ const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose
           open ? 'translate-x-0' : 'translate-x-full'
         )}
       >
-        <div className="px-8 md:px-12 pt-8 pb-24">
-          <div className="flex items-center justify-end mb-6">
+        <div className="px-8 md:px-12 pt-6 pb-24">
+          <div className="flex items-center justify-between mb-8">
+            <h1 className="text-3xl md:text-4xl font-serif text-foreground">Resume</h1>
             <button
               onClick={onClose}
               className="p-2 rounded-full hover:bg-black/5 transition-colors"
@@ -48,8 +49,6 @@ const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose
               <X className="w-5 h-5 text-muted-foreground" />
             </button>
           </div>
-
-          <h1 className="text-3xl md:text-4xl font-serif text-foreground mb-12">Resume</h1>
 
           <h2 className="text-base font-semibold text-foreground mb-6">Work Experience</h2>
           <div className="space-y-8">
