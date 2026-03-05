@@ -54,11 +54,11 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         <div className="flex items-center justify-between mb-8">
           <p className="text-xs uppercase tracking-widest text-muted-foreground">Selected Work</p>
           <div className="flex items-center gap-3">
-            <span className="text-sm text-muted-foreground">{activeTab === 'archives' ? 'Recents' : 'Archives'}</span>
+            <span className={cn("text-sm transition-colors duration-300", activeTab === 'recent' ? 'text-foreground font-medium' : 'text-muted-foreground')}>Recent</span>
             <button
               onClick={() => setActiveTab(activeTab === 'recent' ? 'archives' : 'recent')}
               className="relative w-14 h-6 flex items-center cursor-pointer"
-              aria-label="Toggle between recent and archives"
+              aria-label="Toggle between recent and past"
             >
               <div className={cn("absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] transition-colors duration-400", activeTab === 'archives' ? 'bg-foreground' : 'bg-foreground/20')} />
               <div
@@ -70,6 +70,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                 )}
               />
             </button>
+            <span className={cn("text-sm transition-colors duration-300", activeTab === 'archives' ? 'text-foreground font-medium' : 'text-muted-foreground')}>Past</span>
           </div>
         </div>
 
