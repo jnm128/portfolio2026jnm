@@ -13,10 +13,10 @@ const playlist = [
 ];
 
 const currentRead = {
-  title: "Refactoring UI",
-  author: "Adam Wathan & Steve Schoger",
-  cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546225037i/43190966.jpg",
-  note: "A practical guide to designing beautiful interfaces — currently inspiring how I approach layout, spacing, and visual hierarchy in my daily work.",
+  title: "The Artist's Way",
+  author: "Julia Cameron",
+  cover: "/lovable-uploads/artists-way-cover.jpg",
+  note: "A transformative course in discovering and recovering your creative self — helping me reconnect with creativity as a daily practice.",
 };
 
 const linkedinPosts = [
@@ -155,7 +155,7 @@ const AboutPage = () => {
                 {linkedinPosts.map((post, i) => (
                   <div
                     key={i}
-                    className="rounded-2xl border border-border/60 bg-background/40 p-6 flex flex-col justify-between"
+                    className="rounded-2xl border border-border/60 bg-white p-6 flex flex-col justify-between"
                   >
                     <div>
                       <span className="text-xs uppercase tracking-widest text-muted-foreground">{post.category}</span>
@@ -197,24 +197,16 @@ const AboutPage = () => {
                       <div className="flex items-center gap-3">
                         <button
                           onClick={() => togglePlay(i)}
-                          className="relative w-9 h-9 flex items-center justify-center shrink-0"
+                          className="relative w-9 h-9 flex items-center justify-center shrink-0 rounded-full bg-foreground text-background"
                           aria-label={playingIndex === i ? `Pause ${track.title}` : `Play ${track.title}`}
                         >
                           <svg width="36" height="36" className="absolute inset-0">
-                            {/* Background circle */}
-                            <circle
-                              cx="18" cy="18" r={CIRCLE_RADIUS}
-                              fill="none"
-                              stroke="hsl(var(--border))"
-                              strokeWidth="2"
-                              opacity={0.6}
-                            />
                             {/* Progress arc */}
                             {playingIndex === i && (
                               <circle
                                 cx="18" cy="18" r={CIRCLE_RADIUS}
                                 fill="none"
-                                stroke="hsl(var(--foreground))"
+                                stroke="hsl(var(--background))"
                                 strokeWidth="2"
                                 strokeDasharray={CIRCLE_CIRCUMFERENCE}
                                 strokeDashoffset={dashOffset}
@@ -225,9 +217,9 @@ const AboutPage = () => {
                             )}
                           </svg>
                           {playingIndex === i ? (
-                            <Pause className="w-3.5 h-3.5 relative z-10" />
+                            <Pause className="w-3.5 h-3.5 relative z-10 fill-current" />
                           ) : (
-                            <Play className="w-3.5 h-3.5 ml-0.5 relative z-10" />
+                            <Play className="w-3.5 h-3.5 ml-0.5 relative z-10 fill-current" />
                           )}
                         </button>
                         <span className="text-base font-serif text-foreground">{track.title}</span>
@@ -246,7 +238,7 @@ const AboutPage = () => {
                   <BookOpen className="w-4 h-4" />
                   Current Read
                 </h2>
-                <div className="rounded-2xl border border-border/60 p-6 bg-background/40 flex gap-6 items-start">
+                <div className="rounded-2xl border border-border/60 p-6 bg-white flex gap-6 items-start">
                   <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden shadow-md">
                     <img
                       src={currentRead.cover}
