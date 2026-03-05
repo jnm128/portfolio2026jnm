@@ -87,7 +87,8 @@ const AboutPage = () => {
       <ScrollAnimations />
       <div className="pt-28 md:pt-36">
         {/* Hero / Intro */}
-        <section className="container mx-auto px-6 md:px-10 max-w-[1600px] pb-16 md:pb-24">
+        <section className="pt-10 md:pt-16 pb-24 md:pb-32 bg-[#F8F6F1]">
+          <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn delay={200}>
             <div className="max-w-5xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
@@ -104,16 +105,16 @@ const AboutPage = () => {
 
                 {/* Bio Text */}
                 <div className="flex flex-col justify-center">
-                  <h1 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
+                  <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4">
                     About
                   </h1>
-                  <p className="text-base md:text-xl text-foreground leading-relaxed mb-6 font-serif">
+                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
                     Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences.
                   </p>
-                  <p className="text-base md:text-xl text-foreground leading-relaxed mb-6 font-serif">
+                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
                     She blends product strategy, behavior-driven design, and emotional insight to create solutions that help people feel supported, empowered, and understood.
                   </p>
-                  <p className="text-base md:text-xl text-foreground leading-relaxed mb-6 font-serif">
+                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
                     Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.
                   </p>
 
@@ -141,6 +142,7 @@ const AboutPage = () => {
               </div>
             </div>
           </FadeIn>
+          </div>
         </section>
 
         {/* Writing, Work Playlist & Current Read — Combined Dark Section */}
