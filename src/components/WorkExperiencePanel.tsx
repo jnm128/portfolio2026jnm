@@ -1,7 +1,7 @@
 import React from 'react';
-import { ArrowLeft, X } from 'lucide-react';
+import { createPortal } from 'react-dom';
+import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import FadeIn from './animations/FadeIn';
 
 interface WorkExperiencePanelProps {
   open: boolean;
@@ -23,7 +23,7 @@ const education = [
 ];
 
 const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose }) => {
-  return (
+  return createPortal(
     <div
       className={cn(
         'fixed top-0 right-0 h-full z-[200] bg-[#F8F6F1] shadow-[-4px_0_24px_rgba(0,0,0,0.08)] overflow-y-auto transition-transform duration-500 ease-out w-full md:w-1/2',
@@ -31,14 +31,7 @@ const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose
       )}
     >
       <div className="px-8 md:px-12 pt-24 pb-24">
-        <div className="flex items-center justify-between mb-12">
-          <button
-            onClick={onClose}
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back
-          </button>
+        <div className="flex items-center justify-end mb-12">
           <button
             onClick={onClose}
             className="p-2 rounded-full hover:bg-black/5 transition-colors"
@@ -77,7 +70,8 @@ const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose
           ))}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
