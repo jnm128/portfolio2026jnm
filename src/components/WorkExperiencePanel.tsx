@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 
@@ -26,18 +26,26 @@ const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose
   return (
     <div
       className={cn(
-        'fixed top-0 right-0 h-full z-50 bg-[#F8F6F1] shadow-[-4px_0_24px_rgba(0,0,0,0.08)] overflow-y-auto transition-transform duration-500 ease-out w-full md:w-1/2',
+        'fixed top-0 right-0 h-full z-[200] bg-[#F8F6F1] shadow-[-4px_0_24px_rgba(0,0,0,0.08)] overflow-y-auto transition-transform duration-500 ease-out w-full md:w-1/2',
         open ? 'translate-x-0' : 'translate-x-full'
       )}
     >
       <div className="px-8 md:px-12 pt-8 pb-24">
-        <button
-          onClick={onClose}
-          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back
-        </button>
+        <div className="flex items-center justify-between mb-12">
+          <button
+            onClick={onClose}
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back
+          </button>
+          <button
+            onClick={onClose}
+            className="p-2 rounded-full hover:bg-black/5 transition-colors"
+          >
+            <X className="w-5 h-5 text-muted-foreground" />
+          </button>
+        </div>
 
         <h1 className="text-3xl md:text-4xl font-serif text-foreground mb-1">Joanna Minott</h1>
         <p className="text-muted-foreground font-serif text-base mb-0.5">UX Designer, Miami, FL</p>
