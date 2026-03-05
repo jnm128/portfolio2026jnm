@@ -1,14 +1,15 @@
 
 
-## Plan: Match About page margins with homepage
+## Plan: Reduce top whitespace on About page
 
-The About page constrains its content inside `max-w-5xl mx-auto` (~64rem/1024px), while the homepage sections use the full `container mx-auto px-6 md:px-10 max-w-[1600px]` width. This creates noticeably narrower content on the About page.
+The current spacing comes from two sources: `pt-28 md:pt-36` on the outer `<div>` (header clearance) and `pt-10 md:pt-16` on the section itself. Combined, that's too much gap.
 
-### Changes to `src/pages/AboutPage.tsx`
+### Change in `src/pages/AboutPage.tsx`
 
-1. **Hero/Intro section** (line 93): Remove the `max-w-5xl mx-auto` wrapper from the grid so the two-column bio layout spans the full container width, matching the homepage Projects section layout.
+- Reduce the outer div from `pt-28 md:pt-36` to `pt-24 md:pt-28` (tighter header clearance)
+- Remove the section's own top padding: change `pt-10 md:pt-16` to `pt-0`
 
-2. **Dark section** (line 154): Remove the `max-w-5xl mx-auto` wrapper from the Writing/Playlist/Current Read content so it also spans the full container width.
+This puts the content roughly 32px below the nav.
 
 ### Files modified
 - `src/pages/AboutPage.tsx`
