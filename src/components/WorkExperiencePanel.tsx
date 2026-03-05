@@ -49,9 +49,7 @@ const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose
             </button>
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-serif text-foreground mb-1">Joanna Minott</h1>
-          <p className="text-muted-foreground font-serif text-base mb-0.5">UX Designer, Miami, FL</p>
-          <p className="text-muted-foreground font-serif text-base mb-12">joannaminott.com</p>
+          <h1 className="text-3xl md:text-4xl font-serif text-foreground mb-12">Resume</h1>
 
           <h2 className="text-base font-semibold text-foreground mb-6">Work Experience</h2>
           <div className="space-y-8">
