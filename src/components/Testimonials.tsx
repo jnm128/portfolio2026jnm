@@ -55,14 +55,9 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
               <div className="rounded-2xl p-6 space-y-4 h-full bg-[#F8F6F1]">
                 <h3 className="text-base font-serif font-medium text-foreground">{testimonial.title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">"{testimonial.quote}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-foreground">
-                    <span className="text-sm font-medium text-background">{testimonial.initials}</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm font-medium text-foreground">{testimonial.author}</span>
-                    <span className="text-xs text-muted-foreground">{testimonial.role}, {testimonial.company}</span>
-                  </div>
+                <div className="flex flex-col">
+                  <span className="text-sm font-medium text-foreground">{testimonial.author}</span>
+                  <span className="text-xs text-muted-foreground">{testimonial.role}, {testimonial.company}</span>
                 </div>
               </div>
             </FadeIn>
