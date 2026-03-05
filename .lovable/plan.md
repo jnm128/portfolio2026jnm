@@ -1,19 +1,19 @@
 
 
-## Plan: Fix Process spacing and normalize heading sizes
+## Plan: Fix spacing inconsistencies and update Testimonials heading hierarchy
 
-### Issues found
+### Issues
 
-1. **Process section spacing**: Uses `py-12 md:py-20` — should be `py-16 md:py-24` to match the standardized spacing. Also uses `bg-white` instead of `bg-[#F8F6F1]`, and `px-4 md:px-6` / `max-w-6xl` instead of the site-wide `px-6 md:px-10` / `max-w-[1600px]`.
+1. **AboutSection bottom spacing**: The `py-16 md:py-24` is symmetric, but the content inside ends with skills chips that may create less visual bottom space. The Projects section above also uses `py-16 md:py-24`. The perceived imbalance is likely due to the About section's content ending abruptly vs Projects having more visual weight at the bottom. Adding slightly more bottom padding to About (`pt-16 md:pt-24 pb-20 md:pb-28`) will balance this.
 
-2. **Heading size mismatch**: Hero h1 ("Joanna Minott, UX Designer") is `text-2xl md:text-3xl`, while AboutSection h2 ("Design, Tech & Intention") is `text-3xl md:text-5xl`. These should match.
+2. **Testimonials heading hierarchy**: Currently "Kind Words" is a small label and "Bringing people and ideas together at scale" is the h2. User wants "Kind Words" as the main heading and the longer text as a subheading.
 
 ### Changes
 
-**`src/components/Process.tsx`**
-- Change `py-12 md:py-20 bg-white` → `py-16 md:py-24 bg-[#F8F6F1]`
-- Change container from `px-4 md:px-6` + `max-w-6xl` to `px-6 md:px-10` + `max-w-[1600px]` to match other sections
+**`src/components/AboutSection.tsx`**
+- Change `py-16 md:py-24` → `pt-16 md:pt-24 pb-20 md:pb-28` to add more breathing room at the bottom
 
-**`src/components/Hero.tsx`**
-- Change h1 from `text-2xl md:text-3xl` → `text-3xl md:text-5xl` to match AboutSection heading size
+**`src/components/Testimonials.tsx`**
+- Change "Kind Words" from `<p>` label to `<h2>` with `text-3xl md:text-5xl font-serif text-white` (matching AboutSection heading size)
+- Change "Bringing people and ideas together at scale" from `<h2>` to `<p>` subheading with `text-base md:text-lg text-white/60 font-serif max-w-2xl`
 
