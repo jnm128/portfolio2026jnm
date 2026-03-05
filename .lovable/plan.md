@@ -1,16 +1,20 @@
 
 
-## Plan: Reduce top whitespace on About page
+## Plan: Add Home nav link and align Footer with Header
 
-The current spacing comes from two sources: `pt-28 md:pt-36` on the outer `<div>` (header clearance) and `pt-10 md:pt-16` on the section itself. Combined, that's too much gap.
+### Changes
 
-### Change in `src/pages/AboutPage.tsx`
+**1. `src/components/Header.tsx`** — Add "Home" link before "Work" in both desktop and mobile nav
+- Desktop: Add a "Home" link/button that navigates to `/` or scrolls to top if already on homepage
+- Mobile: Add matching "Home" entry
 
-- Reduce the outer div from `pt-28 md:pt-36` to `pt-24 md:pt-28` (tighter header clearance)
-- Remove the section's own top padding: change `pt-10 md:pt-16` to `pt-0`
-
-This puts the content roughly 32px below the nav.
+**2. `src/components/Footer.tsx`** — Update footer nav links to match header
+- Current footer: Work, About, Book Club, Get in Touch
+- Updated footer: Home, Work, About, Community, Get in Touch
+- "Community" links to `/book-club` (matching header label)
+- "About" links to `/about` (matching header)
 
 ### Files modified
-- `src/pages/AboutPage.tsx`
+- `src/components/Header.tsx`
+- `src/components/Footer.tsx`
 
