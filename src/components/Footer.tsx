@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { Leaf } from 'lucide-react';
 
 interface FooterProps {
   className?: string;
@@ -34,6 +35,9 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             </button>
             <p className="text-sm text-white/60">
               &copy; {new Date().getFullYear()} All rights reserved.
+            </p>
+            <p className="flex items-center gap-1 text-xs text-white/40 mt-2">
+              made with <Leaf className="w-3 h-3" /> matcha
             </p>
           </div>
           
