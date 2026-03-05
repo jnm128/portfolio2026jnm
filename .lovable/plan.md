@@ -1,19 +1,17 @@
 
 
-## Problem
+## Plan
 
-The WorkExperiencePanel renders inside `Hero` → `PageTransition`, which creates a stacking context via its animation. This prevents the panel's `z-[200]` from layering above the Header's `z-[60]`.
+Add "Recent" and "Past" labels flanking the toggle switch in the Projects section.
 
-## Solution
+**`src/components/Projects.tsx`** (lines ~68-80):
 
-Use `createPortal` from `react-dom` to render the panel directly into `document.body`, escaping the stacking context. Also remove the Back button per previous request.
+Replace the current toggle area (which has label on the left and toggle on the right) with:
+- "Recent" label on the left of the toggle
+- The circle-and-line toggle in the middle
+- "Past" label on the right of the toggle
+- Active label gets highlighted styling, inactive gets muted
+- Toggle semantics: left position = "recent", right position = "archives" (past)
 
-### Changes
-
-**`src/components/WorkExperiencePanel.tsx`:**
-1. Import `createPortal` from `react-dom`
-2. Wrap returned JSX in `createPortal(..., document.body)`
-3. Remove Back button, keep only X close button right-aligned
-
-That's it — the panel keeps its existing `z-[200]`, `fixed`, `w-full md:w-1/2` classes and will now properly overlay the nav.
+The existing dynamic label ("Recents"/"Archives") will be removed and replaced with the two fixed labels.
 
