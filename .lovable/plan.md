@@ -1,19 +1,17 @@
 
 
-## Plan: Footer signature, Testimonials heading update, and subtitle removal
+## Plan: Match About page styling with homepage patterns
 
-### 1. Add "made with matcha" signature to Footer
-**`src/components/Footer.tsx`** — Below the copyright line, add a "made with 🍵 matcha" line using the `Coffee` (or `Leaf`) icon from lucide-react as a matcha icon stand-in, styled subtly in `text-white/40`.
+### Changes to `src/pages/AboutPage.tsx`
 
-### 2. Update Testimonials heading style to match Community
-**`src/components/Testimonials.tsx`** (line 36):
-- Change the `<h2>` from `text-3xl md:text-5xl font-serif` to `text-xs uppercase tracking-widest text-white/60` — matching the Community section's label style.
+**Writing cards** — Change `bg-white` to `bg-white/60` to match the homepage Projects section card style on cream backgrounds.
 
-### 3. Remove subtitle from Testimonials
-**`src/components/Testimonials.tsx`** (lines 37-39):
-- Remove the `<p>` with "Bringing people and ideas together at scale" and the `mb-3` on the heading.
+**Playlist rows** — The zebra striping already uses `bg-white/60` which is correct. No change needed there.
 
-### Files
-- `src/components/Footer.tsx`
-- `src/components/Testimonials.tsx`
+**Current Read card** — Change `bg-white` to `bg-white/60` to match the same pattern.
+
+These are the only styling mismatches. The section labels (`text-sm uppercase tracking-widest text-muted-foreground`) already match the homepage pattern for light-background sections (the homepage dark sections use `text-white/60` because they sit on dark surfaces, but the About page is on cream so `text-muted-foreground` is correct).
+
+### Files modified
+- `src/pages/AboutPage.tsx` — two instances of `bg-white` changed to `bg-white/60`
 
