@@ -31,10 +31,22 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
     <div id="testimonials" className={cn('pt-12 pb-6 md:pt-20 md:pb-10', className)}>
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
-          <p className="text-xs uppercase tracking-widest text-center mb-3 text-white/60">Kind Words</p>
-          <h2 className="text-2xl md:text-3xl text-center font-serif mb-8 text-white">
-            Bringing people and ideas together at scale
-          </h2>
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <p className="text-xs uppercase tracking-widest mb-3 text-white/60">Kind Words</p>
+              <h2 className="text-2xl md:text-3xl font-serif text-white">
+                Bringing people and ideas together at scale
+              </h2>
+            </div>
+            <div className="flex gap-2">
+              <button onClick={prev} disabled={currentIndex === 0} className="w-9 h-9 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white hover:bg-white/20 flex items-center justify-center disabled:opacity-30 transition-colors">
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button onClick={next} disabled={currentIndex >= maxIndex} className="w-9 h-9 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white hover:bg-white/20 flex items-center justify-center disabled:opacity-30 transition-colors">
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
         </FadeIn>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -55,15 +67,6 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
               </div>
             </FadeIn>
           ))}
-        </div>
-
-        <div className="flex justify-end gap-2 mt-6">
-          <button onClick={prev} disabled={currentIndex === 0} className="w-9 h-9 rounded-full border border-white/30 text-white hover:bg-white hover:text-black flex items-center justify-center disabled:opacity-30">
-            <ChevronLeft className="w-4 h-4" />
-          </button>
-          <button onClick={next} disabled={currentIndex >= maxIndex} className="w-9 h-9 rounded-full border border-white/30 text-white hover:bg-white hover:text-black flex items-center justify-center disabled:opacity-30">
-            <ChevronRight className="w-4 h-4" />
-          </button>
         </div>
       </div>
     </div>
