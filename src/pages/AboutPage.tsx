@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback } from 'react';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
-import { ExternalLink, Play, Pause, BookOpen, Music, PenLine } from 'lucide-react';
+import { ExternalLink, Play, Pause } from 'lucide-react';
 
 const playlist = [
   { title: "Clair de Lune", artist: "Debussy", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
@@ -147,8 +147,7 @@ const AboutPage = () => {
         <section className="container mx-auto px-6 md:px-10 max-w-[1600px] pb-16 md:pb-24">
           <div className="max-w-5xl mx-auto">
             <FadeIn delay={250}>
-              <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6 flex items-center gap-2">
-                <PenLine className="w-4 h-4" />
+              <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">
                 Writing
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -184,23 +183,22 @@ const AboutPage = () => {
             {/* Work Playlist */}
             <FadeIn delay={300}>
               <div>
-                <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6 flex items-center gap-2">
-                  <Music className="w-4 h-4" />
+                <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">
                   Work Playlist
                 </h2>
                 <ul className="space-y-0">
                   {playlist.map((track, i) => (
                     <li
                       key={i}
-                      className="flex items-center justify-between py-3.5 border-b border-border/60 group"
+                      className={`flex items-center justify-between py-3.5 border-b border-border/60 group ${i % 2 === 0 ? 'bg-white/60' : ''}`}
                     >
                       <div className="flex items-center gap-3">
                         <button
                           onClick={() => togglePlay(i)}
-                          className="relative w-9 h-9 flex items-center justify-center shrink-0 rounded-full bg-foreground text-background"
+                          className="relative w-7 h-7 flex items-center justify-center shrink-0 rounded-full bg-background border border-border text-foreground"
                           aria-label={playingIndex === i ? `Pause ${track.title}` : `Play ${track.title}`}
                         >
-                          <svg width="36" height="36" className="absolute inset-0">
+                          <svg width="28" height="28" className="absolute inset-0">
                             {/* Progress arc */}
                             {playingIndex === i && (
                               <circle
@@ -217,9 +215,9 @@ const AboutPage = () => {
                             )}
                           </svg>
                           {playingIndex === i ? (
-                            <Pause className="w-3.5 h-3.5 relative z-10 fill-current" />
+                            <Pause className="w-3 h-3 relative z-10 fill-current" />
                           ) : (
-                            <Play className="w-3.5 h-3.5 ml-0.5 relative z-10 fill-current" />
+                            <Play className="w-3 h-3 ml-0.5 relative z-10 fill-current" />
                           )}
                         </button>
                         <span className="text-base font-serif text-foreground">{track.title}</span>
@@ -234,8 +232,7 @@ const AboutPage = () => {
             {/* Current Read */}
             <FadeIn delay={400}>
               <div>
-                <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6 flex items-center gap-2">
-                  <BookOpen className="w-4 h-4" />
+                <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">
                   Current Read
                 </h2>
                 <div className="rounded-2xl border border-border/60 p-6 bg-white flex gap-6 items-start">
