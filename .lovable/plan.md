@@ -1,17 +1,19 @@
 
 
-## Plan: Match About page styling with homepage patterns
+## Plan: White cards for Writing & Current Read, bigger Current Read section
 
 ### Changes to `src/pages/AboutPage.tsx`
 
-**Writing cards** — Change `bg-white` to `bg-white/60` to match the homepage Projects section card style on cream backgrounds.
+**1. Writing cards** — Change `bg-white/5 border-white/10` to `bg-white` with dark text styling. Update inner text colors from `text-white` / `text-white/40` / `text-white/60` to `text-foreground` / `text-muted-foreground`. Update link color similarly.
 
-**Playlist rows** — The zebra striping already uses `bg-white/60` which is correct. No change needed there.
+**2. Current Read card** — Change `bg-white/5 border-white/10` to `bg-white` with dark text. Update text colors to match. Increase book image size from `w-24 md:w-32` to `w-36 md:w-48` and add padding (`p-8`) for a more spacious feel.
 
-**Current Read card** — Change `bg-white` to `bg-white/60` to match the same pattern.
-
-These are the only styling mismatches. The section labels (`text-sm uppercase tracking-widest text-muted-foreground`) already match the homepage pattern for light-background sections (the homepage dark sections use `text-white/60` because they sit on dark surfaces, but the About page is on cream so `text-muted-foreground` is correct).
+**3. Text color updates within white cards:**
+- Category labels: `text-muted-foreground`
+- Titles: `text-foreground`
+- Excerpts/notes: `text-muted-foreground`
+- Links: `text-foreground`
 
 ### Files modified
-- `src/pages/AboutPage.tsx` — two instances of `bg-white` changed to `bg-white/60`
+- `src/pages/AboutPage.tsx`
 
