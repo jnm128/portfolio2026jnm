@@ -30,7 +30,7 @@ const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose
         open ? 'translate-x-0' : 'translate-x-full'
       )}
     >
-      <div className="px-8 md:px-12 pt-8 pb-24">
+      <div className="px-8 md:px-12 pt-24 pb-24">
         <div className="flex items-center justify-between mb-12">
           <button
             onClick={onClose}
