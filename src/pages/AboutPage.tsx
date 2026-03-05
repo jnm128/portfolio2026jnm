@@ -146,6 +146,9 @@ const AboutPage = () => {
         {/* Writing, Work Playlist & Current Read — Combined Dark Section */}
         <section className="bg-[#171717] text-white py-16 md:py-24">
           <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
+            <p className="text-[14px] text-center font-medium uppercase tracking-wider text-white/60 mb-10">
+              Get to know your favorite designer
+            </p>
             <div className="max-w-5xl mx-auto space-y-16">
               {/* Writing / LinkedIn Posts */}
               <FadeIn delay={250}>
@@ -232,7 +235,7 @@ const AboutPage = () => {
                     Current Read
                   </h2>
                   <div className="rounded-2xl border border-border/60 p-8 bg-white flex gap-8 items-start">
-                    <div className="w-36 md:w-48 shrink-0 rounded-lg overflow-hidden shadow-xl">
+                    <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden">
                       <img
                         src={currentRead.cover}
                         alt={currentRead.title}
