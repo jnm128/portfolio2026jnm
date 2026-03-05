@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import FadeIn from './animations/FadeIn';
+import { ExternalLink } from 'lucide-react';
 
 interface ProjectsProps {
   className?: string;
@@ -120,8 +121,9 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           {archives.map((item, index) => (
             <FadeIn key={item.name} delay={index * 50} duration={400} threshold={0.05}>
               <div className="flex flex-col md:flex-row md:items-center py-4 border-b border-foreground/10 gap-1 md:gap-0">
-                <Link to={item.link} className="md:w-[28%] font-medium text-sm hover:underline underline-offset-4 transition-colors">
+                <Link to={item.link} className="md:w-[28%] font-medium text-sm hover:underline underline-offset-4 transition-colors inline-flex items-center gap-1.5">
                   {item.name}
+                  <ExternalLink size={14} className="text-muted-foreground" />
                 </Link>
                 <span className="text-sm text-muted-foreground md:w-[18%]">{item.company}</span>
                 <span className="text-sm text-muted-foreground md:w-[16%]">{item.focusArea}</span>
