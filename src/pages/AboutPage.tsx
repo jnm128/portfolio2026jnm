@@ -90,7 +90,6 @@ const AboutPage = () => {
         <section className="pt-10 md:pt-16 pb-24 md:pb-32 bg-[#F8F6F1]">
           <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn delay={200}>
-            <div className="max-w-5xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
                 {/* Profile Image */}
                 <div className="relative w-full max-w-lg aspect-[5/6]">
@@ -140,7 +139,6 @@ const AboutPage = () => {
                   </a>
                 </div>
               </div>
-            </div>
           </FadeIn>
           </div>
         </section>
@@ -151,7 +149,7 @@ const AboutPage = () => {
             <p className="text-[14px] text-center font-medium uppercase tracking-wider text-white/60 mb-10">
               Get to know your favorite designer
             </p>
-            <div className="max-w-5xl mx-auto space-y-16">
+            <div className="space-y-16">
               {/* Writing / LinkedIn Posts */}
               <FadeIn delay={250}>
                 <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
