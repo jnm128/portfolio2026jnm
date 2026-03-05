@@ -154,7 +154,7 @@ const AboutPage = () => {
                 {linkedinPosts.map((post, i) => (
                   <div
                     key={i}
-                    className="rounded-2xl border border-border/60 bg-white p-6 flex flex-col justify-between"
+                    className="rounded-2xl border border-border/60 bg-white/60 p-6 flex flex-col justify-between"
                   >
                     <div>
                       <span className="text-xs uppercase tracking-widest text-muted-foreground">{post.category}</span>
@@ -235,7 +235,7 @@ const AboutPage = () => {
                 <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">
                   Current Read
                 </h2>
-                <div className="rounded-2xl border border-border/60 p-6 bg-white flex gap-6 items-start">
+                <div className="rounded-2xl border border-border/60 p-6 bg-white/60 flex gap-6 items-start">
                   <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden shadow-md">
                     <img
                       src={currentRead.cover}
