@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import PopIn from './animations/PopIn';
+import WorkExperiencePanel from './WorkExperiencePanel';
 
 interface HeroProps {
   className?: string;
@@ -10,6 +11,7 @@ const heroImages = ["/lovable-uploads/luffu-hero.png"];
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [panelOpen, setPanelOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
 
@@ -55,12 +57,13 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <p className="text-base md:text-lg text-muted-foreground font-serif mb-4 max-w-2xl">
           Product designer by day, community builder by night. I build software and digital experiences that connect people and spark meaningful change.
         </p>
-        <a
-          href="/work-experience"
+        <button
+          onClick={() => setPanelOpen(true)}
           className="inline-flex items-center gap-2 bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity mb-6"
         >
           View Work Experience →
-        </a>
+        </button>
+        <WorkExperiencePanel open={panelOpen} onClose={() => setPanelOpen(false)} />
         <PopIn>
           <div ref={imageWrapperRef} className="relative rounded-3xl overflow-hidden h-[60vh] md:h-[80vh] lg:h-[90vh]">
             {heroImages.map((image, index) => (
