@@ -85,9 +85,9 @@ const AboutPage = () => {
   return (
     <main className="relative bg-[#F8F6F1]">
       <ScrollAnimations />
-      <div className="pt-28 md:pt-36">
+      <div className="pt-24 md:pt-28">
         {/* Hero / Intro */}
-        <section className="pt-10 md:pt-16 pb-24 md:pb-32 bg-[#F8F6F1]">
+        <section className="pt-0 pb-24 md:pb-32 bg-[#F8F6F1]">
           <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn delay={200}>
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
