@@ -6,7 +6,7 @@ const skills = ["Figma", "Prototyping", "User Research", "Design Systems", "HTML
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-16 md:py-24 bg-[#F8F6F1]">
+    <section id="about" className="pt-16 md:pt-24 pb-20 md:pb-28 bg-[#F8F6F1]">
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn>
           <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">

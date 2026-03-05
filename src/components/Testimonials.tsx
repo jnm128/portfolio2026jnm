@@ -33,10 +33,10 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
         <FadeIn>
           <div className="flex items-end justify-between mb-8">
             <div>
-              <p className="text-xs uppercase tracking-widest mb-3 text-white/60">Kind Words</p>
-              <h2 className="text-2xl md:text-3xl font-serif text-white">
+              <h2 className="text-3xl md:text-5xl font-serif text-white mb-3">Kind Words</h2>
+              <p className="text-base md:text-lg text-white/60 font-serif max-w-2xl">
                 Bringing people and ideas together at scale
-              </h2>
+              </p>
             </div>
             <div className="flex gap-2">
               <button onClick={prev} disabled={currentIndex === 0} className="w-9 h-9 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white hover:bg-white/20 flex items-center justify-center disabled:opacity-30 transition-colors">
