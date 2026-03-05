@@ -33,7 +33,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
         <FadeIn>
           <div className="flex items-end justify-between mb-8">
             <div>
-              <h2 className="text-3xl md:text-5xl font-serif text-white mb-3">Kind Words</h2>
+              <h2 className="text-3xl md:text-5xl font-serif text-white mb-3">Testimonials</h2>
               <p className="text-base md:text-lg text-white/60 font-serif max-w-2xl">
                 Bringing people and ideas together at scale
               </p>
