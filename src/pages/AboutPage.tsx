@@ -40,7 +40,7 @@ const linkedinPosts = [
   },
 ];
 
-const CIRCLE_RADIUS = 14;
+const CIRCLE_RADIUS = 10;
 const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * CIRCLE_RADIUS;
 
 const AboutPage = () => {
@@ -196,28 +196,28 @@ const AboutPage = () => {
                           <div className="flex items-center gap-3">
                             <button
                               onClick={() => togglePlay(i)}
-                              className="relative w-7 h-7 flex items-center justify-center shrink-0 rounded-full bg-foreground/10 border border-foreground/20 text-foreground"
+                              className="relative w-5 h-5 flex items-center justify-center shrink-0 rounded-full bg-foreground/10 border border-foreground/20 text-foreground"
                               aria-label={playingIndex === i ? `Pause ${track.title}` : `Play ${track.title}`}
                             >
-                              <svg width="28" height="28" className="absolute inset-0">
+                              <svg width="20" height="20" className="absolute inset-0">
                                 {playingIndex === i && (
                                   <circle
-                                    cx="18" cy="18" r={CIRCLE_RADIUS}
+                                    cx="10" cy="10" r={CIRCLE_RADIUS}
                                     fill="none"
                                     stroke="currentColor"
                                     strokeWidth="2"
                                     strokeDasharray={CIRCLE_CIRCUMFERENCE}
                                     strokeDashoffset={dashOffset}
                                     strokeLinecap="round"
-                                    transform="rotate(-90 18 18)"
+                                    transform="rotate(-90 10 10)"
                                     className="transition-[stroke-dashoffset] duration-200"
                                   />
                                 )}
                               </svg>
                               {playingIndex === i ? (
-                                <Pause className="w-3 h-3 relative z-10 fill-current" />
+                                <Pause className="w-2.5 h-2.5 relative z-10 fill-current" />
                               ) : (
-                                <Play className="w-3 h-3 ml-0.5 relative z-10 fill-current" />
+                                <Play className="w-2.5 h-2.5 ml-0.5 relative z-10 fill-current" />
                               )}
                             </button>
                             <span className="text-base font-serif text-foreground">{track.title}</span>
