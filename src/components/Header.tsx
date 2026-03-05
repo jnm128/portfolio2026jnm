@@ -228,20 +228,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             </Link>
 
             {/* Community */}
-            <button
-              onClick={() => {
-                if (isBookClubPage) {
-                  window.location.reload();
-                } else if (isHomePage) {
-                  scrollToSection('community');
-                } else {
-                  navigateAndScroll('community');
-                }
-              }}
+            <Link
+              to="/book-club"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               Community
-            </button>
+            </Link>
 
             {/* Get in Touch - Black to white button */}
             <Link
@@ -293,7 +285,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         <nav className="flex flex-col items-center gap-6 pt-12">
           <MobileNavLink label="Work" sectionId="projects" />
           <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">About</Link>
-          <MobileNavLink label="Community" sectionId="community" isBookClubNavOnBookClubPage={isBookClubPage} />
+          <Link to="/book-club" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Community</Link>
           
           <Link
             to="/contact"

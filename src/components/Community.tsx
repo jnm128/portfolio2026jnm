@@ -32,8 +32,8 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
               <div className="md:w-3/5">
                 <div className="rounded-xl overflow-hidden">
                   <img 
-                    src="/lovable-uploads/47f9a1d0-4458-400a-8fc0-79adf093cf18.png"
-                    alt="UX Design Community"
+                    src="/lovable-uploads/community-books.jpeg"
+                    alt="Fresh Perspectives Book Club"
                     className="w-full aspect-[16/9] object-cover"
                   />
                 </div>
