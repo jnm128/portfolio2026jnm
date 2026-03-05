@@ -61,7 +61,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           onClick={() => setPanelOpen(true)}
           className="inline-flex items-center bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity mb-6"
         >
-          Work Experience
+          View Resume
         </button>
         <WorkExperiencePanel open={panelOpen} onClose={() => setPanelOpen(false)} />
         <PopIn>
