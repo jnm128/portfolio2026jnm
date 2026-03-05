@@ -1,36 +1,19 @@
 
 
-## Plan: Normalize section spacing
+## Plan: Fix Process spacing and normalize heading sizes
 
-Current spacing is inconsistent across sections. The standard should be `py-16 md:py-24` for main content sections, with intentional exceptions for the Hero (top of page) and the Testimonials/Community pair (which share a halved gap by design).
+### Issues found
+
+1. **Process section spacing**: Uses `py-12 md:py-20` — should be `py-16 md:py-24` to match the standardized spacing. Also uses `bg-white` instead of `bg-[#F8F6F1]`, and `px-4 md:px-6` / `max-w-6xl` instead of the site-wide `px-6 md:px-10` / `max-w-[1600px]`.
+
+2. **Heading size mismatch**: Hero h1 ("Joanna Minott, UX Designer") is `text-2xl md:text-3xl`, while AboutSection h2 ("Design, Tech & Intention") is `text-3xl md:text-5xl`. These should match.
 
 ### Changes
 
-**`src/components/IntroBlurb.tsx`**
-- Change `py-8 md:py-12` to `py-12 md:py-16` — currently too tight, needs more breathing room
+**`src/components/Process.tsx`**
+- Change `py-12 md:py-20 bg-white` → `py-16 md:py-24 bg-[#F8F6F1]`
+- Change container from `px-4 md:px-6` + `max-w-6xl` to `px-6 md:px-10` + `max-w-[1600px]` to match other sections
 
-**`src/components/Projects.tsx`**
-- Keep `py-12 md:py-20` — already close to standard, bump to `py-16 md:py-24` for consistency
-
-**`src/components/AboutSection.tsx`**
-- Change `py-10 md:py-16` to `py-16 md:py-24` — currently tighter than other sections
-
-**`src/components/Collab.tsx`**
-- Change `py-24 md:py-32` to `py-16 md:py-24` — currently oversized compared to other sections
-
-**No changes to:**
-- **Hero** — top-of-page spacing is intentionally different
-- **Testimonials / Community** — their split padding (`pt-12 pb-6` / `pt-6 pb-12`) is intentional to create a tighter pairing, and together they equal the standard `py-18 md:py-30` which is reasonable for the dark section transition
-
-### Summary of final values
-
-| Section | Before | After |
-|---------|--------|-------|
-| Hero | `pt-20 md:pt-24 pb-6 md:pb-8` | no change |
-| IntroBlurb | `py-8 md:py-12` | `py-12 md:py-16` |
-| Projects | `py-12 md:py-20` | `py-16 md:py-24` |
-| AboutSection | `py-10 md:py-16` | `py-16 md:py-24` |
-| Testimonials | `pt-12 pb-6 md:pt-20 md:pb-10` | no change |
-| Community | `pt-6 pb-12 md:pt-10 md:pb-20` | no change |
-| Collab | `py-24 md:py-32` | `py-16 md:py-24` |
+**`src/components/Hero.tsx`**
+- Change h1 from `text-2xl md:text-3xl` → `text-3xl md:text-5xl` to match AboutSection heading size
 
