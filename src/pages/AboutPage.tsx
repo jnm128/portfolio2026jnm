@@ -186,45 +186,47 @@ const AboutPage = () => {
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
                     Work Playlist
                   </h2>
-                  <ul className="space-y-0">
-                    {playlist.map((track, i) => (
-                      <li
-                        key={i}
-                        className={`flex items-center justify-between py-3.5 px-4 border-b border-white/10 group ${i % 2 === 0 ? 'bg-white/[0.07]' : ''}`}
-                      >
-                        <div className="flex items-center gap-3">
-                          <button
-                            onClick={() => togglePlay(i)}
-                            className="relative w-7 h-7 flex items-center justify-center shrink-0 rounded-full bg-white/10 border border-white/20 text-white"
-                            aria-label={playingIndex === i ? `Pause ${track.title}` : `Play ${track.title}`}
-                          >
-                            <svg width="28" height="28" className="absolute inset-0">
-                              {playingIndex === i && (
-                                <circle
-                                  cx="18" cy="18" r={CIRCLE_RADIUS}
-                                  fill="none"
-                                  stroke="white"
-                                  strokeWidth="2"
-                                  strokeDasharray={CIRCLE_CIRCUMFERENCE}
-                                  strokeDashoffset={dashOffset}
-                                  strokeLinecap="round"
-                                  transform="rotate(-90 18 18)"
-                                  className="transition-[stroke-dashoffset] duration-200"
-                                />
+                  <div className="bg-white rounded-2xl border border-border/60 p-6 overflow-hidden">
+                    <ul className="divide-y divide-muted">
+                      {playlist.map((track, i) => (
+                        <li
+                          key={i}
+                          className={`flex items-center justify-between py-3.5 px-4 group ${i % 2 === 0 ? 'bg-muted/40' : ''}`}
+                        >
+                          <div className="flex items-center gap-3">
+                            <button
+                              onClick={() => togglePlay(i)}
+                              className="relative w-7 h-7 flex items-center justify-center shrink-0 rounded-full bg-foreground/10 border border-foreground/20 text-foreground"
+                              aria-label={playingIndex === i ? `Pause ${track.title}` : `Play ${track.title}`}
+                            >
+                              <svg width="28" height="28" className="absolute inset-0">
+                                {playingIndex === i && (
+                                  <circle
+                                    cx="18" cy="18" r={CIRCLE_RADIUS}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeDasharray={CIRCLE_CIRCUMFERENCE}
+                                    strokeDashoffset={dashOffset}
+                                    strokeLinecap="round"
+                                    transform="rotate(-90 18 18)"
+                                    className="transition-[stroke-dashoffset] duration-200"
+                                  />
+                                )}
+                              </svg>
+                              {playingIndex === i ? (
+                                <Pause className="w-3 h-3 relative z-10 fill-current" />
+                              ) : (
+                                <Play className="w-3 h-3 ml-0.5 relative z-10 fill-current" />
                               )}
-                            </svg>
-                            {playingIndex === i ? (
-                              <Pause className="w-3 h-3 relative z-10 fill-current" />
-                            ) : (
-                              <Play className="w-3 h-3 ml-0.5 relative z-10 fill-current" />
-                            )}
-                          </button>
-                          <span className="text-base font-serif text-white">{track.title}</span>
-                        </div>
-                        <span className="text-sm text-white/60 ml-4 shrink-0">{track.artist}</span>
-                      </li>
-                    ))}
-                  </ul>
+                            </button>
+                            <span className="text-base font-serif text-foreground">{track.title}</span>
+                          </div>
+                          <span className="text-sm text-muted-foreground ml-4 shrink-0">{track.artist}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </FadeIn>
 
