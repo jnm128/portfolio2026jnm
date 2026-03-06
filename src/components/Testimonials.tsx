@@ -74,9 +74,6 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
                   <p className="text-xs text-white/60">{heroTestimonial.role}</p>
                 </div>
               </div>
-              <span className="text-xs px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white/70">
-                {heroTestimonial.company}
-              </span>
             </div>
           </div>
         </FadeIn>
@@ -112,9 +109,6 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
                       <p className="text-xs text-muted-foreground">{t.role}</p>
                     </div>
                   </div>
-                  <span className="text-[10px] px-2.5 py-1 rounded-full bg-foreground/5 border border-foreground/10 text-muted-foreground whitespace-nowrap">
-                    {t.company}
-                  </span>
                 </div>
               </div>
             </FadeIn>
