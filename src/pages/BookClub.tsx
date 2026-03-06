@@ -34,6 +34,21 @@ const books = [
     author: "Tom Greever",
     cover: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=300&h=400&fit=crop",
   },
+  {
+    title: "Refactoring UI",
+    author: "Adam Wathan & Steve Schoger",
+    cover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop",
+  },
+  {
+    title: "The Lean Startup",
+    author: "Eric Ries",
+    cover: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=300&h=400&fit=crop",
+  },
+  {
+    title: "Creative Confidence",
+    author: "Tom & David Kelley",
+    cover: "https://images.unsplash.com/photo-1589998059171-988d887df646?w=300&h=400&fit=crop",
+  },
 ];
 
 const BookClub: React.FC = () => {
@@ -45,8 +60,11 @@ const BookClub: React.FC = () => {
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
             <div className="max-w-3xl">
+              <div className="w-16 h-16 rounded-full bg-foreground flex items-center justify-center mb-6">
+                <BookOpen className="w-7 h-7 text-background" />
+              </div>
               <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
-                Fresh Perspectives Collective
+                Fresh Perspectives
               </h1>
               <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-2">
                 A community of curious minds exploring the intersection of design, psychology, and human behavior.
@@ -111,24 +129,22 @@ const BookClub: React.FC = () => {
       <section className="py-16 md:py-24 bg-[#F8F6F1]">
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
-            <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-12">
-              Our Bookshelf
-            </h2>
+            <p className="text-[14px] uppercase tracking-wider text-muted-foreground font-medium text-center mb-12">
+              A Look at Our Past Reads
+            </p>
           </FadeIn>
 
           <FadeIn delay={100}>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {books.map((book, index) => (
                 <div key={index} className="group cursor-pointer">
                   <div className="relative mb-4 transition-transform duration-300 group-hover:-translate-y-2">
-                    <div className="absolute inset-0 bg-foreground/20 rounded-sm translate-x-2 translate-y-2" />
-                    <div className="relative aspect-[3/4] rounded-sm overflow-hidden border border-border shadow-lg">
+                    <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
                       <img 
                         src={book.cover} 
                         alt={book.title}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/30 to-transparent" />
                     </div>
                   </div>
                   <h3 className="font-serif text-sm font-medium leading-tight mb-1 text-foreground">
