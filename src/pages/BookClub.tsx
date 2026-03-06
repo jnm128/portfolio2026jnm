@@ -161,7 +161,7 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-[#171717]">
+      <section className="py-16 md:py-24 bg-[#1C1C1C]">
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
             <div className="max-w-2xl mx-auto text-center">
@@ -172,7 +172,7 @@ const BookClub: React.FC = () => {
                 Join a growing community of designers who believe in the power of continuous learning and shared insights.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="w-full sm:w-auto px-8 py-3 bg-white text-[#171717] font-medium rounded-full transition-all hover:bg-white/90 hover:scale-105 active:scale-95">
+                <button className="w-full sm:w-auto px-8 py-3 bg-white text-[#1C1C1C] font-medium rounded-full transition-all hover:bg-white/90 hover:scale-105 active:scale-95">
                   Join the Community
                 </button>
                 <button className="w-full sm:w-auto px-8 py-3 bg-transparent text-white font-medium rounded-full border border-white/30 transition-all hover:bg-white/10 active:scale-95">

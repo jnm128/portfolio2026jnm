@@ -284,7 +284,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       >
         <nav className="flex flex-col items-center gap-6 pt-12">
           <MobileNavLink label="Work" sectionId="projects" />
-          <MobileNavLink label="Work" sectionId="projects" />
           <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">About</Link>
           <Link to="/book-club" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Community</Link>
           

@@ -145,7 +145,7 @@ const AboutPage = () => {
         </section>
 
         {/* Writing, Work Playlist & Current Read — Combined Dark Section */}
-        <section className="bg-[#171717] text-white py-16 md:py-24">
+        <section className="bg-[#1C1C1C] text-white py-16 md:py-24">
           <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
             <div className="mb-16">
               <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">
