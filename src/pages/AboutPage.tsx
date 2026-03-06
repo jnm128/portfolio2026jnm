@@ -119,12 +119,12 @@ const AboutPage = () => {
                     href="https://www.linkedin.com/in/joannaminott"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-medium 
+                    className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-full text-base font-medium 
                                hover:bg-background hover:text-foreground border border-foreground 
                                transition-all duration-300 self-start"
                   >
                     Connect on LinkedIn
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
 
