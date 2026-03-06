@@ -13,7 +13,7 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
       <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
         <FadeIn delay={100}>
           <p className="text-xs uppercase tracking-widest mb-4 text-white/60">Community</p>
-          <div className="rounded-2xl p-6 md:p-8 bg-[#F8F6F1]">
+          <div className="rounded-2xl p-6 md:p-8 bg-[#D4E4ED]">
             <div className="flex flex-col gap-6 md:gap-12 md:flex-row">
               <div className="md:w-2/5 flex flex-col justify-center">
                 <h3 className="text-lg md:text-xl font-serif font-medium leading-relaxed mb-4 text-foreground">
