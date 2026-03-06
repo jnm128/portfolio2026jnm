@@ -10,6 +10,7 @@ const playlist = [
   { title: "Electric Feel", artist: "MGMT", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" },
   { title: "Sunset Lover", artist: "Petit Biscuit", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" },
   { title: "Breathe", artist: "Télépopmusik", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" },
+  { title: "Alone (ft. Notelle)", artist: "Telomic", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" },
 ];
 
 const currentRead = {
