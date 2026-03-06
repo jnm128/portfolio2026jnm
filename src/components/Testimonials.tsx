@@ -61,7 +61,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
         {/* Hero Pull Quote */}
         <FadeIn delay={100}>
           <div className="mb-16 md:mb-20">
-            <blockquote className="font-serif text-3xl md:text-5xl leading-tight text-white mb-8">
+            <blockquote className="font-serif text-3xl md:text-5xl leading-tight text-[#F8F6F1] mb-8">
               "{heroTestimonial.quote}"
             </blockquote>
             <div className="flex items-center gap-4">
