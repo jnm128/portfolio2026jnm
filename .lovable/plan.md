@@ -1,29 +1,20 @@
 
 
-## Plan: Update dark backgrounds site-wide + fix duplicate mobile nav
+## Plan: Change card backgrounds to lighter cream `#F8F6F1`
 
 ### Overview
-Replace all `#171717` with `#1C1C1C` across every file, update the Testimonials hero quote to cream (`#F8F6F1`), and fix the duplicate "Work" link in the mobile menu from the last diff.
+Replace the pastel card colors with the lighter cream background (`#F8F6F1`) on the Writing cards, Testimonials cards, and Community card on the homepage. The Book Club/Community page cards remain unchanged.
 
 ### Changes
 
-**1. `src/components/DarkSection.tsx` (line 25)** — `#171717` → `#1C1C1C`
+**1. `src/components/Testimonials.tsx` (line 100)** — Replace rotating pastel backgrounds with `bg-[#F8F6F1]`
 
-**2. `src/components/Footer.tsx` (line 25)** — `bg-[#171717]` → `bg-[#1C1C1C]`
+**2. `src/pages/AboutPage.tsx` (line 168)** — Replace rotating pastel backgrounds on Writing cards with `bg-[#F8F6F1]`
 
-**3. `src/pages/AboutPage.tsx` (line 148)** — `bg-[#171717]` → `bg-[#1C1C1C]`
-
-**4. `src/pages/BookClub.tsx` (lines 164, 175)** — `bg-[#171717]` → `bg-[#1C1C1C]`, `text-[#171717]` → `text-[#1C1C1C]`
-
-**5. `src/components/Testimonials.tsx` (line 64)** — Hero blockquote `text-white` → `text-[#F8F6F1]`
-
-**6. `src/components/Header.tsx` (line 286-287)** — Remove duplicate `<MobileNavLink label="Work" sectionId="projects" />` (bug from last edit)
+**3. `src/components/Community.tsx` (line 16)** — Replace `bg-[#D4E4ED]` with `bg-[#F8F6F1]`
 
 ### Files modified
-- `src/components/DarkSection.tsx`
-- `src/components/Footer.tsx`
-- `src/pages/AboutPage.tsx`
-- `src/pages/BookClub.tsx`
 - `src/components/Testimonials.tsx`
-- `src/components/Header.tsx`
+- `src/pages/AboutPage.tsx`
+- `src/components/Community.tsx`
 
