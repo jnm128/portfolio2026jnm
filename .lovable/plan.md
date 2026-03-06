@@ -1,13 +1,13 @@
 
 
-## Plan: Add heading + tagline to About page dark section
+## Plan: Swap positions in About page hero + Current Read section
 
-Replace the small centered "Get to know your favorite designer" text (line 149-151 in `AboutPage.tsx`) with a heading + tagline block matching the "Design, Tech & Intention" pattern from `AboutSection.tsx`:
+### Changes to `src/pages/AboutPage.tsx`
 
-- **Heading**: `text-3xl md:text-5xl font-serif text-white` — "Get to Know Your Favorite Designer"
-- **Tagline**: `text-base md:text-lg text-white/60 font-serif max-w-2xl` — A short intro line about the non-design side (e.g. "Beyond the pixels — what I'm reading, listening to, and thinking about when I'm not designing.")
-- Left-aligned, matching the homepage pattern
+**1. Hero section** (lines 93-140): Swap the two grid columns so text comes first (left) and photo comes second (right). Move the bio text `<div>` before the image `<div>` in the markup.
 
-### File modified
-- `src/pages/AboutPage.tsx` — lines 149-151, replace the small `<p>` with heading + tagline block
+**2. Current Read section** (lines 244-262): Swap the flex order so text/details come first (left) and the book cover image moves to the right. Move the `<div className="flex-1 min-w-0">` before the image `<div>`.
+
+### Files modified
+- `src/pages/AboutPage.tsx`
 
