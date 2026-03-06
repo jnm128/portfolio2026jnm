@@ -1,22 +1,28 @@
 
 
-## Plan: Update Book Club page — hero branding, bookshelf redesign
+## Plan: Apply pastel card colors consistently across sections
 
-### Changes to `src/pages/BookClub.tsx`
+### Overview
+Apply the three pastel colors from the Book Club feature cards (`#D4E4ED` light blue, `#E8C87A` warm amber, `#D8C8E8` soft lavender) to the Testimonials cards, Writing cards on About page, and the Community card. Ensure consistent `font-serif` typography across all.
 
-**1. Hero Section — Add logo circle + update title**
-- Add a circular logo/icon element above the "Fresh Perspectives" title (similar to a brand mark — a simple circle with the initials "FP" or a BookOpen icon inside, styled as a rounded-full element)
-- Keep the title as "Fresh Perspectives" (dropping "Collective")
+### Changes
 
-**2. Bookshelf Section — Restyle header and grid**
-- Center-align the bookshelf heading
-- Reduce font size to match the marquee style: `text-[14px] uppercase tracking-wider text-muted-foreground font-medium text-center`
-- Update title to something like "A Look at Our Past Reads"
-- Change grid from `grid-cols-6` to `grid-cols-3` for larger book images
-- Remove the shadow element (`bg-foreground/20 translate-x-2 translate-y-2`), the `shadow-lg` class, the `border`, and the spine gradient overlay
-- Keep clean rounded corners with simple hover lift effect
-- Add 3 more books to fill out a 3x3 grid (9 total)
+**1. `src/components/Testimonials.tsx` — Testimonial cards (line 100)**
+- Replace uniform `bg-[#F8F6F1]` on the 3 cards with rotating pastel colors: card 0 gets `#D4E4ED`, card 1 gets `#E8C87A`, card 2 gets `#D8C8E8`
+- Add the color as a property to `cardTestimonials` array or use index-based mapping
+- Ensure quote text uses `font-serif` for consistency
 
-### File modified
-- `src/pages/BookClub.tsx`
+**2. `src/pages/AboutPage.tsx` — Writing cards (line 164-186)**
+- Replace uniform `bg-white` on the 3 LinkedIn post cards with the same rotating pastels: `#D4E4ED`, `#E8C87A`, `#D8C8E8`
+- Remove the `border border-border/60` since the colored backgrounds provide enough visual separation
+- Ensure heading/body text uses `font-serif` consistently
+
+**3. `src/components/Community.tsx` — Community card (line 16)**
+- Update the single card background from `bg-[#F8F6F1]` to one of the pastels (e.g., `#D4E4ED` light blue) for visual cohesion
+- Ensure heading uses `font-serif` (already does)
+
+### Files modified
+- `src/components/Testimonials.tsx`
+- `src/pages/AboutPage.tsx`
+- `src/components/Community.tsx`
 
