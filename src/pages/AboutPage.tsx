@@ -165,7 +165,7 @@ const AboutPage = () => {
                   {linkedinPosts.map((post, i) => (
                     <div
                       key={i}
-                      className={`rounded-2xl p-6 flex flex-col justify-between ${['bg-[#D4E4ED]', 'bg-[#E8C87A]', 'bg-[#D8C8E8]'][i % 3]}`}
+                      className="rounded-2xl p-6 flex flex-col justify-between bg-[#F8F6F1]"
                     >
                       <div>
                         <span className="text-xs uppercase tracking-widest text-foreground/60 font-serif">{post.category}</span>
