@@ -1,13 +1,32 @@
 
 
-## Plan: Swap positions in About page hero + Current Read section
+## Plan: Redesign Book Club page to match site styling
 
-### Changes to `src/pages/AboutPage.tsx`
+### Overview
+Update the Book Club page to align with the site's established design system (cream `#F8F6F1` background, serif typography at `text-3xl md:text-5xl`, consistent container/padding patterns). Redesign the three feature cards inspired by the Podia reference — giving each a distinct soft color background with a "Learn More" external link CTA. Keep the bookshelf and bottom CTA sections but restyle them for consistency.
 
-**1. Hero section** (lines 93-140): Swap the two grid columns so text comes first (left) and photo comes second (right). Move the bio text `<div>` before the image `<div>` in the markup.
+### Changes to `src/pages/BookClub.tsx`
 
-**2. Current Read section** (lines 244-262): Swap the flex order so text/details come first (left) and the book cover image moves to the right. Move the `<div className="flex-1 min-w-0">` before the image `<div>`.
+**1. Hero Section**
+- Switch from dark `bg-surface-6` to cream `bg-[#F8F6F1]` with `text-foreground` to match the About page hero pattern
+- Use `pt-24 md:pt-28` for header clearance (matching About page)
+- Heading: `text-3xl md:text-5xl font-serif` (site standard)
+- Tagline: `text-base md:text-lg text-muted-foreground font-serif`
+- Remove the pulsing circle indicator for a cleaner look
 
-### Files modified
-- `src/pages/AboutPage.tsx`
+**2. Feature Cards Section**
+- Redesign the 3 cards (Monthly Reads, Community Discussions, Fresh Perspectives) with distinct soft pastel backgrounds inspired by the Podia reference (e.g., light blue `bg-[#D4E4ED]`, warm amber `bg-[#E8C87A]`, soft lavender `bg-[#D8C8E8]`)
+- Each card gets: rounded-2xl, larger padding (p-8), serif heading, description text, and an "Learn More →" link with `ExternalLink` icon
+- Keep icons but make them slightly smaller and more subtle
+
+**3. Bookshelf Section**
+- Switch from `bg-muted` to cream `bg-[#F8F6F1]` for consistency
+- Update heading to site-standard serif typography
+
+**4. CTA Section**
+- Move to dark section `bg-[#171717]` with white text to match the About page dark section pattern
+- Restyle buttons to match site conventions (rounded-full, proper hover states)
+
+### File modified
+- `src/pages/BookClub.tsx` — full restyle
 
