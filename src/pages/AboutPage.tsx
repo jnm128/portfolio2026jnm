@@ -91,17 +91,6 @@ const AboutPage = () => {
           <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn delay={200}>
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
-                {/* Profile Image */}
-                <div className="relative w-full max-w-lg aspect-[5/6]">
-                  <div className="rounded-3xl overflow-hidden h-full">
-                    <img
-                      alt="Joanna Minott"
-                      className="w-full h-full object-cover"
-                      src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
-                    />
-                  </div>
-                </div>
-
                 {/* Bio Text */}
                 <div className="flex flex-col justify-center">
                   <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4">
@@ -137,6 +126,17 @@ const AboutPage = () => {
                     Connect on LinkedIn
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
+                </div>
+
+                {/* Profile Image */}
+                <div className="relative w-full max-w-lg aspect-[5/6] md:ml-auto">
+                  <div className="rounded-3xl overflow-hidden h-full">
+                    <img
+                      alt="Joanna Minott"
+                      className="w-full h-full object-cover"
+                      src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
+                    />
+                  </div>
                 </div>
               </div>
           </FadeIn>
@@ -241,14 +241,7 @@ const AboutPage = () => {
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
                     Current Read
                   </h2>
-                  <div className="rounded-2xl border border-border/60 p-8 bg-white flex gap-8 items-start">
-                    <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden">
-                      <img
-                        src={currentRead.cover}
-                        alt={currentRead.title}
-                        className="w-full h-auto object-cover"
-                      />
-                    </div>
+                  <div className="rounded-2xl border border-border/60 p-8 bg-white flex flex-col-reverse md:flex-row gap-8 items-start">
                     <div className="flex-1 min-w-0">
                       <p className="text-lg md:text-xl font-serif text-foreground mb-1">
                         {currentRead.title}
@@ -259,6 +252,13 @@ const AboutPage = () => {
                       <p className="text-sm text-muted-foreground leading-relaxed font-serif">
                         {currentRead.note}
                       </p>
+                    </div>
+                    <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden">
+                      <img
+                        src={currentRead.cover}
+                        alt={currentRead.title}
+                        className="w-full h-auto object-cover"
+                      />
                     </div>
                   </div>
                 </div>
