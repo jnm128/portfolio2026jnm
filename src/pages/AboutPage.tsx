@@ -168,9 +168,9 @@ const AboutPage = () => {
                       className={`rounded-2xl p-6 flex flex-col justify-between ${['bg-[#D4E4ED]', 'bg-[#E8C87A]', 'bg-[#D8C8E8]'][i % 3]}`}
                     >
                       <div>
-                        <span className="text-xs uppercase tracking-widest text-muted-foreground">{post.category}</span>
+                        <span className="text-xs uppercase tracking-widest text-foreground/60 font-serif">{post.category}</span>
                         <p className="text-base font-serif text-foreground mt-2 mb-3 leading-snug">{post.title}</p>
-                        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">{post.excerpt}</p>
+                        <p className="text-sm text-foreground/70 leading-relaxed line-clamp-2 font-serif">{post.excerpt}</p>
                       </div>
                       <a
                         href={post.url}
