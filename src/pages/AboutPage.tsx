@@ -242,7 +242,14 @@ const AboutPage = () => {
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
                     Current Read
                   </h2>
-                  <div className="rounded-2xl border border-border/60 p-8 bg-white flex flex-col-reverse md:flex-row gap-8 items-start">
+                  <div className="rounded-2xl border border-border/60 p-8 bg-white flex flex-col md:flex-row gap-8 items-start">
+                    <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden">
+                      <img
+                        src={currentRead.cover}
+                        alt={currentRead.title}
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-lg md:text-xl font-serif text-foreground mb-1">
                         {currentRead.title}
@@ -253,13 +260,6 @@ const AboutPage = () => {
                       <p className="text-sm text-muted-foreground leading-relaxed font-serif">
                         {currentRead.note}
                       </p>
-                    </div>
-                    <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden">
-                      <img
-                        src={currentRead.cover}
-                        alt={currentRead.title}
-                        className="w-full h-auto object-cover"
-                      />
                     </div>
                   </div>
                 </div>
