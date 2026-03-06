@@ -146,9 +146,14 @@ const AboutPage = () => {
         {/* Writing, Work Playlist & Current Read — Combined Dark Section */}
         <section className="bg-[#171717] text-white py-16 md:py-24">
           <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
-            <p className="text-[14px] text-center font-medium uppercase tracking-wider text-white/60 mb-10">
-              Get to know your favorite designer
-            </p>
+            <div className="mb-16">
+              <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">
+                Get to Know Your Favorite Designer
+              </h2>
+              <p className="text-base md:text-lg text-white/60 font-serif max-w-2xl">
+                Beyond the pixels — what I'm reading, listening to, and thinking about when I'm not designing.
+              </p>
+            </div>
             <div className="space-y-16">
               {/* Writing / LinkedIn Posts */}
               <FadeIn delay={250}>
