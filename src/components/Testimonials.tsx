@@ -8,7 +8,7 @@ interface TestimonialsProps {
 }
 
 const heroTestimonial = {
-  quote: "She excels at articulating complex concepts in an understandable manner, making her an invaluable liaison between technical teams and non-technical stakeholders.",
+  quote: "Joanna is an invaluable liaison between technical teams and non-technical stakeholders.",
   author: "Rynita Julien",
   role: "Senior Director IT",
   company: "CSL Behring",
