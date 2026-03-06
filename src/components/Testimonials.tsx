@@ -97,8 +97,8 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
         <div className="grid md:grid-cols-3 gap-6">
           {visibleCards.map((t, index) => (
             <FadeIn key={`${animKey}-${index}`} delay={index * 150} duration={500}>
-              <div className="rounded-2xl p-6 h-full bg-[#F8F6F1] flex flex-col justify-between gap-6">
-                <p className="text-sm leading-relaxed text-muted-foreground">"{t.quote}"</p>
+              <div className={`rounded-2xl p-6 h-full flex flex-col justify-between gap-6 ${['bg-[#D4E4ED]', 'bg-[#E8C87A]', 'bg-[#D8C8E8]'][index % 3]}`}>
+                <p className="text-sm leading-relaxed text-muted-foreground font-serif">"{t.quote}"</p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-foreground/10 flex items-center justify-center text-xs font-medium text-foreground/70">
