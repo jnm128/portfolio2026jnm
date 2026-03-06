@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
-import { Circle, BookOpen, Users, Sparkles } from 'lucide-react';
+import { BookOpen, Users, Sparkles, ExternalLink } from 'lucide-react';
 
 const books = [
   {
@@ -38,27 +38,20 @@ const books = [
 
 const BookClub: React.FC = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#F8F6F1]">
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-surface-6 text-surface-1">
+      <section className="pt-24 md:pt-28 pb-16 md:pb-24 bg-[#F8F6F1]">
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
             <div className="max-w-3xl">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="relative flex items-center justify-center w-3 h-3">
-                  <Circle className="w-3 h-3 fill-current relative z-10" />
-                  <span className="absolute inset-0 rounded-full bg-current animate-pulse-ring" />
-                </span>
-                <span className="text-sm uppercase tracking-wider">Book Club</span>
-              </div>
-              <h1 className="text-4xl md:text-6xl font-serif font-medium mb-6 leading-tight">
+              <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
                 Fresh Perspectives Collective
               </h1>
-              <p className="text-lg md:text-xl text-surface-1/80 font-serif leading-relaxed mb-4">
+              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-2">
                 A community of curious minds exploring the intersection of design, psychology, and human behavior.
               </p>
-              <p className="text-lg md:text-xl text-surface-1/80 font-serif leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
                 We read, discuss, and grow together—one book at a time.
               </p>
             </div>
@@ -66,31 +59,48 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 md:py-24 bg-background">
+      {/* Feature Cards Section */}
+      <section className="pb-16 md:pb-24 bg-[#F8F6F1]">
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-6 rounded-2xl bg-secondary/30 border border-border">
-                <BookOpen className="w-8 h-8 mb-4 text-foreground" />
-                <h3 className="text-lg font-serif font-medium mb-2">Monthly Reads</h3>
-                <p className="text-muted-foreground text-sm">
-                  Carefully curated books that challenge perspectives and spark meaningful conversations.
-                </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="rounded-2xl p-8 bg-[#D4E4ED] flex flex-col justify-between min-h-[280px]">
+                <div>
+                  <BookOpen className="w-6 h-6 mb-5 text-foreground/70" />
+                  <h3 className="text-2xl font-serif font-medium text-foreground mb-3">Monthly Reads</h3>
+                  <p className="text-sm text-foreground/70 leading-relaxed">
+                    Carefully curated books that challenge perspectives and spark meaningful conversations about design and behavior.
+                  </p>
+                </div>
+                <a href="#" className="inline-flex items-center gap-2 text-sm font-medium text-foreground mt-6 hover:opacity-70 transition-opacity">
+                  Learn More <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
-              <div className="p-6 rounded-2xl bg-secondary/30 border border-border">
-                <Users className="w-8 h-8 mb-4 text-foreground" />
-                <h3 className="text-lg font-serif font-medium mb-2">Community Discussions</h3>
-                <p className="text-muted-foreground text-sm">
-                  Join live sessions where we dive deep into key takeaways and real-world applications.
-                </p>
+
+              <div className="rounded-2xl p-8 bg-[#E8C87A] flex flex-col justify-between min-h-[280px]">
+                <div>
+                  <Users className="w-6 h-6 mb-5 text-foreground/70" />
+                  <h3 className="text-2xl font-serif font-medium text-foreground mb-3">Community Discussions</h3>
+                  <p className="text-sm text-foreground/70 leading-relaxed">
+                    Join live sessions where we dive deep into key takeaways and real-world applications of what we read.
+                  </p>
+                </div>
+                <a href="#" className="inline-flex items-center gap-2 text-sm font-medium text-foreground mt-6 hover:opacity-70 transition-opacity">
+                  Learn More <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
-              <div className="p-6 rounded-2xl bg-secondary/30 border border-border">
-                <Sparkles className="w-8 h-8 mb-4 text-foreground" />
-                <h3 className="text-lg font-serif font-medium mb-2">Fresh Perspectives</h3>
-                <p className="text-muted-foreground text-sm">
-                  Connect with designers, researchers, and thinkers who bring diverse viewpoints to every discussion.
-                </p>
+
+              <div className="rounded-2xl p-8 bg-[#D8C8E8] flex flex-col justify-between min-h-[280px]">
+                <div>
+                  <Sparkles className="w-6 h-6 mb-5 text-foreground/70" />
+                  <h3 className="text-2xl font-serif font-medium text-foreground mb-3">Fresh Perspectives</h3>
+                  <p className="text-sm text-foreground/70 leading-relaxed">
+                    Connect with designers, researchers, and thinkers who bring diverse viewpoints to every discussion.
+                  </p>
+                </div>
+                <a href="#" className="inline-flex items-center gap-2 text-sm font-medium text-foreground mt-6 hover:opacity-70 transition-opacity">
+                  Learn More <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </FadeIn>
@@ -98,14 +108,10 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Digital Bookshelf */}
-      <section className="py-16 md:py-24 bg-muted">
+      <section className="py-16 md:py-24 bg-[#F8F6F1]">
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
-            <h2 className="text-xl md:text-2xl font-serif font-medium mb-12 flex items-center gap-3">
-              <span className="relative flex items-center justify-center w-3 h-3">
-                <Circle className="w-3 h-3 fill-current relative z-10" />
-                <span className="absolute inset-0 rounded-full bg-current animate-pulse-ring" />
-              </span>
+            <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-12">
               Our Bookshelf
             </h2>
           </FadeIn>
@@ -113,25 +119,19 @@ const BookClub: React.FC = () => {
           <FadeIn delay={100}>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
               {books.map((book, index) => (
-                <div 
-                  key={index} 
-                  className="group cursor-pointer"
-                >
+                <div key={index} className="group cursor-pointer">
                   <div className="relative mb-4 transition-transform duration-300 group-hover:-translate-y-2">
-                    {/* Book shadow */}
                     <div className="absolute inset-0 bg-foreground/20 rounded-sm translate-x-2 translate-y-2" />
-                    {/* Book cover */}
                     <div className="relative aspect-[3/4] rounded-sm overflow-hidden border border-border shadow-lg">
                       <img 
                         src={book.cover} 
                         alt={book.title}
                         className="w-full h-full object-cover"
                       />
-                      {/* Book spine effect */}
                       <div className="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/30 to-transparent" />
                     </div>
                   </div>
-                  <h3 className="font-serif text-sm font-medium leading-tight mb-1 group-hover:text-foreground transition-colors">
+                  <h3 className="font-serif text-sm font-medium leading-tight mb-1 text-foreground">
                     {book.title}
                   </h3>
                   <p className="text-xs text-muted-foreground">
@@ -145,21 +145,21 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-surface-6 text-surface-1">
+      <section className="py-16 md:py-24 bg-[#171717]">
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-6">
+              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-6 text-white">
                 Ready to expand your perspective?
               </h2>
-              <p className="text-lg text-surface-1/80 font-serif mb-8">
+              <p className="text-lg text-white/70 font-serif mb-8">
                 Join a growing community of designers who believe in the power of continuous learning and shared insights.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="w-full sm:w-auto px-8 py-3 bg-surface-1 text-surface-6 font-medium rounded-full transition-all hover:bg-surface-1/90 hover:scale-105 active:scale-95">
+                <button className="w-full sm:w-auto px-8 py-3 bg-white text-[#171717] font-medium rounded-full transition-all hover:bg-white/90 hover:scale-105 active:scale-95">
                   Join the Community
                 </button>
-                <button className="w-full sm:w-auto px-8 py-3 bg-transparent text-surface-1 font-medium rounded-full border border-surface-1/30 transition-all hover:bg-surface-1/10 active:scale-95">
+                <button className="w-full sm:w-auto px-8 py-3 bg-transparent text-white font-medium rounded-full border border-white/30 transition-all hover:bg-white/10 active:scale-95">
                   Learn More
                 </button>
               </div>
