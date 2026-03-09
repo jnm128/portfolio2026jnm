@@ -1,20 +1,25 @@
 
 
-## Plan: Change card backgrounds to lighter cream `#F8F6F1`
+## Plan: Clean up Book Club page
 
-### Overview
-Replace the pastel card colors with the lighter cream background (`#F8F6F1`) on the Writing cards, Testimonials cards, and Community card on the homepage. The Book Club/Community page cards remain unchanged.
+### Changes to `src/pages/BookClub.tsx`
 
-### Changes
+**1. Hero section (lines 62-75)**
+- Remove the circular icon div (lines 63-65)
+- Remove the second paragraph "We read, discuss, and grow together..." (lines 72-74)
+- Add a primary black CTA button/link after the first paragraph: "Learn More" styled as a black pill button (matching site's dark CTA style)
 
-**1. `src/components/Testimonials.tsx` (line 100)** — Replace rotating pastel backgrounds with `bg-[#F8F6F1]`
+**2. Feature cards (lines 84-123)**
+- Remove "Learn More" + ExternalLink links from all three cards (lines 93-95, 106-108, 119-121)
+- Change card backgrounds from pastel colors to `bg-[#F8F6F1]` to match testimonial/writing cards site-wide
 
-**2. `src/pages/AboutPage.tsx` (line 168)** — Replace rotating pastel backgrounds on Writing cards with `bg-[#F8F6F1]`
+**3. Bookshelf heading (line 132)**
+- Change from small uppercase label (`text-[14px] uppercase tracking-wider`) to a secondary title style: `text-2xl md:text-3xl font-serif font-medium text-foreground`
+- Remove `text-center` alignment (left-align to match site patterns)
 
-**3. `src/components/Community.tsx` (line 16)** — Replace `bg-[#D4E4ED]` with `bg-[#F8F6F1]`
+**4. Clean up unused imports**
+- Remove `ExternalLink` from lucide imports
 
 ### Files modified
-- `src/components/Testimonials.tsx`
-- `src/pages/AboutPage.tsx`
-- `src/components/Community.tsx`
+- `src/pages/BookClub.tsx`
 
