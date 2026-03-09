@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
-import { BookOpen, Users, Sparkles, ExternalLink } from 'lucide-react';
+import { BookOpen, Users, Sparkles } from 'lucide-react';
 
 const books = [
   {
@@ -60,18 +60,15 @@ const BookClub: React.FC = () => {
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
             <div className="max-w-3xl">
-              <div className="w-16 h-16 rounded-full bg-foreground flex items-center justify-center mb-6">
-                <BookOpen className="w-7 h-7 text-background" />
-              </div>
               <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
                 Fresh Perspectives
               </h1>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-2">
+              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
                 A community of curious minds exploring the intersection of design, psychology, and human behavior.
               </p>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
-                We read, discuss, and grow together—one book at a time.
-              </p>
+              <a href="#" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity">
+                Learn More
+              </a>
             </div>
           </FadeIn>
         </div>
@@ -82,7 +79,7 @@ const BookClub: React.FC = () => {
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="rounded-2xl p-8 bg-[#D4E4ED] flex flex-col justify-between min-h-[280px]">
+              <div className="rounded-2xl p-8 bg-[#F8F6F1] flex flex-col justify-between min-h-[280px]">
                 <div>
                   <BookOpen className="w-6 h-6 mb-5 text-foreground/70" />
                   <h3 className="text-2xl font-serif font-medium text-foreground mb-3">Monthly Reads</h3>
@@ -90,12 +87,9 @@ const BookClub: React.FC = () => {
                     Carefully curated books that challenge perspectives and spark meaningful conversations about design and behavior.
                   </p>
                 </div>
-                <a href="#" className="inline-flex items-center gap-2 text-sm font-medium text-foreground mt-6 hover:opacity-70 transition-opacity">
-                  Learn More <ExternalLink className="w-4 h-4" />
-                </a>
               </div>
 
-              <div className="rounded-2xl p-8 bg-[#E8C87A] flex flex-col justify-between min-h-[280px]">
+              <div className="rounded-2xl p-8 bg-[#F8F6F1] flex flex-col justify-between min-h-[280px]">
                 <div>
                   <Users className="w-6 h-6 mb-5 text-foreground/70" />
                   <h3 className="text-2xl font-serif font-medium text-foreground mb-3">Community Discussions</h3>
@@ -103,12 +97,9 @@ const BookClub: React.FC = () => {
                     Join live sessions where we dive deep into key takeaways and real-world applications of what we read.
                   </p>
                 </div>
-                <a href="#" className="inline-flex items-center gap-2 text-sm font-medium text-foreground mt-6 hover:opacity-70 transition-opacity">
-                  Learn More <ExternalLink className="w-4 h-4" />
-                </a>
               </div>
 
-              <div className="rounded-2xl p-8 bg-[#D8C8E8] flex flex-col justify-between min-h-[280px]">
+              <div className="rounded-2xl p-8 bg-[#F8F6F1] flex flex-col justify-between min-h-[280px]">
                 <div>
                   <Sparkles className="w-6 h-6 mb-5 text-foreground/70" />
                   <h3 className="text-2xl font-serif font-medium text-foreground mb-3">Fresh Perspectives</h3>
@@ -116,9 +107,6 @@ const BookClub: React.FC = () => {
                     Connect with designers, researchers, and thinkers who bring diverse viewpoints to every discussion.
                   </p>
                 </div>
-                <a href="#" className="inline-flex items-center gap-2 text-sm font-medium text-foreground mt-6 hover:opacity-70 transition-opacity">
-                  Learn More <ExternalLink className="w-4 h-4" />
-                </a>
               </div>
             </div>
           </FadeIn>
@@ -129,9 +117,9 @@ const BookClub: React.FC = () => {
       <section className="py-16 md:py-24 bg-[#F8F6F1]">
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
-            <p className="text-[14px] uppercase tracking-wider text-muted-foreground font-medium text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium text-foreground mb-12">
               A Look at Our Past Reads
-            </p>
+            </h2>
           </FadeIn>
 
           <FadeIn delay={100}>
