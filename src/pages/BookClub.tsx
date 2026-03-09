@@ -127,27 +127,33 @@ const BookClub: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {books.map((book, index) => (
-                <div key={index} className="group cursor-pointer">
-                  <div className="relative mb-4 transition-transform duration-300 group-hover:-translate-y-2">
-                    <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
-                      <img 
-                        src={book.cover} 
-                        alt={book.title}
-                        className="w-full h-full object-cover"
-                      />
+            <Carousel opts={{ align: "start", slidesToScroll: 1 }} className="w-full">
+              <CarouselContent className="-ml-6">
+                {books.map((book, index) => (
+                  <CarouselItem key={index} className="pl-6 basis-1/2 lg:basis-1/4">
+                    <div className="group cursor-pointer">
+                      <div className="relative mb-4 transition-transform duration-300 group-hover:-translate-y-2">
+                        <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
+                          <img 
+                            src={book.cover} 
+                            alt={book.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                      <h3 className="font-serif text-sm font-medium leading-tight mb-1 text-foreground">
+                        {book.title}
+                      </h3>
+                      <p className="text-xs text-muted-foreground">
+                        {book.author}
+                      </p>
                     </div>
-                  </div>
-                  <h3 className="font-serif text-sm font-medium leading-tight mb-1 text-foreground">
-                    {book.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground">
-                    {book.author}
-                  </p>
-                </div>
-              ))}
-            </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="-left-4 md:-left-12" />
+              <CarouselNext className="-right-4 md:-right-12" />
+            </Carousel>
           </FadeIn>
         </div>
       </section>
