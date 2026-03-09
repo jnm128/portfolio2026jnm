@@ -59,25 +59,16 @@ const BookClub: React.FC = () => {
       <section className="pt-24 md:pt-28 pb-16 md:pb-24 bg-[#F8F6F1]">
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
-            <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-              <div className="max-w-xl">
-                <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
-                  Fresh Perspectives
-                </h1>
-                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
-                  A community of curious minds exploring the intersection of design, psychology, and human behavior.
-                </p>
-                <a href="#" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity">
-                  Learn More
-                </a>
-              </div>
-              <div className="w-full md:w-[400px] flex-shrink-0">
-                <img 
-                  src="/lovable-uploads/community-books.jpeg" 
-                  alt="Fresh Perspectives community" 
-                  className="w-full h-auto rounded-2xl object-cover"
-                />
-              </div>
+            <div className="max-w-3xl">
+              <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
+                Fresh Perspectives
+              </h1>
+              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
+                A community of curious minds exploring the intersection of design, psychology, and human behavior.
+              </p>
+              <a href="#" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity">
+                Learn More
+              </a>
             </div>
           </FadeIn>
         </div>
