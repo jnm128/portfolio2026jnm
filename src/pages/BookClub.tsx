@@ -89,7 +89,7 @@ const BookClub: React.FC = () => {
                 </div>
               </div>
 
-              <div className="rounded-2xl p-8 bg-[#F8F6F1] border border-foreground/10 flex flex-col justify-between min-h-[280px]">
+              <div className="rounded-2xl p-8 bg-white border border-foreground/10 flex flex-col justify-between min-h-[280px]">
                 <div>
                   <Users className="w-6 h-6 mb-5 text-foreground/70" />
                   <h3 className="text-2xl font-serif font-medium text-foreground mb-3">Community Discussions</h3>
