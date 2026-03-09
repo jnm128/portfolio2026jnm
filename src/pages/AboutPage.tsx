@@ -92,6 +92,17 @@ const AboutPage = () => {
           <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn delay={200}>
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+                {/* Profile Image */}
+                <div className="relative w-full max-w-lg aspect-[5/6]">
+                  <div className="rounded-3xl overflow-hidden h-full">
+                    <img
+                      alt="Joanna Minott"
+                      className="w-full h-full object-cover"
+                      src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
+                    />
+                  </div>
+                </div>
+
                 {/* Bio Text */}
                 <div className="flex flex-col justify-center">
                   <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4">
@@ -127,17 +138,6 @@ const AboutPage = () => {
                     Connect on LinkedIn
                     <ExternalLink className="w-4 h-4" />
                   </a>
-                </div>
-
-                {/* Profile Image */}
-                <div className="relative w-full max-w-lg aspect-[5/6] md:ml-auto">
-                  <div className="rounded-3xl overflow-hidden h-full">
-                    <img
-                      alt="Joanna Minott"
-                      className="w-full h-full object-cover"
-                      src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
-                    />
-                  </div>
                 </div>
               </div>
           </FadeIn>
