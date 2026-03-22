@@ -72,7 +72,7 @@ const BookClub: React.FC = () => {
                   A community of curious minds exploring the intersection of design, psychology, and human behavior.
                 </p>
                 <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity">
-                  Learn More
+                  Learn More <ExternalLink className="w-4 h-4 ml-1" />
                 </a>
               </div>
               <div className="hidden md:block shrink-0 pt-2">
