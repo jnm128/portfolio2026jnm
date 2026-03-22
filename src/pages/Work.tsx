@@ -35,7 +35,7 @@ const Work: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Header */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20">
+      <section className="pt-32 pb-8 md:pt-40 md:pb-10">
         <div className="max-w-4xl mx-auto px-4 md:px-8">
           <FadeIn>
             <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-6">
