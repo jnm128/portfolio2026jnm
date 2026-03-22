@@ -81,7 +81,7 @@ const AboutPage = () => {
       <div className="pt-24 md:pt-28">
         {/* Hero / Intro */}
         <section className="pt-0 pb-24 md:pb-32 bg-[#F8F6F1]">
-          <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
+            <div className="max-w-4xl mx-auto px-4 md:px-8">
           <FadeIn delay={200}>
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
                 {/* Bio Text */}
@@ -122,7 +122,7 @@ const AboutPage = () => {
                 </div>
 
                 {/* Profile Image */}
-                <div className="relative w-full max-w-lg aspect-[5/6] md:ml-auto">
+                <div className="relative w-full max-w-sm aspect-[5/6] md:ml-auto">
                   <div className="rounded-3xl overflow-hidden h-full">
                     <img
                       alt="Joanna Minott"
@@ -138,7 +138,7 @@ const AboutPage = () => {
 
         {/* Writing, Current Read & Song on Repeat — Combined Dark Section */}
         <section className="bg-[#1C1C1C] text-white py-16 md:py-24">
-          <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
+          <div className="max-w-4xl mx-auto px-4 md:px-8">
             <div className="mb-16">
               <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">
                 Beyond the Pixels
