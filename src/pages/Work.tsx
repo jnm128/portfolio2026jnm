@@ -87,7 +87,7 @@ const Work: React.FC = () => {
 
       {/* Dark CTA */}
       <section className="py-16 md:py-24 bg-[#1C1C1C]">
-        <div className="max-w-4xl mx-auto px-4 md:px-8">
+        <div className="max-w-4xl mx-auto px-6 md:px-12">
           <FadeIn>
             <div className="flex flex-col gap-6 items-center text-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-white">

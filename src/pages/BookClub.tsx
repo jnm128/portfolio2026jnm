@@ -148,7 +148,7 @@ const BookClub: React.FC = () => {
 
       {/* What We Do */}
       <section className="py-16 md:py-24 bg-[#1C1C1C]">
-        <div className="max-w-4xl mx-auto px-4 md:px-8">
+        <div className="max-w-4xl mx-auto px-6 md:px-12">
           <FadeIn>
             <p className="text-xs uppercase tracking-widest text-white/70 mb-12">
               What We Do

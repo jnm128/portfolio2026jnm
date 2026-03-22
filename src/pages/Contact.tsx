@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <main className="min-h-screen bg-background">
       {/* Content */}
-      <div className="pt-32 pb-24 px-4 md:px-8">
+      <div className="pt-32 pb-24 px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium mb-6">
