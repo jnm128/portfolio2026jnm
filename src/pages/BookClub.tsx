@@ -116,6 +116,7 @@ const BookClub: React.FC = () => {
 
           <FadeIn delay={300}>
             <div className="mt-12">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Past Reads</p>
               <Carousel opts={{ align: "start", slidesToScroll: 1 }} className="w-full">
                 <div className="flex items-center justify-end gap-2 mb-6">
                   <CarouselPrevious className="static translate-y-0 w-9 h-9 rounded-full backdrop-blur-md bg-foreground/5 border border-foreground/20 text-foreground hover:bg-foreground/10 disabled:opacity-30" />
