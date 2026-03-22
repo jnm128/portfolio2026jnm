@@ -2,7 +2,9 @@ import React from 'react';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Mic } from 'lucide-react';
+import speakingMiami from '@/assets/speaking-miami.jpg';
+import speakingUF from '@/assets/speaking-uf.jpg';
 
 const songOnRepeat = { title: "Clair de Lune", artist: "Debussy", url: "https://www.youtube.com/watch?v=CvFH_6DNRCY", cover: "/lovable-uploads/artists-way-cover.jpg" };
 
