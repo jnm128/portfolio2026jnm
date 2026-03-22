@@ -166,46 +166,27 @@ const AboutPage = () => {
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
                     Song on Repeat
                   </h2>
-                  <div className="bg-white rounded-2xl border border-border/60 p-6 overflow-hidden flex flex-col md:flex-row gap-6 items-center">
-                    <div className="w-20 md:w-24 shrink-0 rounded-lg overflow-hidden">
+                  <div className="bg-white rounded-2xl border border-border/60 p-6 overflow-hidden flex items-center gap-4">
+                    <div className="w-12 h-12 shrink-0 rounded-lg overflow-hidden">
                       <img
                         src={songOnRepeat.cover}
                         alt={songOnRepeat.title}
-                        className="w-full h-auto object-cover"
+                        className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="flex items-center justify-between flex-1 min-w-0 py-3.5 px-4 bg-muted/40 rounded-lg w-full">
-                      <div className="flex items-center gap-3">
-                        <button
-                          onClick={togglePlay}
-                          className="relative w-5 h-5 flex items-center justify-center shrink-0 rounded-full bg-foreground/10 border border-foreground/20 text-foreground"
-                          aria-label={isPlaying ? `Pause ${songOnRepeat.title}` : `Play ${songOnRepeat.title}`}
-                        >
-                          <svg width="20" height="20" className="absolute inset-0">
-                            {isPlaying && (
-                              <circle
-                                cx="10" cy="10" r={CIRCLE_RADIUS}
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeDasharray={CIRCLE_CIRCUMFERENCE}
-                                strokeDashoffset={dashOffset}
-                                strokeLinecap="round"
-                                transform="rotate(-90 10 10)"
-                                className="transition-[stroke-dashoffset] duration-200"
-                              />
-                            )}
-                          </svg>
-                          {isPlaying ? (
-                            <Pause className="w-2.5 h-2.5 relative z-10 fill-current" />
-                          ) : (
-                            <Play className="w-2.5 h-2.5 ml-0.5 relative z-10 fill-current" />
-                          )}
-                        </button>
-                        <span className="text-base font-serif text-foreground">{songOnRepeat.title}</span>
-                      </div>
-                      <span className="text-sm text-muted-foreground ml-4 shrink-0">{songOnRepeat.artist}</span>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-base font-serif text-foreground leading-tight">{songOnRepeat.title}</p>
+                      <p className="text-sm text-muted-foreground">{songOnRepeat.artist}</p>
                     </div>
+                    <a
+                      href={songOnRepeat.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="shrink-0 text-foreground hover:opacity-70 transition-opacity"
+                      aria-label={`Listen to ${songOnRepeat.title} on YouTube`}
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
                   </div>
                 </div>
               </FadeIn>
