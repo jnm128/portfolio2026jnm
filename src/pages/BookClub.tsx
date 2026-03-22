@@ -4,6 +4,7 @@ import FadeIn from '@/components/animations/FadeIn';
 import { BookOpen, MessageCircle, Globe, ArrowRight } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { Link } from 'react-router-dom';
+import bookClubGroup from '@/assets/book-club-group.png';
 
 const books = [
   {
@@ -195,6 +196,19 @@ const BookClub: React.FC = () => {
             </FadeIn>
           </div>
         </div>
+      </section>
+
+      {/* Group Photo */}
+      <section className="py-12 md:py-16 bg-[#1C1C1C]">
+        <FadeIn>
+          <div className="max-w-2xl mx-auto px-4 md:px-8">
+            <img 
+              src={bookClubGroup} 
+              alt="Book club gathering" 
+              className="w-full rounded-xl shadow-2xl"
+            />
+          </div>
+        </FadeIn>
       </section>
 
       {/* Get Involved CTA */}
