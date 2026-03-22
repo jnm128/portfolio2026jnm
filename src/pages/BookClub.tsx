@@ -88,11 +88,11 @@ const BookClub: React.FC = () => {
 
       {/* Digital Bookshelf */}
       <section className="py-16 md:py-24 bg-[#F8F6F1]">
-        <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
           <FadeIn>
-            <h2 className="text-2xl md:text-3xl font-serif font-medium text-foreground mb-3">
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
               A Look at Our Past Reads
-            </h2>
+            </p>
             <p className="text-base text-muted-foreground font-serif leading-relaxed mb-12">
               A collection of books that have shaped our conversations and expanded our thinking.
             </p>
