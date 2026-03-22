@@ -1,27 +1,31 @@
 
 
-## Plan: Update Book Club page styling
+## Plan: Create dedicated Work page
 
-### 1. Center-align "A Look at Our Past Reads" section (lines 120-127)
-- Add `text-center` to the label and subtitle wrapper
+### Overview
+Create a new `/work` route with a dedicated Work page that includes a header section with title + helper text, the existing project cards from the Projects component, and a dark "Interested in collaborating?" CTA section. Update the "Work" nav link to point to `/work` instead of scrolling to `#projects`. Ensure MINO logo links home with scroll-to-top.
 
-### 2. Make book carousel larger
-- Change carousel container from `max-w-4xl` to `max-w-6xl` to give books more space
-- Keep `basis-1/2 lg:basis-1/4` but the wider container makes each book bigger
+### Changes
 
-### 3. Make "What We Do" section dark (lines 163-210)
-- Change section background from `bg-[#F8F6F1]` to `bg-[#1C1C1C]`
-- Invert all text colors: `text-foreground` → `text-white`, `text-muted-foreground` → `text-white/70`
-- Invert borders: `border-foreground/10` → `border-white/15`
-- Invert icon containers: `bg-foreground` → `bg-white` with `text-background` → `text-[#1C1C1C]`
+#### 1. Create `src/pages/Work.tsx`
+- Header area with large serif title (e.g. "Tiny fraction of my work") and descriptive subtitle, matching the reference screenshot style
+- Import and reuse the project cards data and layout from `Projects.tsx` (the "recent" view cards)
+- Add a dark CTA section at the bottom (`bg-[#1C1C1C]`) matching the Collab component style — centered white text, "Get in Touch" white rounded button
+- Include Footer at the bottom
 
-### 4. Make CTA section dark, matching homepage Collab style (lines 212-245)
-- Change section background to `bg-[#1C1C1C]`
-- Remove the inner `bg-[#EFECE6]` rounded card -- make it flat like Collab component
-- Center-aligned text with white heading, white/70 body text
-- Primary CTA button: `bg-white text-black` (matching Collab's "Get in Touch" style)
-- Secondary button: `border-white/20 text-white`
+#### 2. Update `src/App.tsx`
+- Add route: `<Route path="/work" element={<Work />} />`
+
+#### 3. Update `src/components/Header.tsx`
+- Change "Work" nav link from scrollToSection/navigateAndScroll to a `<Link to="/work">` (both desktop and mobile)
+- MINO logo already links to `/` on non-home pages and scrolls to top on home — no change needed
+
+#### 4. Update `src/components/Footer.tsx`
+- Change "Work" button from `scrollToSection('projects')` to an `<a href="/work">` link
 
 ### Files modified
-- `src/pages/BookClub.tsx`
+- `src/pages/Work.tsx` (new)
+- `src/App.tsx`
+- `src/components/Header.tsx`
+- `src/components/Footer.tsx`
 
