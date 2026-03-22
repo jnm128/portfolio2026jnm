@@ -91,6 +91,26 @@ const BookClub: React.FC = () => {
               </div>
             </div>
           </FadeIn>
+
+          {/* Stats */}
+          <FadeIn delay={200}>
+            <div className="border-t border-foreground/10 mt-12 pt-10">
+              <div className="flex gap-16">
+                <div>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">2025</p>
+                  <p className="text-sm text-muted-foreground mt-1">Founded</p>
+                </div>
+                <div>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">8+</p>
+                  <p className="text-sm text-muted-foreground mt-1">Books Completed</p>
+                </div>
+                <div>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground italic">Monthly</p>
+                  <p className="text-sm text-muted-foreground mt-1">Sessions</p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
