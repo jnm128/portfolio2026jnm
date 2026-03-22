@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
-import { ExternalLink, Mic } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import speakingMiami from '@/assets/speaking-miami.jpg';
 import speakingUF from '@/assets/speaking-uf.jpg';
 
@@ -150,8 +150,7 @@ const AboutPage = () => {
                        </div>
                        <div className="p-5 flex items-center justify-between">
                          <div>
-                           <div className="flex items-center gap-2 mb-2">
-                             <Mic className="w-3.5 h-3.5 text-muted-foreground" />
+                           <div className="mb-2">
                              <span className="text-xs uppercase tracking-widest text-foreground/60 font-serif">Alumni Panel</span>
                            </div>
                            <p className="text-base font-serif text-foreground leading-snug">University of Miami</p>
@@ -169,8 +168,7 @@ const AboutPage = () => {
                        </div>
                        <div className="p-5 flex items-center justify-between">
                          <div>
-                           <div className="flex items-center gap-2 mb-2">
-                             <Mic className="w-3.5 h-3.5 text-muted-foreground" />
+                           <div className="mb-2">
                              <span className="text-xs uppercase tracking-widest text-foreground/60 font-serif">Guest Speaker</span>
                            </div>
                            <p className="text-base font-serif text-foreground leading-snug">University of Florida — Gator Design</p>
