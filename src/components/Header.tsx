@@ -212,12 +212,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {/* Work */}
-            <button
-              onClick={() => isHomePage ? scrollToSection('projects') : navigateAndScroll('projects')}
+            <Link
+              to="/work"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               Work
-            </button>
+            </Link>
 
             {/* About */}
             <Link
