@@ -212,12 +212,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {/* Work */}
-            <button
-              onClick={() => isHomePage ? scrollToSection('projects') : navigateAndScroll('projects')}
+            <Link
+              to="/work"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               Work
-            </button>
+            </Link>
 
             {/* About */}
             <Link
@@ -283,7 +283,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         )}
       >
         <nav className="flex flex-col items-center gap-6 pt-12">
-          <MobileNavLink label="Work" sectionId="projects" />
+          <Link to="/work" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Work</Link>
           <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">About</Link>
           <Link to="/book-club" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Community</Link>
           

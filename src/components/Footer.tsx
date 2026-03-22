@@ -43,12 +43,9 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           
           {/* Navigation */}
           <nav className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm">
-            <button
-              onClick={() => scrollToSection('projects')} 
-              className="text-white/60 hover:text-white transition-colors"
-            >
+            <a href="/work" className="text-white/60 hover:text-white transition-colors">
               Work
-            </button>
+            </a>
             <a href="/about" className="text-white/60 hover:text-white transition-colors">
               About
             </a>
