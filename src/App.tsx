@@ -12,6 +12,7 @@ import CaseStudyCreativeStudio from "./pages/CaseStudyCreativeStudio";
 import Contact from "./pages/Contact";
 import BookClub from "./pages/BookClub";
 import WorkExperience from "./pages/WorkExperience";
+import Work from "./pages/Work";
 import CustomCursor from "./components/CustomCursor";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
