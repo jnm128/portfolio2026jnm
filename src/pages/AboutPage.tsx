@@ -146,7 +146,7 @@ const AboutPage = () => {
                          <img
                            src={speakingMiami}
                            alt="Alumni panel at the University of Miami"
-                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                           className="w-full h-full object-cover"
                          />
                        </div>
                        <div className="p-5 flex items-center justify-between">
@@ -164,7 +164,7 @@ const AboutPage = () => {
                          <img
                            src={speakingUF}
                            alt="Guest speaker at University of Florida's Gator Design student org"
-                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                           className="w-full h-full object-cover"
                          />
                        </div>
                        <div className="p-5 flex items-center justify-between">
