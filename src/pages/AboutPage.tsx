@@ -34,46 +34,7 @@ const linkedinPosts = [
   },
 ];
 
-const CIRCLE_RADIUS = 10;
-const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * CIRCLE_RADIUS;
-
 const AboutPage = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [audioProgress, setAudioProgress] = useState(0);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  const togglePlay = useCallback(() => {
-    if (isPlaying) {
-      audioRef.current?.pause();
-      setIsPlaying(false);
-      setAudioProgress(0);
-      return;
-    }
-
-    if (audioRef.current) {
-      audioRef.current.pause();
-    }
-
-    const audio = new Audio(songOnRepeat.src);
-    audioRef.current = audio;
-    setIsPlaying(true);
-    setAudioProgress(0);
-
-    audio.addEventListener('timeupdate', () => {
-      if (audio.duration) {
-        setAudioProgress((audio.currentTime / audio.duration) * 100);
-      }
-    });
-
-    audio.addEventListener('ended', () => {
-      setIsPlaying(false);
-      setAudioProgress(0);
-    });
-
-    audio.play();
-  }, [isPlaying]);
-
-  const dashOffset = CIRCLE_CIRCUMFERENCE - (audioProgress / 100) * CIRCLE_CIRCUMFERENCE;
 
   return (
     <main className="relative bg-[#F8F6F1]">
