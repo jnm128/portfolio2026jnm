@@ -6,7 +6,7 @@ import { ExternalLink } from 'lucide-react';
 import speakingMiami from '@/assets/speaking-miami.jpg';
 import speakingUF from '@/assets/speaking-uf.jpg';
 
-const songOnRepeat = { title: "Clair de Lune", artist: "Debussy", url: "https://www.youtube.com/watch?v=CvFH_6DNRCY", cover: "/lovable-uploads/artists-way-cover.jpg" };
+const songOnRepeat = { title: "Arirang", artist: "BTS", url: "https://www.youtube.com/results?search_query=BTS+Arirang", cover: "/lovable-uploads/artists-way-cover.jpg" };
 
 const currentRead = {
   title: "The Artist's Way",
