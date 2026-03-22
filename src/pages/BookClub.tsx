@@ -200,19 +200,6 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* Group Photo */}
-      <section className="py-12 md:py-16 bg-[#1C1C1C]">
-        <FadeIn>
-          <div className="flex justify-center px-4 md:px-8">
-            <img 
-              src={bookClubGroup} 
-              alt="Book club gathering"
-              className="max-w-[150px] md:max-w-[180px] rounded-xl shadow-2xl rotate-2"
-            />
-          </div>
-        </FadeIn>
-      </section>
-
       {/* Get Involved CTA */}
       <section className="py-16 md:py-24 bg-[#1C1C1C]">
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
@@ -237,6 +224,19 @@ const BookClub: React.FC = () => {
             </div>
           </FadeIn>
         </div>
+      </section>
+
+      {/* Group Photo */}
+      <section className="py-12 md:py-16 bg-[#1C1C1C]">
+        <FadeIn>
+          <div className="flex justify-center px-4 md:px-8">
+            <img 
+              src={bookClubGroup} 
+              alt="Book club gathering"
+              className="max-w-[150px] md:max-w-[180px] rounded-xl shadow-2xl rotate-2"
+            />
+          </div>
+        </FadeIn>
       </section>
 
       <Footer />
