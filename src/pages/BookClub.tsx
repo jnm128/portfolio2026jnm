@@ -116,6 +116,7 @@ const BookClub: React.FC = () => {
 
           <FadeIn delay={300}>
             <div className="mt-12">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Past Reads</p>
               <Carousel opts={{ align: "start", slidesToScroll: 1 }} className="w-full">
                 <div className="flex items-center justify-end gap-2 mb-6">
                   <CarouselPrevious className="static translate-y-0 w-9 h-9 rounded-full backdrop-blur-md bg-foreground/5 border border-foreground/20 text-foreground hover:bg-foreground/10 disabled:opacity-30" />
@@ -199,19 +200,6 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* Group Photo */}
-      <section className="py-12 md:py-16 bg-[#1C1C1C]">
-        <FadeIn>
-          <div className="flex justify-center px-4 md:px-8">
-            <img 
-              src={bookClubGroup} 
-              alt="Book club gathering"
-              className="max-w-[150px] md:max-w-[180px] rounded-xl shadow-2xl rotate-2"
-            />
-          </div>
-        </FadeIn>
-      </section>
-
       {/* Get Involved CTA */}
       <section className="py-16 md:py-24 bg-[#1C1C1C]">
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
@@ -236,6 +224,19 @@ const BookClub: React.FC = () => {
             </div>
           </FadeIn>
         </div>
+      </section>
+
+      {/* Group Photo */}
+      <section className="py-12 md:py-16 bg-[#1C1C1C]">
+        <FadeIn>
+          <div className="flex justify-center px-4 md:px-8">
+            <img 
+              src={bookClubGroup} 
+              alt="Book club gathering"
+              className="max-w-[150px] md:max-w-[180px] rounded-xl shadow-2xl rotate-2"
+            />
+          </div>
+        </FadeIn>
       </section>
 
       <Footer />
