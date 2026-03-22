@@ -1,8 +1,9 @@
 import React from 'react';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { BookOpen, MessageCircle, Globe, ArrowRight } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
+import { Link } from 'react-router-dom';
 
 const books = [
   {
