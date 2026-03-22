@@ -169,7 +169,7 @@ const AboutPage = () => {
                        <div className="p-5 flex items-center justify-between">
                          <div>
                            <div className="flex items-center gap-2 mb-2">
-                             <Mic className="w-3.5 h-3.5 text-muted-foreground" />
+                           <div className="mb-2">
                              <span className="text-xs uppercase tracking-widest text-foreground/60 font-serif">Guest Speaker</span>
                            </div>
                            <p className="text-base font-serif text-foreground leading-snug">University of Florida — Gator Design</p>
