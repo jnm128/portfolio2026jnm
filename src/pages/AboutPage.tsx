@@ -4,7 +4,7 @@ import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
 import { ExternalLink } from 'lucide-react';
 
-const songOnRepeat = { title: "Clair de Lune", artist: "Debussy", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", cover: "/lovable-uploads/artists-way-cover.jpg" };
+const songOnRepeat = { title: "Clair de Lune", artist: "Debussy", url: "https://www.youtube.com/watch?v=CvFH_6DNRCY", cover: "/lovable-uploads/artists-way-cover.jpg" };
 
 const currentRead = {
   title: "The Artist's Way",
