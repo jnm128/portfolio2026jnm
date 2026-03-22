@@ -75,7 +75,7 @@ const AboutPage = () => {
                 </div>
 
                 {/* Profile Image */}
-                <div className="relative w-full max-w-sm aspect-[5/6] md:ml-auto">
+                <div className="relative w-full max-w-sm aspect-[5/6] md:ml-auto rotate-2 hover:-rotate-1 transition-transform duration-500 translate-y-4">
                   <div className="rounded-3xl overflow-hidden h-full">
                     <img
                       alt="Joanna Minott"
