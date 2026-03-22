@@ -75,18 +75,11 @@ const BookClub: React.FC = () => {
                   Learn More
                 </a>
               </div>
-              <div className="hidden md:flex items-start gap-4 shrink-0 pt-2">
-                <div className="w-36 h-48 rounded-xl overflow-hidden shadow-md -rotate-3 translate-y-4">
-                  <img 
-                    src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop" 
-                    alt="Book collection" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="hidden md:block shrink-0 pt-2">
                 <div className="w-36 h-48 rounded-xl overflow-hidden shadow-md rotate-2">
                   <img 
-                    src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=400&fit=crop" 
-                    alt="Book reading" 
+                    src={bookClubGroup} 
+                    alt="Book club gathering" 
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -228,18 +221,6 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* Group Photo */}
-      <section className="py-12 md:py-16 bg-[#1C1C1C]">
-        <FadeIn>
-          <div className="flex justify-center px-4 md:px-8">
-            <img 
-              src={bookClubGroup} 
-              alt="Book club gathering"
-              className="max-w-[150px] md:max-w-[180px] rounded-xl shadow-2xl rotate-2"
-            />
-          </div>
-        </FadeIn>
-      </section>
 
       <Footer />
     </div>
