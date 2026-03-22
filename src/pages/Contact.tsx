@@ -1,18 +1,18 @@
 import React from 'react';
 import { Mail, Linkedin, Calendar } from 'lucide-react';
 import FadeIn from '@/components/animations/FadeIn';
+import Footer from '@/components/Footer';
 
 const Contact = () => {
   return (
-    <main className="min-h-screen bg-background">
-      {/* Content */}
-      <div className="pt-32 pb-24 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto">
+    <main className="min-h-screen bg-[#F8F6F1]">
+      <div className="pt-24 md:pt-28 pb-24 md:pb-32">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
           <FadeIn>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium mb-6">
+            <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
               Let's create something meaningful together
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mb-16">
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl mb-16">
               Whether you have a project in mind, want to collaborate, or just want to say hello — I'd love to hear from you.
             </p>
           </FadeIn>
@@ -20,19 +20,19 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 gap-12 md:gap-16">
             {/* Contact Methods */}
             <FadeIn delay={100}>
-              <div className="space-y-8">
-                <h2 className="text-xl font-serif font-medium mb-6">Get in touch</h2>
+              <div className="space-y-6">
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Get in touch</p>
                 
                 <a 
                   href="mailto:hello@joannaminott.com" 
-                  className="group flex items-start gap-4 p-4 rounded-2xl border border-border hover:border-primary/30 hover:bg-primary/5 transition-all"
+                  className="group flex items-start gap-4 p-5 rounded-2xl bg-white border border-foreground/10 hover:border-foreground/20 transition-all"
                 >
-                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-foreground" />
+                  <div className="w-10 h-10 rounded-full bg-[#F8F6F1] flex items-center justify-center">
+                    <Mail className="w-4 h-4 text-foreground" />
                   </div>
                   <div>
-                    <span className="text-sm text-muted-foreground">Email</span>
-                    <p className="text-foreground font-medium group-hover:text-primary transition-colors">
+                    <span className="text-xs text-muted-foreground">Email</span>
+                    <p className="text-sm text-foreground font-medium">
                       hello@joannaminott.com
                     </p>
                   </div>
@@ -42,14 +42,14 @@ const Contact = () => {
                   href="https://linkedin.com/in/joannaminott" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-start gap-4 p-4 rounded-2xl border border-border hover:border-primary/30 hover:bg-primary/5 transition-all"
+                  className="group flex items-start gap-4 p-5 rounded-2xl bg-white border border-foreground/10 hover:border-foreground/20 transition-all"
                 >
-                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
-                    <Linkedin className="w-5 h-5 text-foreground" />
+                  <div className="w-10 h-10 rounded-full bg-[#F8F6F1] flex items-center justify-center">
+                    <Linkedin className="w-4 h-4 text-foreground" />
                   </div>
                   <div>
-                    <span className="text-sm text-muted-foreground">LinkedIn</span>
-                    <p className="text-foreground font-medium group-hover:text-primary transition-colors">
+                    <span className="text-xs text-muted-foreground">LinkedIn</span>
+                    <p className="text-sm text-foreground font-medium">
                       Connect with me
                     </p>
                   </div>
@@ -59,14 +59,14 @@ const Contact = () => {
                   href="https://calendly.com/joannaminott" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-start gap-4 p-4 rounded-2xl border border-border hover:border-primary/30 hover:bg-primary/5 transition-all"
+                  className="group flex items-start gap-4 p-5 rounded-2xl bg-white border border-foreground/10 hover:border-foreground/20 transition-all"
                 >
-                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
-                    <Calendar className="w-5 h-5 text-foreground" />
+                  <div className="w-10 h-10 rounded-full bg-[#F8F6F1] flex items-center justify-center">
+                    <Calendar className="w-4 h-4 text-foreground" />
                   </div>
                   <div>
-                    <span className="text-sm text-muted-foreground">Schedule</span>
-                    <p className="text-foreground font-medium group-hover:text-primary transition-colors">
+                    <span className="text-xs text-muted-foreground">Schedule</span>
+                    <p className="text-sm text-foreground font-medium">
                       Book a 30-min call
                     </p>
                   </div>
@@ -76,26 +76,26 @@ const Contact = () => {
 
             {/* Location & Availability */}
             <FadeIn delay={200}>
-              <div className="space-y-8">
-                <h2 className="text-xl font-serif font-medium mb-6">Currently</h2>
+              <div className="space-y-6">
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Currently</p>
                 
-                <div className="p-6 rounded-2xl bg-secondary/30">
-                  <span className="text-sm text-muted-foreground">Location</span>
-                  <p className="text-lg font-medium mt-1">New York, NY</p>
-                  <p className="text-muted-foreground text-sm mt-1">Open to remote collaboration worldwide</p>
+                <div className="p-5 rounded-2xl bg-white border border-foreground/10">
+                  <span className="text-xs text-muted-foreground">Location</span>
+                  <p className="text-sm font-medium text-foreground mt-1">New York, NY</p>
+                  <p className="text-xs text-muted-foreground mt-1">Open to remote collaboration worldwide</p>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-secondary/30">
-                  <span className="text-sm text-muted-foreground">Availability</span>
-                  <p className="text-lg font-medium mt-1 flex items-center gap-2">
+                <div className="p-5 rounded-2xl bg-white border border-foreground/10">
+                  <span className="text-xs text-muted-foreground">Availability</span>
+                  <p className="text-sm font-medium text-foreground mt-1 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                     Open for new projects
                   </p>
-                  <p className="text-muted-foreground text-sm mt-1">Accepting clients for Q1 2025</p>
+                  <p className="text-xs text-muted-foreground mt-1">Accepting clients for Q1 2025</p>
                 </div>
 
-                <div className="p-6 rounded-2xl border border-border">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                <div className="p-5 rounded-2xl bg-white border border-foreground/10">
+                  <p className="text-xs text-muted-foreground font-serif leading-relaxed">
                     I typically respond within 24-48 hours. For urgent inquiries, please mention it in your message.
                   </p>
                 </div>
@@ -104,6 +104,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 };
