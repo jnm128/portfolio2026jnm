@@ -160,6 +160,90 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
+      {/* What We Do */}
+      <section className="py-16 md:py-24 bg-[#F8F6F1]">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <FadeIn>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-12">
+              What We Do
+            </p>
+          </FadeIn>
+
+          <div className="space-y-0">
+            <FadeIn delay={100}>
+              <div className="border-t border-foreground/10 py-10">
+                <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
+                  <BookOpen className="w-6 h-6 text-background" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-serif font-medium text-foreground mb-3">Read Together</h3>
+                <p className="text-base text-muted-foreground font-serif leading-relaxed max-w-2xl">
+                  We pick one book per cycle — spanning UX, behavioral science, AI, and systems thinking — and read at a pace that fits busy design professionals.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={200}>
+              <div className="border-t border-foreground/10 py-10">
+                <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
+                  <MessageCircle className="w-6 h-6 text-background" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-serif font-medium text-foreground mb-3">Discuss & Reflect</h3>
+                <p className="text-base text-muted-foreground font-serif leading-relaxed max-w-2xl">
+                  Monthly virtual sessions where we connect ideas to our real work, challenge assumptions, and leave with frameworks we can actually use.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={300}>
+              <div className="border-t border-foreground/10 border-b py-10">
+                <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
+                  <Globe className="w-6 h-6 text-background" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-serif font-medium text-foreground mb-3">Stay Connected</h3>
+                <p className="text-base text-muted-foreground font-serif leading-relaxed max-w-2xl">
+                  An ongoing LinkedIn community where members share resources, job leads, and design conversations between sessions.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Get Involved CTA */}
+      <section className="py-16 md:py-24 bg-[#F8F6F1]">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <FadeIn>
+            <div className="bg-[#EFECE6] rounded-3xl py-16 md:py-20 px-8 md:px-16 text-center">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
+                Get Involved
+              </p>
+              <h2 className="text-3xl md:text-5xl font-serif font-medium text-foreground mb-6 leading-tight">
+                Ready to read with us?
+              </h2>
+              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-xl mx-auto mb-10">
+                Join a community of UX professionals who believe that great designers are also great thinkers. New members always welcome.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <a 
+                  href="https://www.linkedin.com/in/joannaminott" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity"
+                >
+                  Join on LinkedIn <ArrowRight className="w-4 h-4" />
+                </a>
+                <Link 
+                  to="/contact"
+                  className="inline-flex items-center px-8 py-3.5 rounded-full border border-foreground/20 text-foreground text-sm font-medium hover:bg-foreground/5 transition-colors"
+                >
+                  Say hello
+                </Link>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
