@@ -4,14 +4,7 @@ import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
 import { ExternalLink, Play, Pause } from 'lucide-react';
 
-const playlist = [
-  { title: "Clair de Lune", artist: "Debussy", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
-  { title: "Golden Hour", artist: "JVKE", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
-  { title: "Electric Feel", artist: "MGMT", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" },
-  { title: "Sunset Lover", artist: "Petit Biscuit", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" },
-  { title: "Breathe", artist: "Télépopmusik", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" },
-  { title: "Alone (ft. Notelle)", artist: "Telomic", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" },
-];
+const songOnRepeat = { title: "Clair de Lune", artist: "Debussy", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" };
 
 const currentRead = {
   title: "The Artist's Way",
@@ -45,26 +38,25 @@ const CIRCLE_RADIUS = 10;
 const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * CIRCLE_RADIUS;
 
 const AboutPage = () => {
-  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [audioProgress, setAudioProgress] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const togglePlay = useCallback((index: number) => {
-    if (playingIndex === index) {
+  const togglePlay = useCallback(() => {
+    if (isPlaying) {
       audioRef.current?.pause();
-      setPlayingIndex(null);
+      setIsPlaying(false);
       setAudioProgress(0);
       return;
     }
 
     if (audioRef.current) {
       audioRef.current.pause();
-      audioRef.current.removeEventListener('timeupdate', () => {});
     }
 
-    const audio = new Audio(playlist[index].src);
+    const audio = new Audio(songOnRepeat.src);
     audioRef.current = audio;
-    setPlayingIndex(index);
+    setIsPlaying(true);
     setAudioProgress(0);
 
     audio.addEventListener('timeupdate', () => {
@@ -74,12 +66,12 @@ const AboutPage = () => {
     });
 
     audio.addEventListener('ended', () => {
-      setPlayingIndex(null);
+      setIsPlaying(false);
       setAudioProgress(0);
     });
 
     audio.play();
-  }, [playingIndex]);
+  }, [isPlaying]);
 
   const dashOffset = CIRCLE_CIRCUMFERENCE - (audioProgress / 100) * CIRCLE_CIRCUMFERENCE;
 
@@ -92,17 +84,6 @@ const AboutPage = () => {
           <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn delay={200}>
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
-                {/* Profile Image */}
-                <div className="relative w-full max-w-lg aspect-[5/6]">
-                  <div className="rounded-3xl overflow-hidden h-full">
-                    <img
-                      alt="Joanna Minott"
-                      className="w-full h-full object-cover"
-                      src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
-                    />
-                  </div>
-                </div>
-
                 {/* Bio Text */}
                 <div className="flex flex-col justify-center">
                   <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4">
@@ -139,20 +120,31 @@ const AboutPage = () => {
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
+
+                {/* Profile Image */}
+                <div className="relative w-full max-w-lg aspect-[5/6] md:ml-auto">
+                  <div className="rounded-3xl overflow-hidden h-full">
+                    <img
+                      alt="Joanna Minott"
+                      className="w-full h-full object-cover"
+                      src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
+                    />
+                  </div>
+                </div>
               </div>
           </FadeIn>
           </div>
         </section>
 
-        {/* Writing, Work Playlist & Current Read — Combined Dark Section */}
+        {/* Writing, Current Read & Song on Repeat — Combined Dark Section */}
         <section className="bg-[#1C1C1C] text-white py-16 md:py-24">
           <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
             <div className="mb-16">
               <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">
-                Get to Know Your Favorite Designer
+                Beyond the Pixels
               </h2>
               <p className="text-base md:text-lg text-white/60 font-serif max-w-2xl">
-                Beyond the pixels — what I'm reading, listening to, and thinking about when I'm not designing.
+                What I'm reading, listening to, and thinking about when I'm not designing.
               </p>
             </div>
             <div className="space-y-16">
@@ -186,58 +178,8 @@ const AboutPage = () => {
                 </div>
               </FadeIn>
 
-              {/* Work Playlist */}
-              <FadeIn delay={300}>
-                <div>
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
-                    Work Playlist
-                  </h2>
-                  <div className="bg-white rounded-2xl border border-border/60 p-6 overflow-hidden">
-                    <ul className="divide-y divide-muted">
-                      {playlist.map((track, i) => (
-                        <li
-                          key={i}
-                          className={`flex items-center justify-between py-3.5 px-4 group ${i % 2 === 0 ? 'bg-muted/40' : ''}`}
-                        >
-                          <div className="flex items-center gap-3">
-                            <button
-                              onClick={() => togglePlay(i)}
-                              className="relative w-5 h-5 flex items-center justify-center shrink-0 rounded-full bg-foreground/10 border border-foreground/20 text-foreground"
-                              aria-label={playingIndex === i ? `Pause ${track.title}` : `Play ${track.title}`}
-                            >
-                              <svg width="20" height="20" className="absolute inset-0">
-                                {playingIndex === i && (
-                                  <circle
-                                    cx="10" cy="10" r={CIRCLE_RADIUS}
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeDasharray={CIRCLE_CIRCUMFERENCE}
-                                    strokeDashoffset={dashOffset}
-                                    strokeLinecap="round"
-                                    transform="rotate(-90 10 10)"
-                                    className="transition-[stroke-dashoffset] duration-200"
-                                  />
-                                )}
-                              </svg>
-                              {playingIndex === i ? (
-                                <Pause className="w-2.5 h-2.5 relative z-10 fill-current" />
-                              ) : (
-                                <Play className="w-2.5 h-2.5 ml-0.5 relative z-10 fill-current" />
-                              )}
-                            </button>
-                            <span className="text-base font-serif text-foreground">{track.title}</span>
-                          </div>
-                          <span className="text-sm text-muted-foreground ml-4 shrink-0">{track.artist}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </FadeIn>
-
               {/* Current Read */}
-              <FadeIn delay={400}>
+              <FadeIn delay={300}>
                 <div>
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
                     Current Read
@@ -260,6 +202,49 @@ const AboutPage = () => {
                       <p className="text-sm text-muted-foreground leading-relaxed font-serif">
                         {currentRead.note}
                       </p>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+
+              {/* Song on Repeat */}
+              <FadeIn delay={400}>
+                <div>
+                  <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
+                    Song on Repeat
+                  </h2>
+                  <div className="bg-white rounded-2xl border border-border/60 p-6 overflow-hidden">
+                    <div className="flex items-center justify-between py-3.5 px-4 bg-muted/40 rounded-lg">
+                      <div className="flex items-center gap-3">
+                        <button
+                          onClick={togglePlay}
+                          className="relative w-5 h-5 flex items-center justify-center shrink-0 rounded-full bg-foreground/10 border border-foreground/20 text-foreground"
+                          aria-label={isPlaying ? `Pause ${songOnRepeat.title}` : `Play ${songOnRepeat.title}`}
+                        >
+                          <svg width="20" height="20" className="absolute inset-0">
+                            {isPlaying && (
+                              <circle
+                                cx="10" cy="10" r={CIRCLE_RADIUS}
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeDasharray={CIRCLE_CIRCUMFERENCE}
+                                strokeDashoffset={dashOffset}
+                                strokeLinecap="round"
+                                transform="rotate(-90 10 10)"
+                                className="transition-[stroke-dashoffset] duration-200"
+                              />
+                            )}
+                          </svg>
+                          {isPlaying ? (
+                            <Pause className="w-2.5 h-2.5 relative z-10 fill-current" />
+                          ) : (
+                            <Play className="w-2.5 h-2.5 ml-0.5 relative z-10 fill-current" />
+                          )}
+                        </button>
+                        <span className="text-base font-serif text-foreground">{songOnRepeat.title}</span>
+                      </div>
+                      <span className="text-sm text-muted-foreground ml-4 shrink-0">{songOnRepeat.artist}</span>
                     </div>
                   </div>
                 </div>
