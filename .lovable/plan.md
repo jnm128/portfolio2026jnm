@@ -1,15 +1,16 @@
 
 
-## Plan: Clean up Work page styling
+## Plan: Add group photo before CTA section
 
-### Changes to `src/pages/Work.tsx`
+### Changes to `src/pages/BookClub.tsx`
 
-1. **Update hero header to match About page style** — Use `max-w-4xl mx-auto px-4 md:px-8` container instead of `container mx-auto px-6 md:px-10 max-w-[1600px]`. Match the About page's heading classes (`text-3xl md:text-5xl font-serif text-foreground`) and body text style.
+1. **Copy uploaded image** to `src/assets/book-club-group.png`
 
-2. **Remove "Selected Work" label** — Delete the `<p>` tag with "Selected Work" text (line 67 area).
+2. **Add centered image** between the "What We Do" section and the "Get Involved CTA" section — inside the dark `bg-[#1C1C1C]` area, matching the decorative image pattern from the hero (rounded corners, slight shadow). The image will be centered, constrained width (`max-w-2xl`), with rounded-xl corners, wrapped in a `FadeIn`.
 
-3. **Remove entire Past Work archives section** — Delete the archives data array (lines 46-53) and the archives table markup (lines 97-117 area).
+Since both CTA and What We Do sections are `bg-[#1C1C1C]`, the image sits naturally between them with no visual break.
 
 ### Files modified
-- `src/pages/Work.tsx`
+- `src/assets/book-club-group.png` (copy)
+- `src/pages/BookClub.tsx`
 
