@@ -201,11 +201,11 @@ const BookClub: React.FC = () => {
       {/* Group Photo */}
       <section className="py-12 md:py-16 bg-[#1C1C1C]">
         <FadeIn>
-          <div className="max-w-2xl mx-auto px-4 md:px-8">
+          <div className="flex justify-center px-4 md:px-8">
             <img 
               src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=500&fit=crop" 
               alt="Book club gathering"
-              className="w-full rounded-xl shadow-2xl"
+              className="max-w-xs md:max-w-sm rounded-xl shadow-2xl rotate-2"
             />
           </div>
         </FadeIn>
