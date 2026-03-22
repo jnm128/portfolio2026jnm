@@ -205,8 +205,15 @@ const AboutPage = () => {
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
                     Song on Repeat
                   </h2>
-                  <div className="bg-white rounded-2xl border border-border/60 p-6 overflow-hidden">
-                    <div className="flex items-center justify-between py-3.5 px-4 bg-muted/40 rounded-lg">
+                  <div className="bg-white rounded-2xl border border-border/60 p-6 overflow-hidden flex flex-col md:flex-row gap-6 items-center">
+                    <div className="w-20 md:w-24 shrink-0 rounded-lg overflow-hidden">
+                      <img
+                        src={songOnRepeat.cover}
+                        alt={songOnRepeat.title}
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                    <div className="flex items-center justify-between flex-1 min-w-0 py-3.5 px-4 bg-muted/40 rounded-lg w-full">
                       <div className="flex items-center gap-3">
                         <button
                           onClick={togglePlay}
