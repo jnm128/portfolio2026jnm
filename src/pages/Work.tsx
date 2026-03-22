@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
 import Footer from '@/components/Footer';
 import { cn } from '@/lib/utils';
-import { ExternalLink } from 'lucide-react';
 
 const projects = [
   {
@@ -32,26 +31,17 @@ const projects = [
   }
 ];
 
-const archives = [
-  { name: 'Design System Overhaul', company: 'CSL Behring', focusArea: 'Design Systems', industry: 'Biotech', role: 'Lead Designer', year: '2023', link: '/case-study/mindful-wellness' },
-  { name: 'Patient Portal Redesign', company: 'Adrienne Arsht Center', focusArea: 'UX Research', industry: 'Arts & Culture', role: 'UX Designer', year: '2022', link: '/case-study/artisan-marketplace' },
-  { name: 'Mobile App MVP', company: 'Synchronyx', focusArea: 'Product Strategy', industry: 'Health Tech', role: 'Product Designer', year: '2021', link: '/case-study/creative-studio' },
-  { name: 'E-Commerce Platform', company: 'Freelance', focusArea: 'UI Design', industry: 'Retail', role: 'UI/UX Designer', year: '2020', link: '/case-study/creative-studio' },
-  { name: 'Internal Dashboard', company: 'CVS Health', focusArea: 'Enterprise UX', industry: 'Healthcare', role: 'Senior Designer', year: '2019', link: '/case-study/mindful-wellness' },
-];
-
 const Work: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Header */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20">
-        <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
           <FadeIn>
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Selected Work</p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium leading-[1.1] mb-6">
+            <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-6">
               Tiny fraction of my work
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
               A collection of projects spanning product design, brand identity, and digital experiences — each crafted with intention and care.
             </p>
           </FadeIn>
@@ -60,7 +50,7 @@ const Work: React.FC = () => {
 
       {/* Project Cards */}
       <section className="pb-16 md:pb-24 bg-[#F8F6F1]">
-        <div className="container mx-auto px-6 md:px-10 max-w-[1600px] py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24">
           <div className="flex flex-col gap-16">
             {projects.map((project, index) => (
               <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
@@ -92,42 +82,12 @@ const Work: React.FC = () => {
               </FadeIn>
             ))}
           </div>
-
-          {/* Archives Table */}
-          <div className="mt-24">
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-8">Past Work</p>
-            <div className="flex flex-col">
-              <div className="hidden md:flex items-center py-3 border-b border-foreground/20 text-xs uppercase tracking-wider text-muted-foreground">
-                <span className="w-[28%]">Project Name</span>
-                <span className="w-[18%]">Company / Org</span>
-                <span className="w-[16%]">Focus Area</span>
-                <span className="w-[14%]">Industry</span>
-                <span className="w-[14%]">Role</span>
-                <span className="w-[10%] text-right">Year</span>
-              </div>
-              {archives.map((item, index) => (
-                <FadeIn key={item.name} delay={index * 50} duration={400} threshold={0.05}>
-                  <div className={cn("flex flex-col md:flex-row md:items-center py-4 px-4 border-b border-foreground/10 gap-1 md:gap-0", index % 2 === 1 && "bg-foreground/[0.03]")}>
-                    <Link to={item.link} className="md:w-[28%] font-medium text-sm hover:underline underline-offset-4 transition-colors inline-flex items-center gap-1.5">
-                      {item.name}
-                      <ExternalLink size={14} className="text-muted-foreground" />
-                    </Link>
-                    <span className="text-sm text-muted-foreground md:w-[18%]">{item.company}</span>
-                    <span className="text-sm text-muted-foreground md:w-[16%]">{item.focusArea}</span>
-                    <span className="text-sm text-muted-foreground md:w-[14%]">{item.industry}</span>
-                    <span className="text-sm text-muted-foreground md:w-[14%]">{item.role}</span>
-                    <span className="text-sm text-muted-foreground md:w-[10%] md:text-right">{item.year}</span>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Dark CTA */}
       <section className="py-16 md:py-24 bg-[#1C1C1C]">
-        <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
           <FadeIn>
             <div className="flex flex-col gap-6 items-center text-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-white">
