@@ -203,8 +203,8 @@ const BookClub: React.FC = () => {
         <FadeIn>
           <div className="max-w-2xl mx-auto px-4 md:px-8">
             <img 
-              src={bookClubGroup} 
-              alt="Book club gathering" 
+              src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=500&fit=crop" 
+              alt="Book club gathering"
               className="w-full rounded-xl shadow-2xl"
             />
           </div>
