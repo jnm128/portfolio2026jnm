@@ -4,7 +4,7 @@ import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
 import { ExternalLink, Play, Pause } from 'lucide-react';
 
-const songOnRepeat = { title: "Clair de Lune", artist: "Debussy", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" };
+const songOnRepeat = { title: "Clair de Lune", artist: "Debussy", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", cover: "/lovable-uploads/artists-way-cover.jpg" };
 
 const currentRead = {
   title: "The Artist's Way",
@@ -99,14 +99,6 @@ const AboutPage = () => {
                     Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.
                   </p>
 
-                  {/* Expertise Tags */}
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {["4+ Years", "Healthcare", "B2B & B2C", "Mobile & Web", "Enterprise Systems", "Based in Miami, FL", "Remote"].map(tag => (
-                      <span key={tag} className="bg-muted/60 rounded-full px-3 py-1 text-xs text-muted-foreground">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
 
                   <a
                     href="https://www.linkedin.com/in/joannaminott"
@@ -213,8 +205,15 @@ const AboutPage = () => {
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
                     Song on Repeat
                   </h2>
-                  <div className="bg-white rounded-2xl border border-border/60 p-6 overflow-hidden">
-                    <div className="flex items-center justify-between py-3.5 px-4 bg-muted/40 rounded-lg">
+                  <div className="bg-white rounded-2xl border border-border/60 p-6 overflow-hidden flex flex-col md:flex-row gap-6 items-center">
+                    <div className="w-20 md:w-24 shrink-0 rounded-lg overflow-hidden">
+                      <img
+                        src={songOnRepeat.cover}
+                        alt={songOnRepeat.title}
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                    <div className="flex items-center justify-between flex-1 min-w-0 py-3.5 px-4 bg-muted/40 rounded-lg w-full">
                       <div className="flex items-center gap-3">
                         <button
                           onClick={togglePlay}
