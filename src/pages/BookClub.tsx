@@ -213,7 +213,7 @@ const BookClub: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors"
                 >
-                  Join <ArrowRight className="w-4 h-4" />
+                  Join the Club
                 </a>
               </div>
             </div>
