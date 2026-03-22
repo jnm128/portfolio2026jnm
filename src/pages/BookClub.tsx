@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
-import { BookOpen, Users, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 
 const books = [
@@ -60,53 +60,32 @@ const BookClub: React.FC = () => {
       <section className="pt-24 md:pt-28 pb-16 md:pb-24 bg-[#F8F6F1]">
         <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
           <FadeIn>
-            <div className="max-w-3xl">
-              <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
-                Fresh Perspectives
-              </h1>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
-                A community of curious minds exploring the intersection of design, psychology, and human behavior.
-              </p>
-              <a href="#" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity">
-                Learn More
-              </a>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Feature Cards Section */}
-      <section className="pb-16 md:pb-24 bg-[#F8F6F1]">
-        <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
-          <FadeIn>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="rounded-2xl p-8 bg-white border border-foreground/10 flex flex-col justify-between min-h-[280px]">
-                <div>
-                  <BookOpen className="w-6 h-6 mb-5 text-foreground/70" />
-                  <h3 className="text-2xl font-serif font-medium text-foreground mb-3">Monthly Reads</h3>
-                  <p className="text-sm text-foreground/70 leading-relaxed">
-                    Carefully curated books that challenge perspectives and spark meaningful conversations about design and behavior.
-                  </p>
-                </div>
+            <div className="flex items-start gap-8 md:gap-12">
+              <div className="flex-1 max-w-2xl">
+                <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
+                  Fresh Perspectives
+                </h1>
+                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
+                  A community of curious minds exploring the intersection of design, psychology, and human behavior.
+                </p>
+                <a href="#" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity">
+                  Learn More
+                </a>
               </div>
-
-              <div className="rounded-2xl p-8 bg-white border border-foreground/10 flex flex-col justify-between min-h-[280px]">
-                <div>
-                  <Users className="w-6 h-6 mb-5 text-foreground/70" />
-                  <h3 className="text-2xl font-serif font-medium text-foreground mb-3">Community Discussions</h3>
-                  <p className="text-sm text-foreground/70 leading-relaxed">
-                    Join live sessions where we dive deep into key takeaways and real-world applications of what we read.
-                  </p>
+              <div className="hidden md:flex items-start gap-4 shrink-0 pt-2">
+                <div className="w-28 h-36 rounded-xl overflow-hidden shadow-md -rotate-3 translate-y-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=200&h=260&fit=crop" 
+                    alt="Book reading" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              </div>
-
-              <div className="rounded-2xl p-8 bg-white border border-foreground/10 flex flex-col justify-between min-h-[280px]">
-                <div>
-                  <Sparkles className="w-6 h-6 mb-5 text-foreground/70" />
-                  <h3 className="text-2xl font-serif font-medium text-foreground mb-3">Fresh Perspectives</h3>
-                  <p className="text-sm text-foreground/70 leading-relaxed">
-                    Connect with designers, researchers, and thinkers who bring diverse viewpoints to every discussion.
-                  </p>
+                <div className="w-28 h-36 rounded-xl overflow-hidden shadow-md rotate-2">
+                  <img 
+                    src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=200&h=260&fit=crop" 
+                    alt="Book collection" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -128,6 +107,10 @@ const BookClub: React.FC = () => {
 
           <FadeIn delay={100}>
             <Carousel opts={{ align: "start", slidesToScroll: 1 }} className="w-full">
+              <div className="flex items-center justify-end gap-2 mb-6">
+                <CarouselPrevious className="static translate-y-0 w-9 h-9 rounded-full backdrop-blur-md bg-foreground/5 border border-foreground/20 text-foreground hover:bg-foreground/10 disabled:opacity-30" />
+                <CarouselNext className="static translate-y-0 w-9 h-9 rounded-full backdrop-blur-md bg-foreground/5 border border-foreground/20 text-foreground hover:bg-foreground/10 disabled:opacity-30" />
+              </div>
               <CarouselContent className="-ml-6">
                 {books.map((book, index) => (
                   <CarouselItem key={index} className="pl-6 basis-1/2 lg:basis-1/4">
@@ -151,33 +134,7 @@ const BookClub: React.FC = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="-left-4 md:-left-12" />
-              <CarouselNext className="-right-4 md:-right-12" />
             </Carousel>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-[#1C1C1C]">
-        <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
-          <FadeIn>
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-6 text-white">
-                Ready to expand your perspective?
-              </h2>
-              <p className="text-lg text-white/70 font-serif mb-8">
-                Join a growing community of designers who believe in the power of continuous learning and shared insights.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="w-full sm:w-auto px-8 py-3 bg-white text-[#1C1C1C] font-medium rounded-full transition-all hover:bg-white/90 hover:scale-105 active:scale-95">
-                  Join the Community
-                </button>
-                <button className="w-full sm:w-auto px-8 py-3 bg-transparent text-white font-medium rounded-full border border-white/30 transition-all hover:bg-white/10 active:scale-95">
-                  Learn More
-                </button>
-              </div>
-            </div>
           </FadeIn>
         </div>
       </section>
