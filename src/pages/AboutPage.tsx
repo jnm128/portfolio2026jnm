@@ -164,7 +164,7 @@ const AboutPage = () => {
               <FadeIn delay={400}>
                 <div>
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
-                    Song on Repeat
+                    Work Playlist
                   </h2>
                   <div className="bg-white rounded-2xl border border-border/60 p-6 overflow-hidden flex items-center gap-4">
                     <div className="w-12 h-12 shrink-0 rounded-lg overflow-hidden">
