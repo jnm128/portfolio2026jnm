@@ -111,53 +111,39 @@ const BookClub: React.FC = () => {
               </div>
             </div>
           </FadeIn>
-        </div>
-      </section>
 
-      {/* Digital Bookshelf */}
-      <section className="py-16 md:py-24 bg-[#F8F6F1]">
-        <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <FadeIn>
-            <div className="text-center">
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-                A Look at Our Past Reads
-              </p>
-              <p className="text-base text-muted-foreground font-serif leading-relaxed mb-12">
-                A collection of books that have shaped our conversations and expanded our thinking.
-              </p>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={100}>
-            <Carousel opts={{ align: "start", slidesToScroll: 1 }} className="w-full">
-              <div className="flex items-center justify-end gap-2 mb-6">
-                <CarouselPrevious className="static translate-y-0 w-9 h-9 rounded-full backdrop-blur-md bg-foreground/5 border border-foreground/20 text-foreground hover:bg-foreground/10 disabled:opacity-30" />
-                <CarouselNext className="static translate-y-0 w-9 h-9 rounded-full backdrop-blur-md bg-foreground/5 border border-foreground/20 text-foreground hover:bg-foreground/10 disabled:opacity-30" />
-              </div>
-              <CarouselContent className="-ml-6">
-                {books.map((book, index) => (
-                  <CarouselItem key={index} className="pl-6 basis-1/2 lg:basis-1/4">
-                    <div className="group cursor-pointer">
-                      <div className="relative mb-4 transition-transform duration-300 group-hover:-translate-y-2">
-                        <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
-                          <img 
-                            src={book.cover} 
-                            alt={book.title}
-                            className="w-full h-full object-cover"
-                          />
+          <FadeIn delay={300}>
+            <div className="mt-12">
+              <Carousel opts={{ align: "start", slidesToScroll: 1 }} className="w-full">
+                <div className="flex items-center justify-end gap-2 mb-6">
+                  <CarouselPrevious className="static translate-y-0 w-9 h-9 rounded-full backdrop-blur-md bg-foreground/5 border border-foreground/20 text-foreground hover:bg-foreground/10 disabled:opacity-30" />
+                  <CarouselNext className="static translate-y-0 w-9 h-9 rounded-full backdrop-blur-md bg-foreground/5 border border-foreground/20 text-foreground hover:bg-foreground/10 disabled:opacity-30" />
+                </div>
+                <CarouselContent className="-ml-6">
+                  {books.map((book, index) => (
+                    <CarouselItem key={index} className="pl-6 basis-1/2 lg:basis-1/4">
+                      <div className="group cursor-pointer">
+                        <div className="relative mb-4 transition-transform duration-300 group-hover:-translate-y-2">
+                          <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
+                            <img 
+                              src={book.cover} 
+                              alt={book.title}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
                         </div>
+                        <h3 className="font-serif text-sm font-medium leading-tight mb-1 text-foreground">
+                          {book.title}
+                        </h3>
+                        <p className="text-xs text-muted-foreground">
+                          {book.author}
+                        </p>
                       </div>
-                      <h3 className="font-serif text-sm font-medium leading-tight mb-1 text-foreground">
-                        {book.title}
-                      </h3>
-                      <p className="text-xs text-muted-foreground">
-                        {book.author}
-                      </p>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+            </div>
           </FadeIn>
         </div>
       </section>
