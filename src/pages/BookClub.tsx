@@ -120,7 +120,7 @@ const BookClub: React.FC = () => {
                 <CarouselContent className="-ml-6">
                   {books.map((book, index) => (
                     <CarouselItem key={index} className="pl-6 basis-1/2 lg:basis-1/4">
-                      <div className="rounded-xl border border-foreground/10 overflow-hidden bg-background">
+                      <div className="rounded-xl border border-foreground/10 overflow-hidden bg-white">
                         <div className="relative aspect-[3/4]">
                           <img 
                             src={book.cover} 
