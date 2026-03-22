@@ -99,14 +99,6 @@ const AboutPage = () => {
                     Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.
                   </p>
 
-                  {/* Expertise Tags */}
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {["4+ Years", "Healthcare", "B2B & B2C", "Mobile & Web", "Enterprise Systems", "Based in Miami, FL", "Remote"].map(tag => (
-                      <span key={tag} className="bg-muted/60 rounded-full px-3 py-1 text-xs text-muted-foreground">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
 
                   <a
                     href="https://www.linkedin.com/in/joannaminott"
