@@ -122,7 +122,7 @@ const AboutPage = () => {
                 </div>
 
                 {/* Profile Image */}
-                <div className="relative w-full max-w-lg aspect-[5/6] md:ml-auto">
+                <div className="relative w-full max-w-sm aspect-[5/6] md:ml-auto">
                   <div className="rounded-3xl overflow-hidden h-full">
                     <img
                       alt="Joanna Minott"
