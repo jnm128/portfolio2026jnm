@@ -138,7 +138,7 @@ const AboutPage = () => {
 
         {/* Writing, Current Read & Song on Repeat — Combined Dark Section */}
         <section className="bg-[#1C1C1C] text-white py-16 md:py-24">
-          <div className="container mx-auto px-6 md:px-10 max-w-[1600px]">
+          <div className="max-w-4xl mx-auto px-4 md:px-8">
             <div className="mb-16">
               <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">
                 Beyond the Pixels
