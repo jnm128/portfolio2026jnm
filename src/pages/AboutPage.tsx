@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback } from 'react';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
-import { ExternalLink, Play, Pause } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 const songOnRepeat = { title: "Clair de Lune", artist: "Debussy", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", cover: "/lovable-uploads/artists-way-cover.jpg" };
 
