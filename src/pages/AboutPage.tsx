@@ -5,8 +5,9 @@ import FadeIn from '@/components/animations/FadeIn';
 import { ExternalLink } from 'lucide-react';
 import speakingMiami from '@/assets/speaking-miami.jpg';
 import speakingUF from '@/assets/speaking-uf.jpg';
+import arirangCover from '@/assets/arirang-cover.png';
 
-const songOnRepeat = { title: "Arirang", artist: "BTS", url: "https://www.youtube.com/results?search_query=BTS+Arirang", cover: "/lovable-uploads/artists-way-cover.jpg" };
+const songOnRepeat = { title: "Arirang", artist: "BTS", url: "https://www.youtube.com/results?search_query=BTS+Arirang", cover: arirangCover };
 
 const currentRead = {
   title: "The Artist's Way",
