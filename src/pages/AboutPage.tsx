@@ -139,40 +139,46 @@ const AboutPage = () => {
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
                     Speaking
                   </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="rounded-2xl overflow-hidden bg-white border border-border/60">
-                      <div className="aspect-[16/10] overflow-hidden">
-                        <img
-                          src={speakingMiami}
-                          alt="Alumni panel at the University of Miami"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="p-5">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Mic className="w-3.5 h-3.5 text-muted-foreground" />
-                          <span className="text-xs uppercase tracking-widest text-foreground/60 font-serif">Alumni Panel</span>
-                        </div>
-                        <p className="text-base font-serif text-foreground leading-snug">University of Miami</p>
-                      </div>
-                    </div>
-                    <div className="rounded-2xl overflow-hidden bg-white border border-border/60">
-                      <div className="aspect-[16/10] overflow-hidden">
-                        <img
-                          src={speakingUF}
-                          alt="Guest speaker at University of Florida's Gator Design student org"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="p-5">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Mic className="w-3.5 h-3.5 text-muted-foreground" />
-                          <span className="text-xs uppercase tracking-widest text-foreground/60 font-serif">Guest Speaker</span>
-                        </div>
-                        <p className="text-base font-serif text-foreground leading-snug">University of Florida — Gator Design</p>
-                      </div>
-                    </div>
-                  </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="rounded-2xl overflow-hidden bg-white border border-border/60 group hover:shadow-lg transition-shadow duration-300">
+                       <div className="aspect-[16/10] overflow-hidden">
+                         <img
+                           src={speakingMiami}
+                           alt="Alumni panel at the University of Miami"
+                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         />
+                       </div>
+                       <div className="p-5 flex items-center justify-between">
+                         <div>
+                           <div className="flex items-center gap-2 mb-2">
+                             <Mic className="w-3.5 h-3.5 text-muted-foreground" />
+                             <span className="text-xs uppercase tracking-widest text-foreground/60 font-serif">Alumni Panel</span>
+                           </div>
+                           <p className="text-base font-serif text-foreground leading-snug">University of Miami</p>
+                         </div>
+                         <ExternalLink className="w-4 h-4 text-foreground/40 group-hover:text-foreground transition-colors" />
+                       </div>
+                     </a>
+                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="rounded-2xl overflow-hidden bg-white border border-border/60 group hover:shadow-lg transition-shadow duration-300">
+                       <div className="aspect-[16/10] overflow-hidden">
+                         <img
+                           src={speakingUF}
+                           alt="Guest speaker at University of Florida's Gator Design student org"
+                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         />
+                       </div>
+                       <div className="p-5 flex items-center justify-between">
+                         <div>
+                           <div className="flex items-center gap-2 mb-2">
+                             <Mic className="w-3.5 h-3.5 text-muted-foreground" />
+                             <span className="text-xs uppercase tracking-widest text-foreground/60 font-serif">Guest Speaker</span>
+                           </div>
+                           <p className="text-base font-serif text-foreground leading-snug">University of Florida — Gator Design</p>
+                         </div>
+                         <ExternalLink className="w-4 h-4 text-foreground/40 group-hover:text-foreground transition-colors" />
+                       </div>
+                     </a>
+                   </div>
                 </div>
               </FadeIn>
 
