@@ -215,14 +215,8 @@ const BookClub: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors"
                 >
-                  Join on LinkedIn <ArrowRight className="w-4 h-4" />
+                  Join <ArrowRight className="w-4 h-4" />
                 </a>
-                <Link 
-                  to="/contact"
-                  className="inline-flex items-center px-8 py-3 rounded-full border border-white/20 text-white font-medium hover:bg-white/10 transition-colors"
-                >
-                  Say hello
-                </Link>
               </div>
             </div>
           </FadeIn>
