@@ -1,16 +1,16 @@
 
 
-## Plan: Add group photo before CTA section
+## Fix Inconsistent Margins Across Pages
 
-### Changes to `src/pages/BookClub.tsx`
+**Problem**: The Work, About, Contact, and Book Club pages use `px-4 md:px-8` (32px desktop padding) instead of the standard `px-6 md:px-12` (48px). The homepage components already use the correct 48px margins.
 
-1. **Copy uploaded image** to `src/assets/book-club-group.png`
+**Changes needed** — update padding classes from `px-4 md:px-8` to `px-6 md:px-12` in:
 
-2. **Add centered image** between the "What We Do" section and the "Get Involved CTA" section — inside the dark `bg-[#1C1C1C]` area, matching the decorative image pattern from the hero (rounded corners, slight shadow). The image will be centered, constrained width (`max-w-2xl`), with rounded-xl corners, wrapped in a `FadeIn`.
+1. **`src/pages/Work.tsx`** — 3 container divs (hero, project cards, dark CTA sections)
+2. **`src/pages/AboutPage.tsx`** — 2 container divs (hero section, dark section)
+3. **`src/pages/Contact.tsx`** — 1 container div (main content wrapper)
+4. **`src/pages/BookClub.tsx`** — 2 container divs (hero section, "What We Do" section)
+5. **`src/components/Connecting.tsx`** — update `px-4 md:px-6` to `px-6 md:px-12`
 
-Since both CTA and What We Do sections are `bg-[#1C1C1C]`, the image sits naturally between them with no visual break.
-
-### Files modified
-- `src/assets/book-club-group.png` (copy)
-- `src/pages/BookClub.tsx`
+All instances of `px-4 md:px-8` on page-level containers will be replaced with `px-6 md:px-12` to match the site-wide 48px desktop / 24px mobile standard.
 
