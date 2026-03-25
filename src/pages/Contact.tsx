@@ -6,11 +6,32 @@ const Contact = () => {
   return (
     <main className="min-h-screen grid md:grid-cols-2">
       {/* Left Panel - Dark */}
-      <div className="bg-[#1C1C1C] md:sticky md:top-0 md:h-screen flex items-end p-8 md:p-16">
+      <div className="bg-[#1C1C1C] md:sticky md:top-0 md:h-screen flex flex-col justify-between p-8 md:p-16 pt-24 md:pt-32">
         <FadeIn>
-          <h1 className="text-3xl md:text-5xl font-serif text-white leading-tight">
+          <h1 className="text-3xl md:text-5xl font-serif text-white leading-tight text-right">
             Let's create something meaningful together
           </h1>
+        </FadeIn>
+
+        <FadeIn delay={200}>
+          <div className="mt-16">
+            <h2 className="text-xl font-serif text-white mb-8">Currently</h2>
+
+            <div className="border-t border-white/15 py-8">
+              <span className="text-xs uppercase tracking-widest text-white/60">Location</span>
+              <p className="text-lg font-serif text-white mt-1">New York, NY</p>
+              <p className="text-sm text-white/60 mt-1">Open to remote collaboration worldwide</p>
+            </div>
+
+            <div className="border-t border-b border-white/15 py-8">
+              <span className="text-xs uppercase tracking-widest text-white/60">Availability</span>
+              <p className="text-lg font-serif text-white mt-1 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                Open for new projects
+              </p>
+              <p className="text-sm text-white/60 mt-1">Accepting clients for Q1 2025</p>
+            </div>
+          </div>
         </FadeIn>
       </div>
 
@@ -66,25 +87,6 @@ const Contact = () => {
               </div>
               <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors shrink-0" />
             </a>
-
-            <h2 className="text-xl font-serif text-foreground mt-16 mb-8">
-              Currently
-            </h2>
-
-            <div className="border-t border-foreground/10 py-8">
-              <span className="text-xs uppercase tracking-widest text-muted-foreground">Location</span>
-              <p className="text-lg font-serif text-foreground mt-1">New York, NY</p>
-              <p className="text-sm text-muted-foreground mt-1">Open to remote collaboration worldwide</p>
-            </div>
-
-            <div className="border-t border-b border-foreground/10 py-8">
-              <span className="text-xs uppercase tracking-widest text-muted-foreground">Availability</span>
-              <p className="text-lg font-serif text-foreground mt-1 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                Open for new projects
-              </p>
-              <p className="text-sm text-muted-foreground mt-1">Accepting clients for Q1 2025</p>
-            </div>
           </div>
         </FadeIn>
       </div>

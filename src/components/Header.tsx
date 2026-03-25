@@ -19,6 +19,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
   const isBookClubPage = location.pathname === '/book-club';
+  const isContactPage = location.pathname === '/contact';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -169,9 +170,11 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         ref={headerRef}
         className={cn(
           'fixed top-0 left-0 right-0 z-[60] transition-all duration-300',
-        isScrolled 
-          ? `py-4 ${isMobileMenuOpen ? 'bg-background' : 'bg-background/95 backdrop-blur-sm'}`
-          : 'py-6 bg-background',
+          isScrolled 
+            ? `py-4 ${isMobileMenuOpen ? 'bg-background' : 'bg-background/95 backdrop-blur-sm'}`
+            : isContactPage
+              ? 'py-6 bg-transparent'
+              : 'py-6 bg-background',
           className
         )}
       >
@@ -180,7 +183,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           {isHomePage ? (
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-2xl font-serif font-semibold tracking-tight flex"
+              className={cn(
+                "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
+                isContactPage && !isScrolled ? 'text-white' : ''
+              )}
             >
               {'MINO.'.split('').map((letter, index) => (
                 <span 
@@ -195,7 +201,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           ) : (
             <Link 
               to="/"
-              className="text-2xl font-serif font-semibold tracking-tight flex"
+              className={cn(
+                "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
+                isContactPage && !isScrolled ? 'text-white' : ''
+              )}
             >
               {'MINO.'.split('').map((letter, index) => (
                 <span 
