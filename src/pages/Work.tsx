@@ -82,6 +82,7 @@ const Work: React.FC = () => {
               </FadeIn>
             ))}
           </div>
+          <p className="text-sm text-muted-foreground font-serif text-center mt-12">More coming soon...</p>
         </div>
       </section>
 
