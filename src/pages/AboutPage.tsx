@@ -103,28 +103,26 @@ const AboutPage = () => {
                 What I'm reading, listening to, and thinking about when I'm not designing.
               </p>
             </div>
-            <div className="space-y-16">
+            <div className="space-y-0">
               {/* Writing / LinkedIn Posts */}
               <FadeIn delay={250}>
-                <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
-                  Writing
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
+                    Writing
+                  </h2>
                   {linkedinPosts.map((post, i) => (
                     <div
                       key={i}
-                      className="rounded-2xl p-6 flex flex-col justify-between bg-[#F8F6F1]"
+                      className="border-t border-white/15 py-10"
                     >
-                      <div>
-                        <span className="text-xs uppercase tracking-widest text-foreground/60 font-serif">{post.category}</span>
-                        <p className="text-base font-serif text-foreground mt-2 mb-3 leading-snug">{post.title}</p>
-                        <p className="text-sm text-foreground/70 leading-relaxed line-clamp-2 font-serif">{post.excerpt}</p>
-                      </div>
+                      <span className="text-xs uppercase tracking-widest text-white/70 font-serif">{post.category}</span>
+                      <p className="text-xl font-serif text-white mt-2 mb-3 leading-snug">{post.title}</p>
+                      <p className="text-base text-white/70 leading-relaxed font-serif mb-4">{post.excerpt}</p>
                       <a
                         href={post.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm text-foreground mt-4 hover:opacity-70 transition-opacity"
+                        className="inline-flex items-center gap-1.5 text-sm text-white hover:opacity-70 transition-opacity"
                       >
                         Read on LinkedIn
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -137,57 +135,51 @@ const AboutPage = () => {
               {/* Speaking Engagements */}
               <FadeIn delay={280}>
                 <div>
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
+                  <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6 pt-10">
                     Speaking
                   </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="rounded-2xl overflow-hidden bg-white border border-border/60 group hover:shadow-lg transition-shadow duration-300">
-                       <div className="aspect-[16/10] overflow-hidden">
-                         <img
-                           src={speakingMiami}
-                           alt="Alumni panel at the University of Miami"
-                           className="w-full h-full object-cover"
-                         />
-                       </div>
-                       <div className="p-5 flex items-center justify-between">
-                         <div>
-                           <div className="mb-2">
-                             <span className="text-xs uppercase tracking-widest text-foreground/60 font-serif">Alumni Panel</span>
-                           </div>
-                           <p className="text-base font-serif text-foreground leading-snug">University of Miami</p>
-                         </div>
-                         <ExternalLink className="w-4 h-4 text-foreground/40 group-hover:text-foreground transition-colors" />
-                       </div>
-                     </a>
-                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="rounded-2xl overflow-hidden bg-white border border-border/60 group hover:shadow-lg transition-shadow duration-300">
-                       <div className="aspect-[16/10] overflow-hidden">
-                         <img
-                           src={speakingUF}
-                           alt="Guest speaker at University of Florida's Gator Design student org"
-                           className="w-full h-full object-cover"
-                         />
-                       </div>
-                       <div className="p-5 flex items-center justify-between">
-                         <div>
-                           <div className="mb-2">
-                             <span className="text-xs uppercase tracking-widest text-foreground/60 font-serif">Guest Speaker</span>
-                           </div>
-                           <p className="text-base font-serif text-foreground leading-snug">University of Florida — Gator Design</p>
-                         </div>
-                         <ExternalLink className="w-4 h-4 text-foreground/40 group-hover:text-foreground transition-colors" />
-                       </div>
-                     </a>
-                   </div>
+                  <div className="border-t border-white/15 py-10">
+                    <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="group flex flex-col md:flex-row gap-6 items-start">
+                      <div className="w-full md:w-64 shrink-0 rounded-xl overflow-hidden aspect-[16/10]">
+                        <img
+                          src={speakingMiami}
+                          alt="Alumni panel at the University of Miami"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <span className="text-xs uppercase tracking-widest text-white/70 font-serif">Alumni Panel</span>
+                        <p className="text-xl font-serif text-white leading-snug mt-2">University of Miami</p>
+                      </div>
+                      <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-white transition-colors shrink-0 mt-1" />
+                    </a>
+                  </div>
+                  <div className="border-t border-white/15 py-10">
+                    <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="group flex flex-col md:flex-row gap-6 items-start">
+                      <div className="w-full md:w-64 shrink-0 rounded-xl overflow-hidden aspect-[16/10]">
+                        <img
+                          src={speakingUF}
+                          alt="Guest speaker at University of Florida's Gator Design student org"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <span className="text-xs uppercase tracking-widest text-white/70 font-serif">Guest Speaker</span>
+                        <p className="text-xl font-serif text-white leading-snug mt-2">University of Florida — Gator Design</p>
+                      </div>
+                      <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-white transition-colors shrink-0 mt-1" />
+                    </a>
+                  </div>
                 </div>
               </FadeIn>
 
               {/* Current Read */}
               <FadeIn delay={300}>
-                <div>
+                <div className="border-t border-white/15 py-10">
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
                     Current Read
                   </h2>
-                  <div className="rounded-2xl border border-border/60 p-8 bg-white flex flex-col md:flex-row gap-8 items-start">
+                  <div className="flex flex-col md:flex-row gap-8 items-start">
                     <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden">
                       <img
                         src={currentRead.cover}
@@ -196,13 +188,13 @@ const AboutPage = () => {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-lg md:text-xl font-serif text-foreground mb-1">
+                      <p className="text-lg md:text-xl font-serif text-white mb-1">
                         {currentRead.title}
                       </p>
-                      <p className="text-sm text-muted-foreground mb-4">
+                      <p className="text-sm text-white/70 mb-4">
                         by {currentRead.author}
                       </p>
-                      <p className="text-sm text-muted-foreground leading-relaxed font-serif">
+                      <p className="text-sm text-white/70 leading-relaxed font-serif">
                         {currentRead.note}
                       </p>
                     </div>
@@ -212,11 +204,11 @@ const AboutPage = () => {
 
               {/* Song on Repeat */}
               <FadeIn delay={400}>
-                <div>
+                <div className="border-t border-b border-white/15 py-10">
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">
                     Work Playlist
                   </h2>
-                  <div className="bg-white rounded-2xl border border-border/60 p-6 overflow-hidden flex items-center gap-4">
+                  <div className="flex items-center gap-4">
                     <div className="w-12 h-12 shrink-0 rounded-lg overflow-hidden">
                       <img
                         src={songOnRepeat.cover}
@@ -225,14 +217,14 @@ const AboutPage = () => {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-base font-serif text-foreground leading-tight">{songOnRepeat.title}</p>
-                      <p className="text-sm text-muted-foreground">{songOnRepeat.artist}</p>
+                      <p className="text-base font-serif text-white leading-tight">{songOnRepeat.title}</p>
+                      <p className="text-sm text-white/70">{songOnRepeat.artist}</p>
                     </div>
                     <a
                       href={songOnRepeat.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="shrink-0 text-foreground hover:opacity-70 transition-opacity"
+                      className="shrink-0 text-white hover:opacity-70 transition-opacity"
                       aria-label={`Listen to ${songOnRepeat.title} on YouTube`}
                     >
                       <ExternalLink className="w-4 h-4" />
