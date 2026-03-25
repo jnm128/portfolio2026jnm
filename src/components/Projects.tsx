@@ -50,7 +50,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
 
   return (
     <section id="projects" className={cn('py-16 md:py-24 bg-[#F8F6F1]', className)}>
-      <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+      <div className="container mx-auto px-8 md:px-16 max-w-4xl">
         {/* Section label */}
         <div className="flex items-center justify-between mb-8">
           <p className="text-xs uppercase tracking-widest text-muted-foreground">Selected Work</p>
