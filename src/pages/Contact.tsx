@@ -15,7 +15,7 @@ const Contact = () => {
 
         <FadeIn delay={200}>
           <div className="mt-16">
-            <h2 className="text-xl font-serif text-white mb-8">Currently</h2>
+            
 
             <div className="border-t border-white/15 py-8">
               <span className="text-xs uppercase tracking-widest text-white/60">Location</span>
