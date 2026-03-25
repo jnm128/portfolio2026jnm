@@ -33,7 +33,7 @@ const Process: React.FC<ProcessProps> = ({ className }) => {
 
   return (
     <section id="process" className={cn('py-16 md:py-24 bg-[#F8F6F1]', className)}>
-      <div className="container mx-auto px-6 md:px-12 max-w-[1600px]">
+      <div className="container mx-auto px-6 md:px-12 <div className="container mx-auto px-6 md:px-12 max-w-4xl">">
         <div className="grid md:grid-cols-12 gap-12 md:gap-20 items-start">
           <FadeIn className="md:col-span-5">
             <div className="flex flex-col space-y-6">
