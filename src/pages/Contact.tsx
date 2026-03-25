@@ -47,7 +47,7 @@ const Contact = () => {
               href="mailto:hello@joannaminott.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group border-t border-foreground/10 py-8 flex items-center justify-between"
+              className="group py-8 flex items-center justify-between"
             >
               <div>
                 <span className="text-xs uppercase tracking-widest text-muted-foreground">Email</span>
