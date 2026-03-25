@@ -53,7 +53,7 @@ const books = [
     author: "Tom & David Kelley",
     cover: "https://images.unsplash.com/photo-1589998059171-988d887df646?w=300&h=400&fit=crop",
   },
-];
+].slice(0, 8);
 
 const BookClub: React.FC = () => {
   return (
