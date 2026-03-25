@@ -45,7 +45,7 @@ const AboutPage = () => {
       <div className="pt-24 md:pt-28">
         {/* Hero / Intro */}
         <section className="pt-0 pb-24 md:pb-32 bg-[#F8F6F1]">
-            <div className="max-w-[1600px] mx-auto px-8 md:px-16">
+            <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn delay={200}>
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
                 {/* Bio Text */}
