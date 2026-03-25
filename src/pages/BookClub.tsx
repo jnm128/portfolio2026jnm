@@ -140,29 +140,78 @@ const BookClub: React.FC = () => {
           <FadeIn delay={300}>
             <div className="mt-12">
               <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Past Reads</p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {books.map((book, index) => (
-                  <div key={index} className="rounded-xl border border-foreground/10 overflow-hidden bg-white">
-                    <div className="relative aspect-[3/4]">
-                      <img 
-                        src={book.cover} 
-                        alt={book.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-3">
-                      <h3 className="font-serif text-sm font-medium leading-tight mb-1 text-foreground">
-                        {book.title}
-                      </h3>
-                      <p className="text-xs text-muted-foreground">
-                        {book.author}
-                      </p>
-                    </div>
+              <TooltipProvider delayDuration={200}>
+                <div className="overflow-x-auto">
+                  <div className="flex items-end gap-[6px] min-w-max pb-0">
+                    {books.map((book, index) => (
+                      <Tooltip key={index}>
+                        <TooltipTrigger asChild>
+                          <button
+                            onClick={() => setSelectedBook(book)}
+                            className="relative cursor-pointer transition-all duration-200 hover:-translate-y-2 hover:brightness-110 rounded-t-sm focus:outline-none focus:ring-2 focus:ring-foreground/20"
+                            style={{
+                              width: `${book.width}px`,
+                              height: `${book.height}px`,
+                              backgroundColor: book.spineColor,
+                            }}
+                          >
+                            <span
+                              className="absolute inset-0 flex items-center justify-center"
+                              style={{ writingMode: 'vertical-rl' }}
+                            >
+                              <span className="text-[10px] font-medium text-white/80 tracking-wider truncate max-h-[90%] rotate-180">
+                                {book.title}
+                              </span>
+                            </span>
+                            <div className="absolute inset-y-0 left-0 w-[2px] bg-white/10 rounded-tl-sm" />
+                            <div className="absolute inset-y-0 right-0 w-[1px] bg-black/20" />
+                          </button>
+                        </TooltipTrigger>
+                        <TooltipContent side="top" className="font-serif">
+                          <p className="font-medium">{book.title}</p>
+                          <p className="text-xs text-muted-foreground">{book.author}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    ))}
                   </div>
-                ))}
-              </div>
+                  {/* Shelf */}
+                  <div className="h-3 bg-[#8B7355] rounded-b-sm shadow-md min-w-max" />
+                  <div className="h-1 bg-[#6B5335] rounded-b-sm min-w-max mx-1" />
+                </div>
+              </TooltipProvider>
             </div>
           </FadeIn>
+
+          {/* Book Detail Modal */}
+          <Dialog open={!!selectedBook} onOpenChange={(open) => !open && setSelectedBook(null)}>
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle className="font-serif text-xl">{selectedBook?.title}</DialogTitle>
+                <DialogDescription className="font-serif">{selectedBook?.author}</DialogDescription>
+              </DialogHeader>
+              {selectedBook && (
+                <div className="space-y-4">
+                  <div className="aspect-[3/4] w-48 mx-auto rounded-lg overflow-hidden shadow-lg">
+                    <img
+                      src={selectedBook.cover}
+                      alt={selectedBook.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex justify-center">
+                    <a
+                      href={selectedBook.purchaseUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity"
+                    >
+                      Purchase <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
 
