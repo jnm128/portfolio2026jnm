@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
 import { BookOpen, MessageCircle, Globe, ArrowRight, ExternalLink } from 'lucide-react';
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
+
 import { Link } from 'react-router-dom';
 import bookClubGroup from '@/assets/book-club-group.png';
 
@@ -53,7 +53,7 @@ const books = [
     author: "Tom & David Kelley",
     cover: "https://images.unsplash.com/photo-1589998059171-988d887df646?w=300&h=400&fit=crop",
   },
-];
+].slice(0, 8);
 
 const BookClub: React.FC = () => {
   return (
@@ -76,7 +76,7 @@ const BookClub: React.FC = () => {
                 </a>
               </div>
               <div className="hidden md:block shrink-0 pt-2">
-                <div className="w-36 h-48 rounded-xl overflow-hidden shadow-md rotate-2">
+                <div className="w-52 h-64 rounded-xl overflow-hidden shadow-md rotate-2">
                   <img 
                     src={bookClubGroup} 
                     alt="Book club gathering" 
@@ -109,38 +109,28 @@ const BookClub: React.FC = () => {
 
           <FadeIn delay={300}>
             <div className="mt-12">
-              <Carousel opts={{ align: "start", slidesToScroll: 1 }} className="w-full">
-                <div className="flex items-center justify-between mb-6">
-                  <p className="text-xs uppercase tracking-widest text-muted-foreground">Past Reads</p>
-                  <div className="flex items-center gap-2">
-                    <CarouselPrevious className="static translate-y-0 w-9 h-9 rounded-full backdrop-blur-md bg-foreground/5 border border-foreground/20 text-foreground hover:bg-foreground/10 disabled:opacity-30" />
-                    <CarouselNext className="static translate-y-0 w-9 h-9 rounded-full backdrop-blur-md bg-foreground/5 border border-foreground/20 text-foreground hover:bg-foreground/10 disabled:opacity-30" />
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Past Reads</p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {books.map((book, index) => (
+                  <div key={index} className="rounded-xl border border-foreground/10 overflow-hidden bg-white">
+                    <div className="relative aspect-[3/4]">
+                      <img 
+                        src={book.cover} 
+                        alt={book.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-3">
+                      <h3 className="font-serif text-sm font-medium leading-tight mb-1 text-foreground">
+                        {book.title}
+                      </h3>
+                      <p className="text-xs text-muted-foreground">
+                        {book.author}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <CarouselContent className="-ml-6">
-                  {books.map((book, index) => (
-                    <CarouselItem key={index} className="pl-6 basis-1/2 lg:basis-1/4">
-                      <div className="rounded-xl border border-foreground/10 overflow-hidden bg-white">
-                        <div className="relative aspect-[3/4]">
-                          <img 
-                            src={book.cover} 
-                            alt={book.title}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div className="p-3">
-                          <h3 className="font-serif text-sm font-medium leading-tight mb-1 text-foreground">
-                            {book.title}
-                          </h3>
-                          <p className="text-xs text-muted-foreground">
-                            {book.author}
-                          </p>
-                        </div>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-              </Carousel>
+                ))}
+              </div>
             </div>
           </FadeIn>
         </div>
@@ -150,9 +140,12 @@ const BookClub: React.FC = () => {
       <section className="py-16 md:py-24 bg-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-6 md:px-12">
           <FadeIn>
-            <p className="text-xs uppercase tracking-widest text-white/70 mb-12">
-              What We Do
-            </p>
+            <div className="mb-16">
+              <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">What We Do</h2>
+              <p className="text-base md:text-lg text-white/60 font-serif max-w-2xl leading-relaxed">
+                How we bring curious designers together around ideas that matter.
+              </p>
+            </div>
           </FadeIn>
 
           <div className="space-y-0">
