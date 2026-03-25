@@ -1,44 +1,26 @@
 
 
-## Interactive Bookshelf for "Past Reads"
+## Update Book Club Page: 3 Changes
 
-Replace the current 2x4 card grid with a CSS-illustrated bookshelf where each book is rendered as a colored spine standing upright on a shelf. Hovering a spine shows a tooltip with the book title; clicking opens a modal with the book cover, title, author, and a purchase link.
+### 1. Restyle "What We Do" to match "Beyond the Pixels"
 
-### Visual Design
+The "What We Do" section currently has a small uppercase label header. Change it to match the "Beyond the Pixels" style with a large serif heading and subtitle paragraph, then keep the border-separated rows below.
 
-```text
-┌──────────────────────────────────────────────┐
-│  ║  ║   ║  ║  ║   ║  ║  ║                   │
-│  ║  ║   ║  ║  ║   ║  ║  ║   ← book spines   │
-│  ║  ║   ║  ║  ║   ║  ║  ║     (varying       │
-│  ║  ║   ║  ║  ║   ║  ║  ║      widths,       │
-│  ║  ║   ║  ║  ║   ║  ║  ║      heights,      │
-│  ║  ║   ║  ║  ║   ║  ║  ║      colors)       │
-├──────────────────────────────────────────────┤  ← shelf edge
-└──────────────────────────────────────────────┘
-```
+**In `src/pages/BookClub.tsx`**, replace the small label (lines 152-156) with:
+- Large `h2` in `text-3xl md:text-5xl font-serif text-white mb-4` — "What We Do"
+- Subtitle `p` in `text-base md:text-lg text-white/60 font-serif max-w-2xl` with descriptive text
+- Wrap in a `mb-16` div, matching the AboutPage pattern
 
-### Data Changes
+### 2. Make header photo wider
 
-Add `purchaseUrl` and `spineColor` fields to each book object. Assign rich, varied colors inspired by the reference image (burgundy, navy, forest green, deep red, brown, gold-accented tones). Add placeholder Amazon/Bookshop links.
+Change the hero photo container (line 79) from `w-36 h-48` to `w-52 h-64` to make it significantly larger.
 
-### Implementation — `src/pages/BookClub.tsx`
+### 3. Replace book carousel with static 2x4 grid
 
-1. **Replace the grid** (lines 110-135) with a bookshelf component:
-   - A `flex items-end` container representing books standing on a shelf
-   - Each book spine is a tall, narrow `div` with varying `width` (28-48px), `height` (160-200px), and `backgroundColor` from the data
-   - Spines have subtle details: vertical text (book title rotated 90deg), slight rounded corners at top, and a `hover:brightness-110 hover:-translate-y-1` effect
-   - A horizontal "shelf" bar below (`h-3 bg-[#8B7355] rounded-b shadow-md`)
+Remove the `Carousel` component and its imports. Replace with a simple CSS grid showing all 8 books (trim the 9th book from the array to get exactly 8) in a `grid grid-cols-2 md:grid-cols-4 gap-6` layout. Keep the "Past Reads" label, remove the carousel navigation arrows. Each book card keeps the same styling (`rounded-xl border border-foreground/10 bg-white` with cover image and title/author).
 
-2. **Tooltip on hover**: Wrap each spine in a `Tooltip` (from existing `src/components/ui/tooltip.tsx`) showing the book title and author.
+Remove unused imports: `Carousel`, `CarouselContent`, `CarouselItem`, `CarouselPrevious`, `CarouselNext`.
 
-3. **Modal on click**: Use the existing `Dialog` component. Clicking a spine opens a dialog showing:
-   - Book cover image (large)
-   - Title and author in serif font
-   - "Purchase" button linking to `purchaseUrl` (opens in new tab)
-
-4. **Responsive**: On mobile (`< md`), spines get slightly narrower; the shelf scrolls horizontally if needed via `overflow-x-auto`.
-
-### Files Modified
-- `src/pages/BookClub.tsx` — replace grid with bookshelf, add Dialog + Tooltip imports, add `purchaseUrl`/`spineColor` to book data
+### Files modified
+- `src/pages/BookClub.tsx`
 
