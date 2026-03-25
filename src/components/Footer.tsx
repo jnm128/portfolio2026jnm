@@ -23,7 +23,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
 
   return (
     <footer className={cn('py-12 md:py-16 bg-[#1C1C1C] text-white', className)}>
-      <div className="<div className="container mx-auto px-8 md:px-16 max-w-[1600px]"> className="container mx-auto px-8 md:px-16 max-w-[1600px]">">
+      <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           {/* Logo & Copyright */}
           <div>
