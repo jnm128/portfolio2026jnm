@@ -61,7 +61,7 @@ const BookClub: React.FC = () => {
       
       {/* Hero Section */}
       <section className="pt-24 md:pt-28 pb-16 md:pb-24 bg-[#F8F6F1]">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
+        <div className="max-w-[1600px] mx-auto px-8 md:px-16">
           <FadeIn>
             <div className="flex items-start gap-8 md:gap-12">
               <div className="flex-1 max-w-2xl">
@@ -138,7 +138,7 @@ const BookClub: React.FC = () => {
 
       {/* What We Do */}
       <section className="py-16 md:py-24 bg-[#1C1C1C]">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
+        <div className="max-w-[1600px] mx-auto px-8 md:px-16">
           <FadeIn>
             <div className="mb-16">
               <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">What We Do</h2>
