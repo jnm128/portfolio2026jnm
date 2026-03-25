@@ -19,6 +19,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
   const isBookClubPage = location.pathname === '/book-club';
+  const isContactPage = location.pathname === '/contact';
 
   useEffect(() => {
     const handleScroll = () => {
