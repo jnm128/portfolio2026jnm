@@ -1,25 +1,28 @@
 
 
-## Unify Padding: Apply `px-8 md:px-16` Across Homepage, Work, About, and Community
+## Widen Content on About, Work, and Book Club Pages
 
-**Goal**: Change all homepage components, Work page, About page, and Community component from `px-6 md:px-12` to `px-8 md:px-16` to match the inner page padding standard.
+**Problem**: About, Work, and Book Club pages use `max-w-4xl mx-auto` (max 896px), leaving content narrower than the Contact page which spans full-width within its padding. This creates inconsistent content widths across pages.
+
+**Solution**: Remove the `max-w-4xl` constraint and replace with `max-w-[1600px]` (matching the homepage container pattern) so content fills the available space up to the padding edges, consistent with Contact.
 
 ### Files to Update
 
-**Homepage components** (change `px-6 md:px-12` → `px-8 md:px-16`):
-- `src/components/Hero.tsx`
-- `src/components/IntroBlurb.tsx` (container only, not the logo image classes)
-- `src/components/Projects.tsx`
-- `src/components/AboutSection.tsx`
-- `src/components/Testimonials.tsx`
-- `src/components/Community.tsx`
-- `src/components/Collab.tsx`
-- `src/components/Footer.tsx`
+**`src/pages/Work.tsx`** — 3 container divs:
+- Line 39: `max-w-4xl mx-auto px-8 md:px-16` → `max-w-[1600px] mx-auto px-8 md:px-16`
+- Line 53: same change
+- Line 90: same change
 
-**Pages** (already use `px-8 md:px-16` — no changes needed):
-- `src/pages/Work.tsx` — already correct
-- `src/pages/AboutPage.tsx` — already correct
+**`src/pages/AboutPage.tsx`** — 2 container divs:
+- Line 48: `max-w-4xl mx-auto px-8 md:px-16` → `max-w-[1600px] mx-auto px-8 md:px-16`
+- Line 97: same change
 
-### What Changes
-A simple find-and-replace of `px-6 md:px-12` → `px-8 md:px-16` in each component's container div. The IntroBlurb logo image classes that use `px-6 md:px-12` for internal spacing remain unchanged.
+**`src/pages/BookClub.tsx`** — all `max-w-4xl` container divs → `max-w-[1600px]`
+
+**`src/components/Community.tsx`** — already uses `max-w-[1600px]`, no change needed.
+
+### What stays the same
+- Padding (`px-8 md:px-16`) remains unchanged
+- Internal content constraints like `max-w-2xl` on paragraphs stay as-is for readability
+- Contact page is untouched
 
