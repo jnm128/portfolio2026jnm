@@ -39,7 +39,7 @@ const Contact = () => {
       <div className="bg-[#F8F6F1] p-8 md:p-16 pt-24 md:pt-32">
         <FadeIn delay={100}>
           <div className="max-w-lg">
-            <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-8">
+            <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-8">
               Get in touch
             </h2>
 
