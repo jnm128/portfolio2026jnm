@@ -17,7 +17,7 @@ const Contact = () => {
           <div className="mt-16">
             
 
-            <div className="border-t border-white/15 py-8">
+            <div className="py-8">
               <span className="text-xs uppercase tracking-widest text-white/60">Location</span>
               <p className="text-lg font-serif text-white mt-1">New York, NY</p>
               <p className="text-sm text-white/60 mt-1">Open to remote collaboration worldwide</p>
@@ -47,7 +47,7 @@ const Contact = () => {
               href="mailto:hello@joannaminott.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group border-t border-foreground/10 py-8 flex items-center justify-between"
+              className="group py-8 flex items-center justify-between"
             >
               <div>
                 <span className="text-xs uppercase tracking-widest text-muted-foreground">Email</span>
