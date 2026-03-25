@@ -49,7 +49,7 @@ const Work: React.FC = () => {
       </section>
 
       {/* Project Cards */}
-      <section className="pb-16 md:pb-24 bg-[#F8F6F1]">
+      <section className="bg-[#F8F6F1]">
         <div className="max-w-[1600px] mx-auto px-8 md:px-16 py-16 md:py-24">
           <div className="flex flex-col gap-16">
             {projects.map((project, index) => (
@@ -82,7 +82,7 @@ const Work: React.FC = () => {
               </FadeIn>
             ))}
           </div>
-          <p className="text-sm text-muted-foreground font-serif text-center mt-12">More coming soon...</p>
+          <p className="text-xs uppercase tracking-widest text-muted-foreground text-center mt-16">More coming soon...</p>
         </div>
       </section>
 
