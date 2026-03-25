@@ -140,9 +140,12 @@ const BookClub: React.FC = () => {
       <section className="py-16 md:py-24 bg-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-6 md:px-12">
           <FadeIn>
-            <p className="text-xs uppercase tracking-widest text-white/70 mb-12">
-              What We Do
-            </p>
+            <div className="mb-16">
+              <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">What We Do</h2>
+              <p className="text-base md:text-lg text-white/60 font-serif max-w-2xl leading-relaxed">
+                How we bring curious designers together around ideas that matter.
+              </p>
+            </div>
           </FadeIn>
 
           <div className="space-y-0">
