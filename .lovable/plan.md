@@ -1,21 +1,25 @@
 
 
-## Contact Page: 3 Updates
+## Unify Padding: Apply `px-8 md:px-16` Across Homepage, Work, About, and Community
 
-### 1. Move tagline to upper-right of dark panel
-Change the left panel from `flex items-end` to `flex items-start justify-end text-right pt-24 md:pt-32` so the tagline sits top-right, clearing the header.
+**Goal**: Change all homepage components, Work page, About page, and Community component from `px-6 md:px-12` to `px-8 md:px-16` to match the inner page padding standard.
 
-### 2. Move "Currently" section into the dark panel
-Remove the "Currently" heading, Location, and Availability rows (lines 70-87) from the right panel. Add them to the bottom of the left dark panel, styled with `border-t border-white/15 py-8` and white text (`text-white`, `text-white/60`), matching the dark-section list pattern.
+### Files to Update
 
-### 3. Dynamic header on Contact page
-In `src/components/Header.tsx`:
-- Detect `/contact` route via `isContactPage`
-- When `isContactPage && !isScrolled`: header bg transparent, logo `text-white`
-- Nav links stay default (over cream right panel)
-- On scroll or mobile menu open: revert to normal `bg-background`
+**Homepage components** (change `px-6 md:px-12` → `px-8 md:px-16`):
+- `src/components/Hero.tsx`
+- `src/components/IntroBlurb.tsx` (container only, not the logo image classes)
+- `src/components/Projects.tsx`
+- `src/components/AboutSection.tsx`
+- `src/components/Testimonials.tsx`
+- `src/components/Community.tsx`
+- `src/components/Collab.tsx`
+- `src/components/Footer.tsx`
 
-### Files modified
-- `src/pages/Contact.tsx`
-- `src/components/Header.tsx`
+**Pages** (already use `px-8 md:px-16` — no changes needed):
+- `src/pages/Work.tsx` — already correct
+- `src/pages/AboutPage.tsx` — already correct
+
+### What Changes
+A simple find-and-replace of `px-6 md:px-12` → `px-8 md:px-16` in each component's container div. The IntroBlurb logo image classes that use `px-6 md:px-12` for internal spacing remain unchanged.
 
