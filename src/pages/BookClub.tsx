@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
-import { BookOpen, MessageCircle, Globe, ArrowRight, ExternalLink } from 'lucide-react';
+import { BookOpen, MessageCircle, Globe, ExternalLink } from 'lucide-react';
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
-import { Link } from 'react-router-dom';
 import bookClubGroup from '@/assets/book-club-group.png';
 
 
