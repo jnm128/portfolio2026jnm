@@ -15,7 +15,7 @@ const Connecting: React.FC<ConnectingProps> = ({ className }) => {
 
   return (
     <section id="connecting" className={cn('py-20 bg-white', className)}>
-      <div className="container mx-auto px-6 md:px-12">
+      <div className="container mx-auto px-8 md:px-16">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-serif mb-12 text-center">Connecting</h2>
