@@ -50,7 +50,7 @@ const Work: React.FC = () => {
 
       {/* Project Cards */}
       <section className="bg-[#F8F6F1]">
-        <div className="max-w-[1600px] mx-auto px-8 md:px-16 py-16 md:py-24">
+        <div className="<div className="max-w-4xl mx-auto px-8 md:px-16 py-16 md:py-24"> md:py-24">
           <div className="flex flex-col gap-16">
             {projects.map((project, index) => (
               <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
