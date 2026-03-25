@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
 import { BookOpen, MessageCircle, Globe, ArrowRight, ExternalLink } from 'lucide-react';
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
+
 import { Link } from 'react-router-dom';
 import bookClubGroup from '@/assets/book-club-group.png';
 
