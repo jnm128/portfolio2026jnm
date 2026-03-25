@@ -1,21 +1,52 @@
 
 
-## Increase Content Padding Across Non-Homepage Pages
+## Redesign Contact Page: Split Layout with Dark Left Panel
 
-**Current state**: Homepage components use `px-6 md:px-12` (24px / 48px). Most inner pages already match this. The 3 case study pages still use the old `px-4 md:px-6` (16px / 24px).
+**Goal**: Transform the Contact page into a two-panel split layout inspired by the reference image. Left side is dark (`bg-[#1C1C1C]`) with a tagline. Right side has "Get in touch" and "Currently" info styled with `border-t border-white/15` flat rows (matching "Beyond the Pixels").
 
-**Change**: Bump all inner pages to `px-8 md:px-16` (32px / 64px) — slightly more than the homepage's 48px desktop padding, giving editorial pages more breathing room.
+### Layout Structure
 
-### Files to update
+```text
+┌─────────────────────┬─────────────────────────┐
+│                     │                         │
+│  (dark #1C1C1C)     │  (cream #F8F6F1)        │
+│                     │                         │
+│  "Let's create      │  Get in touch           │
+│   something         │  ─────────────────────  │
+│   meaningful        │  Email                  │
+│   together"         │  hello@joannaminott.com │
+│                     │  ─────────────────────  │
+│                     │  LinkedIn               │
+│                     │  Connect with me        │
+│                     │  ─────────────────────  │
+│                     │  Schedule               │
+│                     │  Book a 30-min call     │
+│                     │                         │
+│                     │  Currently              │
+│                     │  ─────────────────────  │
+│                     │  Location               │
+│                     │  New York, NY           │
+│                     │  ─────────────────────  │
+│                     │  Availability           │
+│                     │  Open for new projects  │
+└─────────────────────┴─────────────────────────┘
+```
 
-1. **`src/pages/Work.tsx`** — 3 containers: change `px-6 md:px-12` → `px-8 md:px-16`
-2. **`src/pages/AboutPage.tsx`** — 2 containers: `px-6 md:px-12` → `px-8 md:px-16`
-3. **`src/pages/Contact.tsx`** — 1 container: `px-6 md:px-12` → `px-8 md:px-16`
-4. **`src/pages/BookClub.tsx`** — 3 containers (hero, What We Do, CTA): `px-6 md:px-12` → `px-8 md:px-16`
-5. **`src/pages/WorkExperience.tsx`** — 1 container: `px-6 md:px-12` → `px-8 md:px-16`
-6. **`src/pages/CaseStudyMindfulWellness.tsx`** — 4 containers: `px-4 md:px-6` → `px-8 md:px-16`
-7. **`src/pages/CaseStudyCreativeStudio.tsx`** — 4 containers: `px-4 md:px-6` → `px-8 md:px-16`
-8. **`src/pages/CaseStudyArtisanMarketplace.tsx`** — 4 containers: `px-4 md:px-6` → `px-8 md:px-16`
+### Changes to `src/pages/Contact.tsx`
 
-All changes are simple find-and-replace of padding classes within each file's container divs. No layout or structural changes.
+1. **Split into two-column layout**: `grid md:grid-cols-2 min-h-screen`. On mobile, stack vertically (dark panel on top, content below).
+
+2. **Left panel** (`bg-[#1C1C1C]`): Full height, contains the tagline "Let's create something meaningful together" in `text-white font-serif text-3xl md:text-5xl`, vertically centered or near-bottom. Sticky on desktop (`md:sticky md:top-0 md:h-screen`).
+
+3. **Right panel** (`bg-[#F8F6F1]`): Contains all contact info and availability, styled with flat border-separated rows:
+   - Section header "Get in touch" as `text-3xl md:text-4xl font-serif mb-8`
+   - Each contact method (Email, LinkedIn, Schedule) as a `border-t border-foreground/10 py-8` row — remove card wrappers, rounded corners, icon circles. Use `text-xs uppercase tracking-widest text-muted-foreground` for labels, `text-lg font-serif` for values.
+   - Section header "Currently" as `text-xl font-serif mt-16 mb-8`
+   - Location and Availability as `border-t border-foreground/10 py-8` rows — remove `rounded-2xl bg-secondary/30`. Same label/value typography. Last row gets `border-b`.
+   - Remove the response time card.
+
+4. **Remove** the circular icon containers and the two-column grid within the content area — everything flows as a single column of border-separated rows on the right side.
+
+### Files Modified
+- `src/pages/Contact.tsx`
 
