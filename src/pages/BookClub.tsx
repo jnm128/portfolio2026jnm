@@ -76,7 +76,7 @@ const BookClub: React.FC = () => {
                 </a>
               </div>
               <div className="hidden md:block shrink-0 pt-2">
-                <div className="w-36 h-48 rounded-xl overflow-hidden shadow-md rotate-2">
+                <div className="w-52 h-64 rounded-xl overflow-hidden shadow-md rotate-2">
                   <img 
                     src={bookClubGroup} 
                     alt="Book club gathering" 
