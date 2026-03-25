@@ -1,26 +1,21 @@
 
 
-## Update Book Club Page: 3 Changes
+## Increase Content Padding Across Non-Homepage Pages
 
-### 1. Restyle "What We Do" to match "Beyond the Pixels"
+**Current state**: Homepage components use `px-6 md:px-12` (24px / 48px). Most inner pages already match this. The 3 case study pages still use the old `px-4 md:px-6` (16px / 24px).
 
-The "What We Do" section currently has a small uppercase label header. Change it to match the "Beyond the Pixels" style with a large serif heading and subtitle paragraph, then keep the border-separated rows below.
+**Change**: Bump all inner pages to `px-8 md:px-16` (32px / 64px) — slightly more than the homepage's 48px desktop padding, giving editorial pages more breathing room.
 
-**In `src/pages/BookClub.tsx`**, replace the small label (lines 152-156) with:
-- Large `h2` in `text-3xl md:text-5xl font-serif text-white mb-4` — "What We Do"
-- Subtitle `p` in `text-base md:text-lg text-white/60 font-serif max-w-2xl` with descriptive text
-- Wrap in a `mb-16` div, matching the AboutPage pattern
+### Files to update
 
-### 2. Make header photo wider
+1. **`src/pages/Work.tsx`** — 3 containers: change `px-6 md:px-12` → `px-8 md:px-16`
+2. **`src/pages/AboutPage.tsx`** — 2 containers: `px-6 md:px-12` → `px-8 md:px-16`
+3. **`src/pages/Contact.tsx`** — 1 container: `px-6 md:px-12` → `px-8 md:px-16`
+4. **`src/pages/BookClub.tsx`** — 3 containers (hero, What We Do, CTA): `px-6 md:px-12` → `px-8 md:px-16`
+5. **`src/pages/WorkExperience.tsx`** — 1 container: `px-6 md:px-12` → `px-8 md:px-16`
+6. **`src/pages/CaseStudyMindfulWellness.tsx`** — 4 containers: `px-4 md:px-6` → `px-8 md:px-16`
+7. **`src/pages/CaseStudyCreativeStudio.tsx`** — 4 containers: `px-4 md:px-6` → `px-8 md:px-16`
+8. **`src/pages/CaseStudyArtisanMarketplace.tsx`** — 4 containers: `px-4 md:px-6` → `px-8 md:px-16`
 
-Change the hero photo container (line 79) from `w-36 h-48` to `w-52 h-64` to make it significantly larger.
-
-### 3. Replace book carousel with static 2x4 grid
-
-Remove the `Carousel` component and its imports. Replace with a simple CSS grid showing all 8 books (trim the 9th book from the array to get exactly 8) in a `grid grid-cols-2 md:grid-cols-4 gap-6` layout. Keep the "Past Reads" label, remove the carousel navigation arrows. Each book card keeps the same styling (`rounded-xl border border-foreground/10 bg-white` with cover image and title/author).
-
-Remove unused imports: `Carousel`, `CarouselContent`, `CarouselItem`, `CarouselPrevious`, `CarouselNext`.
-
-### Files modified
-- `src/pages/BookClub.tsx`
+All changes are simple find-and-replace of padding classes within each file's container divs. No layout or structural changes.
 
