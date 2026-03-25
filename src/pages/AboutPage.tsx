@@ -45,7 +45,7 @@ const AboutPage = () => {
       <div className="pt-24 md:pt-28">
         {/* Hero / Intro */}
         <section className="pt-0 pb-24 md:pb-32 bg-[#F8F6F1]">
-            <div className="max-w-4xl mx-auto px-6 md:px-12">
+            <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn delay={200}>
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
                 {/* Bio Text */}
@@ -94,7 +94,7 @@ const AboutPage = () => {
 
         {/* Writing, Current Read & Song on Repeat — Combined Dark Section */}
         <section className="bg-[#1C1C1C] text-white py-16 md:py-24">
-          <div className="max-w-4xl mx-auto px-6 md:px-12">
+          <div className="max-w-4xl mx-auto px-8 md:px-16">
             <div className="mb-16">
               <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">
                 Beyond the Pixels
