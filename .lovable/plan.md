@@ -1,28 +1,37 @@
 
 
-## Widen Content on About, Work, and Book Club Pages
+## Apply `max-w-4xl mx-auto` (896px) Across All Pages
 
-**Problem**: About, Work, and Book Club pages use `max-w-4xl mx-auto` (max 896px), leaving content narrower than the Contact page which spans full-width within its padding. This creates inconsistent content widths across pages.
+**Goal**: Replace all `max-w-[1600px]` containers with `max-w-4xl` site-wide for a consistent, narrower content width.
 
-**Solution**: Remove the `max-w-4xl` constraint and replace with `max-w-[1600px]` (matching the homepage container pattern) so content fills the available space up to the padding edges, consistent with Contact.
+### Files to Update (16 files)
 
-### Files to Update
+**Pages:**
+- `src/pages/Work.tsx` — 3 containers (lines 39, 53, 91)
+- `src/pages/AboutPage.tsx` — 2 containers (lines 48, 97)
+- `src/pages/BookClub.tsx` — 3 containers (lines 64, 141, 193)
 
-**`src/pages/Work.tsx`** — 3 container divs:
-- Line 39: `max-w-4xl mx-auto px-8 md:px-16` → `max-w-[1600px] mx-auto px-8 md:px-16`
-- Line 53: same change
-- Line 90: same change
+**Homepage components:**
+- `src/components/Hero.tsx`
+- `src/components/IntroBlurb.tsx` (line 20)
+- `src/components/BioBlurb.tsx` (line 12)
+- `src/components/Projects.tsx` (line 53)
+- `src/components/Testimonials.tsx` (line 55)
+- `src/components/Community.tsx` (line 13)
+- `src/components/Footer.tsx` (line 26)
+- `src/components/About.tsx` (line 12)
+- `src/components/Process.tsx` (line 36)
+- `src/components/Collab.tsx`
+- `src/components/Connecting.tsx`
 
-**`src/pages/AboutPage.tsx`** — 2 container divs:
-- Line 48: `max-w-4xl mx-auto px-8 md:px-16` → `max-w-[1600px] mx-auto px-8 md:px-16`
-- Line 97: same change
+**Global:**
+- `src/components/Header.tsx` (line 181)
 
-**`src/pages/BookClub.tsx`** — all `max-w-4xl` container divs → `max-w-[1600px]`
+### The Change
 
-**`src/components/Community.tsx`** — already uses `max-w-[1600px]`, no change needed.
+Every instance of `max-w-[1600px]` → `max-w-4xl`. No other classes change. Padding (`px-8 md:px-16`) and `mx-auto` remain as-is.
 
-### What stays the same
-- Padding (`px-8 md:px-16`) remains unchanged
-- Internal content constraints like `max-w-2xl` on paragraphs stay as-is for readability
-- Contact page is untouched
+### Technical Detail
+
+`max-w-4xl` = 896px max width. This creates a centered, readable column layout consistent across all pages. The Header nav will also be constrained to this width for full alignment.
 
