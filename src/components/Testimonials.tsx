@@ -52,7 +52,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
 
   return (
     <div id="testimonials" className={cn('pt-12 pb-12 md:pt-20 md:pb-20', className)}>
-      <div className="container mx-auto px-8 md:px-16 max-w-4xl">
+      <div className="container mx-auto px-8 md:px-16 <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">">
         {/* Section Label */}
         <FadeIn>
           <h2 className="text-xs uppercase tracking-widest text-white/60 mb-10">In Their Words</h2>
