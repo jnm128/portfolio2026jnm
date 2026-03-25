@@ -10,7 +10,7 @@ interface CommunityProps {
 const Community: React.FC<CommunityProps> = ({ className }) => {
   return (
     <div id="community" className={cn('pt-12 pb-12 md:pt-20 md:pb-20', className)}>
-      <div className="container mx-auto px-6 md:px-12 max-w-[1600px]">
+      <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
         <FadeIn delay={100}>
           <p className="text-xs uppercase tracking-widest mb-4 text-white/60">Community</p>
           <div className="rounded-2xl p-6 md:p-8 bg-[#F8F6F1]">

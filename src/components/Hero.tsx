@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
   return (
     <section className={cn('pt-20 md:pt-24 pb-6 md:pb-8 bg-[#F8F6F1]', className)}>
-      <div ref={containerRef} className="mx-auto max-w-[1600px] px-6 md:px-12">
+      <div ref={containerRef} className="mx-auto max-w-[1600px] px-8 md:px-16">
         <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-2">Joanna Minott, <span className="text-muted-foreground">UX Designer</span></h1>
         <p className="text-base md:text-lg text-muted-foreground font-serif mb-4 max-w-2xl">
           Product designer by day, community builder by night. I build software and digital experiences that connect people and spark meaningful change.
