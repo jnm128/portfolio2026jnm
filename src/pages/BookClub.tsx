@@ -84,6 +84,8 @@ const books = [
 ];
 
 const BookClub: React.FC = () => {
+  const [selectedBook, setSelectedBook] = useState<typeof books[0] | null>(null);
+
   return (
     <div className="min-h-screen bg-[#F8F6F1]">
       
