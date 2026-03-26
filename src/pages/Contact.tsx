@@ -8,9 +8,14 @@ const Contact = () => {
       {/* Left Panel - Dark */}
       <div className="bg-[#1C1C1C] md:sticky md:top-0 md:h-screen flex flex-col justify-between p-8 md:p-16 pt-24 md:pt-32">
         <FadeIn>
-          <h1 className="text-3xl md:text-5xl font-serif text-white leading-tight text-right">
-            Let's create something meaningful together
-          </h1>
+          <div>
+            <h2 className="text-3xl md:text-5xl font-serif text-white mb-8">
+              Get in touch
+            </h2>
+            <h1 className="text-3xl md:text-5xl font-serif text-white leading-tight text-right">
+              Let's create something meaningful together
+            </h1>
+          </div>
         </FadeIn>
 
         <FadeIn delay={200}>
@@ -39,9 +44,6 @@ const Contact = () => {
       <div className="bg-[#F8F6F1] p-8 md:p-16 pt-24 md:pt-32">
         <FadeIn delay={100}>
           <div className="max-w-lg">
-            <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-8">
-              Get in touch
-            </h2>
 
             <a
               href="mailto:hello@joannaminott.com"
