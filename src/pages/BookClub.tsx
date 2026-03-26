@@ -82,9 +82,11 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-          {/* Stats */}
+      {/* Stats & Past Reads */}
+      <section className="py-16 md:py-24 bg-[#F8F6F1]">
+        <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn delay={200}>
-            <div className="border-t border-foreground/10 mt-12 pt-10">
+            <div className="border-t border-foreground/10 pt-10">
               <div className="flex gap-16">
                 <div>
                   <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">2025</p>
