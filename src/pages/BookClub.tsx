@@ -79,30 +79,30 @@ const BookClub: React.FC = () => {
               Learn More <ExternalLink className="w-4 h-4 ml-1" />
             </a>
           </FadeIn>
-        </div>
-      </section>
-
-      {/* Stats & Past Reads */}
-      <section className="py-16 md:py-24 bg-[#F8F6F1]">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn delay={200}>
-            <div className="border-t border-foreground/10 pt-10">
-              <div className="flex gap-16">
+            <div className="border-t border-white/20 pt-8 mt-10">
+              <div className="flex gap-12 md:gap-16">
                 <div>
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">2025</p>
-                  <p className="text-sm text-muted-foreground mt-1">Founded</p>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-white">2025</p>
+                  <p className="text-sm text-white/60 mt-1">Founded</p>
                 </div>
                 <div>
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">8+</p>
-                  <p className="text-sm text-muted-foreground mt-1">Books Completed</p>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-white">8+</p>
+                  <p className="text-sm text-white/60 mt-1">Books Completed</p>
                 </div>
                 <div>
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground italic">Monthly</p>
-                  <p className="text-sm text-muted-foreground mt-1">Sessions</p>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-white italic">Monthly</p>
+                  <p className="text-sm text-white/60 mt-1">Sessions</p>
                 </div>
               </div>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Past Reads */}
+      <section className="py-16 md:py-24 bg-[#F8F6F1]">
+        <div className="max-w-4xl mx-auto px-8 md:px-16">
 
           <FadeIn delay={300}>
             <div className="mt-12">
