@@ -58,16 +58,16 @@ const BookClub: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F8F6F1]">
       
-      <section className="relative min-h-[70vh] flex items-end overflow-hidden">
-        <PopIn className="absolute inset-0 -z-10">
+      <section className="relative isolate min-h-[70vh] flex items-end overflow-hidden">
+        <div className="absolute inset-0 z-0">
           <img 
-            src={`${bookClubHero}?v=2`} 
+            src={bookClubHero} 
             alt="Book club gathering" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-black/20" />
-        </PopIn>
-        <div className="w-full max-w-4xl mx-auto px-8 md:px-16 py-16 md:py-24 relative z-10">
+        </div>
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-8 md:px-16 py-16 md:py-24">
           <FadeIn>
             <h1 className="text-3xl md:text-5xl font-serif text-white mb-4 leading-tight">
               Fresh Perspectives
