@@ -106,9 +106,16 @@ const BookClub: React.FC = () => {
       <section className="py-16 md:py-24 bg-[#F8F6F1]">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
 
-          <FadeIn delay={300}>
-            <div className="mt-12">
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Past Reads</p>
+          <FadeIn>
+            <div className="mb-16">
+              <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">Past Reads</h2>
+              <p className="text-base md:text-lg text-muted-foreground font-serif max-w-2xl leading-relaxed">
+                Books that have shaped our thinking and conversations.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {books.map((book, index) => (
                   <div key={index} className="rounded-xl border border-foreground/10 overflow-hidden bg-white">
