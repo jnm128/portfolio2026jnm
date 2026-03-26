@@ -58,7 +58,7 @@ const BookClub: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F8F6F1]">
       
-      <section className="relative isolate min-h-[70vh] flex items-end overflow-hidden">
+      <section className="relative isolate min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={bookClubHero} 
@@ -67,7 +67,8 @@ const BookClub: React.FC = () => {
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-8 md:px-16 py-16 md:py-24">
+        <div className="relative z-10 container mx-auto px-8 md:px-16 py-20 md:py-32">
+          <div className="max-w-4xl">
           <FadeIn>
             <h1 className="text-3xl md:text-5xl font-serif text-white mb-4 leading-tight">
               Fresh Perspectives
