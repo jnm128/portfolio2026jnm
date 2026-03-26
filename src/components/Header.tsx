@@ -178,7 +178,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           className
         )}
       >
-        <div className="container mx-auto px-8 md:px-16 flex items-center justify-between max-w-4xl">
+        <div className="w-full mx-auto px-8 md:px-16 flex items-center justify-between">
           {/* Logo */}
           {isHomePage ? (
             <button 
