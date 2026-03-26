@@ -98,6 +98,7 @@ const BookClub: React.FC = () => {
               </div>
             </div>
           </FadeIn>
+          </div>
         </div>
       </section>
 
