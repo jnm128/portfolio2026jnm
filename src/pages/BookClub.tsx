@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
 import { BookOpen, MessageCircle, Globe, ExternalLink } from 'lucide-react';
 import PopIn from '@/components/animations/PopIn';
-import bookClubHero from '@/assets/book-club-hero.jpg';
+import bookClubHero from '@/assets/book-club-hero-2.jpg';
 
 
 const books = [
