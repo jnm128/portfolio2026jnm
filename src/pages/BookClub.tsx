@@ -1,10 +1,9 @@
 import React from 'react';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
-import { BookOpen, MessageCircle, Globe, ArrowRight, ExternalLink } from 'lucide-react';
-
-import { Link } from 'react-router-dom';
-import bookClubGroup from '@/assets/book-club-group.png';
+import { BookOpen, MessageCircle, Globe, ExternalLink } from 'lucide-react';
+import PopIn from '@/components/animations/PopIn';
+import bookClubHero from '@/assets/book-club-hero.jpg';
 
 
 const books = [
