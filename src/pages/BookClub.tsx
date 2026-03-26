@@ -58,7 +58,7 @@ const BookClub: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F8F6F1]">
       
-      <section className="relative isolate min-h-[70vh] flex items-end overflow-hidden">
+      <section className="relative isolate min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={bookClubHero} 
@@ -67,7 +67,8 @@ const BookClub: React.FC = () => {
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-8 md:px-16 py-16 md:py-24">
+        <div className="relative z-10 container mx-auto px-8 md:px-16 py-20 md:py-32">
+          <div className="max-w-4xl">
           <FadeIn>
             <h1 className="text-3xl md:text-5xl font-serif text-white mb-4 leading-tight">
               Fresh Perspectives
@@ -97,6 +98,7 @@ const BookClub: React.FC = () => {
               </div>
             </div>
           </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -104,9 +106,16 @@ const BookClub: React.FC = () => {
       <section className="py-16 md:py-24 bg-[#F8F6F1]">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
 
-          <FadeIn delay={300}>
-            <div className="mt-12">
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Past Reads</p>
+          <FadeIn>
+            <div className="mb-16">
+              <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">Past Reads</h2>
+              <p className="text-base md:text-lg text-muted-foreground font-serif max-w-2xl leading-relaxed">
+                Books that have shaped our thinking and conversations.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {books.map((book, index) => (
                   <div key={index} className="rounded-xl border border-foreground/10 overflow-hidden bg-white">
