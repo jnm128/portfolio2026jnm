@@ -150,7 +150,7 @@ const BookClub: React.FC = () => {
 
           <div className="space-y-0">
             <FadeIn delay={100}>
-              <div className="border-t border-white/15 py-10">
+              <div className="py-10">
                 <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6">
                   <BookOpen className="w-6 h-6 text-[#1C1C1C]" />
                 </div>
