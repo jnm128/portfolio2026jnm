@@ -58,7 +58,7 @@ const BookClub: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F8F6F1]">
       
-      <section className="relative isolate min-h-[55vh] flex items-center overflow-hidden">
+      <section className="relative isolate min-h-[45vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={bookClubHero} 
