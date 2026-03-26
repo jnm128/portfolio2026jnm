@@ -12,7 +12,7 @@ const Contact = () => {
             <h2 className="text-3xl md:text-5xl font-serif text-white mb-8">
               Get in touch
             </h2>
-            <h1 className="text-3xl md:text-5xl font-serif text-white leading-tight text-right">
+            <h1 className="text-3xl md:text-5xl font-serif text-white leading-tight text-left">
               Let's create something meaningful together
             </h1>
           </div>
