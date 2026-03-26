@@ -65,14 +65,14 @@ const BookClub: React.FC = () => {
             alt="Book club gathering" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/20" />
         </PopIn>
         <div className="w-full max-w-4xl mx-auto px-8 md:px-16 py-16 md:py-24 relative z-10">
           <FadeIn>
             <h1 className="text-3xl md:text-5xl font-serif text-white mb-4 leading-tight">
               Fresh Perspectives
             </h1>
-            <p className="text-base md:text-lg text-white/80 font-serif leading-relaxed mb-6 max-w-2xl">
+            <p className="text-base md:text-lg text-white/90 font-serif leading-relaxed mb-6 max-w-2xl">
               A community of curious minds exploring the intersection of design, psychology, and human behavior.
             </p>
             <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-full bg-white text-foreground text-sm font-medium hover:opacity-90 transition-opacity">
