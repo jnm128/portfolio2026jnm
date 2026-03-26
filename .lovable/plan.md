@@ -1,39 +1,26 @@
 
+Update the Book Club hero overlay so the newly uploaded image is more visible while preserving text readability.
 
-## Plan: Redesign Book Club Hero to Case Study Style
+1. Adjust the hero overlay in `src/pages/BookClub.tsx`
+   - Change the dark layer from `bg-black/40` to a lighter opacity such as `bg-black/20` or `bg-black/25`
+   - Keep the full-width image, current text, and existing case-study-style layout intact
 
-### What changes
-Replace the current Book Club hero (text + small image side-by-side) with a full-width background image hero matching the case study pattern, using the uploaded photo as the background image.
+2. Fine-tune text contrast if needed
+   - Keep the heading white
+   - Slightly increase paragraph contrast from `text-white/80` to `text-white/90` if the lighter overlay reduces readability
+   - Leave the CTA button styling as-is unless the new image makes it blend in too much
 
-### Steps
+3. Verify responsiveness against the current layout
+   - Ensure the hero still reads well at the user’s current viewport size and remains visually balanced on mobile/tablet breakpoints
+   - Keep the rest of the page unchanged
 
-1. **Copy uploaded image** to `src/assets/book-club-hero.jpg`
-
-2. **Rewrite the hero section** in `src/pages/BookClub.tsx` (lines 62-90):
-   - Full-width section with `min-h-[70vh]` and the new image as background (absolute, object-cover)
-   - Dark overlay (`bg-black/40`) for text readability
-   - Keep existing content: "Fresh Perspectives" title, description text, "Learn More" button — but style them in white text like case study heroes
-   - Remove the small side image and the side-by-side layout
-   - Wrap in `PopIn` for image and `FadeIn` for text, matching case study pattern
-
-### Technical detail
-
-The hero markup will follow this structure:
+Technical detail:
+The only required code change is in the hero section overlay div:
 ```tsx
-<section className="relative min-h-[70vh] flex items-end overflow-hidden">
-  <PopIn className="absolute inset-0 -z-10">
-    <img src={bookClubHero} ... className="w-full h-full object-cover" />
-    <div className="absolute inset-0 bg-black/40" />
-  </PopIn>
-  <div className="w-full px-8 md:px-16 py-16 md:py-24 relative z-10">
-    <FadeIn>
-      <h1 className="... text-white">Fresh Perspectives</h1>
-      <p className="... text-white/90">...</p>
-      <a ...>Learn More</a>
-    </FadeIn>
-  </div>
-</section>
+<div className="absolute inset-0 bg-black/20" />
 ```
-
-The `pt-24` top padding is removed since the case study hero uses `min-h-[70vh]` with the header overlaying it.
-
+Optional supporting tweak:
+```tsx
+<p className="text-base md:text-lg text-white/90 ...">
+```
+This is the smallest change that should make the new background image noticeably clearer without redesigning the section.
