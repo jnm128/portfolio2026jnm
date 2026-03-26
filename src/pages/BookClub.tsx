@@ -65,7 +65,7 @@ const BookClub: React.FC = () => {
             alt="Book club gathering" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/20" />
         </PopIn>
         <div className="w-full max-w-4xl mx-auto px-8 md:px-16 py-16 md:py-24 relative z-10">
           <FadeIn>
