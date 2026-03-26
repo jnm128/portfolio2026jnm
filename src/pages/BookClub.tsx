@@ -61,7 +61,7 @@ const BookClub: React.FC = () => {
       <section className="relative min-h-[70vh] flex items-end overflow-hidden">
         <PopIn className="absolute inset-0 -z-10">
           <img 
-            src={bookClubHero} 
+            src={`${bookClubHero}?v=2`} 
             alt="Book club gathering" 
             className="w-full h-full object-cover"
           />
