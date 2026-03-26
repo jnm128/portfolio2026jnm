@@ -58,33 +58,29 @@ const BookClub: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F8F6F1]">
       
-      {/* Hero Section */}
-      <section className="pt-24 md:pt-28 pb-16 md:pb-24 bg-[#F8F6F1]">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
+      <section className="relative min-h-[70vh] flex items-end overflow-hidden">
+        <PopIn className="absolute inset-0 -z-10">
+          <img 
+            src={bookClubHero} 
+            alt="Book club gathering" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </PopIn>
+        <div className="w-full max-w-4xl mx-auto px-8 md:px-16 py-16 md:py-24 relative z-10">
           <FadeIn>
-            <div className="flex items-start gap-8 md:gap-12">
-              <div className="flex-1 max-w-2xl">
-                <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
-                  Fresh Perspectives
-                </h1>
-                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
-                  A community of curious minds exploring the intersection of design, psychology, and human behavior.
-                </p>
-                <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity">
-                  Learn More <ExternalLink className="w-4 h-4 ml-1" />
-                </a>
-              </div>
-              <div className="hidden md:block shrink-0 pt-2">
-                <div className="w-52 h-64 rounded-xl overflow-hidden shadow-md rotate-2">
-                  <img 
-                    src={bookClubGroup} 
-                    alt="Book club gathering" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
+            <h1 className="text-3xl md:text-5xl font-serif text-white mb-4 leading-tight">
+              Fresh Perspectives
+            </h1>
+            <p className="text-base md:text-lg text-white/80 font-serif leading-relaxed mb-6 max-w-2xl">
+              A community of curious minds exploring the intersection of design, psychology, and human behavior.
+            </p>
+            <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-full bg-white text-foreground text-sm font-medium hover:opacity-90 transition-opacity">
+              Learn More <ExternalLink className="w-4 h-4 ml-1" />
+            </a>
           </FadeIn>
+        </div>
+      </section>
 
           {/* Stats */}
           <FadeIn delay={200}>
