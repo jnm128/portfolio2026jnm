@@ -87,53 +87,55 @@ const BookClub: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F8F6F1]">
 
-      {/* Hero — text above, rounded image below */}
-      <section className="bg-[#F8F6F1] pt-20 md:pt-28 pb-6">
+      {/* Hero — text left, square image right */}
+      <section className="bg-[#F8F6F1] pt-20 md:pt-28 pb-12">
         <div className="container mx-auto px-8 md:px-16">
-          <div className="max-w-4xl">
-            <FadeIn>
-              <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
-                Fresh Perspectives
-              </h1>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6 max-w-2xl">
-                A community of curious minds exploring the intersection of design, psychology, and human behavior.
-              </p>
-              <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity">
-                Learn More <ExternalLink className="w-4 h-4 ml-1" />
-              </a>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div className="border-t border-foreground/10 pt-8 mt-10">
-                <div className="flex gap-12 md:gap-16">
-                  <div>
-                    <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">2025</p>
-                    <p className="text-sm text-muted-foreground mt-1">Founded</p>
+          <div className="flex flex-col md:flex-row md:items-center md:gap-12 lg:gap-16">
+            <div className="flex-1 min-w-0">
+              <FadeIn>
+                <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
+                  Fresh Perspectives
+                </h1>
+                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6 max-w-xl">
+                  A community of curious minds exploring the intersection of design, psychology, and human behavior.
+                </p>
+                <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity">
+                  Learn More <ExternalLink className="w-4 h-4 ml-1" />
+                </a>
+              </FadeIn>
+              <FadeIn delay={200}>
+                <div className="border-t border-foreground/10 pt-8 mt-10">
+                  <div className="flex gap-12 md:gap-16">
+                    <div>
+                      <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">2025</p>
+                      <p className="text-sm text-muted-foreground mt-1">Founded</p>
+                    </div>
+                    <div>
+                      <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">8+</p>
+                      <p className="text-sm text-muted-foreground mt-1">Books Completed</p>
+                    </div>
+                    <div>
+                      <p className="text-3xl md:text-4xl font-serif font-medium text-foreground italic">Monthly</p>
+                      <p className="text-sm text-muted-foreground mt-1">Sessions</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">8+</p>
-                    <p className="text-sm text-muted-foreground mt-1">Books Completed</p>
-                  </div>
-                  <div>
-                    <p className="text-3xl md:text-4xl font-serif font-medium text-foreground italic">Monthly</p>
-                    <p className="text-sm text-muted-foreground mt-1">Sessions</p>
-                  </div>
+                </div>
+              </FadeIn>
+            </div>
+
+            <FadeIn delay={300}>
+              <div className="mt-10 md:mt-0 w-full md:w-[380px] lg:w-[420px] flex-shrink-0">
+                <div className="aspect-square rounded-3xl overflow-hidden">
+                  <img
+                    src={bookClubHero}
+                    alt="Book club gathering"
+                    className="w-full h-full object-cover object-center"
+                  />
                 </div>
               </div>
             </FadeIn>
           </div>
         </div>
-
-        <FadeIn delay={300}>
-          <div className="px-6 md:px-10 mt-12">
-            <div className="rounded-3xl overflow-hidden h-[40vh] md:h-[50vh]">
-              <img
-                src={bookClubHero}
-                alt="Book club gathering"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-          </div>
-        </FadeIn>
       </section>
 
       {/* Past Reads */}
