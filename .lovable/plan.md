@@ -1,50 +1,32 @@
 
-Goal: make the Book Club hero image reliably visible instead of leaving the hero as a blank cream block.
 
-What I found:
-- In `src/pages/BookClub.tsx`, the hero image is wrapped in `PopIn` with `className="absolute inset-0 -z-10"`.
-- That combination is fragile for a hero background: the image layer can sit behind the page background, and it also starts at `opacity: 0` until the intersection animation fires.
-- Your screenshot matches that failure mode exactly: the text renders, but the image layer does not.
+## Plan: Rounded hero image + clickable book cards with dialog
 
-Plan:
-1. Rebuild the hero background layer in `src/pages/BookClub.tsx`
-   - Remove `PopIn` from the hero image only
-   - Replace it with a plain absolute wrapper so the image is always rendered immediately
-   - Keep the uploaded image asset import in place
+### 1. Hero image — match home page style
+Change the hero from a full-bleed background image to a contained, rounded image block (like `Hero.tsx`):
+- Move text/stats **above** the image (title, subtitle, CTA button, stats bar on the cream background)
+- Render the hero image below the text in a `rounded-3xl overflow-hidden` container with horizontal padding (`px-6 md:px-10`)
+- Image height: `h-[40vh] md:h-[50vh]`
+- Remove the full-bleed absolute positioning and dark overlay
 
-2. Fix the stacking order
-   - Add `isolate` to the hero `<section>`
-   - Change the image wrapper to `absolute inset-0 z-0`
-   - Keep the text container at `relative z-10`
-   - This ensures the image sits behind the text, not behind the whole page
+### 2. Book cards — image only, clickable with dialog
+- Add `description`, `link`, and `rating` fields to each book in the data array
+- Remove the title/author text below the card — show only the cover image
+- Make each card clickable (`cursor-pointer`, hover scale effect)
+- On click, open a `Dialog` modal showing:
+  - Book cover image
+  - Title and author
+  - Description paragraph
+  - Jo's Rating section (e.g. star display or numeric out of 5)
+  - External link button ("Get the Book")
 
-3. Simplify the image source and preserve visibility
-   - Use `src={bookClubHero}` directly instead of `?v=2`
-   - Keep `w-full h-full object-cover`, and add `object-center` if needed
-   - Keep a light overlay such as `bg-black/15` or `bg-black/20` for readability
+### Technical details
+**File**: `src/pages/BookClub.tsx`
 
-4. Leave the rest of the page unchanged
-   - No changes to the stats, books grid, dark sections, or CTA
-   - No broad animation refactor unless the hero is confirmed fixed first
+- Import `Dialog, DialogContent, DialogHeader, DialogTitle` from `@/components/ui/dialog`
+- Add `useState` for selected book
+- Extend book data type with `description: string`, `link: string`, `rating: number`
+- Hero section becomes a standard content block with `pt-20 md:pt-24 pb-6 bg-[#F8F6F1]` and the image in a padded rounded container — same pattern as `Hero.tsx`
+- Card grid: remove `<div className="p-3">` block, keep only the image in a rounded container
+- Dialog: cream/white background, serif typography consistent with the rest of the page
 
-Technical shape of the fix:
-```tsx
-<section className="relative isolate min-h-[70vh] flex items-end overflow-hidden">
-  <div className="absolute inset-0 z-0">
-    <img
-      src={bookClubHero}
-      alt="Book club gathering"
-      className="w-full h-full object-cover object-center"
-    />
-    <div className="absolute inset-0 bg-black/15" />
-  </div>
-
-  <div className="relative z-10 w-full max-w-4xl mx-auto px-8 md:px-16 py-16 md:py-24">
-    ...
-  </div>
-</section>
-```
-
-Why this should solve it:
-- Imported assets already get cache-busted by Vite, so the extra query string is not the real issue now.
-- The more likely problem is the animated negative-z background layer. Making the hero background a normal absolute layer removes both the stacking bug and the “starts hidden” risk.
