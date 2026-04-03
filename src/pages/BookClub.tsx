@@ -87,47 +87,49 @@ const BookClub: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F8F6F1]">
 
-      {/* Hero — full-bleed image with overlaid content */}
-      <section className="relative isolate min-h-[70vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={bookClubHero}
-            alt="Book club gathering"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        <div className="relative z-10 container mx-auto px-8 md:px-16 py-20 md:py-32">
-          <div className="max-w-3xl">
-            <FadeIn>
-              <h1 className="text-3xl md:text-5xl font-serif text-white mb-4 leading-tight">
-                Fresh Perspectives
-              </h1>
-              <p className="text-base md:text-lg text-white/85 font-serif leading-relaxed mb-6 max-w-xl">
-                A community of curious minds exploring the intersection of design, psychology, and human behavior.
-              </p>
-              <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-full bg-white text-foreground text-sm font-medium hover:opacity-90 transition-opacity">
-                Learn More <ExternalLink className="w-4 h-4 ml-1" />
-              </a>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div className="border-t border-white/20 pt-8 mt-10">
-                <div className="flex gap-12 md:gap-16">
-                  <div>
-                    <p className="text-3xl md:text-4xl font-serif font-medium text-white">2025</p>
-                    <p className="text-sm text-white/60 mt-1">Founded</p>
-                  </div>
-                  <div>
-                    <p className="text-3xl md:text-4xl font-serif font-medium text-white">8+</p>
-                    <p className="text-sm text-white/60 mt-1">Books Completed</p>
-                  </div>
-                  <div>
-                    <p className="text-3xl md:text-4xl font-serif font-medium text-white italic">Monthly</p>
-                    <p className="text-sm text-white/60 mt-1">Sessions</p>
+      {/* Hero — rounded image with overlaid content */}
+      <section className="pt-20 md:pt-24 px-4 md:px-8 bg-[#F8F6F1]">
+        <div className="relative isolate min-h-[70vh] flex items-center overflow-hidden rounded-3xl">
+          <div className="absolute inset-0 z-0">
+            <img
+              src={bookClubHero}
+              alt="Book club gathering"
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-black/40" />
+          </div>
+          <div className="relative z-10 container mx-auto px-8 md:px-16 py-20 md:py-32">
+            <div className="max-w-3xl">
+              <FadeIn>
+                <h1 className="text-3xl md:text-5xl font-serif text-white mb-4 leading-tight">
+                  Fresh Perspectives
+                </h1>
+                <p className="text-base md:text-lg text-white/85 font-serif leading-relaxed mb-6 max-w-xl">
+                  A community of curious minds exploring the intersection of design, psychology, and human behavior.
+                </p>
+                <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-full bg-white text-foreground text-sm font-medium hover:opacity-90 transition-opacity">
+                  Learn More <ExternalLink className="w-4 h-4 ml-1" />
+                </a>
+              </FadeIn>
+              <FadeIn delay={200}>
+                <div className="border-t border-white/20 pt-8 mt-10">
+                  <div className="flex gap-12 md:gap-16">
+                    <div>
+                      <p className="text-3xl md:text-4xl font-serif font-medium text-white">2025</p>
+                      <p className="text-sm text-white/60 mt-1">Founded</p>
+                    </div>
+                    <div>
+                      <p className="text-3xl md:text-4xl font-serif font-medium text-white">8+</p>
+                      <p className="text-sm text-white/60 mt-1">Books Completed</p>
+                    </div>
+                    <div>
+                      <p className="text-3xl md:text-4xl font-serif font-medium text-white italic">Monthly</p>
+                      <p className="text-sm text-white/60 mt-1">Sessions</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
           </div>
         </div>
       </section>
