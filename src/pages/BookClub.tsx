@@ -103,9 +103,6 @@ const BookClub: React.FC = () => {
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="pt-10 md:pt-14 max-w-3xl">
-              <p className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-4">
-                Community
-              </p>
               <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
                 Fresh Perspectives
               </h1>
@@ -156,20 +153,20 @@ const BookClub: React.FC = () => {
             </p>
           </FadeIn>
           <FadeIn delay={200}>
-            <div className="flex items-end">
-              <div className="flex flex-col items-center">
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2">
                 <img
                   src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
                   alt="Joanna"
-                  className="w-20 h-20 rounded-full border-4 border-[#F8F6F1] object-cover z-10 relative"
+                  className="w-14 h-14 rounded-full border-4 border-[#F8F6F1] object-cover"
                 />
-                <span className="text-xs text-muted-foreground mt-2">Joanna, Founder</span>
+                <span className="text-xs text-muted-foreground">Joanna, Founder</span>
               </div>
-              <div className="flex flex-col items-center -ml-6">
-                <div className="w-20 h-20 rounded-full border-4 border-[#F8F6F1] bg-muted flex items-center justify-center text-muted-foreground font-serif text-lg">
+              <div className="flex items-center gap-2">
+                <div className="w-14 h-14 rounded-full border-4 border-[#F8F6F1] bg-muted flex items-center justify-center text-muted-foreground font-serif text-base">
                   B
                 </div>
-                <span className="text-xs text-muted-foreground mt-2">Bhavna, Co-host</span>
+                <span className="text-xs text-muted-foreground">Bhavna, Co-host</span>
               </div>
             </div>
           </FadeIn>
