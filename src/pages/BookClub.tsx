@@ -109,7 +109,7 @@ const BookClub: React.FC = () => {
               <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8 max-w-xl">
                 A UX book club for designers who think beyond the screen.
               </p>
-              <div className="flex gap-8 md:gap-12">
+              <div className="border-t border-foreground/10 pt-6 mt-2 flex gap-8 md:gap-12">
                 <div>
                   <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">486+</div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Members</div>
