@@ -283,7 +283,7 @@ const BookClub: React.FC = () => {
                 <img
                   src={selectedBook.cover}
                   alt={selectedBook.title}
-                  className="w-40 h-40 object-contain rounded-lg"
+                  className="w-48 h-48 object-contain rounded-xl"
                 />
               </div>
               <div className="p-6 pt-4">
