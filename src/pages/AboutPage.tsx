@@ -47,10 +47,26 @@ const AboutPage = () => {
         <section className="pt-0 pb-24 md:pb-32 bg-[#F8F6F1]">
             <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn delay={200}>
+              {/* Mobile-only title */}
+              <h1 className="text-3xl font-serif text-foreground mb-4 md:hidden">
+                About
+              </h1>
+
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+                {/* Profile Image — first in DOM, appears on right on desktop */}
+                <div className="relative w-full max-w-sm aspect-[5/6] mx-auto md:ml-auto md:order-last md:rotate-2 md:hover:-rotate-1 md:transition-transform md:duration-500 md:translate-y-4">
+                  <div className="rounded-3xl overflow-hidden h-full">
+                    <img
+                      alt="Joanna Minott"
+                      className="w-full h-full object-cover animate-fade-in"
+                      src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
+                    />
+                  </div>
+                </div>
+
                 {/* Bio Text */}
                 <div className="flex flex-col justify-center">
-                  <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4">
+                  <h1 className="hidden md:block text-3xl md:text-5xl font-serif text-foreground mb-4">
                     About
                   </h1>
                   <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
@@ -63,7 +79,6 @@ const AboutPage = () => {
                     Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.
                   </p>
 
-
                   <a
                     href="https://www.linkedin.com/in/joannaminott"
                     target="_blank"
@@ -75,17 +90,6 @@ const AboutPage = () => {
                     Connect on LinkedIn
                     <ExternalLink className="w-4 h-4" />
                   </a>
-                </div>
-
-                {/* Profile Image */}
-                <div className="relative w-full max-w-sm aspect-[5/6] md:ml-auto rotate-2 hover:-rotate-1 transition-transform duration-500 translate-y-4">
-                  <div className="rounded-3xl overflow-hidden h-full">
-                    <img
-                      alt="Joanna Minott"
-                      className="w-full h-full object-cover animate-fade-in"
-                      src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
-                    />
-                  </div>
                 </div>
               </div>
           </FadeIn>
