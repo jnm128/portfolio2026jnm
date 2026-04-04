@@ -171,6 +171,9 @@ const BookClub: React.FC = () => {
               </div>
             </div>
           </FadeIn>
+          <FadeIn delay={150}>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Previous Reads</h2>
+          </FadeIn>
           <FadeIn delay={200}>
             <div
               ref={scrollRef}
