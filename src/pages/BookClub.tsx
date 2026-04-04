@@ -127,40 +127,42 @@ const BookClub: React.FC = () => {
       <section className="py-16 md:py-24 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <div className="flex items-end justify-between mb-12">
-              <div>
-                <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">More About Us</h2>
-                <p className="text-base md:text-lg text-muted-foreground font-serif max-w-2xl leading-relaxed">
-                  What we're reading, discussing, and exploring together beyond the screen.
-                </p>
-              </div>
-              <div className="flex gap-12 md:gap-16 mt-8">
+            <div className="flex flex-col mb-12">
+              <div className="flex items-end justify-between">
                 <div>
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">2025</p>
+                  <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">More About Us</h2>
+                  <p className="text-base md:text-lg text-muted-foreground font-serif max-w-2xl leading-relaxed">
+                    What we're reading, discussing, and exploring together beyond the screen.
+                  </p>
+                </div>
+                <div className="hidden md:flex items-center gap-2">
+                  <button
+                    onClick={() => scrollCarousel('left')}
+                    className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
+                  >
+                    <ChevronLeft className="w-4 h-4 text-foreground" />
+                  </button>
+                  <button
+                    onClick={() => scrollCarousel('right')}
+                    className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
+                  >
+                    <ChevronRight className="w-4 h-4 text-foreground" />
+                  </button>
+                </div>
+              </div>
+              <div className="flex gap-8 md:gap-16 mt-8">
+                <div>
+                  <p className="text-2xl md:text-4xl font-serif font-medium text-foreground">2025</p>
                   <p className="text-sm text-muted-foreground mt-1">Founded</p>
                 </div>
                 <div>
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">8+</p>
+                  <p className="text-2xl md:text-4xl font-serif font-medium text-foreground">8+</p>
                   <p className="text-sm text-muted-foreground mt-1">Books Completed</p>
                 </div>
                 <div>
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground italic">Monthly</p>
+                  <p className="text-2xl md:text-4xl font-serif font-medium text-foreground italic">Monthly</p>
                   <p className="text-sm text-muted-foreground mt-1">Sessions</p>
                 </div>
-              </div>
-              <div className="hidden md:flex items-center gap-2">
-                <button
-                  onClick={() => scrollCarousel('left')}
-                  className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
-                >
-                  <ChevronLeft className="w-4 h-4 text-foreground" />
-                </button>
-                <button
-                  onClick={() => scrollCarousel('right')}
-                  className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
-                >
-                  <ChevronRight className="w-4 h-4 text-foreground" />
-                </button>
               </div>
             </div>
           </FadeIn>
