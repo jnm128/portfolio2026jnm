@@ -210,13 +210,13 @@ const BookClub: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <div className="space-y-6">
+            <div className="space-y-0">
               {[
                 { icon: BookOpen, title: "Read Together", desc: "We pick one book per cycle — spanning UX, behavioral science, AI, and systems thinking — and read at a pace that fits busy design professionals." },
                 { icon: MessageCircle, title: "Discuss & Reflect", desc: "Monthly virtual sessions where we connect ideas to our real work, challenge assumptions, and leave with frameworks we can actually use." },
                 { icon: Globe, title: "Stay Connected", desc: "An ongoing LinkedIn community where members share resources, job leads, and design conversations between sessions." },
               ].map((step, index) => (
-                <div key={index} className="rounded-xl border border-foreground/10 p-6 flex items-start gap-6">
+                <div key={index} className="border-t border-foreground/10 py-8 flex items-start gap-6">
                   <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center shrink-0">
                     <step.icon className="w-6 h-6 text-background" />
                   </div>
