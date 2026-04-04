@@ -216,7 +216,7 @@ const BookClub: React.FC = () => {
                 { icon: MessageCircle, title: "Discuss & Reflect", desc: "Monthly virtual sessions where we connect ideas to our real work, challenge assumptions, and leave with frameworks we can actually use." },
                 { icon: Globe, title: "Stay Connected", desc: "An ongoing LinkedIn community where members share resources, job leads, and design conversations between sessions." },
               ].map((step, index) => (
-                <div key={index} className="border-t border-foreground/10 py-8 flex items-start gap-6">
+                <div key={index} className={`${index > 0 ? 'border-t border-foreground/10' : ''} py-8 flex items-start gap-6`}>
                   <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center shrink-0">
                     <step.icon className="w-6 h-6 text-background" />
                   </div>
