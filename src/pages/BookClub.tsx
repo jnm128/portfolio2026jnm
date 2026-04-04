@@ -289,32 +289,15 @@ const BookClub: React.FC = () => {
               <div className="p-6 pt-4">
                 <DialogHeader className="mb-4">
                   <DialogTitle className="text-xl font-serif font-medium text-foreground">
-                    {selectedBook.title}
+                    <a href={selectedBook.link} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70 transition-opacity inline-flex items-center gap-1.5">
+                      {selectedBook.title} <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
                   </DialogTitle>
                   <p className="text-sm text-muted-foreground font-serif">{selectedBook.author}</p>
                 </DialogHeader>
-                <p className="text-sm text-muted-foreground font-serif leading-relaxed mb-5">
+                <p className="text-sm text-muted-foreground font-serif leading-relaxed">
                   {selectedBook.description}
                 </p>
-                <div className="mb-5">
-                  <p className="text-xs font-medium text-foreground/60 uppercase tracking-wider mb-2">Jo's Rating</p>
-                  <div className="flex gap-1">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-4 h-4 ${i < selectedBook.rating ? 'fill-foreground text-foreground' : 'text-foreground/20'}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-                <a
-                  href={selectedBook.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
-                >
-                  Get the Book <ExternalLink className="w-3.5 h-3.5" />
-                </a>
               </div>
             </>
           )}
