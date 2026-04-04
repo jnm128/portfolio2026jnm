@@ -130,7 +130,7 @@ const BookClub: React.FC = () => {
             </div>
           </FadeIn>
           <FadeIn delay={200}>
-            <div className="aspect-[16/9] rounded-2xl overflow-hidden mt-12">
+            <div className="aspect-[16/10] rounded-2xl overflow-hidden mt-12">
               <img
                 src={bookClubHero}
                 alt="Book club gathering"
@@ -141,7 +141,39 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* Section 2 — Previous Reads (moved up) */}
+      {/* Section 2 — Who We Are */}
+      <section className="py-12 md:py-16 bg-[#F8F6F1]">
+        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+          <FadeIn>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl mb-10">
+              I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work.
+            </p>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2">
+                <img
+                  src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
+                  alt="Joanna"
+                  className="w-14 h-14 rounded-full border-4 border-[#F8F6F1] object-cover"
+                />
+                <span className="text-xs text-muted-foreground">Joanna, Founder</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-14 h-14 rounded-full border-4 border-[#F8F6F1] bg-muted flex items-center justify-center text-muted-foreground font-serif text-base">
+                  B
+                </div>
+                <span className="text-xs text-muted-foreground">Bhavna, Co-host</span>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Section 3 — Previous Reads */}
       <section className="py-12 md:py-16 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
@@ -183,38 +215,6 @@ const BookClub: React.FC = () => {
                   </div>
                 </div>
               ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Section 3 — Who We Are (moved down) */}
-      <section className="py-12 md:py-16 bg-[#F8F6F1]">
-        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
-          <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
-          </FadeIn>
-          <FadeIn delay={100}>
-            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl mb-10">
-              I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work.
-            </p>
-          </FadeIn>
-          <FadeIn delay={200}>
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2">
-                <img
-                  src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
-                  alt="Joanna"
-                  className="w-14 h-14 rounded-full border-4 border-[#F8F6F1] object-cover"
-                />
-                <span className="text-xs text-muted-foreground">Joanna, Founder</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-14 h-14 rounded-full border-4 border-[#F8F6F1] bg-muted flex items-center justify-center text-muted-foreground font-serif text-base">
-                  B
-                </div>
-                <span className="text-xs text-muted-foreground">Bhavna, Co-host</span>
-              </div>
             </div>
           </FadeIn>
         </div>
