@@ -83,6 +83,7 @@ const books: Book[] = [
 
 const BookClub: React.FC = () => {
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+  const [faqOpenIndex, setFaqOpenIndex] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scrollCarousel = (direction: 'left' | 'right') => {
