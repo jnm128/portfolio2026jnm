@@ -1,16 +1,13 @@
 
 
-## Plan: Add padding to carousel container so hover scale isn't clipped
+## Fix: Contact page left & right panels uneven height
 
-**Problem**: The scroll container's `overflow-x-auto` clips the book cards when they scale up on hover, cutting off the rounded corners.
+**Problem**: The left dark panel uses `md:h-screen md:sticky md:top-0` making it exactly viewport height and sticky, while the right cream panel has no height constraint and is shorter — resulting in mismatched panel heights.
 
-**Fix**: Add vertical padding to the scroll container and compensate with negative margin, so the scaled cards have room to grow without being clipped by overflow.
+**Fix** (single file: `src/pages/Contact.tsx`):
 
-**File**: `src/pages/BookClub.tsx` — line 177
+1. **Right panel**: Add `md:min-h-screen` so it always fills at least the full viewport height, matching the left panel.
+2. **Right panel vertical centering**: Use `flex items-center` (or `flex items-end`) so the contact links sit at a natural position within the full-height panel rather than being pushed to the top.
 
-**Change**:
-- On the scroll container div, add `py-4 -my-4` alongside the existing classes. This gives vertical breathing room for the scale effect while keeping visual alignment unchanged.
-- The `overflow-x-auto` only clips horizontally; the vertical padding ensures the top/bottom of scaled cards aren't cut off by any parent clipping.
-
-Single line change.
+This keeps the left panel sticky at full viewport height and makes the right panel match it visually.
 
