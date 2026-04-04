@@ -156,7 +156,7 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 3 — Previous Reads */}
-      <section className="pt-16 md:pt-20 pb-4 bg-[#F8F6F1]">
+      <section className="py-16 md:py-20 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex items-end justify-between mb-6">
@@ -210,18 +210,20 @@ const BookClub: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar">
+            <div className="space-y-6">
               {[
                 { icon: BookOpen, title: "Read Together", desc: "We pick one book per cycle — spanning UX, behavioral science, AI, and systems thinking — and read at a pace that fits busy design professionals." },
                 { icon: MessageCircle, title: "Discuss & Reflect", desc: "Monthly virtual sessions where we connect ideas to our real work, challenge assumptions, and leave with frameworks we can actually use." },
                 { icon: Globe, title: "Stay Connected", desc: "An ongoing LinkedIn community where members share resources, job leads, and design conversations between sessions." },
               ].map((step, index) => (
-                <div key={index} className="flex-shrink-0 w-[220px] md:w-[260px] snap-start rounded-xl border border-foreground/10 p-6 flex flex-col gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center">
+                <div key={index} className="rounded-xl border border-foreground/10 p-6 flex items-start gap-6">
+                  <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center shrink-0">
                     <step.icon className="w-6 h-6 text-background" />
                   </div>
-                  <h3 className="text-lg font-serif font-medium text-foreground">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground font-serif leading-relaxed">{step.desc}</p>
+                  <div>
+                    <h3 className="text-lg font-serif font-medium text-foreground mb-2">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground font-serif leading-relaxed">{step.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
