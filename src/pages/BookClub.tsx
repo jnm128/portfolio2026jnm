@@ -134,6 +134,20 @@ const BookClub: React.FC = () => {
                   What we're reading, discussing, and exploring together beyond the screen.
                 </p>
               </div>
+              <div className="flex gap-12 md:gap-16 mt-8">
+                <div>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">2025</p>
+                  <p className="text-sm text-muted-foreground mt-1">Founded</p>
+                </div>
+                <div>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">8+</p>
+                  <p className="text-sm text-muted-foreground mt-1">Books Completed</p>
+                </div>
+                <div>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground italic">Monthly</p>
+                  <p className="text-sm text-muted-foreground mt-1">Sessions</p>
+                </div>
+              </div>
               <div className="hidden md:flex items-center gap-2">
                 <button
                   onClick={() => scrollCarousel('left')}
