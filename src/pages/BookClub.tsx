@@ -99,7 +99,7 @@ const BookClub: React.FC = () => {
     <div className="min-h-screen bg-[#F8F6F1]">
 
       {/* Section 1 — Hero */}
-      <section className="pt-24 md:pt-28 pb-16 md:pb-24 bg-[#F8F6F1]">
+      <section className="pt-24 md:pt-28 pb-6 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="max-w-3xl">
@@ -142,7 +142,7 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 2 — Who We Are */}
-      <section className="py-12 md:py-16 bg-[#F8F6F1]">
+      <section className="pt-6 pb-12 md:pb-16 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
@@ -221,7 +221,7 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 4 — How the Community Works */}
-      <section className="pt-12 pb-12 md:pb-16 bg-[#F8F6F1]">
+      <section className="pt-6 pb-12 md:pb-16 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">How the Community Works</h2>
