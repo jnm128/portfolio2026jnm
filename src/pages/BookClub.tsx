@@ -319,7 +319,7 @@ const BookClub: React.FC = () => {
               },
             ].map((faq, index) => (
               <FadeIn key={index} delay={100 * (index + 1)}>
-                <div className="border-t border-foreground/10">
+                <div className={index > 0 ? "border-t border-foreground/10" : ""}>
                   <button
                     onClick={() => setFaqOpenIndex(faqOpenIndex === index ? null : index)}
                     className="w-full flex items-center justify-between py-5 text-left"
