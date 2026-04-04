@@ -48,6 +48,7 @@ const CaseStudyArtisanMarketplace = () => {
             </FadeIn>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Project Overview */}

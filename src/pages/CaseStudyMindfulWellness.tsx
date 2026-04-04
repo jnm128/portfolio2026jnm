@@ -48,6 +48,7 @@ const CaseStudyMindfulWellness = () => {
             </FadeIn>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Project Overview */}

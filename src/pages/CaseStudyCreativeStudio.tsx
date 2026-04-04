@@ -48,6 +48,7 @@ const CaseStudyCreativeStudio = () => {
             </FadeIn>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Project Overview */}
