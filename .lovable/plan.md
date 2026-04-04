@@ -1,14 +1,10 @@
 
 
-## Update Book Detail Modal
+## Plan: Add subtle grow animation on hover for book cards
 
-In `src/pages/BookClub.tsx`, remove two elements from the book detail dialog:
+**What**: Add a smooth scale-up transition on hover to each book card in the carousel.
 
-1. **Remove "Get the Book" button** — delete the `<a>` tag at the bottom of the modal that links externally with "Get the Book" text
-2. **Remove "Jo's Rating" section** — delete the rating label and star icons block
+**How**: Add `transition-transform duration-300 hover:scale-[1.03]` to the book card container `className` in `src/pages/BookClub.tsx` (line ~168). Using `scale-[1.03]` for a subtle, refined grow effect rather than the previous `scale-105` which was too aggressive.
 
-The title will already be an underlined external link (from the previous plan), so the separate button is redundant.
-
-### File
-- `src/pages/BookClub.tsx`
+**File**: `src/pages/BookClub.tsx` — one line change to the card's className.
 
