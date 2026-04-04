@@ -104,22 +104,31 @@ const BookClub: React.FC = () => {
           <FadeIn>
             <div className="pt-10 md:pt-14 max-w-3xl">
               <p className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-4">
-                Book Club · UX · Design Thinking
+                Community
               </p>
               <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
                 Fresh Perspectives
               </h1>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6 max-w-xl">
+              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8 max-w-xl">
                 A UX book club for designers who think beyond the screen.
               </p>
-              <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
-                <span>486+ Members</span>
-                <span className="text-foreground/30">·</span>
-                <span>8+ Books</span>
-                <span className="text-foreground/30">·</span>
-                <span>Est. 2025</span>
-                <span className="text-foreground/30">·</span>
-                <span>Monthly Sessions</span>
+              <div className="flex gap-8 md:gap-12">
+                <div>
+                  <div className="text-2xl md:text-3xl font-serif font-semibold text-foreground">486+</div>
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Members</div>
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-serif font-semibold text-foreground">8+</div>
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Books</div>
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-serif font-semibold text-foreground">2025</div>
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Est.</div>
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-serif font-semibold text-foreground">Monthly</div>
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Sessions</div>
+                </div>
               </div>
             </div>
           </FadeIn>
