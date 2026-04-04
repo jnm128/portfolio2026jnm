@@ -97,50 +97,52 @@ const BookClub: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F8F6F1]">
 
-      {/* Hero — rounded image with overlaid content */}
-      <section className="pt-20 md:pt-24 px-4 md:px-8 bg-[#F8F6F1]">
-        <div className="relative isolate min-h-[70vh] flex items-center overflow-hidden rounded-3xl">
-          <div className="absolute inset-0 z-0">
-            <img
-              src={bookClubHero}
-              alt="Book club gathering"
-              className="w-full h-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-black/40" />
-          </div>
-          <div className="relative z-10 container mx-auto px-8 md:px-16 py-20 md:py-32">
-            <div className="max-w-3xl">
-              <FadeIn>
-                <h1 className="text-3xl md:text-5xl font-serif text-white mb-4 leading-tight">
-                  Fresh Perspectives
-                </h1>
-                <p className="text-base md:text-lg text-white/85 font-serif leading-relaxed mb-6 max-w-xl">
-                  A community of curious minds exploring the intersection of design, psychology, and human behavior.
-                </p>
-                <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-full bg-white text-foreground text-sm font-medium hover:opacity-90 transition-opacity">
-                  Learn More <ExternalLink className="w-4 h-4 ml-1" />
-                </a>
-              </FadeIn>
-              <FadeIn delay={200}>
-                <div className="border-t border-white/20 pt-8 mt-10">
-                  <div className="flex gap-12 md:gap-16">
-                    <div>
-                      <p className="text-3xl md:text-4xl font-serif font-medium text-white">2025</p>
-                      <p className="text-sm text-white/60 mt-1">Founded</p>
-                    </div>
-                    <div>
-                      <p className="text-3xl md:text-4xl font-serif font-medium text-white">8+</p>
-                      <p className="text-sm text-white/60 mt-1">Books Completed</p>
-                    </div>
-                    <div>
-                      <p className="text-3xl md:text-4xl font-serif font-medium text-white italic">Monthly</p>
-                      <p className="text-sm text-white/60 mt-1">Sessions</p>
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
+      {/* Hero — Split: label, image, then content */}
+      <section className="pt-28 md:pt-32 bg-[#F8F6F1]">
+        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+          <FadeIn>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Community</h2>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <div className="aspect-[21/9] rounded-3xl overflow-hidden">
+              <img
+                src={bookClubHero}
+                alt="Book club gathering"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
-          </div>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <div className="pt-10 md:pt-14 max-w-3xl">
+              <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
+                Fresh Perspectives
+              </h1>
+              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6 max-w-xl">
+                A community of curious minds exploring the intersection of design, psychology, and human behavior.
+              </p>
+              <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity">
+                Learn More <ExternalLink className="w-4 h-4 ml-1" />
+              </a>
+            </div>
+          </FadeIn>
+          <FadeIn delay={300}>
+            <div className="border-t border-border pt-8 mt-10">
+              <div className="flex gap-12 md:gap-16">
+                <div>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">2025</p>
+                  <p className="text-sm text-muted-foreground mt-1">Founded</p>
+                </div>
+                <div>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">8+</p>
+                  <p className="text-sm text-muted-foreground mt-1">Books Completed</p>
+                </div>
+                <div>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground italic">Monthly</p>
+                  <p className="text-sm text-muted-foreground mt-1">Sessions</p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -200,17 +202,15 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* What We Do */}
-      <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-[#F8F6F1]">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
+      <section className="py-16 md:py-24 bg-[#F8F6F1]">
+        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <div className="mb-16">
-              <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">How the Community Works</h2>
-            </div>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">How the Community Works</h2>
           </FadeIn>
 
           <div className="space-y-0">
             <FadeIn delay={100}>
-              <div className="py-10">
+              <div className="py-6">
                 <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
                   <BookOpen className="w-6 h-6 text-background" />
                 </div>
@@ -222,7 +222,7 @@ const BookClub: React.FC = () => {
             </FadeIn>
 
             <FadeIn delay={200}>
-              <div className="border-t border-border py-10">
+              <div className="border-t border-border py-6">
                 <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
                   <MessageCircle className="w-6 h-6 text-background" />
                 </div>
@@ -234,7 +234,7 @@ const BookClub: React.FC = () => {
             </FadeIn>
 
             <FadeIn delay={300}>
-              <div className="border-t border-border py-10">
+              <div className="border-t border-border py-6">
                 <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
                   <Globe className="w-6 h-6 text-background" />
                 </div>
