@@ -99,7 +99,7 @@ const BookClub: React.FC = () => {
     <div className="min-h-screen bg-[#F8F6F1]">
 
       {/* Section 1 — Hero */}
-      <section className="pt-24 md:pt-28 pb-16 md:pb-24 bg-[#F8F6F1]">
+      <section className="pt-24 md:pt-28 pb-8 md:pb-12 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="max-w-3xl">
@@ -145,7 +145,7 @@ const BookClub: React.FC = () => {
       <section className="py-12 md:py-16 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 pb-4 mb-6 border-b border-foreground/10">Who We Are</h2>
           </FadeIn>
           <FadeIn delay={100}>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl mb-10">
@@ -178,7 +178,7 @@ const BookClub: React.FC = () => {
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex items-end justify-between mb-6">
-              <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60">Previous Reads</h2>
+              <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 pb-4 border-b border-foreground/10">Previous Reads</h2>
               <div className="hidden md:flex items-center gap-2">
                 <button
                   onClick={() => scrollCarousel('left')}
@@ -224,7 +224,7 @@ const BookClub: React.FC = () => {
       <section className="pt-12 pb-12 md:pb-16 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">How the Community Works</h2>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 pb-4 mb-6 border-b border-foreground/10">How the Community Works</h2>
           </FadeIn>
 
           <div className="space-y-0">
@@ -297,7 +297,7 @@ const BookClub: React.FC = () => {
       <section className="py-12 md:py-16 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 pb-4 mb-6 border-b border-foreground/10">Frequently Asked Questions</h2>
           </FadeIn>
           <div className="space-y-0">
             {[
