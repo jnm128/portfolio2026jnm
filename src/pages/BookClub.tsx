@@ -280,11 +280,13 @@ const BookClub: React.FC = () => {
           {selectedBook && (
             <>
               <div className="flex items-center justify-center p-6 pb-2">
-                <img
-                  src={selectedBook.cover}
-                  alt={selectedBook.title}
-                  className="w-48 h-48 object-contain rounded-xl"
-                />
+                <div className="w-48 h-56 rounded-xl overflow-hidden">
+                  <img
+                    src={selectedBook.cover}
+                    alt={selectedBook.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
               <div className="p-6 pt-4">
                 <DialogHeader className="mb-4">
