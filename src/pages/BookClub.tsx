@@ -109,9 +109,6 @@ const BookClub: React.FC = () => {
               <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6 max-w-xl">
                 A community of curious minds exploring the intersection of design, psychology, and human behavior.
               </p>
-              <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity">
-                Learn More <ExternalLink className="w-4 h-4 ml-1" />
-              </a>
             </div>
           </FadeIn>
           <FadeIn delay={100}>
