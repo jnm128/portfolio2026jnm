@@ -276,14 +276,14 @@ const BookClub: React.FC = () => {
 
       {/* Book Detail Dialog */}
       <Dialog open={!!selectedBook} onOpenChange={() => setSelectedBook(null)}>
-        <DialogContent className="max-w-md bg-[#F8F6F1] border-foreground/10 p-0 overflow-hidden">
+        <DialogContent className="max-w-sm bg-[#F8F6F1] border-foreground/10 p-0 overflow-hidden rounded-2xl">
           {selectedBook && (
             <>
-              <div className="aspect-[3/4] max-h-[280px] overflow-hidden">
+              <div className="flex items-center justify-center p-6 pb-2">
                 <img
                   src={selectedBook.cover}
                   alt={selectedBook.title}
-                  className="w-full h-full object-cover"
+                  className="w-40 h-40 object-contain rounded-lg"
                 />
               </div>
               <div className="p-6 pt-4">
