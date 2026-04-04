@@ -154,20 +154,8 @@ const BookClub: React.FC = () => {
           </FadeIn>
           <FadeIn delay={200}>
             <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2">
-                <img
-                  src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
-                  alt="Joanna"
-                  className="w-14 h-14 rounded-full border-4 border-[#F8F6F1] object-cover"
-                />
-                <span className="text-xs text-muted-foreground">Joanna, Founder</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-14 h-14 rounded-full border-4 border-[#F8F6F1] bg-muted flex items-center justify-center text-muted-foreground font-serif text-base">
-                  B
-                </div>
-                <span className="text-xs text-muted-foreground">Bhavna, Co-host</span>
-              </div>
+              <span className="text-xs text-muted-foreground">Joanna, Founder</span>
+              <span className="text-xs text-muted-foreground">Bhavna, Co-host</span>
             </div>
           </FadeIn>
         </div>
