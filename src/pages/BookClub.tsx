@@ -150,9 +150,9 @@ const BookClub: React.FC = () => {
           <FadeIn>
             <div className="flex items-end justify-between mb-12">
               <div>
-                <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">Past Reads</h2>
+                <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">More About Us</h2>
                 <p className="text-base md:text-lg text-muted-foreground font-serif max-w-2xl leading-relaxed">
-                  Books that have shaped our thinking and conversations.
+                  What we're reading, discussing, and exploring together beyond the screen.
                 </p>
               </div>
               <div className="hidden md:flex items-center gap-2">
