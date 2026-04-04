@@ -111,16 +111,16 @@ const BookClub: React.FC = () => {
               </p>
               <div className="border-t border-foreground/10 pt-6 mt-2 flex gap-8 md:gap-12">
                 <div>
+                  <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">2025</div>
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Est.</div>
+                </div>
+                <div>
                   <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">486+</div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Members</div>
                 </div>
                 <div>
                   <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">8+</div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Books</div>
-                </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">2025</div>
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Est.</div>
                 </div>
                 <div>
                   <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">Monthly</div>
