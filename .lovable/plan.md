@@ -1,10 +1,16 @@
 
 
-## Plan: Add subtle grow animation on hover for book cards
+## Plan: Add padding to carousel container so hover scale isn't clipped
 
-**What**: Add a smooth scale-up transition on hover to each book card in the carousel.
+**Problem**: The scroll container's `overflow-x-auto` clips the book cards when they scale up on hover, cutting off the rounded corners.
 
-**How**: Add `transition-transform duration-300 hover:scale-[1.03]` to the book card container `className` in `src/pages/BookClub.tsx` (line ~168). Using `scale-[1.03]` for a subtle, refined grow effect rather than the previous `scale-105` which was too aggressive.
+**Fix**: Add vertical padding to the scroll container and compensate with negative margin, so the scaled cards have room to grow without being clipped by overflow.
 
-**File**: `src/pages/BookClub.tsx` — one line change to the card's className.
+**File**: `src/pages/BookClub.tsx` — line 177
+
+**Change**:
+- On the scroll container div, add `py-4 -my-4` alongside the existing classes. This gives vertical breathing room for the scale effect while keeping visual alignment unchanged.
+- The `overflow-x-auto` only clips horizontally; the vertical padding ensures the top/bottom of scaled cards aren't cut off by any parent clipping.
+
+Single line change.
 
