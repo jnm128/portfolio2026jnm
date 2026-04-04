@@ -98,17 +98,29 @@ const BookClub: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F8F6F1]">
 
-      {/* Hero — Split: content, metrics, then image */}
+      {/* Section 1 — Hero */}
       <section className="pt-28 md:pt-32 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="pt-10 md:pt-14 max-w-3xl">
+              <p className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-4">
+                Book Club · UX · Design Thinking
+              </p>
               <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
                 Fresh Perspectives
               </h1>
               <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6 max-w-xl">
-                A community of curious minds exploring the intersection of design, psychology, and human behavior.
+                A UX book club for designers who think beyond the screen.
               </p>
+              <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
+                <span>486+ Members</span>
+                <span className="text-foreground/30">·</span>
+                <span>8+ Books</span>
+                <span className="text-foreground/30">·</span>
+                <span>Est. 2025</span>
+                <span className="text-foreground/30">·</span>
+                <span>Monthly Sessions</span>
+              </div>
             </div>
           </FadeIn>
           <FadeIn delay={200}>
@@ -123,51 +135,59 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* Past Reads — Horizontal Carousel */}
+      {/* Section 2 — Who We Are */}
       <section className="py-16 md:py-24 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <div className="flex flex-col mb-12">
-              <div className="flex items-end justify-between">
-                <div>
-                  <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">More About Us</h2>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif max-w-2xl leading-relaxed">
-                    What we're reading, discussing, and exploring together beyond the screen.
-                  </p>
-                </div>
-                <div className="hidden md:flex items-center gap-2">
-                  <button
-                    onClick={() => scrollCarousel('left')}
-                    className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
-                  >
-                    <ChevronLeft className="w-4 h-4 text-foreground" />
-                  </button>
-                  <button
-                    onClick={() => scrollCarousel('right')}
-                    className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
-                  >
-                    <ChevronRight className="w-4 h-4 text-foreground" />
-                  </button>
-                </div>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl mb-10">
+              I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work.
+            </p>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <div className="flex items-end">
+              <div className="flex flex-col items-center">
+                <img
+                  src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
+                  alt="Joanna"
+                  className="w-20 h-20 rounded-full border-4 border-[#F8F6F1] object-cover z-10 relative"
+                />
+                <span className="text-xs text-muted-foreground mt-2">Joanna, Founder</span>
               </div>
-              <div className="flex gap-8 md:gap-16 mt-8">
-                <div>
-                  <p className="text-2xl md:text-4xl font-serif font-medium text-foreground">2025</p>
-                  <p className="text-sm text-muted-foreground mt-1">Founded</p>
+              <div className="flex flex-col items-center -ml-6">
+                <div className="w-20 h-20 rounded-full border-4 border-[#F8F6F1] bg-muted flex items-center justify-center text-muted-foreground font-serif text-lg">
+                  B
                 </div>
-                <div>
-                  <p className="text-2xl md:text-4xl font-serif font-medium text-foreground">8+</p>
-                  <p className="text-sm text-muted-foreground mt-1">Books Completed</p>
-                </div>
-                <div>
-                  <p className="text-2xl md:text-4xl font-serif font-medium text-foreground italic">Monthly</p>
-                  <p className="text-sm text-muted-foreground mt-1">Sessions</p>
-                </div>
+                <span className="text-xs text-muted-foreground mt-2">Bhavna, Co-host</span>
               </div>
             </div>
           </FadeIn>
-          <FadeIn delay={150}>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Previous Reads</h2>
+        </div>
+      </section>
+
+      {/* Section 3 — Previous Reads */}
+      <section className="py-16 md:py-24 bg-[#F8F6F1]">
+        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+          <FadeIn>
+            <div className="flex items-end justify-between mb-6">
+              <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60">Previous Reads</h2>
+              <div className="hidden md:flex items-center gap-2">
+                <button
+                  onClick={() => scrollCarousel('left')}
+                  className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
+                >
+                  <ChevronLeft className="w-4 h-4 text-foreground" />
+                </button>
+                <button
+                  onClick={() => scrollCarousel('right')}
+                  className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
+                >
+                  <ChevronRight className="w-4 h-4 text-foreground" />
+                </button>
+              </div>
+            </div>
           </FadeIn>
           <FadeIn delay={200}>
             <div
@@ -194,7 +214,7 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* What We Do */}
+      {/* Section 4 — How the Community Works */}
       <section className="py-16 md:py-24 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
@@ -241,7 +261,7 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA — Collab style */}
+      {/* Section 5 — CTA */}
       <section className="py-16 md:py-24 bg-[#1C1C1C]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
@@ -267,7 +287,7 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* Section 6 — FAQ */}
       <section className="py-16 md:py-24 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
