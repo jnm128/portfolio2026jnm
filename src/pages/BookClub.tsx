@@ -248,38 +248,26 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA — Community-style card */}
-      <section className="pt-12 pb-12 md:pt-20 md:pb-20 bg-[#1C1C1C]">
+      {/* CTA — Collab style */}
+      <section className="py-16 md:py-24 bg-[#1C1C1C]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
-          <FadeIn delay={100}>
-            <p className="text-xs uppercase tracking-widest mb-4 text-white/60">Community</p>
-            <div className="rounded-2xl p-6 md:p-8 bg-[#F8F6F1]">
-              <div className="flex flex-col gap-6 md:gap-12 md:flex-row">
-                <div className="md:w-2/5 flex flex-col justify-center">
-                  <h3 className="text-lg md:text-xl font-serif font-medium leading-relaxed mb-4 text-foreground">
-                    Ready to read with us?
-                  </h3>
-                  <p className="text-sm md:text-base leading-relaxed mb-6 text-muted-foreground">
-                    Join a community of UX professionals who believe that great designers are also great thinkers. New members always welcome.
-                  </p>
-                  <a
-                    href="https://www.linkedin.com/in/joannaminott"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-accent-foreground hover:text-foreground inline-flex items-center gap-1"
-                  >
-                    Join the Club →
-                  </a>
-                </div>
-                <div className="md:w-3/5">
-                  <div className="rounded-xl overflow-hidden">
-                    <img
-                      src="/lovable-uploads/community-books.jpeg"
-                      alt="Fresh Perspectives Book Club"
-                      className="w-full aspect-[16/9] object-cover"
-                    />
-                  </div>
-                </div>
+          <FadeIn>
+            <div className="flex flex-col gap-6 items-center text-center">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-white">
+                Ready to read with us?
+              </h2>
+              <p className="text-lg md:text-xl text-white/70 leading-relaxed">
+                Join a community of UX professionals who believe that great designers are also great thinkers.
+              </p>
+              <div className="mt-4">
+                <a
+                  href="https://www.linkedin.com/in/joannaminott"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors"
+                >
+                  Join the Club
+                </a>
               </div>
             </div>
           </FadeIn>
