@@ -98,22 +98,10 @@ const BookClub: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F8F6F1]">
 
-      {/* Hero — Split: label, image, then content */}
+      {/* Hero — Split: content, metrics, then image */}
       <section className="pt-28 md:pt-32 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Community</h2>
-          </FadeIn>
-          <FadeIn delay={100}>
-            <div className="aspect-[21/9] rounded-3xl overflow-hidden">
-              <img
-                src={bookClubHero}
-                alt="Book club gathering"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-          </FadeIn>
-          <FadeIn delay={200}>
             <div className="pt-10 md:pt-14 max-w-3xl">
               <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
                 Fresh Perspectives
@@ -126,7 +114,7 @@ const BookClub: React.FC = () => {
               </a>
             </div>
           </FadeIn>
-          <FadeIn delay={300}>
+          <FadeIn delay={100}>
             <div className="border-t border-border pt-8 mt-10">
               <div className="flex gap-12 md:gap-16">
                 <div>
@@ -142,6 +130,15 @@ const BookClub: React.FC = () => {
                   <p className="text-sm text-muted-foreground mt-1">Sessions</p>
                 </div>
               </div>
+            </div>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <div className="aspect-[16/9] rounded-3xl overflow-hidden mt-12">
+              <img
+                src={bookClubHero}
+                alt="Book club gathering"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
           </FadeIn>
         </div>
