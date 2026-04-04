@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
-import { BookOpen, MessageCircle, Globe, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { BookOpen, MessageCircle, Globe, ExternalLink, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import bookClubHero from '@/assets/book-club-hero-2.jpg';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
@@ -83,6 +83,7 @@ const books: Book[] = [
 
 const BookClub: React.FC = () => {
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+  const [faqOpenIndex, setFaqOpenIndex] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scrollCarousel = (direction: 'left' | 'right') => {
@@ -271,6 +272,56 @@ const BookClub: React.FC = () => {
               </div>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 md:py-24 bg-[#F8F6F1]">
+        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+          <FadeIn>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Frequently Asked Questions</h2>
+          </FadeIn>
+          <div className="space-y-0">
+            {[
+              {
+                q: "When and how often does the book club meet?",
+                a: "We meet once a month via virtual sessions. Exact dates are shared in advance through our LinkedIn group so everyone can plan ahead.",
+              },
+              {
+                q: "How do I join the LinkedIn group?",
+                a: "Search for \"Fresh Perspectives Book Club\" on LinkedIn or reach out directly through the Join the Club button above. We'll send you an invite to the private group.",
+              },
+              {
+                q: "How can I stay connected between sessions?",
+                a: "We have an active LinkedIn group and a Discord server where members share articles, book recommendations, and continue discussions asynchronously.",
+              },
+              {
+                q: "Do I need to finish the book before each session?",
+                a: "Not at all! We encourage reading at your own pace. Sessions are designed so you can participate meaningfully even if you're partway through.",
+              },
+            ].map((faq, index) => (
+              <FadeIn key={index} delay={100 * (index + 1)}>
+                <div className="border-t border-border">
+                  <button
+                    onClick={() => setFaqOpenIndex(faqOpenIndex === index ? null : index)}
+                    className="w-full flex items-center justify-between py-5 text-left"
+                  >
+                    <span className="text-lg font-medium text-foreground font-serif pr-4">{faq.q}</span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-foreground/60 shrink-0 transition-transform duration-300 ${faqOpenIndex === index ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${faqOpenIndex === index ? 'max-h-40 pb-5' : 'max-h-0'}`}
+                  >
+                    <p className="text-base text-muted-foreground font-serif leading-relaxed max-w-2xl">
+                      {faq.a}
+                    </p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
