@@ -158,7 +158,7 @@ const AboutPage = () => {
                       <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-white transition-colors shrink-0 mt-1" />
                     </a>
                   </div>
-                  <div className="border-t border-white/15 py-10">
+                  <div className="py-10">
                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="group flex flex-col md:flex-row gap-6 items-start">
                       <div className="w-full md:w-64 shrink-0 rounded-xl overflow-hidden aspect-[16/10]">
                         <img
