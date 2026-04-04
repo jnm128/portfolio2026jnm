@@ -179,7 +179,7 @@ const AboutPage = () => {
 
               {/* Current Read */}
               <FadeIn delay={300}>
-                <div className="border-t border-white/15 py-10">
+                <div className="py-10">
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white mb-6 pb-6 border-b border-white/15">
                     Current Read
                   </h2>
@@ -208,7 +208,7 @@ const AboutPage = () => {
 
               {/* Song on Repeat */}
               <FadeIn delay={400}>
-                <div className="border-t border-white/15 py-10">
+                <div className="py-10">
                   <h2 className="text-sm font-medium uppercase tracking-widest text-white mb-6 pb-6 border-b border-white/15">
                     Work Playlist
                   </h2>
