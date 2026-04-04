@@ -174,7 +174,7 @@ const BookClub: React.FC = () => {
           <FadeIn delay={200}>
             <div
               ref={scrollRef}
-              className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar"
+              className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar py-4 -my-4"
             >
               {books.map((book, index) => (
                 <div
