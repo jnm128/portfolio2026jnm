@@ -1,41 +1,28 @@
 
 
-## Restructure Book Club: Split hero + reduce community section padding
+## Add FAQ section to Book Club page
 
-### Layout
-
-```text
-┌──────────────────────────────┐
-│  "Community" (sm uppercase   │
-│   tracked label, cream bg)   │
-│                              │
-│  ┌────────────────────────┐  │
-│  │   hero image            │  │
-│  │   (rounded-3xl, no      │  │
-│  │    overlay)             │  │
-│  └────────────────────────┘  │
-│                              │
-│  Fresh Perspectives (h1)     │
-│  Helper text paragraph       │
-│  [Learn More] pill button    │
-│                              │
-│  ── metrics row ──           │
-│  2025 · 8+ · Monthly         │
-└──────────────────────────────┘
-```
+### What
+Add an FAQ section between the CTA and the Footer, styled consistently with the page's editorial design language. Four questions covering meeting time/frequency, joining LinkedIn, staying connected async, and general participation.
 
 ### Changes (1 file: `src/pages/BookClub.tsx`)
 
-**1. Hero section (lines 100-145)** — Replace overlay hero with split layout:
+**After the CTA section (line ~273), before `{/* Book Detail Dialog */}`, add a new FAQ section:**
 
-- **Above image**: "Community" as a small uppercase tracked label (`text-sm font-medium uppercase tracking-widest text-foreground/60`) on cream background, with top padding for the header
-- **Hero image**: Full-width rounded-3xl image, no dark overlay, no text on top. Aspect ratio container for consistent sizing
-- **Below image**: "Fresh Perspectives" as large serif h1, helper text, Learn More button, and metrics row — all on cream background with standard container padding
+- Section label: "Frequently Asked Questions" using the small uppercase tracked label style (`text-sm font-medium uppercase tracking-widest text-foreground/60`)
+- Cream background (`bg-[#F8F6F1]`) with `py-16 md:py-24` padding, same container as other sections
+- Accordion-style FAQ items using the same toggle pattern as the existing `FAQ.tsx` component (local `openIndex` state, `ChevronDown` icon rotation, `max-h` animation)
+- Each item: border-top divider, question as `text-lg font-medium`, answer as `text-muted-foreground font-serif`
 
-**2. "How the Community Works" section (lines 202-208)** — Reduce padding:
+**FAQ content:**
 
-- Section: change `pt-8 md:pt-12 pb-16 md:pb-24` → `py-16 md:py-24` (match carousel section)
-- Label wrapper: `mb-16` → `mb-6` (match "Previous Reads" spacing)
-- Container: switch to `container mx-auto px-8 md:px-16 max-w-[1600px]` (match carousel section)
-- Card padding: `py-10` → `py-6` for tighter rhythm
+1. **When and how often does the book club meet?** — We meet once a month via virtual sessions. Exact dates are shared in advance through our LinkedIn group so everyone can plan ahead.
+
+2. **How do I join the LinkedIn group?** — Search for "Fresh Perspectives Book Club" on LinkedIn or reach out directly through the Join the Club button above. We'll send you an invite to the private group.
+
+3. **How can I stay connected between sessions?** — We have an active LinkedIn group and a Discord server where members share articles, book recommendations, and continue discussions asynchronously.
+
+4. **Do I need to finish the book before each session?** — Not at all! We encourage reading at your own pace. Sessions are designed so you can participate meaningfully even if you're partway through.
+
+**Technical:** Add `useState<number | null>` for `faqOpenIndex` and `ChevronDown` import (already imported? will check). Reuse `FadeIn` for staggered reveal.
 
