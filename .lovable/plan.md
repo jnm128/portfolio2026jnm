@@ -1,28 +1,22 @@
 
 
-## Add FAQ section to Book Club page
+## Fix Book Club layout for mobile
 
-### What
-Add an FAQ section between the CTA and the Footer, styled consistently with the page's editorial design language. Four questions covering meeting time/frequency, joining LinkedIn, staying connected async, and general participation.
+The "More About Us" section header (lines 130-165) uses `flex items-end justify-between` to place the title, metrics, and carousel arrows all in one row. On a 440px viewport this breaks — three groups crammed horizontally with no wrapping.
 
 ### Changes (1 file: `src/pages/BookClub.tsx`)
 
-**After the CTA section (line ~273), before `{/* Book Detail Dialog */}`, add a new FAQ section:**
+**Lines 130-165 — "More About Us" header block:**
 
-- Section label: "Frequently Asked Questions" using the small uppercase tracked label style (`text-sm font-medium uppercase tracking-widest text-foreground/60`)
-- Cream background (`bg-[#F8F6F1]`) with `py-16 md:py-24` padding, same container as other sections
-- Accordion-style FAQ items using the same toggle pattern as the existing `FAQ.tsx` component (local `openIndex` state, `ChevronDown` icon rotation, `max-h` animation)
-- Each item: border-top divider, question as `text-lg font-medium`, answer as `text-muted-foreground font-serif`
+- Change the outer wrapper from a single horizontal flex row to a stacked layout: `flex flex-col` instead of `flex items-end justify-between`
+- Title + subtitle: stays as-is (block-level `<div>`)
+- Metrics row: keep `flex gap-12 md:gap-16 mt-8` but move it outside the horizontal flex so it stacks below the title naturally
+- Carousel arrows: wrap in a `flex items-center justify-between mt-8` row together with the metrics on desktop, or just stack below on mobile. Use `flex flex-wrap items-end justify-between` at the top level with the arrows, and let the metrics sit on their own row below both.
 
-**FAQ content:**
+Specific approach:
+1. Outer div: `flex flex-col mb-12`
+2. Inner top row: `flex items-end justify-between` containing only the title/subtitle div and the carousel arrows
+3. Metrics row: separate div below with `flex gap-8 md:gap-16 mt-8`, using smaller text on mobile (`text-2xl md:text-4xl`)
 
-1. **When and how often does the book club meet?** — We meet once a month via virtual sessions. Exact dates are shared in advance through our LinkedIn group so everyone can plan ahead.
-
-2. **How do I join the LinkedIn group?** — Search for "Fresh Perspectives Book Club" on LinkedIn or reach out directly through the Join the Club button above. We'll send you an invite to the private group.
-
-3. **How can I stay connected between sessions?** — We have an active LinkedIn group and a Discord server where members share articles, book recommendations, and continue discussions asynchronously.
-
-4. **Do I need to finish the book before each session?** — Not at all! We encourage reading at your own pace. Sessions are designed so you can participate meaningfully even if you're partway through.
-
-**Technical:** Add `useState<number | null>` for `faqOpenIndex` and `ChevronDown` import (already imported? will check). Reuse `FadeIn` for staggered reveal.
+This ensures clean stacking on mobile while preserving the side-by-side title+arrows on desktop.
 
