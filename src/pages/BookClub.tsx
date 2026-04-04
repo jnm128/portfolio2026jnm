@@ -204,10 +204,7 @@ const BookClub: React.FC = () => {
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
             <div className="mb-16">
-              <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">What We Do</h2>
-              <p className="text-base md:text-lg text-muted-foreground font-serif max-w-2xl leading-relaxed">
-                How we bring curious designers together around ideas that matter.
-              </p>
+              <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">How We Connect</h2>
             </div>
           </FadeIn>
 
