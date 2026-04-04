@@ -112,7 +112,7 @@ const BookClub: React.FC = () => {
             </div>
           </FadeIn>
           <FadeIn delay={200}>
-            <div className="aspect-[16/9] rounded-3xl overflow-hidden mt-12">
+            <div className="aspect-[16/9] rounded-2xl overflow-hidden mt-12">
               <img
                 src={bookClubHero}
                 alt="Book club gathering"
