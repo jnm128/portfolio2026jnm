@@ -39,10 +39,10 @@ const CaseStudyArtisanMarketplace = () => {
               <span className="text-sm md:text-base font-medium text-white/80 mb-4 inline-block uppercase tracking-wide">
                 Web Development
               </span>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight text-white leading-tight mb-6">
+              <h1 className="text-3xl md:text-5xl font-serif font-medium text-white leading-tight mb-6">
                 Artisan Marketplace
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl">
+              <p className="text-base md:text-lg text-white/85 font-serif leading-relaxed mb-8 max-w-3xl">
                 E-commerce platform for local artisans to showcase and sell their handcrafted products online.
               </p>
             </FadeIn>
@@ -73,44 +73,44 @@ const CaseStudyArtisanMarketplace = () => {
             </FadeIn>
 
             <FadeIn delay={200}>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-8">The Challenge</h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-8">The Challenge</h2>
+              <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed mb-8">
                 Local artisans were struggling to reach customers beyond their immediate geographic area. Traditional craft fairs 
                 and local markets limited their sales potential, especially during the pandemic when in-person events were restricted.
               </p>
-              <p className="text-lg text-gray-600 mb-16 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed mb-16">
                 They needed a digital marketplace that could showcase the unique story behind each handcrafted item while providing 
                 a seamless shopping experience that competed with major e-commerce platforms.
               </p>
             </FadeIn>
 
             <FadeIn delay={300}>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-8">Our Approach</h2>
+              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-8">Our Approach</h2>
               <div className="grid md:grid-cols-2 gap-12 mb-16">
                 <div>
-                  <h3 className="text-xl font-medium mb-4">Market Analysis</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-lg md:text-xl font-medium mb-4">Market Analysis</h3>
+                  <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">
                     Analyzed successful artisan marketplaces and identified gaps in storytelling and community building 
                     that we could address.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium mb-4">User Experience</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-lg md:text-xl font-medium mb-4">User Experience</h3>
+                  <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">
                     Designed intuitive product discovery flows that highlight the artisan's story and craftsmanship process 
                     alongside traditional product details.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium mb-4">Technical Architecture</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-lg md:text-xl font-medium mb-4">Technical Architecture</h3>
+                  <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">
                     Built a scalable e-commerce platform with integrated payment processing, inventory management, 
                     and shipping calculation systems.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium mb-4">Mobile Optimization</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-lg md:text-xl font-medium mb-4">Mobile Optimization</h3>
+                  <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">
                     Ensured seamless mobile shopping experience with touch-optimized product galleries and streamlined 
                     checkout process.
                   </p>
@@ -126,13 +126,13 @@ const CaseStudyArtisanMarketplace = () => {
         <div className="container mx-auto px-8 md:px-16">
           <div className="max-w-6xl mx-auto">
             <FadeIn>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-16 text-center">Final Designs</h2>
+              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-16 text-center">Final Designs</h2>
               
               <div className="space-y-16">
                 {/* E-commerce Platform */}
                 <div className="text-center">
                   <FadeIn delay={100}>
-                    <h3 className="text-xl font-medium mb-6 text-gray-800">E-commerce Platform</h3>
+                    <h3 className="text-lg md:text-xl font-medium mb-6 text-gray-800">E-commerce Platform</h3>
                   </FadeIn>
                   <PopIn delay={100}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -148,7 +148,7 @@ const CaseStudyArtisanMarketplace = () => {
                 {/* Product Gallery */}
                 <div className="text-center">
                   <FadeIn delay={200}>
-                    <h3 className="text-xl font-medium mb-6 text-gray-800">Product Gallery & Details</h3>
+                    <h3 className="text-lg md:text-xl font-medium mb-6 text-gray-800">Product Gallery & Details</h3>
                   </FadeIn>
                   <PopIn delay={200}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -164,7 +164,7 @@ const CaseStudyArtisanMarketplace = () => {
                 {/* Artisan Profiles */}
                 <div className="text-center">
                   <FadeIn delay={300}>
-                    <h3 className="text-xl font-medium mb-6 text-gray-800">Artisan Profile Pages</h3>
+                    <h3 className="text-lg md:text-xl font-medium mb-6 text-gray-800">Artisan Profile Pages</h3>
                   </FadeIn>
                   <PopIn delay={300}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -187,7 +187,7 @@ const CaseStudyArtisanMarketplace = () => {
         <div className="container mx-auto px-8 md:px-16">
           <div className="max-w-4xl mx-auto">
             <FadeIn>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-16 text-center">Results</h2>
+              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-16 text-center">Results</h2>
               
               <div className="grid md:grid-cols-3 gap-8 mb-16">
                 <div className="text-center">

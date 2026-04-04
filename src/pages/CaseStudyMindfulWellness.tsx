@@ -39,10 +39,10 @@ const CaseStudyMindfulWellness = () => {
               <span className="text-sm md:text-base font-medium text-white/80 mb-4 inline-block uppercase tracking-wide">
                 UX/UI Design & Development
               </span>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight text-white leading-tight mb-6">
+              <h1 className="text-3xl md:text-5xl font-serif font-medium text-white leading-tight mb-6">
                 Mindful Wellness
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl">
+              <p className="text-base md:text-lg text-white/85 font-serif leading-relaxed mb-8 max-w-3xl">
                 A holistic wellness platform connecting users with mental health resources and mindfulness practices.
               </p>
             </FadeIn>
@@ -73,45 +73,45 @@ const CaseStudyMindfulWellness = () => {
             </FadeIn>
 
             <FadeIn delay={200}>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-8">The Challenge</h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-8">The Challenge</h2>
+              <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed mb-8">
                 Mental health awareness is at an all-time high, but accessible, comprehensive wellness platforms remain scarce. 
                 Our client needed a digital solution that could bridge the gap between professional mental health services and 
                 everyday mindfulness practices, creating a seamless experience for users at different stages of their wellness journey.
               </p>
-              <p className="text-lg text-gray-600 mb-16 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed mb-16">
                 The challenge was to design an interface that felt approachable and non-clinical while maintaining the credibility 
                 and professionalism required for mental health resources.
               </p>
             </FadeIn>
 
             <FadeIn delay={300}>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-8">Our Approach</h2>
+              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-8">Our Approach</h2>
               <div className="grid md:grid-cols-2 gap-12 mb-16">
                 <div>
-                  <h3 className="text-xl font-medium mb-4">User Research</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-lg md:text-xl font-medium mb-4">User Research</h3>
+                  <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">
                     We conducted in-depth interviews with 24 users across different demographics to understand their mental 
                     health journey, pain points, and preferred digital interactions.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium mb-4">Design System</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-lg md:text-xl font-medium mb-4">Design System</h3>
+                  <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">
                     Created a comprehensive design system focusing on calming colors, accessible typography, and intuitive 
                     navigation patterns that reduce cognitive load.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium mb-4">Prototyping</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-lg md:text-xl font-medium mb-4">Prototyping</h3>
+                  <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">
                     Developed interactive prototypes to test user flows and validate design decisions before moving to 
                     development phase.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium mb-4">Development</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-lg md:text-xl font-medium mb-4">Development</h3>
+                  <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">
                     Built a responsive web application with React and integrated third-party APIs for content delivery 
                     and user progress tracking.
                   </p>
@@ -127,13 +127,13 @@ const CaseStudyMindfulWellness = () => {
         <div className="container mx-auto px-8 md:px-16">
           <div className="max-w-6xl mx-auto">
             <FadeIn>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-16 text-center">Final Designs</h2>
+              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-16 text-center">Final Designs</h2>
               
               <div className="space-y-16">
                 {/* Mobile App Interface */}
                 <div className="text-center">
                   <FadeIn delay={100}>
-                    <h3 className="text-xl font-medium mb-6 text-gray-800">Mobile App Interface</h3>
+                    <h3 className="text-lg md:text-xl font-medium mb-6 text-gray-800">Mobile App Interface</h3>
                   </FadeIn>
                   <PopIn delay={100}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -149,7 +149,7 @@ const CaseStudyMindfulWellness = () => {
                 {/* Web Platform Dashboard */}
                 <div className="text-center">
                   <FadeIn delay={200}>
-                    <h3 className="text-xl font-medium mb-6 text-gray-800">Web Platform Dashboard</h3>
+                    <h3 className="text-lg md:text-xl font-medium mb-6 text-gray-800">Web Platform Dashboard</h3>
                   </FadeIn>
                   <PopIn delay={200}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -165,7 +165,7 @@ const CaseStudyMindfulWellness = () => {
                 {/* User Journey Flow */}
                 <div className="text-center">
                   <FadeIn delay={300}>
-                    <h3 className="text-xl font-medium mb-6 text-gray-800">User Journey & Flow</h3>
+                    <h3 className="text-lg md:text-xl font-medium mb-6 text-gray-800">User Journey & Flow</h3>
                   </FadeIn>
                   <PopIn delay={300}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -188,7 +188,7 @@ const CaseStudyMindfulWellness = () => {
         <div className="container mx-auto px-8 md:px-16">
           <div className="max-w-4xl mx-auto">
             <FadeIn>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-16 text-center">Results</h2>
+              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-16 text-center">Results</h2>
               
               <div className="grid md:grid-cols-3 gap-8 mb-16">
                 <div className="text-center">
