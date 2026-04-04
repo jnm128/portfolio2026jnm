@@ -180,13 +180,13 @@ const BookClub: React.FC = () => {
                 <div
                   key={index}
                   onClick={() => setSelectedBook(book)}
-                  className="flex-shrink-0 w-[220px] md:w-[260px] snap-start rounded-xl overflow-hidden cursor-pointer group"
+                  className="flex-shrink-0 w-[220px] md:w-[260px] snap-start rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.03]"
                 >
                   <div className="aspect-[3/4] overflow-hidden rounded-xl">
                     <img
                       src={book.cover}
                       alt={book.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
