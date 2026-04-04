@@ -197,12 +197,12 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* What We Do */}
-      <section className="py-16 md:py-24 bg-[#1C1C1C]">
+      <section className="py-16 md:py-24 bg-[#F8F6F1]">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
             <div className="mb-16">
-              <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">What We Do</h2>
-              <p className="text-base md:text-lg text-white/60 font-serif max-w-2xl leading-relaxed">
+              <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">What We Do</h2>
+              <p className="text-base md:text-lg text-muted-foreground font-serif max-w-2xl leading-relaxed">
                 How we bring curious designers together around ideas that matter.
               </p>
             </div>
@@ -211,35 +211,35 @@ const BookClub: React.FC = () => {
           <div className="space-y-0">
             <FadeIn delay={100}>
               <div className="py-10">
-                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6">
-                  <BookOpen className="w-6 h-6 text-[#1C1C1C]" />
+                <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
+                  <BookOpen className="w-6 h-6 text-background" />
                 </div>
-                <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-3">Read Together</h3>
-                <p className="text-base text-white/70 font-serif leading-relaxed max-w-2xl">
+                <h3 className="text-lg md:text-xl font-serif font-medium text-foreground mb-3">Read Together</h3>
+                <p className="text-base text-muted-foreground font-serif leading-relaxed max-w-2xl">
                   We pick one book per cycle — spanning UX, behavioral science, AI, and systems thinking — and read at a pace that fits busy design professionals.
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delay={200}>
-              <div className="border-t border-white/15 py-10">
-                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6">
-                  <MessageCircle className="w-6 h-6 text-[#1C1C1C]" />
+              <div className="border-t border-border py-10">
+                <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
+                  <MessageCircle className="w-6 h-6 text-background" />
                 </div>
-                <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-3">Discuss & Reflect</h3>
-                <p className="text-base text-white/70 font-serif leading-relaxed max-w-2xl">
+                <h3 className="text-lg md:text-xl font-serif font-medium text-foreground mb-3">Discuss & Reflect</h3>
+                <p className="text-base text-muted-foreground font-serif leading-relaxed max-w-2xl">
                   Monthly virtual sessions where we connect ideas to our real work, challenge assumptions, and leave with frameworks we can actually use.
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delay={300}>
-              <div className="border-t border-white/15 py-10">
-                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6">
-                  <Globe className="w-6 h-6 text-[#1C1C1C]" />
+              <div className="border-t border-border py-10">
+                <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
+                  <Globe className="w-6 h-6 text-background" />
                 </div>
-                <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-3">Stay Connected</h3>
-                <p className="text-base text-white/70 font-serif leading-relaxed max-w-2xl">
+                <h3 className="text-lg md:text-xl font-serif font-medium text-foreground mb-3">Stay Connected</h3>
+                <p className="text-base text-muted-foreground font-serif leading-relaxed max-w-2xl">
                   An ongoing LinkedIn community where members share resources, job leads, and design conversations between sessions.
                 </p>
               </div>
