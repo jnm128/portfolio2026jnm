@@ -1,28 +1,34 @@
 
 
-## Invert section colors and fix typography on Book Club page
+## Fix Book Club page: stats weight, section order, colors, and padding
 
 **File:** `src/pages/BookClub.tsx`
 
-### Color scheme changes
+### 1. Stats font weight
+- Change stat numbers from `font-semibold` to `font-medium` (lines 114, 118, 122, 126)
 
-Current flow: Hero (cream) → Who We Are (cream) → Previous Reads (cream) → How Community Works (cream) → CTA (dark) → FAQ (cream) → Footer (dark)
+### 2. Reorder sections: Previous Reads before Who We Are
+- Move **Section 3 (Previous Reads)** to come right after the Hero (Section 1)
+- Move **Section 2 (Who We Are)** to come after Previous Reads
 
-New flow: Hero (cream) → Who We Are (cream) → **Previous Reads (dark)** → **How Community Works (dark)** → **CTA (cream)** → **FAQ (dark)** → Footer (dark, seamless)
+New order: Hero → Previous Reads → Who We Are → How Community Works → CTA → FAQ
 
-Specific changes:
-- **Section 3 (Previous Reads):** `bg-[#1C1C1C]`, white text, carousel arrows invert to `bg-white/10 border-white/20`, label becomes `text-white/60`
-- **Section 4 (How Community Works):** `bg-[#1C1C1C]`, white text, icon boxes invert to `bg-white` with dark icons, borders become `border-white/15`, headings `text-white`, body `text-white/70`
-- **Section 5 (CTA):** Flip to `bg-[#F8F6F1]`, heading `text-foreground`, subtext `text-muted-foreground`, button `bg-foreground text-background`
-- **Section 6 (FAQ):** `bg-[#1C1C1C]`, question text `text-white`, answer text `text-white/70`, chevron `text-white/60`, borders `border-white/15` — blends seamlessly into Footer
+### 3. Revert section colors — all cream except CTA (dark)
+- **Previous Reads**: `bg-[#F8F6F1]`, label `text-foreground/60`, carousel arrows use `bg-foreground/10 border-foreground/20` with dark icon colors
+- **Who We Are**: stays `bg-[#F8F6F1]` (no change)
+- **How Community Works**: `bg-[#F8F6F1]`, icon boxes `bg-foreground` with white icons, headings `text-foreground`, body `text-muted-foreground`, borders `border-foreground/10`
+- **CTA**: `bg-[#1C1C1C]`, heading `text-white`, subtext `text-white/70`, button `bg-white text-[#1C1C1C]`
+- **FAQ**: `bg-[#F8F6F1]`, question text `text-foreground`, answer text `text-muted-foreground`, chevron `text-foreground/60`, borders `border-foreground/10`
 
-### Typography fixes (match About and Home pages)
-- H1 uses `text-3xl md:text-5xl font-serif` — already matches About page scale
-- H1 placement: Match About page structure with `pt-24 md:pt-28` on the outer wrapper and `pt-0` on the hero section (About uses `pt-0 pb-24`), keeping the same vertical position below the header
-- Body text stays `text-base md:text-lg font-serif leading-relaxed`
-- Section labels stay `text-sm uppercase tracking-widest`
+### 4. Tighten padding between sections
+- Previous Reads (now section 2): `py-12 md:py-16`
+- Who We Are (now section 3): `py-12 md:py-16`
+- How Community Works: `py-12 md:py-16`
+- CTA: `py-16 md:py-24` (keep larger for impact)
+- FAQ: `py-12 md:py-16`
 
-### H1 placement alignment with About page
-- Change outer wrapper from `pt-28 md:pt-32` on the hero section to match About's pattern: wrap content in a `pt-24 md:pt-28` div, hero section gets `pt-0`
-- Remove the inner `pt-10 md:pt-14` to align H1 position with About page
+### Result flow
+```
+Hero (cream) → Previous Reads (cream) → Who We Are (cream) → How Community Works (cream) → CTA (dark) → FAQ (cream) → Footer
+```
 
