@@ -182,11 +182,11 @@ const BookClub: React.FC = () => {
                   onClick={() => setSelectedBook(book)}
                   className="flex-shrink-0 w-[220px] md:w-[260px] snap-start rounded-xl overflow-hidden cursor-pointer group"
                 >
-                  <div className="aspect-[3/4]">
+                  <div className="aspect-[3/4] overflow-hidden rounded-xl">
                     <img
                       src={book.cover}
                       alt={book.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                 </div>
