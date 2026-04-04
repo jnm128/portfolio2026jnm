@@ -99,10 +99,10 @@ const BookClub: React.FC = () => {
     <div className="min-h-screen bg-[#F8F6F1]">
 
       {/* Section 1 — Hero */}
-      <section className="pt-28 md:pt-32 bg-[#F8F6F1]">
+      <section className="pt-24 md:pt-28 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <div className="pt-10 md:pt-14 max-w-3xl">
+            <div className="max-w-3xl">
               <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
                 Fresh Perspectives
               </h1>
@@ -174,23 +174,23 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 3 — Previous Reads */}
-      <section className="py-16 md:py-24 bg-[#F8F6F1]">
+      <section className="py-16 md:py-24 bg-[#1C1C1C]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex items-end justify-between mb-6">
-              <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60">Previous Reads</h2>
+              <h2 className="text-sm font-medium uppercase tracking-widest text-white/60">Previous Reads</h2>
               <div className="hidden md:flex items-center gap-2">
                 <button
                   onClick={() => scrollCarousel('left')}
-                  className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
+                  className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors"
                 >
-                  <ChevronLeft className="w-4 h-4 text-foreground" />
+                  <ChevronLeft className="w-4 h-4 text-white" />
                 </button>
                 <button
                   onClick={() => scrollCarousel('right')}
-                  className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
+                  className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors"
                 >
-                  <ChevronRight className="w-4 h-4 text-foreground" />
+                  <ChevronRight className="w-4 h-4 text-white" />
                 </button>
               </div>
             </div>
@@ -221,44 +221,44 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 4 — How the Community Works */}
-      <section className="py-16 md:py-24 bg-[#F8F6F1]">
+      <section className="py-16 md:py-24 bg-[#1C1C1C]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">How the Community Works</h2>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">How the Community Works</h2>
           </FadeIn>
 
           <div className="space-y-0">
             <FadeIn delay={100}>
               <div className="py-6">
-                <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
-                  <BookOpen className="w-6 h-6 text-background" />
+                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6">
+                  <BookOpen className="w-6 h-6 text-[#1C1C1C]" />
                 </div>
-                <h3 className="text-lg md:text-xl font-serif font-medium text-foreground mb-3">Read Together</h3>
-                <p className="text-base text-muted-foreground font-serif leading-relaxed max-w-2xl">
+                <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-3">Read Together</h3>
+                <p className="text-base text-white/70 font-serif leading-relaxed max-w-2xl">
                   We pick one book per cycle — spanning UX, behavioral science, AI, and systems thinking — and read at a pace that fits busy design professionals.
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delay={200}>
-              <div className="border-t border-border py-6">
-                <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
-                  <MessageCircle className="w-6 h-6 text-background" />
+              <div className="border-t border-white/15 py-6">
+                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6">
+                  <MessageCircle className="w-6 h-6 text-[#1C1C1C]" />
                 </div>
-                <h3 className="text-lg md:text-xl font-serif font-medium text-foreground mb-3">Discuss & Reflect</h3>
-                <p className="text-base text-muted-foreground font-serif leading-relaxed max-w-2xl">
+                <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-3">Discuss & Reflect</h3>
+                <p className="text-base text-white/70 font-serif leading-relaxed max-w-2xl">
                   Monthly virtual sessions where we connect ideas to our real work, challenge assumptions, and leave with frameworks we can actually use.
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delay={300}>
-              <div className="border-t border-border py-6">
-                <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
-                  <Globe className="w-6 h-6 text-background" />
+              <div className="border-t border-white/15 py-6">
+                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6">
+                  <Globe className="w-6 h-6 text-[#1C1C1C]" />
                 </div>
-                <h3 className="text-lg md:text-xl font-serif font-medium text-foreground mb-3">Stay Connected</h3>
-                <p className="text-base text-muted-foreground font-serif leading-relaxed max-w-2xl">
+                <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-3">Stay Connected</h3>
+                <p className="text-base text-white/70 font-serif leading-relaxed max-w-2xl">
                   An ongoing LinkedIn community where members share resources, job leads, and design conversations between sessions.
                 </p>
               </div>
@@ -268,14 +268,14 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 5 — CTA */}
-      <section className="py-16 md:py-24 bg-[#1C1C1C]">
+      <section className="py-16 md:py-24 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col gap-6 items-center text-center">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-white">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-foreground">
                 Ready to read with us?
               </h2>
-              <p className="text-lg md:text-xl text-white/70 leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Join a community of UX professionals who believe that great designers are also great thinkers.
               </p>
               <div className="mt-4">
@@ -283,7 +283,7 @@ const BookClub: React.FC = () => {
                   href="https://www.linkedin.com/in/joannaminott"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors"
+                  className="inline-flex items-center px-8 py-3 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-colors"
                 >
                   Join the Club
                 </a>
@@ -294,10 +294,10 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 6 — FAQ */}
-      <section className="py-16 md:py-24 bg-[#F8F6F1]">
+      <section className="py-16 md:py-24 bg-[#1C1C1C]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">Frequently Asked Questions</h2>
           </FadeIn>
           <div className="space-y-0">
             {[
@@ -319,20 +319,20 @@ const BookClub: React.FC = () => {
               },
             ].map((faq, index) => (
               <FadeIn key={index} delay={100 * (index + 1)}>
-                <div className="border-t border-border">
+                <div className="border-t border-white/15">
                   <button
                     onClick={() => setFaqOpenIndex(faqOpenIndex === index ? null : index)}
                     className="w-full flex items-center justify-between py-5 text-left"
                   >
-                    <span className="text-lg font-medium text-foreground font-serif pr-4">{faq.q}</span>
+                    <span className="text-lg font-medium text-white font-serif pr-4">{faq.q}</span>
                     <ChevronDown
-                      className={`w-5 h-5 text-foreground/60 shrink-0 transition-transform duration-300 ${faqOpenIndex === index ? 'rotate-180' : ''}`}
+                      className={`w-5 h-5 text-white/60 shrink-0 transition-transform duration-300 ${faqOpenIndex === index ? 'rotate-180' : ''}`}
                     />
                   </button>
                   <div
                     className={`overflow-hidden transition-all duration-300 ${faqOpenIndex === index ? 'max-h-40 pb-5' : 'max-h-0'}`}
                   >
-                    <p className="text-base text-muted-foreground font-serif leading-relaxed max-w-2xl">
+                    <p className="text-base text-white/70 font-serif leading-relaxed max-w-2xl">
                       {faq.a}
                     </p>
                   </div>
