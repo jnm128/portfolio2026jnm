@@ -280,7 +280,7 @@ const BookClub: React.FC = () => {
           {selectedBook && (
             <>
               <div className="flex items-center justify-center p-6 pb-2">
-                <div className="w-48 h-56 rounded-xl overflow-hidden">
+                <div className="w-40 h-56 rounded-xl overflow-hidden">
                   <img
                     src={selectedBook.cover}
                     alt={selectedBook.title}
