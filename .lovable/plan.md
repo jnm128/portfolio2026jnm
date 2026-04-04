@@ -1,33 +1,28 @@
 
 
-## Restructure Book Club page to match updated spec (keeping hero image)
+## Revise Book Club hero stats and eyebrow
 
-Single file change: `src/pages/BookClub.tsx`
+**File:** `src/pages/BookClub.tsx`
 
-### Section 1 — Hero
-- Add eyebrow: "Book Club · UX · Design Thinking" (uppercase tracked, muted)
-- Keep H1: "Fresh Perspectives"
-- Update subhead to: "A UX book club for designers who think beyond the screen."
-- Add stats strip below subhead: `486+ Members · 8+ Books · Est. 2025 · Monthly Sessions` — all same weight, no italics
-- **Keep the hero image** (`rounded-2xl`, `aspect-[16/9]`) below the stats
+### Changes
 
-### Section 2 — Founders / About (new, after hero)
-- Label: `WHO WE ARE`
-- First-person copy about founding Fresh Perspectives with Bhavna
-- Two overlapping circular headshots (~80px, `rounded-full`, `border-4 border-[#F8F6F1]`):
-  - Joanna (left, z-10) using existing upload `/lovable-uploads/fff4e4ff-...`
-  - Bhavna (right, `-ml-6`) placeholder image
-- Name labels: "Joanna, Founder" · "Bhavna, Co-host"
+1. **Eyebrow** (line 106-108): Change "Book Club · UX · Design Thinking" to just "Community"
 
-### Section 3 — Previous Reads
-- Remove "More About Us" heading, subtitle, and metrics row (moved to hero stats)
-- Keep only `PREVIOUS READS` label + book carousel with arrows
+2. **Stats strip** (lines 115-123): Restyle each stat to a bold number + lighter label format:
+   - Large bold number on top (e.g. `486+`), small muted label below (e.g. `Members`)
+   - Layout: horizontal flex row with 4 stat blocks, separated by subtle dividers or spacing
+   - Numbers: `text-2xl md:text-3xl font-serif font-semibold text-foreground`
+   - Labels: `text-xs uppercase tracking-wide text-muted-foreground`
+   - Remove dot separators, use `gap-8 md:gap-12` between blocks
 
-### Sections 4–6
-- How It Works, CTA, FAQ — unchanged
+### Result
+```
+Community
 
-### Technical notes
-- Keep `bookClubHero` import
-- Remove italic styling from "Monthly" metric
-- Stats use `flex flex-wrap gap-x-6` with `·` separators
+Fresh Perspectives
+A UX book club for designers who think beyond the screen.
+
+486+        8+         2025       Monthly
+Members     Books      Est.       Sessions
+```
 
