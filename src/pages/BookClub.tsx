@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
-import { BookOpen, MessageCircle, Globe, ExternalLink, Star } from 'lucide-react';
+import { BookOpen, MessageCircle, Globe, ExternalLink, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import bookClubHero from '@/assets/book-club-hero-2.jpg';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
@@ -83,6 +83,16 @@ const books: Book[] = [
 
 const BookClub: React.FC = () => {
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollCarousel = (direction: 'left' | 'right') => {
+    if (!scrollRef.current) return;
+    const scrollAmount = 280;
+    scrollRef.current.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <div className="min-h-screen bg-[#F8F6F1]">
@@ -134,26 +144,45 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* Past Reads */}
+      {/* Past Reads — Horizontal Carousel */}
       <section className="py-16 md:py-24 bg-[#F8F6F1]">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
+        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <div className="mb-16">
-              <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">Past Reads</h2>
-              <p className="text-base md:text-lg text-muted-foreground font-serif max-w-2xl leading-relaxed">
-                Books that have shaped our thinking and conversations.
-              </p>
+            <div className="flex items-end justify-between mb-12">
+              <div>
+                <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">Past Reads</h2>
+                <p className="text-base md:text-lg text-muted-foreground font-serif max-w-2xl leading-relaxed">
+                  Books that have shaped our thinking and conversations.
+                </p>
+              </div>
+              <div className="hidden md:flex items-center gap-2">
+                <button
+                  onClick={() => scrollCarousel('left')}
+                  className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
+                >
+                  <ChevronLeft className="w-4 h-4 text-foreground" />
+                </button>
+                <button
+                  onClick={() => scrollCarousel('right')}
+                  className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
+                >
+                  <ChevronRight className="w-4 h-4 text-foreground" />
+                </button>
+              </div>
             </div>
           </FadeIn>
           <FadeIn delay={200}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div
+              ref={scrollRef}
+              className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar"
+            >
               {books.map((book, index) => (
                 <div
                   key={index}
                   onClick={() => setSelectedBook(book)}
-                  className="rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105"
+                  className="flex-shrink-0 w-[220px] md:w-[260px] snap-start rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105"
                 >
-                  <div className="relative aspect-[3/4]">
+                  <div className="aspect-[3/4]">
                     <img
                       src={book.cover}
                       alt={book.title}
@@ -169,7 +198,7 @@ const BookClub: React.FC = () => {
 
       {/* What We Do */}
       <section className="py-16 md:py-24 bg-[#1C1C1C]">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
+        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="mb-16">
               <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">What We Do</h2>
@@ -185,7 +214,7 @@ const BookClub: React.FC = () => {
                 <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6">
                   <BookOpen className="w-6 h-6 text-[#1C1C1C]" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif font-medium text-white mb-3">Read Together</h3>
+                <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-3">Read Together</h3>
                 <p className="text-base text-white/70 font-serif leading-relaxed max-w-2xl">
                   We pick one book per cycle — spanning UX, behavioral science, AI, and systems thinking — and read at a pace that fits busy design professionals.
                 </p>
@@ -197,7 +226,7 @@ const BookClub: React.FC = () => {
                 <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6">
                   <MessageCircle className="w-6 h-6 text-[#1C1C1C]" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif font-medium text-white mb-3">Discuss & Reflect</h3>
+                <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-3">Discuss & Reflect</h3>
                 <p className="text-base text-white/70 font-serif leading-relaxed max-w-2xl">
                   Monthly virtual sessions where we connect ideas to our real work, challenge assumptions, and leave with frameworks we can actually use.
                 </p>
@@ -209,7 +238,7 @@ const BookClub: React.FC = () => {
                 <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6">
                   <Globe className="w-6 h-6 text-[#1C1C1C]" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif font-medium text-white mb-3">Stay Connected</h3>
+                <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-3">Stay Connected</h3>
                 <p className="text-base text-white/70 font-serif leading-relaxed max-w-2xl">
                   An ongoing LinkedIn community where members share resources, job leads, and design conversations between sessions.
                 </p>
@@ -219,26 +248,37 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* Get Involved CTA */}
+      {/* CTA — Community-style card */}
       <section className="py-16 md:py-24 bg-[#1C1C1C]">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
+        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <div className="flex flex-col gap-6 items-center text-center">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-white">
-                Ready to read with us?
-              </h2>
-              <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-xl">
-                Join a community of UX professionals who believe that great designers are also great thinkers. New members always welcome.
-              </p>
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
-                <a
-                  href="https://www.linkedin.com/in/joannaminott"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors"
-                >
-                  Join the Club
-                </a>
+            <div className="rounded-2xl p-6 md:p-8 bg-[#F8F6F1]">
+              <div className="flex flex-col gap-6 md:gap-12 md:flex-row">
+                <div className="md:w-2/5 flex flex-col justify-center">
+                  <h3 className="text-lg md:text-xl font-serif font-medium leading-relaxed mb-4 text-foreground">
+                    Ready to read with us?
+                  </h3>
+                  <p className="text-sm md:text-base leading-relaxed mb-6 text-muted-foreground">
+                    Join a community of UX professionals who believe that great designers are also great thinkers. New members always welcome.
+                  </p>
+                  <a
+                    href="https://www.linkedin.com/in/joannaminott"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-accent-foreground hover:text-foreground inline-flex items-center gap-1"
+                  >
+                    Join the Club →
+                  </a>
+                </div>
+                <div className="md:w-3/5">
+                  <div className="rounded-xl overflow-hidden">
+                    <img
+                      src="/lovable-uploads/community-books.jpeg"
+                      alt="Fresh Perspectives Book Club"
+                      className="w-full aspect-[16/9] object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </FadeIn>
