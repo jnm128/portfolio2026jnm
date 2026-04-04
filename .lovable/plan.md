@@ -1,28 +1,23 @@
 
 
-## Align case study typography with Book Club page
+## Mobile-only layout change for About page hero
 
-### Problem
-Case study pages use inconsistent font sizing compared to the Book Club page's established typographic system.
+### What changes
+In `src/pages/AboutPage.tsx`, restructure the hero so that **on mobile only**, the order is: Title → Headshot (straight) → Text. On desktop (`md:` and up), keep the current side-by-side 2-column grid with the tilted image.
 
-### Key differences
+### How
 
-| Element | Case Studies (current) | Book Club (target) |
-|---|---|---|
-| Hero h1 | `text-4xl md:text-6xl lg:text-7xl tracking-tight` | `text-3xl md:text-5xl` |
-| Hero subtitle | `text-xl md:text-2xl` | `text-base md:text-lg font-serif leading-relaxed` |
-| Section h2 | `text-3xl md:text-4xl` | `text-3xl md:text-5xl` |
-| Body text | `text-lg` (no serif) | `text-base md:text-lg font-serif leading-relaxed` |
-| Subheadings | `text-xl` | `text-lg md:text-xl` |
+1. **Reorder with CSS `order`**: Move the image block before the text block in the DOM, then use `md:order-last` on the image so it appears on the right on desktop.
 
-### Changes (3 files, same updates)
+2. **Remove tilt on mobile only**: Change `rotate-2 hover:-rotate-1 transition-transform duration-500 translate-y-4` to `md:rotate-2 md:hover:-rotate-1 md:transition-transform md:duration-500 md:translate-y-4` so the image is straight on mobile but tilted on desktop.
 
-Files: `CaseStudyMindfulWellness.tsx`, `CaseStudyCreativeStudio.tsx`, `CaseStudyArtisanMarketplace.tsx`
+3. **Single-column mobile, 2-col desktop**: The existing `grid md:grid-cols-2` already handles this — it's 1 column on mobile, 2 on desktop. Just need the DOM order change.
 
-1. **Hero h1** — change to `text-3xl md:text-5xl font-serif font-medium text-white leading-tight mb-6`
-2. **Hero subtitle** — change to `text-base md:text-lg text-white/85 font-serif leading-relaxed`
-3. **All section h2s** (Challenge, Approach, Final Designs, Results) — change to `text-3xl md:text-5xl font-serif font-medium`
-4. **Body paragraphs** — change to `text-base md:text-lg text-gray-600 font-serif leading-relaxed`
-5. **Approach subheadings** — change to `text-lg md:text-xl font-medium`
-6. **Blockquote** — keep `text-xl md:text-2xl font-serif` (matches editorial quote style)
+### File: `src/pages/AboutPage.tsx`
+
+- Image div (line 81): Move above the bio text div in DOM order, add `order-first md:order-last` 
+- Image div: Change rotation classes to desktop-only (`md:rotate-2 md:hover:-rotate-1 md:translate-y-4`)
+- Title: Keep inside bio text div but also add a mobile-only duplicate above the image, or simpler — extract title out of the grid as a separate element shown only on mobile, while keeping it in the bio text div with `hidden md:block`
+
+**Simplest approach**: Pull `<h1>About</h1>` above the grid with responsive visibility, reorder image before text in DOM with `md:order-last` on image.
 
