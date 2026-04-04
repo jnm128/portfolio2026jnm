@@ -249,9 +249,10 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* CTA — Community-style card */}
-      <section className="py-16 md:py-24 bg-[#1C1C1C]">
+      <section className="pt-12 pb-12 md:pt-20 md:pb-20 bg-[#1C1C1C]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
-          <FadeIn>
+          <FadeIn delay={100}>
+            <p className="text-xs uppercase tracking-widest mb-4 text-white/60">Community</p>
             <div className="rounded-2xl p-6 md:p-8 bg-[#F8F6F1]">
               <div className="flex flex-col gap-6 md:gap-12 md:flex-row">
                 <div className="md:w-2/5 flex flex-col justify-center">
