@@ -111,24 +111,6 @@ const BookClub: React.FC = () => {
               </p>
             </div>
           </FadeIn>
-          <FadeIn delay={100}>
-            <div className="border-t border-border pt-8 mt-10">
-              <div className="flex gap-12 md:gap-16">
-                <div>
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">2025</p>
-                  <p className="text-sm text-muted-foreground mt-1">Founded</p>
-                </div>
-                <div>
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">8+</p>
-                  <p className="text-sm text-muted-foreground mt-1">Books Completed</p>
-                </div>
-                <div>
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground italic">Monthly</p>
-                  <p className="text-sm text-muted-foreground mt-1">Sessions</p>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
           <FadeIn delay={200}>
             <div className="aspect-[16/9] rounded-3xl overflow-hidden mt-12">
               <img
@@ -151,6 +133,20 @@ const BookClub: React.FC = () => {
                 <p className="text-base md:text-lg text-muted-foreground font-serif max-w-2xl leading-relaxed">
                   What we're reading, discussing, and exploring together beyond the screen.
                 </p>
+              </div>
+              <div className="flex gap-12 md:gap-16 mt-8">
+                <div>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">2025</p>
+                  <p className="text-sm text-muted-foreground mt-1">Founded</p>
+                </div>
+                <div>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground">8+</p>
+                  <p className="text-sm text-muted-foreground mt-1">Books Completed</p>
+                </div>
+                <div>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground italic">Monthly</p>
+                  <p className="text-sm text-muted-foreground mt-1">Sessions</p>
+                </div>
               </div>
               <div className="hidden md:flex items-center gap-2">
                 <button
