@@ -1,24 +1,12 @@
 
 
-## Changes to Book Club Page
+## Revert "How the Community Works" to vertical list & fix spacing
 
 **File:** `src/pages/BookClub.tsx`
 
-### 1. Remove founder/co-host text
-Delete lines 155-160 (the `FadeIn` block containing "Joanna, Founder" and "Bhavna, Co-host" spans).
+### 1. Convert "How the Community Works" back to a vertical stacked list
+Replace the horizontal scroll container (lines 213-227) with a vertical layout — a `space-y-6` or `grid` with the three cards stacked vertically, each full-width. Remove `flex-shrink-0`, `w-[220px]`, `overflow-x-auto`, `snap-x`, etc.
 
-### 2. Convert "How the Community Works" to horizontal scroll layout
-Replace the current stacked vertical layout (lines 218-254) with a horizontal scrollable row matching the book carousel pattern — cards side-by-side in a `flex gap-6 overflow-x-auto` container, each card as a fixed-width flex-shrink-0 item (~260px).
-
-### 3. Fix section spacing — add more whitespace between all sections
-Standardize all sections to `py-16 md:py-20` for generous breathing room:
-
-| Section | Current padding | New padding |
-|---------|----------------|-------------|
-| Hero | `pt-24 md:pt-28 pb-6` | `pt-24 md:pt-28 pb-16 md:pb-20` |
-| Who We Are | `pt-6 pb-12 md:pb-16` | `py-16 md:py-20` |
-| Previous Reads | `pt-12 md:pt-16 pb-0` | `pt-16 md:pt-20 pb-4` |
-| How Community Works | `pt-6 pb-12 md:pb-16` | `py-16 md:py-20` |
-| CTA | `py-16 md:py-24` | keep as-is |
-| FAQ | `py-12 md:py-16` | `py-16 md:py-20` |
+### 2. Make Previous Reads and How Community Works fully separate sections with equal spacing
+Currently Previous Reads has `pt-16 md:pt-20 pb-4` — the small `pb-4` makes it feel merged with the next section. Change it to `py-16 md:py-20` to match the consistent spacing used by Who We Are and other sections. How Community Works already has `py-16 md:py-20`, so no change needed there. This gives equal whitespace between all sections.
 
