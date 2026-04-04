@@ -1,41 +1,28 @@
 
 
-## Make case study heroes match Book Club hero style
+## Align case study typography with Book Club page
 
-The Book Club hero uses a **contained, rounded image** with surrounding padding on a cream background, while all three case study heroes use **full-bleed images** with no padding or rounding.
+### Problem
+Case study pages use inconsistent font sizing compared to the Book Club page's established typographic system.
 
-### Current (case studies)
-- `section` is full-width with no padding around it, no border radius
-- Background image via `PopIn` with `absolute inset-0 -z-10`
-- No cream background wrapper
+### Key differences
 
-### Target (Book Club style)
-- Cream background (`bg-[#F8F6F1]`) on outer section
-- Top padding for header clearance (`pt-20 md:pt-24`)
-- Horizontal padding (`px-4 md:px-8`)
-- Inner container with `rounded-3xl overflow-hidden`
-- Image positioned with `absolute inset-0` inside the rounded container
-- `isolate` on container for proper stacking
+| Element | Case Studies (current) | Book Club (target) |
+|---|---|---|
+| Hero h1 | `text-4xl md:text-6xl lg:text-7xl tracking-tight` | `text-3xl md:text-5xl` |
+| Hero subtitle | `text-xl md:text-2xl` | `text-base md:text-lg font-serif leading-relaxed` |
+| Section h2 | `text-3xl md:text-4xl` | `text-3xl md:text-5xl` |
+| Body text | `text-lg` (no serif) | `text-base md:text-lg font-serif leading-relaxed` |
+| Subheadings | `text-xl` | `text-lg md:text-xl` |
 
-### Files to change (3)
-1. **`src/pages/CaseStudyMindfulWellness.tsx`** — Restructure hero section
-2. **`src/pages/CaseStudyCreativeStudio.tsx`** — Same restructure
-3. **`src/pages/CaseStudyArtisanMarketplace.tsx`** — Same restructure
+### Changes (3 files, same updates)
 
-For each file, replace the hero `<section>` with:
-```tsx
-<section className="pt-20 md:pt-24 px-4 md:px-8 bg-[#F8F6F1]">
-  <div className="relative isolate min-h-[70vh] flex items-center overflow-hidden rounded-3xl">
-    <div className="absolute inset-0 z-0">
-      <img src="..." alt="..." className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-black/40" />
-    </div>
-    <div className="relative z-10 container mx-auto px-8 md:px-16 py-20 md:py-32">
-      {/* existing back link + title content, unchanged */}
-    </div>
-  </div>
-</section>
-```
+Files: `CaseStudyMindfulWellness.tsx`, `CaseStudyCreativeStudio.tsx`, `CaseStudyArtisanMarketplace.tsx`
 
-Each case study keeps its own image, title, subtitle, and "Back to Projects" link. Only the wrapper structure changes.
+1. **Hero h1** — change to `text-3xl md:text-5xl font-serif font-medium text-white leading-tight mb-6`
+2. **Hero subtitle** — change to `text-base md:text-lg text-white/85 font-serif leading-relaxed`
+3. **All section h2s** (Challenge, Approach, Final Designs, Results) — change to `text-3xl md:text-5xl font-serif font-medium`
+4. **Body paragraphs** — change to `text-base md:text-lg text-gray-600 font-serif leading-relaxed`
+5. **Approach subheadings** — change to `text-lg md:text-xl font-medium`
+6. **Blockquote** — keep `text-xl md:text-2xl font-serif` (matches editorial quote style)
 
