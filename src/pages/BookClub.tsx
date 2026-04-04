@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
-import { BookOpen, MessageCircle, Globe, ExternalLink, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { BookOpen, MessageCircle, Globe, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import bookClubHero from '@/assets/book-club-hero-2.jpg';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
