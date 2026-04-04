@@ -12,17 +12,18 @@ const CaseStudyArtisanMarketplace = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-        <PopIn className="absolute inset-0 -z-10">
-          <img 
-            src="/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png" 
-            alt="Artisan Marketplace Platform" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40"></div>
-        </PopIn>
-        
-        <div className="container mx-auto px-8 md:px-16 py-20 md:py-32 relative z-10">
+      <section className="pt-20 md:pt-24 px-4 md:px-8 bg-[#F8F6F1]">
+        <div className="relative isolate min-h-[70vh] flex items-center overflow-hidden rounded-3xl">
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png" 
+              alt="Artisan Marketplace Platform" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/40"></div>
+          </div>
+          
+          <div className="relative z-10 container mx-auto px-8 md:px-16 py-20 md:py-32">
           <FadeIn>
             <Link 
               to="/" 
@@ -46,6 +47,7 @@ const CaseStudyArtisanMarketplace = () => {
               </p>
             </FadeIn>
           </div>
+        </div>
         </div>
       </section>
 
