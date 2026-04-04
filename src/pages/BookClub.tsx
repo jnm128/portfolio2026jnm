@@ -202,17 +202,15 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* What We Do */}
-      <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-[#F8F6F1]">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
+      <section className="py-16 md:py-24 bg-[#F8F6F1]">
+        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <div className="mb-16">
-              <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">How the Community Works</h2>
-            </div>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">How the Community Works</h2>
           </FadeIn>
 
           <div className="space-y-0">
             <FadeIn delay={100}>
-              <div className="py-10">
+              <div className="py-6">
                 <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
                   <BookOpen className="w-6 h-6 text-background" />
                 </div>
@@ -224,7 +222,7 @@ const BookClub: React.FC = () => {
             </FadeIn>
 
             <FadeIn delay={200}>
-              <div className="border-t border-border py-10">
+              <div className="border-t border-border py-6">
                 <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
                   <MessageCircle className="w-6 h-6 text-background" />
                 </div>
@@ -236,7 +234,7 @@ const BookClub: React.FC = () => {
             </FadeIn>
 
             <FadeIn delay={300}>
-              <div className="border-t border-border py-10">
+              <div className="border-t border-border py-6">
                 <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center mb-6">
                   <Globe className="w-6 h-6 text-background" />
                 </div>
