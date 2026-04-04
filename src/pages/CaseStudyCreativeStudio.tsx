@@ -39,10 +39,10 @@ const CaseStudyCreativeStudio = () => {
               <span className="text-sm md:text-base font-medium text-white/80 mb-4 inline-block uppercase tracking-wide">
                 Brand Identity & Design
               </span>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight text-white leading-tight mb-6">
+              <h1 className="text-3xl md:text-5xl font-serif font-medium text-white leading-tight mb-6">
                 Creative Studio
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl">
+              <p className="text-base md:text-lg text-white/85 font-serif leading-relaxed mb-8 max-w-3xl">
                 Brand identity and web presence for a creative agency specializing in visual storytelling.
               </p>
             </FadeIn>
@@ -73,45 +73,45 @@ const CaseStudyCreativeStudio = () => {
             </FadeIn>
 
             <FadeIn delay={200}>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-8">The Challenge</h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-8">The Challenge</h2>
+              <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed mb-8">
                 Lumina Creative Studio was a talented team of visual storytellers without a cohesive brand identity. 
                 Their existing online presence didn't reflect the quality of their work or attract their ideal clients - 
                 innovative brands seeking cutting-edge creative solutions.
               </p>
-              <p className="text-lg text-gray-600 mb-16 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed mb-16">
                 They needed a brand that would position them as industry leaders while creating a digital experience 
                 that showcased their portfolio in a way that converted visitors into clients.
               </p>
             </FadeIn>
 
             <FadeIn delay={300}>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-8">Our Approach</h2>
+              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-8">Our Approach</h2>
               <div className="grid md:grid-cols-2 gap-12 mb-16">
                 <div>
-                  <h3 className="text-xl font-medium mb-4">Brand Strategy</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-lg md:text-xl font-medium mb-4">Brand Strategy</h3>
+                  <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">
                     Developed a comprehensive brand strategy that positioned Lumina as the go-to studio for brands 
                     seeking innovative visual storytelling.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium mb-4">Visual Identity</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-lg md:text-xl font-medium mb-4">Visual Identity</h3>
+                  <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">
                     Created a bold, modern visual identity system including logo, color palette, typography, 
                     and brand guidelines that reflected their creative excellence.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium mb-4">Portfolio Showcase</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-lg md:text-xl font-medium mb-4">Portfolio Showcase</h3>
+                  <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">
                     Designed an immersive portfolio experience that tells the story behind each project while 
                     highlighting the studio's unique approach and results.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium mb-4">Content Strategy</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-lg md:text-xl font-medium mb-4">Content Strategy</h3>
+                  <p className="text-base md:text-lg text-gray-600 font-serif leading-relaxed">
                     Developed messaging and content strategy that speaks directly to decision-makers at innovative 
                     brands and startups.
                   </p>
@@ -127,13 +127,13 @@ const CaseStudyCreativeStudio = () => {
         <div className="container mx-auto px-8 md:px-16">
           <div className="max-w-6xl mx-auto">
             <FadeIn>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-16 text-center">Final Designs</h2>
+              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-16 text-center">Final Designs</h2>
               
               <div className="space-y-16">
                 {/* Brand Identity System */}
                 <div className="text-center">
                   <FadeIn delay={100}>
-                    <h3 className="text-xl font-medium mb-6 text-gray-800">Brand Identity System</h3>
+                    <h3 className="text-lg md:text-xl font-medium mb-6 text-gray-800">Brand Identity System</h3>
                   </FadeIn>
                   <PopIn delay={100}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -149,7 +149,7 @@ const CaseStudyCreativeStudio = () => {
                 {/* Website Design */}
                 <div className="text-center">
                   <FadeIn delay={200}>
-                    <h3 className="text-xl font-medium mb-6 text-gray-800">Website Design</h3>
+                    <h3 className="text-lg md:text-xl font-medium mb-6 text-gray-800">Website Design</h3>
                   </FadeIn>
                   <PopIn delay={200}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -165,7 +165,7 @@ const CaseStudyCreativeStudio = () => {
                 {/* Portfolio Showcase */}
                 <div className="text-center">
                   <FadeIn delay={300}>
-                    <h3 className="text-xl font-medium mb-6 text-gray-800">Portfolio Showcase</h3>
+                    <h3 className="text-lg md:text-xl font-medium mb-6 text-gray-800">Portfolio Showcase</h3>
                   </FadeIn>
                   <PopIn delay={300}>
                     <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -188,7 +188,7 @@ const CaseStudyCreativeStudio = () => {
         <div className="container mx-auto px-8 md:px-16">
           <div className="max-w-4xl mx-auto">
             <FadeIn>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-16 text-center">Results</h2>
+              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-16 text-center">Results</h2>
               
               <div className="grid md:grid-cols-3 gap-8 mb-16">
                 <div className="text-center">
