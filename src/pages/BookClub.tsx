@@ -110,7 +110,7 @@ const BookClub: React.FC = () => {
                 <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8 max-w-xl">
                   A UX book club for designers who think beyond the screen.
                 </p>
-                <div className="border-t border-foreground/10 pt-6 mt-2 flex gap-8 md:gap-12">
+                <div className="border-t border-foreground/10 pt-6 mt-2 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
                   <div>
                     <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">2023</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Est.</div>
@@ -143,12 +143,12 @@ const BookClub: React.FC = () => {
 
       {/* Section 2 — Who We Are */}
       <section className="py-16 md:py-20 bg-[#F8F6F1]">
-        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+        <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
           </FadeIn>
           <FadeIn delay={100}>
-            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
               I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work.
             </p>
           </FadeIn>
@@ -204,7 +204,7 @@ const BookClub: React.FC = () => {
 
       {/* Section 4 — How the Community Works */}
       <section className="py-16 md:py-20 bg-[#F8F6F1]">
-        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+        <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">How the Community Works</h2>
           </FadeIn>
@@ -259,7 +259,7 @@ const BookClub: React.FC = () => {
 
       {/* Section 6 — FAQ */}
       <section className="py-16 md:py-20 bg-[#F8F6F1]">
-        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+        <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Frequently Asked Questions</h2>
           </FadeIn>
