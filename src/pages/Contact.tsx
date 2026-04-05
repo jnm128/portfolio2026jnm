@@ -1,9 +1,17 @@
-import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { ExternalLink, Copy, Check } from 'lucide-react';
 import FadeIn from '@/components/animations/FadeIn';
 import Footer from '@/components/Footer';
 
 const Contact = () => {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText('hello@joannaminott.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <>
       <main className="min-h-screen">
@@ -21,11 +29,9 @@ const Contact = () => {
 
             <FadeIn delay={100}>
               <div>
-                <a
-                  href="mailto:hello@joannaminott.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group py-6 flex items-center justify-between"
+                <button
+                  onClick={copyEmail}
+                  className="group py-6 flex items-center justify-between w-full text-left"
                 >
                   <div>
                     <span className="text-xs uppercase tracking-widest text-white/60">Email</span>
@@ -33,8 +39,12 @@ const Contact = () => {
                       hello@joannaminott.com
                     </p>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-white transition-colors shrink-0" />
-                </a>
+                  {copied ? (
+                    <Check className="w-4 h-4 text-green-400 shrink-0" />
+                  ) : (
+                    <Copy className="w-4 h-4 text-white/40 group-hover:text-white transition-colors shrink-0" />
+                  )}
+                </button>
 
                 <a
                   href="https://linkedin.com/in/joannaminott"
@@ -77,6 +87,7 @@ const Contact = () => {
                 Open for new projects
               </p>
               <p className="text-sm text-white/60 mt-1">Open for projects starting Q3 2026</p>
+              <p className="text-sm text-white/60 mt-4 font-serif">I typically respond within 24 hours of receiving your message.</p>
             </div>
           </FadeIn>
         </div>
