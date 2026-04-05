@@ -81,9 +81,6 @@ const Contact = () => {
           </FadeIn>
         </div>
 
-        {/* Right Panel - Cream */}
-        <div className="bg-[#F8F6F1] p-8 md:p-16 pt-24 md:pt-32 md:min-h-screen flex items-center">
-        </div>
       </main>
       <Footer />
     </>
