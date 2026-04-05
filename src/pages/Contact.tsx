@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 const Contact = () => {
   return (
     <>
-      <main className="min-h-screen grid md:grid-cols-2">
+      <main className="min-h-screen">
         {/* Left Panel - Dark */}
         <div className="bg-[#1C1C1C] md:sticky md:top-0 md:h-screen flex flex-col justify-between p-8 md:p-16 pt-24 md:pt-32 pb-8 md:pb-32">
           <div>
@@ -81,9 +81,6 @@ const Contact = () => {
           </FadeIn>
         </div>
 
-        {/* Right Panel - Cream */}
-        <div className="bg-[#F8F6F1] p-8 md:p-16 pt-24 md:pt-32 md:min-h-screen flex items-center">
-        </div>
       </main>
       <Footer />
     </>
