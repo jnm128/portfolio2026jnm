@@ -187,7 +187,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               onClick={() => scrollToSection('home')}
               className={cn(
                 "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
-                isContactPage && !isMobileMenuOpen ? 'text-white md:text-foreground' : ''
+                isContactPage && !isMobileMenuOpen && !isScrolled ? 'text-white' : ''
               )}
             >
               {'MINO.'.split('').map((letter, index) => (
@@ -205,7 +205,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               to="/"
               className={cn(
                 "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
-                isContactPage && !isMobileMenuOpen ? 'text-white md:text-foreground' : ''
+                isContactPage && !isMobileMenuOpen && !isScrolled ? 'text-white' : ''
               )}
             >
               {'MINO.'.split('').map((letter, index) => (
@@ -222,36 +222,44 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {/* Work */}
             <Link
               to="/work"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className={cn(
+                "text-sm font-medium transition-colors duration-300",
+                isContactPage && !isScrolled ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
+              )}
             >
               Work
             </Link>
 
-            {/* About */}
             <Link
               to="/about"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className={cn(
+                "text-sm font-medium transition-colors duration-300",
+                isContactPage && !isScrolled ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
+              )}
             >
               About
             </Link>
 
-            {/* Community */}
             <Link
               to="/book-club"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className={cn(
+                "text-sm font-medium transition-colors duration-300",
+                isContactPage && !isScrolled ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
+              )}
             >
               Community
             </Link>
 
-            {/* Get in Touch - Black to white button */}
             <Link
               to="/contact"
-              className="bg-foreground text-background px-5 py-2 rounded-full text-sm font-medium 
-                         hover:bg-background hover:text-foreground border border-foreground hover:border-border
-                         transition-all duration-300"
+              className={cn(
+                "px-5 py-2 rounded-full text-sm font-medium transition-all duration-300",
+                isContactPage && !isScrolled
+                  ? "bg-white text-[#1C1C1C] hover:bg-white/80 border border-white"
+                  : "bg-foreground text-background hover:bg-background hover:text-foreground border border-foreground hover:border-border"
+              )}
             >
               Get in Touch
             </Link>
@@ -265,17 +273,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           >
             <span className={cn(
               "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+              isContactPage && !isMobileMenuOpen && !isScrolled ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
             )} />
             <span className={cn(
               "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+              isContactPage && !isMobileMenuOpen && !isScrolled ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "opacity-0" : ""
             )} />
             <span className={cn(
               "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+              isContactPage && !isMobileMenuOpen && !isScrolled ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
             )} />
           </button>
