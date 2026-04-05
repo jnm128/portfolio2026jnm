@@ -54,7 +54,7 @@ const AboutPage = () => {
 
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
                 {/* Profile Image — first in DOM, appears on right on desktop */}
-                <div className="relative w-full max-w-sm aspect-[5/6] mx-auto md:ml-auto md:order-last md:rotate-2 md:hover:-rotate-1 md:transition-transform md:duration-500 md:translate-y-4">
+                <div className="relative w-full max-w-sm aspect-[5/6] mx-auto md:ml-auto md:order-last">
                   <div className="rounded-3xl overflow-hidden h-full">
                     <img
                       alt="Joanna Minott"
