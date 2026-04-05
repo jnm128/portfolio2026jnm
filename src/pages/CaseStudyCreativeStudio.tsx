@@ -4,7 +4,8 @@ import Footer from '@/components/Footer';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
-import PopIn from '@/components/animations/PopIn';
+import SplitSection from '@/components/SplitSection';
+import ImageLightbox from '@/components/ImageLightbox';
 
 const CaseStudyCreativeStudio = () => {
   const navigate = useNavigate();
@@ -70,152 +71,125 @@ const CaseStudyCreativeStudio = () => {
         </div>
       </section>
 
-      {/* Challenge & Approach */}
+      {/* Problem Space */}
       <section className="py-20 md:py-32 bg-background">
         <div className="container mx-auto px-8 md:px-16">
-          <div className="max-w-4xl mx-auto">
-            <FadeIn>
-              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-8">The Challenge</h2>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
-                Lumina Creative Studio was a talented team of visual storytellers without a cohesive brand identity. 
-                Their existing online presence didn't reflect the quality of their work or attract their ideal clients - 
-                innovative brands seeking cutting-edge creative solutions.
-              </p>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-16">
-                They needed a brand that would position them as industry leaders while creating a digital experience 
-                that showcased their portfolio in a way that converted visitors into clients.
-              </p>
-            </FadeIn>
+          <SplitSection label="Problem Space">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+              How do you position a creative studio as an industry leader when their work speaks louder than their brand?
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
+              Lumina Creative Studio was a talented team of visual storytellers without a cohesive brand identity. 
+              Their existing online presence didn't reflect the quality of their work or attract their ideal clients - 
+              innovative brands seeking cutting-edge creative solutions.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
+              They needed a brand that would position them as industry leaders while creating a digital experience 
+              that showcased their portfolio in a way that converted visitors into clients.
+            </p>
+          </SplitSection>
+        </div>
+      </section>
 
-            <FadeIn delay={200}>
-              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-8">Our Approach</h2>
-              <div className="grid md:grid-cols-2 gap-12 mb-16">
-                <div>
-                  <h3 className="text-lg md:text-xl font-medium mb-4">Brand Strategy</h3>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
-                    Developed a comprehensive brand strategy that positioned Lumina as the go-to studio for brands 
-                    seeking innovative visual storytelling.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-medium mb-4">Visual Identity</h3>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
-                    Created a bold, modern visual identity system including logo, color palette, typography, 
-                    and brand guidelines that reflected their creative excellence.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-medium mb-4">Portfolio Showcase</h3>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
-                    Designed an immersive portfolio experience that tells the story behind each project while 
-                    highlighting the studio's unique approach and results.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-medium mb-4">Content Strategy</h3>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
-                    Developed messaging and content strategy that speaks directly to decision-makers at innovative 
-                    brands and startups.
-                  </p>
-                </div>
+      {/* Approach */}
+      <section className="py-20 md:py-32 bg-secondary/30">
+        <div className="container mx-auto px-8 md:px-16">
+          <SplitSection label="Our Approach">
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4">Brand Strategy</h3>
+                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
+                  Developed a comprehensive brand strategy that positioned Lumina as the go-to studio for brands 
+                  seeking innovative visual storytelling.
+                </p>
               </div>
-            </FadeIn>
-          </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4">Visual Identity</h3>
+                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
+                  Created a bold, modern visual identity system including logo, color palette, typography, 
+                  and brand guidelines that reflected their creative excellence.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4">Portfolio Showcase</h3>
+                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
+                  Designed an immersive portfolio experience that tells the story behind each project while 
+                  highlighting the studio's unique approach and results.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4">Content Strategy</h3>
+                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
+                  Developed messaging and content strategy that speaks directly to decision-makers at innovative 
+                  brands and startups.
+                </p>
+              </div>
+            </div>
+          </SplitSection>
         </div>
       </section>
 
       {/* Final Designs */}
-      <section className="py-20 md:py-32 bg-secondary/30">
+      <section className="py-20 md:py-32 bg-background">
         <div className="container mx-auto px-8 md:px-16">
-          <div className="max-w-6xl mx-auto">
-            <FadeIn>
-              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-16 text-center">Final Designs</h2>
-              
-              <div className="space-y-16">
-                <div className="text-center">
-                  <FadeIn delay={100}>
-                    <h3 className="text-lg md:text-xl font-medium mb-6 text-foreground">Brand Identity System</h3>
-                  </FadeIn>
-                  <PopIn delay={100}>
-                    <div className="bg-background p-8 rounded-lg shadow-lg">
-                      <img 
-                        src="/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
-                        alt="Creative Studio Brand Identity System" 
-                        className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
-                      />
-                    </div>
-                  </PopIn>
-                </div>
-
-                <div className="text-center">
-                  <FadeIn delay={200}>
-                    <h3 className="text-lg md:text-xl font-medium mb-6 text-foreground">Website Design</h3>
-                  </FadeIn>
-                  <PopIn delay={200}>
-                    <div className="bg-background p-8 rounded-lg shadow-lg">
-                      <img 
-                        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" 
-                        alt="Creative Studio Website Design" 
-                        className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
-                      />
-                    </div>
-                  </PopIn>
-                </div>
-
-                <div className="text-center">
-                  <FadeIn delay={300}>
-                    <h3 className="text-lg md:text-xl font-medium mb-6 text-foreground">Portfolio Showcase</h3>
-                  </FadeIn>
-                  <PopIn delay={300}>
-                    <div className="bg-background p-8 rounded-lg shadow-lg">
-                      <img 
-                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80" 
-                        alt="Creative Studio Portfolio Showcase" 
-                        className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
-                      />
-                    </div>
-                  </PopIn>
-                </div>
+          <SplitSection label="Final Designs">
+            <div className="space-y-12">
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4 text-foreground">Brand Identity System</h3>
+                <ImageLightbox
+                  src="/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png"
+                  alt="Creative Studio Brand Identity System"
+                />
               </div>
-            </FadeIn>
-          </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4 text-foreground">Website Design</h3>
+                <ImageLightbox
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+                  alt="Creative Studio Website Design"
+                />
+              </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4 text-foreground">Portfolio Showcase</h3>
+                <ImageLightbox
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80"
+                  alt="Creative Studio Portfolio Showcase"
+                />
+              </div>
+            </div>
+          </SplitSection>
         </div>
       </section>
 
-      {/* Results Section */}
-      <section className="py-20 md:py-32 bg-background">
+      {/* Results */}
+      <section className="py-20 md:py-32 bg-secondary/30">
         <div className="container mx-auto px-8 md:px-16">
-          <div className="max-w-4xl mx-auto">
-            <FadeIn>
-              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-16 text-center">Results</h2>
-              
-              <div className="grid md:grid-cols-3 gap-8 mb-16">
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-serif font-medium text-orangery-500 mb-2">300%</div>
-                  <p className="text-muted-foreground">Increase in qualified leads</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-serif font-medium text-orangery-500 mb-2">85%</div>
-                  <p className="text-muted-foreground">Client retention rate</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-serif font-medium text-orangery-500 mb-2">40%</div>
-                  <p className="text-muted-foreground">Increase in project value</p>
-                </div>
+          <SplitSection label="Results">
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">300%</div>
+                <p className="text-muted-foreground">Increase in qualified leads</p>
               </div>
+              <div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">85%</div>
+                <p className="text-muted-foreground">Client retention rate</p>
+              </div>
+              <div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">40%</div>
+                <p className="text-muted-foreground">Increase in project value</p>
+              </div>
+            </div>
 
-              <div className="bg-background p-8 md:p-12 border border-border">
-                <blockquote className="text-xl md:text-2xl font-serif text-center text-muted-foreground mb-6">
-                  "The rebrand has been transformational. We're attracting higher-quality clients and commanding 
-                  premium rates. Our new identity perfectly captures who we are and where we're going."
-                </blockquote>
-                <div className="text-center">
-                  <p className="font-medium">David Chen</p>
-                  <p className="text-muted-foreground">Creative Director, Lumina Creative Studio</p>
-                </div>
+            <div className="bg-background p-8 md:p-12 border border-border rounded-2xl">
+              <blockquote className="text-xl md:text-2xl font-serif text-muted-foreground mb-6">
+                "The rebrand has been transformational. We're attracting higher-quality clients and commanding 
+                premium rates. Our new identity perfectly captures who we are and where we're going."
+              </blockquote>
+              <div>
+                <p className="font-medium">David Chen</p>
+                <p className="text-muted-foreground">Creative Director, Lumina Creative Studio</p>
               </div>
-            </FadeIn>
-          </div>
+            </div>
+          </SplitSection>
         </div>
       </section>
 
