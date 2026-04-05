@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         const wrapper = imageWrapperRef.current;
         if (container) {
           const isMd = window.innerWidth >= 768;
-          const maxPad = isMd ? 40 : 24;
+          const maxPad = isMd ? 64 : 32;
           const pad = maxPad * (1 - progress);
           container.style.paddingLeft = `${pad}px`;
           container.style.paddingRight = `${pad}px`;
