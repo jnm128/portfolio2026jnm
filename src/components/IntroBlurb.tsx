@@ -20,7 +20,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
       <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
         <FadeIn>
           <div>
-            <p className="text-[14px] text-center font-medium mb-6 uppercase tracking-wider text-muted-foreground">
+            <p className="text-xs text-center font-medium mb-6 uppercase tracking-wider text-muted-foreground">
               Trusted by teams building the next frontier.
             </p>
             <div className="relative overflow-hidden">

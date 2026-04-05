@@ -29,7 +29,7 @@ const CaseStudyArtisanMarketplace = () => {
 
           <div className="max-w-4xl mx-auto">
             <FadeIn delay={100}>
-              <h1 className="text-3xl md:text-5xl font-serif font-medium text-foreground leading-tight mb-4">
+              <h1 className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-4">
                 Artisan Marketplace
               </h1>
               <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-12 max-w-3xl">

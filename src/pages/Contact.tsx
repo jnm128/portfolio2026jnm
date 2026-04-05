@@ -14,7 +14,7 @@ const Contact = () => {
               <h2 className="text-3xl md:text-5xl font-serif text-white mb-3">
                 Get in touch
               </h2>
-              <p className="text-base md:text-lg text-white/60 mb-12">
+              <p className="text-base md:text-lg text-white/60 font-serif mb-12">
                 Interested in my expertise in UX or product? Here's how we can connect.
               </p>
             </FadeIn>

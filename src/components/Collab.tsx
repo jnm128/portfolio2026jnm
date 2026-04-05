@@ -16,7 +16,7 @@ const Collab: React.FC<CollabProps> = ({ className }) => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-white">
               Interested in collaborating?
             </h2>
-            <p className="text-lg md:text-xl text-white/70 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/70 font-serif leading-relaxed">
               I'm always open to new projects and partnerships. Let's create something meaningful together.
             </p>
             <div className="mt-4">

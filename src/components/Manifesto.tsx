@@ -23,7 +23,7 @@ const Manifesto: React.FC<ManifestoProps> = ({ className }) => {
           </FadeIn>
           
           <FadeIn delay={200}>
-            <p className="text-lg leading-relaxed text-muted-foreground text-center">
+            <p className="text-lg leading-relaxed text-muted-foreground font-serif text-center">
               Directing investment towards diverse teams is a strategic move that not only promotes equity but also leverages untapped potential for economic growth — and higher returns
             </p>
           </FadeIn>
