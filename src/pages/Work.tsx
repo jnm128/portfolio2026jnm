@@ -70,7 +70,7 @@ const Work: React.FC = () => {
                           {project.title}
                         </h3>
                       </Link>
-                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+                      <p className="text-sm md:text-base text-muted-foreground font-serif leading-relaxed mb-6">
                         {project.description}
                       </p>
                       <Link to={project.link} className="text-sm font-medium text-accent-foreground hover:text-foreground transition-colors inline-flex items-center gap-1">
@@ -94,7 +94,7 @@ const Work: React.FC = () => {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-white">
                 Interested in collaborating?
               </h2>
-              <p className="text-lg md:text-xl text-white/70 leading-relaxed">
+              <p className="text-lg md:text-xl text-white/70 font-serif leading-relaxed">
                 I'm always open to new projects and partnerships. Let's create something meaningful together.
               </p>
               <div className="mt-4">

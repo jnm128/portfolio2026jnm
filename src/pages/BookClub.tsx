@@ -221,7 +221,7 @@ const BookClub: React.FC = () => {
                     <step.icon className="w-6 h-6 text-background" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-serif font-medium text-foreground mb-2">{step.title}</h3>
+                    <h3 className="text-lg md:text-xl font-serif font-medium text-foreground mb-2">{step.title}</h3>
                     <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
@@ -239,7 +239,7 @@ const BookClub: React.FC = () => {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-white">
                 Ready to read with us?
               </h2>
-              <p className="text-lg md:text-xl text-white/70 leading-relaxed">
+              <p className="text-lg md:text-xl text-white/70 font-serif leading-relaxed">
                 Join a community of UX professionals who believe that great designers are also great thinkers.
               </p>
               <div className="mt-4">
