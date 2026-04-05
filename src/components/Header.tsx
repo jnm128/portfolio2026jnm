@@ -171,7 +171,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         className={cn(
           `fixed top-0 left-0 right-0 transition-all duration-300 ${isMobileMenuOpen ? 'z-[101]' : 'z-[60]'}`,
           isScrolled 
-            ? `py-4 ${isMobileMenuOpen ? 'bg-background' : 'bg-background/95 backdrop-blur-sm'}`
+            ? `py-4 ${isMobileMenuOpen ? 'bg-background' : isContactPage ? 'md:bg-background/95 md:backdrop-blur-sm bg-[#1C1C1C]' : 'bg-background/95 backdrop-blur-sm'}`
             : isMobileMenuOpen
               ? 'py-6 bg-background'
               : isContactPage
@@ -187,7 +187,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               onClick={() => scrollToSection('home')}
               className={cn(
                 "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
-                isContactPage && !isScrolled && !isMobileMenuOpen ? 'text-white' : ''
+                isContactPage && !isMobileMenuOpen ? 'text-white md:text-foreground' : ''
               )}
             >
               {'MINO.'.split('').map((letter, index) => (
@@ -205,7 +205,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               to="/"
               className={cn(
                 "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
-                isContactPage && !isScrolled && !isMobileMenuOpen ? 'text-white' : ''
+                isContactPage && !isMobileMenuOpen ? 'text-white md:text-foreground' : ''
               )}
             >
               {'MINO.'.split('').map((letter, index) => (
@@ -265,17 +265,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           >
             <span className={cn(
               "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isScrolled && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+              isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
             )} />
             <span className={cn(
               "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isScrolled && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+              isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "opacity-0" : ""
             )} />
             <span className={cn(
               "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isScrolled && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+              isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
             )} />
           </button>
