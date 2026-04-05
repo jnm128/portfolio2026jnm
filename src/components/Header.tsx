@@ -285,8 +285,8 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       {/* Mobile Menu - Outside header for proper stacking context */}
       <div
         style={{
-          top: headerHeight,
-          height: headerHeight ? `calc(100vh - ${headerHeight}px)` : '100vh',
+          top: headerHeight ? headerHeight - 1 : 0,
+          height: headerHeight ? `calc(100vh - ${headerHeight}px + 1px)` : '100vh',
         }}
         className={cn(
           "fixed left-0 right-0 z-[100] md:hidden bg-background",
