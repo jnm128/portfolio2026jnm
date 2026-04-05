@@ -36,7 +36,7 @@ const Work: React.FC = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Header */}
       <section className="pt-32 pb-0 md:pt-40 md:pb-0">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
+        <div className="max-w-[1600px] mx-auto px-8 md:px-16">
           <FadeIn>
             <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-6">
               Tiny fraction of my work
@@ -50,7 +50,7 @@ const Work: React.FC = () => {
 
       {/* Project Cards */}
       <section className="bg-[#F8F6F1]">
-        <div className="max-w-4xl mx-auto px-8 md:px-16 py-16 md:py-24">
+        <div className="max-w-[1600px] mx-auto px-8 md:px-16 py-16 md:py-24">
           <div className="flex flex-col gap-16">
             {projects.map((project, index) => (
               <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
@@ -88,7 +88,7 @@ const Work: React.FC = () => {
 
       {/* Dark CTA */}
       <section className="py-16 md:py-24 bg-[#1C1C1C]">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
+        <div className="max-w-[1600px] mx-auto px-8 md:px-16">
           <FadeIn>
             <div className="flex flex-col gap-6 items-center text-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-white">
