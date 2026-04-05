@@ -27,18 +27,8 @@ const CaseStudyCreativeStudio = () => {
             </button>
           </FadeIn>
 
-          <FadeIn delay={100}>
-            <div className="overflow-hidden rounded-2xl mb-10">
-              <img 
-                src="/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
-                alt="Creative Studio Brand Identity" 
-                className="w-full object-cover aspect-[16/9]"
-              />
-            </div>
-          </FadeIn>
-
           <div className="max-w-4xl mx-auto">
-            <FadeIn delay={200}>
+            <FadeIn delay={100}>
               <h1 className="text-3xl md:text-5xl font-serif font-medium text-foreground leading-tight mb-4">
                 Creative Studio
               </h1>
@@ -47,7 +37,7 @@ const CaseStudyCreativeStudio = () => {
               </p>
             </FadeIn>
 
-            <FadeIn delay={300}>
+            <FadeIn delay={200}>
               <div className="grid grid-cols-2 gap-x-12 gap-y-8">
                 <div>
                   <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Role</h3>
@@ -68,6 +58,16 @@ const CaseStudyCreativeStudio = () => {
               </div>
             </FadeIn>
           </div>
+
+          <FadeIn delay={300}>
+            <div className="overflow-hidden rounded-2xl mt-12">
+              <img 
+                src="/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
+                alt="Creative Studio Brand Identity" 
+                className="w-full object-cover aspect-[16/9]"
+              />
+            </div>
+          </FadeIn>
         </div>
       </section>
 
