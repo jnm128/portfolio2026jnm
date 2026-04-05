@@ -102,30 +102,39 @@ const BookClub: React.FC = () => {
       <section className="pt-24 md:pt-28 pb-16 md:pb-20 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
-            <div className="max-w-3xl">
-              <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
-                Fresh Perspectives
-              </h1>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8 max-w-xl">
-                A UX book club for designers who think beyond the screen.
-              </p>
-              <div className="border-t border-foreground/10 pt-6 mt-2 flex gap-8 md:gap-12">
-                <div>
-                  <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">2023</div>
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Est.</div>
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+              <div className="md:w-1/2">
+                <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight">
+                  Fresh Perspectives
+                </h1>
+                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8 max-w-xl">
+                  A UX book club for designers who think beyond the screen.
+                </p>
+                <div className="border-t border-foreground/10 pt-6 mt-2 flex gap-8 md:gap-12">
+                  <div>
+                    <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">2023</div>
+                    <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Est.</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">486+</div>
+                    <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Members</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">8+</div>
+                    <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Books</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">Monthly</div>
+                    <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Sessions</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">486+</div>
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Members</div>
-                </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">8+</div>
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Books</div>
-                </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-serif font-medium text-foreground">Monthly</div>
-                  <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Sessions</div>
-                </div>
+              </div>
+              <div className="md:w-1/2 rounded-2xl overflow-hidden">
+                <img
+                  src={bookClubHero}
+                  alt="Book club gathering"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
               </div>
             </div>
           </FadeIn>
@@ -139,18 +148,9 @@ const BookClub: React.FC = () => {
             <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
           </FadeIn>
           <FadeIn delay={100}>
-            <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed md:w-1/2">
-                I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work.
-              </p>
-              <div className="md:w-1/2 rounded-2xl overflow-hidden">
-                <img
-                  src={bookClubHero}
-                  alt="Book club gathering"
-                  className="w-full h-full object-cover aspect-[4/3]"
-                />
-              </div>
-            </div>
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
+              I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work.
+            </p>
           </FadeIn>
         </div>
       </section>
