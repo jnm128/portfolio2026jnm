@@ -1,12 +1,34 @@
 
+Goal: remove the dark line/gap still visible between the mobile header and the open nav panel, and make the open state read as one continuous cream surface.
 
-## Revert "How the Community Works" to vertical list & fix spacing
+Plan
+1. Update the mobile open-menu layering in `src/components/Header.tsx`
+   - Keep the header cream when `isMobileMenuOpen` is true.
+   - Change the mobile menu panel so it begins at `top: 0` on mobile while open, instead of starting below the measured header height.
+   - Add top padding inside the menu equal to the header height so the links still appear below the header content.
 
-**File:** `src/pages/BookClub.tsx`
+2. Make header + menu behave like a single surface
+   - Give the mobile menu the same cream background and same stacking relationship as the header.
+   - Ensure the menu sits behind the header controls but extends underneath the full header area, so no underlying page color can peek through at the seam.
 
-### 1. Convert "How the Community Works" back to a vertical stacked list
-Replace the horizontal scroll container (lines 213-227) with a vertical layout — a `space-y-6` or `grid` with the three cards stacked vertically, each full-width. Remove `flex-shrink-0`, `w-[220px]`, `overflow-x-auto`, `snap-x`, etc.
+3. Remove the seam-causing offset hack
+   - Replace the current `headerHeight - 1` and `+ 1px` overlap approach.
+   - Use a cleaner full-panel layout: panel covers the full viewport, content inside is offset by header height.
 
-### 2. Make Previous Reads and How Community Works fully separate sections with equal spacing
-Currently Previous Reads has `pt-16 md:pt-20 pb-4` — the small `pb-4` makes it feel merged with the next section. Change it to `py-16 md:py-20` to match the consistent spacing used by Who We Are and other sections. How Community Works already has `py-16 md:py-20`, so no change needed there. This gives equal whitespace between all sections.
+4. Verify route-specific behavior still holds
+   - On `/contact`, closed mobile header remains dark/transparent as designed.
+   - On `/contact`, opening the menu still switches to cream with dark logo/icon.
+   - On scroll, closed mobile header on contact remains dark.
 
+Technical details
+- Current issue: the menu container starts below the header (`top: headerHeight - 1`), so any mismatch in paint/compositing can still expose the dark page beneath as a line.
+- Safer structure:
+```text
+[fixed header z-101, cream when open]
+[fixed mobile menu z-100, top:0, h-screen, cream]
+    [nav wrapper with padding-top: headerHeight]
+```
+- This avoids relying on a 1px overlap, which is fragile on mobile Safari and high-DPR screens like the one shown in the screenshot.
+
+Expected result
+- Opening the mobile nav shows one uninterrupted cream block from the top of the header through the menu content, with no dark divider line.
