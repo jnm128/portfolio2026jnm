@@ -129,15 +129,6 @@ const BookClub: React.FC = () => {
               </div>
             </div>
           </FadeIn>
-          <FadeIn delay={200}>
-            <div className="aspect-[16/10] rounded-2xl overflow-hidden mt-12">
-              <img
-                src={bookClubHero}
-                alt="Book club gathering"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-          </FadeIn>
         </div>
       </section>
 
@@ -148,9 +139,18 @@ const BookClub: React.FC = () => {
             <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
           </FadeIn>
           <FadeIn delay={100}>
-            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
-              I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work.
-            </p>
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed md:w-1/2">
+                I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work.
+              </p>
+              <div className="md:w-1/2 rounded-2xl overflow-hidden">
+                <img
+                  src={bookClubHero}
+                  alt="Book club gathering"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
+              </div>
+            </div>
           </FadeIn>
         </div>
       </section>
