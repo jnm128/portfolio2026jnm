@@ -262,15 +262,18 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             aria-label="Toggle menu"
           >
             <span className={cn(
-              "block w-5 h-0.5 bg-foreground transition-all duration-300",
+              "block w-5 h-0.5 transition-all duration-300",
+              isContactPage && !isScrolled ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
             )} />
             <span className={cn(
-              "block w-5 h-0.5 bg-foreground transition-all duration-300",
+              "block w-5 h-0.5 transition-all duration-300",
+              isContactPage && !isScrolled ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "opacity-0" : ""
             )} />
             <span className={cn(
-              "block w-5 h-0.5 bg-foreground transition-all duration-300",
+              "block w-5 h-0.5 transition-all duration-300",
+              isContactPage && !isScrolled ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
             )} />
           </button>
