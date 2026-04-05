@@ -9,9 +9,12 @@ const Contact = () => {
       <div className="bg-[#1C1C1C] md:sticky md:top-0 md:h-screen flex flex-col justify-between p-8 md:p-16 pt-24 md:pt-32 pb-8 md:pb-32">
         <div>
           <FadeIn>
-            <h2 className="text-3xl md:text-5xl font-serif text-white mb-12">
+            <h2 className="text-3xl md:text-5xl font-serif text-white mb-3">
               Get in touch
             </h2>
+            <p className="text-base md:text-lg text-white/60 mb-12">
+              Interested in my expertise in UX or product? Here's how we can connect.
+            </p>
           </FadeIn>
 
           <FadeIn delay={100}>
