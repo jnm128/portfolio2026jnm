@@ -4,7 +4,8 @@ import Footer from '@/components/Footer';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
-import PopIn from '@/components/animations/PopIn';
+import SplitSection from '@/components/SplitSection';
+import ImageLightbox from '@/components/ImageLightbox';
 
 const CaseStudyMindfulWellness = () => {
   const navigate = useNavigate();
@@ -70,152 +71,125 @@ const CaseStudyMindfulWellness = () => {
         </div>
       </section>
 
-      {/* Challenge & Approach */}
+      {/* Problem Space */}
       <section className="py-20 md:py-32 bg-background">
         <div className="container mx-auto px-8 md:px-16">
-          <div className="max-w-4xl mx-auto">
-            <FadeIn>
-              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-8">The Challenge</h2>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
-                Mental health awareness is at an all-time high, but accessible, comprehensive wellness platforms remain scarce. 
-                Our client needed a digital solution that could bridge the gap between professional mental health services and 
-                everyday mindfulness practices, creating a seamless experience for users at different stages of their wellness journey.
-              </p>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-16">
-                The challenge was to design an interface that felt approachable and non-clinical while maintaining the credibility 
-                and professionalism required for mental health resources.
-              </p>
-            </FadeIn>
+          <SplitSection label="Problem Space">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+              How might we create an accessible wellness platform that feels approachable yet credible?
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
+              Mental health awareness is at an all-time high, but accessible, comprehensive wellness platforms remain scarce. 
+              Our client needed a digital solution that could bridge the gap between professional mental health services and 
+              everyday mindfulness practices, creating a seamless experience for users at different stages of their wellness journey.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
+              The challenge was to design an interface that felt approachable and non-clinical while maintaining the credibility 
+              and professionalism required for mental health resources.
+            </p>
+          </SplitSection>
+        </div>
+      </section>
 
-            <FadeIn delay={200}>
-              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-8">Our Approach</h2>
-              <div className="grid md:grid-cols-2 gap-12 mb-16">
-                <div>
-                  <h3 className="text-lg md:text-xl font-medium mb-4">User Research</h3>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
-                    We conducted in-depth interviews with 24 users across different demographics to understand their mental 
-                    health journey, pain points, and preferred digital interactions.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-medium mb-4">Design System</h3>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
-                    Created a comprehensive design system focusing on calming colors, accessible typography, and intuitive 
-                    navigation patterns that reduce cognitive load.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-medium mb-4">Prototyping</h3>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
-                    Developed interactive prototypes to test user flows and validate design decisions before moving to 
-                    development phase.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-medium mb-4">Development</h3>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
-                    Built a responsive web application with React and integrated third-party APIs for content delivery 
-                    and user progress tracking.
-                  </p>
-                </div>
+      {/* Approach */}
+      <section className="py-20 md:py-32 bg-secondary/30">
+        <div className="container mx-auto px-8 md:px-16">
+          <SplitSection label="Our Approach">
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4">User Research</h3>
+                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
+                  We conducted in-depth interviews with 24 users across different demographics to understand their mental 
+                  health journey, pain points, and preferred digital interactions.
+                </p>
               </div>
-            </FadeIn>
-          </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4">Design System</h3>
+                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
+                  Created a comprehensive design system focusing on calming colors, accessible typography, and intuitive 
+                  navigation patterns that reduce cognitive load.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4">Prototyping</h3>
+                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
+                  Developed interactive prototypes to test user flows and validate design decisions before moving to 
+                  development phase.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4">Development</h3>
+                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
+                  Built a responsive web application with React and integrated third-party APIs for content delivery 
+                  and user progress tracking.
+                </p>
+              </div>
+            </div>
+          </SplitSection>
         </div>
       </section>
 
       {/* Final Designs */}
-      <section className="py-20 md:py-32 bg-secondary/30">
+      <section className="py-20 md:py-32 bg-background">
         <div className="container mx-auto px-8 md:px-16">
-          <div className="max-w-6xl mx-auto">
-            <FadeIn>
-              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-16 text-center">Final Designs</h2>
-              
-              <div className="space-y-16">
-                <div className="text-center">
-                  <FadeIn delay={100}>
-                    <h3 className="text-lg md:text-xl font-medium mb-6 text-foreground">Mobile App Interface</h3>
-                  </FadeIn>
-                  <PopIn delay={100}>
-                    <div className="bg-background p-8 rounded-lg shadow-lg">
-                      <img 
-                        src="/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png" 
-                        alt="Mindful Wellness Mobile App Interface" 
-                        className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
-                      />
-                    </div>
-                  </PopIn>
-                </div>
-
-                <div className="text-center">
-                  <FadeIn delay={200}>
-                    <h3 className="text-lg md:text-xl font-medium mb-6 text-foreground">Web Platform Dashboard</h3>
-                  </FadeIn>
-                  <PopIn delay={200}>
-                    <div className="bg-background p-8 rounded-lg shadow-lg">
-                      <img 
-                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80" 
-                        alt="Mindful Wellness Web Dashboard" 
-                        className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
-                      />
-                    </div>
-                  </PopIn>
-                </div>
-
-                <div className="text-center">
-                  <FadeIn delay={300}>
-                    <h3 className="text-lg md:text-xl font-medium mb-6 text-foreground">User Journey & Flow</h3>
-                  </FadeIn>
-                  <PopIn delay={300}>
-                    <div className="bg-background p-8 rounded-lg shadow-lg">
-                      <img 
-                        src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=1200&q=80" 
-                        alt="Mindful Wellness User Journey" 
-                        className="w-full max-w-4xl mx-auto rounded-lg shadow-md"
-                      />
-                    </div>
-                  </PopIn>
-                </div>
+          <SplitSection label="Final Designs">
+            <div className="space-y-12">
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4 text-foreground">Mobile App Interface</h3>
+                <ImageLightbox
+                  src="/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png"
+                  alt="Mindful Wellness Mobile App Interface"
+                />
               </div>
-            </FadeIn>
-          </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4 text-foreground">Web Platform Dashboard</h3>
+                <ImageLightbox
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80"
+                  alt="Mindful Wellness Web Dashboard"
+                />
+              </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-medium mb-4 text-foreground">User Journey & Flow</h3>
+                <ImageLightbox
+                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=1200&q=80"
+                  alt="Mindful Wellness User Journey"
+                />
+              </div>
+            </div>
+          </SplitSection>
         </div>
       </section>
 
-      {/* Results Section */}
-      <section className="py-20 md:py-32 bg-background">
+      {/* Results */}
+      <section className="py-20 md:py-32 bg-secondary/30">
         <div className="container mx-auto px-8 md:px-16">
-          <div className="max-w-4xl mx-auto">
-            <FadeIn>
-              <h2 className="text-3xl md:text-5xl font-serif font-medium mb-16 text-center">Results</h2>
-              
-              <div className="grid md:grid-cols-3 gap-8 mb-16">
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-serif font-medium text-orangery-500 mb-2">150%</div>
-                  <p className="text-muted-foreground">Increase in user engagement</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-serif font-medium text-orangery-500 mb-2">89%</div>
-                  <p className="text-muted-foreground">User satisfaction score</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-serif font-medium text-orangery-500 mb-2">3.2k</div>
-                  <p className="text-muted-foreground">Active users in first month</p>
-                </div>
+          <SplitSection label="Results">
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">150%</div>
+                <p className="text-muted-foreground">Increase in user engagement</p>
               </div>
+              <div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">89%</div>
+                <p className="text-muted-foreground">User satisfaction score</p>
+              </div>
+              <div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">3.2k</div>
+                <p className="text-muted-foreground">Active users in first month</p>
+              </div>
+            </div>
 
-              <div className="bg-background p-8 md:p-12 border border-border">
-                <blockquote className="text-xl md:text-2xl font-serif text-center text-muted-foreground mb-6">
-                  "The team at brewed completely transformed our vision into reality. The platform has exceeded our 
-                  expectations in both design and functionality."
-                </blockquote>
-                <div className="text-center">
-                  <p className="font-medium">Sarah Johnson</p>
-                  <p className="text-muted-foreground">Founder, Mindful Wellness Co.</p>
-                </div>
+            <div className="bg-background p-8 md:p-12 border border-border rounded-2xl">
+              <blockquote className="text-xl md:text-2xl font-serif text-muted-foreground mb-6">
+                "The team at brewed completely transformed our vision into reality. The platform has exceeded our 
+                expectations in both design and functionality."
+              </blockquote>
+              <div>
+                <p className="font-medium">Sarah Johnson</p>
+                <p className="text-muted-foreground">Founder, Mindful Wellness Co.</p>
               </div>
-            </FadeIn>
-          </div>
+            </div>
+          </SplitSection>
         </div>
       </section>
 
