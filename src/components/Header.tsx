@@ -187,7 +187,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               onClick={() => scrollToSection('home')}
               className={cn(
                 "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
-                isContactPage && !isScrolled && !isMobileMenuOpen ? 'text-white' : ''
+                isContactPage && !isMobileMenuOpen ? 'text-white md:text-foreground' : ''
               )}
             >
               {'MINO.'.split('').map((letter, index) => (
@@ -205,7 +205,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               to="/"
               className={cn(
                 "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
-                isContactPage && !isScrolled && !isMobileMenuOpen ? 'text-white' : ''
+                isContactPage && !isMobileMenuOpen ? 'text-white md:text-foreground' : ''
               )}
             >
               {'MINO.'.split('').map((letter, index) => (
@@ -265,17 +265,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           >
             <span className={cn(
               "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isScrolled && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+              isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
             )} />
             <span className={cn(
               "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isScrolled && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+              isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "opacity-0" : ""
             )} />
             <span className={cn(
               "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isScrolled && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+              isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
             )} />
           </button>
