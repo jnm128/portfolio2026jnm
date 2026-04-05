@@ -87,6 +87,7 @@ const Contact = () => {
                 Open for new projects
               </p>
               <p className="text-sm text-white/60 mt-1">Open for projects starting Q3 2026</p>
+              <p className="text-sm text-white/60 mt-4 font-serif">I typically respond within 24 hours of receiving your message.</p>
             </div>
           </FadeIn>
         </div>
