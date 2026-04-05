@@ -38,9 +38,6 @@ const CaseStudyMindfulWellness = () => {
             </FadeIn>
 
             <FadeIn delay={200}>
-              <div className="grid grid-cols-2 gap-x-12 gap-y-8 mb-12">
-
-            <FadeIn delay={300}>
               <div className="grid grid-cols-2 gap-x-12 gap-y-8">
                 <div>
                   <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Role</h3>
@@ -61,6 +58,16 @@ const CaseStudyMindfulWellness = () => {
               </div>
             </FadeIn>
           </div>
+
+          <FadeIn delay={300}>
+            <div className="overflow-hidden rounded-2xl mt-12">
+              <img 
+                src="/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png" 
+                alt="Mindful Wellness Platform" 
+                className="w-full object-cover aspect-[16/9]"
+              />
+            </div>
+          </FadeIn>
         </div>
       </section>
 
