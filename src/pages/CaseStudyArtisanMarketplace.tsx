@@ -15,7 +15,7 @@ const CaseStudyArtisanMarketplace = () => {
       
       {/* Hero Section */}
       <section className="pt-20 md:pt-24 pb-16 md:pb-24 px-4 md:px-8 bg-[#F8F6F1]">
-        <div className="container mx-auto px-4 md:px-16">
+        <div className="container mx-auto px-8 md:px-16">
           <FadeIn>
             <button 
               onClick={() => navigate(-1)}
