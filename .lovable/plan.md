@@ -1,34 +1,41 @@
 
-Goal: remove the dark line/gap still visible between the mobile header and the open nav panel, and make the open state read as one continuous cream surface.
 
-Plan
-1. Update the mobile open-menu layering in `src/components/Header.tsx`
-   - Keep the header cream when `isMobileMenuOpen` is true.
-   - Change the mobile menu panel so it begins at `top: 0` on mobile while open, instead of starting below the measured header height.
-   - Add top padding inside the menu equal to the header height so the links still appear below the header content.
+## Redesign Case Study Hero Sections
 
-2. Make header + menu behave like a single surface
-   - Give the mobile menu the same cream background and same stacking relationship as the header.
-   - Ensure the menu sits behind the header controls but extends underneath the full header area, so no underlying page color can peek through at the seam.
+**Goal**: Pull title and metadata out from the hero image overlay. New layout: back button → standalone image → title + description → metadata grid (Role, Problem, Team, Timeline). Apply to all 3 case study pages.
 
-3. Remove the seam-causing offset hack
-   - Replace the current `headerHeight - 1` and `+ 1px` overlap approach.
-   - Use a cleaner full-panel layout: panel covers the full viewport, content inside is offset by header height.
+### New Hero Layout
 
-4. Verify route-specific behavior still holds
-   - On `/contact`, closed mobile header remains dark/transparent as designed.
-   - On `/contact`, opening the menu still switches to cream with dark logo/icon.
-   - On scroll, closed mobile header on contact remains dark.
-
-Technical details
-- Current issue: the menu container starts below the header (`top: headerHeight - 1`), so any mismatch in paint/compositing can still expose the dark page beneath as a line.
-- Safer structure:
 ```text
-[fixed header z-101, cream when open]
-[fixed mobile menu z-100, top:0, h-screen, cream]
-    [nav wrapper with padding-top: headerHeight]
-```
-- This avoids relying on a 1px overlap, which is fragile on mobile Safari and high-DPR screens like the one shown in the screenshot.
+← Back                          (navigate(-1), dark text on cream)
+[Hero image — full width, rounded-2xl, no overlay, no text on it]
+Case Study Title                (large serif heading, dark text)
+Description paragraph           (muted text)
 
-Expected result
-- Opening the mobile nav shows one uninterrupted cream block from the top of the header through the menu content, with no dark divider line.
+MY ROLE          |  THE PROBLEM
+value            |  value
+
+MY TEAM          |  TIMELINE
+value            |  value
+```
+
+### Changes (all 3 files)
+
+**1. Replace hero section** (lines 14-52 in each file)
+- Remove the dark overlay, remove text positioned over the image
+- Render: back button with `useNavigate(-1)` → standalone `<img>` with `rounded-2xl w-full object-cover aspect-[16/9]` → title as `h1` in dark text on cream → description paragraph
+- Keep cream background `bg-[#F8F6F1]` throughout
+
+**2. Replace Project Overview metadata** (lines 54-73 in each file)
+- Swap the Client/Timeline/Services 3-column grid for a 2x2 metadata grid with fields: **MY ROLE**, **THE PROBLEM**, **MY TEAM**, **TIMELINE**
+- Labels: `text-xs uppercase tracking-widest text-gray-400 font-medium mb-2`
+- Values: `text-base text-foreground font-serif`
+- Place this grid on the cream background, directly below the title/description — still within the hero section, before "The Challenge"
+
+**3. Import change**: Add `useNavigate` from `react-router-dom`, remove `Link` usage for back button (keep for other links if used), remove unused `ExternalLink` import.
+
+### Files Modified
+- `src/pages/CaseStudyMindfulWellness.tsx`
+- `src/pages/CaseStudyCreativeStudio.tsx`
+- `src/pages/CaseStudyArtisanMarketplace.tsx`
+
