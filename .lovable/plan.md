@@ -1,55 +1,26 @@
 
 
-## Refactor Case Study Pages: Left-Right Layout + Lightbox Images
+## Fix Book Club Page: Stats Responsiveness + Content Width Alignment
 
-**Goal**: Restructure content sections to use a two-column layout (subtitle/label on the left, content on the right — matching the reference screenshot) and add a clickable lightbox for images that expands them to a larger overlay view.
+### Problems
+1. **Stats row breaks on small screens** — 4 stat items in a horizontal flex with `gap-8` overflow on narrow viewports
+2. **"Who We Are" text is capped at `max-w-2xl`** — should expand to fill available width
+3. **Section containers use `max-w-[1600px]`** instead of `max-w-4xl` like the About page
 
-### New Section Layout Pattern
+### Changes (single file: `src/pages/BookClub.tsx`)
 
-```text
-┌─────────────────────────────────────────────────┐
-│  ✦ SECTION LABEL          Large heading text    │
-│  (left column,            and body paragraphs   │
-│   sticky/aligned top)     (right column, ~65%)  │
-└─────────────────────────────────────────────────┘
-│  [Clickable image — full width, rounded]        │
-│  Click → expands to lightbox overlay            │
-└─────────────────────────────────────────────────┘
-```
+**1. Fix stats layout for small screens**
+- Change the stats strip from `flex gap-8 md:gap-12` to a `grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12`
+- This gives a clean 2x2 grid on mobile, single row on desktop
 
-Apply this to: **Challenge/Problem Space**, **Approach**, **Final Designs**, and **Results** sections.
+**2. Remove `max-w-2xl` from Who We Are paragraph**
+- Let the text expand to the full container width
 
-### Changes
-
-**1. Create a reusable `ImageLightbox` component** (`src/components/ImageLightbox.tsx`)
-- Accepts `src`, `alt` props
-- Renders a clickable image thumbnail
-- On click, opens a full-screen overlay (fixed, z-50, dark backdrop) showing the image at a larger scale with smooth CSS transition
-- Click backdrop or X button to close
-- Uses `useState` for open/close state
-
-**2. Create a reusable `SplitSection` component** (`src/components/SplitSection.tsx`)
-- Props: `label` (left column text like "PROBLEM SPACE"), `children` (right column content), optional `className`
-- Renders a two-column grid: left ~30% with uppercase label + decorative ✦ marker, right ~70% with content
-- On mobile, stacks vertically (label on top)
-
-**3. Refactor all 3 case study pages** to use these components:
-- **Hero section**: Keep as-is (back button, image, title, metadata grid)
-- **Challenge section** → `<SplitSection label="PROBLEM SPACE">` with the heading as a large question-style statement and body paragraphs below (matching the reference)
-- **Approach section** → `<SplitSection label="OUR APPROACH">` with the 2x2 approach grid as children
-- **Final Designs section** → `<SplitSection label="FINAL DESIGNS">` with images below, each wrapped in `<ImageLightbox>`
-- **Results section** → `<SplitSection label="RESULTS">` with stats and testimonial as children
-
-**4. Image lightbox behavior**:
-- Default: image displays at normal size in the page flow
-- On click: image scales up to ~90vw/90vh in a centered overlay with a dark semi-transparent backdrop
-- Smooth `transition: transform 300ms ease` for the scale-up effect
-- Close on backdrop click, Escape key, or X button
-
-### Files Modified
-- `src/components/SplitSection.tsx` (new)
-- `src/components/ImageLightbox.tsx` (new)
-- `src/pages/CaseStudyMindfulWellness.tsx`
-- `src/pages/CaseStudyCreativeStudio.tsx`
-- `src/pages/CaseStudyArtisanMarketplace.tsx`
+**3. Align all section containers to match About page**
+- Replace `container mx-auto px-8 md:px-16 max-w-[1600px]` with `max-w-4xl mx-auto px-8 md:px-16` on these sections:
+  - Who We Are
+  - How the Community Works
+  - FAQ
+- Hero and Previous Reads keep wider width since they have the image/carousel
+- CTA (dark section) keeps wider width for visual impact
 
