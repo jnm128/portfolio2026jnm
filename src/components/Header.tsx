@@ -172,9 +172,11 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           'fixed top-0 left-0 right-0 z-[60] transition-all duration-300',
           isScrolled 
             ? `py-4 ${isMobileMenuOpen ? 'bg-background' : 'bg-background/95 backdrop-blur-sm'}`
-            : isContactPage
-              ? 'py-6 bg-transparent'
-              : 'py-6 bg-background',
+            : isMobileMenuOpen
+              ? 'py-6 bg-background'
+              : isContactPage
+                ? 'py-6 bg-transparent'
+                : 'py-6 bg-background',
           className
         )}
       >
