@@ -172,9 +172,11 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           'fixed top-0 left-0 right-0 z-[60] transition-all duration-300',
           isScrolled 
             ? `py-4 ${isMobileMenuOpen ? 'bg-background' : 'bg-background/95 backdrop-blur-sm'}`
-            : isContactPage
-              ? 'py-6 bg-transparent'
-              : 'py-6 bg-background',
+            : isMobileMenuOpen
+              ? 'py-6 bg-background'
+              : isContactPage
+                ? 'py-6 bg-transparent'
+                : 'py-6 bg-background',
           className
         )}
       >
@@ -185,7 +187,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               onClick={() => scrollToSection('home')}
               className={cn(
                 "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
-                isContactPage && !isScrolled ? 'text-white' : ''
+                isContactPage && !isScrolled && !isMobileMenuOpen ? 'text-white' : ''
               )}
             >
               {'MINO.'.split('').map((letter, index) => (
@@ -203,7 +205,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               to="/"
               className={cn(
                 "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
-                isContactPage && !isScrolled ? 'text-white' : ''
+                isContactPage && !isScrolled && !isMobileMenuOpen ? 'text-white' : ''
               )}
             >
               {'MINO.'.split('').map((letter, index) => (
@@ -263,17 +265,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           >
             <span className={cn(
               "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isScrolled ? "bg-white" : "bg-foreground",
+              isContactPage && !isScrolled && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
             )} />
             <span className={cn(
               "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isScrolled ? "bg-white" : "bg-foreground",
+              isContactPage && !isScrolled && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "opacity-0" : ""
             )} />
             <span className={cn(
               "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isScrolled ? "bg-white" : "bg-foreground",
+              isContactPage && !isScrolled && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
               isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
             )} />
           </button>
