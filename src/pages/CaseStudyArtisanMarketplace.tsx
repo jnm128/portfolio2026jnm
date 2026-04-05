@@ -14,7 +14,7 @@ const CaseStudyArtisanMarketplace = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 md:pt-24 pb-16 md:pb-24 px-4 md:px-8 bg-[#F8F6F1]">
+      <section className="pt-20 md:pt-24 pb-16 md:pb-24 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16">
           <FadeIn>
             <button 
@@ -36,7 +36,7 @@ const CaseStudyArtisanMarketplace = () => {
             </div>
           </FadeIn>
 
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto">
             <FadeIn delay={200}>
               <h1 className="text-3xl md:text-5xl font-serif font-medium text-foreground leading-tight mb-4">
                 Artisan Marketplace
