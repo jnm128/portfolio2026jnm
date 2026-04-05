@@ -32,40 +32,40 @@ const CaseStudyMindfulWellness = () => {
               <h1 className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-4">
                 Mindful Wellness
               </h1>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-12 max-w-3xl">
+              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-3xl">
                 A holistic wellness platform connecting users with mental health resources and mindfulness practices.
               </p>
             </FadeIn>
-
-            <FadeIn delay={200}>
-              <div className="grid grid-cols-2 gap-x-12 gap-y-8">
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Role</h3>
-                  <p className="text-base text-foreground font-serif">UX Research, UI Design, Development</p>
-                </div>
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">The Problem</h3>
-                  <p className="text-base text-foreground font-serif">Accessible, comprehensive <span className="font-semibold">wellness platforms</span> remain scarce despite rising mental health awareness.</p>
-                </div>
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Team</h3>
-                  <p className="text-base text-foreground font-serif">Mindful Wellness Co.</p>
-                </div>
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">Timeline</h3>
-                  <p className="text-base text-foreground font-serif">8 weeks</p>
-                </div>
-              </div>
-            </FadeIn>
           </div>
 
-          <FadeIn delay={300}>
+          <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-12">
               <img 
                 src="/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png" 
                 alt="Mindful Wellness Platform" 
                 className="w-full object-cover aspect-[16/9]"
               />
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={300}>
+            <div className="grid grid-cols-2 gap-x-12 gap-y-8 mt-12">
+              <div>
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Role</h3>
+                <p className="text-base text-foreground font-serif">UX Research, UI Design, Development</p>
+              </div>
+              <div>
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">The Problem</h3>
+                <p className="text-base text-foreground font-serif">Accessible, comprehensive <span className="font-semibold">wellness platforms</span> remain scarce despite rising mental health awareness.</p>
+              </div>
+              <div>
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Team</h3>
+                <p className="text-base text-foreground font-serif">Mindful Wellness Co.</p>
+              </div>
+              <div>
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">Timeline</h3>
+                <p className="text-base text-foreground font-serif">8 weeks</p>
+              </div>
             </div>
           </FadeIn>
         </div>

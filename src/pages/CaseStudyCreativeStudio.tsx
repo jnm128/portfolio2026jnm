@@ -32,40 +32,40 @@ const CaseStudyCreativeStudio = () => {
               <h1 className="text-3xl md:text-5xl font-serif font-medium text-foreground leading-tight mb-4">
                 Creative Studio
               </h1>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-12 max-w-3xl">
+              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-3xl">
                 Brand identity and web presence for a creative agency specializing in visual storytelling.
               </p>
             </FadeIn>
-
-            <FadeIn delay={200}>
-              <div className="grid grid-cols-2 gap-x-12 gap-y-8">
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Role</h3>
-                  <p className="text-base text-foreground font-serif">Brand Identity, Web Design, Strategy</p>
-                </div>
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">The Problem</h3>
-                  <p className="text-base text-foreground font-serif">A talented team without a <span className="font-semibold">cohesive brand identity</span> to attract their ideal clients.</p>
-                </div>
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Team</h3>
-                  <p className="text-base text-foreground font-serif">Lumina Creative Studio</p>
-                </div>
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">Timeline</h3>
-                  <p className="text-base text-foreground font-serif">10 weeks</p>
-                </div>
-              </div>
-            </FadeIn>
           </div>
 
-          <FadeIn delay={300}>
+          <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-12">
               <img 
                 src="/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
                 alt="Creative Studio Brand Identity" 
                 className="w-full object-cover aspect-[16/9]"
               />
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={300}>
+            <div className="grid grid-cols-2 gap-x-12 gap-y-8 mt-12">
+              <div>
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Role</h3>
+                <p className="text-base text-foreground font-serif">Brand Identity, Web Design, Strategy</p>
+              </div>
+              <div>
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">The Problem</h3>
+                <p className="text-base text-foreground font-serif">A talented team without a <span className="font-semibold">cohesive brand identity</span> to attract their ideal clients.</p>
+              </div>
+              <div>
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Team</h3>
+                <p className="text-base text-foreground font-serif">Lumina Creative Studio</p>
+              </div>
+              <div>
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">Timeline</h3>
+                <p className="text-base text-foreground font-serif">10 weeks</p>
+              </div>
             </div>
           </FadeIn>
         </div>
