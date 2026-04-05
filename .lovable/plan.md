@@ -1,34 +1,39 @@
 
 
-## Fix Hero Section Padding & Scroll Interaction
+## Font Styling Consistency Audit
 
-### Problem
-The hero container already has `mx-auto max-w-[1600px] px-8 md:px-16` in the markup, but the JavaScript scroll handler (lines 34-39) overrides the padding with wrong values — `maxPad` is set to 40px desktop / 24px mobile instead of the requested 64px / 32px.
+After reviewing every page and component, here are the inconsistencies found and the fixes needed.
 
-### Solution
-Separate the title/text area from the image area so the title always maintains the standard `px-8 md:px-16` padding, while the image container gets its own ref for the scroll-to-grow padding animation.
+### Issues Found
 
-### File: `src/components/Hero.tsx`
+**1. Missing `font-serif` on body/description text**
+Several components use body text without the standard `font-serif` class, breaking the editorial feel:
 
-1. **Create a static outer wrapper** with `mx-auto max-w-[1600px] px-8 md:px-16` for the title, subtitle, and button — no JS override on this container.
+| File | Element | Current | Fix |
+|------|---------|---------|-----|
+| `Work.tsx` line 73 | Project description | `text-sm md:text-base text-muted-foreground leading-relaxed` | Add `font-serif` |
+| `Work.tsx` line 97 | CTA subtitle | `text-lg md:text-xl text-white/70 leading-relaxed` | Add `font-serif` |
+| `Collab.tsx` line 19 | CTA subtitle | `text-lg md:text-xl text-white/70 leading-relaxed` | Add `font-serif` |
+| `Contact.tsx` line 17 | Page subtitle | `text-base md:text-lg text-white/60` | Add `font-serif` |
+| `BookClub.tsx` line 242 | CTA subtitle | `text-lg md:text-xl text-white/70 leading-relaxed` | Add `font-serif` |
+| `Manifesto.tsx` line 26 | Second paragraph | `text-lg leading-relaxed text-muted-foreground` | Add `font-serif` |
 
-2. **Move `containerRef`** to a separate inner div that wraps only the image/PopIn block. This div starts with `px-8 md:px-16` and the scroll handler animates its padding from 32/64 → 0.
+**2. Section label inconsistency**
+- `IntroBlurb.tsx` line 23 uses `text-[14px]` instead of the standard `text-xs` used everywhere else for uppercase tracking labels.
 
-3. **Update scroll handler values**: Change `maxPad` from `isMd ? 40 : 24` to `isMd ? 64 : 32` so the image padding starts matching the site standard and animates to zero (edge-to-edge).
+**3. Case study h1 has extra `font-medium`**
+- `CaseStudyMindfulWellness.tsx` line 32 and `CaseStudyArtisanMarketplace.tsx` line 32 use `font-medium` on h1, while the main pages (Hero, Work, About, BookClub) do not. Should remove `font-medium` from case study h1s for consistency.
 
-### Structure after change
-```text
-<section>
-  <div class="mx-auto max-w-[1600px] px-8 md:px-16">   ← static, holds text
-    <h1>...</h1>
-    <p>...</p>
-    <button>...</button>
-  </div>
-  <div ref={containerRef} class="mx-auto max-w-[1600px] px-8 md:px-16">  ← JS-animated padding
-    <PopIn>
-      <div ref={imageWrapperRef}>...</div>
-    </PopIn>
-  </div>
-</section>
-```
+**4. BookClub step titles missing responsive scale**
+- `BookClub.tsx` line 224: `text-lg font-serif` should be `text-lg md:text-xl font-serif` to match how subheadings scale elsewhere (Projects, Community).
+
+### Files to Modify (7 files, all single-line class changes)
+
+1. **`src/pages/Work.tsx`** — Add `font-serif` to project description (line 73) and CTA subtitle (line 97)
+2. **`src/components/Collab.tsx`** — Add `font-serif` to subtitle (line 19)
+3. **`src/pages/Contact.tsx`** — Add `font-serif` to subtitle (line 17)
+4. **`src/pages/BookClub.tsx`** — Add `font-serif` to CTA subtitle (line 242); add `md:text-xl` to step titles (line 224)
+5. **`src/components/Manifesto.tsx`** — Add `font-serif` to second paragraph (line 26)
+6. **`src/components/IntroBlurb.tsx`** — Change `text-[14px]` to `text-xs` (line 23)
+7. **`src/pages/CaseStudyMindfulWellness.tsx`** and **`src/pages/CaseStudyArtisanMarketplace.tsx`** — Remove `font-medium` from h1
 
