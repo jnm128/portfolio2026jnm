@@ -333,11 +333,6 @@ const BookClub: React.FC = () => {
                 <p className="text-sm text-muted-foreground font-serif leading-relaxed mb-4">
                   {selectedBook.description}
                 </p>
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className={`text-sm ${i < selectedBook.rating ? 'text-foreground' : 'text-foreground/20'}`}>★</span>
-                  ))}
-                </div>
               </div>
             </>
           )}
