@@ -32,40 +32,40 @@ const CaseStudyArtisanMarketplace = () => {
               <h1 className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-4">
                 Artisan Marketplace
               </h1>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-12 max-w-3xl">
+              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-3xl">
                 E-commerce platform for local artisans to showcase and sell their handcrafted products online.
               </p>
             </FadeIn>
-
-            <FadeIn delay={200}>
-              <div className="grid grid-cols-2 gap-x-12 gap-y-8">
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Role</h3>
-                  <p className="text-base text-foreground font-serif">E-commerce Development, UX Design</p>
-                </div>
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">The Problem</h3>
-                  <p className="text-base text-foreground font-serif">Local artisans struggling to <span className="font-semibold">reach customers</span> beyond their immediate geographic area.</p>
-                </div>
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Team</h3>
-                  <p className="text-base text-foreground font-serif">Local Artisan Collective</p>
-                </div>
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">Timeline</h3>
-                  <p className="text-base text-foreground font-serif">12 weeks</p>
-                </div>
-              </div>
-            </FadeIn>
           </div>
 
-          <FadeIn delay={300}>
+          <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-12">
               <img 
                 src="/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png" 
                 alt="Artisan Marketplace Platform" 
                 className="w-full object-cover aspect-[16/9]"
               />
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={300}>
+            <div className="grid grid-cols-2 gap-x-12 gap-y-8 mt-12">
+              <div>
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Role</h3>
+                <p className="text-base text-foreground font-serif">E-commerce Development, UX Design</p>
+              </div>
+              <div>
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">The Problem</h3>
+                <p className="text-base text-foreground font-serif">Local artisans struggling to <span className="font-semibold">reach customers</span> beyond their immediate geographic area.</p>
+              </div>
+              <div>
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Team</h3>
+                <p className="text-base text-foreground font-serif">Local Artisan Collective</p>
+              </div>
+              <div>
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">Timeline</h3>
+                <p className="text-base text-foreground font-serif">12 weeks</p>
+              </div>
             </div>
           </FadeIn>
         </div>
