@@ -222,7 +222,7 @@ const BookClub: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-serif font-medium text-foreground mb-2">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground font-serif leading-relaxed">{step.desc}</p>
+                    <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               ))}
