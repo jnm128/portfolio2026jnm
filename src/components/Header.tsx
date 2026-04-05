@@ -187,7 +187,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               onClick={() => scrollToSection('home')}
               className={cn(
                 "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
-                isContactPage && !isScrolled ? 'text-white' : ''
+                isContactPage && !isScrolled && !isMobileMenuOpen ? 'text-white' : ''
               )}
             >
               {'MINO.'.split('').map((letter, index) => (
