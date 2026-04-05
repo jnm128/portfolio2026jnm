@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         const wrapper = imageWrapperRef.current;
         if (container) {
           const isMd = window.innerWidth >= 768;
-          const maxPad = isMd ? 40 : 24;
+          const maxPad = isMd ? 64 : 32;
           const pad = maxPad * (1 - progress);
           container.style.paddingLeft = `${pad}px`;
           container.style.paddingRight = `${pad}px`;
@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
   return (
     <section className={cn('pt-20 md:pt-24 pb-6 md:pb-8 bg-[#F8F6F1]', className)}>
-      <div ref={containerRef} className="mx-auto max-w-[1600px] px-8 md:px-16">
+      <div className="mx-auto max-w-[1600px] px-8 md:px-16">
         <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-2">Joanna Minott, <span className="text-muted-foreground">UX Designer</span></h1>
         <p className="text-base md:text-lg text-muted-foreground font-serif mb-4 max-w-2xl">
           Product designer by day, community builder by night. I build software and digital experiences that connect people and spark meaningful change.
@@ -64,6 +64,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           View Resume
         </button>
         <WorkExperiencePanel open={panelOpen} onClose={() => setPanelOpen(false)} />
+      </div>
+      <div ref={containerRef} className="mx-auto max-w-[1600px] px-8 md:px-16">
         <PopIn>
           <div ref={imageWrapperRef} className="relative rounded-3xl overflow-hidden h-[60vh] md:h-[80vh] lg:h-[90vh]">
             {heroImages.map((image, index) => (
