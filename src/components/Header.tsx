@@ -282,21 +282,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         </div>
       </header>
       
-      {/* Mobile Menu - Outside header for proper stacking context */}
+      {/* Mobile Menu - Full viewport overlay behind header */}
       <div
-        style={{
-          top: headerHeight ? headerHeight - 1 : 0,
-          height: headerHeight ? `calc(100vh - ${headerHeight}px + 1px)` : '100vh',
-        }}
         className={cn(
-          "fixed left-0 right-0 z-[100] md:hidden bg-background",
+          "fixed inset-0 z-[100] md:hidden bg-background",
           "transition-[transform,opacity] duration-300 ease-in-out will-change-transform",
           isMobileMenuOpen
             ? "translate-y-0 pointer-events-auto opacity-100"
             : "-translate-y-full pointer-events-none opacity-0"
         )}
       >
-        <nav className="flex flex-col items-center gap-6 pt-12">
+        <nav className="flex flex-col items-center gap-6" style={{ paddingTop: headerHeight + 24 }}>
           <Link to="/work" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Work</Link>
           <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">About</Link>
           <Link to="/book-club" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Community</Link>
