@@ -7,7 +7,7 @@ interface HeroProps {
   className?: string;
 }
 
-const heroImages = ["/lovable-uploads/669ab556-1904-4f6a-a452-017725001fb4.png"];
+const heroImages = ["/lovable-uploads/354aef4d-0714-40c3-9ba3-cc875ac0bc73.png"];
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
