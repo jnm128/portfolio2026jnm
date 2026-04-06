@@ -1,20 +1,26 @@
 
 
-## Fix Hero Section to Fill Viewport
+## Make Each Section Distinct on Scroll
 
 ### Problem
-At 770×716 viewport, the hero section doesn't fill the full screen height, so the top of the dark "Who We Are" section peeks above the fold. This breaks the scroll-reveal effect.
+The "Previous Reads" and "How the Community Works" sections both use the same cream background (`bg-[#F8F6F1]`), so they visually merge. On a 1020×716 viewport, "How the Community Works" peeks above the fold while scrolling through the book carousel.
 
-### Solution
-Make the hero section fill the viewport using `min-h-screen` so it occupies the full first screen. The "Who We Are" dark section will then start entirely below the fold, creating a clean reveal on scroll.
+### Approach
+Two changes to create visual separation:
+
+1. **Enlarge book cards** — Increase from `w-[220px] md:w-[260px]` to `w-[260px] md:w-[300px]` so the carousel section takes up more vertical space and pushes the next section further down.
+
+2. **Dark background for "How the Community Works"** — Switch from cream to `bg-[#1C1C1C]` with inverted text colors (matching the existing dark section pattern). This creates the alternating rhythm: cream hero → dark (Who We Are) → cream (Previous Reads) → dark (How It Works) → dark (CTA + FAQ).
 
 ### Changes in `src/pages/BookClub.tsx`
 
-**Line 102** — Add `min-h-screen` and use flexbox to vertically center the hero content:
+**Book cards (line 194):** Change card width classes from `w-[220px] md:w-[260px]` to `w-[260px] md:w-[300px]`.
 
-```tsx
-<section className="min-h-screen flex items-center pt-24 md:pt-28 pb-10 md:pb-16 bg-[#F8F6F1]">
-```
-
-This ensures the hero fills the viewport on all screen sizes, pushing the dark section fully below the fold. The `flex items-center` vertically centers the two-column layout within the available space.
+**"How the Community Works" section (lines 211–242):**
+- Section: `bg-[#F8F6F1]` → `bg-[#1C1C1C]`
+- Label: `text-foreground/60` → `text-white/60`
+- Icon boxes: `bg-foreground` → `bg-white`, icon color: `text-background` → `text-[#1C1C1C]`
+- Step titles: `text-foreground` → `text-white`
+- Step descriptions: `text-muted-foreground` → `text-white/70`
+- Dividers: `border-foreground/10` → `border-white/15`
 
