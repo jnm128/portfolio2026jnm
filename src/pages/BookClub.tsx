@@ -99,7 +99,7 @@ const BookClub: React.FC = () => {
     <div className="min-h-screen bg-[#F8F6F1]">
 
       {/* Section 1 — Hero */}
-      <section className="pt-24 md:pt-28 pb-16 md:pb-20 bg-[#F8F6F1]">
+      <section className="pt-24 md:pt-28 pb-10 md:pb-16 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
@@ -142,18 +142,18 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 2 — Who We Are */}
-      <section className="py-16 md:py-20 bg-[#F8F6F1]">
+      <section className="py-16 md:py-20 bg-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">Who We Are</h2>
           </FadeIn>
           <FadeIn delay={200}>
-            <h3 className="text-2xl md:text-4xl font-serif font-medium text-foreground mb-6 leading-tight">
+            <h3 className="text-2xl md:text-4xl font-serif font-medium text-white mb-6 leading-tight">
               A space where UX professionals slow down, think deeply, and grow beyond the screen.
             </h3>
           </FadeIn>
           <FadeIn delay={400}>
-            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
+            <p className="text-base md:text-lg text-white/70 font-serif leading-relaxed">
               I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work.
             </p>
           </FadeIn>
