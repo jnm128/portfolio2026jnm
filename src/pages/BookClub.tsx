@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
 import { BookOpen, MessageCircle, Globe, ExternalLink, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import bookClubHero from '@/assets/book-club-hero-2.jpg';
+import emotionalDesignCover from '@/assets/emotional-design-cover.jpg';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 interface Book {
