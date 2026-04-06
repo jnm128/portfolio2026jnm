@@ -138,7 +138,7 @@ const BookClub: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="lg:hidden w-full border-t border-foreground/10 pt-6 mt-8 grid grid-cols-4 gap-3 md:gap-8">
+              <div className="lg:hidden w-full border-t border-foreground/10 pt-6 mt-2 grid grid-cols-4 gap-3 md:gap-8">
                 <div>
                   <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">2023</div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Est.</div>
