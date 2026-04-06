@@ -138,11 +138,11 @@ const BookClub: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="md:w-1/2 rounded-2xl overflow-hidden">
+              <div className="md:w-1/2 rounded-2xl overflow-hidden max-h-[300px] md:max-h-[350px] lg:max-h-[450px]">
                 <img
                   src={bookClubHero}
                   alt="Book club gathering"
-                  className="w-full h-full object-cover aspect-[4/3]"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -171,7 +171,7 @@ const BookClub: React.FC = () => {
 
       {/* Section 3 — Previous Reads */}
       <section className="py-16 md:py-20 bg-[#F8F6F1]">
-        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+        <div className="mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex items-end justify-between mb-6">
               <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60">Previous Reads</h2>
@@ -247,7 +247,7 @@ const BookClub: React.FC = () => {
 
       {/* Section 5 — CTA (dark) */}
       <section className="py-16 md:py-24 bg-[#1C1C1C]">
-        <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+        <div className="mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col gap-6 items-center text-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-white">
