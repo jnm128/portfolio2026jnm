@@ -1,23 +1,17 @@
 
 
-## Changes to All Three Case Study Pages
+## Update Case Study Title Padding to Match Homepage
 
-### 1. Update hero section container width
-Change from `container mx-auto` to `mx-auto max-w-[1600px]` to match the homepage Hero component's wide layout.
+The homepage Hero places the title and description directly inside the wide container (`max-w-[1600px] px-8 md:px-16`) with no centering wrapper, and uses `mb-2` on the title and `mb-4` on the description. The case study pages currently wrap title/description in `max-w-4xl mx-auto` (centering them) and use different spacing (`mb-4` on title, `mt-12` before image).
 
-### 2. Remove metadata grid
-Delete the entire 2x2 grid section (My Role, The Problem, My Team, Timeline) from the hero area.
+### Changes (all 3 case study files)
 
-### 3. Move Final Designs images outside SplitSection
-Replace the "Final Designs" SplitSection with a full-width image gallery. Each image will be rendered at full container width with `rounded-2xl overflow-hidden aspect-[16/9]` styling — matching the hero image treatment. Remove the per-image subheadings.
+1. **Remove `max-w-4xl mx-auto` wrapper** around title/description so they left-align like the homepage
+2. **Update title spacing** from `mb-4` to `mb-2` to match homepage
+3. **Keep description max-width** using `max-w-2xl` (matching homepage) instead of `max-w-3xl`
 
-### Files to modify
+### Files
 - `src/pages/CaseStudyMindfulWellness.tsx`
 - `src/pages/CaseStudyArtisanMarketplace.tsx`
 - `src/pages/CaseStudyCreativeStudio.tsx`
-
-### Technical detail
-- Hero section container: `mx-auto max-w-[1600px] px-8 md:px-16` (replacing `container mx-auto px-8 md:px-16`)
-- Title/description block keeps `max-w-4xl mx-auto` for readability
-- Final Designs section becomes a simple vertical stack of full-width images with `space-y-8`, each wrapped in `ImageLightbox` inside a `rounded-2xl overflow-hidden` container, using `aspect-[16/9] w-full object-cover`
 
