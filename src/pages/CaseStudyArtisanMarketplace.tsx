@@ -27,16 +27,14 @@ const CaseStudyArtisanMarketplace = () => {
             </button>
           </FadeIn>
 
-          <div className="max-w-4xl mx-auto">
-            <FadeIn delay={100}>
-              <h1 className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-4">
-                Artisan Marketplace
-              </h1>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-3xl">
-                E-commerce platform for local artisans to showcase and sell their handcrafted products online.
-              </p>
-            </FadeIn>
-          </div>
+          <FadeIn delay={100}>
+            <h1 className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-2">
+              Artisan Marketplace
+            </h1>
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
+              E-commerce platform for local artisans to showcase and sell their handcrafted products online.
+            </p>
+          </FadeIn>
 
           <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-12">

@@ -27,16 +27,14 @@ const CaseStudyMindfulWellness = () => {
             </button>
           </FadeIn>
 
-          <div className="max-w-4xl mx-auto">
-            <FadeIn delay={100}>
-              <h1 className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-4">
-                Mindful Wellness
-              </h1>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-3xl">
-                A holistic wellness platform connecting users with mental health resources and mindfulness practices.
-              </p>
-            </FadeIn>
-          </div>
+          <FadeIn delay={100}>
+            <h1 className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-2">
+              Mindful Wellness
+            </h1>
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
+              A holistic wellness platform connecting users with mental health resources and mindfulness practices.
+            </p>
+          </FadeIn>
 
           <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-12">
