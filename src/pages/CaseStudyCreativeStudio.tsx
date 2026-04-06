@@ -27,16 +27,14 @@ const CaseStudyCreativeStudio = () => {
             </button>
           </FadeIn>
 
-          <div className="max-w-4xl mx-auto">
-            <FadeIn delay={100}>
-              <h1 className="text-3xl md:text-5xl font-serif font-medium text-foreground leading-tight mb-4">
-                Creative Studio
-              </h1>
-              <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-3xl">
-                Brand identity and web presence for a creative agency specializing in visual storytelling.
-              </p>
-            </FadeIn>
-          </div>
+          <FadeIn delay={100}>
+            <h1 className="text-3xl md:text-5xl font-serif font-medium text-foreground leading-tight mb-2">
+              Creative Studio
+            </h1>
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
+              Brand identity and web presence for a creative agency specializing in visual storytelling.
+            </p>
+          </FadeIn>
 
           <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-12">
