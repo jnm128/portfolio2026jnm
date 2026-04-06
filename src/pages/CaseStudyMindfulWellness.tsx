@@ -16,7 +16,7 @@ const CaseStudyMindfulWellness = () => {
       
       {/* Hero Section */}
       <section className="pt-20 md:pt-24 pb-16 md:pb-24 bg-[#F8F6F1]">
-        <div className="container mx-auto px-8 md:px-16">
+        <div className="mx-auto max-w-[1600px] px-8 md:px-16">
           <FadeIn>
             <button 
               onClick={() => navigate(-1)}
@@ -48,26 +48,6 @@ const CaseStudyMindfulWellness = () => {
             </div>
           </FadeIn>
 
-          <FadeIn delay={300}>
-            <div className="grid grid-cols-2 gap-x-12 gap-y-8 mt-12">
-              <div>
-                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Role</h3>
-                <p className="text-base text-foreground font-serif">UX Research, UI Design, Development</p>
-              </div>
-              <div>
-                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">The Problem</h3>
-                <p className="text-base text-foreground font-serif">Accessible, comprehensive <span className="font-semibold">wellness platforms</span> remain scarce despite rising mental health awareness.</p>
-              </div>
-              <div>
-                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Team</h3>
-                <p className="text-base text-foreground font-serif">Mindful Wellness Co.</p>
-              </div>
-              <div>
-                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">Timeline</h3>
-                <p className="text-base text-foreground font-serif">8 weeks</p>
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
@@ -131,32 +111,32 @@ const CaseStudyMindfulWellness = () => {
 
       {/* Final Designs */}
       <section className="py-20 md:py-32 bg-background">
-        <div className="container mx-auto px-8 md:px-16">
-          <SplitSection label="Final Designs">
-            <div className="space-y-12">
-              <div>
-                <h3 className="text-lg md:text-xl font-medium mb-4 text-foreground">Mobile App Interface</h3>
+        <div className="mx-auto max-w-[1600px] px-8 md:px-16">
+          <FadeIn>
+            <div className="space-y-8">
+              <div className="rounded-2xl overflow-hidden">
                 <ImageLightbox
                   src="/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png"
                   alt="Mindful Wellness Mobile App Interface"
+                  className="aspect-[16/9] w-full object-cover"
                 />
               </div>
-              <div>
-                <h3 className="text-lg md:text-xl font-medium mb-4 text-foreground">Web Platform Dashboard</h3>
+              <div className="rounded-2xl overflow-hidden">
                 <ImageLightbox
                   src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80"
                   alt="Mindful Wellness Web Dashboard"
+                  className="aspect-[16/9] w-full object-cover"
                 />
               </div>
-              <div>
-                <h3 className="text-lg md:text-xl font-medium mb-4 text-foreground">User Journey & Flow</h3>
+              <div className="rounded-2xl overflow-hidden">
                 <ImageLightbox
                   src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=1200&q=80"
                   alt="Mindful Wellness User Journey"
+                  className="aspect-[16/9] w-full object-cover"
                 />
               </div>
             </div>
-          </SplitSection>
+          </FadeIn>
         </div>
       </section>
 
