@@ -25,7 +25,7 @@ const About: React.FC<AboutProps> = ({
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Profile Image */}
             <div className="relative w-full max-w-lg aspect-[5/6]">
-              <div className="rounded-3xl overflow-hidden h-full">
+              <div className="rounded-2xl overflow-hidden h-full">
                 <img alt="Joanna Minott" className="w-full h-full object-cover" src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg" />
               </div>
             </div>

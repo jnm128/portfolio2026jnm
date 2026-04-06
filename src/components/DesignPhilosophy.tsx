@@ -117,7 +117,7 @@ const DesignPhilosophy: React.FC<DesignPhilosophyProps> = ({ className }) => {
                   key={philosophy.title}
                   onClick={() => setActiveCard(index)}
                   className={cn(
-                    "p-4 md:p-5 rounded-xl text-left transition-all duration-300 group",
+                    "p-4 md:p-5 rounded-2xl text-left transition-all duration-300 group",
                     activeCard === index
                       ? "bg-primary/10 border border-primary/30 animate-card-pop"
                       : "bg-card border border-border hover:bg-secondary/50 hover:border-border/80 hover:scale-[1.02]"

@@ -85,7 +85,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 )}>
                   <Link to={project.link} className="md:w-2/3">
-                    <div className="rounded-xl overflow-hidden">
+                    <div className="rounded-2xl overflow-hidden">
                       <img src={project.image} alt={project.title} className="w-full aspect-[16/9] object-cover" />
                     </div>
                   </Link>

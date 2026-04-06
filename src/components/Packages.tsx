@@ -153,7 +153,7 @@ const Packages: React.FC<PackagesProps> = ({ className }) => {
               key={pkg.name}
               data-package-card
               className={cn(
-                "relative bg-white p-8 border h-full shadow-sm hover:shadow-lg transition-shadow duration-300",
+                "relative bg-white rounded-2xl p-8 border h-full shadow-sm hover:shadow-lg transition-shadow duration-300",
                 pkg.popular && "border-orangery-500"
               )}
             >
@@ -196,7 +196,7 @@ const Packages: React.FC<PackagesProps> = ({ className }) => {
 
         {/* Custom Plan Section */}
         <FadeIn delay={500}>
-          <div className="bg-white p-8 md:p-12 text-center max-w-4xl mx-auto shadow-sm border">
+          <div className="bg-white rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-sm border">
             <h3 className="text-2xl md:text-3xl font-serif font-medium mb-4">Need a custom plan?</h3>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Every project is unique. If none of our packages fit your specific needs, let's create a custom solution tailored just for you.
