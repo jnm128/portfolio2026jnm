@@ -191,9 +191,9 @@ const BookClub: React.FC = () => {
                 <div
                   key={index}
                   onClick={() => setSelectedBook(book)}
-                  className="flex-shrink-0 w-[260px] md:w-[300px] snap-start rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.03]"
+                  className="flex-shrink-0 w-[260px] md:w-[300px] snap-start rounded-2xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.03]"
                 >
-                  <div className="aspect-[3/4] overflow-hidden rounded-xl">
+                  <div className="aspect-[3/4] overflow-hidden rounded-2xl">
                     <img
                       src={book.cover}
                       alt={book.title}
@@ -222,7 +222,7 @@ const BookClub: React.FC = () => {
                 { icon: Globe, title: "Stay Connected", desc: "An ongoing LinkedIn community where members share resources, job leads, and design conversations between sessions." },
               ].map((step, index) => (
                 <div key={index} className={`${index > 0 ? 'border-t border-white/15' : ''} py-8 flex items-start gap-6`}>
-                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shrink-0">
                     <step.icon className="w-6 h-6 text-[#1C1C1C]" />
                   </div>
                   <div>
@@ -318,7 +318,7 @@ const BookClub: React.FC = () => {
           {selectedBook && (
             <>
               <div className="flex items-center justify-center p-6 pb-2">
-                <div className="w-40 h-56 rounded-xl overflow-hidden">
+                <div className="w-40 h-56 rounded-2xl overflow-hidden">
                   <img
                     src={selectedBook.cover}
                     alt={selectedBook.title}

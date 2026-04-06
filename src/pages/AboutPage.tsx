@@ -49,7 +49,7 @@ const AboutPage = () => {
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
                 {/* Profile Image — first in DOM, appears on right on desktop */}
                 <div className="relative w-full max-w-sm aspect-[5/6] mx-auto md:ml-auto md:order-last">
-                  <div className="rounded-3xl overflow-hidden h-full">
+                  <div className="rounded-2xl overflow-hidden h-full">
                     <img
                       alt="Joanna Minott"
                       className="w-full h-full object-cover animate-fade-in"
@@ -138,7 +138,7 @@ const AboutPage = () => {
                   </h2>
                   <div className="border-t border-white/15 py-10">
                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="group flex flex-col md:flex-row gap-6 items-start">
-                      <div className="w-full md:w-64 shrink-0 rounded-xl overflow-hidden aspect-[16/10]">
+                      <div className="w-full md:w-64 shrink-0 rounded-2xl overflow-hidden aspect-[16/10]">
                         <img
                           src={speakingMiami}
                           alt="Alumni panel at the University of Miami"
@@ -154,7 +154,7 @@ const AboutPage = () => {
                   </div>
                   <div className="border-t border-white/15 py-10">
                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="group flex flex-col md:flex-row gap-6 items-start">
-                      <div className="w-full md:w-64 shrink-0 rounded-xl overflow-hidden aspect-[16/10]">
+                      <div className="w-full md:w-64 shrink-0 rounded-2xl overflow-hidden aspect-[16/10]">
                         <img
                           src={speakingUF}
                           alt="Guest speaker at University of Florida's Gator Design student org"
@@ -178,7 +178,7 @@ const AboutPage = () => {
                     Current Read
                   </h2>
                   <div className="flex flex-col md:flex-row gap-8 items-start">
-                    <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden">
+                    <div className="w-24 md:w-32 shrink-0 rounded-2xl overflow-hidden">
                       <img
                         src={currentRead.cover}
                         alt={currentRead.title}
@@ -207,7 +207,7 @@ const AboutPage = () => {
                     Work Playlist
                   </h2>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 shrink-0 rounded-lg overflow-hidden">
+                    <div className="w-12 h-12 shrink-0 rounded-2xl overflow-hidden">
                       <img
                         src={songOnRepeat.cover}
                         alt={songOnRepeat.title}
