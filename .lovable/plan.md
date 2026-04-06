@@ -1,28 +1,30 @@
 
 
-## Add Mission Headline to "Who We Are" Section
+## Dark "Who We Are" Section with Breathing Space
 
-### File: `src/pages/BookClub.tsx` (lines 144-156)
+### Problem
+1. The "Who We Are" section blends into the hero since both share the same cream background — no visual break.
+2. The hero uses `pb-16 md:pb-20` which, combined with the section's `py-16 md:py-20`, creates inconsistent spacing compared to the rest of the site.
 
-Keep the existing structure — small uppercase "Who We Are" label on top, then add a bold serif h2 mission statement headline below it, followed by the existing paragraph.
+### Changes in `src/pages/BookClub.tsx`
 
-**Replace lines 147-153 with:**
+**1. Fix hero bottom padding** — Reduce to `pb-10 md:pb-16` to match the case study hero pattern and tighten the gap before the next section.
 
-```tsx
-<FadeIn>
-  <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
-</FadeIn>
-<FadeIn delay={200}>
-  <h3 className="text-2xl md:text-4xl font-serif font-medium text-foreground mb-6 leading-tight">
-    A space where UX professionals slow down, think deeply, and grow beyond the screen.
-  </h3>
-</FadeIn>
-<FadeIn delay={400}>
-  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
-    I founded Fresh Perspectives as a space for like-minded UX professionals...
-  </p>
-</FadeIn>
+**2. Convert "Who We Are" to a dark section** — Change background to `bg-[#1C1C1C]` and invert all text colors:
+- Label: `text-white/60`
+- Headline: `text-white`
+- Paragraph: `text-white/70`
+
+This creates a cream → dark → cream → dark rhythm down the page, giving it room to breathe.
+
+**3. Keep the staggered FadeIn animations** as-is — the existing `FadeIn` with delays (0, 200, 400ms) will handle the scroll-triggered fade-in naturally since the dark background makes the reveal more dramatic.
+
+### Result
 ```
-
-Three staggered `FadeIn` layers: label → headline → paragraph, creating a cascading reveal.
+Hero (cream)        ← pb-10 md:pb-16
+Who We Are (dark)   ← py-16 md:py-20, #1C1C1C bg, white text
+Previous Reads (cream)
+How It Works (cream)
+CTA + FAQ (dark)
+```
 
