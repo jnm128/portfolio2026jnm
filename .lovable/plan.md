@@ -1,16 +1,29 @@
+## Fix Book Club Hero — Remove Double Padding on Tablet
 
+### Problem
 
-## Move Hero Image Below Text at Tablet Breakpoint
+The hero uses `container mx-auto px-8 md:px-16`, but the Tailwind `container` class already applies its own padding (`1.5rem` default, `3rem` at md). This double-padding creates excessive side margins at 751px, making the content appear center-floated rather than edge-to-edge.
 
-Currently the text and image are stacked vertically at all breakpoints. The user is at 768px (tablet) and wants to ensure the image sits clearly below the text content rather than appearing side-by-side or in an unexpected layout.
+### Fix — `src/pages/BookClub.tsx`
 
-Looking at the code, text and image are already stacked vertically in separate divs. The issue is likely that the image height `md:h-[80vh]` kicks in at 768px, making it too tall for tablet. The fix is to add a tablet-specific height so the image doesn't dominate the viewport.
+**Line 112:** Replace `container mx-auto` with just `mx-auto` so only the explicit `px-8 md:px-16` padding applies (matching site-wide convention):
 
-### Change — `src/components/Hero.tsx`
+```tsx
+<div className="mx-auto px-8 md:px-16 max-w-[1600px]">
+```
 
-**Line 70:** Update the image container height to include a tablet breakpoint:
+This is the same pattern the other sections on this page already use (e.g., the "Previous Reads" section on line 162 also uses `container mx-auto` — but the narrower `max-w-4xl` sections like "Who We Are" just use `max-w-4xl mx-auto px-8 md:px-16` without `container`).
 
-`h-[60vh] md:h-[80vh] lg:h-[90vh]` → `h-[50vh] md:h-[60vh] lg:h-[90vh]`
+**Also fix line 162** (Previous Reads) and **line 230** (CTA section) — both use `container mx-auto px-8 md:px-16 max-w-[1600px]` and will have the same double-padding issue. Remove `container` from those too.
 
-This gives tablet screens a more proportional image height, keeping the text-then-image vertical flow clear without the image consuming most of the viewport.
+&nbsp;
 
+also reduce size of hero image on tablet too.
+
+### Summary
+
+- Remove `container` class from hero, Previous Reads, and CTA sections (lines 112, 162, 230)
+- Keep `mx-auto px-8 md:px-16 max-w-[1600px]` for consistent full-width layout
+- No other changes
+
+&nbsp;
