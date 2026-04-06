@@ -104,7 +104,7 @@ const Gap: React.FC<GapProps> = ({ className }) => {
               
               {/* Centered newsletter box overlaid on the image */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-md max-w-md w-full mx-4">
+                <div className="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-md max-w-md w-full mx-4">
                   <h3 className="text-2xl font-serif mb-6 text-center">Subscribe for Updates</h3>
                   
                   <div className="flex justify-center mb-6">
