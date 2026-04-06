@@ -16,7 +16,7 @@ const CaseStudyArtisanMarketplace = () => {
       
       {/* Hero Section */}
       <section className="pt-20 md:pt-24 pb-16 md:pb-24 bg-[#F8F6F1]">
-        <div className="container mx-auto px-8 md:px-16">
+        <div className="mx-auto max-w-[1600px] px-8 md:px-16">
           <FadeIn>
             <button 
               onClick={() => navigate(-1)}
@@ -48,26 +48,6 @@ const CaseStudyArtisanMarketplace = () => {
             </div>
           </FadeIn>
 
-          <FadeIn delay={300}>
-            <div className="grid grid-cols-2 gap-x-12 gap-y-8 mt-12">
-              <div>
-                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Role</h3>
-                <p className="text-base text-foreground font-serif">E-commerce Development, UX Design</p>
-              </div>
-              <div>
-                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">The Problem</h3>
-                <p className="text-base text-foreground font-serif">Local artisans struggling to <span className="font-semibold">reach customers</span> beyond their immediate geographic area.</p>
-              </div>
-              <div>
-                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">My Team</h3>
-                <p className="text-base text-foreground font-serif">Local Artisan Collective</p>
-              </div>
-              <div>
-                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-medium mb-2">Timeline</h3>
-                <p className="text-base text-foreground font-serif">12 weeks</p>
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
@@ -130,32 +110,32 @@ const CaseStudyArtisanMarketplace = () => {
 
       {/* Final Designs */}
       <section className="py-20 md:py-32 bg-background">
-        <div className="container mx-auto px-8 md:px-16">
-          <SplitSection label="Final Designs">
-            <div className="space-y-12">
-              <div>
-                <h3 className="text-lg md:text-xl font-medium mb-4 text-foreground">E-commerce Platform</h3>
+        <div className="mx-auto max-w-[1600px] px-8 md:px-16">
+          <FadeIn>
+            <div className="space-y-8">
+              <div className="rounded-2xl overflow-hidden">
                 <ImageLightbox
                   src="/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png"
                   alt="Artisan Marketplace E-commerce Platform"
+                  className="aspect-[16/9] w-full object-cover"
                 />
               </div>
-              <div>
-                <h3 className="text-lg md:text-xl font-medium mb-4 text-foreground">Product Gallery & Details</h3>
+              <div className="rounded-2xl overflow-hidden">
                 <ImageLightbox
                   src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=1200&q=80"
                   alt="Artisan Marketplace Product Gallery"
+                  className="aspect-[16/9] w-full object-cover"
                 />
               </div>
-              <div>
-                <h3 className="text-lg md:text-xl font-medium mb-4 text-foreground">Artisan Profile Pages</h3>
+              <div className="rounded-2xl overflow-hidden">
                 <ImageLightbox
                   src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80"
                   alt="Artisan Marketplace Profile Pages"
+                  className="aspect-[16/9] w-full object-cover"
                 />
               </div>
             </div>
-          </SplitSection>
+          </FadeIn>
         </div>
       </section>
 
