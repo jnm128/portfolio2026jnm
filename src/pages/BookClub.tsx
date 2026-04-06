@@ -147,7 +147,12 @@ const BookClub: React.FC = () => {
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
           </FadeIn>
-          <FadeIn delay={300}>
+          <FadeIn delay={200}>
+            <h3 className="text-2xl md:text-4xl font-serif font-medium text-foreground mb-6 leading-tight">
+              A space where UX professionals slow down, think deeply, and grow beyond the screen.
+            </h3>
+          </FadeIn>
+          <FadeIn delay={400}>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
               I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work.
             </p>
