@@ -1,25 +1,40 @@
 
 
-## Minimalist Refinements
+## Centered Nav — Logo in the Middle, No CTA Pill
 
-### 1. Contact Page — Remove availability indicator
-**File:** `src/pages/Contact.tsx`
-- Remove the green pulse dot (`<span className="w-2 h-2 rounded-full bg-green-500 animate-pulse inline-block" />`) from line 27
-- Clean up the `inline-flex items-center flex-wrap gap-1` classes on the parent `<p>` since they're no longer needed for alignment
+Restructure the desktop header from `[Logo ... Links+Button]` to a fully centered layout: `[Work, About ... MINO. ... Community, Contact]` with all items as plain text links.
 
-### 2. About Page — Smaller corner radius for media thumbnails
-**File:** `src/pages/AboutPage.tsx`
-- Current Read cover (line 181): `rounded-2xl` → `rounded-lg`
-- Work Playlist cover (line 210): `rounded-2xl` → `rounded-lg`
-- Speaking images (lines 141, 157): `rounded-2xl` → `rounded-lg`
+### Changes — `src/components/Header.tsx`
 
-These are small thumbnails/media items where `rounded-2xl` feels oversized — `rounded-lg` (8px) keeps them clean and minimal.
+**Desktop nav (lines 185–268):** Replace the current `flex justify-between` layout with a single centered row:
 
-### 3. Book Club — Remove shadow from Previous Reads arrows
-**File:** `src/pages/BookClub.tsx`
-- Lines 172, 178: Remove `shadow-lg` and `backdrop-blur-md` from both arrow buttons
-- Simplify to a minimal style: `bg-foreground/5 border border-foreground/10 hover:bg-foreground/10` — no blur, no shadow, just a subtle outline
+```
+Work   About   MINO.   Community   Contact
+```
 
-### Summary
-3 files, ~8 line changes total. Makes the UI cleaner and more restrained.
+- Change the container from `justify-between` to `justify-center gap-10`
+- Move the logo into the middle of the nav links (between About and Community)
+- Remove the pill button styling from "Contact" — make it a plain text link like the others
+- Rename "Get in Touch" to "Contact"
+- Keep the mobile hamburger button absolutely positioned to the right so it doesn't interfere with centering
+
+**Mobile menu (lines 306–320):**
+- Change "Get in Touch" pill button to a plain text link styled like the other mobile nav items
+- Rename to "Contact"
+
+**Contact page dark theme:** The `isContactPage` conditional text colors (`text-white/70`, `text-white`) remain but apply uniformly to all 4 links + logo.
+
+### Structure
+```text
+Desktop:  Work  About  [MINO.]  Community  Contact
+          ←─── all centered, equal weight ───→
+
+Mobile:   [hamburger icon, right-aligned]
+          Work / About / Community / Contact (all plain text)
+```
+
+### What stays the same
+- Scroll behavior, mobile menu overlay, case study progress bar
+- Logo animation (letter-by-letter fall)
+- All routing logic
 
