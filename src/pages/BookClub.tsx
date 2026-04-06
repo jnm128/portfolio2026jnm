@@ -99,7 +99,7 @@ const BookClub: React.FC = () => {
     <div className="min-h-screen bg-[#F8F6F1]">
 
       {/* Section 1 — Hero */}
-      <section className="pt-24 md:pt-28 pb-10 md:pb-16 bg-[#F8F6F1]">
+      <section className="min-h-screen flex items-center pt-24 md:pt-28 pb-10 md:pb-16 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
