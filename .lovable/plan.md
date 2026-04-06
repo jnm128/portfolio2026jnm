@@ -1,23 +1,28 @@
 
 
-## Combine Helper Text & Move Availability Indicator
+## Add Mission Headline to "Who We Are" Section
 
-### Changes in `src/pages/Contact.tsx`
+### File: `src/pages/BookClub.tsx` (lines 144-156)
 
-1. **Merge the two subtitle paragraphs** (lines 25-30) into a single `<p>` tag, combining "Interested in my expertise..." and "I typically respond within 24 hours..." into one sentence/block.
+Keep the existing structure — small uppercase "Who We Are" label on top, then add a bold serif h2 mission statement headline below it, followed by the existing paragraph.
 
-2. **Move the green pulse indicator** to the end of the combined string instead of the beginning. Place it inline after the text using `inline-flex` alignment.
+**Replace lines 147-153 with:**
 
-Result:
 ```tsx
-<p className="text-base md:text-lg text-white/60 font-serif mb-12 inline-flex items-center flex-wrap gap-1">
-  Interested in my expertise in UX or product? I typically respond within 24 hours
-  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse inline-block" />
-</p>
+<FadeIn>
+  <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
+</FadeIn>
+<FadeIn delay={200}>
+  <h3 className="text-2xl md:text-4xl font-serif font-medium text-foreground mb-6 leading-tight">
+    A space where UX professionals slow down, think deeply, and grow beyond the screen.
+  </h3>
+</FadeIn>
+<FadeIn delay={400}>
+  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
+    I founded Fresh Perspectives as a space for like-minded UX professionals...
+  </p>
+</FadeIn>
 ```
 
-3. **Remove the separate Availability section** at the bottom (lines 85-95) since the indicator is now integrated into the subtitle area.
-
-### File
-- `src/pages/Contact.tsx`
+Three staggered `FadeIn` layers: label → headline → paragraph, creating a cascading reveal.
 
