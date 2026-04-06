@@ -1,26 +1,45 @@
 
 
-## Make Each Section Distinct on Scroll
+## Two Changes: Case Study Progress Bar + Light FAQ Section
 
-### Problem
-The "Previous Reads" and "How the Community Works" sections both use the same cream background (`bg-[#F8F6F1]`), so they visually merge. On a 1020×716 viewport, "How the Community Works" peeks above the fold while scrolling through the book carousel.
+### 1. Case Study Progress Bar
 
-### Approach
-Two changes to create visual separation:
+**New file: `src/components/CaseStudyProgressBar.tsx`**
+- A thin (2px) progress bar that tracks scroll position
+- Uses `useEffect` with a scroll listener + `requestAnimationFrame` for smooth performance
+- Calculates `(scrollY / (documentHeight - viewportHeight)) * 100` and sets width via inline style
+- Styled with `bg-foreground` and `transition-all duration-150`
 
-1. **Enlarge book cards** — Increase from `w-[220px] md:w-[260px]` to `w-[260px] md:w-[300px]` so the carousel section takes up more vertical space and pushes the next section further down.
+**Modified: `src/components/Header.tsx`**
+- Add `const isCaseStudy = location.pathname.startsWith('/case-study')`
+- Import and render `<CaseStudyProgressBar />` as the last child inside `<header>`, only when `isCaseStudy`
+- Position it with `absolute bottom-0 left-0` so it sits flush at the header's bottom edge
 
-2. **Dark background for "How the Community Works"** — Switch from cream to `bg-[#1C1C1C]` with inverted text colors (matching the existing dark section pattern). This creates the alternating rhythm: cream hero → dark (Who We Are) → cream (Previous Reads) → dark (How It Works) → dark (CTA + FAQ).
+### 2. Book Club FAQ — Light Background
 
-### Changes in `src/pages/BookClub.tsx`
+**Modified: `src/pages/BookClub.tsx` (lines 265–313)**
 
-**Book cards (line 194):** Change card width classes from `w-[220px] md:w-[260px]` to `w-[260px] md:w-[300px]`.
+Switch the FAQ section from dark to cream to create a visual break after the dark CTA:
+- Section: `bg-[#1C1C1C]` → `bg-[#F8F6F1]`
+- Label: `text-white/60` → `text-foreground/60`
+- Question text: `text-white` → `text-foreground`
+- Chevron: `text-white/60` → `text-foreground/60`
+- Answer text: `text-white/70` → `text-muted-foreground`
+- Dividers: `border-white/15` → `border-foreground/10`
 
-**"How the Community Works" section (lines 211–242):**
-- Section: `bg-[#F8F6F1]` → `bg-[#1C1C1C]`
-- Label: `text-foreground/60` → `text-white/60`
-- Icon boxes: `bg-foreground` → `bg-white`, icon color: `text-background` → `text-[#1C1C1C]`
-- Step titles: `text-foreground` → `text-white`
-- Step descriptions: `text-muted-foreground` → `text-white/70`
-- Dividers: `border-foreground/10` → `border-white/15`
+### Result
+```text
+Case study pages:
+  Header [======progress bar======]
+  Content...
+
+Book Club page rhythm:
+  Hero (cream)
+  Who We Are (dark)
+  Previous Reads (cream)
+  How It Works (dark)
+  CTA (dark)
+  FAQ (cream)        ← changed
+  Footer
+```
 
