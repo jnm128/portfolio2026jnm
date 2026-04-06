@@ -80,6 +80,14 @@ const books: Book[] = [
     link: "https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898",
     rating: 4,
   },
+  {
+    title: "Emotional Design",
+    author: "Don Norman",
+    cover: emotionalDesignCover,
+    description: "Why we love (or hate) everyday things. Don Norman explores how emotions play a critical role in design and how aesthetics influence our perception of usability.",
+    link: "https://www.amazon.com/Emotional-Design-Love-Everyday-Things/dp/0465051367",
+    rating: 5,
+  },
 ];
 
 const BookClub: React.FC = () => {
