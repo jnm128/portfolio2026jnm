@@ -52,7 +52,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, alt, className }) =>
           <img
             src={src}
             alt={alt}
-            className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg animate-in zoom-in-95 duration-300"
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-2xl animate-in zoom-in-95 duration-300"
             onClick={(e) => e.stopPropagation()}
           />
         </div>

@@ -44,7 +44,7 @@ const Services: React.FC<ServicesProps> = ({ className }) => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <FadeIn key={service.title} delay={index * 100}>
-              <div className="bg-white rounded-lg p-8 border transition-all duration-300 hover:shadow-lg h-full">
+              <div className="bg-white rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg h-full">
                 <h3 className="text-xl font-serif font-medium mb-4">{service.title}</h3>
                 <p className="text-muted-foreground">{service.description}</p>
               </div>

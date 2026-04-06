@@ -30,7 +30,7 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
                 </Link>
               </div>
               <div className="md:w-3/5">
-                <div className="rounded-xl overflow-hidden">
+                <div className="rounded-2xl overflow-hidden">
                   <img 
                     src="/lovable-uploads/community-books.jpeg"
                     alt="Fresh Perspectives Book Club"
