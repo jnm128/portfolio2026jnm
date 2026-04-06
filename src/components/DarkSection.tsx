@@ -23,7 +23,6 @@ const DarkSection: React.FC = () => {
       ref={sectionRef}
       className="transition-colors duration-1000"
       style={{ backgroundColor: isVisible ? '#1C1C1C' : '#F8F6F1' }}
-      data-header-theme={isVisible ? 'dark' : undefined}
     >
       <Testimonials />
       <Community />
