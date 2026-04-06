@@ -207,7 +207,7 @@ const AboutPage = () => {
                     Work Playlist
                   </h2>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 shrink-0 rounded-md overflow-hidden">
+                    <div className="w-12 h-12 shrink-0 rounded overflow-hidden">
                       <img
                         src={songOnRepeat.cover}
                         alt={songOnRepeat.title}
