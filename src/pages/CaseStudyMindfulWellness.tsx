@@ -15,7 +15,7 @@ const CaseStudyMindfulWellness = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 md:pt-24 pb-16 md:pb-24 bg-[#F8F6F1]">
+      <section className="pt-20 md:pt-24 pb-10 md:pb-16 bg-[#F8F6F1]">
         <div className="mx-auto max-w-[1600px] px-8 md:px-16">
           <FadeIn>
             <button 
@@ -50,7 +50,7 @@ const CaseStudyMindfulWellness = () => {
       </section>
 
       {/* Problem Space */}
-      <section className="py-20 md:py-32 bg-background">
+        <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-8 md:px-16">
           <SplitSection label="Problem Space">
             <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
