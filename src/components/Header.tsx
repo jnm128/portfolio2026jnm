@@ -2,6 +2,7 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import CaseStudyProgressBar from './CaseStudyProgressBar';
 
 // Working Lottie animation URLs
 const CAMERA_LOTTIE_URL = "https://lottie.host/b5a5e2d8-0b1a-4e0c-9b3a-3c4e1b6a8f9d/camera.lottie";
@@ -20,6 +21,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   const isHomePage = location.pathname === '/';
   const isBookClubPage = location.pathname === '/book-club';
   const isContactPage = location.pathname === '/contact';
+  const isCaseStudy = location.pathname.startsWith('/case-study');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -288,6 +290,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             )} />
           </button>
         </div>
+        {isCaseStudy && <CaseStudyProgressBar />}
       </header>
       
       {/* Mobile Menu - Full viewport overlay behind header */}
