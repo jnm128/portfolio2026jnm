@@ -141,21 +141,7 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* Section 2 — Who We Are */}
-      <section className="py-16 md:py-20 bg-[#F8F6F1]">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
-          <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
-          </FadeIn>
-          <FadeIn delay={100}>
-            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
-              I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Section 3 — Previous Reads */}
+      {/* Section 2 — Previous Reads */}
       <section className="py-16 md:py-20 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
@@ -198,6 +184,20 @@ const BookClub: React.FC = () => {
                 </div>
               ))}
             </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Section 3 — Who We Are */}
+      <section className="py-16 md:py-20 bg-[#F8F6F1]">
+        <div className="max-w-4xl mx-auto px-8 md:px-16">
+          <FadeIn>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Who We Are</h2>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">
+              I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work.
+            </p>
           </FadeIn>
         </div>
       </section>
