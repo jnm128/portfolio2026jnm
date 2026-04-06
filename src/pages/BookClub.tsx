@@ -191,7 +191,7 @@ const BookClub: React.FC = () => {
                 <div
                   key={index}
                   onClick={() => setSelectedBook(book)}
-                  className="flex-shrink-0 w-[220px] md:w-[260px] snap-start rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.03]"
+                  className="flex-shrink-0 w-[260px] md:w-[300px] snap-start rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.03]"
                 >
                   <div className="aspect-[3/4] overflow-hidden rounded-xl">
                     <img
@@ -208,10 +208,10 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 4 — How the Community Works */}
-      <section className="py-16 md:py-20 bg-[#F8F6F1]">
+      <section className="py-16 md:py-20 bg-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">How the Community Works</h2>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">How the Community Works</h2>
           </FadeIn>
 
           <FadeIn delay={300}>
@@ -221,13 +221,13 @@ const BookClub: React.FC = () => {
                 { icon: MessageCircle, title: "Discuss & Reflect", desc: "Monthly virtual sessions where we connect ideas to our real work, challenge assumptions, and leave with frameworks we can actually use." },
                 { icon: Globe, title: "Stay Connected", desc: "An ongoing LinkedIn community where members share resources, job leads, and design conversations between sessions." },
               ].map((step, index) => (
-                <div key={index} className={`${index > 0 ? 'border-t border-foreground/10' : ''} py-8 flex items-start gap-6`}>
-                  <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center shrink-0">
-                    <step.icon className="w-6 h-6 text-background" />
+                <div key={index} className={`${index > 0 ? 'border-t border-white/15' : ''} py-8 flex items-start gap-6`}>
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0">
+                    <step.icon className="w-6 h-6 text-[#1C1C1C]" />
                   </div>
                   <div>
-                    <h3 className="text-lg md:text-xl font-serif font-medium text-foreground mb-2">{step.title}</h3>
-                    <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed">{step.desc}</p>
+                    <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-2">{step.title}</h3>
+                    <p className="text-base md:text-lg text-white/70 font-serif leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               ))}
