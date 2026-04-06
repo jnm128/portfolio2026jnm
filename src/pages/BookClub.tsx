@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
 import { BookOpen, MessageCircle, Globe, ExternalLink, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import bookClubHero from '@/assets/book-club-hero-2.jpg';
+import emotionalDesignCover from '@/assets/emotional-design-cover.jpg';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 interface Book {
@@ -78,6 +79,14 @@ const books: Book[] = [
     description: "How today's entrepreneurs use continuous innovation to create radically successful businesses through validated learning.",
     link: "https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898",
     rating: 4,
+  },
+  {
+    title: "Emotional Design",
+    author: "Don Norman",
+    cover: emotionalDesignCover,
+    description: "Why we love (or hate) everyday things. Don Norman explores how emotions play a critical role in design and how aesthetics influence our perception of usability.",
+    link: "https://www.amazon.com/Emotional-Design-Love-Everyday-Things/dp/0465051367",
+    rating: 5,
   },
 ];
 
