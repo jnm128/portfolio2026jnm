@@ -25,7 +25,7 @@ const Contact = () => {
               <p className="text-base md:text-lg text-white/60 font-serif mb-2">
                 Interested in my expertise in UX or product? Here's how we can connect.
               </p>
-              <p className="text-sm text-white/40 font-serif mb-12">
+              <p className="text-base md:text-lg text-white/60 font-serif mb-12">
                 I typically respond within 24 hours of receiving your message.
               </p>
             </FadeIn>
