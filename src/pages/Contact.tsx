@@ -22,11 +22,9 @@ const Contact = () => {
               <h2 className="text-3xl md:text-5xl font-serif text-white mb-3">
                 Get in touch
               </h2>
-              <p className="text-base md:text-lg text-white/60 font-serif mb-2">
-                Interested in my expertise in UX or product? Here's how we can connect.
-              </p>
-              <p className="text-base md:text-lg text-white/60 font-serif mb-12">
-                I typically respond within 24 hours of receiving your message.
+              <p className="text-base md:text-lg text-white/60 font-serif mb-12 inline-flex items-center flex-wrap gap-1">
+                Interested in my expertise in UX or product? I typically respond within 24 hours
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse inline-block" />
               </p>
             </FadeIn>
 
@@ -82,17 +80,6 @@ const Contact = () => {
             </FadeIn>
           </div>
 
-          <FadeIn delay={200}>
-            <div className="border-t border-white/15 pt-8">
-              <span className="text-xs uppercase tracking-widest text-white/60">Availability</span>
-              <p className="text-lg font-serif text-white mt-1 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                Open for new projects
-              </p>
-              <p className="text-sm text-white/60 mt-1">Open for projects starting Q3 2026</p>
-              
-            </div>
-          </FadeIn>
         </div>
 
       </div>
