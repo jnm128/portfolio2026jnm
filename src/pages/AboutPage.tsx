@@ -29,12 +29,6 @@ const linkedinPosts = [
     excerpt: "We collect insights but rarely close the loop. Here's a framework I use to turn research into actionable design direction.",
     url: "https://www.linkedin.com/in/joannaminott",
   },
-  {
-    category: "Healthcare UX",
-    title: "Designing for trust in digital health experiences",
-    excerpt: "In healthcare, every interaction carries emotional weight. How we handle uncertainty in UI can make or break patient confidence.",
-    url: "https://www.linkedin.com/in/joannaminott",
-  },
 ];
 
 const AboutPage = () => {
