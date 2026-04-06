@@ -263,10 +263,10 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 6 — FAQ */}
-      <section className="py-16 md:py-20 bg-[#1C1C1C]">
+      <section className="py-16 md:py-20 bg-[#F8F6F1]">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Frequently Asked Questions</h2>
           </FadeIn>
           <div className="space-y-0">
             {[
@@ -288,20 +288,20 @@ const BookClub: React.FC = () => {
               },
             ].map((faq, index) => (
               <FadeIn key={index} delay={100 * (index + 1)}>
-                <div className={index > 0 ? "border-t border-white/15" : ""}>
+                <div className={index > 0 ? "border-t border-foreground/10" : ""}>
                   <button
                     onClick={() => setFaqOpenIndex(faqOpenIndex === index ? null : index)}
                     className="w-full flex items-center justify-between py-5 text-left"
                   >
-                    <span className="text-lg font-medium text-white font-serif pr-4">{faq.q}</span>
+                    <span className="text-lg font-medium text-foreground font-serif pr-4">{faq.q}</span>
                     <ChevronDown
-                      className={`w-5 h-5 text-white/60 shrink-0 transition-transform duration-300 ${faqOpenIndex === index ? 'rotate-180' : ''}`}
+                      className={`w-5 h-5 text-foreground/60 shrink-0 transition-transform duration-300 ${faqOpenIndex === index ? 'rotate-180' : ''}`}
                     />
                   </button>
                   <div
                     className={`overflow-hidden transition-all duration-300 ${faqOpenIndex === index ? 'max-h-40 pb-5' : 'max-h-0'}`}
                   >
-                    <p className="text-base text-white/70 font-serif leading-relaxed max-w-2xl">
+                    <p className="text-base text-muted-foreground font-serif leading-relaxed max-w-2xl">
                       {faq.a}
                     </p>
                   </div>
