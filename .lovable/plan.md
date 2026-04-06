@@ -1,21 +1,30 @@
 
 
-## Testimonials: Remove Arrows Only + Book Club Frosted Arrows
+## Standardize Border Radius to `rounded-2xl` Across Remaining Pages
 
-### 1. Testimonials — remove only the arrow buttons
-In `src/components/Testimonials.tsx`:
-- Keep the "More from collaborators" heading row (line 87)
-- Remove just the two arrow buttons and their wrapping `div` (lines 88-93)
-- Remove unused state (`currentIndex`, `animKey`) and nav logic (`prev`, `next`, `maxIndex`, `visibleCards`)
-- Remove `ChevronLeft`/`ChevronRight` imports
-- Render all `cardTestimonials` directly in the grid instead of `visibleCards`
+The homepage components were already standardized. These are the remaining files with inconsistent radii outside of UI primitives and the Hero (which intentionally keeps `rounded-3xl`).
 
-### 2. Book Club — frosted glass carousel arrows
-In `src/pages/BookClub.tsx`:
-- Update arrow button classes to: `backdrop-blur-md bg-white/30 border border-white/40 shadow-lg hover:bg-white/50`
-- Keeps buttons visible and accessible with a frosted nav-like feel
+### Files to Update
 
-### Files
-- `src/components/Testimonials.tsx`
-- `src/pages/BookClub.tsx`
+1. **`src/pages/Work.tsx`** (line 63)
+   - Project image container: `rounded-xl` → `rounded-2xl`
+
+2. **`src/pages/AboutPage.tsx`** (5 changes)
+   - Line 52: Profile image `rounded-3xl` → `rounded-2xl`
+   - Lines 141, 157: Speaking images `rounded-xl` → `rounded-2xl`
+   - Line 181: Current read book cover `rounded-lg` → `rounded-2xl`
+   - Line 210: Song cover `rounded-lg` → `rounded-2xl`
+
+3. **`src/pages/BookClub.tsx`** (4 changes)
+   - Lines 194, 196: Book card & inner image `rounded-xl` → `rounded-2xl`
+   - Line 225: Step icon container `rounded-xl` → `rounded-2xl`
+   - Line 321: Selected book cover in dialog `rounded-xl` → `rounded-2xl`
+
+4. **`src/components/Gap.tsx`** (line 107)
+   - Newsletter box `rounded-lg` → `rounded-2xl`
+
+### Unchanged
+- **Hero.tsx**: keeps `rounded-3xl` (animates to 0 on scroll)
+- **UI primitives** (`src/components/ui/*`): untouched
+- **Case study pages**: already consistent
 
