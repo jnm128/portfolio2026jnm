@@ -182,48 +182,9 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           className
         )}
       >
-        <div className="w-full mx-auto px-8 md:px-16 flex items-center justify-between">
-          {/* Logo */}
-          {isHomePage ? (
-            <button 
-              onClick={() => scrollToSection('home')}
-              className={cn(
-                "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
-                isContactPage && !isMobileMenuOpen ? 'text-white' : ''
-              )}
-            >
-              {'MINO.'.split('').map((letter, index) => (
-                <span 
-                  key={index} 
-                  className="animate-natural-fall"
-                  style={{ animationDelay: `${index * 80}ms` }}
-                >
-                  {letter}
-                </span>
-              ))}
-            </button>
-          ) : (
-            <Link 
-              to="/"
-              className={cn(
-                "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
-                isContactPage && !isMobileMenuOpen ? 'text-white' : ''
-              )}
-            >
-              {'MINO.'.split('').map((letter, index) => (
-                <span 
-                  key={index} 
-                  className="animate-natural-fall"
-                  style={{ animationDelay: `${index * 80}ms` }}
-                >
-                  {letter}
-                </span>
-              ))}
-            </Link>
-          )}
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+        <div className="w-full mx-auto px-8 md:px-16 flex items-center justify-center relative">
+          {/* Desktop Navigation - Centered with logo in middle */}
+          <nav className="hidden md:flex items-center gap-10">
             <Link
               to="/work"
               className={cn(
@@ -244,6 +205,45 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               About
             </Link>
 
+            {/* Logo */}
+            {isHomePage ? (
+              <button 
+                onClick={() => scrollToSection('home')}
+                className={cn(
+                  "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300 mx-4",
+                  isContactPage ? 'text-white' : ''
+                )}
+              >
+                {'MINO.'.split('').map((letter, index) => (
+                  <span 
+                    key={index} 
+                    className="animate-natural-fall"
+                    style={{ animationDelay: `${index * 80}ms` }}
+                  >
+                    {letter}
+                  </span>
+                ))}
+              </button>
+            ) : (
+              <Link 
+                to="/"
+                className={cn(
+                  "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300 mx-4",
+                  isContactPage ? 'text-white' : ''
+                )}
+              >
+                {'MINO.'.split('').map((letter, index) => (
+                  <span 
+                    key={index} 
+                    className="animate-natural-fall"
+                    style={{ animationDelay: `${index * 80}ms` }}
+                  >
+                    {letter}
+                  </span>
+                ))}
+              </Link>
+            )}
+
             <Link
               to="/book-club"
               className={cn(
@@ -257,38 +257,77 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             <Link
               to="/contact"
               className={cn(
-                "px-5 py-2 rounded-full text-sm font-medium transition-all duration-300",
-                isContactPage
-                  ? "bg-white text-[#1C1C1C] hover:bg-white/80 border border-white"
-                  : "bg-foreground text-background hover:bg-background hover:text-foreground border border-foreground hover:border-border"
+                "text-sm font-medium transition-colors duration-300",
+                isContactPage ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
               )}
             >
-              Get in Touch
+              Contact
             </Link>
           </nav>
-          
-          {/* Mobile menu button */}
-          <button 
-            className="md:hidden relative w-6 h-6 flex flex-col justify-center items-center"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span className={cn(
-              "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
-              isMobileMenuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
-            )} />
-            <span className={cn(
-              "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
-              isMobileMenuOpen ? "opacity-0" : ""
-            )} />
-            <span className={cn(
-              "block w-5 h-0.5 transition-all duration-300",
-              isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
-              isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
-            )} />
-          </button>
+
+          {/* Mobile: Logo left, hamburger right */}
+          <div className="flex md:hidden items-center justify-between w-full">
+            {isHomePage ? (
+              <button 
+                onClick={() => scrollToSection('home')}
+                className={cn(
+                  "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
+                  isContactPage && !isMobileMenuOpen ? 'text-white' : ''
+                )}
+              >
+                {'MINO.'.split('').map((letter, index) => (
+                  <span 
+                    key={index} 
+                    className="animate-natural-fall"
+                    style={{ animationDelay: `${index * 80}ms` }}
+                  >
+                    {letter}
+                  </span>
+                ))}
+              </button>
+            ) : (
+              <Link 
+                to="/"
+                className={cn(
+                  "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
+                  isContactPage && !isMobileMenuOpen ? 'text-white' : ''
+                )}
+              >
+                {'MINO.'.split('').map((letter, index) => (
+                  <span 
+                    key={index} 
+                    className="animate-natural-fall"
+                    style={{ animationDelay: `${index * 80}ms` }}
+                  >
+                    {letter}
+                  </span>
+                ))}
+              </Link>
+            )}
+
+            {/* Mobile menu button */}
+            <button 
+              className="relative w-6 h-6 flex flex-col justify-center items-center"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span className={cn(
+                "block w-5 h-0.5 transition-all duration-300",
+                isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+                isMobileMenuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
+              )} />
+              <span className={cn(
+                "block w-5 h-0.5 transition-all duration-300",
+                isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+                isMobileMenuOpen ? "opacity-0" : ""
+              )} />
+              <span className={cn(
+                "block w-5 h-0.5 transition-all duration-300",
+                isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+                isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
+              )} />
+            </button>
+          </div>
         </div>
         {isCaseStudy && <CaseStudyProgressBar />}
       </header>
@@ -307,16 +346,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           <Link to="/work" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Work</Link>
           <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">About</Link>
           <Link to="/book-club" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Community</Link>
-          
-          <Link
-            to="/contact"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="w-full max-w-xs bg-foreground text-background px-6 py-3 rounded-full text-base font-medium text-center
-                       hover:bg-background hover:text-foreground border border-foreground hover:border-border
-                       transition-all duration-300 active:scale-95"
-          >
-            Get in Touch
-          </Link>
+          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Contact</Link>
         </nav>
       </div>
     </>
