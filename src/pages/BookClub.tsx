@@ -110,21 +110,21 @@ const BookClub: React.FC = () => {
                 <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8 max-w-xl">
                   A UX book club for designers who think beyond the screen.
                 </p>
-                <div className="border-t border-foreground/10 pt-6 mt-2 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <div className="border-t border-foreground/10 pt-6 mt-2 <div className="border-t border-foreground/10 pt-6 mt-2 grid grid-cols-4 gap-3 md:gap-8">">
                   <div>
                     <div className="text-xl md:text-2xl lg:text-3xl font-serif font-medium text-foreground">2023</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Est.</div>
                   </div>
                   <div>
-                    <div className="text-xl md:text-2xl lg:text-3xl font-serif font-medium text-foreground">486+</div>
+                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">486+</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Members</div>
                   </div>
                   <div>
-                    <div className="text-xl md:text-2xl lg:text-3xl font-serif font-medium text-foreground">8+</div>
+                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">8+</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Books</div>
                   </div>
                   <div>
-                    <div className="text-xl md:text-2xl lg:text-3xl font-serif font-medium text-foreground">Monthly</div>
+                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">Monthly</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Sessions</div>
                   </div>
                 </div>
