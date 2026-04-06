@@ -346,16 +346,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           <Link to="/work" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Work</Link>
           <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">About</Link>
           <Link to="/book-club" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Community</Link>
-          
-          <Link
-            to="/contact"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="w-full max-w-xs bg-foreground text-background px-6 py-3 rounded-full text-base font-medium text-center
-                       hover:bg-background hover:text-foreground border border-foreground hover:border-border
-                       transition-all duration-300 active:scale-95"
-          >
-            Get in Touch
-          </Link>
+          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Contact</Link>
         </nav>
       </div>
     </>
