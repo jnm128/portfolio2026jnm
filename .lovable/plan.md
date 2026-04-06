@@ -1,41 +1,23 @@
 
 
-## Case Study Layout Updates
+## Changes to All Three Case Study Pages
 
-### Changes
+### 1. Update hero section container width
+Change from `container mx-auto` to `mx-auto max-w-[1600px]` to match the homepage Hero component's wide layout.
 
-**1. Move metadata grid below hero image (3 case study files)**
+### 2. Remove metadata grid
+Delete the entire 2x2 grid section (My Role, The Problem, My Team, Timeline) from the hero area.
 
-In `CaseStudyMindfulWellness.tsx`, `CaseStudyArtisanMarketplace.tsx`, and `CaseStudyCreativeStudio.tsx`:
-- Remove the metadata grid (My Role, The Problem, My Team, Timeline) from inside the `max-w-4xl` wrapper above the image
-- Place it after the hero image `div`, still inside the main container
-- Keep the title and description in the `max-w-4xl` wrapper with standard `px-8 md:px-16` padding
-
-Structure becomes:
-```text
-<section hero>
-  <div container px-8 md:px-16>
-    Back button
-    <div max-w-4xl>
-      <h1>Title</h1>
-      <p>Description</p>
-    </div>
-    <div hero image rounded-2xl mt-12>...</div>
-    <div metadata grid mt-12>        ← moved below image
-      My Role | The Problem
-      My Team | Timeline
-    </div>
-  </div>
-</section>
-```
-
-**2. Remove star icon from SplitSection labels**
-
-In `src/components/SplitSection.tsx` line 16: remove the `<span className="text-muted-foreground text-sm">✦</span>` element and the `gap-2` from the parent flex container.
+### 3. Move Final Designs images outside SplitSection
+Replace the "Final Designs" SplitSection with a full-width image gallery. Each image will be rendered at full container width with `rounded-2xl overflow-hidden aspect-[16/9]` styling — matching the hero image treatment. Remove the per-image subheadings.
 
 ### Files to modify
-1. `src/components/SplitSection.tsx` — remove ✦ icon
-2. `src/pages/CaseStudyMindfulWellness.tsx` — move metadata below image
-3. `src/pages/CaseStudyArtisanMarketplace.tsx` — move metadata below image
-4. `src/pages/CaseStudyCreativeStudio.tsx` — move metadata below image
+- `src/pages/CaseStudyMindfulWellness.tsx`
+- `src/pages/CaseStudyArtisanMarketplace.tsx`
+- `src/pages/CaseStudyCreativeStudio.tsx`
+
+### Technical detail
+- Hero section container: `mx-auto max-w-[1600px] px-8 md:px-16` (replacing `container mx-auto px-8 md:px-16`)
+- Title/description block keeps `max-w-4xl mx-auto` for readability
+- Final Designs section becomes a simple vertical stack of full-width images with `space-y-8`, each wrapped in `ImageLightbox` inside a `rounded-2xl overflow-hidden` container, using `aspect-[16/9] w-full object-cover`
 
