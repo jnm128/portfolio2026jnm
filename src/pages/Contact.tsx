@@ -22,9 +22,8 @@ const Contact = () => {
               <h2 className="text-3xl md:text-5xl font-serif text-white mb-3">
                 Get in touch
               </h2>
-              <p className="text-base md:text-lg text-white/60 font-serif mb-12 inline-flex items-center flex-wrap gap-1">
+              <p className="text-base md:text-lg text-white/60 font-serif mb-12">
                 Interested in my expertise in UX or product? I typically respond within 24 hours
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse inline-block" />
               </p>
             </FadeIn>
 
