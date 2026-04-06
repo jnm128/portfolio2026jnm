@@ -67,7 +67,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       </div>
       <div ref={containerRef} className="mx-auto max-w-[1600px] px-8 md:px-16">
         <PopIn>
-          <div ref={imageWrapperRef} className="relative rounded-3xl overflow-hidden <div ref={imageWrapperRef} className="relative rounded-3xl overflow-hidden h-[50vh] md:h-[60vh] lg:h-[90vh]">">
+          <div ref={imageWrapperRef} className="relative rounded-3xl overflow-hidden h-[50vh] md:h-[60vh] lg:h-[90vh]">">
             {heroImages.map((image, index) => (
               <img 
                 key={image} 
