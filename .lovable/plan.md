@@ -1,17 +1,19 @@
 
 
-## Update Case Study Title Padding to Match Homepage
+## Fix Animations & Swap Sections on Book Club Page
 
-The homepage Hero places the title and description directly inside the wide container (`max-w-[1600px] px-8 md:px-16`) with no centering wrapper, and uses `mb-2` on the title and `mb-4` on the description. The case study pages currently wrap title/description in `max-w-4xl mx-auto` (centering them) and use different spacing (`mb-4` on title, `mt-12` before image).
+### 1. Swap "Who We Are" and "Previous Reads" sections
+Move "Who We Are" (Section 3, lines 191-203) above "Previous Reads" (Section 2, lines 144-189), so the order becomes: Hero → Who We Are → Previous Reads → How the Community Works.
 
-### Changes (all 3 case study files)
+### 2. Fix staggered fade-in animations
+Currently, both "Who We Are" and "How the Community Works" wrap the heading in one `<FadeIn>` and the content paragraph/list in another `<FadeIn delay={100}>`. Because both elements are close together in the viewport, they trigger near-simultaneously, making the stagger imperceptible — they appear to animate as one block.
 
-1. **Remove `max-w-4xl mx-auto` wrapper** around title/description so they left-align like the homepage
-2. **Update title spacing** from `mb-4` to `mb-2` to match homepage
-3. **Keep description max-width** using `max-w-2xl` (matching homepage) instead of `max-w-3xl`
+**Fix**: Wrap the heading and content together in a single `<FadeIn>`, then give the content paragraph/list its own separate staggered delay using inline CSS (`opacity: 0`, `transform`, `transition-delay`) or by increasing the delay significantly (e.g., `delay={300}`) so the stagger is visually distinct.
 
-### Files
-- `src/pages/CaseStudyMindfulWellness.tsx`
-- `src/pages/CaseStudyArtisanMarketplace.tsx`
-- `src/pages/CaseStudyCreativeStudio.tsx`
+Approach: Keep the heading inside a `<FadeIn>` with no delay, and increase the content `<FadeIn>` delay from `100` to `300` for both sections. This creates a noticeable two-step reveal (heading first, then content).
+
+### Technical detail
+- **File**: `src/pages/BookClub.tsx`
+- "Who We Are" section (lines 191-203): move above "Previous Reads" (lines 144-189)
+- Lines 197, 212: change `delay={100}` to `delay={300}` on both content `<FadeIn>` wrappers
 
