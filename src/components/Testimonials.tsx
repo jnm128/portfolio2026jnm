@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface TestimonialsProps {
   className?: string;
@@ -40,15 +39,6 @@ const cardTestimonials = [
 ];
 
 const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [animKey, setAnimKey] = useState(0);
-  const cardsPerView = 3;
-  const maxIndex = Math.max(0, cardTestimonials.length - cardsPerView);
-
-  const prev = () => { setCurrentIndex((i) => Math.max(0, i - 1)); setAnimKey((k) => k + 1); };
-  const next = () => { setCurrentIndex((i) => Math.min(maxIndex, i + 1)); setAnimKey((k) => k + 1); };
-
-  const visibleCards = cardTestimonials.slice(currentIndex, currentIndex + cardsPerView);
 
   return (
     <div id="testimonials" className={cn('pt-12 pb-12 md:pt-20 md:pb-20', className)}>
@@ -80,23 +70,15 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
 
         {/* Subheading + Arrows */}
         <FadeIn delay={200}>
-          <div className="flex items-end justify-between mb-8">
+          <div className="mb-8">
             <h3 className="text-base text-white/80">More from collaborators</h3>
-            <div className="flex gap-2">
-              <button onClick={prev} disabled={currentIndex === 0} className="w-9 h-9 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white hover:bg-white/20 flex items-center justify-center disabled:opacity-30 transition-colors">
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button onClick={next} disabled={currentIndex >= maxIndex} className="w-9 h-9 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white hover:bg-white/20 flex items-center justify-center disabled:opacity-30 transition-colors">
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
           </div>
         </FadeIn>
 
         {/* Card Grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {visibleCards.map((t, index) => (
-            <FadeIn key={`${animKey}-${index}`} delay={index * 150} duration={500}>
+          {cardTestimonials.map((t, index) => (
+            <FadeIn key={index} delay={index * 150} duration={500}>
               <div className="rounded-2xl p-6 h-full flex flex-col justify-between gap-6 bg-[#F8F6F1]">
                 <p className="text-sm leading-relaxed text-foreground/80 font-serif">"{t.quote}"</p>
                 <div className="flex items-center justify-between">

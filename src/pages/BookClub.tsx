@@ -169,13 +169,13 @@ const BookClub: React.FC = () => {
               <div className="hidden md:flex items-center gap-2">
                 <button
                   onClick={() => scrollCarousel('left')}
-                  className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
+                  className="w-9 h-9 rounded-full backdrop-blur-md bg-white/30 border border-white/40 shadow-lg flex items-center justify-center hover:bg-white/50 transition-colors"
                 >
                   <ChevronLeft className="w-4 h-4 text-foreground" />
                 </button>
                 <button
                   onClick={() => scrollCarousel('right')}
-                  className="w-9 h-9 rounded-full bg-foreground/10 border border-foreground/20 flex items-center justify-center hover:bg-foreground/20 transition-colors"
+                  className="w-9 h-9 rounded-full backdrop-blur-md bg-white/30 border border-white/40 shadow-lg flex items-center justify-center hover:bg-white/50 transition-colors"
                 >
                   <ChevronRight className="w-4 h-4 text-foreground" />
                 </button>
