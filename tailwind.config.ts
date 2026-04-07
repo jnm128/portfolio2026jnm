@@ -24,6 +24,7 @@ export default {
 		fontFamily: {
 		sans: ['Inter', 'system-ui', 'sans-serif'],
 			serif: ['Inter Tight', 'system-ui', 'sans-serif'],
+			syne: ['Syne', 'sans-serif'],
 		},
 			colors: {
 				border: 'hsl(var(--border))',
