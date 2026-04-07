@@ -25,6 +25,7 @@ export default {
 		sans: ['Inter', 'system-ui', 'sans-serif'],
 			serif: ['Inter Tight', 'system-ui', 'sans-serif'],
 			syne: ['Syne', 'sans-serif'],
+			'space-grotesk': ['Space Grotesk', 'sans-serif'],
 		},
 			colors: {
 				border: 'hsl(var(--border))',
