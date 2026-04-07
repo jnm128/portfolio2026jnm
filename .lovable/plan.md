@@ -1,19 +1,12 @@
 
 
-## Fix: Equal Spacing Around Divider Line
+## Reduce Divider Spacing
 
-### Problem
-The helper text has `mb-8` (2rem) bottom margin plus `mt-2` on the stats container, creating ~2.25rem above the divider line. Below the line, there's only `pt-6` (1.5rem). The spacing is uneven.
+### Change
+In `src/pages/BookClub.tsx`, reduce spacing around the divider line by changing `py-6` to `py-4` on both stats containers, and `mb-6` to `mb-4` on the description paragraph.
 
-### Fix — `src/pages/BookClub.tsx`
-
-Equalize spacing by changing the description paragraph's `mb-8` to `mb-6` and removing `mt-2` from both stats blocks. This gives 1.5rem above and 1.5rem below the divider line.
-
-**Changes:**
-1. **Line 119** — Change `mb-8` to `mb-6` on the `<p>` tag
-2. **Line 122** — Change `pt-6 mt-2` to `py-6` on the desktop stats (`hidden lg:grid`)
-3. **Line 141** — Change `pt-6 mt-2` to `py-6` on the tablet stats (`lg:hidden`)
-
-### File modified
-- `src/pages/BookClub.tsx`
+### Edits
+1. **Line 119** — `mb-6` → `mb-4` on the `<p>` tag
+2. **Line 122** — `py-6` → `py-4` on the desktop stats div
+3. **Line 141** — `py-6` → `py-4` on the tablet stats div
 
