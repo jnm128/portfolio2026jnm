@@ -113,7 +113,7 @@ const BookClub: React.FC = () => {
           <FadeIn>
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
               <div className="lg:w-1/2">
-                <h1 className="text-3xl md:text-5xl font-syne text-foreground mb-4 leading-tight">
+                <h1 className="text-3xl md:text-5xl font-syne font-bold text-foreground mb-4 leading-tight">
                   Fresh Perspectives
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-4 max-w-xl">
