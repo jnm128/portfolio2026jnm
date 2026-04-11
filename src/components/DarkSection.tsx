@@ -21,6 +21,7 @@ const DarkSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
+      data-theme="dark"
       className="transition-colors duration-1000"
       style={{ backgroundColor: isVisible ? '#1C1C1C' : '#F8F6F1' }}
     >

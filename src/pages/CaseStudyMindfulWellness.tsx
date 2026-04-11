@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CaseStudyNav from '@/components/CaseStudyNav';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
@@ -41,7 +42,7 @@ const CaseStudyMindfulWellness = () => {
               <img 
                 src="/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png" 
                 alt="Mindful Wellness Platform" 
-                className="w-full object-cover aspect-[16/9]"
+                className="w-full object-cover aspect-[16/10]"
               />
             </div>
           </FadeIn>
