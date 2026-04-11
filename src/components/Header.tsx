@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import CaseStudyProgressBar from './CaseStudyProgressBar';
 
-// Working Lottie animation URLs
 const CAMERA_LOTTIE_URL = "https://lottie.host/b5a5e2d8-0b1a-4e0c-9b3a-3c4e1b6a8f9d/camera.lottie";
 
 interface HeaderProps {
@@ -14,6 +13,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDarkSection, setIsDarkSection] = useState(false);
   const headerRef = useRef<HTMLElement | null>(null);
   const [headerHeight, setHeaderHeight] = useState(0);
   const location = useLocation();
@@ -22,6 +22,44 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   const isBookClubPage = location.pathname === '/book-club';
   const isContactPage = location.pathname === '/contact';
   const isCaseStudy = location.pathname.startsWith('/case-study');
+
+  // Dynamic dark section detection
+  useEffect(() => {
+    const checkDarkSections = () => {
+      const darkSections = document.querySelectorAll('[data-theme="dark"]');
+      if (darkSections.length === 0) {
+        setIsDarkSection(false);
+        return;
+      }
+
+      const observers: IntersectionObserver[] = [];
+      const visibleSet = new Set<Element>();
+
+      darkSections.forEach((section) => {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              visibleSet.add(section);
+            } else {
+              visibleSet.delete(section);
+            }
+            setIsDarkSection(visibleSet.size > 0);
+          },
+          { rootMargin: '-80px 0px -90% 0px', threshold: 0 }
+        );
+        observer.observe(section);
+        observers.push(observer);
+      });
+
+      return () => observers.forEach(o => o.disconnect());
+    };
+
+    // Delay to let DOM render
+    const timeout = setTimeout(checkDarkSections, 200);
+    return () => clearTimeout(timeout);
+  }, [location.pathname]);
+
+  const useDarkTheme = isContactPage || isDarkSection;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,7 +92,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
     if (id === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      // Immediately set scrolled state since we're navigating to a section
       setIsScrolled(true);
       const element = document.getElementById(id);
       if (element) {
@@ -62,7 +99,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           top: element.offsetTop - 80,
           behavior: 'smooth'
         });
-        // Verify scroll position after animation completes
         setTimeout(() => {
           setIsScrolled(window.scrollY > 10);
         }, 500);
@@ -84,7 +120,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
     }, 100);
   };
 
-  // Reusable Lottie nav link component
   const LottieNavItem = ({ 
     label, 
     lottieUrl, 
@@ -118,7 +153,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
     return <button onClick={onClick} className={className}>{content}</button>;
   };
 
-  // Reusable mobile nav link component
   const MobileNavLink = ({ 
     label, 
     sectionId,
@@ -130,7 +164,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   }) => {
     const linkClassName = "text-lg font-medium text-foreground hover:text-muted-foreground transition-colors";
 
-    // Special case: Book Club nav on Book Club page - refresh
     if (isBookClubNavOnBookClubPage) {
       return (
         <button 
@@ -145,7 +178,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       );
     }
 
-    // On home page: scroll to section
     if (isHomePage && sectionId) {
       return (
         <button onClick={() => scrollToSection(sectionId)} className={linkClassName}>
@@ -154,7 +186,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       );
     }
 
-    // On other pages: navigate to home and scroll
     if (sectionId) {
       return (
         <button onClick={() => navigateAndScroll(sectionId)} className={linkClassName}>
@@ -173,23 +204,23 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         className={cn(
           `fixed top-0 left-0 right-0 transition-all duration-300 ${isMobileMenuOpen ? 'z-[101]' : 'z-[60]'}`,
           isScrolled 
-            ? `py-4 ${isMobileMenuOpen ? 'bg-background' : isContactPage ? 'bg-[#1C1C1C]' : 'bg-background/95 backdrop-blur-sm'}`
+            ? `py-4 ${isMobileMenuOpen ? 'bg-background' : useDarkTheme ? 'bg-[#1C1C1C]' : 'bg-background/95 backdrop-blur-sm'}`
             : isMobileMenuOpen
               ? 'py-6 bg-background'
-              : isContactPage
+              : useDarkTheme
                 ? 'py-6 bg-transparent'
                 : 'py-6 bg-background',
           className
         )}
       >
         <div className="w-full mx-auto px-8 md:px-16 flex items-center justify-center relative">
-          {/* Desktop Navigation - Centered with logo in middle */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-10">
             <Link
               to="/work"
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
-                isContactPage ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
+                useDarkTheme && !isMobileMenuOpen ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
               )}
             >
               Work
@@ -199,7 +230,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               to="/about"
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
-                isContactPage ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
+                useDarkTheme && !isMobileMenuOpen ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
               )}
             >
               About
@@ -211,7 +242,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 onClick={() => scrollToSection('home')}
                 className={cn(
                   "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300 mx-4",
-                  isContactPage ? 'text-white' : ''
+                  useDarkTheme && !isMobileMenuOpen ? 'text-white' : ''
                 )}
               >
                 {'MINO.'.split('').map((letter, index) => (
@@ -229,7 +260,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 to="/"
                 className={cn(
                   "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300 mx-4",
-                  isContactPage ? 'text-white' : ''
+                  useDarkTheme && !isMobileMenuOpen ? 'text-white' : ''
                 )}
               >
                 {'MINO.'.split('').map((letter, index) => (
@@ -248,7 +279,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               to="/book-club"
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
-                isContactPage ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
+                useDarkTheme && !isMobileMenuOpen ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
               )}
             >
               Community
@@ -258,7 +289,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               to="/contact"
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
-                isContactPage ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
+                useDarkTheme && !isMobileMenuOpen ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
               )}
             >
               Contact
@@ -272,7 +303,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 onClick={() => scrollToSection('home')}
                 className={cn(
                   "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
-                  isContactPage && !isMobileMenuOpen ? 'text-white' : ''
+                  useDarkTheme && !isMobileMenuOpen ? 'text-white' : ''
                 )}
               >
                 {'MINO.'.split('').map((letter, index) => (
@@ -290,7 +321,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 to="/"
                 className={cn(
                   "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
-                  isContactPage && !isMobileMenuOpen ? 'text-white' : ''
+                  useDarkTheme && !isMobileMenuOpen ? 'text-white' : ''
                 )}
               >
                 {'MINO.'.split('').map((letter, index) => (
@@ -313,17 +344,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             >
               <span className={cn(
                 "block w-5 h-0.5 transition-all duration-300",
-                isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+                useDarkTheme && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
                 isMobileMenuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
               )} />
               <span className={cn(
                 "block w-5 h-0.5 transition-all duration-300",
-                isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+                useDarkTheme && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
                 isMobileMenuOpen ? "opacity-0" : ""
               )} />
               <span className={cn(
                 "block w-5 h-0.5 transition-all duration-300",
-                isContactPage && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+                useDarkTheme && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
                 isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
               )} />
             </button>
@@ -332,7 +363,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         {isCaseStudy && <CaseStudyProgressBar />}
       </header>
       
-      {/* Mobile Menu - Full viewport overlay behind header */}
+      {/* Mobile Menu */}
       <div
         className={cn(
           "fixed inset-0 z-[100] md:hidden bg-background",
