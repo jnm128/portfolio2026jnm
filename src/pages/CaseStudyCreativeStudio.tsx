@@ -172,6 +172,7 @@ const CaseStudyCreativeStudio = () => {
         </div>
       </section>
 
+      <CaseStudyNav currentSlug="creative-studio" />
       <Footer />
     </main>
   );

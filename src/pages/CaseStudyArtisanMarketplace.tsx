@@ -171,6 +171,7 @@ const CaseStudyArtisanMarketplace = () => {
         </div>
       </section>
 
+      <CaseStudyNav currentSlug="artisan-marketplace" />
       <Footer />
     </main>
   );

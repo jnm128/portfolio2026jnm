@@ -172,6 +172,7 @@ const CaseStudyMindfulWellness = () => {
         </div>
       </section>
 
+      <CaseStudyNav currentSlug="mindful-wellness" />
       <Footer />
     </main>
   );
