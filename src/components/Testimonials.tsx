@@ -39,7 +39,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
   const next = () => setActiveIndex((i) => (i + 1) % testimonials.length);
 
   return (
-    <div id="testimonials" className={cn('pt-12 pb-12 md:pt-20 md:pb-20', className)}>
+    <div id="testimonials" className={cn('pt-12 pb-4 md:pt-20 md:pb-8', className)}>
       <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
         {/* Section Label + Arrows */}
         <FadeIn>

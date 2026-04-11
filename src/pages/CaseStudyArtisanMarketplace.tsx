@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CaseStudyNav from '@/components/CaseStudyNav';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
@@ -41,7 +42,7 @@ const CaseStudyArtisanMarketplace = () => {
               <img 
                 src="/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png" 
                 alt="Artisan Marketplace Platform" 
-                className="w-full object-cover aspect-[16/9]"
+                className="w-full object-cover aspect-[16/10]"
               />
             </div>
           </FadeIn>
@@ -170,6 +171,7 @@ const CaseStudyArtisanMarketplace = () => {
         </div>
       </section>
 
+      <CaseStudyNav currentSlug="artisan-marketplace" />
       <Footer />
     </main>
   );

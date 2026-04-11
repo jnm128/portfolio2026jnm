@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
-import { BookOpen, MessageCircle, Globe, ExternalLink, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
+import { BookOpen, MessageCircle, Globe, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import bookClubHero from '@/assets/book-club-hero-3.png';
 import emotionalDesignCover from '@/assets/emotional-design-cover.jpg';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -169,7 +169,7 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 2 — Who We Are */}
-      <section className="py-16 md:py-20 bg-[#1C1C1C]">
+      <section data-theme="dark" className="py-16 md:py-20 bg-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">Who We Are</h2>
@@ -235,7 +235,7 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 4 — How the Community Works */}
-      <section className="py-16 md:py-20 bg-[#1C1C1C]">
+      <section data-theme="dark" className="py-16 md:py-20 bg-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">How the Community Works</h2>
@@ -249,8 +249,8 @@ const BookClub: React.FC = () => {
                 { icon: Globe, title: "Stay Connected", desc: "An ongoing LinkedIn community where members share resources, job leads, and design conversations between sessions." },
               ].map((step, index) => (
                 <div key={index} className={`${index > 0 ? 'border-t border-white/15' : ''} py-8 flex items-start gap-6`}>
-                  <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shrink-0">
-                    <step.icon className="w-6 h-6 text-[#1C1C1C]" />
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+                    <step.icon className="w-6 h-6 text-[#F5E642]" />
                   </div>
                   <div>
                     <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-2">{step.title}</h3>
@@ -263,15 +263,15 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* Section 5 — CTA (dark) */}
-      <section className="py-16 md:py-24 bg-[#1C1C1C]">
+      {/* Section 5 — CTA (light) */}
+      <section className="py-16 md:py-24 bg-[#F8F6F1]">
         <div className="mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col gap-6 items-center text-center">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-white">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-foreground">
                 Ready to read with us?
               </h2>
-              <p className="text-lg md:text-xl text-white/70 font-serif leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground font-serif leading-relaxed">
                 Join a community of UX professionals who believe that great designers are also great thinkers.
               </p>
               <div className="mt-4">
@@ -279,7 +279,7 @@ const BookClub: React.FC = () => {
                   href="https://www.linkedin.com/in/joannaminott"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 py-3 rounded-full bg-white text-[#1C1C1C] font-medium hover:bg-white/90 transition-colors"
+                  className="inline-flex items-center px-8 py-3 rounded-full bg-[#1C1C1C] text-white font-medium hover:bg-[#1C1C1C]/90 transition-colors"
                 >
                   Join the Club
                 </a>
@@ -289,11 +289,11 @@ const BookClub: React.FC = () => {
         </div>
       </section>
 
-      {/* Section 6 — FAQ */}
-      <section className="py-16 md:py-20 bg-[#F8F6F1]">
+      {/* Section 6 — FAQ (dark) */}
+      <section data-theme="dark" className="py-16 md:py-20 bg-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60 mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">Frequently Asked Questions</h2>
           </FadeIn>
           <div className="space-y-0">
             {[
@@ -315,20 +315,20 @@ const BookClub: React.FC = () => {
               },
             ].map((faq, index) => (
               <FadeIn key={index} delay={100 * (index + 1)}>
-                <div className={index > 0 ? "border-t border-foreground/10" : ""}>
+                <div className={index > 0 ? "border-t border-white/15" : ""}>
                   <button
                     onClick={() => setFaqOpenIndex(faqOpenIndex === index ? null : index)}
                     className="w-full flex items-center justify-between py-5 text-left"
                   >
-                    <span className="text-lg font-medium text-foreground font-serif pr-4">{faq.q}</span>
+                    <span className="text-lg font-medium text-white font-serif pr-4">{faq.q}</span>
                     <ChevronDown
-                      className={`w-5 h-5 text-foreground/60 shrink-0 transition-transform duration-300 ${faqOpenIndex === index ? 'rotate-180' : ''}`}
+                      className={`w-5 h-5 text-white/60 shrink-0 transition-transform duration-300 ${faqOpenIndex === index ? 'rotate-180' : ''}`}
                     />
                   </button>
                   <div
                     className={`overflow-hidden transition-all duration-300 ${faqOpenIndex === index ? 'max-h-40 pb-5' : 'max-h-0'}`}
                   >
-                    <p className="text-base text-muted-foreground font-serif leading-relaxed max-w-2xl">
+                    <p className="text-base text-white/70 font-serif leading-relaxed max-w-2xl">
                       {faq.a}
                     </p>
                   </div>
@@ -356,15 +356,21 @@ const BookClub: React.FC = () => {
               <div className="p-6 pt-4">
                 <DialogHeader className="mb-4">
                   <DialogTitle className="text-xl font-serif font-medium text-foreground">
-                    <a href={selectedBook.link} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70 transition-opacity inline-flex items-center gap-1.5">
-                      {selectedBook.title} <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
+                    {selectedBook.title}
                   </DialogTitle>
                   <p className="text-sm text-muted-foreground font-serif">{selectedBook.author}</p>
                 </DialogHeader>
-                <p className="text-sm text-muted-foreground font-serif leading-relaxed mb-4">
+                <p className="text-sm text-muted-foreground font-serif leading-relaxed mb-6">
                   {selectedBook.description}
                 </p>
+                <a
+                  href={selectedBook.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full px-6 py-2.5 rounded-full bg-[#1C1C1C] text-white font-medium hover:bg-[#1C1C1C]/90 transition-colors"
+                >
+                  View on Amazon
+                </a>
               </div>
             </>
           )}
