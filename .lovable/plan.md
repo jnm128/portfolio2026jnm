@@ -1,25 +1,24 @@
 
 
-## Fix About Page On-Load Animation Consistency
+## Change Site Font to Outfit
 
-### Problem
-The About page profile image has an extra `animate-fade-in` CSS class (line 55 of `AboutPage.tsx`) that adds a redundant 0.5s fade+slide animation on top of the `FadeIn` component wrapper. No other page does this -- it creates a double-animation effect unique to the About page.
+### Changes
 
-### Fix
+**1. Load Outfit font from Google Fonts** (`index.html`)
+Replace the current Google Fonts link. Load Outfit weights 300–700 instead of Inter, Inter Tight, Space Grotesk, and Syne.
 
-**File**: `src/pages/AboutPage.tsx`, line 55
+**2. Update Tailwind font families** (`tailwind.config.ts`)
+- `sans` → `['Outfit', 'system-ui', 'sans-serif']`
+- `serif` → `['Outfit', 'system-ui', 'sans-serif']` (keep the alias so all `font-serif` references work without changes)
+- Remove `syne` and `space-grotesk` families (or point them to Outfit)
 
-Remove `animate-fade-in` from the image's className so it inherits only the parent `FadeIn` component animation (matching all other pages).
-
-Change:
-```tsx
-className="w-full h-full object-cover animate-fade-in"
-```
-To:
-```tsx
-className="w-full h-full object-cover"
-```
+**3. Update logo to Outfit 700** (`src/components/Header.tsx` and `src/components/Footer.tsx`)
+- Header logo: change from `font-serif font-medium` to `font-sans font-bold` (Outfit 700)
+- Footer logo: change from `font-serif font-medium` to `font-sans font-bold`
 
 ### Files Modified
-- `src/pages/AboutPage.tsx`
+- `index.html` — swap Google Fonts link to Outfit
+- `tailwind.config.ts` — update font family definitions
+- `src/components/Header.tsx` — logo font weight
+- `src/components/Footer.tsx` — logo font weight
 
