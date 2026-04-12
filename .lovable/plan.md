@@ -1,52 +1,20 @@
 
 
-## Add TLDR Section Above Problem Space on All Case Study Pages
+## Remove Sticky Behavior from "Design, Tech & Intention" Title
 
-Add a new section between the hero and the "Problem Space" section on each case study page, using the same `SplitSection` layout with "TLDR" as the label.
+**File**: `src/components/AboutSection.tsx`, line 13
 
-### Content Structure
+Remove `md:sticky md:top-32 self-start` from the left column wrapper so the title and helper text scroll naturally with the page.
 
-Each TLDR section will display metadata in a clean grid:
-
-```
-TLDR                Client: [name]
-                    Category: [type]
-                    Industry: [industry]
-                    Responsibilities: [list]
-                    My Role: [role]
-                    Timeline: [duration]
-```
-
-### Implementation
-
-**Files**: `src/pages/CaseStudyMindfulWellness.tsx`, `src/pages/CaseStudyArtisanMarketplace.tsx`, `src/pages/CaseStudyCreativeStudio.tsx`
-
-Insert a new `<section>` block between the hero and problem space sections on each page:
-
+Change:
 ```tsx
-<section className="py-12 md:py-20 bg-[#F8F6F1]">
-  <div className="container mx-auto px-8 md:px-16">
-    <SplitSection label="TLDR">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
-        <div>
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Client</p>
-          <p className="text-base font-medium">...</p>
-        </div>
-        <!-- repeat for Category, Industry, Responsibilities, My Role, Timeline -->
-      </div>
-    </SplitSection>
-  </div>
-</section>
+<div className="md:sticky md:top-32 self-start">
 ```
-
-**Per-page placeholder content** (values are placeholders the user can update later):
-
-- **Mindful Wellness**: Client: Mindful Wellness / Category: Product Design / Industry: Health & Wellness / Responsibilities: UX/UI Design, Research / My Role: Lead Designer / Timeline: 8 weeks
-- **Artisan Marketplace**: Client: Artisan Collective / Category: E-commerce / Industry: Retail & Crafts / Responsibilities: UX/UI Design, Development / My Role: Lead Designer / Timeline: 12 weeks
-- **Creative Studio**: Client: Lumina Creative Studio / Category: Brand Identity / Industry: Creative Services / Responsibilities: Brand Strategy, Web Design / My Role: Lead Designer / Timeline: 6 weeks
+To:
+```tsx
+<div>
+```
 
 ### Files Modified
-- `src/pages/CaseStudyMindfulWellness.tsx`
-- `src/pages/CaseStudyArtisanMarketplace.tsx`
-- `src/pages/CaseStudyCreativeStudio.tsx`
+- `src/components/AboutSection.tsx`
 
