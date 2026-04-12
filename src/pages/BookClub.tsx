@@ -116,9 +116,23 @@ const BookClub: React.FC = () => {
                 <h1 className="text-3xl md:text-5xl font-space-grotesk font-extrabold text-foreground mb-4 leading-tight">
                   fresh perspectives
                 </h1>
-                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-4 max-w-xl">
+                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6 max-w-xl">
                   A UX book club for designers who think beyond the screen.
                 </p>
+                <div className="flex flex-wrap gap-3 mb-6">
+                  <a
+                    href="#community"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-foreground text-background font-medium text-sm rounded-full hover:opacity-90 transition-opacity"
+                  >
+                    Join the Community
+                  </a>
+                  <a
+                    href="#upcoming"
+                    className="inline-flex items-center justify-center px-6 py-3 border border-foreground/20 text-foreground font-medium text-sm rounded-full hover:bg-foreground/5 transition-colors"
+                  >
+                    See Upcoming Events
+                  </a>
+                </div>
                 <div className="hidden lg:grid border-t border-foreground/10 py-4 grid-cols-4 gap-3 md:gap-8">
                   <div>
                     <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">2023</div>
@@ -235,7 +249,7 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 4 — How the Community Works */}
-      <section data-theme="dark" className="py-16 md:py-20 bg-[#1C1C1C]">
+      <section id="community" data-theme="dark" className="py-16 md:py-20 bg-[#1C1C1C]">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">How the Community Works</h2>
@@ -264,7 +278,7 @@ const BookClub: React.FC = () => {
       </section>
 
       {/* Section 5 — CTA (light) */}
-      <section className="py-16 md:py-24 bg-[#F8F6F1]">
+      <section id="upcoming" className="py-16 md:py-24 bg-[#F8F6F1]">
         <div className="mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col gap-6 items-center text-center">
