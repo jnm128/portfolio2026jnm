@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import freshPerspectivesLogo from '@/assets/fresh-perspectives-logo.png';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
 import { BookOpen, MessageCircle, Globe, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
@@ -113,6 +114,7 @@ const BookClub: React.FC = () => {
           <FadeIn>
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
               <div className="lg:w-1/2">
+                <img src={freshPerspectivesLogo} alt="Fresh Perspectives" className="w-10 h-10 rounded-lg mb-4" />
                 <h1 className="text-3xl md:text-5xl font-space-grotesk font-extrabold text-foreground mb-4 leading-tight">
                   fresh perspectives
                 </h1>
