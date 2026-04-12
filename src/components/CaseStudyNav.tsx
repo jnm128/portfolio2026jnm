@@ -18,7 +18,7 @@ const CaseStudyNav: React.FC<CaseStudyNavProps> = ({ currentSlug }) => {
   const nextStudy = caseStudies[(currentIndex + 1) % caseStudies.length];
 
   return (
-    <section className="py-12 md:py-16 bg-secondary/30 border-t border-border">
+    <section className="py-12 md:py-16 bg-[#F8F6F1] border-t border-border">
       <div className="container mx-auto px-8 md:px-16">
         <div className="flex items-center justify-between">
           <Link
