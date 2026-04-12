@@ -115,7 +115,7 @@ const BookClub: React.FC = () => {
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
               <div className="lg:w-1/2">
                 <img src={freshPerspectivesLogo} alt="Fresh Perspectives" className="w-10 h-10 rounded-lg mb-4" />
-                <h1 className="text-3xl md:text-5xl font-space-grotesk font-extrabold text-foreground mb-4 leading-tight">
+                <h1 className="text-3xl md:text-5xl font-serif font-medium text-foreground mb-4 leading-tight">
                   fresh perspectives
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-4 max-w-xl">
@@ -348,7 +348,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                 <div className={index > 0 ? "border-t border-white/15" : ""}>
                   <button
                     onClick={() => setFaqOpenIndex(faqOpenIndex === index ? null : index)}
-                    className="w-full flex items-center justify-between py-5 text-left"
+                    className="w-full flex items-center justify-between py-5 text-left hover:opacity-70 transition-opacity"
                   >
                     <span className="text-lg font-medium text-white font-serif pr-4">{faq.q}</span>
                     <ChevronDown

@@ -82,7 +82,6 @@ const AboutPage = () => {
                                transition-all duration-300 self-start"
                   >
                     Connect on LinkedIn
-                    <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
               </div>
