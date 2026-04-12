@@ -1,19 +1,28 @@
 
 
-## Fix Dynamic Header Theme Detection on All Pages
+## Fix Cursor on Dark Theme + Case Study Background Colors
 
-### Problem
-The header's dark theme detection only works on pages that have `data-theme="dark"` on their dark sections. Currently only `BookClub.tsx` and `DarkSection.tsx` (homepage) have this attribute. The dark sections on `AboutPage.tsx` and `Work.tsx` are missing it, so the header stays light-themed when scrolling over those dark areas.
+### 1. Cursor Accessibility on Dark Sections
 
-### Fix
-Add `data-theme="dark"` to the dark `<section>` elements on:
+The custom cursor uses `bg-foreground` which is dark/black. On dark-themed sections (`bg-[#1C1C1C]`), it becomes invisible.
 
-1. **`src/pages/AboutPage.tsx`** (line 94) — the "Writing, Current Read & Song on Repeat" section with `bg-[#1C1C1C]`
-2. **`src/pages/Work.tsx`** (line 90) — the dark CTA section with `bg-[#1C1C1C]`
+**Fix in `src/components/CustomCursor.tsx`**: Detect when the cursor is over a `[data-theme="dark"]` section using `document.elementFromPoint()` inside the mousemove handler. Add a state `isOnDark` and swap the cursor color: use `bg-white` when on dark sections, `bg-foreground` otherwise.
 
-No other changes needed. The existing `IntersectionObserver` in `Header.tsx` already watches for `[data-theme="dark"]` elements and will automatically pick these up.
+### 2. Case Study Section Backgrounds → `#F8F6F1`
 
-### Files modified
-- `src/pages/AboutPage.tsx`
-- `src/pages/Work.tsx`
+All three case study pages plus `CaseStudyNav.tsx` have sections using `bg-background` (white) and `bg-secondary/30` instead of the cream `#F8F6F1`.
+
+**Replace across all 3 case study pages** (`CaseStudyMindfulWellness.tsx`, `CaseStudyArtisanMarketplace.tsx`, `CaseStudyCreativeStudio.tsx`):
+- `bg-background` → `bg-[#F8F6F1]` (Problem Space, Final Designs sections)
+- `bg-secondary/30` → `bg-[#F8F6F1]` (Approach, Results sections)
+- Inner testimonial card `bg-background` → `bg-white`
+
+**In `CaseStudyNav.tsx`**: Change `bg-secondary/30` → `bg-[#F8F6F1]`
+
+### Files Modified
+- `src/components/CustomCursor.tsx`
+- `src/pages/CaseStudyMindfulWellness.tsx`
+- `src/pages/CaseStudyArtisanMarketplace.tsx`
+- `src/pages/CaseStudyCreativeStudio.tsx`
+- `src/components/CaseStudyNav.tsx`
 
