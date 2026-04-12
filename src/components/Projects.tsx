@@ -32,9 +32,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   return (
     <section id="projects" className={cn('py-16 md:py-24 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
-        <div className="flex items-center justify-between mb-8">
-          <p className="text-xs uppercase tracking-widest text-muted-foreground">Selected Work</p>
-        </div>
+        <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-12">Selected Work</h2>
 
         <div className="flex flex-col gap-16">
           {projects.map((project, index) => (
