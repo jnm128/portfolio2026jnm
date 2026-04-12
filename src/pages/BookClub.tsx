@@ -115,7 +115,7 @@ const BookClub: React.FC = () => {
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
               <div className="lg:w-1/2">
                 <img src={freshPerspectivesLogo} alt="Fresh Perspectives" className="w-10 h-10 rounded-lg mb-4" />
-                <h1 className="text-3xl md:text-5xl font-serif font-medium text-foreground mb-4 leading-tight">
+                <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight font-normal">
                   fresh perspectives
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-4 max-w-xl">
