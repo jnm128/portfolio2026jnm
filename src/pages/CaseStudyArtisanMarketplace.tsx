@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CaseStudyNav from '@/components/CaseStudyNav';
 import { ArrowLeft } from 'lucide-react';
@@ -13,7 +12,6 @@ const CaseStudyArtisanMarketplace = () => {
 
   return (
     <main className="relative">
-      <Header />
       
       {/* Hero Section */}
       <section className="pt-20 md:pt-24 pb-10 md:pb-16 bg-[#F8F6F1]">
