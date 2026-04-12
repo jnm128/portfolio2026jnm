@@ -52,7 +52,7 @@ const AboutPage = () => {
                   <div className="rounded-2xl overflow-hidden h-full">
                     <img
                       alt="Joanna Minott"
-                      className="w-full h-full object-cover animate-fade-in"
+                      className="w-full h-full object-cover"
                       src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
                     />
                   </div>
