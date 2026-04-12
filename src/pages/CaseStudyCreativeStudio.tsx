@@ -12,7 +12,6 @@ const CaseStudyCreativeStudio = () => {
 
   return (
     <main className="relative">
-      <Header />
       
       {/* Hero Section */}
       <section className="pt-20 md:pt-24 pb-10 md:pb-16 bg-[#F8F6F1]">
