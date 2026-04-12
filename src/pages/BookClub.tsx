@@ -172,7 +172,14 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Sessions</div>
                 </div>
               </div>
-              <div className="lg:hidden flex flex-wrap gap-3 mb-4">
+              <div className="lg:w-1/2 rounded-none lg:rounded-2xl overflow-hidden max-h-[300px] md:max-h-[350px] lg:max-h-[450px] -mx-8 md:-mx-16 lg:mx-0">
+                <img
+                  src="/lovable-uploads/community-books.jpeg"
+                  alt="Fresh Perspectives Book Club"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="lg:hidden flex flex-wrap gap-3">
                 <a
                   href="#community"
                   className="inline-flex items-center justify-center px-6 py-3 bg-foreground text-background font-medium text-sm rounded-full hover:opacity-90 transition-opacity"
@@ -185,13 +192,6 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                 >
                   See Upcoming Events
                 </a>
-              </div>
-              <div className="lg:w-1/2 rounded-2xl overflow-hidden max-h-[300px] md:max-h-[350px] lg:max-h-[450px]">
-                <img
-                  src="/lovable-uploads/community-books.jpeg"
-                  alt="Fresh Perspectives Book Club"
-                  className="w-full h-full object-cover"
-                />
               </div>
             </div>
           </FadeIn>
