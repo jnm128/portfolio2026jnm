@@ -279,8 +279,8 @@ const BookClub: React.FC = () => {
                 { icon: Globe, title: "Stay Connected", desc: "An ongoing LinkedIn community where members share resources, job leads, and design conversations between sessions." },
               ].map((step, index) => (
                 <div key={index} className={`${index > 0 ? 'border-t border-white/15' : ''} py-8 flex items-start gap-6`}>
-                  <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
-                    <step.icon className="w-6 h-6 text-[#F5E642]" />
+                  <div className="w-12 h-12 rounded-2xl bg-[#F5E642] flex items-center justify-center shrink-0">
+                    <step.icon className="w-6 h-6 text-[#1C1C1C]" />
                   </div>
                   <div>
                     <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-2">{step.title}</h3>
