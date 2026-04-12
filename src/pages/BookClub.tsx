@@ -3,7 +3,7 @@ import freshPerspectivesLogo from '@/assets/fresh-perspectives-logo.png';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
 import { BookOpen, MessageCircle, Globe, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
-import bookClubHero from '@/assets/book-club-hero-3.png';
+
 import emotionalDesignCover from '@/assets/emotional-design-cover.jpg';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
