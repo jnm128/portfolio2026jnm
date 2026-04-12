@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { X, ZoomIn, ZoomOut } from 'lucide-react';
 
 interface ImageLightboxProps {
@@ -90,7 +91,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, alt, className }) =>
         />
       </div>
 
-      {isOpen && (
+      {isOpen && createPortal(
         <div
           className="fixed inset-0 z-[110] bg-black/90 flex items-center justify-center p-4 animate-in fade-in duration-200"
           onClick={() => { if (scale <= 1) close(); }}
@@ -138,7 +139,8 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, alt, className }) =>
             onMouseDown={handleMouseDown}
             draggable={false}
           />
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
