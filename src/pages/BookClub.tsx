@@ -188,8 +188,8 @@ const BookClub: React.FC = () => {
               </div>
               <div className="lg:w-1/2 rounded-2xl overflow-hidden max-h-[300px] md:max-h-[350px] lg:max-h-[450px]">
                 <img
-                  src={bookClubHero}
-                  alt="Book club gathering"
+                  src="/lovable-uploads/community-books.jpeg"
+                  alt="Fresh Perspectives Book Club"
                   className="w-full h-full object-cover"
                 />
               </div>
