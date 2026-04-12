@@ -50,6 +50,40 @@ const CaseStudyArtisanMarketplace = () => {
         </div>
       </section>
 
+      {/* TLDR */}
+      <section className="py-12 md:py-20 bg-[#F8F6F1]">
+        <div className="container mx-auto px-8 md:px-16">
+          <SplitSection label="TLDR">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
+              <div>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Client</p>
+                <p className="text-base font-medium">Artisan Collective</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Category</p>
+                <p className="text-base font-medium">E-commerce</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Industry</p>
+                <p className="text-base font-medium">Retail & Crafts</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Responsibilities</p>
+                <p className="text-base font-medium">UX/UI Design, Development</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">My Role</p>
+                <p className="text-base font-medium">Lead Designer</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Timeline</p>
+                <p className="text-base font-medium">12 weeks</p>
+              </div>
+            </div>
+          </SplitSection>
+        </div>
+      </section>
+
       {/* Problem Space */}
         <section className="py-12 md:py-20 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16">
