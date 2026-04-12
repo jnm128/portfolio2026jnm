@@ -17,7 +17,7 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
             <div className="flex flex-col gap-6 md:gap-12 md:flex-row">
               <div className="md:w-2/5 flex flex-col justify-center">
                 <h3 className="text-3xl md:text-5xl font-serif leading-tight mb-4 text-foreground">
-                  She's also building the next big ux design community
+                  Fresh Perspectives
                 </h3>
                 <p className="text-sm md:text-base leading-relaxed mb-6 text-muted-foreground">
                   A space for designers to connect, share ideas, and grow together through curated conversations and resources.
