@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CaseStudyNav from '@/components/CaseStudyNav';
 import { ArrowLeft } from 'lucide-react';

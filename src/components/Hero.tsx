@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import PopIn from './animations/PopIn';
+import FadeIn from './animations/FadeIn';
 import WorkExperiencePanel from './WorkExperiencePanel';
 
 interface HeroProps {
@@ -53,16 +54,18 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
     <section className={cn('pt-32 md:pt-40 pb-6 md:pb-8 bg-[#F8F6F1]', className)}>
       <div className="mx-auto max-w-[1600px] px-8 md:px-16">
-        <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-2">Joanna Minott, <span className="text-muted-foreground">UX Designer</span></h1>
-        <p className="text-base md:text-lg text-muted-foreground font-serif mb-4 max-w-2xl">
-          Product designer by day, community builder by night. I build software and digital experiences that connect people and spark meaningful change.
-        </p>
-        <button
-          onClick={() => setPanelOpen(true)}
-          className="inline-flex items-center bg-foreground text-background px-6 py-3 rounded-full text-base font-medium hover:opacity-90 transition-opacity mb-6"
-        >
-          View Resume
-        </button>
+        <FadeIn>
+          <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-2">Joanna Minott, <span className="text-muted-foreground">UX Designer</span></h1>
+          <p className="text-base md:text-lg text-muted-foreground font-serif mb-4 max-w-2xl">
+            Product designer by day, community builder by night. I build software and digital experiences that connect people and spark meaningful change.
+          </p>
+          <button
+            onClick={() => setPanelOpen(true)}
+            className="inline-flex items-center bg-foreground text-background px-6 py-3 rounded-full text-base font-medium hover:opacity-90 transition-opacity mb-6"
+          >
+            View Resume
+          </button>
+        </FadeIn>
         <WorkExperiencePanel open={panelOpen} onClose={() => setPanelOpen(false)} />
       </div>
       <div ref={containerRef} className="mx-auto max-w-[1600px] px-8 md:px-16">

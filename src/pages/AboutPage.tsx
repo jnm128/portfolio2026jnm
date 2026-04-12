@@ -40,7 +40,7 @@ const AboutPage = () => {
         {/* Hero / Intro */}
         <section className="pt-0 pb-24 md:pb-32 bg-[#F8F6F1] min-h-[calc(100vh-7rem)] flex flex-col justify-center">
             <div className="max-w-4xl mx-auto px-8 md:px-16">
-          <FadeIn delay={200}>
+          <FadeIn>
               {/* Mobile-only title */}
               <h1 className="text-3xl font-serif text-foreground mb-4 md:hidden">
                 About
