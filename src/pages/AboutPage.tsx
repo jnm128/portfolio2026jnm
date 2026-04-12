@@ -38,7 +38,7 @@ const AboutPage = () => {
       <ScrollAnimations />
       <div className="pt-24 md:pt-28">
         {/* Hero / Intro */}
-        <section className="pt-0 pb-24 md:pb-32 bg-[#F8F6F1]">
+        <section className="pt-0 pb-24 md:pb-32 bg-[#F8F6F1] min-h-[calc(100vh-7rem)] flex flex-col justify-center">
             <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn delay={200}>
               {/* Mobile-only title */}
