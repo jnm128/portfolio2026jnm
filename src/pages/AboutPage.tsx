@@ -78,8 +78,7 @@ const AboutPage = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-full text-base font-medium 
-                               hover:bg-background hover:text-foreground border border-foreground 
-                               transition-all duration-300 self-start"
+                               hover:opacity-90 transition-opacity self-start"
                   >
                     Connect on LinkedIn
                   </a>
