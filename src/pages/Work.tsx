@@ -100,7 +100,7 @@ const Work: React.FC = () => {
               <div className="mt-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center px-6 py-3 text-sm rounded-full bg-white text-black font-medium hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center px-8 py-3 rounded-full bg-white text-black font-medium hover:opacity-90 transition-opacity"
                 >
                   Get in Touch
                 </Link>

@@ -109,7 +109,7 @@ const BookClub: React.FC = () => {
     <div className="min-h-screen bg-[#F8F6F1]">
 
       {/* Section 1 — Hero */}
-      <section className="pt-24 md:pt-28 pb-10 md:pb-16 bg-[#F8F6F1]">
+      <section className="min-h-screen flex items-center pt-24 md:pt-28 pb-10 md:pb-16 bg-[#F8F6F1]">
         <div className="mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
@@ -172,26 +172,26 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Sessions</div>
                 </div>
               </div>
-              <div className="lg:w-1/2 rounded-none lg:rounded-2xl overflow-hidden max-h-[300px] md:max-h-[350px] lg:max-h-[450px] -mx-8 md:-mx-16 lg:mx-0">
-                <img
-                  src="/lovable-uploads/community-books.jpeg"
-                  alt="Fresh Perspectives Book Club"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="lg:hidden flex gap-3">
+              <div className="lg:hidden flex flex-wrap gap-3 mb-4">
                 <a
                   href="#community"
-                  className="flex-1 inline-flex items-center justify-center px-4 py-3 bg-foreground text-background font-medium text-sm rounded-full hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-foreground text-background font-medium text-sm rounded-full hover:opacity-90 transition-opacity"
                 >
                   Join the Community
                 </a>
                 <a
                   href="#upcoming"
-                  className="flex-1 inline-flex items-center justify-center px-4 py-3 bg-white text-foreground border border-foreground/10 font-medium text-sm rounded-full hover:bg-foreground/5 transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreground border border-foreground/10 font-medium text-sm rounded-full hover:bg-foreground/5 transition-colors"
                 >
                   See Upcoming Events
                 </a>
+              </div>
+              <div className="lg:w-1/2 rounded-2xl overflow-hidden max-h-[300px] md:max-h-[350px] lg:max-h-[450px]">
+                <img
+                  src="/lovable-uploads/community-books.jpeg"
+                  alt="Fresh Perspectives Book Club"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </FadeIn>
@@ -309,7 +309,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                   href="https://www.linkedin.com/in/joannaminott"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 text-sm rounded-full bg-[#1C1C1C] text-white font-medium hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center px-8 py-3 rounded-full bg-[#1C1C1C] text-white font-medium hover:bg-[#1C1C1C]/90 transition-colors"
                 >
                   Join the Club
                 </a>
