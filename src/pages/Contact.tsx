@@ -16,7 +16,7 @@ const Contact = () => {
     <>
       <div className="min-h-screen bg-[#1C1C1C]">
         {/* Left Panel - Dark */}
-        <div className="bg-[#1C1C1C] md:sticky md:top-0 md:h-screen flex flex-col justify-between p-8 md:p-16 pt-24 md:pt-32 pb-8 md:pb-32">
+        <div className="bg-[#1C1C1C] flex flex-col justify-between p-8 md:p-16 pt-24 md:pt-32 pb-8 md:pb-32">
           <div>
             <FadeIn>
               <h2 className="text-3xl md:text-5xl font-serif text-white mb-3">
