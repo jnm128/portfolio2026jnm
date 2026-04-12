@@ -1,52 +1,30 @@
 
 
-## Add TLDR Section Above Problem Space on All Case Study Pages
+## Layout & Typography Updates on Homepage
 
-Add a new section between the hero and the "Problem Space" section on each case study page, using the same `SplitSection` layout with "TLDR" as the label.
+### 1. Restructure AboutSection to Two-Column Layout
+**File**: `src/components/AboutSection.tsx`
 
-### Content Structure
+Change from stacked heading+content to a split layout: left column has the heading ("Design, Tech & Intention") and helper text, right column has Services and Skills.
 
-Each TLDR section will display metadata in a clean grid:
+- Remove `max-w-4xl`, use `max-w-[1600px]` to match Testimonials/Projects width
+- Use `grid grid-cols-1 md:grid-cols-[1fr_2.5fr]` (same ratio as `SplitSection`)
+- Left column: heading + paragraph (sticky on desktop)
+- Right column: Services + Skills grid
+- Update padding to match Testimonials: `pt-12 pb-4 md:pt-20 md:pb-8`
 
-```
-TLDR                Client: [name]
-                    Category: [type]
-                    Industry: [industry]
-                    Responsibilities: [list]
-                    My Role: [role]
-                    Timeline: [duration]
-```
+### 2. Make "Selected Work" Label Same Font Size as "Design, Tech & Intention"
+**File**: `src/components/Projects.tsx`
 
-### Implementation
+Line 36: Change `<p className="text-xs uppercase tracking-widest ...">Selected Work</p>` to use `text-3xl md:text-5xl font-serif` like the AboutSection heading — making it a proper section title rather than a small label.
 
-**Files**: `src/pages/CaseStudyMindfulWellness.tsx`, `src/pages/CaseStudyArtisanMarketplace.tsx`, `src/pages/CaseStudyCreativeStudio.tsx`
+### 3. Fix Community Title Font Size
+**File**: `src/components/Community.tsx`
 
-Insert a new `<section>` block between the hero and problem space sections on each page:
-
-```tsx
-<section className="py-12 md:py-20 bg-[#F8F6F1]">
-  <div className="container mx-auto px-8 md:px-16">
-    <SplitSection label="TLDR">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
-        <div>
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Client</p>
-          <p className="text-base font-medium">...</p>
-        </div>
-        <!-- repeat for Category, Industry, Responsibilities, My Role, Timeline -->
-      </div>
-    </SplitSection>
-  </div>
-</section>
-```
-
-**Per-page placeholder content** (values are placeholders the user can update later):
-
-- **Mindful Wellness**: Client: Mindful Wellness / Category: Product Design / Industry: Health & Wellness / Responsibilities: UX/UI Design, Research / My Role: Lead Designer / Timeline: 8 weeks
-- **Artisan Marketplace**: Client: Artisan Collective / Category: E-commerce / Industry: Retail & Crafts / Responsibilities: UX/UI Design, Development / My Role: Lead Designer / Timeline: 12 weeks
-- **Creative Studio**: Client: Lumina Creative Studio / Category: Brand Identity / Industry: Creative Services / Responsibilities: Brand Strategy, Web Design / My Role: Lead Designer / Timeline: 6 weeks
+Line 19: Change from `text-lg md:text-xl` to `text-3xl md:text-5xl` to match the heading scale used on About and Work pages.
 
 ### Files Modified
-- `src/pages/CaseStudyMindfulWellness.tsx`
-- `src/pages/CaseStudyArtisanMarketplace.tsx`
-- `src/pages/CaseStudyCreativeStudio.tsx`
+- `src/components/AboutSection.tsx`
+- `src/components/Projects.tsx`
+- `src/components/Community.tsx`
 
