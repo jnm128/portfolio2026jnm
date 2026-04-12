@@ -179,16 +179,16 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="lg:hidden flex flex-wrap gap-3">
+              <div className="lg:hidden flex gap-3">
                 <a
                   href="#community"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-foreground text-background font-medium text-sm rounded-full hover:opacity-90 transition-opacity"
+                  className="flex-1 inline-flex items-center justify-center px-4 py-3 bg-foreground text-background font-medium text-sm rounded-full hover:opacity-90 transition-opacity"
                 >
                   Join the Community
                 </a>
                 <a
                   href="#upcoming"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreground border border-foreground/10 font-medium text-sm rounded-full hover:bg-foreground/5 transition-colors"
+                  className="flex-1 inline-flex items-center justify-center px-4 py-3 bg-white text-foreground border border-foreground/10 font-medium text-sm rounded-full hover:bg-foreground/5 transition-colors"
                 >
                   See Upcoming Events
                 </a>
