@@ -109,7 +109,7 @@ const BookClub: React.FC = () => {
     <div className="min-h-screen bg-[#F8F6F1]">
 
       {/* Section 1 — Hero */}
-      <section className="min-h-screen flex items-center pt-24 md:pt-28 pb-10 md:pb-16 bg-[#F8F6F1]">
+      <section className="pt-24 md:pt-28 pb-10 md:pb-16 bg-[#F8F6F1]">
         <div className="mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
@@ -309,7 +309,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                   href="https://www.linkedin.com/in/joannaminott"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 py-3 rounded-full bg-[#1C1C1C] text-white font-medium hover:bg-[#1C1C1C]/90 transition-colors"
+                  className="inline-flex items-center px-6 py-3 text-sm rounded-full bg-[#1C1C1C] text-white font-medium hover:opacity-90 transition-opacity"
                 >
                   Join the Club
                 </a>

@@ -77,7 +77,7 @@ const AboutPage = () => {
                     href="https://www.linkedin.com/in/joannaminott"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-full text-base font-medium 
+                    className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-full text-sm font-medium 
                                hover:opacity-90 transition-opacity self-start"
                   >
                     Connect on LinkedIn
