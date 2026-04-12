@@ -3,7 +3,7 @@ import freshPerspectivesLogo from '@/assets/fresh-perspectives-logo.png';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/animations/FadeIn';
 import { BookOpen, MessageCircle, Globe, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
-import bookClubHero from '@/assets/book-club-hero-3.png';
+
 import emotionalDesignCover from '@/assets/emotional-design-cover.jpg';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
@@ -188,8 +188,8 @@ const BookClub: React.FC = () => {
               </div>
               <div className="lg:w-1/2 rounded-2xl overflow-hidden max-h-[300px] md:max-h-[350px] lg:max-h-[450px]">
                 <img
-                  src={bookClubHero}
-                  alt="Book club gathering"
+                  src="/lovable-uploads/community-books.jpeg"
+                  alt="Fresh Perspectives Book Club"
                   className="w-full h-full object-cover"
                 />
               </div>
