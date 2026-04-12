@@ -279,7 +279,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                 { icon: Globe, title: "Stay Connected", desc: "An ongoing LinkedIn community where members share resources, job leads, and design conversations between sessions." },
               ].map((step, index) => (
                 <div key={index} className={`${index > 0 ? 'border-t border-white/15' : ''} py-8 flex items-start gap-6`}>
-                  <div className="w-12 h-12 rounded-2xl <div className="w-12 h-12 rounded-2xl bg-[#FAFAF5] flex items-center justify-center shrink-0"> flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAFAF5] flex items-center justify-center shrink-0">
                     <step.icon className="w-6 h-6 text-[#1C1C1C]" />
                   </div>
                   <div>
