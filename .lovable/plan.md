@@ -1,45 +1,52 @@
 
 
-## Summary of Changes
+## Add TLDR Section Above Problem Space on All Case Study Pages
 
-Five targeted updates across the homepage, Book Club page, and About page.
+Add a new section between the hero and the "Problem Space" section on each case study page, using the same `SplitSection` layout with "TLDR" as the label.
 
----
+### Content Structure
 
-### 1. Remove Recent/Past Toggle Switch (Projects.tsx)
+Each TLDR section will display metadata in a clean grid:
 
-Remove the toggle switch UI (lines 57-75) and the `activeTab` state (line 14), the `archives` array (lines 16-22), and the archives view (lines 110-137). Always show the `projects` cards directly. Remove the `useState` import if no longer needed, and the `ExternalLink` import.
-
-### 2. Remove Nightlife Ecosystem Case Study Card (Projects.tsx)
-
-Remove the third project from the `projects` array (lines 37-42): "Building the next night life ecosystem".
-
-### 3. Fresh Perspectives Title Font (BookClub.tsx)
-
-Line 118: Change `font-space-grotesk font-extrabold` to `font-serif font-medium` to match the rest of the site's heading style.
-
-### 4. Book Modal Close Button — Match Resume Panel X (dialog.tsx)
-
-The dialog close button (lines 45-49) already uses the two-crossing-spans pattern. Add a hover state matching the resume panel: `hover:bg-black/5 transition-colors` on the close button wrapper, and add `rounded-full p-2` for consistent sizing. Currently it has no hover background — the resume panel uses `hover:bg-black/5`.
-
-Update line 45:
 ```
-<DialogPrimitive.Close className="absolute right-4 top-4 rounded-full p-2 hover:bg-black/5 transition-colors focus:outline-none disabled:pointer-events-none">
+TLDR                Client: [name]
+                    Category: [type]
+                    Industry: [industry]
+                    Responsibilities: [list]
+                    My Role: [role]
+                    Timeline: [duration]
 ```
 
-### 5. FAQ Hover State on Book Club Page (BookClub.tsx)
+### Implementation
 
-Add a hover state to each FAQ button row (line 351) similar to the Contact page's interactive rows. Add `hover:opacity-70 transition-opacity` to the FAQ button, making the entire row respond on hover.
+**Files**: `src/pages/CaseStudyMindfulWellness.tsx`, `src/pages/CaseStudyArtisanMarketplace.tsx`, `src/pages/CaseStudyCreativeStudio.tsx`
 
-### 6. Remove ExternalLink Icon from "Connect on LinkedIn" CTA (AboutPage.tsx)
+Insert a new `<section>` block between the hero and problem space sections on each page:
 
-Line 85: Remove `<ExternalLink className="w-4 h-4" />` from the LinkedIn button, and remove the `ExternalLink` import if unused elsewhere.
+```tsx
+<section className="py-12 md:py-20 bg-[#F8F6F1]">
+  <div className="container mx-auto px-8 md:px-16">
+    <SplitSection label="TLDR">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
+        <div>
+          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Client</p>
+          <p className="text-base font-medium">...</p>
+        </div>
+        <!-- repeat for Category, Industry, Responsibilities, My Role, Timeline -->
+      </div>
+    </SplitSection>
+  </div>
+</section>
+```
 
----
+**Per-page placeholder content** (values are placeholders the user can update later):
+
+- **Mindful Wellness**: Client: Mindful Wellness / Category: Product Design / Industry: Health & Wellness / Responsibilities: UX/UI Design, Research / My Role: Lead Designer / Timeline: 8 weeks
+- **Artisan Marketplace**: Client: Artisan Collective / Category: E-commerce / Industry: Retail & Crafts / Responsibilities: UX/UI Design, Development / My Role: Lead Designer / Timeline: 12 weeks
+- **Creative Studio**: Client: Lumina Creative Studio / Category: Brand Identity / Industry: Creative Services / Responsibilities: Brand Strategy, Web Design / My Role: Lead Designer / Timeline: 6 weeks
 
 ### Files Modified
-- `src/components/Projects.tsx`
-- `src/pages/BookClub.tsx`
-- `src/components/ui/dialog.tsx`
-- `src/pages/AboutPage.tsx`
+- `src/pages/CaseStudyMindfulWellness.tsx`
+- `src/pages/CaseStudyArtisanMarketplace.tsx`
+- `src/pages/CaseStudyCreativeStudio.tsx`
 
