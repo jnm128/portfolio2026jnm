@@ -29,7 +29,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <div>
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-3xl md:text-4xl font-serif font-medium tracking-tight mb-2 block"
+              className="text-3xl md:text-4xl font-sans font-bold tracking-tight mb-2 block"
             >
               MINO.
             </button>

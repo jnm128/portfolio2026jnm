@@ -21,11 +21,11 @@ export default {
 			}
 		},
 		extend: {
-		fontFamily: {
-		sans: ['Inter', 'system-ui', 'sans-serif'],
-			serif: ['Inter Tight', 'system-ui', 'sans-serif'],
-			syne: ['Syne', 'sans-serif'],
-			'space-grotesk': ['Space Grotesk', 'sans-serif'],
+	fontFamily: {
+		sans: ['Outfit', 'system-ui', 'sans-serif'],
+			serif: ['Outfit', 'system-ui', 'sans-serif'],
+			syne: ['Outfit', 'sans-serif'],
+			'space-grotesk': ['Outfit', 'sans-serif'],
 		},
 			colors: {
 				border: 'hsl(var(--border))',

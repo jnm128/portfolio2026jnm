@@ -241,7 +241,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               <button 
                 onClick={() => scrollToSection('home')}
                 className={cn(
-                  "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300 mx-4",
+                  "text-2xl font-sans font-bold tracking-tight flex transition-colors duration-300 mx-4",
                   useDarkTheme && !isMobileMenuOpen ? 'text-white' : ''
                 )}
               >
@@ -259,7 +259,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               <Link 
                 to="/"
                 className={cn(
-                  "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300 mx-4",
+                  "text-2xl font-sans font-bold tracking-tight flex transition-colors duration-300 mx-4",
                   useDarkTheme && !isMobileMenuOpen ? 'text-white' : ''
                 )}
               >
@@ -302,7 +302,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               <button 
                 onClick={() => scrollToSection('home')}
                 className={cn(
-                  "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
+                  "text-2xl font-sans font-bold tracking-tight flex transition-colors duration-300",
                   useDarkTheme && !isMobileMenuOpen ? 'text-white' : ''
                 )}
               >
@@ -320,7 +320,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               <Link 
                 to="/"
                 className={cn(
-                  "text-2xl font-serif font-semibold tracking-tight flex transition-colors duration-300",
+                  "text-2xl font-sans font-bold tracking-tight flex transition-colors duration-300",
                   useDarkTheme && !isMobileMenuOpen ? 'text-white' : ''
                 )}
               >
