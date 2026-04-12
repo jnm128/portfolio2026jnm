@@ -10,16 +10,16 @@ const AboutSection: React.FC = () => {
       <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
           {/* Left Column — Title & Helper Text */}
-          <FadeIn>
-            <div className="md:sticky md:top-32">
+          <div className="md:sticky md:top-32 self-start">
+            <FadeIn>
               <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">
                 Design, Tech & Intention
               </h2>
               <p className="text-base md:text-lg text-muted-foreground font-serif">
                 Our process is rooted in research — blending user insights, business goals, and thoughtful craft to create digital experiences that feel intuitive and look exceptional.
               </p>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
 
           {/* Right Column — Services & Skills */}
           <div className="space-y-12">
