@@ -116,23 +116,9 @@ const BookClub: React.FC = () => {
                 <h1 className="text-3xl md:text-5xl font-space-grotesk font-extrabold text-foreground mb-4 leading-tight">
                   fresh perspectives
                 </h1>
-                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6 max-w-xl">
+                <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-4 max-w-xl">
                   A UX book club for designers who think beyond the screen.
                 </p>
-                <div className="flex flex-wrap gap-3 mb-6">
-                  <a
-                    href="#community"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-foreground text-background font-medium text-sm rounded-full hover:opacity-90 transition-opacity"
-                  >
-                    Join the Community
-                  </a>
-                  <a
-                    href="#upcoming"
-                    className="inline-flex items-center justify-center px-6 py-3 border border-foreground/20 text-foreground font-medium text-sm rounded-full hover:bg-foreground/5 transition-colors"
-                  >
-                    See Upcoming Events
-                  </a>
-                </div>
                 <div className="hidden lg:grid border-t border-foreground/10 py-4 grid-cols-4 gap-3 md:gap-8">
                   <div>
                     <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">2023</div>
@@ -150,6 +136,20 @@ const BookClub: React.FC = () => {
                     <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">Monthly</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Sessions</div>
                   </div>
+                </div>
+                <div className="hidden lg:flex flex-wrap gap-3 mt-6">
+                  <a
+                    href="#community"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-foreground text-background font-medium text-sm rounded-full hover:opacity-90 transition-opacity"
+                  >
+                    Join the Community
+                  </a>
+                  <a
+                    href="#upcoming"
+                    className="inline-flex items-center justify-center px-6 py-3 border border-foreground/20 text-foreground font-medium text-sm rounded-full hover:bg-foreground/5 transition-colors"
+                  >
+                    See Upcoming Events
+                  </a>
                 </div>
               </div>
               <div className="lg:hidden w-full border-t border-foreground/10 py-4 grid grid-cols-4 gap-3 md:gap-8">
@@ -169,6 +169,20 @@ const BookClub: React.FC = () => {
                   <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">Monthly</div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Sessions</div>
                 </div>
+              </div>
+              <div className="lg:hidden flex flex-wrap gap-3 mb-4">
+                <a
+                  href="#community"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-foreground text-background font-medium text-sm rounded-full hover:opacity-90 transition-opacity"
+                >
+                  Join the Community
+                </a>
+                <a
+                  href="#upcoming"
+                  className="inline-flex items-center justify-center px-6 py-3 border border-foreground/20 text-foreground font-medium text-sm rounded-full hover:bg-foreground/5 transition-colors"
+                >
+                  See Upcoming Events
+                </a>
               </div>
               <div className="lg:w-1/2 rounded-2xl overflow-hidden max-h-[300px] md:max-h-[350px] lg:max-h-[450px]">
                 <img
