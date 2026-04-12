@@ -51,7 +51,7 @@ const CaseStudyMindfulWellness = () => {
       </section>
 
       {/* Problem Space */}
-        <section className="py-12 md:py-20 bg-background">
+        <section className="py-12 md:py-20 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16">
           <SplitSection label="Problem Space">
             <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
@@ -71,7 +71,7 @@ const CaseStudyMindfulWellness = () => {
       </section>
 
       {/* Approach */}
-      <section className="py-20 md:py-32 bg-secondary/30">
+      <section className="py-20 md:py-32 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16">
           <SplitSection label="Our Approach">
             <div className="grid md:grid-cols-2 gap-12">
@@ -109,7 +109,7 @@ const CaseStudyMindfulWellness = () => {
       </section>
 
       {/* Final Designs */}
-      <section className="py-20 md:py-32 bg-background">
+      <section className="py-20 md:py-32 bg-[#F8F6F1]">
         <div className="mx-auto max-w-[1600px] px-8 md:px-16">
           <FadeIn>
             <div className="space-y-8">
@@ -140,7 +140,7 @@ const CaseStudyMindfulWellness = () => {
       </section>
 
       {/* Results */}
-      <section className="py-20 md:py-32 bg-secondary/30">
+      <section className="py-20 md:py-32 bg-[#F8F6F1]">
         <div className="container mx-auto px-8 md:px-16">
           <SplitSection label="Results">
             <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -158,7 +158,7 @@ const CaseStudyMindfulWellness = () => {
               </div>
             </div>
 
-            <div className="bg-background p-8 md:p-12 border border-border rounded-2xl">
+            <div className="bg-white p-8 md:p-12 border border-border rounded-2xl">
               <blockquote className="text-xl md:text-2xl font-serif text-muted-foreground mb-6">
                 "The team at brewed completely transformed our vision into reality. The platform has exceeded our 
                 expectations in both design and functionality."

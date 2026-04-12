@@ -8,9 +8,13 @@ const CustomCursor = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
 
+  const [isOnDark, setIsOnDark] = useState(false);
+
   const updatePosition = useCallback((e: MouseEvent) => {
     setPosition({ x: e.clientX, y: e.clientY });
     setIsVisible(true);
+    const element = document.elementFromPoint(e.clientX, e.clientY);
+    setIsOnDark(!!element?.closest('[data-theme="dark"]'));
   }, []);
 
   useEffect(() => {
@@ -98,7 +102,7 @@ const CustomCursor = () => {
 
   return (
     <div
-      className={`fixed pointer-events-none z-[9999] bg-foreground
+      className={`fixed pointer-events-none z-[9999] ${isOnDark ? 'bg-white' : 'bg-foreground'}
                   transition-all duration-150 ease-out
                   ${styles.className}
                   ${isClicking ? 'animate-cursor-pulse' : ''}
