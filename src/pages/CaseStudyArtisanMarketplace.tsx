@@ -40,7 +40,7 @@ const CaseStudyArtisanMarketplace = () => {
               <img 
                 src="/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png" 
                 alt="Artisan Marketplace Platform" 
-                className="w-full object-cover aspect-[16/10]"
+                className="w-full object-cover aspect-[4/3] md:aspect-[16/10]"
               />
             </div>
           </FadeIn>
