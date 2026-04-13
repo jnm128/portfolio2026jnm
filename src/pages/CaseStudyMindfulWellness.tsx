@@ -142,7 +142,7 @@ const CaseStudyMindfulWellness = () => {
 
       {/* Final Designs */}
       <section className="py-20 md:py-32 bg-[#F8F6F1]">
-        <div className="mx-auto max-w-[1600px] px-8 md:px-16">
+        <div className="mx-auto max-w-[1600px] px-4 md:px-16">
           <FadeIn>
             <div className="space-y-8">
               <div className="rounded-2xl overflow-hidden">
