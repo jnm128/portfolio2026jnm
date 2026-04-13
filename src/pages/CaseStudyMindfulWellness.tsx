@@ -15,7 +15,7 @@ const CaseStudyMindfulWellness = () => {
       
       {/* Hero Section */}
       <section className="pt-20 md:pt-24 pb-10 md:pb-16 bg-[#F8F6F1]">
-        <div className="mx-auto max-w-[1600px] px-8 md:px-16">
+        <div className="mx-auto max-w-[1600px] px-4 md:px-16">
           <FadeIn>
             <button 
               onClick={() => navigate(-1)}
@@ -40,7 +40,7 @@ const CaseStudyMindfulWellness = () => {
               <img 
                 src="/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png" 
                 alt="Mindful Wellness Platform" 
-                className="w-full object-cover aspect-[16/10]"
+                className="w-full object-cover aspect-[4/3] md:aspect-[16/10]"
               />
             </div>
           </FadeIn>
