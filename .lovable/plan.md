@@ -1,24 +1,24 @@
 
 
-## Change Site Font to Outfit
+## Fix: Outfit Font Not Loading
 
-### Changes
+### Problem
+Line 12 of `index.html` still loads the old fonts (Inter, Inter Tight, Space Grotesk, Syne). The previous edit to swap this to Outfit was lost or never applied. Tailwind config references Outfit, but the font is never actually loaded from Google Fonts.
 
-**1. Load Outfit font from Google Fonts** (`index.html`)
-Replace the current Google Fonts link. Load Outfit weights 300–700 instead of Inter, Inter Tight, Space Grotesk, and Syne.
+### Fix
 
-**2. Update Tailwind font families** (`tailwind.config.ts`)
-- `sans` → `['Outfit', 'system-ui', 'sans-serif']`
-- `serif` → `['Outfit', 'system-ui', 'sans-serif']` (keep the alias so all `font-serif` references work without changes)
-- Remove `syne` and `space-grotesk` families (or point them to Outfit)
+**File**: `index.html`, line 12
 
-**3. Update logo to Outfit 700** (`src/components/Header.tsx` and `src/components/Footer.tsx`)
-- Header logo: change from `font-serif font-medium` to `font-sans font-bold` (Outfit 700)
-- Footer logo: change from `font-serif font-medium` to `font-sans font-bold`
+Replace the current Google Fonts link:
+```html
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&family=Space+Grotesk:wght@800&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+```
+
+With:
+```html
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+```
 
 ### Files Modified
-- `index.html` — swap Google Fonts link to Outfit
-- `tailwind.config.ts` — update font family definitions
-- `src/components/Header.tsx` — logo font weight
-- `src/components/Footer.tsx` — logo font weight
+- `index.html` — swap Google Fonts link to load Outfit
 
