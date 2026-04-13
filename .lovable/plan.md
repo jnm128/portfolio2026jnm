@@ -1,24 +1,21 @@
 
 
-## Fix: Outfit Font Not Loading
+## Add Headline Under "Selected Work"
 
-### Problem
-Line 12 of `index.html` still loads the old fonts (Inter, Inter Tight, Space Grotesk, Syne). The previous edit to swap this to Outfit was lost or never applied. Tailwind config references Outfit, but the font is never actually loaded from Google Fonts.
+**File**: `src/components/Projects.tsx`, around line 37
 
-### Fix
+After the "Selected Work" label, add a large headline about helping teams ship products people love.
 
-**File**: `index.html`, line 12
+**Change**: Insert a `FadeIn`-wrapped heading between the "Selected Work" paragraph (line 37) and the project cards:
 
-Replace the current Google Fonts link:
-```html
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&family=Space+Grotesk:wght@800&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
-```
-
-With:
-```html
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+```tsx
+<FadeIn>
+  <h2 className="text-3xl md:text-5xl font-sans font-medium text-foreground leading-tight mb-4">
+    Helping teams ship & build products people love
+  </h2>
+</FadeIn>
 ```
 
 ### Files Modified
-- `index.html` — swap Google Fonts link to load Outfit
+- `src/components/Projects.tsx`
 
