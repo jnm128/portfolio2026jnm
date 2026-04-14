@@ -16,13 +16,10 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
   ];
 
   return (
-    <section className={cn('py-12 md:py-16 bg-[#F8F6F1]', className)}>
+    <section className={cn('py-4 md:py-6 bg-[#F8F6F1]', className)}>
       <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
         <FadeIn>
           <div>
-            <p className="text-xs text-center font-medium mb-6 uppercase tracking-wider text-muted-foreground">
-              Trusted by teams building the next frontier.
-            </p>
             <div className="relative overflow-hidden">
               <div className="flex animate-marquee-fast md:animate-marquee whitespace-nowrap items-center">
                 {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
