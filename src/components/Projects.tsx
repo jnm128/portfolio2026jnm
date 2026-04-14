@@ -36,7 +36,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           <p className="text-xs uppercase tracking-widest text-muted-foreground">Selected Work</p>
         </div>
         <FadeIn>
-          <h2 className="text-3xl md:text-5xl font-sans font-medium text-foreground leading-tight mb-4">
+          <h2 className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-4">
             Helping teams ship & build products people love
           </h2>
         </FadeIn>
