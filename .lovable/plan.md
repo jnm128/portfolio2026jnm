@@ -1,21 +1,15 @@
 
 
-## Add Headline Under "Selected Work"
+## Three Changes
 
-**File**: `src/components/Projects.tsx`, around line 37
+### 1. Remove "Trusted by" label and reduce spacing (`src/components/IntroBlurb.tsx`)
+- Delete the `<p>` tag with "Trusted by teams building the next frontier."
+- Reduce vertical padding from `py-12 md:py-16` to `py-4 md:py-6` to move the marquee closer to the hero image above
 
-After the "Selected Work" label, add a large headline about helping teams ship products people love.
-
-**Change**: Insert a `FadeIn`-wrapped heading between the "Selected Work" paragraph (line 37) and the project cards:
-
-```tsx
-<FadeIn>
-  <h2 className="text-3xl md:text-5xl font-sans font-medium text-foreground leading-tight mb-4">
-    Helping teams ship & build products people love
-  </h2>
-</FadeIn>
-```
+### 2. Match "Helping teams ship" font to "Design, Tech & Intention" (`src/components/Projects.tsx`)
+- Line 39: Change `font-sans font-medium` to `font-serif` on the `<h2>` element
 
 ### Files Modified
-- `src/components/Projects.tsx`
+- `src/components/IntroBlurb.tsx` — remove label, tighten padding
+- `src/components/Projects.tsx` — change heading font class
 
