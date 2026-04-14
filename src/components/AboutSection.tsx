@@ -6,7 +6,7 @@ const skills = ["Figma", "Prototyping", "User Research", "Design Systems", "HTML
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="<section id="about" className="pt-12 pb-12 md:pt-20 md:pb-20 bg-[#F8F6F1]"> bg-[#F8F6F1]">
+    <section id="about" className="pt-12 pb-12 md:pt-20 md:pb-20 bg-[#F8F6F1]">
       <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
           {/* Left Column — Title & Helper Text */}
