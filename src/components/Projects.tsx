@@ -40,7 +40,6 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
             Helping teams ship & build products people love
           </h2>
         </FadeIn>
-        </div>
 
         <div className="flex flex-col gap-16">
           {projects.map((project, index) => (
