@@ -1,15 +1,14 @@
 
 
-## Three Changes
+## Changes
 
-### 1. Remove "Trusted by" label and reduce spacing (`src/components/IntroBlurb.tsx`)
-- Delete the `<p>` tag with "Trusted by teams building the next frontier."
-- Reduce vertical padding from `py-12 md:py-16` to `py-4 md:py-6` to move the marquee closer to the hero image above
+### 1. Remove "Helping teams ship" headline (`src/components/Projects.tsx`)
+- Delete lines 38-42 (the `<FadeIn>` wrapped `<h2>` heading)
 
-### 2. Match "Helping teams ship" font to "Design, Tech & Intention" (`src/components/Projects.tsx`)
-- Line 39: Change `font-sans font-medium` to `font-serif` on the `<h2>` element
+### 2. Add more bottom padding to AboutSection (`src/components/AboutSection.tsx`)
+- Line 9: Change `pb-4 md:pb-8` to `pb-12 md:pb-20`
 
 ### Files Modified
-- `src/components/IntroBlurb.tsx` — remove label, tighten padding
-- `src/components/Projects.tsx` — change heading font class
+- `src/components/Projects.tsx`
+- `src/components/AboutSection.tsx`
 
