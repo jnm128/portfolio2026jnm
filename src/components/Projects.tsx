@@ -35,6 +35,12 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         <div className="flex items-center justify-between mb-8">
           <p className="text-xs uppercase tracking-widest text-muted-foreground">Selected Work</p>
         </div>
+        <FadeIn>
+          <h2 className="text-3xl md:text-5xl font-sans font-medium text-foreground leading-tight mb-4">
+            Helping teams ship & build products people love
+          </h2>
+        </FadeIn>
+        </div>
 
         <div className="flex flex-col gap-16">
           {projects.map((project, index) => (
