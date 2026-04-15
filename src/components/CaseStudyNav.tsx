@@ -6,6 +6,7 @@ const caseStudies = [
   { slug: 'mindful-wellness', title: 'Mindful Wellness', path: '/case-study/mindful-wellness' },
   { slug: 'artisan-marketplace', title: 'Artisan Marketplace', path: '/case-study/artisan-marketplace' },
   { slug: 'creative-studio', title: 'Creative Studio', path: '/case-study/creative-studio' },
+  { slug: 'cvs-health', title: 'CVS Health', path: '/case-study/cvs-health' },
 ];
 
 interface CaseStudyNavProps {

@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import CaseStudyMindfulWellness from "./pages/CaseStudyMindfulWellness";
 import CaseStudyArtisanMarketplace from "./pages/CaseStudyArtisanMarketplace";
 import CaseStudyCreativeStudio from "./pages/CaseStudyCreativeStudio";
+import CaseStudyCVS from "./pages/CaseStudyCVS";
 import Contact from "./pages/Contact";
 import BookClub from "./pages/BookClub";
 import WorkExperience from "./pages/WorkExperience";
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/case-study/mindful-wellness" element={<CaseStudyMindfulWellness />} />
             <Route path="/case-study/artisan-marketplace" element={<CaseStudyArtisanMarketplace />} />
             <Route path="/case-study/creative-studio" element={<CaseStudyCreativeStudio />} />
+            <Route path="/case-study/cvs-health" element={<CaseStudyCVS />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
