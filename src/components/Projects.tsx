@@ -13,7 +13,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       title: "Shipping colleague facing design experience with CVS Health",
       description: "Led end-to-end product design for an internal tools platform, reducing user errors by 40% and increasing task completion rates across key workflows.",
       image: "/lovable-uploads/cvs-health-project.png",
-      link: "/case-study/mindful-wellness",
+      link: "/case-study/cvs-health",
     },
     {
       title: "Building cost transparency between families, insurance and businesses with Viveka Health",
