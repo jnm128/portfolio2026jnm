@@ -12,7 +12,7 @@ const Collab: React.FC<CollabProps> = ({ className }) => {
     <div className={cn('py-16 md:py-24', className)}>
       <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
         <FadeIn>
-          <div className="rounded-2xl px-8 py-16 md:py-20 w-full bg-secondary">
+          <div className="rounded-2xl px-8 py-24 md:py-32 w-full bg-secondary">
             <div className="flex flex-col gap-6 items-center text-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-foreground">
                 Interested in collaborating?
