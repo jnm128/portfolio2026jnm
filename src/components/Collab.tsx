@@ -10,6 +10,7 @@ interface CollabProps {
 const Collab: React.FC<CollabProps> = ({ className }) => {
   return (
     <div className={cn('py-16 md:py-24', className)}>
+      {/* rebuild trigger */}
       <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
         <FadeIn>
           <div className="rounded-2xl px-8 py-24 md:py-32 w-full bg-secondary">
