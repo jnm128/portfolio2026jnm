@@ -110,7 +110,7 @@ const CaseStudyCVS: React.FC = () => {
         </div>
       </section>
 
-      <CaseStudyNav currentSlug="cvs-health" />
+      <CaseStudyNav currentSlug="cvs-health" variant="dark" />
       <Footer />
     </main>
   );
