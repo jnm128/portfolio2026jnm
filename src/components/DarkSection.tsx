@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Testimonials from './Testimonials';
-import Community from './Community';
 import Collab from './Collab';
 
 const DarkSection: React.FC = () => {
@@ -26,7 +25,6 @@ const DarkSection: React.FC = () => {
       style={{ backgroundColor: isVisible ? '#1C1C1C' : '#F8F6F1' }}
     >
       <Testimonials />
-      <Community />
       <Collab />
     </section>
   );
