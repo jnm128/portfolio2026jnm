@@ -24,30 +24,20 @@ const CaseStudyCVS: React.FC = () => {
             </button>
           </FadeIn>
 
-          <FadeIn delay={100}>
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Case Study</p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium text-foreground leading-tight mb-4">
-              Shipping colleague facing design experience with CVS Health
-            </h1>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mb-10">
-              Led end-to-end product design for an internal tools platform, reducing user errors by 40% and increasing task completion rates across key workflows.
-            </p>
-          </FadeIn>
-
           <FadeIn delay={200}>
-            <div className="rounded-2xl aspect-[4/3] md:aspect-[16/10] bg-[#1C1C1C] flex flex-col items-center justify-center p-8 text-center overflow-hidden">
-              <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-6">
-                <ShieldOff size={28} className="text-white/30" />
+            <div className="flex flex-col items-center justify-center py-20 md:py-28 text-center">
+              <div className="w-16 h-16 rounded-full bg-foreground/5 flex items-center justify-center mb-6">
+                <ShieldOff size={28} className="text-muted-foreground" />
               </div>
-              <h2 className="text-2xl md:text-4xl font-serif font-medium text-white mb-4">
+              <h2 className="text-2xl md:text-4xl font-serif font-medium text-foreground mb-4">
                 Oops! This one's under wraps
               </h2>
-              <p className="text-sm md:text-base text-white/60 max-w-xl mb-8 leading-relaxed">
+              <p className="text-sm md:text-base text-muted-foreground max-w-xl mb-8 leading-relaxed">
                 I'm tied to an NDA so I can't share visuals from my work at CVS Health — but I'd be happy to chat about it. Here's what I can tell you:
               </p>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#1C1C1C] rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full text-base font-medium hover:opacity-90 transition-opacity"
               >
                 Let's Chat
               </Link>
