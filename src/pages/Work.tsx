@@ -86,30 +86,6 @@ const Work: React.FC = () => {
         </div>
       </section>
 
-      {/* Dark CTA */}
-      <section className="py-16 md:py-24 bg-[#1C1C1C]" data-theme="dark">
-        <div className="max-w-[1600px] mx-auto px-8 md:px-16">
-          <FadeIn>
-            <div className="flex flex-col gap-6 items-center text-center">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-white">
-                Interested in collaborating?
-              </h2>
-              <p className="text-lg md:text-xl text-white/70 font-serif leading-relaxed">
-                I'm always open to new projects and partnerships. Let's create something meaningful together.
-              </p>
-              <div className="mt-4">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center px-8 py-3 rounded-full bg-white text-black font-medium hover:opacity-90 transition-opacity"
-                >
-                  Get in Touch
-                </Link>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );
