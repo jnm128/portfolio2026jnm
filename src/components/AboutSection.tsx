@@ -40,7 +40,7 @@ const AboutSection: React.FC = () => {
                 {skills.map((s) => (
                   <span
                     key={s}
-                    className="px-4 py-2 rounded-full border border-border text-sm font-medium text-foreground"
+                    className="bg-brand-matcha text-brand-foam px-4 py-2 rounded-full text-sm font-medium"
                   >
                     {s}
                   </span>
