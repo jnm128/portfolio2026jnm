@@ -23,7 +23,7 @@ const CaseStudyNav: React.FC<CaseStudyNavProps> = ({ currentSlug, variant = 'lig
 
   return (
     <section 
-      className={`py-12 md:py-16 ${isDark ? 'bg-[#1C1C1C] border-white/10' : 'bg-[#F8F6F1] border-border'} border-t`}
+      className={`py-12 md:py-16 ${isDark ? 'bg-foreground border-white/10' : 'bg-background border-border'} border-t`}
       {...(isDark ? { 'data-theme': 'dark' } : {})}
     >
       <div className="container mx-auto px-8 md:px-16">

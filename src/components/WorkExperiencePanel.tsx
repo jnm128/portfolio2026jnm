@@ -35,7 +35,7 @@ const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose
       />
       <div
         className={cn(
-          'fixed top-0 right-0 h-full z-[200] bg-[#F8F6F1] shadow-[-4px_0_24px_rgba(0,0,0,0.08)] overflow-y-auto transition-transform duration-500 ease-out w-full md:w-[40%]',
+          'fixed top-0 right-0 h-full z-[200] bg-background shadow-[-4px_0_24px_rgba(0,0,0,0.08)] overflow-y-auto transition-transform duration-500 ease-out w-full md:w-[40%]',
           open ? 'translate-x-0' : 'translate-x-full'
         )}
       >

@@ -34,11 +34,11 @@ const linkedinPosts = [
 const AboutPage = () => {
 
   return (
-    <main className="relative bg-[#F8F6F1]">
+    <main className="relative bg-background">
       <ScrollAnimations />
       <div className="pt-24 md:pt-28">
         {/* Hero / Intro */}
-        <section className="pt-0 pb-24 md:pb-32 bg-[#F8F6F1] min-h-[calc(100vh-7rem)] flex flex-col justify-center">
+        <section className="pt-0 pb-24 md:pb-32 bg-background min-h-[calc(100vh-7rem)] flex flex-col justify-center">
             <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
               {/* Mobile-only title */}
@@ -89,7 +89,7 @@ const AboutPage = () => {
         </section>
 
         {/* Writing, Current Read & Song on Repeat — Combined Dark Section */}
-        <section className="bg-[#1C1C1C] text-white py-16 md:py-24" data-theme="dark">
+        <section className="bg-foreground text-white py-16 md:py-24" data-theme="dark">
           <div className="max-w-4xl mx-auto px-8 md:px-16">
             <div className="mb-16">
               <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">

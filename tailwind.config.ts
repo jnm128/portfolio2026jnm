@@ -84,6 +84,12 @@ export default {
 					4: 'hsl(var(--surface-4))',
 					5: 'hsl(var(--surface-5))',
 					6: 'hsl(var(--surface-6))',
+				},
+				brand: {
+					foam: '#FFFBE7',
+					caramel: '#E6DDA9',
+					matcha: '#7F793B',
+					chai: '#220000',
 				}
 			},
 			borderRadius: {

@@ -28,7 +28,7 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="relative bg-[#F8F6F1]">
+    <main className="relative bg-background">
       <ScrollAnimations />
       <Hero />
       <IntroBlurb />

@@ -4,90 +4,96 @@
 
 @layer base {
   :root {
-    --background: 40 33% 96%;
-    --foreground: 0 0% 9%;
+    /* Brand palette
+       Foam       #FFFBE7  → background
+       Chai Spice #220000  → foreground / primary CTA
+       Matcha     #7F793B  → accent tag
+       Caramel    #E6DDA9  → secondary surface / accent tag
+    */
+    --background: 53 100% 95%;        /* Foam #FFFBE7 */
+    --foreground: 0 100% 7%;          /* Chai Spice #220000 */
 
-    --card: 40 33% 98%;
-    --card-foreground: 0 0% 9%;
+    --card: 53 100% 97%;
+    --card-foreground: 0 100% 7%;
 
-    --popover: 40 33% 98%;
-    --popover-foreground: 0 0% 9%;
+    --popover: 53 100% 97%;
+    --popover-foreground: 0 100% 7%;
 
-    --primary: 0 0% 9%;
-    --primary-foreground: 40 33% 96%;
+    --primary: 0 100% 7%;             /* Chai Spice CTA */
+    --primary-foreground: 53 100% 95%;
 
-    --secondary: 40 20% 92%;
-    --secondary-foreground: 0 0% 9%;
+    --secondary: 50 56% 78%;          /* Caramel #E6DDA9 */
+    --secondary-foreground: 0 100% 7%;
 
-    --muted: 40 20% 92%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 50 56% 88%;
+    --muted-foreground: 0 30% 25%;
 
-    --accent: 40 20% 92%;
-    --accent-foreground: 0 0% 9%;
+    --accent: 56 37% 37%;             /* Matcha #7F793B */
+    --accent-foreground: 53 100% 95%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 9.1% 97.8%;
+    --destructive-foreground: 53 100% 95%;
 
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
-    --ring: 0 0% 9%;
+    --border: 50 40% 80%;
+    --input: 50 40% 80%;
+    --ring: 0 100% 7%;
 
     --radius: 0.5rem;
-    
-    /* Progressive background shades - light to dark */
-    --surface-1: 40 33% 96%;
-    --surface-2: 40 25% 90%;
-    --surface-3: 35 20% 82%;
-    --surface-4: 30 15% 70%;
-    --surface-5: 20 10% 25%;
-    --surface-6: 0 0% 12%;
 
-    --sidebar-background: 40 33% 96%;
-    --sidebar-foreground: 0 0% 9%;
-    --sidebar-primary: 0 0% 9%;
-    --sidebar-primary-foreground: 40 33% 96%;
-    --sidebar-accent: 40 20% 92%;
-    --sidebar-accent-foreground: 0 0% 9%;
-    --sidebar-border: 40 20% 88%;
-    --sidebar-ring: 0 0% 9%;
+    /* Progressive background shades - Foam → Caramel → Matcha → Chai */
+    --surface-1: 53 100% 95%;         /* Foam */
+    --surface-2: 50 70% 90%;
+    --surface-3: 50 56% 78%;          /* Caramel */
+    --surface-4: 56 37% 55%;
+    --surface-5: 56 37% 37%;          /* Matcha */
+    --surface-6: 0 100% 7%;           /* Chai */
+
+    --sidebar-background: 53 100% 95%;
+    --sidebar-foreground: 0 100% 7%;
+    --sidebar-primary: 0 100% 7%;
+    --sidebar-primary-foreground: 53 100% 95%;
+    --sidebar-accent: 50 56% 78%;
+    --sidebar-accent-foreground: 0 100% 7%;
+    --sidebar-border: 50 40% 80%;
+    --sidebar-ring: 0 100% 7%;
   }
 
   .dark {
-    --background: 0 0% 9%;
-    --foreground: 40 33% 96%;
+    --background: 0 100% 7%;          /* Chai Spice */
+    --foreground: 53 100% 95%;        /* Foam */
 
-    --card: 0 0% 12%;
-    --card-foreground: 40 33% 96%;
+    --card: 0 60% 10%;
+    --card-foreground: 53 100% 95%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 40 33% 96%;
+    --popover: 0 60% 10%;
+    --popover-foreground: 53 100% 95%;
 
-    --primary: 40 33% 96%;
-    --primary-foreground: 0 0% 9%;
+    --primary: 53 100% 95%;           /* Foam CTA */
+    --primary-foreground: 0 100% 7%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 40 33% 96%;
+    --secondary: 56 37% 37%;          /* Matcha */
+    --secondary-foreground: 53 100% 95%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 40 20% 65%;
+    --muted: 0 40% 12%;
+    --muted-foreground: 50 30% 75%;
 
-    --accent: 0 0% 15%;
-    --accent-foreground: 40 33% 96%;
+    --accent: 50 56% 78%;             /* Caramel */
+    --accent-foreground: 0 100% 7%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 40 33% 96%;
+    --destructive-foreground: 53 100% 95%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 40 33% 96%;
-    
-    /* Progressive background shades - already dark */
-    --surface-1: 0 0% 9%;
-    --surface-2: 0 0% 11%;
-    --surface-3: 0 0% 13%;
-    --surface-4: 0 0% 15%;
-    --surface-5: 0 0% 17%;
-    --surface-6: 0 0% 9%;
+    --border: 0 30% 18%;
+    --input: 0 30% 18%;
+    --ring: 53 100% 95%;
+
+    /* Progressive background shades - Chai → Matcha */
+    --surface-1: 0 100% 7%;
+    --surface-2: 0 60% 10%;
+    --surface-3: 0 40% 14%;
+    --surface-4: 56 30% 25%;
+    --surface-5: 56 37% 37%;
+    --surface-6: 0 100% 7%;
   }
 }
 

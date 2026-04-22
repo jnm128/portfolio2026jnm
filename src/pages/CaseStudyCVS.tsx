@@ -12,7 +12,7 @@ const CaseStudyCVS: React.FC = () => {
   return (
     <main className="relative">
       {/* Hero Section */}
-      <section className="pt-20 md:pt-24 pb-10 md:pb-16 bg-[#F8F6F1]">
+      <section className="pt-20 md:pt-24 pb-10 md:pb-16 bg-background">
         <div className="container mx-auto max-w-[1600px] px-8 md:px-16">
           <FadeIn>
             <button
@@ -47,7 +47,7 @@ const CaseStudyCVS: React.FC = () => {
       </section>
 
       {/* Specialty Central */}
-      <section className="py-16 md:py-24 bg-[#1C1C1C]" data-theme="dark">
+      <section className="py-16 md:py-24 bg-foreground" data-theme="dark">
         <div className="container mx-auto max-w-[1600px] px-8 md:px-16">
           <SplitSection label="Project One" className="[&_span]:text-white/50">
             <FadeIn>
@@ -79,7 +79,7 @@ const CaseStudyCVS: React.FC = () => {
       </section>
 
       {/* Benefits Verification */}
-      <section className="py-16 md:py-24 bg-[#1C1C1C]" data-theme="dark">
+      <section className="py-16 md:py-24 bg-foreground" data-theme="dark">
         <div className="container mx-auto max-w-[1600px] px-8 md:px-16">
           <SplitSection label="Project Two" className="[&_span]:text-white/50">
             <FadeIn>
