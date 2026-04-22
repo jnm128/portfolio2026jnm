@@ -1,15 +1,66 @@
 
-The user wants the light cream container inside the "Interested in collaborating?" section to expand wider within the dark section, rather than being constrained to `max-w-4xl`.
 
-Looking at `Collab.tsx`, the outer container is `max-w-[1600px]` (site-wide) and the inner cream card is `max-w-4xl mx-auto` (~896px). I'll remove the `max-w-4xl` constraint so the cream container fills the full width of the outer `max-w-[1600px]` container, with dark `#1C1C1C` only showing in the standard `px-8 md:px-16` outer padding.
+## Apply the Chai/Matcha/Caramel/Foam palette site-wide
 
-## Expand Collab Container Width
+Map the four uploaded brand colors into the design token system so the whole site (light + dark themes, CTAs, tags) updates from one source of truth instead of touching every file.
 
-### `src/components/Collab.tsx`
-Remove `max-w-4xl mx-auto` from the cream container so it expands to fill the full width of the parent `max-w-[1600px]` wrapper. The dark background remains visible only in the outer horizontal page padding (`px-8 md:px-16`).
+### Token mapping
 
-- Change `bg-[#F8F6F1] rounded-2xl px-8 py-16 md:py-20 max-w-4xl mx-auto` → `bg-[#F8F6F1] rounded-2xl px-8 py-16 md:py-20 w-full`
-- Content inside (heading, paragraph, CTA) remains centered via the existing `items-center text-center` flex container
+| Brand color | Hex | Role |
+|---|---|---|
+| Foam | `#FFFBE7` | Light theme background (`--background`) |
+| Chai Spice | `#220000` | Dark theme background + light theme primary/foreground (CTA fill) |
+| Matcha | `#7F793B` | Accent / tag color #1 |
+| Caramel | `#E6DDA9` | Secondary surface / tag color #2 |
 
-### Files Modified
-- `src/components/Collab.tsx`
+### Changes
+
+**1. `src/index.css` — update CSS variables**
+- Light theme (`:root`):
+  - `--background` → Foam `#FFFBE7` (HSL `49 100% 95%`)
+  - `--foreground` / `--primary` → Chai Spice `#220000` (HSL `0 100% 7%`)
+  - `--secondary` / `--muted` / `--accent` → Caramel `#E6DDA9` (HSL `50 56% 78%`)
+  - `--border` / `--input` → Caramel-tinted (HSL `50 40% 70%`)
+  - Surface ramp 1→6 retuned from Foam → Chai Spice
+- Dark theme (`.dark`):
+  - `--background` → Chai Spice `#220000`
+  - `--foreground` → Foam
+  - `--secondary` → Matcha `#7F793B`
+
+**2. `tailwind.config.ts` — add semantic brand tokens**
+Add a `brand` color group so tags can reference them directly:
+```ts
+brand: {
+  foam: '#FFFBE7',
+  caramel: '#E6DDA9',
+  matcha: '#7F793B',
+  chai: '#220000',
+}
+```
+
+**3. Replace hardcoded hex usage with tokens**
+Sweep these files to swap `bg-[#F8F6F1]` → `bg-background` and `bg-[#1C1C1C]` / `text-[#F8F6F1]` → `bg-foreground` / `text-background`:
+- `src/components/AboutSection.tsx`, `Hero.tsx`, `IntroBlurb.tsx`, `Process.tsx`, `Community.tsx`, `Footer.tsx`, `Testimonials.tsx`, `WorkExperiencePanel.tsx`, `Header.tsx`
+- `src/components/DarkSection.tsx` (inline style swap to `hsl(var(--foreground))` / `hsl(var(--background))`)
+- `src/pages/Index.tsx`, `Work.tsx`, all `CaseStudy*.tsx` files
+
+**4. Tag color refresh — `src/components/About.tsx`**
+Alternate tag pills between Caramel and Matcha for a richer palette:
+- Odd tags: `bg-brand-caramel text-brand-chai`
+- Even tags: `bg-brand-matcha text-brand-foam`
+
+**5. CTA buttons** stay on `bg-foreground text-background`, which now automatically renders as Chai-on-Foam (light) / Foam-on-Chai (dark) — no per-button edits needed.
+
+### Visual flow after change
+
+```text
+Light pages:  Foam bg  →  Chai text  →  Chai CTA w/ Foam text
+Dark sections: Chai bg →  Foam text  →  Foam CTA w/ Chai text
+Tags:         Caramel + Matcha pills (alternating)
+```
+
+### Out of scope
+- No layout, spacing, or typography changes.
+- Component-specific colors (e.g., FAQ's `bg-white`, Packages' card `bg-white`) will be updated to `bg-card` so they pick up the new tokens automatically.
+- Footer text colors flip from hardcoded `text-white` → `text-background` for token consistency.
+
