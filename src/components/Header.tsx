@@ -204,7 +204,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         className={cn(
           `fixed top-0 left-0 right-0 transition-all duration-300 ${isMobileMenuOpen ? 'z-[101]' : 'z-[60]'}`,
           isScrolled 
-            ? `py-4 ${isMobileMenuOpen ? 'bg-background' : useDarkTheme ? 'bg-[#1C1C1C]' : 'bg-background/95 backdrop-blur-sm'}`
+            ? `py-4 ${isMobileMenuOpen ? 'bg-background' : useDarkTheme ? 'bg-foreground' : 'bg-background/95 backdrop-blur-sm'}`
             : isMobileMenuOpen
               ? 'py-6 bg-background'
               : useDarkTheme
@@ -344,17 +344,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             >
               <span className={cn(
                 "block w-5 h-0.5 transition-all duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+                useDarkTheme && !isMobileMenuOpen ? "bg-background" : "bg-foreground",
                 isMobileMenuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
               )} />
               <span className={cn(
                 "block w-5 h-0.5 transition-all duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+                useDarkTheme && !isMobileMenuOpen ? "bg-background" : "bg-foreground",
                 isMobileMenuOpen ? "opacity-0" : ""
               )} />
               <span className={cn(
                 "block w-5 h-0.5 transition-all duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+                useDarkTheme && !isMobileMenuOpen ? "bg-background" : "bg-foreground",
                 isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
               )} />
             </button>

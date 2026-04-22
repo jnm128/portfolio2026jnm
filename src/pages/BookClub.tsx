@@ -106,10 +106,10 @@ const BookClub: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F6F1]">
+    <div className="min-h-screen bg-background">
 
       {/* Section 1 — Hero */}
-      <section className="min-h-screen flex items-center pt-24 md:pt-28 pb-10 md:pb-16 bg-[#F8F6F1]">
+      <section className="min-h-screen flex items-center pt-24 md:pt-28 pb-10 md:pb-16 bg-background">
         <div className="mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
@@ -199,7 +199,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
       </section>
 
       {/* Section 2 — Who We Are */}
-      <section data-theme="dark" className="py-16 md:py-20 bg-[#1C1C1C]">
+      <section data-theme="dark" className="py-16 md:py-20 bg-foreground">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">Who We Are</h2>
@@ -218,7 +218,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
       </section>
 
       {/* Section 3 — Previous Reads */}
-      <section className="py-16 md:py-20 bg-[#F8F6F1]">
+      <section className="py-16 md:py-20 bg-background">
         <div className="mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex items-end justify-between mb-6">
@@ -265,7 +265,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
       </section>
 
       {/* Section 4 — How the Community Works */}
-      <section id="community" data-theme="dark" className="py-16 md:py-20 bg-[#1C1C1C]">
+      <section id="community" data-theme="dark" className="py-16 md:py-20 bg-foreground">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">How the Community Works</h2>
@@ -280,7 +280,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
               ].map((step, index) => (
                 <div key={index} className={`${index > 0 ? 'border-t border-white/15' : ''} py-8 flex items-start gap-6`}>
                   <div className="w-12 h-12 rounded-2xl bg-[#FAFAF5] flex items-center justify-center shrink-0">
-                    <step.icon className="w-6 h-6 text-[#1C1C1C]" />
+                    <step.icon className="w-6 h-6 text-foreground" />
                   </div>
                   <div>
                     <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-2">{step.title}</h3>
@@ -294,7 +294,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
       </section>
 
       {/* Section 5 — CTA (light) */}
-      <section id="upcoming" className="py-16 md:py-24 bg-[#F8F6F1]">
+      <section id="upcoming" className="py-16 md:py-24 bg-background">
         <div className="mx-auto px-8 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col gap-6 items-center text-center">
@@ -309,7 +309,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                   href="https://www.linkedin.com/in/joannaminott"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 py-3 rounded-full bg-[#1C1C1C] text-white font-medium hover:bg-[#1C1C1C]/90 transition-colors"
+                  className="inline-flex items-center px-8 py-3 rounded-full bg-foreground text-white font-medium hover:bg-foreground/90 transition-colors"
                 >
                   Join the Club
                 </a>
@@ -320,7 +320,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
       </section>
 
       {/* Section 6 — FAQ (dark) */}
-      <section data-theme="dark" className="py-16 md:py-20 bg-[#1C1C1C]">
+      <section data-theme="dark" className="py-16 md:py-20 bg-foreground">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">Frequently Asked Questions</h2>
@@ -371,7 +371,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
 
       {/* Book Detail Dialog */}
       <Dialog open={!!selectedBook} onOpenChange={() => setSelectedBook(null)}>
-        <DialogContent className="max-w-sm bg-[#F8F6F1] border-foreground/10 p-0 overflow-hidden rounded-2xl">
+        <DialogContent className="max-w-sm bg-background border-foreground/10 p-0 overflow-hidden rounded-2xl">
           {selectedBook && (
             <>
               <div className="flex items-center justify-center p-6 pb-2">
@@ -397,7 +397,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                   href={selectedBook.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full px-6 py-2.5 rounded-full bg-[#1C1C1C] text-white font-medium hover:bg-[#1C1C1C]/90 transition-colors"
+                  className="inline-flex items-center justify-center w-full px-6 py-2.5 rounded-full bg-foreground text-white font-medium hover:bg-foreground/90 transition-colors"
                 >
                   View on Amazon
                 </a>

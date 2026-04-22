@@ -43,7 +43,7 @@ const Work: React.FC = () => {
       </section>
 
       {/* Project Cards */}
-      <section className="bg-[#F8F6F1]">
+      <section className="bg-background">
         <div className="max-w-[1600px] mx-auto px-8 md:px-16 py-16 md:py-24">
           <div className="flex flex-col gap-16">
             {projects.map((project, index) => (

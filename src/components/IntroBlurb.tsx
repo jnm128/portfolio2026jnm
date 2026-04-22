@@ -16,7 +16,7 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
   ];
 
   return (
-    <section className={cn('py-4 md:py-6 bg-[#F8F6F1]', className)}>
+    <section className={cn('py-4 md:py-6 bg-background', className)}>
       <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
         <FadeIn>
           <div>

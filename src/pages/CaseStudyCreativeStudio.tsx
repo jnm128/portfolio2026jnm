@@ -14,7 +14,7 @@ const CaseStudyCreativeStudio = () => {
     <main className="relative">
       
       {/* Hero Section */}
-      <section className="pt-20 md:pt-24 pb-10 md:pb-16 bg-[#F8F6F1]">
+      <section className="pt-20 md:pt-24 pb-10 md:pb-16 bg-background">
         <div className="mx-auto max-w-[1600px] px-4 md:px-16">
           <FadeIn>
             <button 
@@ -49,7 +49,7 @@ const CaseStudyCreativeStudio = () => {
       </section>
 
       {/* TLDR */}
-      <section className="py-12 md:py-20 bg-[#F8F6F1]">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-8 md:px-16">
           <SplitSection label="TLDR">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
@@ -83,7 +83,7 @@ const CaseStudyCreativeStudio = () => {
       </section>
 
       {/* Problem Space */}
-        <section className="py-12 md:py-20 bg-[#F8F6F1]">
+        <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-8 md:px-16">
           <SplitSection label="Problem Space">
             <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
@@ -103,7 +103,7 @@ const CaseStudyCreativeStudio = () => {
       </section>
 
       {/* Approach */}
-      <section className="py-20 md:py-32 bg-[#F8F6F1]">
+      <section className="py-20 md:py-32 bg-background">
         <div className="container mx-auto px-8 md:px-16">
           <SplitSection label="Our Approach">
             <div className="grid md:grid-cols-2 gap-12">
@@ -141,7 +141,7 @@ const CaseStudyCreativeStudio = () => {
       </section>
 
       {/* Final Designs */}
-      <section className="py-20 md:py-32 bg-[#F8F6F1]">
+      <section className="py-20 md:py-32 bg-background">
         <div className="mx-auto max-w-[1600px] px-4 md:px-16">
           <FadeIn>
             <div className="space-y-8">
@@ -172,7 +172,7 @@ const CaseStudyCreativeStudio = () => {
       </section>
 
       {/* Results */}
-      <section className="py-20 md:py-32 bg-[#F8F6F1]">
+      <section className="py-20 md:py-32 bg-background">
         <div className="container mx-auto px-8 md:px-16">
           <SplitSection label="Results">
             <div className="grid md:grid-cols-3 gap-8 mb-16">

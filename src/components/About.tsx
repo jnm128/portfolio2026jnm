@@ -41,15 +41,15 @@ const About: React.FC<AboutProps> = ({
               <p className="text-base md:text-xl text-foreground leading-relaxed mb-6 font-serif">
                 Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.
               </p>
-              {/* Expertise Tags */}
+              {/* Expertise Tags — alternating Caramel & Matcha */}
               <div className="flex flex-wrap gap-2 mb-8">
-                <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">4+ Years</span>
-                <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">Healthcare</span>
-                <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">B2B & B2C</span>
-                <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">Mobile & Web</span>
-                <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">Enterprise Systems</span>
-                <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">Based in Miami, FL</span>
-                <span className="bg-surface-3/60 rounded-full px-3 py-1 text-xs text-foreground/70">Remote</span>
+                <span className="bg-brand-caramel text-brand-chai rounded-full px-3 py-1 text-xs font-medium">4+ Years</span>
+                <span className="bg-brand-matcha text-brand-foam rounded-full px-3 py-1 text-xs font-medium">Healthcare</span>
+                <span className="bg-brand-caramel text-brand-chai rounded-full px-3 py-1 text-xs font-medium">B2B & B2C</span>
+                <span className="bg-brand-matcha text-brand-foam rounded-full px-3 py-1 text-xs font-medium">Mobile & Web</span>
+                <span className="bg-brand-caramel text-brand-chai rounded-full px-3 py-1 text-xs font-medium">Enterprise Systems</span>
+                <span className="bg-brand-matcha text-brand-foam rounded-full px-3 py-1 text-xs font-medium">Based in Miami, FL</span>
+                <span className="bg-brand-caramel text-brand-chai rounded-full px-3 py-1 text-xs font-medium">Remote</span>
               </div>
 
               <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="pill-tag self-start transition-transform active:scale-95">

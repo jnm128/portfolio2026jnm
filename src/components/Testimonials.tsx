@@ -67,7 +67,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
           <div className="mb-16 md:mb-20">
             <blockquote
               key={activeIndex}
-              className="font-serif text-3xl md:text-5xl leading-tight text-[#F8F6F1] mb-8 animate-fade-in"
+              className="font-serif text-3xl md:text-5xl leading-tight text-background mb-8 animate-fade-in"
             >
               "{current.quote}"
             </blockquote>
