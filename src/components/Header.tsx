@@ -344,17 +344,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             >
               <span className={cn(
                 "block w-5 h-0.5 transition-all duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+                useDarkTheme && !isMobileMenuOpen ? "bg-background" : "bg-foreground",
                 isMobileMenuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
               )} />
               <span className={cn(
                 "block w-5 h-0.5 transition-all duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+                useDarkTheme && !isMobileMenuOpen ? "bg-background" : "bg-foreground",
                 isMobileMenuOpen ? "opacity-0" : ""
               )} />
               <span className={cn(
                 "block w-5 h-0.5 transition-all duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "bg-white" : "bg-foreground",
+                useDarkTheme && !isMobileMenuOpen ? "bg-background" : "bg-foreground",
                 isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
               )} />
             </button>
