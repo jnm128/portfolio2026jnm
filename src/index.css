@@ -157,7 +157,23 @@
 
 @layer components {
   .pill-tag {
-    @apply inline-flex items-center px-5 py-2 bg-foreground text-background text-sm font-medium rounded-full transition-colors hover:bg-foreground/90;
+    @apply inline-flex items-center px-5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-full transition-colors hover:bg-primary/90;
+  }
+
+  /* Hero diagonal gradient — warm taupe → soft blue → cream */
+  .bg-hero-gradient {
+    background: linear-gradient(135deg, #E8E2D8 0%, #D4E0EA 45%, #EDE9E3 100%);
+  }
+  .dark .bg-hero-gradient {
+    background: linear-gradient(135deg, #1F1813 0%, #141C24 45%, #130F0C 100%);
+  }
+
+  /* Subtle card gradient — blue tint → cream */
+  .bg-card-gradient {
+    background: linear-gradient(180deg, #D4E0EA 0%, #EDE9E3 100%);
+  }
+  .dark .bg-card-gradient {
+    background: linear-gradient(135deg, #2C221A 0%, #151C28 100%);
   }
 
   .scroll-reveal {
