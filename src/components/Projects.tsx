@@ -58,7 +58,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                     <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
                       {project.description}
                     </p>
-                    <Link to={project.link} className="text-sm font-medium text-accent-foreground hover:text-foreground transition-colors inline-flex items-center gap-1">
+                    <Link to={project.link} className="text-sm font-medium text-accent hover:opacity-70 transition-opacity inline-flex items-center gap-1">
                       View case study →
                     </Link>
                   </div>
