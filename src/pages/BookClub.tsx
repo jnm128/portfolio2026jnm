@@ -148,7 +148,7 @@ const BookClub: React.FC = () => {
                   </a>
                   <a
                     href="#upcoming"
-className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreground border border-foreground/10 font-medium text-sm rounded-full hover:bg-foreground/5 transition-colors"
+className="inline-flex items-center justify-center px-6 py-3 bg-background text-foreground border border-foreground/10 font-medium text-sm rounded-full hover:bg-foreground/5 transition-colors"
                   >
                     See Upcoming Events
                   </a>
@@ -181,7 +181,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                 </a>
                 <a
                   href="#upcoming"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreground border border-foreground/10 font-medium text-sm rounded-full hover:bg-foreground/5 transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-background text-foreground border border-foreground/10 font-medium text-sm rounded-full hover:bg-foreground/5 transition-colors"
                 >
                   See Upcoming Events
                 </a>

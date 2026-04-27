@@ -28,7 +28,7 @@ const Services: React.FC<ServicesProps> = ({ className }) => {
   ];
 
   return (
-    <section id="services" className={cn('py-20 md:py-32 bg-gray-50 relative', className)}>
+    <section id="services" className={cn('py-20 md:py-32 bg-section relative', className)}>
       {/* Gradient overlay to blend with previous section */}
       <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-white to-transparent"></div>
       
@@ -44,7 +44,7 @@ const Services: React.FC<ServicesProps> = ({ className }) => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <FadeIn key={service.title} delay={index * 100}>
-              <div className="bg-white rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg h-full">
+              <div className="bg-card rounded-2xl p-8 border transition-all duration-300 hover:shadow-lg h-full">
                 <h3 className="text-xl font-serif font-medium mb-4">{service.title}</h3>
                 <p className="text-muted-foreground">{service.description}</p>
               </div>

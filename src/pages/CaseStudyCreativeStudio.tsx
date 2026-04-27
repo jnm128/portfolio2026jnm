@@ -190,7 +190,7 @@ const CaseStudyCreativeStudio = () => {
               </div>
             </div>
 
-            <div className="bg-white p-8 md:p-12 border border-border rounded-2xl">
+            <div className="bg-card p-8 md:p-12 border border-border rounded-2xl">
               <blockquote className="text-xl md:text-2xl font-serif text-muted-foreground mb-6">
                 "The rebrand has been transformational. We're attracting higher-quality clients and commanding 
                 premium rates. Our new identity perfectly captures who we are and where we're going."

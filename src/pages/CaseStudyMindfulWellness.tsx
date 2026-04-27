@@ -190,7 +190,7 @@ const CaseStudyMindfulWellness = () => {
               </div>
             </div>
 
-            <div className="bg-white p-8 md:p-12 border border-border rounded-2xl">
+            <div className="bg-card p-8 md:p-12 border border-border rounded-2xl">
               <blockquote className="text-xl md:text-2xl font-serif text-muted-foreground mb-6">
                 "The team at brewed completely transformed our vision into reality. The platform has exceeded our 
                 expectations in both design and functionality."
