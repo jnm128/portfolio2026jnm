@@ -220,7 +220,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               to="/work"
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
+                useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
               )}
             >
               Work
@@ -230,7 +230,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               to="/about"
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
+                useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
               )}
             >
               About
@@ -242,7 +242,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 onClick={() => scrollToSection('home')}
                 className={cn(
                   "text-2xl font-sans font-bold tracking-tight flex transition-colors duration-300 mx-4",
-                  useDarkTheme && !isMobileMenuOpen ? 'text-white' : ''
+                  useDarkTheme && !isMobileMenuOpen ? 'text-background' : ''
                 )}
               >
                 {'MINO.'.split('').map((letter, index) => (
@@ -260,7 +260,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 to="/"
                 className={cn(
                   "text-2xl font-sans font-bold tracking-tight flex transition-colors duration-300 mx-4",
-                  useDarkTheme && !isMobileMenuOpen ? 'text-white' : ''
+                  useDarkTheme && !isMobileMenuOpen ? 'text-background' : ''
                 )}
               >
                 {'MINO.'.split('').map((letter, index) => (
@@ -279,7 +279,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               to="/book-club"
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
+                useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
               )}
             >
               Community
@@ -289,7 +289,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               to="/contact"
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
+                useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
               )}
             >
               Contact
@@ -303,7 +303,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 onClick={() => scrollToSection('home')}
                 className={cn(
                   "text-2xl font-sans font-bold tracking-tight flex transition-colors duration-300",
-                  useDarkTheme && !isMobileMenuOpen ? 'text-white' : ''
+                  useDarkTheme && !isMobileMenuOpen ? 'text-background' : ''
                 )}
               >
                 {'MINO.'.split('').map((letter, index) => (
@@ -321,7 +321,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 to="/"
                 className={cn(
                   "text-2xl font-sans font-bold tracking-tight flex transition-colors duration-300",
-                  useDarkTheme && !isMobileMenuOpen ? 'text-white' : ''
+                  useDarkTheme && !isMobileMenuOpen ? 'text-background' : ''
                 )}
               >
                 {'MINO.'.split('').map((letter, index) => (

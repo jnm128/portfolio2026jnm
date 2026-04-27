@@ -54,7 +54,7 @@ const Process: React.FC<ProcessProps> = ({ className }) => {
           <FadeIn delay={150} className="md:col-span-7">
             <div className="space-y-8">
               {processSteps.map((step, index) => (
-                <div key={step.step} className="border-l-2 border-gray-200 pl-8 pb-8 last:pb-0">
+                <div key={step.step} className="border-l-2 border-border pl-8 pb-8 last:pb-0">
                   <div className="flex items-start space-x-4">
                     <span className="text-xs font-medium text-orangery-500 bg-orangery-50 px-3 py-1 rounded-full uppercase tracking-wide">
                       {step.step}

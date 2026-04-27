@@ -30,21 +30,21 @@ const CaseStudyNav: React.FC<CaseStudyNavProps> = ({ currentSlug, variant = 'lig
         <div className="flex items-center justify-between">
           <Link
             to={prevStudy.path}
-            className={`group flex items-center gap-3 ${isDark ? 'text-white/60 hover:text-white' : 'text-muted-foreground hover:text-foreground'} transition-colors`}
+            className={`group flex items-center gap-3 ${isDark ? 'text-background/60 hover:text-background' : 'text-muted-foreground hover:text-foreground'} transition-colors`}
           >
             <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
             <div>
-              <p className={`text-xs uppercase tracking-widest ${isDark ? 'text-white/40' : 'text-muted-foreground/60'} mb-1`}>Previous</p>
-              <p className={`text-base md:text-lg font-serif font-medium ${isDark ? 'text-white' : ''}`}>{prevStudy.title}</p>
+              <p className={`text-xs uppercase tracking-widest ${isDark ? 'text-background/40' : 'text-muted-foreground/60'} mb-1`}>Previous</p>
+              <p className={`text-base md:text-lg font-serif font-medium ${isDark ? 'text-background' : ''}`}>{prevStudy.title}</p>
             </div>
           </Link>
           <Link
             to={nextStudy.path}
-            className={`group flex items-center gap-3 ${isDark ? 'text-white/60 hover:text-white' : 'text-muted-foreground hover:text-foreground'} transition-colors text-right`}
+            className={`group flex items-center gap-3 ${isDark ? 'text-background/60 hover:text-background' : 'text-muted-foreground hover:text-foreground'} transition-colors text-right`}
           >
             <div>
-              <p className={`text-xs uppercase tracking-widest ${isDark ? 'text-white/40' : 'text-muted-foreground/60'} mb-1`}>Next</p>
-              <p className={`text-base md:text-lg font-serif font-medium ${isDark ? 'text-white' : ''}`}>{nextStudy.title}</p>
+              <p className={`text-xs uppercase tracking-widest ${isDark ? 'text-background/40' : 'text-muted-foreground/60'} mb-1`}>Next</p>
+              <p className={`text-base md:text-lg font-serif font-medium ${isDark ? 'text-background' : ''}`}>{nextStudy.title}</p>
             </div>
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </Link>

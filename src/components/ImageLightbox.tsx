@@ -93,7 +93,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, alt, className }) =>
 
       {isOpen && createPortal(
         <div
-          className="fixed inset-0 z-[110] bg-black/90 flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-[110] bg-foreground/90 flex items-center justify-center p-4 animate-in fade-in duration-200"
           onClick={() => { if (scale <= 1) close(); }}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}

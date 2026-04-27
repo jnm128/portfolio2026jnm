@@ -99,7 +99,7 @@ const Gap: React.FC<GapProps> = ({ className }) => {
                   alt="Beautiful orangery with palm trees and plants" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="absolute inset-0 bg-foreground/30"></div>
               </div>
               
               {/* Centered newsletter box overlaid on the image */}

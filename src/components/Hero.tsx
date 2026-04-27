@@ -90,7 +90,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                   onClick={() => setCurrentIndex(index)} 
                   className={cn(
                     "w-2 h-2 rounded-full transition-all", 
-                    index === currentIndex ? "bg-white" : "bg-white/40"
+                    index === currentIndex ? "bg-background" : "bg-background/40"
                   )} 
                 />
               ))}
