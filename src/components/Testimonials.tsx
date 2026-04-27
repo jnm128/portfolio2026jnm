@@ -44,19 +44,19 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
         {/* Section Label + Arrows */}
         <FadeIn>
           <div className="flex items-center justify-between mb-10">
-            <h2 className="text-xs uppercase tracking-widest text-white/60">In Their Words</h2>
+            <h2 className="text-xs uppercase tracking-widest text-background/60">In Their Words</h2>
             <div className="flex items-center gap-2">
               <button
                 onClick={prev}
-                className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors"
+                className="w-10 h-10 rounded-full bg-background/10 border border-background/20 flex items-center justify-center hover:bg-background/20 transition-colors"
               >
-                <ChevronLeft size={16} className="text-white/80" />
+                <ChevronLeft size={16} className="text-background/80" />
               </button>
               <button
                 onClick={next}
-                className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors"
+                className="w-10 h-10 rounded-full bg-background/10 border border-background/20 flex items-center justify-center hover:bg-background/20 transition-colors"
               >
-                <ChevronRight size={16} className="text-white/80" />
+                <ChevronRight size={16} className="text-background/80" />
               </button>
             </div>
           </div>
@@ -73,12 +73,12 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
             </blockquote>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-sm text-white/80 font-medium">
+                <div className="w-10 h-10 rounded-full bg-background/10 border border-background/20 flex items-center justify-center text-sm text-background/80 font-medium">
                   {current.initials}
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-white">{current.author}</p>
-                  <p className="text-xs text-white/60">{current.role}</p>
+                  <p className="text-sm font-medium text-background">{current.author}</p>
+                  <p className="text-xs text-background/60">{current.role}</p>
                 </div>
               </div>
             </div>
