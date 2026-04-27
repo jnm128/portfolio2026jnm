@@ -202,15 +202,15 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
       <section data-theme="dark" className="py-16 md:py-20 bg-foreground">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">Who We Are</h2>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-background/60 mb-6">Who We Are</h2>
           </FadeIn>
           <FadeIn delay={200}>
-            <h3 className="text-2xl md:text-4xl font-serif font-medium text-white mb-6 leading-tight">
+            <h3 className="text-2xl md:text-4xl font-serif font-medium text-background mb-6 leading-tight">
               A space where UX professionals slow down, think deeply, and grow beyond the screen.
             </h3>
           </FadeIn>
           <FadeIn delay={400}>
-            <p className="text-base md:text-lg text-white/70 font-serif leading-relaxed">
+            <p className="text-base md:text-lg text-background/70 font-serif leading-relaxed">
               I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work.
             </p>
           </FadeIn>
@@ -268,7 +268,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
       <section id="community" data-theme="dark" className="py-16 md:py-20 bg-foreground">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">How the Community Works</h2>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-background/60 mb-6">How the Community Works</h2>
           </FadeIn>
 
           <FadeIn delay={300}>
@@ -278,13 +278,13 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                 { icon: MessageCircle, title: "Discuss & Reflect", desc: "Monthly virtual sessions where we connect ideas to our real work, challenge assumptions, and leave with frameworks we can actually use." },
                 { icon: Globe, title: "Stay Connected", desc: "An ongoing LinkedIn community where members share resources, job leads, and design conversations between sessions." },
               ].map((step, index) => (
-                <div key={index} className={`${index > 0 ? 'border-t border-white/15' : ''} py-8 flex items-start gap-6`}>
+                <div key={index} className={`${index > 0 ? 'border-t border-background/15' : ''} py-8 flex items-start gap-6`}>
                   <div className="w-12 h-12 rounded-2xl bg-[#FAFAF5] flex items-center justify-center shrink-0">
                     <step.icon className="w-6 h-6 text-foreground" />
                   </div>
                   <div>
-                    <h3 className="text-lg md:text-xl font-serif font-medium text-white mb-2">{step.title}</h3>
-                    <p className="text-base md:text-lg text-white/70 font-serif leading-relaxed">{step.desc}</p>
+                    <h3 className="text-lg md:text-xl font-serif font-medium text-background mb-2">{step.title}</h3>
+                    <p className="text-base md:text-lg text-background/70 font-serif leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -309,7 +309,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                   href="https://www.linkedin.com/in/joannaminott"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 py-3 rounded-full bg-foreground text-white font-medium hover:bg-foreground/90 transition-colors"
+                  className="inline-flex items-center px-8 py-3 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-colors"
                 >
                   Join the Club
                 </a>
@@ -323,7 +323,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
       <section data-theme="dark" className="py-16 md:py-20 bg-foreground">
         <div className="max-w-4xl mx-auto px-8 md:px-16">
           <FadeIn>
-            <h2 className="text-sm font-medium uppercase tracking-widest text-white/60 mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-sm font-medium uppercase tracking-widest text-background/60 mb-6">Frequently Asked Questions</h2>
           </FadeIn>
           <div className="space-y-0">
             {[
@@ -345,20 +345,20 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
               },
             ].map((faq, index) => (
               <FadeIn key={index} delay={100 * (index + 1)}>
-                <div className={index > 0 ? "border-t border-white/15" : ""}>
+                <div className={index > 0 ? "border-t border-background/15" : ""}>
                   <button
                     onClick={() => setFaqOpenIndex(faqOpenIndex === index ? null : index)}
                     className="w-full flex items-center justify-between py-5 text-left hover:opacity-70 transition-opacity"
                   >
-                    <span className="text-lg font-medium text-white font-serif pr-4">{faq.q}</span>
+                    <span className="text-lg font-medium text-background font-serif pr-4">{faq.q}</span>
                     <ChevronDown
-                      className={`w-5 h-5 text-white/60 shrink-0 transition-transform duration-300 ${faqOpenIndex === index ? 'rotate-180' : ''}`}
+                      className={`w-5 h-5 text-background/60 shrink-0 transition-transform duration-300 ${faqOpenIndex === index ? 'rotate-180' : ''}`}
                     />
                   </button>
                   <div
                     className={`overflow-hidden transition-all duration-300 ${faqOpenIndex === index ? 'max-h-40 pb-5' : 'max-h-0'}`}
                   >
-                    <p className="text-base text-white/70 font-serif leading-relaxed max-w-2xl">
+                    <p className="text-base text-background/70 font-serif leading-relaxed max-w-2xl">
                       {faq.a}
                     </p>
                   </div>
@@ -397,7 +397,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-white text-foreg
                   href={selectedBook.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full px-6 py-2.5 rounded-full bg-foreground text-white font-medium hover:bg-foreground/90 transition-colors"
+                  className="inline-flex items-center justify-center w-full px-6 py-2.5 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-colors"
                 >
                   View on Amazon
                 </a>

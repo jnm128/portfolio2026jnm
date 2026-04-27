@@ -19,10 +19,10 @@ const Contact = () => {
         <div className="bg-foreground md:sticky md:top-0 md:h-screen flex flex-col justify-between p-8 md:p-16 pt-24 md:pt-32 pb-8 md:pb-32">
           <div>
             <FadeIn>
-              <h2 className="text-3xl md:text-5xl font-serif text-white mb-3">
+              <h2 className="text-3xl md:text-5xl font-serif text-background mb-3">
                 Get in touch
               </h2>
-              <p className="text-base md:text-lg text-white/60 font-serif mb-12">
+              <p className="text-base md:text-lg text-background/60 font-serif mb-12">
                 Interested in my expertise in UX or product? I typically respond within 24 hours
               </p>
             </FadeIn>
@@ -34,15 +34,15 @@ const Contact = () => {
                   className="group py-6 flex items-center justify-between w-full text-left"
                 >
                   <div>
-                    <span className="text-xs uppercase tracking-widest text-white/60">Email</span>
-                    <p className="text-lg font-serif text-white mt-1 group-hover:opacity-70 transition-opacity">
+                    <span className="text-xs uppercase tracking-widest text-background/60">Email</span>
+                    <p className="text-lg font-serif text-background mt-1 group-hover:opacity-70 transition-opacity">
                       hello@joannaminott.com
                     </p>
                   </div>
                   {copied ? (
                     <Check className="w-4 h-4 text-green-400 shrink-0" />
                   ) : (
-                    <Copy className="w-4 h-4 text-white/40 group-hover:text-white transition-colors shrink-0" />
+                    <Copy className="w-4 h-4 text-background/40 group-hover:text-background transition-colors shrink-0" />
                   )}
                 </button>
 
@@ -50,30 +50,30 @@ const Contact = () => {
                   href="https://linkedin.com/in/joannaminott"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group border-t border-white/15 py-6 flex items-center justify-between"
+                  className="group border-t border-background/15 py-6 flex items-center justify-between"
                 >
                   <div>
-                    <span className="text-xs uppercase tracking-widest text-white/60">LinkedIn</span>
-                    <p className="text-lg font-serif text-white mt-1 group-hover:opacity-70 transition-opacity">
+                    <span className="text-xs uppercase tracking-widest text-background/60">LinkedIn</span>
+                    <p className="text-lg font-serif text-background mt-1 group-hover:opacity-70 transition-opacity">
                       Connect with me
                     </p>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-white transition-colors shrink-0" />
+                  <ExternalLink className="w-4 h-4 text-background/40 group-hover:text-background transition-colors shrink-0" />
                 </a>
 
                 <a
                   href="https://calendly.com/joannaminott"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group border-t border-white/15 py-6 flex items-center justify-between"
+                  className="group border-t border-background/15 py-6 flex items-center justify-between"
                 >
                   <div>
-                    <span className="text-xs uppercase tracking-widest text-white/60">Schedule</span>
-                    <p className="text-lg font-serif text-white mt-1 group-hover:opacity-70 transition-opacity">
+                    <span className="text-xs uppercase tracking-widest text-background/60">Schedule</span>
+                    <p className="text-lg font-serif text-background mt-1 group-hover:opacity-70 transition-opacity">
                       Book a 30-min call
                     </p>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-white transition-colors shrink-0" />
+                  <ExternalLink className="w-4 h-4 text-background/40 group-hover:text-background transition-colors shrink-0" />
                 </a>
               </div>
             </FadeIn>

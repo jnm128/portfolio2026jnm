@@ -49,28 +49,28 @@ const CaseStudyCVS: React.FC = () => {
       {/* Specialty Central */}
       <section className="py-16 md:py-24 bg-foreground" data-theme="dark">
         <div className="container mx-auto max-w-[1600px] px-8 md:px-16">
-          <SplitSection label="Project One" className="[&_span]:text-white/50">
+          <SplitSection label="Project One" className="[&_span]:text-background/50">
             <FadeIn>
-              <h3 className="text-2xl md:text-3xl font-serif font-medium text-white mb-4">
+              <h3 className="text-2xl md:text-3xl font-serif font-medium text-background mb-4">
                 Improving Specialty Central
               </h3>
-              <p className="text-base md:text-lg text-white/70 leading-relaxed mb-8">
+              <p className="text-base md:text-lg text-background/70 leading-relaxed mb-8">
                 Led design efforts to reimagine the Specialty Central platform — streamlining complex pharmacy workflows, reducing friction for pharmacists and care teams, and improving the overall experience for patients managing specialty medications.
               </p>
             </FadeIn>
             <FadeIn delay={100}>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div className="bg-white/10 rounded-2xl p-6">
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-white mb-2">40%</p>
-                  <p className="text-sm text-white/50">Reduction in task completion time</p>
+                <div className="bg-background/10 rounded-2xl p-6">
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-background mb-2">40%</p>
+                  <p className="text-sm text-background/50">Reduction in task completion time</p>
                 </div>
-                <div className="bg-white/10 rounded-2xl p-6">
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-white mb-2">3x</p>
-                  <p className="text-sm text-white/50">Faster onboarding for new team members</p>
+                <div className="bg-background/10 rounded-2xl p-6">
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-background mb-2">3x</p>
+                  <p className="text-sm text-background/50">Faster onboarding for new team members</p>
                 </div>
-                <div className="bg-white/10 rounded-2xl p-6">
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-white mb-2">12+</p>
-                  <p className="text-sm text-white/50">Workflows redesigned end-to-end</p>
+                <div className="bg-background/10 rounded-2xl p-6">
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-background mb-2">12+</p>
+                  <p className="text-sm text-background/50">Workflows redesigned end-to-end</p>
                 </div>
               </div>
             </FadeIn>
@@ -81,28 +81,28 @@ const CaseStudyCVS: React.FC = () => {
       {/* Benefits Verification */}
       <section className="py-16 md:py-24 bg-foreground" data-theme="dark">
         <div className="container mx-auto max-w-[1600px] px-8 md:px-16">
-          <SplitSection label="Project Two" className="[&_span]:text-white/50">
+          <SplitSection label="Project Two" className="[&_span]:text-background/50">
             <FadeIn>
-              <h3 className="text-2xl md:text-3xl font-serif font-medium text-white mb-4">
+              <h3 className="text-2xl md:text-3xl font-serif font-medium text-background mb-4">
                 Supporting Benefits Verification
               </h3>
-              <p className="text-base md:text-lg text-white/70 leading-relaxed mb-8">
+              <p className="text-base md:text-lg text-background/70 leading-relaxed mb-8">
                 Designed tools and interfaces to support the benefits verification process — helping teams quickly validate patient coverage, reduce manual data entry, and surface critical insurance information at the right moments in the workflow.
               </p>
             </FadeIn>
             <FadeIn delay={100}>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div className="bg-white/10 rounded-2xl p-6">
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-white mb-2">60%</p>
-                  <p className="text-sm text-white/50">Less time spent on manual verification</p>
+                <div className="bg-background/10 rounded-2xl p-6">
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-background mb-2">60%</p>
+                  <p className="text-sm text-background/50">Less time spent on manual verification</p>
                 </div>
-                <div className="bg-white/10 rounded-2xl p-6">
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-white mb-2">2x</p>
-                  <p className="text-sm text-white/50">Increase in verification accuracy</p>
+                <div className="bg-background/10 rounded-2xl p-6">
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-background mb-2">2x</p>
+                  <p className="text-sm text-background/50">Increase in verification accuracy</p>
                 </div>
-                <div className="bg-white/10 rounded-2xl p-6">
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-white mb-2">8</p>
-                  <p className="text-sm text-white/50">Key workflows streamlined</p>
+                <div className="bg-background/10 rounded-2xl p-6">
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-background mb-2">8</p>
+                  <p className="text-sm text-background/50">Key workflows streamlined</p>
                 </div>
               </div>
             </FadeIn>
