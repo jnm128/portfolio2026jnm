@@ -4,96 +4,116 @@
 
 @layer base {
   :root {
-    /* Brand palette
-       Foam       #FFFBE7  → background
-       Chai Spice #220000  → foreground / primary CTA
-       Matcha     #7F793B  → accent tag
-       Caramel    #E6DDA9  → secondary surface / accent tag
+    /* Brand palette — warm neutral + slate-blue accent
+       Page bg     #F5F2EE
+       Section bg  #EDE9E3
+       Card        #E0DAD1
+       Border      #C8C0B5
+       Text        #1C1410
+       Muted       #3D3530
+       Hint        #7A7269  (shared across themes)
+       Accent      #4F6A80  (slate blue)
     */
-    --background: 53 100% 95%;        /* Foam #FFFBE7 */
-    --foreground: 0 100% 7%;          /* Chai Spice #220000 */
+    --background: 30 23% 95%;          /* #F5F2EE */
+    --foreground: 25 28% 9%;           /* #1C1410 */
 
-    --card: 53 100% 97%;
-    --card-foreground: 0 100% 7%;
+    --section: 38 22% 91%;             /* #EDE9E3 */
 
-    --popover: 53 100% 97%;
-    --popover-foreground: 0 100% 7%;
+    --card: 33 22% 85%;                /* #E0DAD1 */
+    --card-foreground: 25 28% 9%;
 
-    --primary: 0 100% 7%;             /* Chai Spice CTA */
-    --primary-foreground: 53 100% 95%;
+    --popover: 33 22% 85%;
+    --popover-foreground: 25 28% 9%;
 
-    --secondary: 50 56% 78%;          /* Caramel #E6DDA9 */
-    --secondary-foreground: 0 100% 7%;
+    --primary: 209 24% 41%;            /* #4F6A80 accent CTA */
+    --primary-foreground: 30 23% 95%;
 
-    --muted: 50 56% 88%;
-    --muted-foreground: 0 30% 25%;
+    --secondary: 33 22% 85%;           /* card surface */
+    --secondary-foreground: 25 28% 9%;
 
-    --accent: 56 37% 37%;             /* Matcha #7F793B */
-    --accent-foreground: 53 100% 95%;
+    --muted: 38 22% 91%;
+    --muted-foreground: 25 12% 21%;    /* #3D3530 */
+
+    --accent: 209 24% 41%;             /* #4F6A80 */
+    --accent-foreground: 30 23% 95%;
+
+    --hint: 30 8% 45%;                 /* #7A7269 */
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 53 100% 95%;
+    --destructive-foreground: 30 23% 95%;
 
-    --border: 50 40% 80%;
-    --input: 50 40% 80%;
-    --ring: 0 100% 7%;
+    --border: 33 18% 75%;              /* #C8C0B5 */
+    --input: 33 18% 75%;
+    --ring: 209 24% 41%;               /* accent ring */
 
     --radius: 0.5rem;
 
-    /* Progressive background shades - Foam → Caramel → Matcha → Chai */
-    --surface-1: 53 100% 95%;         /* Foam */
-    --surface-2: 50 70% 90%;
-    --surface-3: 50 56% 78%;          /* Caramel */
-    --surface-4: 56 37% 55%;
-    --surface-5: 56 37% 37%;          /* Matcha */
-    --surface-6: 0 100% 7%;           /* Chai */
+    /* Surface ladder: page → section → card → border → muted → text */
+    --surface-1: 30 23% 95%;
+    --surface-2: 38 22% 91%;
+    --surface-3: 33 22% 85%;
+    --surface-4: 33 18% 75%;
+    --surface-5: 25 12% 21%;
+    --surface-6: 25 28% 9%;
 
-    --sidebar-background: 53 100% 95%;
-    --sidebar-foreground: 0 100% 7%;
-    --sidebar-primary: 0 100% 7%;
-    --sidebar-primary-foreground: 53 100% 95%;
-    --sidebar-accent: 50 56% 78%;
-    --sidebar-accent-foreground: 0 100% 7%;
-    --sidebar-border: 50 40% 80%;
-    --sidebar-ring: 0 100% 7%;
+    --sidebar-background: 30 23% 95%;
+    --sidebar-foreground: 25 28% 9%;
+    --sidebar-primary: 209 24% 41%;
+    --sidebar-primary-foreground: 30 23% 95%;
+    --sidebar-accent: 33 22% 85%;
+    --sidebar-accent-foreground: 25 28% 9%;
+    --sidebar-border: 33 18% 75%;
+    --sidebar-ring: 209 24% 41%;
   }
 
   .dark {
-    --background: 0 100% 7%;          /* Chai Spice */
-    --foreground: 53 100% 95%;        /* Foam */
+    --background: 26 24% 6%;           /* #130F0C */
+    --foreground: 36 24% 92%;          /* #F0ECE6 */
 
-    --card: 0 60% 10%;
-    --card-foreground: 53 100% 95%;
+    --section: 25 24% 10%;             /* #1F1813 */
 
-    --popover: 0 60% 10%;
-    --popover-foreground: 53 100% 95%;
+    --card: 26 25% 14%;                /* #2C221A */
+    --card-foreground: 36 24% 92%;
 
-    --primary: 53 100% 95%;           /* Foam CTA */
-    --primary-foreground: 0 100% 7%;
+    --popover: 26 25% 14%;
+    --popover-foreground: 36 24% 92%;
 
-    --secondary: 56 37% 37%;          /* Matcha */
-    --secondary-foreground: 53 100% 95%;
+    --primary: 204 41% 63%;            /* #7AAAC8 accent CTA */
+    --primary-foreground: 26 24% 6%;
 
-    --muted: 0 40% 12%;
-    --muted-foreground: 50 30% 75%;
+    --secondary: 26 25% 14%;
+    --secondary-foreground: 36 24% 92%;
 
-    --accent: 50 56% 78%;             /* Caramel */
-    --accent-foreground: 0 100% 7%;
+    --muted: 25 24% 10%;
+    --muted-foreground: 33 18% 75%;    /* #C8C0B5 */
+
+    --accent: 204 41% 63%;             /* #7AAAC8 */
+    --accent-foreground: 26 24% 6%;
+
+    --hint: 30 8% 45%;                 /* #7A7269 (shared) */
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 53 100% 95%;
+    --destructive-foreground: 36 24% 92%;
 
-    --border: 0 30% 18%;
-    --input: 0 30% 18%;
-    --ring: 53 100% 95%;
+    --border: 25 22% 21%;              /* #42342A */
+    --input: 25 22% 21%;
+    --ring: 204 41% 63%;
 
-    /* Progressive background shades - Chai → Matcha */
-    --surface-1: 0 100% 7%;
-    --surface-2: 0 60% 10%;
-    --surface-3: 0 40% 14%;
-    --surface-4: 56 30% 25%;
-    --surface-5: 56 37% 37%;
-    --surface-6: 0 100% 7%;
+    --surface-1: 26 24% 6%;
+    --surface-2: 25 24% 10%;
+    --surface-3: 26 25% 14%;
+    --surface-4: 25 22% 21%;
+    --surface-5: 33 18% 75%;
+    --surface-6: 36 24% 92%;
+
+    --sidebar-background: 26 24% 6%;
+    --sidebar-foreground: 36 24% 92%;
+    --sidebar-primary: 204 41% 63%;
+    --sidebar-primary-foreground: 26 24% 6%;
+    --sidebar-accent: 26 25% 14%;
+    --sidebar-accent-foreground: 36 24% 92%;
+    --sidebar-border: 25 22% 21%;
+    --sidebar-ring: 204 41% 63%;
   }
 }
 
