@@ -43,7 +43,7 @@ const FAQ: React.FC<FAQProps> = ({ className }) => {
   };
 
   return (
-    <section id="faq" className={cn('py-20 md:py-32 bg-white relative', className)}>
+    <section id="faq" className={cn('py-20 md:py-32 bg-card relative', className)}>
       {/* Gradient overlay to blend with previous section */}
       <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-gray-50 to-transparent"></div>
       
@@ -62,9 +62,9 @@ const FAQ: React.FC<FAQProps> = ({ className }) => {
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <FadeIn key={index} delay={100 + index * 50}>
-              <div className="bg-white border border-gray-200 overflow-hidden">
+              <div className="bg-card border border-border overflow-hidden">
                 <button
-                  className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                  className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-section transition-colors"
                   onClick={() => toggleFAQ(index)}
                 >
                   <h3 className="text-lg font-medium text-foreground pr-4">

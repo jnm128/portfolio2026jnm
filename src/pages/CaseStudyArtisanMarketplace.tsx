@@ -189,7 +189,7 @@ const CaseStudyArtisanMarketplace = () => {
               </div>
             </div>
 
-            <div className="bg-white p-8 md:p-12 border border-border rounded-2xl">
+            <div className="bg-card p-8 md:p-12 border border-border rounded-2xl">
               <blockquote className="text-xl md:text-2xl font-serif text-muted-foreground mb-6">
                 "This platform has completely changed how we connect with customers. Our sales have quadrupled, 
                 and we're reaching people across the country who truly appreciate handcrafted goods."

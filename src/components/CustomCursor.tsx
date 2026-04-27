@@ -102,7 +102,7 @@ const CustomCursor = () => {
 
   return (
     <div
-      className={`fixed pointer-events-none z-[9999] ${isOnDark ? 'bg-white' : 'bg-foreground'}
+      className={`fixed pointer-events-none z-[9999] ${isOnDark ? 'bg-background' : 'bg-foreground'}
                   transition-all duration-150 ease-out
                   ${styles.className}
                   ${isClicking ? 'animate-cursor-pulse' : ''}

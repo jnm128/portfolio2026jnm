@@ -44,7 +44,7 @@ const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose
             <h1 className="text-3xl md:text-4xl font-serif text-foreground">Resume</h1>
             <button
               onClick={onClose}
-              className="p-2 rounded-full hover:bg-black/5 transition-colors"
+              className="p-2 rounded-full hover:bg-foreground/5 transition-colors"
             >
               <X className="w-5 h-5 text-muted-foreground" />
             </button>

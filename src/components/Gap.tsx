@@ -63,7 +63,7 @@ const Gap: React.FC<GapProps> = ({ className }) => {
   ];
 
   return (
-    <section id="gap" className={cn('py-20 bg-gray-50', className)}>
+    <section id="gap" className={cn('py-20 bg-section', className)}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto mb-16">
           <FadeIn>
@@ -99,12 +99,12 @@ const Gap: React.FC<GapProps> = ({ className }) => {
                   alt="Beautiful orangery with palm trees and plants" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="absolute inset-0 bg-foreground/30"></div>
               </div>
               
               {/* Centered newsletter box overlaid on the image */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-md max-w-md w-full mx-4">
+                <div className="bg-card/90 backdrop-blur-sm p-8 rounded-2xl shadow-md max-w-md w-full mx-4">
                   <h3 className="text-2xl font-serif mb-6 text-center">Subscribe for Updates</h3>
                   
                   <div className="flex justify-center mb-6">
@@ -125,7 +125,7 @@ const Gap: React.FC<GapProps> = ({ className }) => {
                     <Input 
                       type="email" 
                       placeholder="Enter your email" 
-                      className="text-gray-800 bg-gray-50/80 border-gray-200 focus-visible:ring-gray-500" 
+                      className="text-gray-800 bg-section/80 border-border focus-visible:ring-gray-500" 
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required

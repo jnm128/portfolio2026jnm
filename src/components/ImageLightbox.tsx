@@ -93,7 +93,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, alt, className }) =>
 
       {isOpen && createPortal(
         <div
-          className="fixed inset-0 z-[110] bg-black/90 flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-[110] bg-foreground/90 flex items-center justify-center p-4 animate-in fade-in duration-200"
           onClick={() => { if (scale <= 1) close(); }}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
@@ -103,22 +103,22 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, alt, className }) =>
           <div className="absolute top-6 right-6 flex items-center gap-2 z-10">
             <button
               onClick={(e) => { e.stopPropagation(); zoomOut(); }}
-              className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-colors"
+              className="w-10 h-10 rounded-full bg-background/10 backdrop-blur-sm flex items-center justify-center text-background/70 hover:text-background hover:bg-background/20 transition-colors"
             >
               <ZoomOut size={18} />
             </button>
-            <span className="text-white/70 text-sm font-medium min-w-[3rem] text-center">
+            <span className="text-background/70 text-sm font-medium min-w-[3rem] text-center">
               {Math.round(scale * 100)}%
             </span>
             <button
               onClick={(e) => { e.stopPropagation(); zoomIn(); }}
-              className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-colors"
+              className="w-10 h-10 rounded-full bg-background/10 backdrop-blur-sm flex items-center justify-center text-background/70 hover:text-background hover:bg-background/20 transition-colors"
             >
               <ZoomIn size={18} />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); close(); }}
-              className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-colors ml-2"
+              className="w-10 h-10 rounded-full bg-background/10 backdrop-blur-sm flex items-center justify-center text-background/70 hover:text-background hover:bg-background/20 transition-colors ml-2"
             >
               <X size={18} />
             </button>

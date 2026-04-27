@@ -39,7 +39,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         <div className="flex flex-col gap-16">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
-              <div className="bg-white/60 rounded-2xl p-8 md:p-12">
+              <div className="bg-card-gradient border border-border rounded-2xl p-8 md:p-12 transition-colors hover:border-accent">
                 <div className={cn(
                   "flex flex-col gap-8 md:gap-16",
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
@@ -58,7 +58,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                     <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
                       {project.description}
                     </p>
-                    <Link to={project.link} className="text-sm font-medium text-accent-foreground hover:text-foreground transition-colors inline-flex items-center gap-1">
+                    <Link to={project.link} className="text-sm font-medium text-accent hover:opacity-70 transition-opacity inline-flex items-center gap-1">
                       View case study →
                     </Link>
                   </div>

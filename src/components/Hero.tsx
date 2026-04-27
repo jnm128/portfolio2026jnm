@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   }, []);
 
   return (
-    <section className={cn('pt-32 md:pt-40 pb-6 md:pb-8 bg-background', className)}>
+    <section className={cn('pt-32 md:pt-40 pb-6 md:pb-8 bg-hero-gradient', className)}>
       <div className="mx-auto max-w-[1600px] px-8 md:px-16">
         <FadeIn>
           <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-2">Joanna Minott, <span className="text-muted-foreground">UX Designer</span></h1>
@@ -90,7 +90,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                   onClick={() => setCurrentIndex(index)} 
                   className={cn(
                     "w-2 h-2 rounded-full transition-all", 
-                    index === currentIndex ? "bg-white" : "bg-white/40"
+                    index === currentIndex ? "bg-background" : "bg-background/40"
                   )} 
                 />
               ))}

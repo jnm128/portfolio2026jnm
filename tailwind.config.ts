@@ -33,6 +33,8 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				section: 'hsl(var(--section))',
+				hint: 'hsl(var(--hint))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -71,12 +73,6 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				cream: {
-					50: 'hsl(40 33% 98%)',
-					100: 'hsl(40 33% 96%)',
-					200: 'hsl(40 25% 92%)',
-					300: 'hsl(40 20% 85%)',
-				},
 				surface: {
 					1: 'hsl(var(--surface-1))',
 					2: 'hsl(var(--surface-2))',
@@ -85,11 +81,13 @@ export default {
 					5: 'hsl(var(--surface-5))',
 					6: 'hsl(var(--surface-6))',
 				},
+				/* Legacy brand tokens remapped to new palette so existing
+				   bg-brand-* classes resolve to neutral + accent surfaces */
 				brand: {
-					foam: '#FFFBE7',
-					caramel: '#E6DDA9',
-					matcha: '#7F793B',
-					chai: '#220000',
+					foam: '#F5F2EE',     /* page bg */
+					caramel: '#E0DAD1',  /* card surface (was warm cream tag) */
+					matcha: '#4F6A80',   /* accent (was olive) */
+					chai: '#1C1410',     /* primary text (was deep brown-red) */
 				}
 			},
 			borderRadius: {

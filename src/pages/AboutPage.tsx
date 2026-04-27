@@ -89,13 +89,13 @@ const AboutPage = () => {
         </section>
 
         {/* Writing, Current Read & Song on Repeat — Combined Dark Section */}
-        <section className="bg-foreground text-white py-16 md:py-24" data-theme="dark">
+        <section className="bg-foreground text-background py-16 md:py-24" data-theme="dark">
           <div className="max-w-4xl mx-auto px-8 md:px-16">
             <div className="mb-16">
-              <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">
+              <h2 className="text-3xl md:text-5xl font-serif text-background mb-4">
                 Beyond the Pixels
               </h2>
-              <p className="text-base md:text-lg text-white/60 font-serif max-w-2xl">
+              <p className="text-base md:text-lg text-background/60 font-serif max-w-2xl">
                 What I'm reading, listening to, and thinking about when I'm not designing.
               </p>
             </div>
@@ -103,22 +103,22 @@ const AboutPage = () => {
               {/* Writing / LinkedIn Posts */}
               <FadeIn delay={250}>
                 <div>
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-white mb-6">
+                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6">
                     Writing
                   </h2>
                   {linkedinPosts.map((post, i) => (
                     <div
                       key={i}
-                      className="border-t border-white/15 py-10"
+                      className="border-t border-background/15 py-10"
                     >
-                      <span className="text-xs uppercase tracking-widest text-white/70 font-serif">{post.category}</span>
-                      <p className="text-xl font-serif text-white mt-2 mb-3 leading-snug">{post.title}</p>
-                      <p className="text-base text-white/70 leading-relaxed font-serif mb-4">{post.excerpt}</p>
+                      <span className="text-xs uppercase tracking-widest text-background/70 font-serif">{post.category}</span>
+                      <p className="text-xl font-serif text-background mt-2 mb-3 leading-snug">{post.title}</p>
+                      <p className="text-base text-background/70 leading-relaxed font-serif mb-4">{post.excerpt}</p>
                       <a
                         href={post.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm text-white hover:opacity-70 transition-opacity"
+                        className="inline-flex items-center gap-1.5 text-sm text-background hover:opacity-70 transition-opacity"
                       >
                         Read on LinkedIn
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -131,10 +131,10 @@ const AboutPage = () => {
               {/* Speaking Engagements */}
               <FadeIn delay={280}>
                 <div>
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-white mb-6 pt-10">
+                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pt-10">
                     Speaking
                   </h2>
-                  <div className="border-t border-white/15 py-10">
+                  <div className="border-t border-background/15 py-10">
                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="group flex flex-col md:flex-row gap-6 items-start">
                       <div className="w-full md:w-64 shrink-0 rounded-lg overflow-hidden aspect-[16/10]">
                         <img
@@ -144,13 +144,13 @@ const AboutPage = () => {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <span className="text-xs uppercase tracking-widest text-white/70 font-serif">Alumni Panel</span>
-                        <p className="text-xl font-serif text-white leading-snug mt-2">University of Miami</p>
+                        <span className="text-xs uppercase tracking-widest text-background/70 font-serif">Alumni Panel</span>
+                        <p className="text-xl font-serif text-background leading-snug mt-2">University of Miami</p>
                       </div>
-                      <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-white transition-colors shrink-0 mt-1" />
+                      <ExternalLink className="w-4 h-4 text-background/40 group-hover:text-background transition-colors shrink-0 mt-1" />
                     </a>
                   </div>
-                  <div className="border-t border-white/15 py-10">
+                  <div className="border-t border-background/15 py-10">
                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="group flex flex-col md:flex-row gap-6 items-start">
                       <div className="w-full md:w-64 shrink-0 rounded-lg overflow-hidden aspect-[16/10]">
                         <img
@@ -160,10 +160,10 @@ const AboutPage = () => {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <span className="text-xs uppercase tracking-widest text-white/70 font-serif">Guest Speaker</span>
-                        <p className="text-xl font-serif text-white leading-snug mt-2">University of Florida — Gator Design</p>
+                        <span className="text-xs uppercase tracking-widest text-background/70 font-serif">Guest Speaker</span>
+                        <p className="text-xl font-serif text-background leading-snug mt-2">University of Florida — Gator Design</p>
                       </div>
-                      <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-white transition-colors shrink-0 mt-1" />
+                      <ExternalLink className="w-4 h-4 text-background/40 group-hover:text-background transition-colors shrink-0 mt-1" />
                     </a>
                   </div>
                 </div>
@@ -172,7 +172,7 @@ const AboutPage = () => {
               {/* Current Read */}
               <FadeIn delay={300}>
                 <div className="py-10">
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-white mb-6 pb-6 border-b border-white/15">
+                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
                     Current Read
                   </h2>
                   <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -184,13 +184,13 @@ const AboutPage = () => {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-lg md:text-xl font-serif text-white mb-1">
+                      <p className="text-lg md:text-xl font-serif text-background mb-1">
                         {currentRead.title}
                       </p>
-                      <p className="text-sm text-white/70 mb-4">
+                      <p className="text-sm text-background/70 mb-4">
                         by {currentRead.author}
                       </p>
-                      <p className="text-sm text-white/70 leading-relaxed font-serif">
+                      <p className="text-sm text-background/70 leading-relaxed font-serif">
                         {currentRead.note}
                       </p>
                     </div>
@@ -201,7 +201,7 @@ const AboutPage = () => {
               {/* Song on Repeat */}
               <FadeIn delay={400}>
                 <div className="py-10">
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-white mb-6 pb-6 border-b border-white/15">
+                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
                     Work Playlist
                   </h2>
                   <div className="flex items-center gap-4">
@@ -213,14 +213,14 @@ const AboutPage = () => {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-base font-serif text-white leading-tight">{songOnRepeat.title}</p>
-                      <p className="text-sm text-white/70">{songOnRepeat.artist}</p>
+                      <p className="text-base font-serif text-background leading-tight">{songOnRepeat.title}</p>
+                      <p className="text-sm text-background/70">{songOnRepeat.artist}</p>
                     </div>
                     <a
                       href={songOnRepeat.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="shrink-0 text-white hover:opacity-70 transition-opacity"
+                      className="shrink-0 text-background hover:opacity-70 transition-opacity"
                       aria-label={`Listen to ${songOnRepeat.title} on YouTube`}
                     >
                       <ExternalLink className="w-4 h-4" />

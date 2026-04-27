@@ -21,7 +21,7 @@ const InvestmentApproach: React.FC<InvestmentApproachProps> = ({ className }) =>
   ];
 
   return (
-    <section id="investment" className={cn('py-20 bg-gray-50', className)}>
+    <section id="investment" className={cn('py-20 bg-section', className)}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto mb-16">
           <FadeIn>
@@ -42,12 +42,12 @@ const InvestmentApproach: React.FC<InvestmentApproachProps> = ({ className }) =>
                   <h3 className="text-xl font-medium mb-4 font-serif">{tier.title}</h3>
                   <p className="text-muted-foreground mb-4">{tier.description}</p>
                   {index === 0 && (
-                    <div className="mt-4 pt-4 border-t border-gray-100">
+                    <div className="mt-4 pt-4 border-t border-border">
                       <p className="text-sm font-medium">16-week acceleration program</p>
                     </div>
                   )}
                   {index === 1 && (
-                    <div className="mt-4 pt-4 border-t border-gray-100">
+                    <div className="mt-4 pt-4 border-t border-border">
                       <p className="text-sm font-medium">Follow-on capital available</p>
                     </div>
                   )}

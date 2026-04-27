@@ -12,7 +12,7 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
     <div id="community" className={cn('pt-4 pb-12 md:pt-8 md:pb-20', className)}>
       <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
         <FadeIn delay={100}>
-          <p className="text-xs uppercase tracking-widest mb-4 text-white/60">Community</p>
+          <p className="text-xs uppercase tracking-widest mb-4 text-background/60">Community</p>
           <div className="rounded-2xl p-6 md:p-8 bg-background">
             <div className="flex flex-col gap-6 md:gap-12 md:flex-row">
               <div className="md:w-2/5 flex flex-col justify-center">
