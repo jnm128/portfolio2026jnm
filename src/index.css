@@ -160,12 +160,17 @@
     @apply inline-flex items-center px-5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-full transition-colors hover:bg-primary/90;
   }
 
-  /* Flat hero + card surfaces (gradients removed) */
+  /* Flat hero + case-study card surfaces */
   .bg-hero-gradient {
     @apply bg-background;
   }
   .bg-card-gradient {
-    @apply bg-card;
+    background-color: #F2F1ED;
+    border-color: #E5E3DD;
+  }
+  .dark .bg-card-gradient {
+    background-color: hsl(var(--card));
+    border-color: hsl(var(--border));
   }
 
   .scroll-reveal {
