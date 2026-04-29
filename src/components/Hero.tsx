@@ -10,9 +10,27 @@ interface HeroProps {
 
 const heroImages = ["/lovable-uploads/354aef4d-0714-40c3-9ba3-cc875ac0bc73.png"];
 
+type Audience = 'recruiters' | 'founders' | 'designers';
+
+const audienceTabs: { id: Audience; label: string }[] = [
+  { id: 'recruiters', label: 'Recruiters' },
+  { id: 'founders', label: 'Founders' },
+  { id: 'designers', label: 'Designers' },
+];
+
+const taglines: Record<Audience, string> = {
+  recruiters:
+    'UX designer crafting calm, intuitive experiences for complex systems — with a track record of measurable impact at scale.',
+  founders:
+    'Your design partner for turning early product ideas into clear, user-loved experiences that ship and scale.',
+  designers:
+    'Product designer and community builder sharing process, mentorship, and honest notes from the craft.',
+};
+
 const Hero: React.FC<HeroProps> = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [panelOpen, setPanelOpen] = useState(false);
+  const [audience, setAudience] = useState<Audience>('recruiters');
   const containerRef = useRef<HTMLDivElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
 
@@ -55,9 +73,33 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     <section className={cn('pt-32 md:pt-40 pb-6 md:pb-8 bg-hero-gradient', className)}>
       <div className="mx-auto max-w-[1600px] px-8 md:px-16">
         <FadeIn>
+          <div role="tablist" aria-label="Choose audience" className="flex flex-wrap gap-x-5 gap-y-2 mb-4">
+            {audienceTabs.map((tab) => {
+              const active = audience === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  role="tab"
+                  aria-selected={active}
+                  onClick={() => setAudience(tab.id)}
+                  className={cn(
+                    'text-xs uppercase tracking-widest pb-1 border-b transition-colors',
+                    active
+                      ? 'text-foreground border-foreground'
+                      : 'text-muted-foreground border-transparent hover:text-foreground hover:opacity-70'
+                  )}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
           <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-2">Joanna Minott, <span className="text-muted-foreground">UX Designer</span></h1>
-          <p className="text-base md:text-lg text-muted-foreground font-serif mb-4 max-w-2xl">
-            Product designer by day, community builder by night. I build software and digital experiences that connect people and spark meaningful change.
+          <p
+            key={audience}
+            className="text-base md:text-lg text-muted-foreground font-serif mb-4 max-w-2xl animate-fade-in"
+          >
+            {taglines[audience]}
           </p>
           <button
             onClick={() => setPanelOpen(true)}
