@@ -10,9 +10,27 @@ interface HeroProps {
 
 const heroImages = ["/lovable-uploads/354aef4d-0714-40c3-9ba3-cc875ac0bc73.png"];
 
+type Audience = 'recruiters' | 'founders' | 'designers';
+
+const audienceTabs: { id: Audience; label: string }[] = [
+  { id: 'recruiters', label: 'Recruiters' },
+  { id: 'founders', label: 'Founders' },
+  { id: 'designers', label: 'Designers' },
+];
+
+const taglines: Record<Audience, string> = {
+  recruiters:
+    'UX designer crafting calm, intuitive experiences for complex systems — with a track record of measurable impact at scale.',
+  founders:
+    'Your design partner for turning early product ideas into clear, user-loved experiences that ship and scale.',
+  designers:
+    'Product designer and community builder sharing process, mentorship, and honest notes from the craft.',
+};
+
 const Hero: React.FC<HeroProps> = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [panelOpen, setPanelOpen] = useState(false);
+  const [audience, setAudience] = useState<Audience>('recruiters');
   const containerRef = useRef<HTMLDivElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
 
