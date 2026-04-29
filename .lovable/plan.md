@@ -1,39 +1,64 @@
-# Audience Switcher in Hero
+# Tool Stack + Skills, and Founders Services Drawer
 
-Add a small row of text-only tabs (Recruiters · Founders · Designers) above "Joanna Minott" in the hero. Clicking a tab swaps the tagline beneath the name to copy tailored to that audience. The name itself stays the same.
+Three changes:
 
-## UX & Visual
+1. Reframe the homepage "Design, Tech & Intention" section to show **Tool Stack** and **Skills** (replacing the existing Services list).
+2. When the **Founders** audience tab is active in the hero, swap the "View Resume" CTA for a **"View Services"** button that opens a new slide-in drawer listing freelance/fractional design services.
+3. Delete the standalone `Services.tsx` component (it's not imported anywhere on active pages, so this is just cleanup).
 
-- Placement: directly above the H1 in `src/components/Hero.tsx`, inside the existing `FadeIn` block.
-- Style: minimal text buttons (no pills), separated by a thin divider dot or gap. Sized `text-xs uppercase tracking-widest`, font-sans (Outfit), aligning with existing uppercase eyebrow style used elsewhere on the site.
-- States:
-  - Active: `text-foreground` with a thin underline (`border-b border-foreground pb-1`).
-  - Inactive: `text-muted-foreground` with `hover:text-foreground hover:opacity-70` (matches site standard hover).
-- Default selected tab: **Recruiters** (keeps current tagline meaning closest to existing copy).
-- Tagline transition: short fade (150ms) when switching so the change feels intentional, not jarring.
-- Mobile (440px viewport): tabs sit on one row above the name with `gap-4`; if cramped, allow `flex-wrap`.
+## 1. Homepage section — `src/components/AboutSection.tsx`
 
-## Tagline Copy (proposed defaults — easy to tweak later)
+Keep the same 2-column layout, headline, and styling. Only the right column data changes:
 
-- **Recruiters**: "UX designer crafting calm, intuitive experiences for complex systems — with a track record of measurable impact at scale."
-- **Founders**: "Your design partner for turning early product ideas into clear, user-loved experiences that ship and scale."
-- **Designers**: "Product designer and community builder sharing process, mentorship, and honest notes from the craft."
+- **Tool Stack** (replaces "Services" list, same styled list with bottom-bordered rows):
+  Figma, FigJam, Framer, Adobe CC, Notion, Miro, Lovable, Maze, Dovetail
+- **Skills** (replaces current short Skills chip list with a richer set of practice-based skills, same pill styling):
+  User Research, Information Architecture, Interaction Design, Prototyping, Design Systems, Usability Testing, Accessibility (WCAG), Workshop Facilitation, Design Strategy
 
-The "View Resume" button stays unchanged below the tagline regardless of selected tab.
+(Open question: confirm these lists or send your preferred wording — easy to swap.)
 
-## Technical Notes
+## 2. Hero CTA + Services drawer
 
-- Add local state in `Hero.tsx`: `const [audience, setAudience] = useState<'recruiters' | 'founders' | 'designers'>('recruiters')`.
-- Define a `taglines` map keyed by audience type; render `taglines[audience]` inside the existing `<p>`.
-- Tabs rendered as a `<div role="tablist">` with three `<button role="tab">` elements; each sets `aria-selected` for accessibility.
-- Keep all existing classes/animation logic intact — only insert the tablist above the H1 and replace the static tagline string with the dynamic one.
-- No new dependencies, no routing or persistence (resets to Recruiters on reload).
+### `src/components/Hero.tsx`
+- When `audience === 'founders'`: render a **"View Services"** button (same pill styling) that opens a new `ServicesPanel`.
+- All other audiences: keep existing **"View Resume"** button → existing `WorkExperiencePanel`.
+- Both panels mount; only one opens at a time.
 
-## Files to Edit
+### New file: `src/components/ServicesPanel.tsx`
+- Built as a near-clone of `WorkExperiencePanel` for visual consistency: React Portal, slide-in from right, `z-[200]`, cream `bg-background`, full-width on mobile / `md:w-[40%]`, X close button, backdrop click-to-close.
+- Title: **"Services"** with subhead: *"Freelance & fractional design engagements."*
+- Two grouped sections, each rendered as flat rows with bottom dividers (matches site's dark-section list pattern, light variant):
 
-- `src/components/Hero.tsx` — add tablist, state, tagline map, dynamic paragraph.
+  **Freelance — Project-based**
+  - End-to-end product design (0→1 features)
+  - UX research & usability testing
+  - Design systems setup & audits
+  - Web & landing page design
+  - UX audits + actionable redesign roadmap
 
-## Out of Scope
+  **Fractional — Embedded by the month**
+  - Fractional Lead Designer (1–3 days/week)
+  - Design partner for early-stage founders
+  - Design ops & process setup for growing teams
+  - Mentorship & design team coaching
 
-- Persisting the selection across pages or reloads.
-- Changing the hero image or "View Resume" CTA per audience.
+- Footer of the drawer: a small CTA row — "Have a project in mind?" + a `rounded-full` link button **"Get in touch"** routing to `/contact`.
+
+(Open question: confirm service offerings or share your own list.)
+
+## 3. Cleanup
+
+- Delete `src/components/Services.tsx` (no active imports — it's an orphaned legacy section).
+
+## Out of scope
+
+- No changes to routes, no new pages.
+- No changes to the dark `DarkSection` block or footer.
+- Drawer animation, hover states, and typography reuse existing tokens — no new CSS.
+
+## Files touched
+
+- `src/components/AboutSection.tsx` — edit (replace Services list with Tool Stack; refresh Skills)
+- `src/components/Hero.tsx` — edit (conditional CTA + mount new panel)
+- `src/components/ServicesPanel.tsx` — new
+- `src/components/Services.tsx` — delete

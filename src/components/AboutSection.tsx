@@ -1,8 +1,8 @@
 import React from 'react';
 import FadeIn from './animations/FadeIn';
 
-const services = ["UX/UI Design", "Web Design", "Brand Identity", "UX Audits"];
-const skills = ["Figma", "Prototyping", "User Research", "Design Systems", "HTML/CSS", "React"];
+const toolStack = ["Figma", "FigJam", "Framer", "Adobe CC", "Notion", "Miro", "Lovable", "Maze", "Dovetail"];
+const skills = ["User Research", "Information Architecture", "Interaction Design", "Prototyping", "Design Systems", "Usability Testing", "Accessibility (WCAG)", "Workshop Facilitation", "Design Strategy"];
 
 const AboutSection: React.FC = () => {
   return (
@@ -24,9 +24,9 @@ const AboutSection: React.FC = () => {
           {/* Right Column — Services & Skills */}
           <div className="space-y-12">
             <FadeIn delay={100}>
-              <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">Services</h3>
+              <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">Tool Stack</h3>
               <ul className="space-y-4">
-                {services.map((s) => (
+                {toolStack.map((s) => (
                   <li key={s} className="text-lg font-serif text-foreground border-b border-border pb-3">
                     {s}
                   </li>
