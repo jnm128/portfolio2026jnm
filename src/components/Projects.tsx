@@ -39,7 +39,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         <div className="flex flex-col gap-16">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
-              <div className="bg-card-gradient border rounded-2xl p-4 md:p-6 md:min-h-[calc(100vh-8rem)] flex items-center">
+              <div className="bg-card-gradient rounded-2xl p-4 md:p-6 md:min-h-[calc(100vh-8rem)] flex items-center">
                 <div className={cn(
                   "flex flex-col gap-6 md:gap-8 w-full",
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
