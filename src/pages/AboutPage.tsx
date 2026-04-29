@@ -59,7 +59,7 @@ const AboutPage = () => {
                 </div>
 
                 {/* Bio Text */}
-                <div className="flex flex-col justify-center">
+                <div className="flex flex-col justify-center md:col-span-2">
                   <h1 className="hidden md:block text-3xl md:text-5xl font-serif text-foreground mb-4">
                     About
                   </h1>
