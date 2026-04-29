@@ -46,9 +46,9 @@ const AboutPage = () => {
                 About
               </h1>
 
-              <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+              <div className="grid md:grid-cols-5 gap-8 md:gap-12 items-start">
                 {/* Profile Image — first in DOM, appears on right on desktop */}
-                <div className="relative w-full max-w-sm aspect-[5/6] mx-auto md:ml-auto md:order-last">
+                <div className="relative w-full max-w-md aspect-[5/6] mx-auto md:ml-auto md:order-last md:col-span-3">
                   <div className="rounded-2xl overflow-hidden h-full">
                     <img
                       alt="Joanna Minott"
@@ -59,7 +59,7 @@ const AboutPage = () => {
                 </div>
 
                 {/* Bio Text */}
-                <div className="flex flex-col justify-center">
+                <div className="flex flex-col justify-center md:col-span-2">
                   <h1 className="hidden md:block text-3xl md:text-5xl font-serif text-foreground mb-4">
                     About
                   </h1>
