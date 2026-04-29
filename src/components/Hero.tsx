@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 import PopIn from './animations/PopIn';
 import FadeIn from './animations/FadeIn';
 import WorkExperiencePanel from './WorkExperiencePanel';
+import ServicesPanel from './ServicesPanel';
 
 interface HeroProps {
   className?: string;
@@ -30,6 +31,7 @@ const taglines: Record<Audience, string> = {
 const Hero: React.FC<HeroProps> = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [panelOpen, setPanelOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [audience, setAudience] = useState<Audience>('recruiters');
   const containerRef = useRef<HTMLDivElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
@@ -101,14 +103,26 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           >
             {taglines[audience]}
           </p>
-          <button
-            onClick={() => setPanelOpen(true)}
-            className="inline-flex items-center bg-foreground text-background px-6 py-3 rounded-full text-base font-medium hover:opacity-90 transition-opacity mb-6"
-          >
-            View Resume
-          </button>
+          {audience === 'founders' ? (
+            <button
+              key="services-cta"
+              onClick={() => setServicesOpen(true)}
+              className="inline-flex items-center bg-foreground text-background px-6 py-3 rounded-full text-base font-medium hover:opacity-90 transition-opacity mb-6 animate-fade-in"
+            >
+              View Services
+            </button>
+          ) : (
+            <button
+              key="resume-cta"
+              onClick={() => setPanelOpen(true)}
+              className="inline-flex items-center bg-foreground text-background px-6 py-3 rounded-full text-base font-medium hover:opacity-90 transition-opacity mb-6 animate-fade-in"
+            >
+              View Resume
+            </button>
+          )}
         </FadeIn>
         <WorkExperiencePanel open={panelOpen} onClose={() => setPanelOpen(false)} />
+        <ServicesPanel open={servicesOpen} onClose={() => setServicesOpen(false)} />
       </div>
       <div ref={containerRef} className="mx-auto max-w-[1600px] px-8 md:px-16">
         <PopIn>
