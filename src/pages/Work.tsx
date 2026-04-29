@@ -8,7 +8,7 @@ const projects = [
   {
     title: "Shipping colleague facing design experience with CVS Health",
     description: "Led end-to-end product design for an internal tools platform, reducing user errors by 40% and increasing task completion rates across key workflows.",
-    image: "/lovable-uploads/cvs-health-project.png",
+    image: "/lovable-uploads/a7d983f9-a76f-43f1-9194-818eb65ae31f.jpg",
     link: "/case-study/mindful-wellness",
   },
   {
