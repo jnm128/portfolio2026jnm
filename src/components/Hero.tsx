@@ -75,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
   return (
     <section className={cn('pt-32 md:pt-40 pb-6 md:pb-8 bg-hero-gradient', className)}>
-      <div className="mx-auto max-w-[1600px] px-8 md:px-16">
+      <div className="mx-auto max-w-[1600px] px-5 md:px-16">
         <FadeIn>
           <div role="tablist" aria-label="Choose audience" className="flex flex-wrap gap-x-5 gap-y-2 mb-4">
             {audienceTabs.map((tab) => {
@@ -135,7 +135,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <ServicesPanel open={servicesOpen} onClose={() => setServicesOpen(false)} />
         <CommunityPanel open={communityOpen} onClose={() => setCommunityOpen(false)} />
       </div>
-      <div ref={containerRef} className="mx-auto max-w-[1600px] px-8 md:px-16">
+      <div ref={containerRef} className="mx-auto max-w-[1600px] px-5 md:px-16">
         <PopIn>
           <div ref={imageWrapperRef} className="relative rounded-3xl overflow-hidden h-[50vh] md:h-[60vh] lg:h-[90vh]">
             {heroImages.map((image, index) => (

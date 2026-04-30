@@ -11,7 +11,7 @@ const Collab: React.FC<CollabProps> = ({ className }) => {
   return (
     <div className={cn('py-16 md:py-24', className)}>
       {/* rebuild trigger */}
-      <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+      <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
         <FadeIn>
           <div className="flex flex-col gap-6 items-center text-center py-12 md:py-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-background">

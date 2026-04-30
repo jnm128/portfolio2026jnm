@@ -13,7 +13,7 @@ const CaseStudyCVS: React.FC = () => {
     <main className="relative">
       {/* Hero Section */}
       <section className="pt-20 md:pt-24 pb-10 md:pb-16 bg-background">
-        <div className="container mx-auto max-w-[1600px] px-8 md:px-16">
+        <div className="container mx-auto max-w-[1600px] px-5 md:px-16">
           <FadeIn>
             <button
               onClick={() => navigate(-1)}
@@ -48,7 +48,7 @@ const CaseStudyCVS: React.FC = () => {
 
       {/* Specialty Central */}
       <section className="py-16 md:py-24 bg-foreground" data-theme="dark">
-        <div className="container mx-auto max-w-[1600px] px-8 md:px-16">
+        <div className="container mx-auto max-w-[1600px] px-5 md:px-16">
           <SplitSection label="Project One" className="[&_span]:text-background/50">
             <FadeIn>
               <h3 className="text-2xl md:text-3xl font-serif font-medium text-background mb-4">
@@ -80,7 +80,7 @@ const CaseStudyCVS: React.FC = () => {
 
       {/* Benefits Verification */}
       <section className="py-16 md:py-24 bg-foreground" data-theme="dark">
-        <div className="container mx-auto max-w-[1600px] px-8 md:px-16">
+        <div className="container mx-auto max-w-[1600px] px-5 md:px-16">
           <SplitSection label="Project Two" className="[&_span]:text-background/50">
             <FadeIn>
               <h3 className="text-2xl md:text-3xl font-serif font-medium text-background mb-4">

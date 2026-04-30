@@ -213,7 +213,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           className
         )}
       >
-        <div className="w-full mx-auto px-8 md:px-16 flex items-center justify-center relative">
+        <div className="w-full mx-auto px-5 md:px-16 flex items-center justify-center relative">
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-10">
             <Link
