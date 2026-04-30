@@ -1,64 +1,66 @@
-# Tool Stack + Skills, and Founders Services Drawer
+## Goal
 
-Three changes:
+When the **Designers** tab is active in the homepage hero, swap the "View Resume" CTA for a **"View Community"** button that opens a new slide-in side panel showcasing the Fresh Perspectives community.
 
-1. Reframe the homepage "Design, Tech & Intention" section to show **Tool Stack** and **Skills** (replacing the existing Services list).
-2. When the **Founders** audience tab is active in the hero, swap the "View Resume" CTA for a **"View Services"** button that opens a new slide-in drawer listing freelance/fractional design services.
-3. Delete the standalone `Services.tsx` component (it's not imported anywhere on active pages, so this is just cleanup).
+## Behavior by audience tab
 
-## 1. Homepage section — `src/components/AboutSection.tsx`
+- Recruiters → "View Resume" → existing `WorkExperiencePanel`
+- Founders → "View Services" → existing `ServicesPanel`
+- Designers → **"View Community"** → new `CommunityPanel` (this plan)
 
-Keep the same 2-column layout, headline, and styling. Only the right column data changes:
+## 1. New file: `src/components/CommunityPanel.tsx`
 
-- **Tool Stack** (replaces "Services" list, same styled list with bottom-bordered rows):
-  Figma, FigJam, Framer, Adobe CC, Notion, Miro, Lovable, Maze, Dovetail
-- **Skills** (replaces current short Skills chip list with a richer set of practice-based skills, same pill styling):
-  User Research, Information Architecture, Interaction Design, Prototyping, Design Systems, Usability Testing, Accessibility (WCAG), Workshop Facilitation, Design Strategy
+A near-clone of `ServicesPanel` / `WorkExperiencePanel` for visual consistency:
+- React Portal, slide-in from right, `z-[200]`, cream `bg-background`, full-width on mobile / `md:w-[40%]`
+- Backdrop click-to-close, X close button (top right)
+- Same animation timing (500ms ease-out)
 
-(Open question: confirm these lists or send your preferred wording — easy to swap.)
+### Content (pulled from `BookClub.tsx`)
 
-## 2. Hero CTA + Services drawer
+Top of panel:
+- Small Fresh Perspectives logo (`@/assets/fresh-perspectives-logo.png`, w-10 h-10 rounded-lg)
+- Title: **"Fresh Perspectives"** (font-serif, 3xl/4xl)
+- Subhead: *"A UX book club for designers who think beyond the screen."*
 
-### `src/components/Hero.tsx`
-- When `audience === 'founders'`: render a **"View Services"** button (same pill styling) that opens a new `ServicesPanel`.
-- All other audiences: keep existing **"View Resume"** button → existing `WorkExperiencePanel`.
-- Both panels mount; only one opens at a time.
+Stats row (2x2 grid on mobile, 4-col on md+, with top border):
+- 2023 — Est.
+- 486+ — Members
+- 8+ — Books
+- Monthly — Sessions
 
-### New file: `src/components/ServicesPanel.tsx`
-- Built as a near-clone of `WorkExperiencePanel` for visual consistency: React Portal, slide-in from right, `z-[200]`, cream `bg-background`, full-width on mobile / `md:w-[40%]`, X close button, backdrop click-to-close.
-- Title: **"Services"** with subhead: *"Freelance & fractional design engagements."*
-- Two grouped sections, each rendered as flat rows with bottom dividers (matches site's dark-section list pattern, light variant):
+"Who We Are" section (after stats):
+- Eyebrow: "Who We Are" (uppercase tracking-widest)
+- Body: *"I founded Fresh Perspectives as a space for like-minded UX professionals to slow down and think deeply — not just ship faster. What started as a book club has grown, alongside my co-host Bhavna, into a hub where designers connect, challenge assumptions, and bring sharper thinking back to their work."*
 
-  **Freelance — Project-based**
-  - End-to-end product design (0→1 features)
-  - UX research & usability testing
-  - Design systems setup & audits
-  - Web & landing page design
-  - UX audits + actionable redesign roadmap
+"How it Works" section — flat list with bottom dividers (matches site list pattern):
+- **Read Together** — One book per cycle, paced for busy designers. (BookOpen icon)
+- **Discuss & Reflect** — Monthly virtual sessions to connect ideas to real work. (MessageCircle icon)
+- **Stay Connected** — Active LinkedIn community for resources & conversations. (Globe icon)
 
-  **Fractional — Embedded by the month**
-  - Fractional Lead Designer (1–3 days/week)
-  - Design partner for early-stage founders
-  - Design ops & process setup for growing teams
-  - Mentorship & design team coaching
+Footer CTA row (border-top):
+- Text: "Want to read with us?"
+- Two pill buttons:
+  - Primary: **"Join the Club"** → `https://www.linkedin.com/in/joannaminott` (external, target="_blank")
+  - Secondary outlined: **"Visit Community Page"** → `/book-club` (Link, closes panel)
 
-- Footer of the drawer: a small CTA row — "Have a project in mind?" + a `rounded-full` link button **"Get in touch"** routing to `/contact`.
+## 2. Edit `src/components/Hero.tsx`
 
-(Open question: confirm service offerings or share your own list.)
-
-## 3. Cleanup
-
-- Delete `src/components/Services.tsx` (no active imports — it's an orphaned legacy section).
+- Import `CommunityPanel`.
+- Add `const [communityOpen, setCommunityOpen] = useState(false);`
+- Replace the binary `audience === 'founders' ? services : resume` block with a 3-way conditional:
+  - `founders` → "View Services" button (existing)
+  - `designers` → **"View Community"** button → opens `CommunityPanel`
+  - `recruiters` (default) → "View Resume" button (existing)
+- Mount `<CommunityPanel open={communityOpen} onClose={() => setCommunityOpen(false)} />` next to the other two panels.
+- Keep same pill styling (`bg-foreground text-background px-6 py-3 rounded-full`), `animate-fade-in`, and unique `key` per CTA so the swap animates.
 
 ## Out of scope
 
-- No changes to routes, no new pages.
-- No changes to the dark `DarkSection` block or footer.
-- Drawer animation, hover states, and typography reuse existing tokens — no new CSS.
+- No changes to the standalone `/book-club` page.
+- No changes to other audience taglines or hero layout.
+- No new design tokens; reuses existing patterns and copy from BookClub.
 
 ## Files touched
 
-- `src/components/AboutSection.tsx` — edit (replace Services list with Tool Stack; refresh Skills)
-- `src/components/Hero.tsx` — edit (conditional CTA + mount new panel)
-- `src/components/ServicesPanel.tsx` — new
-- `src/components/Services.tsx` — delete
+- `src/components/CommunityPanel.tsx` — new
+- `src/components/Hero.tsx` — edit (3-way CTA + mount new panel)
