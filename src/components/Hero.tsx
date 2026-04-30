@@ -4,6 +4,7 @@ import PopIn from './animations/PopIn';
 import FadeIn from './animations/FadeIn';
 import WorkExperiencePanel from './WorkExperiencePanel';
 import ServicesPanel from './ServicesPanel';
+import CommunityPanel from './CommunityPanel';
 
 interface HeroProps {
   className?: string;
@@ -32,6 +33,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [panelOpen, setPanelOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [communityOpen, setCommunityOpen] = useState(false);
   const [audience, setAudience] = useState<Audience>('recruiters');
   const containerRef = useRef<HTMLDivElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
@@ -111,6 +113,14 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             >
               View Services
             </button>
+          ) : audience === 'designers' ? (
+            <button
+              key="community-cta"
+              onClick={() => setCommunityOpen(true)}
+              className="inline-flex items-center bg-foreground text-background px-6 py-3 rounded-full text-base font-medium hover:opacity-90 transition-opacity mb-6 animate-fade-in"
+            >
+              View Community
+            </button>
           ) : (
             <button
               key="resume-cta"
@@ -123,6 +133,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         </FadeIn>
         <WorkExperiencePanel open={panelOpen} onClose={() => setPanelOpen(false)} />
         <ServicesPanel open={servicesOpen} onClose={() => setServicesOpen(false)} />
+        <CommunityPanel open={communityOpen} onClose={() => setCommunityOpen(false)} />
       </div>
       <div ref={containerRef} className="mx-auto max-w-[1600px] px-8 md:px-16">
         <PopIn>
