@@ -1,7 +1,12 @@
 import React from 'react';
 import FadeIn from './animations/FadeIn';
 
-const toolStack = ["Figma", "FigJam", "Framer", "Adobe CC", "Notion", "Miro", "Lovable", "Maze", "Dovetail"];
+const designPhilosophy = [
+  { title: "User-Centered", description: "Every design decision starts with understanding the user — through research, empathy, and testing." },
+  { title: "Purposeful", description: "Design should solve problems, not just look beautiful. Each element earns its place." },
+  { title: "Iterative", description: "Great design emerges through iteration — embracing feedback and refining until it resonates." },
+  { title: "Collaborative", description: "The best work happens together, with transparent communication and shared ownership." },
+];
 const skills = ["User Research", "Information Architecture", "Interaction Design", "Prototyping", "Design Systems", "Usability Testing", "Accessibility (WCAG)", "Workshop Facilitation", "Design Strategy"];
 
 const AboutSection: React.FC = () => {
@@ -24,11 +29,15 @@ const AboutSection: React.FC = () => {
           {/* Right Column — Services & Skills */}
           <div className="space-y-12">
             <FadeIn delay={100}>
-              <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">Tool Stack</h3>
-              <ul className="space-y-4">
-                {toolStack.map((s) => (
-                  <li key={s} className="text-lg font-serif text-foreground border-b border-border pb-3">
-                    {s}
+              <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">Design Philosophy</h3>
+              <ul className="space-y-0">
+                {designPhilosophy.map((p, i) => (
+                  <li
+                    key={p.title}
+                    className={`py-5 border-b border-border ${i === 0 ? 'border-t' : ''}`}
+                  >
+                    <p className="text-lg font-serif text-foreground">{p.title}</p>
+                    <p className="text-sm text-muted-foreground font-serif mt-1">{p.description}</p>
                   </li>
                 ))}
               </ul>
@@ -36,16 +45,9 @@ const AboutSection: React.FC = () => {
 
             <FadeIn delay={200}>
               <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">Skills</h3>
-              <div className="flex flex-wrap gap-3">
-                {skills.map((s) => (
-                  <span
-                    key={s}
-                    className="bg-brand-matcha text-brand-foam px-4 py-2 rounded-full text-sm font-medium"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
+              <p className="text-base md:text-lg font-serif text-foreground leading-relaxed">
+                {skills.join(' • ')}
+              </p>
             </FadeIn>
           </div>
         </div>
