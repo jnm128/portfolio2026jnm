@@ -20,7 +20,7 @@ const WorkExperience: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
       <main className="pt-32 pb-24">
-        <div className="container mx-auto px-8 md:px-16 max-w-2xl">
+        <div className="container mx-auto px-5 md:px-16 max-w-2xl">
           <FadeIn>
             <h1 className="text-3xl md:text-4xl font-serif text-foreground mb-1">Joanna Minott</h1>
             <p className="text-muted-foreground font-serif text-base mb-0.5">UX Designer, Miami, FL</p>

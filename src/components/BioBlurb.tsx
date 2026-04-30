@@ -9,7 +9,7 @@ interface BioBlurbProps {
 const BioBlurb: React.FC<BioBlurbProps> = ({ className }) => {
   return (
     <section className={cn('pt-20 pb-0 md:pt-24 md:pb-0 bg-background', className)}>
-      <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+      <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
         <FadeIn>
           <div className="flex items-start gap-4 text-left">
             <div className="w-14 h-14 md:w-16 md:h-16 aspect-square rounded-full overflow-hidden flex-shrink-0">

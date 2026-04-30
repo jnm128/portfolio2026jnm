@@ -26,7 +26,7 @@ const CaseStudyNav: React.FC<CaseStudyNavProps> = ({ currentSlug, variant = 'lig
       className={`py-12 md:py-16 ${isDark ? 'bg-foreground border-white/10' : 'bg-background border-border'} border-t`}
       {...(isDark ? { 'data-theme': 'dark' } : {})}
     >
-      <div className="container mx-auto px-8 md:px-16">
+      <div className="container mx-auto px-5 md:px-16">
         <div className="flex items-center justify-between">
           <Link
             to={prevStudy.path}

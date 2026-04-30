@@ -110,7 +110,7 @@ const BookClub: React.FC = () => {
 
       {/* Section 1 — Hero */}
       <section className="min-h-screen flex items-center pt-24 md:pt-28 pb-10 md:pb-16 bg-background">
-        <div className="mx-auto px-8 md:px-16 max-w-[1600px]">
+        <div className="mx-auto px-5 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
               <div className="lg:w-1/2">
@@ -200,7 +200,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-background text-
 
       {/* Section 2 — Who We Are */}
       <section data-theme="dark" className="py-16 md:py-20 bg-foreground">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
+        <div className="max-w-4xl mx-auto px-5 md:px-16">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-background/60 mb-6">Who We Are</h2>
           </FadeIn>
@@ -219,7 +219,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-background text-
 
       {/* Section 3 — Previous Reads */}
       <section className="py-16 md:py-20 bg-background">
-        <div className="mx-auto px-8 md:px-16 max-w-[1600px]">
+        <div className="mx-auto px-5 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex items-end justify-between mb-6">
               <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60">Previous Reads</h2>
@@ -266,7 +266,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-background text-
 
       {/* Section 4 — How the Community Works */}
       <section id="community" data-theme="dark" className="py-16 md:py-20 bg-foreground">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
+        <div className="max-w-4xl mx-auto px-5 md:px-16">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-background/60 mb-6">How the Community Works</h2>
           </FadeIn>
@@ -295,7 +295,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-background text-
 
       {/* Section 5 — CTA (light) */}
       <section id="upcoming" className="py-16 md:py-24 bg-background">
-        <div className="mx-auto px-8 md:px-16 max-w-[1600px]">
+        <div className="mx-auto px-5 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col gap-6 items-center text-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-foreground">
@@ -321,7 +321,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-background text-
 
       {/* Section 6 — FAQ (dark) */}
       <section data-theme="dark" className="py-16 md:py-20 bg-foreground">
-        <div className="max-w-4xl mx-auto px-8 md:px-16">
+        <div className="max-w-4xl mx-auto px-5 md:px-16">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-background/60 mb-6">Frequently Asked Questions</h2>
           </FadeIn>

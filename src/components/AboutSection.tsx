@@ -12,7 +12,7 @@ const skills = ["User Research", "Information Architecture", "Interaction Design
 const AboutSection: React.FC = () => {
   return (
     <section id="about" className="pt-12 pb-12 md:pt-20 md:pb-20 bg-background">
-      <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+      <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
           {/* Left Column — Title & Helper Text */}
           <div>

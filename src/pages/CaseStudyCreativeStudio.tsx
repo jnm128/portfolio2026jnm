@@ -50,7 +50,7 @@ const CaseStudyCreativeStudio = () => {
 
       {/* TLDR */}
       <section className="py-12 md:py-20 bg-background">
-        <div className="container mx-auto px-8 md:px-16">
+        <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="TLDR">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
               <div>
@@ -84,7 +84,7 @@ const CaseStudyCreativeStudio = () => {
 
       {/* Problem Space */}
         <section className="py-12 md:py-20 bg-background">
-        <div className="container mx-auto px-8 md:px-16">
+        <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Problem Space">
             <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               How do you position a creative studio as an industry leader when their work speaks louder than their brand?
@@ -104,7 +104,7 @@ const CaseStudyCreativeStudio = () => {
 
       {/* Approach */}
       <section className="py-20 md:py-32 bg-background">
-        <div className="container mx-auto px-8 md:px-16">
+        <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Our Approach">
             <div className="grid md:grid-cols-2 gap-12">
               <div>
@@ -173,7 +173,7 @@ const CaseStudyCreativeStudio = () => {
 
       {/* Results */}
       <section className="py-20 md:py-32 bg-background">
-        <div className="container mx-auto px-8 md:px-16">
+        <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Results">
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <div>

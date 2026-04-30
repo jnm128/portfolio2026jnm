@@ -40,7 +40,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
 
   return (
     <div id="testimonials" className={cn('pt-12 pb-4 md:pt-20 md:pb-8', className)}>
-      <div className="container mx-auto px-8 md:px-16 max-w-[1600px]">
+      <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
         {/* Section Label + Arrows */}
         <FadeIn>
           <div className="flex items-center justify-between mb-10">

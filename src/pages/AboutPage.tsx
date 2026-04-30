@@ -39,7 +39,7 @@ const AboutPage = () => {
       <div className="pt-24 md:pt-28">
         {/* Hero / Intro */}
         <section className="pt-0 pb-24 md:pb-32 bg-background min-h-[calc(100vh-7rem)] flex flex-col justify-center">
-            <div className="max-w-4xl mx-auto px-8 md:px-16">
+            <div className="max-w-4xl mx-auto px-5 md:px-16">
           <FadeIn>
               {/* Mobile-only title */}
               <h1 className="text-3xl font-serif text-foreground mb-4 md:hidden">
@@ -90,7 +90,7 @@ const AboutPage = () => {
 
         {/* Writing, Current Read & Song on Repeat — Combined Dark Section */}
         <section className="bg-foreground text-background py-16 md:py-24" data-theme="dark">
-          <div className="max-w-4xl mx-auto px-8 md:px-16">
+          <div className="max-w-4xl mx-auto px-5 md:px-16">
             <div className="mb-16">
               <h2 className="text-3xl md:text-5xl font-serif text-background mb-4">
                 Beyond the Pixels
