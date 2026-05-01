@@ -1,33 +1,31 @@
-## Two changes
+## Editorial "MINO" footer
 
-### 1. `src/components/AboutSection.tsx` — replace Tool Stack, restyle Skills
+Restructure `src/components/Footer.tsx` so the wordmark **MINO** dominates the footer as a large, expanded display element — used as a visual signoff, not just a small logo.
 
-**Remove**: Tool Stack list (Figma, FigJam, Framer, etc.).
+### Layout (top → bottom)
 
-**Replace with**: A "Design Philosophy" list using the same flat row + bottom-divider styling. Each row shows a title (large serif) and a one-line description (small muted serif). Items:
-- **User-Centered** — Every design decision starts with understanding the user — through research, empathy, and testing.
-- **Purposeful** — Design should solve problems, not just look beautiful. Each element earns its place.
-- **Iterative** — Great design emerges through iteration — embracing feedback and refining until it resonates.
-- **Collaborative** — The best work happens together, with transparent communication and shared ownership.
+1. **Meta row** — short tagline on the left, nav links on the right (md+: aligned to baseline; mobile: stacked).
+   - Left: small uppercase eyebrow "Joanna Minott" + one-line serif tagline ("UX designer crafting calm, intuitive experiences — and building space for designers to think deeply.")
+   - Right: `Work`, `About`, `Community`, `Get in Touch`
 
-**Skills section**: Drop the rounded chip pills. Render the skill list as a single standalone paragraph, separated by `•`:
+2. **Oversized wordmark** — full-width centered **MINO** as the editorial centerpiece.
+   - `font-sans font-bold` (Outfit 700, matches existing logo)
+   - Fluid sizing: `clamp(5rem, 28vw, 26rem)` — fills the container width on all breakpoints
+   - Letter-spacing `0.04em` for an "expanded" editorial feel
+   - `leading-none` so it sits tight as a slab
+   - Acts as a click-target back to top (preserves existing scroll-to-top behavior)
+   - `overflow-hidden` on the footer to clip any subpixel overflow on narrow screens
 
-> User Research • Information Architecture • Interaction Design • Prototyping • Design Systems • Usability Testing • Accessibility (WCAG) • Workshop Facilitation • Design Strategy
+3. **Bottom row** — thin top border (`border-background/10`), splits copyright (left) and "made with 🍃 matcha" signature (right).
 
-Styling: `text-base md:text-lg font-serif text-foreground` so it reads as quiet editorial text rather than chips.
+### Other details
 
-### 2. `src/components/Collab.tsx` — remove the card wrapper
+- Keep dark theme: `bg-foreground text-background`.
+- Vertical padding becomes `pt-16 md:pt-24 pb-8 md:pb-12` to give the big wordmark breathing room above and a tighter strip below.
+- Drops the small `MINO.` button at the top — the giant wordmark replaces it as the brand mark and the back-to-top trigger.
+- Container, max-width (`max-w-[1600px]`), and global mobile padding (`px-5 md:px-16`) preserved.
+- "made with matcha" signature preserved per memory.
 
-Currently the "Interested in collaborating? / Get in Touch" block sits inside a `rounded-2xl bg-secondary` card with heavy padding. Since this lives inside the dark `DarkSection`, the card visually breaks the dark band.
+### Files touched
 
-**Change**: Remove the card wrapper entirely. Render heading, body, and CTA directly on the dark background, centered, with `py-12 md:py-16` spacing instead of the previous `py-24/py-32` card padding. Update text colors to read on dark:
-- Heading → `text-background`
-- Body → `text-background/70`
-- CTA button inverts: `bg-background text-foreground` (light pill on dark bg)
-
-Layout, copy, and route (`/contact`) all unchanged.
-
-## Files touched
-
-- `src/components/AboutSection.tsx` — edit
-- `src/components/Collab.tsx` — edit
+- `src/components/Footer.tsx` — rewrite layout
