@@ -1,26 +1,28 @@
-## Simplify Services panel
+## Restyle Community panel to match Services format
 
-Clean up `src/components/ServicesPanel.tsx`:
+Rebuild `src/components/CommunityPanel.tsx` so the slide-out mirrors the Services panel: clean header, single titled list with roman numerals, inline link CTA.
 
-### Content changes
-- Remove subtitle "Freelance & fractional design engagements."
-- Remove the entire **Fractional** section (and its 4 items).
-- From the **Freelance** list, remove:
-  - "UX research & usability testing"
-  - "Design systems setup & audits"
-- Remaining 3 freelance items (now numbered I, II, III):
-  - I. End-to-end product design
-  - II. Web & landing page design
-  - III. UX audits + redesign roadmap
+### New content (3 items)
 
-### Style changes
-- Remove all divider lines between list items (top, between, bottom).
-- Add roman numeral prefix (I / II / III) to each item, matching the AboutSection design philosophy treatment: small italic muted numeral in a fixed-width column, content beside it.
-- Replace `<li>` borders + `py-5` with a `space-y-6` flex layout (numeral + text content).
+- **I. Thought leadership & creator on LinkedIn** — Sharing perspectives on UX, craft, and career growth with a community of designers.
+- **II. Mentorship to junior designers** — 1:1 guidance, portfolio reviews, and career coaching for designers early in their journey.
+- **III. UX book club co-founder** — Co-founded Fresh Perspectives — a community of designers reading and reflecting together.
 
-### CTA
-- Replace the bordered footer block with a single inline line: **"Have a project in mind? Let's talk"** where "Let's talk" is an underlined link to `/contact` (closes panel on click).
-- Drop the divider above it.
+### Layout (matches ServicesPanel exactly)
+
+- Header row: "Community" h1 + close X (mb-12).
+- Subsection block: "How I'm active" semibold label + "Ways I show up in the design community." muted serif eyebrow.
+- Roman numeral list using the same tuned styling: `space-y-8`, `gap-6`, italic numeral `text-base font-serif tracking-[0.15em] w-6`, title `text-base font-serif`, detail `text-sm text-muted-foreground mt-1.5`.
+- Inline CTA: "Want to read with us? **Visit the book club**" — underlined link to `/book-club`, closes panel on click.
+
+### Removals
+
+- Fresh Perspectives logo, h1 "Fresh Perspectives", subtitle, stats grid (Est./Members/Books/Sessions).
+- "Who We Are" paragraph block.
+- "How it Works" icon list (BookOpen/MessageCircle/Globe).
+- Two-button CTA row (Join the Club + Visit Community Page).
+- Unused imports: `BookOpen, MessageCircle, Globe`, `freshPerspectivesLogo`.
 
 ### Files changed
-- `src/components/ServicesPanel.tsx`
+
+- `src/components/CommunityPanel.tsx`
