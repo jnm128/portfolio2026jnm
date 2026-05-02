@@ -14,6 +14,8 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDarkSection, setIsDarkSection] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollY = useRef(0);
   const headerRef = useRef<HTMLElement | null>(null);
   const [headerHeight, setHeaderHeight] = useState(0);
   const location = useLocation();
@@ -65,12 +67,22 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentY = window.scrollY;
+      setIsScrolled(currentY > 10);
+
+      if (isMobileMenuOpen) {
+        setIsHidden(false);
+      } else if (currentY > 80 && currentY > lastScrollY.current) {
+        setIsHidden(true);
+      } else if (currentY < lastScrollY.current) {
+        setIsHidden(false);
+      }
+      lastScrollY.current = currentY;
     };
-    
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMobileMenuOpen]);
 
   useLayoutEffect(() => {
     const el = headerRef.current;
@@ -205,6 +217,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         ref={headerRef}
         className={cn(
           `fixed top-0 left-0 right-0 transition-all duration-300 ${isMobileMenuOpen ? 'z-[101]' : 'z-[60]'}`,
+          isHidden && !isMobileMenuOpen ? '-translate-y-full' : 'translate-y-0',
           isScrolled 
             ? `py-4 ${isMobileMenuOpen ? 'bg-background' : useDarkTheme ? 'bg-foreground' : 'bg-background/95 backdrop-blur-sm'}`
             : isMobileMenuOpen
