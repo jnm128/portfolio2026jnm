@@ -1,31 +1,35 @@
-## Editorial "MINO" footer
+## Goal
 
-Restructure `src/components/Footer.tsx` so the wordmark **MINO** dominates the footer as a large, expanded display element — used as a visual signoff, not just a small logo.
+Make the nav theme (light vs dark) switch the instant a Community section's top edge passes under the fixed header band, instead of the current behavior where the dark section has to fill ~10% of the viewport before the toggle fires.
 
-### Layout (top → bottom)
+## Current behavior
 
-1. **Meta row** — short tagline on the left, nav links on the right (md+: aligned to baseline; mobile: stacked).
-   - Left: small uppercase eyebrow "Joanna Minott" + one-line serif tagline ("UX designer crafting calm, intuitive experiences — and building space for designers to think deeply.")
-   - Right: `Work`, `About`, `Community`, `Get in Touch`
+In `src/components/Header.tsx` (line 48), every `[data-theme="dark"]` section is observed with:
 
-2. **Oversized wordmark** — full-width centered **MINO** as the editorial centerpiece.
-   - `font-sans font-bold` (Outfit 700, matches existing logo)
-   - Fluid sizing: `clamp(5rem, 28vw, 26rem)` — fills the container width on all breakpoints
-   - Letter-spacing `0.04em` for an "expanded" editorial feel
-   - `leading-none` so it sits tight as a slab
-   - Acts as a click-target back to top (preserves existing scroll-to-top behavior)
-   - `overflow-hidden` on the footer to clip any subpixel overflow on narrow screens
+```ts
+{ rootMargin: '-80px 0px -90% 0px', threshold: 0 }
+```
 
-3. **Bottom row** — thin top border (`border-background/10`), splits copyright (left) and "made with 🍃 matcha" signature (right).
+That shrinks the viewport detection band to a 10%-tall slice starting 80px below the top. Result: a dark section is only considered "visible" once a meaningful chunk of it has scrolled past the header — the nav lags behind the visual transition.
 
-### Other details
+## Change
 
-- Keep dark theme: `bg-foreground text-background`.
-- Vertical padding becomes `pt-16 md:pt-24 pb-8 md:pb-12` to give the big wordmark breathing room above and a tighter strip below.
-- Drops the small `MINO.` button at the top — the giant wordmark replaces it as the brand mark and the back-to-top trigger.
-- Container, max-width (`max-w-[1600px]`), and global mobile padding (`px-5 md:px-16`) preserved.
-- "made with matcha" signature preserved per memory.
+Replace the rootMargin with a thin detection band pinned right under the header:
 
-### Files touched
+```ts
+{ rootMargin: '-72px 0px -100% 0px', threshold: 0 }
+```
 
-- `src/components/Footer.tsx` — rewrite layout
+- Top inset `-72px` ≈ header height (`py-4` scrolled state). The section becomes "intersecting" the moment its top edge crosses below the header.
+- Bottom inset `-100%` collapses the rest of the viewport so a section stops counting as visible the moment it scrolls past the top — preventing two sections from being "active" at once.
+- Result: the active dark section is whichever one currently sits directly under the nav, so the theme flips exactly at the visual seam between cream and dark sections.
+
+## Files
+
+- `src/components/Header.tsx` — single line change inside `checkDarkSections`, plus a short comment explaining the band.
+
+## Out of scope
+
+- No changes to which sections carry `data-theme="dark"`.
+- No changes to the Contact/Case Study override paths.
+- No memory updates — the existing "Dynamic Header Logic" memory still applies; only a constant is being tuned.
