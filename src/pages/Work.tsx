@@ -6,20 +6,23 @@ import { cn } from '@/lib/utils';
 
 const projects = [
   {
-    title: "Shipping colleague facing design experience with CVS Health",
-    description: "Led end-to-end product design for an internal tools platform, reducing user errors by 40% and increasing task completion rates across key workflows.",
+    brand: "CVS Health",
+    year: "2024",
+    description: "Shipping colleague-facing design experience to reduce user errors and improve task completion across key workflows.",
     image: "/lovable-uploads/a7d983f9-a76f-43f1-9194-818eb65ae31f.jpg",
     link: "/case-study/mindful-wellness",
   },
   {
-    title: "Building cost transparency between families, insurance and businesses with Viveka Health",
-    description: "Designed a transparent pricing experience that bridges families, insurers, and providers — improving cost clarity by 60% and reducing support tickets by 35%.",
+    brand: "Viveka Health",
+    year: "2023",
+    description: "Building cost transparency between families, insurance, and businesses — improving cost clarity and reducing support tickets.",
     image: "/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png",
     link: "/case-study/artisan-marketplace",
   },
   {
-    title: "Modernizing medicine adherence from web to native mobile with Tappt Health",
-    description: "Led the migration of a web-based medication adherence platform to a native mobile experience for Synchronyx, improving patient engagement and daily active usage by 50%.",
+    brand: "Tappt Health",
+    year: "2022",
+    description: "Modernizing medicine adherence from web to native mobile, improving patient engagement and daily active usage.",
     image: "/lovable-uploads/tappt-health-project.png",
     link: "/case-study/creative-studio",
   }
