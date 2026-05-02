@@ -48,7 +48,7 @@ const Work: React.FC = () => {
       {/* Project Cards */}
       <section className="bg-background">
         <div className="max-w-[1600px] mx-auto px-5 md:px-16 py-16 md:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16">
+          <div className="flex flex-col gap-12 md:gap-16">
             {projects.map((project, index) => (
               <FadeIn key={project.brand} delay={index * 50} duration={500} threshold={0.05}>
                 <Link to={project.link} className="group block">
