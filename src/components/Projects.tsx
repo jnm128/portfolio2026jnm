@@ -42,9 +42,6 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   return (
     <section id="projects" className={cn('py-16 md:py-24 bg-background', className)}>
       <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
-        <div className="flex items-center justify-between mb-8">
-          <p className="text-xs uppercase tracking-widest text-muted-foreground">Selected Work</p>
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16">
           {projects.map((project, index) => (
