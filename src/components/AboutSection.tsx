@@ -2,12 +2,10 @@ import React from 'react';
 import FadeIn from './animations/FadeIn';
 
 const designPhilosophy = [
-  { title: "User-Centered", description: "Every design decision starts with understanding the user — through research, empathy, and testing." },
-  { title: "Purposeful", description: "Design should solve problems, not just look beautiful. Each element earns its place." },
-  { title: "Iterative", description: "Great design emerges through iteration — embracing feedback and refining until it resonates." },
-  { title: "Collaborative", description: "The best work happens together, with transparent communication and shared ownership." },
+  { numeral: "I", title: "User-Centered", description: "Every design decision starts with understanding the user — through research, empathy, and testing." },
+  { numeral: "II", title: "Purposeful", description: "Design should solve problems, not just look beautiful. Each element earns its place." },
+  { numeral: "III", title: "Iterative", description: "Great design emerges through iteration — embracing feedback and refining until it resonates." },
 ];
-const skills = ["User Research", "Information Architecture", "Interaction Design", "Prototyping", "Design Systems", "Usability Testing", "Accessibility (WCAG)", "Workshop Facilitation", "Design Strategy"];
 
 const AboutSection: React.FC = () => {
   return (
@@ -26,7 +24,7 @@ const AboutSection: React.FC = () => {
             </FadeIn>
           </div>
 
-          {/* Right Column — Services & Skills */}
+          {/* Right Column — Design Philosophy */}
           <div className="space-y-12">
             <FadeIn delay={100}>
               <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">Design Philosophy</h3>
@@ -34,20 +32,18 @@ const AboutSection: React.FC = () => {
                 {designPhilosophy.map((p, i) => (
                   <li
                     key={p.title}
-                    className={`py-5 border-b border-border ${i === 0 ? 'border-t' : ''}`}
+                    className={`py-5 ${i === 0 ? 'border-t border-border' : ''} ${i !== designPhilosophy.length - 1 ? 'border-b border-border' : ''}`}
                   >
-                    <p className="text-lg font-serif text-foreground">{p.title}</p>
-                    <p className="text-sm text-muted-foreground font-serif mt-1">{p.description}</p>
+                    <div className="flex items-baseline gap-4">
+                      <span className="text-sm font-serif italic text-muted-foreground tracking-wider w-8 shrink-0">{p.numeral}</span>
+                      <div>
+                        <p className="text-lg font-serif text-foreground">{p.title}</p>
+                        <p className="text-sm text-muted-foreground font-serif mt-1">{p.description}</p>
+                      </div>
+                    </div>
                   </li>
                 ))}
               </ul>
-            </FadeIn>
-
-            <FadeIn delay={200}>
-              <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-6">Skills</h3>
-              <p className="text-base md:text-lg font-serif text-foreground leading-relaxed">
-                {skills.join(' • ')}
-              </p>
             </FadeIn>
           </div>
         </div>
@@ -57,3 +53,4 @@ const AboutSection: React.FC = () => {
 };
 
 export default AboutSection;
+
