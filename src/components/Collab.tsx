@@ -19,7 +19,7 @@ const bottomPills = [
 ];
 
 const Pill: React.FC<{ text: string; author: string }> = ({ text, author }) => (
-  <div className="rounded-full border border-background/30 bg-transparent px-4 py-2 text-xs sm:text-sm text-background/80 font-sans max-w-[260px] sm:max-w-[280px]">
+  <div className="rounded-full border border-background/20 bg-background/10 backdrop-blur-md px-4 py-2 text-xs sm:text-sm text-background/85 font-sans max-w-[260px] sm:max-w-[280px]">
     <span>"{text}"</span>
     <span className="ml-2 text-background/50">— {author}</span>
   </div>
