@@ -7,11 +7,9 @@ interface CollabProps {
   className?: string;
 }
 
-const topPills = [
-  { text: 'Invaluable liaison between technical and non-technical teams.', author: 'Rynita J.' },
-  { text: 'Kind, empathetic, relentless problem-solver.', author: 'Jacob R.' },
-  { text: 'Simplifies complex systems with clarity.', author: 'Rynita J.' },
-];
+const topPill = { text: 'Kind, empathetic, relentless problem-solver.', author: 'Jacob R.' };
+
+const belowCtaPill = { text: 'Invaluable liaison between technical and non-technical teams.', author: 'Rynita J.' };
 
 const sidePills = {
   left: { text: 'A complete vision for streamlining.', author: 'Rynita J.' },
@@ -30,12 +28,10 @@ const Collab: React.FC<CollabProps> = ({ className }) => {
     <div data-theme="dark" className={cn('py-16 md:py-24 bg-foreground', className)}>
       <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
         <div className="flex flex-col items-center text-center">
-          {/* Top pills row */}
+          {/* Single top pill */}
           <FadeIn delay={0}>
-            <div className="flex flex-wrap justify-center gap-3 mb-10 md:mb-14">
-              {topPills.map((p) => (
-                <Pill key={p.text} text={p.text} author={p.author} />
-              ))}
+            <div className="flex justify-center mb-10 md:mb-14">
+              <Pill text={topPill.text} author={topPill.author} />
             </div>
           </FadeIn>
 
@@ -60,6 +56,9 @@ const Collab: React.FC<CollabProps> = ({ className }) => {
                   >
                     Get in Touch
                   </Link>
+                </div>
+                <div className="mt-8 flex justify-center">
+                  <Pill text={belowCtaPill.text} author={belowCtaPill.author} />
                 </div>
               </div>
             </FadeIn>
