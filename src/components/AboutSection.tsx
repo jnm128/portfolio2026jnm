@@ -9,9 +9,9 @@ const designPhilosophy = [
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" data-theme="dark" className="pt-12 pb-12 md:pt-20 md:pb-20 bg-foreground">
-      <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+    <section id="about" data-theme="dark" className="min-h-screen flex items-center py-24 md:py-40 bg-foreground">
+      <div className="container mx-auto px-5 md:px-16 max-w-[1600px] w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
           {/* Left Column — Title & Helper Text */}
           <div>
             <FadeIn>
@@ -32,7 +32,7 @@ const AboutSection: React.FC = () => {
                 {designPhilosophy.map((p, i) => (
                   <li
                     key={p.title}
-                    className={`py-5 ${i === 0 ? 'border-t border-background/15' : ''} ${i !== designPhilosophy.length - 1 ? 'border-b border-background/15' : ''}`}
+                    className={`py-10 md:py-12 ${i === 0 ? 'border-t border-background/15' : ''} ${i !== designPhilosophy.length - 1 ? 'border-b border-background/15' : ''}`}
                   >
                     <div className="flex items-baseline gap-4">
                       <span className="text-sm font-serif italic text-background/50 tracking-wider w-8 shrink-0">{p.numeral}</span>
