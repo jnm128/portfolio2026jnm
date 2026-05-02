@@ -39,51 +39,53 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
   const next = () => setActiveIndex((i) => (i + 1) % testimonials.length);
 
   return (
-    <div id="testimonials" className={cn('pt-12 pb-4 md:pt-20 md:pb-8', className)}>
+    <div id="testimonials" className={cn('py-16 md:py-24 bg-background', className)} data-theme="dark">
       <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
-        {/* Section Label + Arrows */}
-        <FadeIn>
-          <div className="flex items-center justify-between mb-10">
-            <h2 className="text-xs uppercase tracking-widest text-background/60">In Their Words</h2>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={prev}
-                className="w-10 h-10 rounded-full bg-background/10 border border-background/20 flex items-center justify-center hover:bg-background/20 transition-colors"
-              >
-                <ChevronLeft size={16} className="text-background/80" />
-              </button>
-              <button
-                onClick={next}
-                className="w-10 h-10 rounded-full bg-background/10 border border-background/20 flex items-center justify-center hover:bg-background/20 transition-colors"
-              >
-                <ChevronRight size={16} className="text-background/80" />
-              </button>
+        <div className="rounded-2xl bg-foreground p-8 md:p-16 lg:p-20">
+          {/* Section Label + Arrows */}
+          <FadeIn>
+            <div className="flex items-center justify-between mb-10">
+              <h2 className="text-xs uppercase tracking-widest text-background/60">In Their Words</h2>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={prev}
+                  className="w-10 h-10 rounded-full bg-background/10 border border-background/20 flex items-center justify-center hover:bg-background/20 transition-colors"
+                >
+                  <ChevronLeft size={16} className="text-background/80" />
+                </button>
+                <button
+                  onClick={next}
+                  className="w-10 h-10 rounded-full bg-background/10 border border-background/20 flex items-center justify-center hover:bg-background/20 transition-colors"
+                >
+                  <ChevronRight size={16} className="text-background/80" />
+                </button>
+              </div>
             </div>
-          </div>
-        </FadeIn>
+          </FadeIn>
 
-        {/* Rotating Quote */}
-        <FadeIn delay={100}>
-          <div className="mb-16 md:mb-20">
-            <blockquote
-              key={activeIndex}
-              className="font-serif text-3xl md:text-5xl leading-tight text-background mb-8 animate-fade-in"
-            >
-              "{current.quote}"
-            </blockquote>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-background/10 border border-background/20 flex items-center justify-center text-sm text-background/80 font-medium">
-                  {current.initials}
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-background">{current.author}</p>
-                  <p className="text-xs text-background/60">{current.role}</p>
+          {/* Rotating Quote */}
+          <FadeIn delay={100}>
+            <div>
+              <blockquote
+                key={activeIndex}
+                className="font-serif text-3xl md:text-5xl lg:text-6xl leading-tight text-background mb-10 animate-fade-in"
+              >
+                "{current.quote}"
+              </blockquote>
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-background/10 border border-background/20 flex items-center justify-center text-sm text-background/80 font-medium">
+                    {current.initials}
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-background">{current.author}</p>
+                    <p className="text-xs text-background/60">{current.role}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </FadeIn>
+          </FadeIn>
+        </div>
       </div>
     </div>
   );
