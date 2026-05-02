@@ -1,16 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import FadeIn from './animations/FadeIn';
 
 interface CollabProps {
   className?: string;
 }
 
+const quotes = [
+  {
+    quote: "Joanna is an invaluable liaison between technical teams and non-technical stakeholders.",
+    author: "Rynita Julien",
+    role: "Senior Director IT, CSL Behring",
+  },
+  {
+    quote: "Joanna's ability to simplify complex systems using detailed maps and flows helped lay out a complete vision for streamlining benefit administration.",
+    author: "Rynita Julien",
+    role: "Senior Director IT, CSL Behring",
+  },
+  {
+    quote: "Joanna's consistency, reliability, and perseverance in complex problem solving is bolstered by her kind and empathetic nature.",
+    author: "Jacob Rosmarin",
+    role: "Product, Viveka Health",
+  },
+];
+
 const Collab: React.FC<CollabProps> = ({ className }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const current = quotes[activeIndex];
+
+  const prev = () => setActiveIndex((i) => (i - 1 + quotes.length) % quotes.length);
+  const next = () => setActiveIndex((i) => (i + 1) % quotes.length);
+
   return (
     <div className={cn('py-16 md:py-24 bg-background', className)}>
-      {/* rebuild trigger */}
       <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
         <FadeIn>
           <div className="flex flex-col gap-6 items-center text-center py-12 md:py-16">
@@ -27,6 +51,52 @@ const Collab: React.FC<CollabProps> = ({ className }) => {
               >
                 Get in Touch
               </Link>
+            </div>
+
+            {/* Mini testimonial carousel */}
+            <div className="w-full max-w-2xl mt-12 md:mt-16">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-5">
+                What others say
+              </p>
+              <blockquote
+                key={activeIndex}
+                className="font-serif italic text-base md:text-lg text-foreground leading-relaxed animate-fade-in"
+              >
+                "{current.quote}"
+              </blockquote>
+              <p className="mt-4 text-sm text-muted-foreground">
+                — {current.author}, {current.role}
+              </p>
+
+              <div className="flex items-center justify-center gap-4 mt-6">
+                <button
+                  onClick={prev}
+                  aria-label="Previous quote"
+                  className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-foreground/5 transition-colors"
+                >
+                  <ChevronLeft size={14} className="text-foreground/80" />
+                </button>
+                <div className="flex items-center gap-2">
+                  {quotes.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveIndex(i)}
+                      aria-label={`Go to quote ${i + 1}`}
+                      className={cn(
+                        'w-1.5 h-1.5 rounded-full transition-colors',
+                        i === activeIndex ? 'bg-foreground' : 'bg-foreground/20 hover:bg-foreground/40'
+                      )}
+                    />
+                  ))}
+                </div>
+                <button
+                  onClick={next}
+                  aria-label="Next quote"
+                  className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-foreground/5 transition-colors"
+                >
+                  <ChevronRight size={14} className="text-foreground/80" />
+                </button>
+              </div>
             </div>
           </div>
         </FadeIn>
