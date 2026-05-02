@@ -1,23 +1,15 @@
-## Refine Collab pills + spacing
+## Rotating word in About heading
 
-Update `src/components/Collab.tsx`:
+Update `src/components/AboutSection.tsx` so the last word of the heading "Design, Tech & **Intention**" cycles through three words.
 
-### Remove
-- The pill below the "Get in Touch" button (`belowCtaPill`).
-
-### Floating animation
-- Apply existing `animate-drift-1/2/3` keyframes (already in `tailwind.config.ts`) to the 3 remaining pills (top + left + right) so they gently float continuously.
-- Stagger via inline `animationDelay` (0s, 0.4s, 0.8s) so motion is desynced — like the original "bee-like" idea but quieter.
-- Keep `FadeIn` wrappers for scroll-in entrance.
-
-### Spacing
-- Section padding: change `py-16 md:py-24` → `pt-20 md:pt-28 pb-10 md:pb-14`.
-  - More top breathing room above the top pill.
-  - Smaller bottom padding so the dark Collab section sits closer to Process.
-- Increase gap between top pill and headline row: `mb-10 md:mb-14` → `mb-16 md:mb-20`.
-- Increase horizontal gap between side pills and headline: `gap-6 md:gap-8` → `gap-8 md:gap-12`.
-- Increase headline → button gap: `mt-8` → `mt-10`.
-- Mobile side-pills row: `mt-10` → `mt-12`.
+### Change
+- Replace static "Intention" with a rotating word that cycles every ~2.2s through:
+  1. Intention
+  2. Research
+  3. Focus
+- Use `useState` + `useEffect` with `setInterval` to advance the index.
+- Wrap the active word in a `<span>` with `key={word}` so React remounts it, triggering the existing `animate-fade-in` keyframe for a smooth cross-fade.
+- Style the rotating word slightly distinct (italic, `text-background/90`) so the swap reads as intentional.
 
 ### Files
-- `src/components/Collab.tsx` only.
+- `src/components/AboutSection.tsx` only.

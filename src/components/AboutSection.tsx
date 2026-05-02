@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import FadeIn from './animations/FadeIn';
+
+const rotatingWords = ['Intention', 'Research', 'Focus'];
 
 const designPhilosophy = [
   { numeral: "I", title: "User-Centered", description: "Every design decision starts with understanding the user — through research, empathy, and testing." },
@@ -8,6 +10,15 @@ const designPhilosophy = [
 ];
 
 const AboutSection: React.FC = () => {
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setWordIndex((i) => (i + 1) % rotatingWords.length);
+    }, 2200);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section id="about" data-theme="dark" className="min-h-screen flex items-center py-24 md:py-40 bg-foreground">
       <div className="container mx-auto px-5 md:px-16 max-w-[1600px] w-full">
@@ -16,7 +27,13 @@ const AboutSection: React.FC = () => {
           <div>
             <FadeIn>
               <h2 className="text-3xl md:text-5xl font-serif text-background mb-4">
-                Design, Tech & Intention
+                Design, Tech &amp;{' '}
+                <span
+                  key={rotatingWords[wordIndex]}
+                  className="inline-block animate-fade-in italic text-background/90"
+                >
+                  {rotatingWords[wordIndex]}
+                </span>
               </h2>
               <p className="text-base md:text-lg text-background/70 font-serif">
                 Our process is rooted in research — blending user insights, business goals, and thoughtful craft to create digital experiences that feel intuitive and look exceptional.
