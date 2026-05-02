@@ -217,6 +217,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         ref={headerRef}
         className={cn(
           `fixed top-0 left-0 right-0 transition-all duration-300 ${isMobileMenuOpen ? 'z-[101]' : 'z-[60]'}`,
+          isHidden && !isMobileMenuOpen ? '-translate-y-full' : 'translate-y-0',
           isScrolled 
             ? `py-4 ${isMobileMenuOpen ? 'bg-background' : useDarkTheme ? 'bg-foreground' : 'bg-background/95 backdrop-blur-sm'}`
             : isMobileMenuOpen
