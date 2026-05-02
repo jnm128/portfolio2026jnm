@@ -45,7 +45,9 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             }
             setIsDarkSection(visibleSet.size > 0);
           },
-          { rootMargin: '-80px 0px -90% 0px', threshold: 0 }
+            // Thin detection band pinned just under the header so the theme flips exactly
+            // when a section's top edge crosses below the nav, not when it fills the viewport.
+            { rootMargin: '-72px 0px -100% 0px', threshold: 0 }
         );
         observer.observe(section);
         observers.push(observer);
