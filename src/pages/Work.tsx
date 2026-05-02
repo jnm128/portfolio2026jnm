@@ -25,6 +25,13 @@ const projects = [
     description: "Modernizing medicine adherence from web to native mobile, improving patient engagement and daily active usage.",
     image: "/lovable-uploads/tappt-health-project.png",
     link: "/case-study/creative-studio",
+  },
+  {
+    brand: "Mindful Wellness",
+    year: "2021",
+    description: "Designing a calming meditation experience that helps users build sustainable mindfulness habits through guided sessions.",
+    image: "/lovable-uploads/a7d983f9-a76f-43f1-9194-818eb65ae31f.jpg",
+    link: "/case-study/mindful-wellness",
   }
 ];
 
