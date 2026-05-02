@@ -1,21 +1,23 @@
-## Refactor testimonial pills around CTA
+## Refine Collab pills + spacing
 
-Update `src/components/Collab.tsx` only.
+Update `src/components/Collab.tsx`:
 
-### Layout
-- Replace the absolute-positioned pill overlay with **two flex rows** that flank the CTA, so they never overlap the headline:
-  - Row above headline: 3 pills (`flex flex-wrap justify-center gap-3 mb-10 md:mb-14`)
-  - Headline + subhead + button (centered)
-  - Row below button: 2 pills (`flex flex-wrap justify-center gap-3 mt-10 md:mt-14`)
-- `flex-wrap` makes pills stack naturally on narrow viewports; `justify-center` keeps the composition centered.
+### Remove
+- The pill below the "Get in Touch" button (`belowCtaPill`).
 
-### Pill style (transparent, Outfit, static)
-- `rounded-full border border-background/30 bg-transparent`
-- `px-4 py-2 text-xs sm:text-sm text-background/80`
-- `font-sans` (Outfit), no italic — matching case-study card typography
-- `max-w-[260px] sm:max-w-[280px]` so each pill caps at a reasonable width
-- Author appended in `text-background/50`
-- **No hover animation, no drift, no shadow** — fully static, outline-only so it reads as a quote tag, not a button
+### Floating animation
+- Apply existing `animate-drift-1/2/3` keyframes (already in `tailwind.config.ts`) to the 3 remaining pills (top + left + right) so they gently float continuously.
+- Stagger via inline `animationDelay` (0s, 0.4s, 0.8s) so motion is desynced — like the original "bee-like" idea but quieter.
+- Keep `FadeIn` wrappers for scroll-in entrance.
+
+### Spacing
+- Section padding: change `py-16 md:py-24` → `pt-20 md:pt-28 pb-10 md:pb-14`.
+  - More top breathing room above the top pill.
+  - Smaller bottom padding so the dark Collab section sits closer to Process.
+- Increase gap between top pill and headline row: `mb-10 md:mb-14` → `mb-16 md:mb-20`.
+- Increase horizontal gap between side pills and headline: `gap-6 md:gap-8` → `gap-8 md:gap-12`.
+- Increase headline → button gap: `mt-8` → `mt-10`.
+- Mobile side-pills row: `mt-10` → `mt-12`.
 
 ### Files
-- `src/components/Collab.tsx` only. Drift keyframes in `tailwind.config.ts` remain (harmless, no longer referenced).
+- `src/components/Collab.tsx` only.
