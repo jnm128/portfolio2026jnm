@@ -1,47 +1,19 @@
-## Add mini testimonial carousel under Get in Touch CTA
+## Make Design Philosophy section taller with more breathing room
 
-Add a small, click-through quote carousel directly below the "Get in Touch" button in the Collab section to nudge visitors toward collaborating after reading social proof.
+Goal: turn the "Design, Tech & Intention" / Design Philosophy section into a full-viewport, focus-one-thing-at-a-time block with generous spacing between each philosophy item.
 
-### Layout
+### Changes to `src/components/AboutSection.tsx`
 
-```
-Interested in collaborating?
-I'm always open to new projects...
-        [ Get in Touch ]
+- **Section height**: change wrapper from `pt-12 pb-12 md:pt-20 md:pb-20` to `min-h-screen flex items-center py-24 md:py-40`. This makes the dark section fill the viewport so it's the only section in view while reading.
+- **Column gap**: bump grid gap from `gap-12 md:gap-16` to `gap-16 md:gap-24` for more separation between the title column and the philosophy list.
+- **Item spacing**: change each `<li>` padding from `py-5` to `py-10 md:py-12` so each numeral/title/description block stands alone with clear vertical breathing room between dividers.
 
-   ── what others are saying ──
+### Result
 
-  "Joanna's ability to simplify complex
-   systems helped lay out a complete vision..."
-   — Rynita Julien, Senior Director IT
-
-         ‹  • • •  ›
-```
-
-- Centered, narrow column (`max-w-2xl`) directly under the CTA, with `mt-12 md:mt-16` spacing so it reads as a supporting blurb, not a competing section.
-- Small uppercase eyebrow label "What others say" above the quote.
-- Single quote at a time, italic serif, modest size (`text-base md:text-lg`), with author name + role on the line below in muted color.
-- Click-through controls: minimalist circular `‹` / `›` arrow buttons (matches existing testimonial pattern) plus tiny dot indicators between them.
-- Manual click only (no autoplay), with a quick fade transition between quotes.
-
-### Content
-
-Reuse the three existing quotes from the (now-removed) Testimonials component:
-- Rynita Julien × 2 (CSL Behring)
-- Jacob Rosmarin (Viveka Health)
-
-Each quote will be slightly trimmed if needed so the blurb stays compact (1–3 lines on desktop).
-
-### Technical notes
-
-- Edit `src/components/Collab.tsx`: add a `useState` index, a `quotes` array, prev/next handlers, and render the carousel block after the existing CTA `<Link>`.
-- Use existing tokens only: `text-foreground`, `text-muted-foreground`, `border-border`, `bg-foreground/5`. No raw colors.
-- Arrow buttons: `w-9 h-9 rounded-full border border-border hover:bg-foreground/5`, `ChevronLeft` / `ChevronRight` from `lucide-react` at `size={14}`.
-- Animate quote swaps with `key={activeIndex}` + `animate-fade-in` on the blockquote.
-- Keep the section's existing `bg-background` and `py-16 md:py-24` rhythm — no new section, just an inner block.
-- Delete `src/components/Testimonials.tsx` since it's no longer imported anywhere.
+- Dark section occupies ~100vh, vertically centered content.
+- Each of the three philosophy items (User-Centered, Purposeful, Iterative) gets roughly 2× the previous vertical space, separated by the existing thin dividers.
+- No color/token changes — still dark theme via `data-theme="dark"` and `bg-foreground`.
 
 ### Files changed
 
-- `src/components/Collab.tsx` — add carousel under CTA
-- `src/components/Testimonials.tsx` — delete (orphaned)
+- `src/components/AboutSection.tsx`
