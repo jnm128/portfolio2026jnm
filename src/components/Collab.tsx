@@ -57,6 +57,9 @@ const Collab: React.FC<CollabProps> = ({ className }) => {
                     Get in Touch
                   </Link>
                 </div>
+                <div className="mt-8 flex justify-center">
+                  <Pill text={belowCtaPill.text} author={belowCtaPill.author} />
+                </div>
               </div>
             </FadeIn>
 
