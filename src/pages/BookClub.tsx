@@ -200,7 +200,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-background text-
 
       {/* Section 2 — Who We Are */}
       <section data-theme="dark" className="py-16 md:py-20 bg-foreground">
-        <div className="max-w-4xl mx-auto px-5 md:px-16">
+        <div className="mx-auto px-5 md:px-16 max-w-[1600px]">
           <FadeIn>
             <h2 className="text-sm font-medium uppercase tracking-widest text-background/60 mb-6">Who We Are</h2>
           </FadeIn>
@@ -298,10 +298,10 @@ className="inline-flex items-center justify-center px-6 py-3 bg-background text-
         <div className="mx-auto px-5 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col gap-6 items-center text-center">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-foreground">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium leading-tight text-foreground max-w-5xl">
                 Ready to read with us?
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground font-serif leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground font-serif leading-relaxed max-w-2xl">
                 Join a community of UX professionals who believe that great designers are also great thinkers.
               </p>
               <div className="mt-4">
