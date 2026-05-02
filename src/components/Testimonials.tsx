@@ -39,25 +39,25 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
   const next = () => setActiveIndex((i) => (i + 1) % testimonials.length);
 
   return (
-    <div id="testimonials" className={cn('py-16 md:py-24 bg-background', className)} data-theme="dark">
+    <div id="testimonials" className={cn('py-16 md:py-24 bg-background', className)}>
       <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
-        <div className="rounded-2xl bg-foreground p-8 md:p-16 lg:p-20">
+        <div className="rounded-2xl bg-card-gradient p-8 md:p-16 lg:p-20">
           {/* Section Label + Arrows */}
           <FadeIn>
             <div className="flex items-center justify-between mb-10">
-              <h2 className="text-xs uppercase tracking-widest text-background/60">In Their Words</h2>
+              <h2 className="text-xs uppercase tracking-widest text-muted-foreground">In Their Words</h2>
               <div className="flex items-center gap-2">
                 <button
                   onClick={prev}
-                  className="w-10 h-10 rounded-full bg-background/10 border border-background/20 flex items-center justify-center hover:bg-background/20 transition-colors"
+                  className="w-10 h-10 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center hover:bg-foreground/10 transition-colors"
                 >
-                  <ChevronLeft size={16} className="text-background/80" />
+                  <ChevronLeft size={16} className="text-foreground/80" />
                 </button>
                 <button
                   onClick={next}
-                  className="w-10 h-10 rounded-full bg-background/10 border border-background/20 flex items-center justify-center hover:bg-background/20 transition-colors"
+                  className="w-10 h-10 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center hover:bg-foreground/10 transition-colors"
                 >
-                  <ChevronRight size={16} className="text-background/80" />
+                  <ChevronRight size={16} className="text-foreground/80" />
                 </button>
               </div>
             </div>
@@ -68,18 +68,18 @@ const Testimonials: React.FC<TestimonialsProps> = ({ className }) => {
             <div>
               <blockquote
                 key={activeIndex}
-                className="font-serif text-3xl md:text-5xl lg:text-6xl leading-tight text-background mb-10 animate-fade-in"
+                className="font-serif text-3xl md:text-5xl lg:text-6xl leading-tight text-foreground mb-10 animate-fade-in"
               >
                 "{current.quote}"
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-background/10 border border-background/20 flex items-center justify-center text-sm text-background/80 font-medium">
+                  <div className="w-10 h-10 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center text-sm text-foreground/80 font-medium">
                     {current.initials}
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-background">{current.author}</p>
-                    <p className="text-xs text-background/60">{current.role}</p>
+                    <p className="text-sm font-medium text-foreground">{current.author}</p>
+                    <p className="text-xs text-muted-foreground">{current.role}</p>
                   </div>
                 </div>
               </div>
