@@ -19,15 +19,15 @@ const Section: React.FC<{ label: string; eyebrow: string; items: typeof freelanc
   <div>
     <h2 className="text-base font-semibold text-foreground mb-1">{label}</h2>
     <p className="text-sm text-muted-foreground font-serif mb-6">{eyebrow}</p>
-    <ul className="space-y-6">
+    <ul className="space-y-8">
       {items.map((item) => (
-        <li key={item.title} className="flex items-baseline gap-4">
-          <span className="text-sm font-serif italic text-muted-foreground tracking-wider w-8 shrink-0">
+        <li key={item.title} className="flex items-baseline gap-6">
+          <span className="text-base font-serif italic text-muted-foreground tracking-[0.15em] w-6 shrink-0 leading-snug tabular-nums">
             {item.numeral}
           </span>
-          <div>
+          <div className="flex-1">
             <p className="text-base text-foreground font-serif leading-snug">{item.title}</p>
-            <p className="text-sm text-muted-foreground font-serif mt-1">{item.detail}</p>
+            <p className="text-sm text-muted-foreground font-serif mt-1.5 leading-relaxed">{item.detail}</p>
           </div>
         </li>
       ))}
