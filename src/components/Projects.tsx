@@ -10,20 +10,23 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ className }) => {
   const projects = [
     {
-      title: "Shipping colleague facing design experience with CVS Health",
-      description: "Led end-to-end product design for an internal tools platform, reducing user errors by 40% and increasing task completion rates across key workflows.",
+      brand: "CVS Health",
+      year: "2024",
+      description: "Shipping colleague-facing design experience to reduce user errors and improve task completion across key workflows.",
       image: "/lovable-uploads/a7d983f9-a76f-43f1-9194-818eb65ae31f.jpg",
       link: "/case-study/cvs-health",
     },
     {
-      title: "Building cost transparency between families, insurance and businesses with Viveka Health",
-      description: "Designed a transparent pricing experience that bridges families, insurers, and providers — improving cost clarity by 60% and reducing support tickets by 35%.",
+      brand: "Viveka Health",
+      year: "2023",
+      description: "Building cost transparency between families, insurance, and businesses — improving cost clarity and reducing support tickets.",
       image: "/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png",
       link: "/case-study/artisan-marketplace",
     },
     {
-      title: "Modernizing medicine adherence from web to native mobile with Tappt Health",
-      description: "Led the migration of a web-based medication adherence platform to a native mobile experience for Synchronyx, improving patient engagement and daily active usage by 50%.",
+      brand: "Tappt Health",
+      year: "2022",
+      description: "Modernizing medicine adherence from web to native mobile, improving patient engagement and daily active usage.",
       image: "/lovable-uploads/tappt-health-project.png",
       link: "/case-study/creative-studio",
     }
@@ -36,34 +39,26 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           <p className="text-xs uppercase tracking-widest text-muted-foreground">Selected Work</p>
         </div>
 
-        <div className="flex flex-col gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16">
           {projects.map((project, index) => (
-            <FadeIn key={project.title} delay={index * 50} duration={500} threshold={0.05}>
-              <div className="bg-card-gradient rounded-2xl p-4 md:p-6 md:min-h-[calc(100vh-8rem)] flex items-center">
-                <div className={cn(
-                  "flex flex-col gap-6 md:gap-8 w-full",
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                )}>
-                  <Link to={project.link} className="md:w-3/4">
-                    <div className="rounded-2xl overflow-hidden">
-                      <img src={project.image} alt={project.title} className="w-full aspect-[4/3] object-cover" />
-                    </div>
-                  </Link>
-                  <div className="md:w-1/4 flex flex-col justify-center">
-                    <Link to={project.link}>
-                      <h3 className="text-xl md:text-2xl lg:text-3xl font-serif font-medium leading-snug mb-6 hover:text-muted-foreground transition-colors">
-                        {project.title}
-                      </h3>
-                    </Link>
-                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
-                      {project.description}
-                    </p>
-                    <Link to={project.link} className="text-sm font-medium text-accent hover:opacity-70 transition-opacity inline-flex items-center gap-1">
-                      View case study →
-                    </Link>
+            <FadeIn key={project.brand} delay={index * 50} duration={500} threshold={0.05}>
+              <Link to={project.link} className="group block">
+                <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
+                  <img
+                    src={project.image}
+                    alt={`${project.brand} case study`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                  <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 px-4 py-2 bg-background rounded-full shadow-sm">
+                    <span className="text-sm font-medium text-foreground">{project.brand}</span>
+                    <span className="text-sm text-hint">·</span>
+                    <span className="text-sm text-hint">{project.year}</span>
                   </div>
                 </div>
-              </div>
+                <p className="mt-4 text-base text-hint leading-relaxed">
+                  {project.description}
+                </p>
+              </Link>
             </FadeIn>
           ))}
         </div>
