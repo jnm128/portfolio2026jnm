@@ -21,7 +21,7 @@ const CaseStudyProgressBar = () => {
 
   return (
     <div
-      className="absolute bottom-0 left-0 h-[2px] bg-foreground transition-all duration-150"
+      className="fixed top-0 left-0 h-[2px] bg-foreground transition-all duration-150 z-[70]"
       style={{ width: `${progress}%` }}
     />
   );

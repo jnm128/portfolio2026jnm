@@ -375,9 +375,9 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             </button>
           </div>
         </div>
-        {isCaseStudy && <CaseStudyProgressBar />}
       </header>
-      
+      {isCaseStudy && <CaseStudyProgressBar />}
+
       {/* Mobile Menu */}
       <div
         className={cn(
