@@ -237,6 +237,21 @@ export default {
 						opacity: '1',
 						transform: 'scale(1)'
 					}
+				},
+				'drift-1': {
+					'0%, 100%': { transform: 'translate(0, 0) rotate(-2deg)' },
+					'25%': { transform: 'translate(12px, -10px) rotate(2deg)' },
+					'50%': { transform: 'translate(-8px, -16px) rotate(-3deg)' },
+					'75%': { transform: 'translate(-14px, 6px) rotate(1deg)' }
+				},
+				'drift-2': {
+					'0%, 100%': { transform: 'translate(0, 0) rotate(2deg)' },
+					'33%': { transform: 'translate(-14px, 12px) rotate(-2deg)' },
+					'66%': { transform: 'translate(16px, 8px) rotate(3deg)' }
+				},
+				'drift-3': {
+					'0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
+					'50%': { transform: 'translate(6px, -18px) rotate(-2deg)' }
 				}
 			},
 			animation: {
@@ -254,7 +269,10 @@ export default {
 				'slide-in-left': 'slide-in-left 0.4s ease-out forwards',
 				'cursor-pulse': 'cursor-pulse 0.15s ease-out',
 				'page-enter': 'page-enter 0.4s ease-out forwards',
-				'pop-in': 'pop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
+				'pop-in': 'pop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+				'drift-1': 'drift-1 7s ease-in-out infinite',
+				'drift-2': 'drift-2 9s ease-in-out infinite',
+				'drift-3': 'drift-3 6s ease-in-out infinite'
 		}
 		}
 	},
