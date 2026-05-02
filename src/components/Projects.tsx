@@ -13,7 +13,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       brand: "CVS Health",
       year: "2024",
       description: "Shipping colleague-facing design experience to reduce user errors and improve task completion across key workflows.",
-      image: "/lovable-uploads/a7d983f9-a76f-43f1-9194-818eb65ae31f.jpg",
+      image: "/lovable-uploads/cvs-health-card.png",
       link: "/case-study/cvs-health",
     },
     {
@@ -34,7 +34,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       brand: "Mindful Wellness",
       year: "2021",
       description: "Designing a calming meditation experience that helps users build sustainable mindfulness habits through guided sessions.",
-      image: "/lovable-uploads/a7d983f9-a76f-43f1-9194-818eb65ae31f.jpg",
+      image: "/lovable-uploads/mindful-wellness-card.png",
       link: "/case-study/mindful-wellness",
     }
   ];
