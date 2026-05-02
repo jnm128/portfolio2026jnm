@@ -52,21 +52,48 @@ const Collab: React.FC<CollabProps> = ({ className }) => {
                 Get in Touch
               </Link>
             </div>
+          </div>
+        </FadeIn>
 
-            {/* Mini testimonial carousel */}
-            <div className="w-full max-w-2xl mt-12 md:mt-16">
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-5">
-                What others say
-              </p>
-              <blockquote
+        {/* Testimonials — 3-across grid on desktop, carousel on mobile */}
+        <FadeIn delay={100}>
+          <div className="mt-8 md:mt-12">
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-8 text-center">
+              What others say
+            </p>
+
+            {/* Desktop grid */}
+            <div className="hidden md:grid grid-cols-3 gap-6">
+              {quotes.map((q) => (
+                <div
+                  key={q.quote}
+                  className="rounded-2xl bg-card p-8 border border-border flex flex-col text-left"
+                >
+                  <blockquote className="font-serif italic text-base lg:text-lg text-foreground leading-relaxed flex-1">
+                    "{q.quote}"
+                  </blockquote>
+                  <div className="mt-6 pt-6 border-t border-border">
+                    <p className="text-sm font-medium text-foreground">{q.author}</p>
+                    <p className="text-xs text-hint mt-1">{q.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile carousel */}
+            <div className="md:hidden">
+              <div
                 key={activeIndex}
-                className="font-serif italic text-base md:text-lg text-foreground leading-relaxed animate-fade-in"
+                className="rounded-2xl bg-card p-6 border border-border text-left animate-fade-in"
               >
-                "{current.quote}"
-              </blockquote>
-              <p className="mt-4 text-sm text-muted-foreground">
-                — {current.author}, {current.role}
-              </p>
+                <blockquote className="font-serif italic text-base text-foreground leading-relaxed">
+                  "{current.quote}"
+                </blockquote>
+                <div className="mt-5 pt-5 border-t border-border">
+                  <p className="text-sm font-medium text-foreground">{current.author}</p>
+                  <p className="text-xs text-hint mt-1">{current.role}</p>
+                </div>
+              </div>
 
               <div className="flex items-center justify-center gap-4 mt-6">
                 <button
