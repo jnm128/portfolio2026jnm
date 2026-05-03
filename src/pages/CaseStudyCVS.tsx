@@ -84,15 +84,15 @@ const CaseStudyCVS: React.FC = () => {
             <FadeIn delay={100}>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div className="bg-section rounded-2xl p-6">
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-2">40%</p>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-title mb-2">40%</p>
                   <p className="text-sm text-hint">Reduction in task completion time</p>
                 </div>
                 <div className="bg-section rounded-2xl p-6">
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-2">3x</p>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-title mb-2">3x</p>
                   <p className="text-sm text-hint">Faster onboarding for new team members</p>
                 </div>
                 <div className="bg-section rounded-2xl p-6">
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-2">12+</p>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-title mb-2">12+</p>
                   <p className="text-sm text-hint">Workflows redesigned end-to-end</p>
                 </div>
               </div>
@@ -116,15 +116,15 @@ const CaseStudyCVS: React.FC = () => {
             <FadeIn delay={100}>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div className="bg-section rounded-2xl p-6">
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-2">60%</p>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-title mb-2">60%</p>
                   <p className="text-sm text-hint">Less time spent on manual verification</p>
                 </div>
                 <div className="bg-section rounded-2xl p-6">
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-2">2x</p>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-title mb-2">2x</p>
                   <p className="text-sm text-hint">Increase in verification accuracy</p>
                 </div>
                 <div className="bg-section rounded-2xl p-6">
-                  <p className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-2">8</p>
+                  <p className="text-3xl md:text-4xl font-serif font-medium text-title mb-2">8</p>
                   <p className="text-sm text-hint">Key workflows streamlined</p>
                 </div>
               </div>

@@ -123,19 +123,19 @@ const BookClub: React.FC = () => {
                 </p>
                 <div className="hidden lg:grid border-t border-foreground/10 py-4 grid-cols-4 gap-3 md:gap-8">
                   <div>
-                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">2023</div>
+                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">2023</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Est.</div>
                   </div>
                   <div>
-                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">486+</div>
+                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">486+</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Members</div>
                   </div>
                   <div>
-                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">8+</div>
+                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">8+</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Books</div>
                   </div>
                   <div>
-                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">Monthly</div>
+                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">Monthly</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Sessions</div>
                   </div>
                 </div>
@@ -156,19 +156,19 @@ className="inline-flex items-center justify-center px-6 py-3 bg-background text-
               </div>
               <div className="lg:hidden w-full border-t border-foreground/10 py-4 grid grid-cols-4 gap-3 md:gap-8">
                 <div>
-                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">2023</div>
+                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">2023</div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Est.</div>
                 </div>
                 <div>
-                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">486+</div>
+                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">486+</div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Members</div>
                 </div>
                 <div>
-                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">8+</div>
+                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">8+</div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Books</div>
                 </div>
                 <div>
-                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">Monthly</div>
+                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">Monthly</div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Sessions</div>
                 </div>
               </div>
@@ -385,7 +385,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-background text-
               </div>
               <div className="p-6 pt-4">
                 <DialogHeader className="mb-4">
-                  <DialogTitle className="text-xl font-serif font-medium text-foreground">
+                  <DialogTitle className="text-xl font-serif font-medium text-title">
                     {selectedBook.title}
                   </DialogTitle>
                   <p className="text-sm text-muted-foreground font-serif">{selectedBook.author}</p>

@@ -161,15 +161,15 @@ const CaseStudyMindfulWellness = () => {
           <SplitSection label="Results">
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <div>
-                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">150%</div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-title mb-2">150%</div>
                 <p className="text-muted-foreground">Increase in user engagement</p>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">89%</div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-title mb-2">89%</div>
                 <p className="text-muted-foreground">User satisfaction score</p>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">3.2k</div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-title mb-2">3.2k</div>
                 <p className="text-muted-foreground">Active users in first month</p>
               </div>
             </div>
