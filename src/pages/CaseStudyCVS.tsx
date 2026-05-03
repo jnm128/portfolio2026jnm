@@ -48,11 +48,11 @@ const CaseStudyCVS: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={200}>
-            <div className="overflow-hidden rounded-2xl mt-10 md:mt-12 max-w-3xl mx-auto">
+            <div className="overflow-hidden rounded-2xl mt-10 md:mt-12">
               <img
                 src={cvsHero}
                 alt="CVS Health case study"
-                className="w-full object-cover aspect-[16/10]"
+                className="w-full object-cover aspect-[4/3] md:aspect-[16/10]"
               />
             </div>
           </FadeIn>
@@ -132,40 +132,24 @@ const CaseStudyCVS: React.FC = () => {
       {/* Curious to learn more CTA — matches Collab style */}
       <section data-theme="dark" className="pt-16 md:pt-24 pb-16 md:pb-24 bg-foreground">
         <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
-          <div className="flex flex-col items-center text-center">
-            <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
-              <FadeIn delay={100} className="hidden md:block flex-shrink-0">
-                <div className="rounded-full bg-background/10 backdrop-blur-md px-4 py-2 text-xs sm:text-sm text-background/85 max-w-[280px]">
-                  <span>"Curious about the process behind the work."</span>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={150} className="flex-1 max-w-3xl">
-                <div className="flex flex-col items-center">
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-background">
-                    Curious to learn more?
-                  </h2>
-                  <p className="mt-6 text-lg md:text-xl text-background/60 font-serif leading-relaxed">
-                    Happy to walk you through the work, decisions, and outcomes in more detail.
-                  </p>
-                  <div className="mt-10">
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center px-6 py-3 rounded-full bg-background text-foreground font-medium hover:opacity-90 transition-opacity"
-                    >
-                      Let's Chat
-                    </Link>
-                  </div>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={200} className="hidden md:block flex-shrink-0">
-                <div className="rounded-full bg-background/10 backdrop-blur-md px-4 py-2 text-xs sm:text-sm text-background/85 max-w-[280px]">
-                  <span>"Happy to share what I can over a chat."</span>
-                </div>
-              </FadeIn>
+          <FadeIn>
+            <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-background">
+                Curious to learn more?
+              </h2>
+              <p className="mt-6 text-lg md:text-xl text-background/60 font-serif leading-relaxed">
+                Happy to walk you through the work, decisions, and outcomes in more detail.
+              </p>
+              <div className="mt-10">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center px-6 py-3 rounded-full bg-background text-foreground font-medium hover:opacity-90 transition-opacity"
+                >
+                  Let's Chat
+                </Link>
+              </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
