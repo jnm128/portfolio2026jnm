@@ -27,6 +27,24 @@ const CaseStudyCreativeStudio = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-4 py-6 border-y border-border mb-10">
+              {[
+                { label: 'Client', value: 'Lumina Creative Studio' },
+                { label: 'Industry', value: 'Creative Services' },
+                { label: 'Category', value: 'Brand Identity' },
+                { label: 'My Role', value: 'Lead Designer' },
+                { label: 'Team', value: '1 Strategist, 1 Developer' },
+                { label: 'Timeline', value: '6 weeks' },
+              ].map((item) => (
+                <div key={item.label}>
+                  <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{item.label}</p>
+                  <p className="text-sm font-medium">{item.value}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={150}>
             <h1 className="text-3xl md:text-5xl font-serif font-medium text-foreground leading-tight mb-2">
               Creative Studio
             </h1>
@@ -45,40 +63,6 @@ const CaseStudyCreativeStudio = () => {
             </div>
           </FadeIn>
 
-        </div>
-      </section>
-
-      {/* TLDR */}
-      <section className="py-12 md:py-20 bg-background">
-        <div className="container mx-auto px-5 md:px-16">
-          <SplitSection label="TLDR">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
-              <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Client</p>
-                <p className="text-base font-medium">Lumina Creative Studio</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Category</p>
-                <p className="text-base font-medium">Brand Identity</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Industry</p>
-                <p className="text-base font-medium">Creative Services</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Responsibilities</p>
-                <p className="text-base font-medium">Brand Strategy, Web Design</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">My Role</p>
-                <p className="text-base font-medium">Lead Designer</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Timeline</p>
-                <p className="text-base font-medium">6 weeks</p>
-              </div>
-            </div>
-          </SplitSection>
         </div>
       </section>
 
