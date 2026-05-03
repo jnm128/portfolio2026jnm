@@ -67,22 +67,13 @@ const CaseStudyNav: React.FC<CaseStudyNavProps> = ({ currentSlug, variant = 'lig
     >
       <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
         <FadeIn>
-          <div className="mb-10 md:mb-14">
-            <p
-              className={`text-xs uppercase tracking-widest mb-3 ${
-                isDark ? 'text-background/50' : 'text-muted-foreground'
-              }`}
-            >
-              Check out more case studies
-            </p>
-            <h2
-              className={`text-2xl md:text-3xl font-medium ${
-                isDark ? 'text-background' : 'text-foreground'
-              }`}
-            >
-              More case studies
-            </h2>
-          </div>
+          <p
+            className={`text-xs uppercase tracking-widest mb-10 md:mb-14 ${
+              isDark ? 'text-background/50' : 'text-muted-foreground'
+            }`}
+          >
+            Check out more case studies
+          </p>
         </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
