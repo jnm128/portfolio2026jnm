@@ -58,7 +58,7 @@ const CaseStudyCreativeStudio = () => {
               <img 
                 src="/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
                 alt="Creative Studio Brand Identity" 
-                className="w-full object-cover aspect-[4/3] md:aspect-[16/10]"
+                className="w-full object-cover aspect-[16/9] md:aspect-[21/9]"
               />
             </div>
           </FadeIn>
