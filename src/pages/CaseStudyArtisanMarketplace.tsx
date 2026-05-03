@@ -27,7 +27,16 @@ const CaseStudyArtisanMarketplace = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-4 py-6 border-y border-border mb-10">
+            <h1 className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-2">
+              Artisan Marketplace
+            </h1>
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
+              E-commerce platform for local artisans to showcase and sell their handcrafted products online.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={150}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-4 mt-10">
               {[
                 { label: 'Client', value: 'Artisan Collective' },
                 { label: 'Industry', value: 'Retail & Crafts' },
@@ -42,15 +51,6 @@ const CaseStudyArtisanMarketplace = () => {
                 </div>
               ))}
             </div>
-          </FadeIn>
-
-          <FadeIn delay={150}>
-            <h1 className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-2">
-              Artisan Marketplace
-            </h1>
-            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
-              E-commerce platform for local artisans to showcase and sell their handcrafted products online.
-            </p>
           </FadeIn>
 
           <FadeIn delay={200}>
