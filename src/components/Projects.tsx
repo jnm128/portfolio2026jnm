@@ -33,9 +33,9 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       link: "/case-study/creative-studio",
     },
     {
-      brand: "Mindful Wellness",
-      year: "2021",
-      description: "Designing a calming meditation experience that helps users build sustainable mindfulness habits through guided sessions.",
+      brand: "Gordon Center",
+      year: "2024",
+      description: "User testing and UX design enhancements to the Gordon Center's Essential Cardiac Auscultation web e-learning platform for medical students.",
       image: "/lovable-uploads/mindful-wellness-card.png",
       link: "/case-study/mindful-wellness",
     }
