@@ -16,6 +16,7 @@ import WorkExperience from "./pages/WorkExperience";
 import Work from "./pages/Work";
 import CustomCursor from "./components/CustomCursor";
 import ScrollToTop from "./components/ScrollToTop";
+import SmoothScroll from "./components/SmoothScroll";
 import PageTransition from "./components/PageTransition";
 import Header from "./components/Header";
 
@@ -28,6 +29,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <SmoothScroll />
         <ScrollToTop />
         <Header />
         <PageTransition>
