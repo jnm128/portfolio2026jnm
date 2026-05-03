@@ -107,7 +107,7 @@ const CustomCursor = () => {
       ref={cursorRef}
       className={`fixed top-0 left-0 pointer-events-none z-[9999] will-change-transform ${
         isOnDark ? 'bg-background' : 'bg-foreground'
-      } transition-[width,height,opacity,background-color,transform] duration-150 ease-out ${styles.className} ${
+      } transition-[width,height,opacity,background-color] duration-150 ease-out ${styles.className} ${
         isClicking ? 'animate-cursor-pulse' : ''
       } ${isVisible ? 'opacity-100' : 'opacity-0'}`}
       style={{ width: styles.width, height: styles.height }}
