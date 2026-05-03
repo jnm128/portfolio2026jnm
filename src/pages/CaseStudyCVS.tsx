@@ -5,7 +5,7 @@ import FadeIn from '@/components/animations/FadeIn';
 import SplitSection from '@/components/SplitSection';
 import CaseStudyNav from '@/components/CaseStudyNav';
 import Footer from '@/components/Footer';
-import cvsHero from '@/assets/cvs-hero.jpg';
+import cvsHeroVideo from '@/assets/cvs-hero.mp4';
 
 const CaseStudyCVS: React.FC = () => {
   const navigate = useNavigate();
@@ -49,9 +49,14 @@ const CaseStudyCVS: React.FC = () => {
 
           <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-10 md:mt-12">
-              <img
-                src={cvsHero}
-                alt="CVS Health case study"
+              <video
+                src={cvsHeroVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                aria-label="CVS Health case study"
                 className="w-full object-cover aspect-[16/9] md:aspect-[21/9]"
               />
             </div>
