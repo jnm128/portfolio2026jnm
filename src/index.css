@@ -71,6 +71,7 @@
   .dark {
     --background: 26 24% 6%;           /* #130F0C */
     --foreground: 36 24% 92%;          /* #F0ECE6 */
+    --title: 36 24% 92%;               /* same as foreground in dark — keep titles legible */
 
     --section: 25 24% 10%;             /* #1F1813 */
 
