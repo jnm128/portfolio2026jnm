@@ -152,7 +152,7 @@ const AboutPage = () => {
                   </div>
                   <div className="border-t border-background/15 py-10">
                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="group flex flex-col md:flex-row gap-6 items-start">
-                      <div className="w-full md:w-64 shrink-0 rounded-lg overflow-hidden aspect-[16/10]">
+                      <div className="w-full md:w-96 shrink-0 rounded-lg overflow-hidden aspect-[16/10]">
                         <img
                           src={speakingUF}
                           alt="Guest speaker at University of Florida's Gator Design student org"
