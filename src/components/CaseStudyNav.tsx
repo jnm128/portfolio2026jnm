@@ -5,13 +5,13 @@ import FadeIn from './animations/FadeIn';
 const caseStudies = [
   {
     slug: 'mindful-wellness',
-    title: 'Mindful Wellness',
+    title: 'Gordon Center',
     path: '/case-study/mindful-wellness',
-    brand: 'Mindful Wellness',
-    year: '2021',
+    brand: 'Gordon Center',
+    year: '2024',
     image: '/lovable-uploads/mindful-wellness-card.png',
     description:
-      'Designing a calming meditation experience that helps users build sustainable mindfulness habits through guided sessions.',
+      "User testing and UX design enhancements to the Gordon Center's Essential Cardiac Auscultation web e-learning platform for medical students.",
   },
   {
     slug: 'artisan-marketplace',
