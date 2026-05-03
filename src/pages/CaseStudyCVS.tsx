@@ -1,10 +1,11 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { ArrowLeft, ShieldOff } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import FadeIn from '@/components/animations/FadeIn';
 import SplitSection from '@/components/SplitSection';
 import CaseStudyNav from '@/components/CaseStudyNav';
 import Footer from '@/components/Footer';
+import cvsHero from '@/assets/cvs-hero.jpg';
 
 const CaseStudyCVS: React.FC = () => {
   const navigate = useNavigate();
@@ -24,24 +25,48 @@ const CaseStudyCVS: React.FC = () => {
             </button>
           </FadeIn>
 
-          <FadeIn delay={200}>
-            <div className="flex flex-col items-center justify-center py-20 md:py-28 text-center">
-              <div className="w-16 h-16 rounded-full bg-foreground/5 flex items-center justify-center mb-6">
-                <ShieldOff size={28} className="text-muted-foreground" />
-              </div>
-              <h2 className="text-2xl md:text-4xl font-serif font-medium text-foreground mb-4">
-                Oops! This one's under wraps
-              </h2>
-              <p className="text-sm md:text-base text-muted-foreground max-w-xl mb-8 leading-relaxed">
-                I'm tied to an NDA so I can't share visuals from my work at CVS Health — but I'd be happy to chat about it. Here's what I can tell you:
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full text-base font-medium hover:opacity-90 transition-opacity"
-              >
-                Let's Chat
-              </Link>
+          <FadeIn delay={100}>
+            <h1 className="text-4xl md:text-6xl font-serif text-foreground leading-tight mb-10">
+              CVS Health
+            </h1>
+          </FadeIn>
+
+          <FadeIn delay={150}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 pb-8 border-b border-border">
+              {[
+                { label: 'Timeline', value: 'Jan 2023 – Present' },
+                { label: 'Role', value: 'Product Design' },
+                { label: 'Org', value: 'Specialty Pharmacy' },
+                { label: 'With', value: 'PMs, Engineers, Pharmacists' },
+              ].map((item) => (
+                <div key={item.label}>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">{item.label}</p>
+                  <p className="text-sm md:text-base font-medium whitespace-pre-line">{item.value}</p>
+                </div>
+              ))}
             </div>
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <div className="overflow-hidden rounded-2xl mt-10 md:mt-12">
+              <img
+                src={cvsHero}
+                alt="CVS Health case study"
+                className="w-full object-cover aspect-[4/3] md:aspect-[16/10]"
+              />
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={250}>
+            <p className="mt-10 text-sm md:text-base text-muted-foreground max-w-2xl leading-relaxed">
+              I'm tied to an NDA so I can't share visuals from my work at CVS Health — but I'd be happy to chat about it. Here's what I can tell you:
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-foreground text-background rounded-full text-base font-medium hover:opacity-90 transition-opacity"
+            >
+              Let's Chat
+            </Link>
           </FadeIn>
         </div>
       </section>
