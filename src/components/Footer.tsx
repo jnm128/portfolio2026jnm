@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Leaf } from 'lucide-react';
+import { Leaf, MapPin } from 'lucide-react';
 
 interface FooterProps {
   className?: string;
 }
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
+  const [time, setTime] = useState('');
+
+  useEffect(() => {
+    const update = () => {
+      setTime(
+        new Intl.DateTimeFormat('en-US', {
+          timeZone: 'America/New_York',
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true,
+        }).format(new Date())
+      );
+    };
+    update();
+    const id = setInterval(update, 30_000);
+    return () => clearInterval(id);
+  }, []);
+
   const scrollToSection = (id: string) => {
     if (id === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -57,6 +75,12 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         <div className="mt-8 md:mt-12 pt-6 border-t border-background/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
           <p className="text-xs text-background/50">
             &copy; {new Date().getFullYear()} Joanna Minott. All rights reserved.
+          </p>
+          <p className="flex items-center gap-2 text-xs text-background/50">
+            <MapPin className="w-3 h-3" />
+            <span>Miami, FL</span>
+            <span className="text-background/30">·</span>
+            <span>{time} local</span>
           </p>
           <p className="flex items-center gap-1 text-xs text-background/40">
             made with <Leaf className="w-3 h-3" /> matcha
