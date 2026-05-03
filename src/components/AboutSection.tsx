@@ -20,7 +20,7 @@ const AboutSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="about" data-theme="dark" className="min-h-screen flex items-center py-24 md:py-40 bg-foreground">
+    <section id="about" data-theme="dark" className="min-h-screen flex items-center pt-24 md:pt-40 pb-12 md:pb-16 bg-foreground">
       <div className="container mx-auto px-5 md:px-16 max-w-[1600px] w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
           {/* Left Column — Title & Helper Text */}
