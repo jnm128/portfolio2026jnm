@@ -27,7 +27,16 @@ const CaseStudyCreativeStudio = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-4 py-6 border-y border-border mb-10">
+            <h1 className="text-3xl md:text-5xl font-serif font-medium text-foreground leading-tight mb-2">
+              Creative Studio
+            </h1>
+            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
+              Brand identity and web presence for a creative agency specializing in visual storytelling.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={150}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-4 mt-10">
               {[
                 { label: 'Client', value: 'Lumina Creative Studio' },
                 { label: 'Industry', value: 'Creative Services' },
@@ -42,15 +51,6 @@ const CaseStudyCreativeStudio = () => {
                 </div>
               ))}
             </div>
-          </FadeIn>
-
-          <FadeIn delay={150}>
-            <h1 className="text-3xl md:text-5xl font-serif font-medium text-foreground leading-tight mb-2">
-              Creative Studio
-            </h1>
-            <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
-              Brand identity and web presence for a creative agency specializing in visual storytelling.
-            </p>
           </FadeIn>
 
           <FadeIn delay={200}>
