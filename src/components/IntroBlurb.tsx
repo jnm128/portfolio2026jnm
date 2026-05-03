@@ -23,11 +23,24 @@ const IntroBlurb: React.FC<IntroBlurbProps> = ({ className }) => {
             <div className="relative overflow-hidden">
               <div className="flex animate-marquee-fast md:animate-marquee whitespace-nowrap items-center">
                 {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
-                  <img
+                  <div
                     key={index}
-                    src={logo.src}
-                    alt={logo.alt}
-                    className={cn(logo.height || "h-6 md:h-8", "w-auto px-6 md:px-12 object-contain grayscale brightness-0 opacity-60")}
+                    role="img"
+                    aria-label={logo.alt}
+                    className={cn(
+                      logo.height || "h-6 md:h-8",
+                      "w-24 md:w-32 mx-6 md:mx-12 bg-hint opacity-80 shrink-0"
+                    )}
+                    style={{
+                      WebkitMaskImage: `url(${logo.src})`,
+                      maskImage: `url(${logo.src})`,
+                      WebkitMaskRepeat: 'no-repeat',
+                      maskRepeat: 'no-repeat',
+                      WebkitMaskPosition: 'center',
+                      maskPosition: 'center',
+                      WebkitMaskSize: 'contain',
+                      maskSize: 'contain',
+                    }}
                   />
                 ))}
               </div>
