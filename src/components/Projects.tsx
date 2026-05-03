@@ -2,6 +2,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import FadeIn from './animations/FadeIn';
+import cvsHeroVideo from '@/assets/cvs-hero.mp4';
 
 interface ProjectsProps {
   className?: string;
@@ -14,6 +15,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       year: "2024",
       description: "Shipping colleague-facing design experience to reduce user errors and improve task completion across key workflows.",
       image: "/lovable-uploads/cvs-health-card.png",
+      video: cvsHeroVideo,
       link: "/case-study/cvs-health",
     },
     {
@@ -48,11 +50,24 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
             <FadeIn key={project.brand} delay={index * 50} duration={500} threshold={0.05}>
               <Link to={project.link} className="group block">
                 <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
-                  <img
-                    src={project.image}
-                    alt={`${project.brand} case study`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
+                  {('video' in project && (project as any).video) ? (
+                    <video
+                      src={(project as any).video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      aria-label={`${project.brand} case study`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={`${project.brand} case study`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  )}
                   <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 px-4 py-2 bg-background rounded-full shadow-sm">
                     <span className="text-sm font-medium text-foreground">{project.brand}</span>
                     <span className="text-sm text-hint">·</span>
