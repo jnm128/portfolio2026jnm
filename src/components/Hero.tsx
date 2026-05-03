@@ -87,7 +87,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                   aria-selected={active}
                   onClick={() => setAudience(tab.id)}
                   className={cn(
-                    'text-xs uppercase tracking-widest pb-1 border-b transition-colors',
+                    'text-xs uppercase tracking-widest pb-1 border-b-2 transition-colors',
                     active
                       ? 'text-foreground border-foreground'
                       : 'text-muted-foreground border-transparent hover:text-foreground hover:opacity-70'
