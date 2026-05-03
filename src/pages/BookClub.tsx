@@ -115,7 +115,7 @@ const BookClub: React.FC = () => {
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
               <div className="lg:w-1/2">
                 <img src={freshPerspectivesLogo} alt="Fresh Perspectives" className="w-10 h-10 rounded-lg mb-4" />
-                <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-4 leading-tight font-normal">
+                <h1 className="text-3xl md:text-5xl font-serif text-title mb-4 leading-tight font-normal">
                   fresh perspectives
                 </h1>
                 <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-4 max-w-xl">
@@ -123,19 +123,19 @@ const BookClub: React.FC = () => {
                 </p>
                 <div className="hidden lg:grid border-t border-foreground/10 py-4 grid-cols-4 gap-3 md:gap-8">
                   <div>
-                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">2023</div>
+                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">2023</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Est.</div>
                   </div>
                   <div>
-                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">486+</div>
+                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">486+</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Members</div>
                   </div>
                   <div>
-                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">8+</div>
+                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">8+</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Books</div>
                   </div>
                   <div>
-                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">Monthly</div>
+                    <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">Monthly</div>
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Sessions</div>
                   </div>
                 </div>
@@ -156,19 +156,19 @@ className="inline-flex items-center justify-center px-6 py-3 bg-background text-
               </div>
               <div className="lg:hidden w-full border-t border-foreground/10 py-4 grid grid-cols-4 gap-3 md:gap-8">
                 <div>
-                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">2023</div>
+                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">2023</div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Est.</div>
                 </div>
                 <div>
-                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">486+</div>
+                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">486+</div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Members</div>
                 </div>
                 <div>
-                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">8+</div>
+                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">8+</div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Books</div>
                 </div>
                 <div>
-                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-foreground">Monthly</div>
+                  <div className="text-lg md:text-2xl lg:text-3xl font-serif font-medium text-title">Monthly</div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground mt-1">Sessions</div>
                 </div>
               </div>
@@ -222,7 +222,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-background text-
         <div className="mx-auto px-5 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex items-end justify-between mb-6">
-              <h2 className="text-sm font-medium uppercase tracking-widest text-foreground/60">Previous Reads</h2>
+              <h2 className="text-sm font-medium uppercase tracking-widest text-title/60">Previous Reads</h2>
               <div className="hidden md:flex items-center gap-2">
                 <button
                   onClick={() => scrollCarousel('left')}
@@ -298,7 +298,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-background text-
         <div className="mx-auto px-5 md:px-16 max-w-[1600px]">
           <FadeIn>
             <div className="flex flex-col gap-6 items-center text-center">
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium leading-tight text-foreground max-w-5xl">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium leading-tight text-title max-w-5xl">
                 Ready to read with us?
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground font-serif leading-relaxed max-w-2xl">
@@ -385,7 +385,7 @@ className="inline-flex items-center justify-center px-6 py-3 bg-background text-
               </div>
               <div className="p-6 pt-4">
                 <DialogHeader className="mb-4">
-                  <DialogTitle className="text-xl font-serif font-medium text-foreground">
+                  <DialogTitle className="text-xl font-serif font-medium text-title">
                     {selectedBook.title}
                   </DialogTitle>
                   <p className="text-sm text-muted-foreground font-serif">{selectedBook.author}</p>

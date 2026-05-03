@@ -16,6 +16,7 @@
     */
     --background: 30 23% 95%;          /* #F5F2EE */
     --foreground: 25 25% 28%;          /* #5C4A3D — light brown body text */
+    --title: 25 28% 9%;                /* #1C1410 — near-black warm for headings */
 
     --section: 38 22% 91%;             /* #EDE9E3 */
 
@@ -70,6 +71,7 @@
   .dark {
     --background: 26 24% 6%;           /* #130F0C */
     --foreground: 36 24% 92%;          /* #F0ECE6 */
+    --title: 36 24% 92%;               /* same as foreground in dark — keep titles legible */
 
     --section: 25 24% 10%;             /* #1F1813 */
 
@@ -143,7 +145,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif tracking-tight;
+    @apply font-serif tracking-tight text-title;
   }
 }
 

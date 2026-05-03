@@ -42,7 +42,7 @@ const AboutPage = () => {
             <div className="max-w-4xl mx-auto px-5 md:px-16">
           <FadeIn>
               {/* Mobile-only title */}
-              <h1 className="text-3xl font-serif text-foreground mb-4 md:hidden">
+              <h1 className="text-3xl font-serif text-title mb-4 md:hidden">
                 About
               </h1>
 
@@ -60,7 +60,7 @@ const AboutPage = () => {
 
                 {/* Bio Text */}
                 <div className="flex flex-col justify-center md:col-span-2">
-                  <h1 className="hidden md:block text-3xl md:text-5xl font-serif text-foreground mb-4">
+                  <h1 className="hidden md:block text-3xl md:text-5xl font-serif text-title mb-4">
                     About
                   </h1>
                   <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">

@@ -27,7 +27,7 @@ const CaseStudyCreativeStudio = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <h1 className="text-3xl md:text-5xl font-serif font-medium text-foreground leading-tight mb-2">
+            <h1 className="text-3xl md:text-5xl font-serif font-medium text-title leading-tight mb-2">
               Creative Studio
             </h1>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
@@ -161,15 +161,15 @@ const CaseStudyCreativeStudio = () => {
           <SplitSection label="Results">
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <div>
-                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">300%</div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-title mb-2">300%</div>
                 <p className="text-muted-foreground">Increase in qualified leads</p>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">85%</div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-title mb-2">85%</div>
                 <p className="text-muted-foreground">Client retention rate</p>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">40%</div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-title mb-2">40%</div>
                 <p className="text-muted-foreground">Increase in project value</p>
               </div>
             </div>

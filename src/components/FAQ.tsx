@@ -50,7 +50,7 @@ const FAQ: React.FC<FAQProps> = ({ className }) => {
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         <FadeIn>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-6">
+            <h2 className="text-4xl md:text-5xl font-serif font-medium text-title mb-6">
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -67,7 +67,7 @@ const FAQ: React.FC<FAQProps> = ({ className }) => {
                   className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-section transition-colors"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <h3 className="text-lg font-medium text-foreground pr-4">
+                  <h3 className="text-lg font-medium text-title pr-4">
                     {faq.question}
                   </h3>
                   <ChevronDown 

@@ -27,7 +27,7 @@ const CaseStudyArtisanMarketplace = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <h1 className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-2">
+            <h1 className="text-3xl md:text-5xl font-serif text-title leading-tight mb-2">
               Artisan Marketplace
             </h1>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
@@ -160,15 +160,15 @@ const CaseStudyArtisanMarketplace = () => {
           <SplitSection label="Results">
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <div>
-                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">400%</div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-title mb-2">400%</div>
                 <p className="text-muted-foreground">Increase in artisan sales</p>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">50+</div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-title mb-2">50+</div>
                 <p className="text-muted-foreground">Artisans onboarded</p>
               </div>
               <div>
-                <div className="text-4xl md:text-5xl font-serif font-medium text-foreground mb-2">$250K</div>
+                <div className="text-4xl md:text-5xl font-serif font-medium text-title mb-2">$250K</div>
                 <p className="text-muted-foreground">Revenue generated in first year</p>
               </div>
             </div>

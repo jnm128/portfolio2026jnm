@@ -33,6 +33,7 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				title: 'hsl(var(--title))',
 				section: 'hsl(var(--section))',
 				hint: 'hsl(var(--hint))',
 				primary: {
