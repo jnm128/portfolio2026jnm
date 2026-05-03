@@ -129,6 +129,26 @@ const CaseStudyCVS: React.FC = () => {
         </div>
       </section>
 
+      {/* Curious to learn more CTA */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="container mx-auto max-w-3xl px-5 md:px-16 text-center">
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight mb-6">
+              Curious to learn more?
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto">
+              Happy to walk you through the work, decisions, and outcomes in more detail.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full text-base font-medium hover:opacity-90 transition-opacity"
+            >
+              Let's Chat
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
       <CaseStudyNav currentSlug="cvs-health" variant="dark" />
       <Footer />
     </main>
