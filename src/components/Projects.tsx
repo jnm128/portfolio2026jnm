@@ -1,41 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Link } from 'react-router-dom';
 import FadeIn from './animations/FadeIn';
+import CaseStudyOverlay from './CaseStudyOverlay';
 
 interface ProjectsProps {
   className?: string;
 }
 
 const Projects: React.FC<ProjectsProps> = ({ className }) => {
+  const [activeSlug, setActiveSlug] = useState<string | null>(null);
+
   const projects = [
     {
       brand: "CVS Health",
       year: "2024",
       description: "Shipping colleague-facing design experience to reduce user errors and improve task completion across key workflows.",
       image: "/lovable-uploads/cvs-health-card.png",
-      link: "/case-study/cvs-health",
+      slug: "cvs-health",
     },
     {
       brand: "Viveka Health",
       year: "2023",
       description: "Building cost transparency between families, insurance, and businesses — improving cost clarity and reducing support tickets.",
       image: "/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png",
-      link: "/case-study/artisan-marketplace",
+      slug: "artisan-marketplace",
     },
     {
       brand: "Tappt Health",
       year: "2022",
       description: "Modernizing medicine adherence from web to native mobile, improving patient engagement and daily active usage.",
       image: "/lovable-uploads/tappt-health-project.png",
-      link: "/case-study/creative-studio",
+      slug: "creative-studio",
     },
     {
       brand: "Mindful Wellness",
       year: "2021",
       description: "Designing a calming meditation experience that helps users build sustainable mindfulness habits through guided sessions.",
       image: "/lovable-uploads/mindful-wellness-card.png",
-      link: "/case-study/mindful-wellness",
+      slug: "mindful-wellness",
     }
   ];
 
@@ -46,7 +48,11 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16">
           {projects.map((project, index) => (
             <FadeIn key={project.brand} delay={index * 50} duration={500} threshold={0.05}>
-              <Link to={project.link} className="group block">
+              <button
+                type="button"
+                onClick={() => setActiveSlug(project.slug)}
+                className="group block w-full text-left"
+              >
                 <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
                   <img
                     src={project.image}
@@ -62,11 +68,13 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                 <p className="mt-4 text-base text-hint leading-relaxed">
                   {project.description}
                 </p>
-              </Link>
+              </button>
             </FadeIn>
           ))}
         </div>
       </div>
+
+      <CaseStudyOverlay slug={activeSlug} onClose={() => setActiveSlug(null)} />
     </section>
   );
 };
