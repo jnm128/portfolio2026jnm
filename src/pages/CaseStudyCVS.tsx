@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowDown } from 'lucide-react';
 import FadeIn from '@/components/animations/FadeIn';
 import SplitSection from '@/components/SplitSection';
 import CaseStudyNav from '@/components/CaseStudyNav';
@@ -13,7 +13,7 @@ const CaseStudyCVS: React.FC = () => {
   return (
     <main className="relative">
       {/* Hero Section */}
-      <section className="pt-20 md:pt-24 pb-10 md:pb-16 bg-background">
+      <section className="pt-20 md:pt-24 pb-32 md:pb-[40vh] bg-background">
         <div className="container mx-auto max-w-[1600px] px-5 md:px-16">
           <FadeIn>
             <button
@@ -59,8 +59,12 @@ const CaseStudyCVS: React.FC = () => {
 
           <FadeIn delay={250}>
             <p className="mt-10 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed text-center">
-              I'm tied to an NDA so I can't share visuals from my work at CVS Health — but I'd be happy to chat about it. Here's what I can tell you:
+              I'm tied to an NDA so I can't share visuals from my work at CVS Health — but I'd be happy to chat about it.
             </p>
+            <div className="mt-6 flex flex-col items-center gap-3 text-sm md:text-base text-muted-foreground">
+              <span>Here's what I can tell you</span>
+              <ArrowDown size={20} className="animate-bounce" />
+            </div>
           </FadeIn>
         </div>
       </section>
