@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { X, Maximize2 } from 'lucide-react';
 import CaseStudyArtisanMarketplace from '@/pages/CaseStudyArtisanMarketplace';
 import CaseStudyCreativeStudio from '@/pages/CaseStudyCreativeStudio';
 import CaseStudyMindfulWellness from '@/pages/CaseStudyMindfulWellness';
@@ -27,12 +28,34 @@ const CaseStudyOverlay: React.FC<CaseStudyOverlayProps> = ({ slug, onClose }) =>
       if (e.key === 'Escape') onClose();
     };
     document.addEventListener('keydown', onKey);
-    const original = document.body.style.overflow;
+
+    // Lock background scroll without layout shift
+    const scrollY = window.scrollY;
+    const originalOverflow = document.body.style.overflow;
+    const originalPosition = document.body.style.position;
+    const originalTop = document.body.style.top;
+    const originalWidth = document.body.style.width;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    const originalPaddingRight = document.body.style.paddingRight;
+
     document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
     if (scrollRef.current) scrollRef.current.scrollTop = 0;
+
     return () => {
       document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = original;
+      document.body.style.overflow = originalOverflow;
+      document.body.style.position = originalPosition;
+      document.body.style.top = originalTop;
+      document.body.style.width = originalWidth;
+      document.body.style.paddingRight = originalPaddingRight;
+      window.scrollTo(0, scrollY);
     };
   }, [slug, onClose]);
 
@@ -42,7 +65,7 @@ const CaseStudyOverlay: React.FC<CaseStudyOverlayProps> = ({ slug, onClose }) =>
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[150] bg-foreground/40 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-[150] bg-foreground/50 backdrop-blur-sm animate-in fade-in duration-200 flex items-center justify-center p-4 md:p-8"
       onClick={onClose}
       aria-modal="true"
       role="dialog"
@@ -50,16 +73,28 @@ const CaseStudyOverlay: React.FC<CaseStudyOverlayProps> = ({ slug, onClose }) =>
       <div
         ref={scrollRef}
         onClick={(e) => e.stopPropagation()}
-        className="absolute inset-x-2 top-2 bottom-2 md:inset-x-8 md:top-8 md:bottom-8 bg-background rounded-2xl overflow-y-auto overflow-x-hidden shadow-2xl animate-in zoom-in-95 slide-in-from-bottom-4 duration-300"
+        className="relative w-full max-w-5xl h-[85vh] bg-background rounded-2xl overflow-y-auto overflow-x-hidden overscroll-contain shadow-2xl animate-in zoom-in-95 slide-in-from-bottom-4 duration-300"
       >
-        <button
-          onClick={onClose}
-          aria-label="Close case study"
-          className="fixed md:absolute top-4 right-4 md:top-6 md:right-6 z-10 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:opacity-90 transition-opacity"
-        >
-          <X size={18} className="text-foreground" />
-        </button>
-        <Component />
+        <div className="sticky top-0 z-10 flex justify-end gap-2 p-3 pointer-events-none">
+          <Link
+            to={`/case-study/${slug}`}
+            onClick={onClose}
+            aria-label="Open full case study"
+            className="pointer-events-auto w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:opacity-90 transition-opacity"
+          >
+            <Maximize2 size={16} className="text-foreground" />
+          </Link>
+          <button
+            onClick={onClose}
+            aria-label="Close case study"
+            className="pointer-events-auto w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:opacity-90 transition-opacity"
+          >
+            <X size={18} className="text-foreground" />
+          </button>
+        </div>
+        <div className="-mt-16">
+          <Component />
+        </div>
       </div>
     </div>,
     document.body,
