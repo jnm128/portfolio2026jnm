@@ -32,7 +32,7 @@ const CaseStudyCVS: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={150}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 pb-8 border-b border-border">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6">
               {[
                 { label: 'Timeline', value: 'Jan 2023 – Present' },
                 { label: 'Role', value: 'Product Design' },
@@ -48,25 +48,19 @@ const CaseStudyCVS: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={200}>
-            <div className="overflow-hidden rounded-2xl mt-10 md:mt-12">
+            <div className="overflow-hidden rounded-2xl mt-10 md:mt-12 max-w-3xl mx-auto">
               <img
                 src={cvsHero}
                 alt="CVS Health case study"
-                className="w-full object-cover aspect-[4/3] md:aspect-[16/10]"
+                className="w-full object-cover aspect-[16/10]"
               />
             </div>
           </FadeIn>
 
           <FadeIn delay={250}>
-            <p className="mt-10 text-sm md:text-base text-muted-foreground max-w-2xl leading-relaxed">
+            <p className="mt-10 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed text-center">
               I'm tied to an NDA so I can't share visuals from my work at CVS Health — but I'd be happy to chat about it. Here's what I can tell you:
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-foreground text-background rounded-full text-base font-medium hover:opacity-90 transition-opacity"
-            >
-              Let's Chat
-            </Link>
           </FadeIn>
         </div>
       </section>
@@ -132,6 +126,26 @@ const CaseStudyCVS: React.FC = () => {
               </div>
             </FadeIn>
           </SplitSection>
+        </div>
+      </section>
+
+      {/* Curious to learn more CTA */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="container mx-auto max-w-3xl px-5 md:px-16 text-center">
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight mb-6">
+              Curious to learn more?
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto">
+              Happy to walk you through the work, decisions, and outcomes in more detail.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full text-base font-medium hover:opacity-90 transition-opacity"
+            >
+              Let's Chat
+            </Link>
+          </FadeIn>
         </div>
       </section>
 
