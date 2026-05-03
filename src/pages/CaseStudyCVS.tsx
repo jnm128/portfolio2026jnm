@@ -52,7 +52,7 @@ const CaseStudyCVS: React.FC = () => {
               <img
                 src={cvsHero}
                 alt="CVS Health case study"
-                className="w-full object-cover aspect-[4/3] md:aspect-[16/10]"
+                className="w-full object-cover aspect-[16/9] md:aspect-[21/9]"
               />
             </div>
           </FadeIn>

@@ -58,7 +58,7 @@ const CaseStudyMindfulWellness = () => {
               <img 
                 src="/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png" 
                 alt="Mindful Wellness Platform" 
-                className="w-full object-cover aspect-[4/3] md:aspect-[16/10]"
+                className="w-full object-cover aspect-[16/9] md:aspect-[21/9]"
               />
             </div>
           </FadeIn>
