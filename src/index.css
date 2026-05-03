@@ -36,6 +36,7 @@
 
     --accent: 209 24% 41%;             /* #4F6A80 */
     --accent-foreground: 30 23% 95%;
+    --accent-tint: 209 24% 92%;        /* slate-blue surface tint */
 
     --hint: 30 8% 45%;                 /* #7A7269 */
 
@@ -89,6 +90,7 @@
 
     --accent: 204 41% 63%;             /* #7AAAC8 */
     --accent-foreground: 26 24% 6%;
+    --accent-tint: 209 22% 14%;        /* slate-blue surface tint (dark) */
 
     --hint: 30 8% 45%;                 /* #7A7269 (shared) */
 
