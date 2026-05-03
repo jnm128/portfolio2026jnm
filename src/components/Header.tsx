@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import CaseStudyProgressBar from './CaseStudyProgressBar';
+import ThemeToggle from './ThemeToggle';
 
 const CAMERA_LOTTIE_URL = "https://lottie.host/b5a5e2d8-0b1a-4e0c-9b3a-3c4e1b6a8f9d/camera.lottie";
 
@@ -309,6 +310,8 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             >
               Contact
             </Link>
+
+            <ThemeToggle onDark={useDarkTheme && !isMobileMenuOpen} className="ml-2" />
           </nav>
 
           {/* Mobile: Logo left, hamburger right */}
@@ -393,6 +396,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">About</Link>
           <Link to="/book-club" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Community</Link>
           <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Contact</Link>
+          <ThemeToggle className="mt-4" />
         </nav>
       </div>
     </>

@@ -68,6 +68,55 @@
     --sidebar-ring: 209 24% 41%;
   }
 
+  /* Neutral theme — warm tan, brown body text, no slate blue */
+  :root[data-theme="neutral"] {
+    --background: 36 26% 86%;          /* #E6DFD2 warm tan */
+    --foreground: 25 21% 30%;          /* #5C4A3D warm brown body */
+    --title: 25 28% 9%;                /* #1C1410 */
+
+    --section: 36 22% 82%;             /* slightly deeper tan */
+    --card: 33 22% 78%;                /* card on tan bg */
+    --card-foreground: 25 28% 9%;
+
+    --popover: 33 22% 78%;
+    --popover-foreground: 25 28% 9%;
+
+    --primary: 25 21% 30%;             /* warm brown CTA */
+    --primary-foreground: 36 26% 92%;
+
+    --secondary: 33 22% 78%;
+    --secondary-foreground: 25 28% 9%;
+
+    --muted: 36 22% 82%;
+    --muted-foreground: 25 18% 28%;
+
+    --accent: 25 21% 30%;              /* warm brown accent */
+    --accent-foreground: 36 26% 92%;
+    --accent-tint: 33 22% 88%;
+
+    --hint: 30 8% 45%;
+
+    --border: 33 18% 68%;
+    --input: 33 18% 68%;
+    --ring: 25 21% 30%;
+
+    --surface-1: 36 26% 86%;
+    --surface-2: 36 22% 82%;
+    --surface-3: 33 22% 78%;
+    --surface-4: 33 18% 68%;
+    --surface-5: 25 18% 28%;
+    --surface-6: 25 28% 9%;
+
+    --sidebar-background: 36 26% 86%;
+    --sidebar-foreground: 25 28% 9%;
+    --sidebar-primary: 25 21% 30%;
+    --sidebar-primary-foreground: 36 26% 92%;
+    --sidebar-accent: 33 22% 78%;
+    --sidebar-accent-foreground: 25 28% 9%;
+    --sidebar-border: 33 18% 68%;
+    --sidebar-ring: 25 21% 30%;
+  }
+
   .dark {
     --background: 26 24% 6%;           /* #130F0C */
     --foreground: 36 24% 92%;          /* #F0ECE6 */
