@@ -41,7 +41,7 @@ const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose
       >
         <div className="px-8 md:px-12 pt-6 pb-24">
           <div className="flex items-center justify-between mb-8">
-            <h1 className="text-3xl md:text-4xl font-serif text-foreground">Resume</h1>
+            <h1 className="text-3xl md:text-4xl font-serif text-title">Resume</h1>
             <button
               onClick={onClose}
               className="p-2 rounded-full hover:bg-foreground/5 transition-colors"
@@ -50,7 +50,7 @@ const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose
             </button>
           </div>
 
-          <h2 className="text-base font-semibold text-foreground mb-6">Work Experience</h2>
+          <h2 className="text-base font-semibold text-title mb-6">Work Experience</h2>
           <div className="space-y-8">
             {workExperience.map((item, i) => (
               <div key={i} className="grid grid-cols-[120px_1fr] gap-4">
@@ -63,7 +63,7 @@ const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose
             ))}
           </div>
 
-          <h2 className="text-base font-semibold text-foreground mt-16 mb-6">Education</h2>
+          <h2 className="text-base font-semibold text-title mt-16 mb-6">Education</h2>
           <div className="space-y-8">
             {education.map((item, i) => (
               <div key={i} className="grid grid-cols-[120px_1fr] gap-4">

@@ -42,7 +42,7 @@ const Work: React.FC = () => {
       <section className="pt-32 pb-0 md:pt-40 md:pb-0">
         <div className="max-w-[1600px] mx-auto px-5 md:px-16">
           <FadeIn>
-            <h1 className="text-3xl md:text-5xl font-serif text-foreground mb-6">
+            <h1 className="text-3xl md:text-5xl font-serif text-title mb-6">
               Tiny fraction of my work
             </h1>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">

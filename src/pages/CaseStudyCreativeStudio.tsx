@@ -27,7 +27,7 @@ const CaseStudyCreativeStudio = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <h1 className="text-3xl md:text-5xl font-serif font-medium text-foreground leading-tight mb-2">
+            <h1 className="text-3xl md:text-5xl font-serif font-medium text-title leading-tight mb-2">
               Creative Studio
             </h1>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">

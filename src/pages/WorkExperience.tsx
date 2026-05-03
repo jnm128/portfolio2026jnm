@@ -22,13 +22,13 @@ const WorkExperience: React.FC = () => {
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-5 md:px-16 max-w-2xl">
           <FadeIn>
-            <h1 className="text-3xl md:text-4xl font-serif text-foreground mb-1">Joanna Minott</h1>
+            <h1 className="text-3xl md:text-4xl font-serif text-title mb-1">Joanna Minott</h1>
             <p className="text-muted-foreground font-serif text-base mb-0.5">UX Designer, Miami, FL</p>
             <p className="text-muted-foreground font-serif text-base mb-12">joannaminott.com</p>
           </FadeIn>
 
           <FadeIn delay={100}>
-            <h2 className="text-base font-semibold text-foreground mb-6">Work Experience</h2>
+            <h2 className="text-base font-semibold text-title mb-6">Work Experience</h2>
             <div className="space-y-8">
               {workExperience.map((item, i) => (
                 <div key={i} className="grid grid-cols-[140px_1fr] gap-4">
@@ -43,7 +43,7 @@ const WorkExperience: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={200}>
-            <h2 className="text-base font-semibold text-foreground mt-16 mb-6">Education</h2>
+            <h2 className="text-base font-semibold text-title mt-16 mb-6">Education</h2>
             <div className="space-y-8">
               {education.map((item, i) => (
                 <div key={i} className="grid grid-cols-[140px_1fr] gap-4">

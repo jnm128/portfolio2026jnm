@@ -26,7 +26,7 @@ const CaseStudyCVS: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <h1 className="text-4xl md:text-6xl font-serif text-foreground leading-tight mb-10">
+            <h1 className="text-4xl md:text-6xl font-serif text-title leading-tight mb-10">
               CVS Health
             </h1>
           </FadeIn>
@@ -74,7 +74,7 @@ const CaseStudyCVS: React.FC = () => {
         <div className="container mx-auto max-w-[1600px] px-5 md:px-16">
           <SplitSection label="Project One">
             <FadeIn>
-              <h3 className="text-2xl md:text-3xl font-serif font-medium text-foreground mb-4">
+              <h3 className="text-2xl md:text-3xl font-serif font-medium text-title mb-4">
                 Improving Specialty Central
               </h3>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
@@ -106,7 +106,7 @@ const CaseStudyCVS: React.FC = () => {
         <div className="container mx-auto max-w-[1600px] px-5 md:px-16">
           <SplitSection label="Project Two">
             <FadeIn>
-              <h3 className="text-2xl md:text-3xl font-serif font-medium text-foreground mb-4">
+              <h3 className="text-2xl md:text-3xl font-serif font-medium text-title mb-4">
                 Supporting Benefits Verification
               </h3>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8">

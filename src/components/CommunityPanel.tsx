@@ -45,7 +45,7 @@ const CommunityPanel: React.FC<CommunityPanelProps> = ({ open, onClose }) => {
       >
         <div className="px-8 md:px-12 pt-6 pb-24">
           <div className="flex items-center justify-between mb-12">
-            <h1 className="text-3xl md:text-4xl font-serif text-foreground">Community</h1>
+            <h1 className="text-3xl md:text-4xl font-serif text-title">Community</h1>
             <button
               onClick={onClose}
               className="p-2 rounded-full hover:bg-foreground/5 transition-colors"
@@ -56,7 +56,7 @@ const CommunityPanel: React.FC<CommunityPanelProps> = ({ open, onClose }) => {
           </div>
 
           <div>
-            <h2 className="text-base font-semibold text-foreground mb-1">How I'm active</h2>
+            <h2 className="text-base font-semibold text-title mb-1">How I'm active</h2>
             <p className="text-sm text-muted-foreground font-serif mb-6">
               Ways I show up in the design community.
             </p>
