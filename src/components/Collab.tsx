@@ -34,7 +34,7 @@ const Pill: React.FC<{ text: string; author: string; floatClass?: string; floatD
 
 const Collab: React.FC<CollabProps> = ({ className }) => {
   return (
-    <div data-theme="dark" className={cn('pt-20 md:pt-28 pb-10 md:pb-14 bg-foreground', className)}>
+    <div data-theme="dark" className={cn('pt-20 md:pt-28 pb-6 md:pb-8 bg-foreground', className)}>
       <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
         <div className="flex flex-col items-center text-center">
           {/* Single top pill */}
