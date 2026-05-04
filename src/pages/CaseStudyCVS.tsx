@@ -1,6 +1,6 @@
 import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { ArrowLeft, ArrowDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 import FadeIn from '@/components/animations/FadeIn';
 import SplitSection from '@/components/SplitSection';
 import CaseStudyNav from '@/components/CaseStudyNav';
@@ -8,8 +8,6 @@ import Footer from '@/components/Footer';
 import cvsHeroVideo from '@/assets/cvs-hero.mp4';
 
 const CaseStudyCVS: React.FC = () => {
-  const navigate = useNavigate();
-
   return (
     <main className="relative">
       {/* Hero Section */}
