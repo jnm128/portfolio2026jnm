@@ -37,6 +37,26 @@ const projects = [
 ];
 
 const Work: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.slice(1);
+    const tryScroll = () => {
+      const el = document.getElementById(id);
+      if (!el) return false;
+      const top = el.getBoundingClientRect().top + window.scrollY - 96;
+      if (window.__lenis) {
+        window.__lenis.scrollTo(top, { immediate: false });
+      } else {
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+      return true;
+    };
+    const t = setTimeout(() => { if (!tryScroll()) setTimeout(tryScroll, 200); }, 100);
+    return () => clearTimeout(t);
+  }, [location.hash]);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Header */}
