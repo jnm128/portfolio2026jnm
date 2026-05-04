@@ -1,24 +1,10 @@
-## CVS case study tweaks
+I’ll update the style switcher so the connecting line no longer shows through the inactive circles.
 
-### 1. Back link → Work page CVS card
+Plan:
+1. In `src/components/ThemeToggle.tsx`, remove the inactive swatch `opacity-70` class because it makes the entire button semi-transparent, allowing the line underneath to show through.
+2. Keep each circle on top of the line with `relative z-10` and a fully opaque `backgroundColor`.
+3. Replace the inactive visual treatment with non-transparency-based styling, such as a slightly smaller size plus solid border, and use `hover:scale-110` or a ring/border change instead of opacity.
+4. Keep the selected state as the larger circled/ringed style shown in your screenshot, with the line hidden behind the selected circle as well.
 
-- `src/pages/Work.tsx`: fix the CVS Health entry — change `link` from `/case-study/mindful-wellness` to `/case-study/cvs-health`. Add a stable id anchor (`id="project-cvs-health"`) to the CVS card's outer wrapper so we can deep-link.
-- `src/pages/CaseStudyCVS.tsx`: replace the `navigate(-1)` Back button with a `<Link to="/work#project-cvs-health">` Back link (keeps icon + label, same styling).
-- Confirm `ScrollToTop` does not block hash-based scroll. If it does, scroll to `#project-cvs-health` after mount via a small `useEffect` on the Work page that reads `location.hash` and calls `scrollIntoView({ behavior: 'smooth', block: 'start' })` with header offset (~96px).
-
-### 2. Remove NDA blurb + "Here's what I can tell you"
-
-- `src/pages/CaseStudyCVS.tsx`: delete the entire `FadeIn delay={250}` block (lines 65–73) — both the NDA paragraph and the "Here's what I can tell you" + bouncing `ArrowDown`.
-
-### 3. Update "Curious to learn more" copy
-
-- `src/pages/CaseStudyCVS.tsx`: replace the description paragraph under the "Curious to learn more?" heading with:
-
-  > I can't share visuals as I'm tied to an NDA with CVS Health, but happy to walk you through the work, decisions, and outcomes in more detail.
-
-- Heading, button, and styling remain unchanged.
-
-### Files to edit
-
-- `src/pages/Work.tsx` — fix CVS link target + add anchor id + hash-scroll effect.
-- `src/pages/CaseStudyCVS.tsx` — Back link → `/work#project-cvs-health`, drop NDA blurb block, update Curious copy.
+Technical detail:
+- The issue is caused by `opacity-70` on inactive buttons. CSS opacity affects the whole element, including its fill, so even with a solid `backgroundColor`, the underlying line can still be visible. The fix is to make inactive swatches fully opaque and use size/scale/border changes for visual hierarchy instead of opacity.
