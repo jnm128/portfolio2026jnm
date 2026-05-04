@@ -1,55 +1,48 @@
-## Theme toggle: Blue / Neutral / Dark
+## Theme switcher: floating overlay, linear, transparent
 
-Add a 3-mode theme switcher in the header that swaps the page background and accent palette. Current site stays as the default "Blue" mode. "Neutral" swaps the blue accent and bg for warm tan #E6DFD2. "Dark" applies the existing espresso dark theme (#130F0C).
+Move the existing 3-mode theme switcher out of the header into a fixed overlay anchored to the bottom-right of the viewport. Restyle it as a horizontal line with three swatches sitting on it (no pill background). Slightly lighten the dark theme's espresso bg.
 
-### The three themes
+### Visual spec
 
-| Mode | Page bg | Accent / body text | Title |
-|---|---|---|---|
-| Blue (default) | #F5F2EE cream | #4F6A80 slate blue | #1C1410 |
-| Neutral | #E6DFD2 warm tan | #5C4A3D warm brown | #1C1410 |
-| Dark (espresso) | #130F0C | #7AAAC8 light blue | #F0ECE6 |
+```
+                              ●—○—○
+                            blue neutral dark
+                       (bottom-right of screen)
+```
 
-### How it works
+- Position: `fixed bottom-6 right-6 z-50` (above content, below modals at z-100+).
+- Background: fully transparent (no border, no fill).
+- Layout: a thin 1px horizontal line (`bg-border/60`, ~64px wide) with the three swatches absolutely positioned along it at evenly-spaced points (start / middle / end).
+- Swatches: 14px circles, filled with that theme's bg color, subtle 1px border for the light ones so they read on any backdrop.
+- Active state: scale up to ~18px + 2px ring matching `--foreground` so it's clear which is selected; inactive at 70% opacity, hover → 100%.
+- Tooltip on hover: "Blue" / "Neutral" / "Dark".
+- Adapts to dark sections via the existing dark-section logic? No — since it's a global overlay, just use `text-foreground`/`border-border` tokens which auto-adjust per theme. On case-study dark sections it sits above the page so it inherits whatever is behind it; the swatch colors are self-contained.
 
-1. **ThemeProvider** (new `src/contexts/ThemeContext.tsx`)
-   - State: `'blue' | 'neutral' | 'dark'`, persisted to `localStorage` (key: `mino-theme`)
-   - On mount, applies `data-theme="blue|neutral"` or the existing `.dark` class to `<html>`
-   - Defaults to `blue` (current look) on first visit
-   - Wraps `<App />` in `src/App.tsx`
+### Header cleanup
 
-2. **CSS tokens** (`src/index.css`)
-   - Keep `:root` block as-is (it IS the Blue theme — no change needed)
-   - Add `:root[data-theme="neutral"]` block overriding only `--background`, `--section`, `--card`, `--foreground`, `--primary`, `--accent`, `--ring`, `--accent-tint`, `--border` to the warm tan palette
-   - Existing `.dark` block stays as the espresso theme (no change)
+- Remove `<ThemeToggle />` from desktop nav (the row after the Contact link).
+- Remove `<ThemeToggle />` from the mobile menu.
+- Remove the `onDark` prop usage — overlay no longer needs it.
 
-3. **ThemeToggle component** (`src/components/ThemeToggle.tsx`)
-   - Three small circular swatches grouped in a `rounded-full` pill with `border-border` background
-   - Each swatch: 18px, filled with that theme's bg color, ring on the active one
-   - Click sets the mode via context
-   - Tooltip on hover: "Blue", "Neutral", "Dark"
+### Mount the overlay globally
 
-4. **Header integration** (`src/components/Header.tsx`)
-   - Desktop: insert toggle as the rightmost item in the nav row (after "Contact"), centered alignment preserved by adding equivalent spacing on the left
-   - Mobile: append toggle below the nav links in the full-screen menu, centered
-   - Toggle adapts its own colors using `text-foreground` / `border-border` so it works on dark sections automatically
+- Render `<ThemeToggle />` once inside `App.tsx` (alongside `<CustomCursor />` / route outlet) so it appears on every page.
 
-### Interactions with existing systems
+### Dark theme: lighter espresso
 
-- **Dark section observer in Header**: keeps working — it controls per-section header tint, independent of the user's chosen base theme. In Dark mode, since the whole page is already dark, the observer's "useDarkTheme" state will still flip but is visually consistent.
-- **Custom cursor**: already detects dark surfaces, no change needed.
-- **`bg-card-gradient` literals in `index.css`**: leave as-is; they already have a `.dark` override and read fine on the neutral tan.
-
-### Files to create
-- `src/contexts/ThemeContext.tsx`
-- `src/components/ThemeToggle.tsx`
+- `--background` in `.dark` block of `src/index.css`: bump from `26 24% 6%` (#130F0C) to roughly `26 18% 11%` (≈ #211B16) — still espresso, just one notch lighter so it doesn't read as pure black.
+- Keep `--section`, `--card`, `--border` in proportion: nudge `--section` from `25 24% 10%` → `25 20% 14%`, `--card` from `26 25% 14%` → `26 22% 18%`. Surfaces ladder still reads but feels softer.
+- Update the memory note that mentions Dark `#130F0C` to the new value.
 
 ### Files to edit
-- `src/App.tsx` — wrap with ThemeProvider
-- `src/index.css` — add `[data-theme="neutral"]` token block
-- `src/components/Header.tsx` — render `<ThemeToggle />` in desktop nav and mobile menu
-- `mem://index.md` + new memory file documenting the 3-theme system
+
+- `src/components/ThemeToggle.tsx` — restyle as transparent line layout, drop `onDark`.
+- `src/components/Header.tsx` — remove both `<ThemeToggle />` instances + import.
+- `src/App.tsx` — render `<ThemeToggle />` as a global overlay.
+- `src/index.css` — lighten `.dark` background/section/card values.
+- `mem://index.md` — update Dark espresso color reference.
 
 ### Out of scope
-- No per-component restyling — every surface already uses tokens, so changing the token values cascades automatically.
-- No system-preference auto-detection (default is always Blue per your spec).
+
+- No change to the Blue/Neutral palettes.
+- No change to ThemeContext or persistence behavior.
