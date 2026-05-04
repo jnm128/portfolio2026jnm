@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
@@ -6,6 +6,27 @@ import { ExternalLink } from 'lucide-react';
 import speakingMiami from '@/assets/speaking-miami.jpg';
 import speakingUF from '@/assets/speaking-uf.jpg';
 import arirangCover from '@/assets/arirang-cover.png';
+import emotionalDesignCover from '@/assets/emotional-design-cover.jpg';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+
+interface PastBook {
+  title: string;
+  author: string;
+  cover: string;
+  description: string;
+  link: string;
+}
+
+const pastReads: PastBook[] = [
+  { title: "The Design of Everyday Things", author: "Don Norman", cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop", description: "A powerful primer on how — and why — some products satisfy customers while others only frustrate them.", link: "https://www.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654" },
+  { title: "Don't Make Me Think", author: "Steve Krug", cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=400&fit=crop", description: "The classic guide to web usability. A practical, common-sense approach to intuitive design.", link: "https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515" },
+  { title: "Hooked", author: "Nir Eyal", cover: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=400&fit=crop", description: "How successful companies create products people can't put down using the four-step Hook Model.", link: "https://www.amazon.com/Hooked-How-Build-Habit-Forming-Products/dp/1591847788" },
+  { title: "Sprint", author: "Jake Knapp", cover: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300&h=400&fit=crop", description: "A unique five-day process for solving tough problems and testing new ideas, developed at Google Ventures.", link: "https://www.amazon.com/Sprint-Solve-Problems-Test-Ideas/dp/150112174X" },
+  { title: "Thinking, Fast and Slow", author: "Daniel Kahneman", cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=400&fit=crop", description: "Kahneman explores the two systems that drive the way we think — and how they shape our decisions.", link: "https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555" },
+  { title: "Articulating Design Decisions", author: "Tom Greever", cover: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=300&h=400&fit=crop", description: "A practical guide to communicating with stakeholders and presenting design work with confidence.", link: "https://www.amazon.com/Articulating-Design-Decisions-Communicate-Stakeholders/dp/1491921560" },
+  { title: "Refactoring UI", author: "Adam Wathan & Steve Schoger", cover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop", description: "Tactical tips for improving your visual design skills and building beautiful interfaces.", link: "https://www.refactoringui.com/" },
+  { title: "Emotional Design", author: "Don Norman", cover: emotionalDesignCover, description: "Why we love (or hate) everyday things. How emotions shape our perception of usability.", link: "https://www.amazon.com/Emotional-Design-Love-Everyday-Things/dp/0465051367" },
+];
 
 const songOnRepeat = { title: "Arirang", artist: "BTS", url: "https://www.youtube.com/results?search_query=BTS+Arirang", cover: arirangCover };
 
