@@ -223,22 +223,38 @@ const AboutPage = () => {
                     </div>
                   </div>
 
-                  {/* Dot indicators */}
-                  <div className="flex items-center justify-center gap-2 mt-8" role="tablist" aria-label="Favorite books">
-                    {favoriteBooks.map((book, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setActiveIndex(i)}
-                        aria-label={`View ${book.title}`}
-                        aria-selected={i === activeIndex}
-                        role="tab"
-                        className={`h-1.5 rounded-full transition-all duration-300 ${
-                          i === activeIndex
-                            ? 'w-6 bg-background'
-                            : 'w-1.5 bg-background/30 hover:bg-background/50'
-                        }`}
-                      />
-                    ))}
+                  {/* Arrow controls + dot indicators */}
+                  <div className="flex items-center justify-center gap-4 mt-8">
+                    <button
+                      onClick={() => setActiveIndex((activeIndex - 1 + favoriteBooks.length) % favoriteBooks.length)}
+                      aria-label="Previous book"
+                      className="w-9 h-9 rounded-full bg-background/5 border border-background/20 flex items-center justify-center hover:bg-background/10 transition-colors"
+                    >
+                      <ChevronLeft className="w-4 h-4 text-background" />
+                    </button>
+                    <div className="flex items-center gap-2" role="tablist" aria-label="Favorite books">
+                      {favoriteBooks.map((book, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setActiveIndex(i)}
+                          aria-label={`View ${book.title}`}
+                          aria-selected={i === activeIndex}
+                          role="tab"
+                          className={`h-1.5 rounded-full transition-all duration-300 ${
+                            i === activeIndex
+                              ? 'w-6 bg-background'
+                              : 'w-1.5 bg-background/30 hover:bg-background/50'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <button
+                      onClick={() => setActiveIndex((activeIndex + 1) % favoriteBooks.length)}
+                      aria-label="Next book"
+                      className="w-9 h-9 rounded-full bg-background/5 border border-background/20 flex items-center justify-center hover:bg-background/10 transition-colors"
+                    >
+                      <ChevronRight className="w-4 h-4 text-background" />
+                    </button>
                   </div>
                 </div>
               </FadeIn>
