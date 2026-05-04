@@ -20,6 +20,7 @@ import SmoothScroll from "./components/SmoothScroll";
 import PageTransition from "./components/PageTransition";
 import Header from "./components/Header";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import ThemeToggle from "./components/ThemeToggle";
 
 const queryClient = new QueryClient();
 
