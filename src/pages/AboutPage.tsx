@@ -191,11 +191,11 @@ const AboutPage = () => {
                 </div>
               </FadeIn>
 
-              {/* Current Read */}
+              {/* Favorite Books */}
               <FadeIn delay={300}>
                 <div className="py-10">
                   <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
-                    Current Read
+                    Favorite Books
                   </h2>
                   <div className="flex flex-col md:flex-row gap-8 items-start">
                     <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden">
@@ -206,9 +206,15 @@ const AboutPage = () => {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-lg md:text-xl font-serif text-background mb-1">
-                        {currentRead.title}
-                      </p>
+                      <div className="flex flex-wrap items-center gap-3 mb-1">
+                        <p className="text-lg md:text-xl font-serif text-background">
+                          {currentRead.title}
+                        </p>
+                        <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-background/80 border border-background/30 rounded-full px-2 py-0.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-background animate-pulse" />
+                          Currently Reading
+                        </span>
+                      </div>
                       <p className="text-sm text-background/70 mb-4">
                         by {currentRead.author}
                       </p>
@@ -217,45 +223,38 @@ const AboutPage = () => {
                       </p>
                     </div>
                   </div>
-                </div>
-              </FadeIn>
 
+                  {/* Stacked book spines */}
+                  <div className="mt-12">
+                    {/* Desktop */}
+                    <div className="hidden md:flex items-end pl-2 pt-10">
+                      {pastReads.map((book, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setSelectedBook(book)}
+                          style={{ zIndex: i + 1 }}
+                          className={`relative ${i > 0 ? '-ml-24' : ''} w-40 aspect-[3/4] rounded-lg overflow-hidden ring-1 ring-background/10 shadow-xl transition-all duration-300 ease-out will-change-transform hover:!z-50 hover:-translate-y-8 hover:scale-105 hover:shadow-2xl focus:outline-none focus-visible:!z-50 focus-visible:-translate-y-8`}
+                          aria-label={`View ${book.title}`}
+                        >
+                          <img src={book.cover} alt={book.title} className="w-full h-full object-cover pointer-events-none" />
+                        </button>
+                      ))}
+                    </div>
 
-              {/* Past Reads */}
-              <FadeIn delay={350}>
-                <div className="py-10">
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
-                    Past Reads
-                  </h2>
-
-                  {/* Desktop: stacked overlapping spines */}
-                  <div className="hidden md:flex items-end pl-2 pt-10">
-                    {pastReads.map((book, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setSelectedBook(book)}
-                        style={{ zIndex: i + 1 }}
-                        className={`group relative ${i > 0 ? '-ml-24' : ''} w-40 aspect-[3/4] rounded-lg overflow-hidden ring-1 ring-background/10 shadow-xl transition-all duration-300 ease-out hover:-translate-y-6 hover:scale-[1.03] hover:z-50 hover:shadow-2xl focus:outline-none focus:-translate-y-6 focus:z-50`}
-                        aria-label={`View ${book.title}`}
-                      >
-                        <img src={book.cover} alt={book.title} className="w-full h-full object-cover" />
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Mobile: horizontal scroll, slight overlap */}
-                  <div className="md:hidden flex items-end overflow-x-auto pl-2 pt-6 pb-4 no-scrollbar">
-                    {pastReads.map((book, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setSelectedBook(book)}
-                        style={{ zIndex: i + 1 }}
-                        className={`relative shrink-0 ${i > 0 ? '-ml-12' : ''} w-28 aspect-[3/4] rounded-lg overflow-hidden ring-1 ring-background/10 shadow-xl active:-translate-y-3 transition-transform duration-200`}
-                        aria-label={`View ${book.title}`}
-                      >
-                        <img src={book.cover} alt={book.title} className="w-full h-full object-cover" />
-                      </button>
-                    ))}
+                    {/* Mobile */}
+                    <div className="md:hidden flex items-end overflow-x-auto pl-2 pt-6 pb-4 no-scrollbar">
+                      {pastReads.map((book, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setSelectedBook(book)}
+                          style={{ zIndex: i + 1 }}
+                          className={`relative shrink-0 ${i > 0 ? '-ml-12' : ''} w-28 aspect-[3/4] rounded-lg overflow-hidden ring-1 ring-background/10 shadow-xl active:-translate-y-3 transition-transform duration-200`}
+                          aria-label={`View ${book.title}`}
+                        >
+                          <img src={book.cover} alt={book.title} className="w-full h-full object-cover pointer-events-none" />
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </FadeIn>
