@@ -204,8 +204,6 @@ const AboutPage = () => {
                       return (
                         <button
                           key={i}
-                          onMouseEnter={() => setActiveIndex(i)}
-                          onFocus={() => setActiveIndex(i)}
                           onClick={() => setActiveIndex(i)}
                           aria-label={book.title}
                           aria-pressed={isActive}
@@ -216,7 +214,7 @@ const AboutPage = () => {
                             zIndex: isActive ? 50 : 10 + (10 - Math.abs(offset)),
                             transformOrigin: 'bottom center',
                           }}
-                          className="relative -mx-3 md:-mx-4 w-20 md:w-28 aspect-[3/4] rounded-md overflow-hidden ring-1 ring-background/15 shadow-[0_10px_24px_-10px_rgba(0,0,0,0.5)] transition-all duration-300 ease-out will-change-transform focus:outline-none"
+                          className="relative -mx-3 md:-mx-4 w-20 md:w-28 aspect-[3/4] rounded-md overflow-hidden ring-2 ring-background/60 shadow-[0_10px_24px_-10px_rgba(0,0,0,0.5)] transition-all duration-300 ease-out will-change-transform focus:outline-none"
                         >
                           <img src={book.cover} alt={book.title} className="w-full h-full object-cover rounded-md pointer-events-none" />
                         </button>
