@@ -22,13 +22,13 @@ const Pill: React.FC<{ text: string; author: string; floatClass?: string; floatD
 }) => (
   <div
     className={cn(
-      'rounded-full bg-background/60 backdrop-blur-md px-4 py-2 text-xs sm:text-sm text-foreground/85 font-sans max-w-[260px] sm:max-w-[280px]',
+      'rounded-full bg-background/10 backdrop-blur-md px-4 py-2 text-xs sm:text-sm text-background/85 font-sans max-w-[260px] sm:max-w-[280px]',
       floatClass
     )}
     style={floatDelay ? { animationDelay: floatDelay } : undefined}
   >
     <span>"{text}"</span>
-    <span className="ml-2 text-foreground/50">— {author}</span>
+    <span className="ml-2 text-background/50">— {author}</span>
   </div>
 );
 
