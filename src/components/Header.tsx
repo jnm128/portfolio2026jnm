@@ -310,8 +310,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             >
               Contact
             </Link>
-
-            <ThemeToggle onDark={useDarkTheme && !isMobileMenuOpen} className="ml-2" />
           </nav>
 
           {/* Mobile: Logo left, hamburger right */}
