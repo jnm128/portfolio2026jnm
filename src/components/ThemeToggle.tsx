@@ -43,9 +43,9 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ className }) => {
                 title={label}
                 onClick={() => setTheme(mode)}
                 className={cn(
-                  'relative rounded-full transition-all duration-200 border border-foreground/30',
+                  'relative z-10 rounded-full transition-all duration-200 border border-foreground/30',
                   isActive
-                    ? 'h-[18px] w-[18px] ring-2 ring-foreground ring-offset-2 ring-offset-transparent'
+                    ? 'h-[18px] w-[18px] ring-2 ring-foreground ring-offset-2 ring-offset-background'
                     : 'h-3.5 w-3.5 opacity-70 hover:opacity-100',
                 )}
                 style={{ backgroundColor: color }}
