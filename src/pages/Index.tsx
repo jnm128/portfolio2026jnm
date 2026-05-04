@@ -6,6 +6,7 @@ import AboutSection from '@/components/AboutSection';
 import DarkSection from '@/components/DarkSection';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
+import MinoLoader from '@/components/MinoLoader';
 
 const Index = () => {
   useEffect(() => {
