@@ -220,6 +220,46 @@ const AboutPage = () => {
                 </div>
               </FadeIn>
 
+
+              {/* Past Reads */}
+              <FadeIn delay={350}>
+                <div className="py-10">
+                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
+                    Past Reads
+                  </h2>
+
+                  {/* Desktop: stacked overlapping spines */}
+                  <div className="hidden md:flex items-end pl-2 pt-10">
+                    {pastReads.map((book, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setSelectedBook(book)}
+                        style={{ zIndex: i + 1 }}
+                        className={`group relative ${i > 0 ? '-ml-24' : ''} w-40 aspect-[3/4] rounded-lg overflow-hidden ring-1 ring-background/10 shadow-xl transition-all duration-300 ease-out hover:-translate-y-6 hover:scale-[1.03] hover:z-50 hover:shadow-2xl focus:outline-none focus:-translate-y-6 focus:z-50`}
+                        aria-label={`View ${book.title}`}
+                      >
+                        <img src={book.cover} alt={book.title} className="w-full h-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Mobile: horizontal scroll, slight overlap */}
+                  <div className="md:hidden flex items-end overflow-x-auto pl-2 pt-6 pb-4 no-scrollbar">
+                    {pastReads.map((book, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setSelectedBook(book)}
+                        style={{ zIndex: i + 1 }}
+                        className={`relative shrink-0 ${i > 0 ? '-ml-12' : ''} w-28 aspect-[3/4] rounded-lg overflow-hidden ring-1 ring-background/10 shadow-xl active:-translate-y-3 transition-transform duration-200`}
+                        aria-label={`View ${book.title}`}
+                      >
+                        <img src={book.cover} alt={book.title} className="w-full h-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </FadeIn>
+
               {/* Song on Repeat */}
               <FadeIn delay={400}>
                 <div className="py-10">
