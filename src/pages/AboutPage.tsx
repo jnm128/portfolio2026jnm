@@ -28,9 +28,8 @@ const favoriteBooks: Book[] = [
   { title: "Refactoring UI", author: "Adam Wathan & Steve Schoger", cover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop", description: "Tactical tips for improving your visual design skills and building beautiful interfaces." },
   { title: "Emotional Design", author: "Don Norman", cover: emotionalDesignCover, description: "Why we love (or hate) everyday things. How emotions shape our perception of usability." },
 ];
-  cover: "/lovable-uploads/artists-way-cover.jpg",
-  note: "A transformative course in discovering and recovering your creative self — helping me reconnect with creativity as a daily practice.",
-};
+
+
 
 const linkedinPosts = [
   {
