@@ -47,7 +47,8 @@ const linkedinPosts = [
 ];
 
 const AboutPage = () => {
-  const [selectedBook, setSelectedBook] = useState<PastBook | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeBook = favoriteBooks[activeIndex];
   return (
 
     <main className="relative bg-background">
