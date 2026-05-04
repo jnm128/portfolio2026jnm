@@ -6,8 +6,21 @@ import AboutSection from '@/components/AboutSection';
 import DarkSection from '@/components/DarkSection';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
+import MinoLoader from '@/components/MinoLoader';
 
 const Index = () => {
+  const [showLoader, setShowLoader] = React.useState(() => {
+    if (typeof window === 'undefined') return false;
+    return sessionStorage.getItem('mino-loaded') !== '1';
+  });
+
+  useEffect(() => {
+    if (!showLoader) return;
+    sessionStorage.setItem('mino-loaded', '1');
+    const t = window.setTimeout(() => setShowLoader(false), 1600);
+    return () => window.clearTimeout(t);
+  }, [showLoader]);
+
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -29,7 +42,9 @@ const Index = () => {
 
   return (
     <main className="relative bg-background">
+      {showLoader && <MinoLoader />}
       <ScrollAnimations />
+
       <Hero />
       <IntroBlurb />
       <Projects />
