@@ -14,13 +14,13 @@ const CaseStudyCVS: React.FC = () => {
       <section className="pt-20 md:pt-24 pb-16 md:pb-24 bg-background">
         <div className="container mx-auto max-w-[1600px] px-5 md:px-16">
           <FadeIn>
-            <button
-              onClick={() => navigate(-1)}
+            <Link
+              to="/work#project-cvs-health"
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-12"
             >
               <ArrowLeft size={16} />
               <span className="text-sm">Back</span>
-            </button>
+            </Link>
           </FadeIn>
 
           <FadeIn delay={100}>
