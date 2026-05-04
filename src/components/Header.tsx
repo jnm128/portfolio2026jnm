@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import CaseStudyProgressBar from './CaseStudyProgressBar';
-import ThemeToggle from './ThemeToggle';
+
 
 const CAMERA_LOTTIE_URL = "https://lottie.host/b5a5e2d8-0b1a-4e0c-9b3a-3c4e1b6a8f9d/camera.lottie";
 
