@@ -1,22 +1,31 @@
-Add a brief, branded loading spinner that appears on the homepage (`/`) when it first loads, then fades out to reveal the page.
+## Add "Past Reads" stacked book section to About page
 
-## What you'll see
-- A full-screen overlay using `bg-background` covers the page on first visit
-- Centered, a small lowercase `o` (the same Outfit-bold style as MINO's logo) sits in the middle
-- Concentric rings ripple outward from the `o` continuously (matcha-calm, slow)
-- After ~900ms the overlay fades out and the homepage fades in normally
-- Only shows on the home route, only on first load per session (so route-changing back home doesn't re-trigger)
+A new section on the About page (`src/pages/AboutPage.tsx`), placed in the dark "Beyond the Pixels" block right after **Current Read** and before **Work Playlist**.
 
-## Files
-- New: `src/components/MinoLoader.tsx`
-  - Fixed full-screen overlay, `z-[300]`, `bg-background`
-  - Center stack: the letter `o` in `font-sans font-bold text-title text-5xl`
-  - Two or three absolutely-positioned rings behind it: `rounded-full border border-foreground/30`, animated with a new `ripple` keyframe (scale 0.6 → 2.4, opacity 0.6 → 0) on a 1.6s loop, staggered delays (0s, 0.4s, 0.8s)
-  - Internal `useState` `visible`, after 900ms set `leaving` (fade-out 400ms via opacity transition), then unmount
-- Edit: `src/pages/Index.tsx` — render `<MinoLoader />` at top of `<main>`; track first-load via `sessionStorage` key `mino-loaded` so it only shows once per tab session
-- Edit: `src/index.css` — add `@keyframes ripple` and a `.animate-ripple` utility class in the `@layer components` / keyframes section
+### Layout & interaction
+- Heading: "Past Reads" (uppercase eyebrow, matches sibling sections).
+- 8 book cards rendered as a horizontal stack of overlapping spines (each card offset by ~40–48px so only a sliver of cover + title shows).
+- On hover, the hovered card translates upward (~`-translate-y-6`) and slightly scales, revealing more of its cover; neighbors stay put. Smooth 300ms transition.
+- On click, opens the same minimalist book detail dialog used on the Community/BookClub page (cover + title + author + description + "View on Amazon" CTA).
+- Mobile (<md): switch to a horizontal scroll of slightly-overlapping cards (stacking gets cramped on narrow screens), keeping the same click-to-open behavior.
 
-## Tokens / design alignment
-- Uses `bg-background`, `text-title`, `border-foreground/30` only — no literal colors
-- Outfit font, bold weight to match the MINO logo
-- Slow easing (`cubic-bezier(0.25, 0.46, 0.45, 0.94)`) consistent with existing natural-fall animation
+### Visual ASCII
+```text
+[📕][📗][📘][📙][📕][📗][📘][📙]
+       ↑ hover lifts one up
+```
+
+### Data
+- Inline array of 8 books in `AboutPage.tsx`. Reuse the existing 8 non-current titles from `BookClub.tsx` (Design of Everyday Things, Don't Make Me Think, Hooked, Sprint, Thinking Fast and Slow, Articulating Design Decisions, Refactoring UI, Emotional Design) so visuals stay consistent. Each entry: `title`, `author`, `cover`, `description`, `link`.
+
+### Technical details
+- Use `Dialog`/`DialogContent` from `@/components/ui/dialog` styled identically to BookClub's modal (rounded-2xl, max-w-sm, cover on top, View on Amazon button). Since this section is inside a `data-theme="dark"` block, the Dialog renders in a portal at document root so it uses the default light dialog styling — no extra theme handling needed.
+- Stack implementation: a flex row with negative margin-left on each card after the first (e.g. `-ml-20 md:-ml-24`); on hover apply `hover:-translate-y-6 hover:z-20` and bump z-index so the lifted card sits above neighbors. Base `z-index` increases left→right so stacking order is natural.
+- Each card: fixed width (~`w-32 md:w-40`), `aspect-[3/4]`, `rounded-lg overflow-hidden`, subtle `shadow-lg` and `ring-1 ring-background/10` to separate spines on the dark background.
+- State: `const [selectedBook, setSelectedBook] = useState<Book | null>(null)` local to AboutPage.
+- Wrap section in `<FadeIn delay={350}>` to fit existing rhythm.
+
+### Files to modify
+- `src/pages/AboutPage.tsx` — add Book type, books array, Past Reads section, Dialog, related imports (`useState`, `Dialog*` from ui/dialog, and the `emotionalDesignCover` asset).
+
+No new files, no new dependencies.

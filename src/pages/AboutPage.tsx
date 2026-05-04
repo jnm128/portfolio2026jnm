@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
@@ -6,6 +6,27 @@ import { ExternalLink } from 'lucide-react';
 import speakingMiami from '@/assets/speaking-miami.jpg';
 import speakingUF from '@/assets/speaking-uf.jpg';
 import arirangCover from '@/assets/arirang-cover.png';
+import emotionalDesignCover from '@/assets/emotional-design-cover.jpg';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+
+interface PastBook {
+  title: string;
+  author: string;
+  cover: string;
+  description: string;
+  link: string;
+}
+
+const pastReads: PastBook[] = [
+  { title: "The Design of Everyday Things", author: "Don Norman", cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop", description: "A powerful primer on how — and why — some products satisfy customers while others only frustrate them.", link: "https://www.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654" },
+  { title: "Don't Make Me Think", author: "Steve Krug", cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=400&fit=crop", description: "The classic guide to web usability. A practical, common-sense approach to intuitive design.", link: "https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515" },
+  { title: "Hooked", author: "Nir Eyal", cover: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=400&fit=crop", description: "How successful companies create products people can't put down using the four-step Hook Model.", link: "https://www.amazon.com/Hooked-How-Build-Habit-Forming-Products/dp/1591847788" },
+  { title: "Sprint", author: "Jake Knapp", cover: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300&h=400&fit=crop", description: "A unique five-day process for solving tough problems and testing new ideas, developed at Google Ventures.", link: "https://www.amazon.com/Sprint-Solve-Problems-Test-Ideas/dp/150112174X" },
+  { title: "Thinking, Fast and Slow", author: "Daniel Kahneman", cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=400&fit=crop", description: "Kahneman explores the two systems that drive the way we think — and how they shape our decisions.", link: "https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555" },
+  { title: "Articulating Design Decisions", author: "Tom Greever", cover: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=300&h=400&fit=crop", description: "A practical guide to communicating with stakeholders and presenting design work with confidence.", link: "https://www.amazon.com/Articulating-Design-Decisions-Communicate-Stakeholders/dp/1491921560" },
+  { title: "Refactoring UI", author: "Adam Wathan & Steve Schoger", cover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop", description: "Tactical tips for improving your visual design skills and building beautiful interfaces.", link: "https://www.refactoringui.com/" },
+  { title: "Emotional Design", author: "Don Norman", cover: emotionalDesignCover, description: "Why we love (or hate) everyday things. How emotions shape our perception of usability.", link: "https://www.amazon.com/Emotional-Design-Love-Everyday-Things/dp/0465051367" },
+];
 
 const songOnRepeat = { title: "Arirang", artist: "BTS", url: "https://www.youtube.com/results?search_query=BTS+Arirang", cover: arirangCover };
 
@@ -32,8 +53,9 @@ const linkedinPosts = [
 ];
 
 const AboutPage = () => {
-
+  const [selectedBook, setSelectedBook] = useState<PastBook | null>(null);
   return (
+
     <main className="relative bg-background">
       <ScrollAnimations />
       <div className="pt-24 md:pt-28">
@@ -198,6 +220,46 @@ const AboutPage = () => {
                 </div>
               </FadeIn>
 
+
+              {/* Past Reads */}
+              <FadeIn delay={350}>
+                <div className="py-10">
+                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
+                    Past Reads
+                  </h2>
+
+                  {/* Desktop: stacked overlapping spines */}
+                  <div className="hidden md:flex items-end pl-2 pt-10">
+                    {pastReads.map((book, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setSelectedBook(book)}
+                        style={{ zIndex: i + 1 }}
+                        className={`group relative ${i > 0 ? '-ml-24' : ''} w-40 aspect-[3/4] rounded-lg overflow-hidden ring-1 ring-background/10 shadow-xl transition-all duration-300 ease-out hover:-translate-y-6 hover:scale-[1.03] hover:z-50 hover:shadow-2xl focus:outline-none focus:-translate-y-6 focus:z-50`}
+                        aria-label={`View ${book.title}`}
+                      >
+                        <img src={book.cover} alt={book.title} className="w-full h-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Mobile: horizontal scroll, slight overlap */}
+                  <div className="md:hidden flex items-end overflow-x-auto pl-2 pt-6 pb-4 no-scrollbar">
+                    {pastReads.map((book, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setSelectedBook(book)}
+                        style={{ zIndex: i + 1 }}
+                        className={`relative shrink-0 ${i > 0 ? '-ml-12' : ''} w-28 aspect-[3/4] rounded-lg overflow-hidden ring-1 ring-background/10 shadow-xl active:-translate-y-3 transition-transform duration-200`}
+                        aria-label={`View ${book.title}`}
+                      >
+                        <img src={book.cover} alt={book.title} className="w-full h-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </FadeIn>
+
               {/* Song on Repeat */}
               <FadeIn delay={400}>
                 <div className="py-10">
@@ -233,6 +295,40 @@ const AboutPage = () => {
         </section>
       </div>
       <Footer />
+
+      {/* Past Read Detail Dialog */}
+      <Dialog open={!!selectedBook} onOpenChange={() => setSelectedBook(null)}>
+        <DialogContent className="max-w-sm bg-background border-foreground/10 p-0 overflow-hidden rounded-2xl">
+          {selectedBook && (
+            <>
+              <div className="flex items-center justify-center p-6 pb-2">
+                <div className="w-40 h-56 rounded-2xl overflow-hidden">
+                  <img src={selectedBook.cover} alt={selectedBook.title} className="w-full h-full object-cover" />
+                </div>
+              </div>
+              <div className="p-6 pt-4">
+                <DialogHeader className="mb-4">
+                  <DialogTitle className="text-xl font-serif font-medium text-title">
+                    {selectedBook.title}
+                  </DialogTitle>
+                  <p className="text-sm text-muted-foreground font-serif">{selectedBook.author}</p>
+                </DialogHeader>
+                <p className="text-sm text-muted-foreground font-serif leading-relaxed mb-6">
+                  {selectedBook.description}
+                </p>
+                <a
+                  href={selectedBook.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full px-6 py-2.5 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-colors"
+                >
+                  View on Amazon
+                </a>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </main>
   );
 };
