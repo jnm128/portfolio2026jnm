@@ -54,7 +54,7 @@ const linkedinPosts = [
 
 const AboutPage = () => {
   const [selectedBook, setSelectedBook] = useState<PastBook | null>(null);
-
+  return (
 
     <main className="relative bg-background">
       <ScrollAnimations />
