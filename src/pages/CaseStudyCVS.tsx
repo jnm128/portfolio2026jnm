@@ -136,7 +136,7 @@ const CaseStudyCVS: React.FC = () => {
                 Curious to learn more?
               </h2>
               <p className="mt-6 text-lg md:text-xl text-background/60 font-serif leading-relaxed">
-                Happy to walk you through the work, decisions, and outcomes in more detail.
+                I can't share visuals as I'm tied to an NDA with CVS Health, but happy to walk you through the work, decisions, and outcomes in more detail.
               </p>
               <div className="mt-10">
                 <Link
