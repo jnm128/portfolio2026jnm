@@ -153,7 +153,7 @@ const AboutPage = () => {
                   </h2>
                   <div className="border-t border-background/15 py-10">
                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="group flex flex-col md:flex-row gap-6 items-start">
-                      <div className="w-full md:w-96 shrink-0 rounded-lg overflow-hidden aspect-[16/10]">
+                      <div className="w-full md:w-96 shrink-0 rounded-lg overflow-hidden aspect-[16/10] ring-1 ring-background/40">
                         <img
                           src={speakingMiami}
                           alt="Alumni panel at the University of Miami"
@@ -169,7 +169,7 @@ const AboutPage = () => {
                   </div>
                   <div className="border-t border-background/15 py-10">
                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="group flex flex-col md:flex-row gap-6 items-start">
-                      <div className="w-full md:w-96 shrink-0 rounded-lg overflow-hidden aspect-[16/10]">
+                      <div className="w-full md:w-96 shrink-0 rounded-lg overflow-hidden aspect-[16/10] ring-1 ring-background/40">
                         <img
                           src={speakingUF}
                           alt="Guest speaker at University of Florida's Gator Design student org"
@@ -225,7 +225,7 @@ const AboutPage = () => {
                   {/* Active book detail */}
                   <div className="mt-8 pt-8 border-t border-background/15">
                     <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-                      <div className="w-20 md:w-24 shrink-0 rounded-lg overflow-hidden">
+                      <div className="w-20 md:w-24 shrink-0 rounded-lg overflow-hidden ring-1 ring-background/40">
                         <img
                           src={activeBook.cover}
                           alt={activeBook.title}
@@ -263,7 +263,7 @@ const AboutPage = () => {
                     Work Playlist
                   </h2>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 shrink-0 rounded overflow-hidden">
+                    <div className="w-12 h-12 shrink-0 rounded overflow-hidden ring-1 ring-background/40">
                       <img
                         src={songOnRepeat.cover}
                         alt={songOnRepeat.title}
