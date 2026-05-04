@@ -293,40 +293,6 @@ const AboutPage = () => {
         </section>
       </div>
       <Footer />
-
-      {/* Past Read Detail Dialog */}
-      <Dialog open={!!selectedBook} onOpenChange={() => setSelectedBook(null)}>
-        <DialogContent className="max-w-sm bg-background border-foreground/10 p-0 overflow-hidden rounded-2xl">
-          {selectedBook && (
-            <>
-              <div className="flex items-center justify-center p-6 pb-2">
-                <div className="w-40 h-56 rounded-2xl overflow-hidden">
-                  <img src={selectedBook.cover} alt={selectedBook.title} className="w-full h-full object-cover" />
-                </div>
-              </div>
-              <div className="p-6 pt-4">
-                <DialogHeader className="mb-4">
-                  <DialogTitle className="text-xl font-serif font-medium text-title">
-                    {selectedBook.title}
-                  </DialogTitle>
-                  <p className="text-sm text-muted-foreground font-serif">{selectedBook.author}</p>
-                </DialogHeader>
-                <p className="text-sm text-muted-foreground font-serif leading-relaxed mb-6">
-                  {selectedBook.description}
-                </p>
-                <a
-                  href={selectedBook.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full px-6 py-2.5 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-colors"
-                >
-                  View on Amazon
-                </a>
-              </div>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
     </main>
   );
 };
