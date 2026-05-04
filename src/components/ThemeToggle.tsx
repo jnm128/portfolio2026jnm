@@ -7,7 +7,7 @@ interface ThemeToggleProps {
 }
 
 const SWATCHES: { mode: ThemeMode; label: string; color: string }[] = [
-  { mode: 'blue', label: 'Blue', color: '#F5F2EE' },
+  { mode: 'blue', label: 'Blue', color: '#4F6A80' },
   { mode: 'neutral', label: 'Neutral', color: '#E6DFD2' },
   { mode: 'dark', label: 'Dark', color: '#211B16' },
 ];
