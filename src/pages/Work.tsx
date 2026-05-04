@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
 import Footer from '@/components/Footer';
 import { cn } from '@/lib/utils';
@@ -10,7 +10,8 @@ const projects = [
     year: "2024",
     description: "Shipping colleague-facing design experience to reduce user errors and improve task completion across key workflows.",
     image: "/lovable-uploads/cvs-health-card.png",
-    link: "/case-study/mindful-wellness",
+    link: "/case-study/cvs-health",
+    id: "project-cvs-health",
   },
   {
     brand: "Viveka Health",
