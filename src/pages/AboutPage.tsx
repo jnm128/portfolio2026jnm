@@ -192,63 +192,67 @@ const AboutPage = () => {
                   <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
                     Favorite Books
                   </h2>
-                  <div className="flex flex-col md:flex-row gap-8 items-start">
-                    <div className="w-24 md:w-32 shrink-0 rounded-lg overflow-hidden">
-                      <img
-                        src={currentRead.cover}
-                        alt={currentRead.title}
-                        className="w-full h-auto object-cover"
-                      />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap items-center gap-3 mb-1">
-                        <p className="text-lg md:text-xl font-serif text-background">
-                          {currentRead.title}
-                        </p>
-                        <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-background/80 border border-background/30 rounded-full px-2 py-0.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-background animate-pulse" />
-                          Currently Reading
-                        </span>
-                      </div>
-                      <p className="text-sm text-background/70 mb-4">
-                        by {currentRead.author}
-                      </p>
-                      <p className="text-sm text-background/70 leading-relaxed font-serif">
-                        {currentRead.note}
-                      </p>
-                    </div>
+
+                  {/* Fanned book row */}
+                  <div className="relative flex justify-center items-end pt-12 pb-6 md:pt-16 md:pb-10 px-2 overflow-hidden">
+                    {favoriteBooks.map((book, i) => {
+                      const center = (favoriteBooks.length - 1) / 2;
+                      const offset = i - center;
+                      const rotate = offset * 5; // deg
+                      const translateY = Math.abs(offset) * 6; // px
+                      const isActive = i === activeIndex;
+                      return (
+                        <button
+                          key={i}
+                          onMouseEnter={() => setActiveIndex(i)}
+                          onFocus={() => setActiveIndex(i)}
+                          onClick={() => setActiveIndex(i)}
+                          aria-label={book.title}
+                          aria-pressed={isActive}
+                          style={{
+                            transform: isActive
+                              ? 'rotate(0deg) translateY(-24px) scale(1.05)'
+                              : `rotate(${rotate}deg) translateY(${translateY}px)`,
+                            zIndex: isActive ? 50 : 10 + (10 - Math.abs(offset)),
+                            transformOrigin: 'bottom center',
+                          }}
+                          className="relative -mx-3 md:-mx-4 w-20 md:w-28 aspect-[3/4] rounded-md overflow-hidden bg-background ring-1 ring-background/10 shadow-[0_8px_20px_-6px_rgba(0,0,0,0.45)] transition-all duration-300 ease-out will-change-transform p-1.5 focus:outline-none"
+                        >
+                          <img src={book.cover} alt={book.title} className="w-full h-full object-cover rounded-sm pointer-events-none" />
+                        </button>
+                      );
+                    })}
                   </div>
 
-                  {/* Stacked book spines */}
-                  <div className="mt-12">
-                    {/* Desktop */}
-                    <div className="hidden md:flex items-end pl-2 pt-10">
-                      {pastReads.map((book, i) => (
-                        <button
-                          key={i}
-                          onClick={() => setSelectedBook(book)}
-                          style={{ zIndex: i + 1 }}
-                          className={`relative ${i > 0 ? '-ml-24' : ''} w-40 aspect-[3/4] rounded-lg overflow-hidden ring-1 ring-background/10 shadow-xl transition-all duration-300 ease-out will-change-transform hover:!z-50 hover:-translate-y-8 hover:scale-105 hover:shadow-2xl focus:outline-none focus-visible:!z-50 focus-visible:-translate-y-8`}
-                          aria-label={`View ${book.title}`}
-                        >
-                          <img src={book.cover} alt={book.title} className="w-full h-full object-cover pointer-events-none" />
-                        </button>
-                      ))}
-                    </div>
-
-                    {/* Mobile */}
-                    <div className="md:hidden flex items-end overflow-x-auto pl-2 pt-6 pb-4 no-scrollbar">
-                      {pastReads.map((book, i) => (
-                        <button
-                          key={i}
-                          onClick={() => setSelectedBook(book)}
-                          style={{ zIndex: i + 1 }}
-                          className={`relative shrink-0 ${i > 0 ? '-ml-12' : ''} w-28 aspect-[3/4] rounded-lg overflow-hidden ring-1 ring-background/10 shadow-xl active:-translate-y-3 transition-transform duration-200`}
-                          aria-label={`View ${book.title}`}
-                        >
-                          <img src={book.cover} alt={book.title} className="w-full h-full object-cover pointer-events-none" />
-                        </button>
-                      ))}
+                  {/* Active book detail */}
+                  <div className="mt-8 pt-8 border-t border-background/15">
+                    <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                      <div className="w-20 md:w-24 shrink-0 rounded-lg overflow-hidden">
+                        <img
+                          src={activeBook.cover}
+                          alt={activeBook.title}
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-3 mb-1">
+                          <p className="text-lg md:text-xl font-serif text-background">
+                            {activeBook.title}
+                          </p>
+                          {activeBook.isCurrent && (
+                            <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-background/80 border border-background/30 rounded-full px-2 py-0.5">
+                              <span className="w-1.5 h-1.5 rounded-full bg-background animate-pulse" />
+                              Currently Reading
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm text-background/70 mb-4">
+                          by {activeBook.author}
+                        </p>
+                        <p className="text-sm text-background/70 leading-relaxed font-serif">
+                          {activeBook.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
