@@ -24,35 +24,28 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ className }) => {
         className,
       )}
     >
-      <div className="relative flex items-center">
-        {/* connecting line */}
-        <span
-          aria-hidden
-          className="absolute left-2 right-2 top-1/2 h-px -translate-y-1/2 bg-foreground/30"
-        />
-        <div className="relative flex items-center gap-5">
-          {SWATCHES.map(({ mode, label, color }) => {
-            const isActive = theme === mode;
-            return (
-              <button
-                key={mode}
-                type="button"
-                role="radio"
-                aria-checked={isActive}
-                aria-label={label}
-                title={label}
-                onClick={() => setTheme(mode)}
-                className={cn(
-                  'relative z-10 rounded-full transition-all duration-200 border border-foreground/30',
-                  isActive
-                    ? 'h-[18px] w-[18px] ring-2 ring-foreground ring-offset-2 ring-offset-background'
-                    : 'h-3.5 w-3.5 hover:scale-110',
-                )}
-                style={{ backgroundColor: color }}
-              />
-            );
-          })}
-        </div>
+      <div className="relative flex items-center gap-5">
+        {SWATCHES.map(({ mode, label, color }) => {
+          const isActive = theme === mode;
+          return (
+            <button
+              key={mode}
+              type="button"
+              role="radio"
+              aria-checked={isActive}
+              aria-label={label}
+              title={label}
+              onClick={() => setTheme(mode)}
+              className={cn(
+                'relative z-10 rounded-full transition-all duration-200 border border-foreground/30',
+                isActive
+                  ? 'h-[18px] w-[18px] ring-2 ring-foreground ring-offset-2 ring-offset-background'
+                  : 'h-3.5 w-3.5 hover:scale-110',
+              )}
+              style={{ backgroundColor: color }}
+            />
+          );
+        })}
       </div>
     </div>
   );
