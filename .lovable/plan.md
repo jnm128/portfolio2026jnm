@@ -1,18 +1,22 @@
-Make secondary/body text resolve to warm brown (#5C4A3D) on every light background, matching memory's body-text rule.
+Add a brief, branded loading spinner that appears on the homepage (`/`) when it first loads, then fades out to reveal the page.
 
-## Changes
+## What you'll see
+- A full-screen overlay using `bg-background` covers the page on first visit
+- Centered, a small lowercase `o` (the same Outfit-bold style as MINO's logo) sits in the middle
+- Concentric rings ripple outward from the `o` continuously (matcha-calm, slow)
+- After ~900ms the overlay fades out and the homepage fades in normally
+- Only shows on the home route, only on first load per session (so route-changing back home doesn't re-trigger)
 
-1. **`src/index.css` — Blue theme `:root`**
-   - `--foreground` is currently slate-blue `209 24% 41%` (#4F6A80). Change to warm brown `25 21% 30%` (#5C4A3D) so `text-foreground` = brown in Blue theme, matching Neutral.
-   - Slate blue stays as `--accent` / `--primary` / `--ring` (unchanged).
-   - `--primary-foreground` stays cream (still on slate-blue button).
-   - `--muted-foreground` already warm-dark, leave as is.
+## Files
+- New: `src/components/MinoLoader.tsx`
+  - Fixed full-screen overlay, `z-[300]`, `bg-background`
+  - Center stack: the letter `o` in `font-sans font-bold text-title text-5xl`
+  - Two or three absolutely-positioned rings behind it: `rounded-full border border-foreground/30`, animated with a new `ripple` keyframe (scale 0.6 → 2.4, opacity 0.6 → 0) on a 1.6s loop, staggered delays (0s, 0.4s, 0.8s)
+  - Internal `useState` `visible`, after 900ms set `leaving` (fade-out 400ms via opacity transition), then unmount
+- Edit: `src/pages/Index.tsx` — render `<MinoLoader />` at top of `<main>`; track first-load via `sessionStorage` key `mino-loaded` so it only shows once per tab session
+- Edit: `src/index.css` — add `@keyframes ripple` and a `.animate-ripple` utility class in the `@layer components` / keyframes section
 
-2. **`src/components/ui-custom/Button.tsx`** — replace literals with tokens:
-   - `bg-gray-600 text-white hover:bg-gray-700 ...gray-600/25` → `bg-primary text-primary-foreground hover:bg-primary/90`
-   - `text-gray-600 underline-offset-4` → `text-foreground underline-offset-4`
-
-3. **`src/components/About.tsx`** — body paragraphs already use `text-foreground`; with the Blue change above they'll automatically render warm brown. No edit needed.
-
-## Verify
-After the edit, secondary text on light backgrounds is the same warm brown across Blue and Neutral themes; headings remain near-black via `text-title`; dark theme is unaffected.
+## Tokens / design alignment
+- Uses `bg-background`, `text-title`, `border-foreground/30` only — no literal colors
+- Outfit font, bold weight to match the MINO logo
+- Slow easing (`cubic-bezier(0.25, 0.46, 0.45, 0.94)`) consistent with existing natural-fall animation
