@@ -60,15 +60,6 @@ const CaseStudyCVS: React.FC = () => {
             </div>
           </FadeIn>
 
-          <FadeIn delay={250}>
-            <p className="mt-10 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed text-center">
-              I'm tied to an NDA so I can't share visuals from my work at CVS Health — but I'd be happy to chat about it.
-            </p>
-            <div className="mt-6 flex flex-col items-center gap-3 text-sm md:text-base text-muted-foreground">
-              <span>Here's what I can tell you</span>
-              <ArrowDown size={20} className="animate-bounce" />
-            </div>
-          </FadeIn>
         </div>
       </section>
 
