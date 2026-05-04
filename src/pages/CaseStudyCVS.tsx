@@ -1,6 +1,6 @@
 import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { ArrowLeft, ArrowDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 import FadeIn from '@/components/animations/FadeIn';
 import SplitSection from '@/components/SplitSection';
 import CaseStudyNav from '@/components/CaseStudyNav';
@@ -8,21 +8,19 @@ import Footer from '@/components/Footer';
 import cvsHeroVideo from '@/assets/cvs-hero.mp4';
 
 const CaseStudyCVS: React.FC = () => {
-  const navigate = useNavigate();
-
   return (
     <main className="relative">
       {/* Hero Section */}
       <section className="pt-20 md:pt-24 pb-16 md:pb-24 bg-background">
         <div className="container mx-auto max-w-[1600px] px-5 md:px-16">
           <FadeIn>
-            <button
-              onClick={() => navigate(-1)}
+            <Link
+              to="/work#project-cvs-health"
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-12"
             >
               <ArrowLeft size={16} />
               <span className="text-sm">Back</span>
-            </button>
+            </Link>
           </FadeIn>
 
           <FadeIn delay={100}>
@@ -62,15 +60,6 @@ const CaseStudyCVS: React.FC = () => {
             </div>
           </FadeIn>
 
-          <FadeIn delay={250}>
-            <p className="mt-10 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed text-center">
-              I'm tied to an NDA so I can't share visuals from my work at CVS Health — but I'd be happy to chat about it.
-            </p>
-            <div className="mt-6 flex flex-col items-center gap-3 text-sm md:text-base text-muted-foreground">
-              <span>Here's what I can tell you</span>
-              <ArrowDown size={20} className="animate-bounce" />
-            </div>
-          </FadeIn>
         </div>
       </section>
 
@@ -147,7 +136,7 @@ const CaseStudyCVS: React.FC = () => {
                 Curious to learn more?
               </h2>
               <p className="mt-6 text-lg md:text-xl text-background/60 font-serif leading-relaxed">
-                Happy to walk you through the work, decisions, and outcomes in more detail.
+                I can't share visuals as I'm tied to an NDA with CVS Health, but happy to walk you through the work, decisions, and outcomes in more detail.
               </p>
               <div className="mt-10">
                 <Link

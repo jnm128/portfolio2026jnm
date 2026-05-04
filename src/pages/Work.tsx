@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
 import Footer from '@/components/Footer';
 import { cn } from '@/lib/utils';
@@ -10,7 +10,8 @@ const projects = [
     year: "2024",
     description: "Shipping colleague-facing design experience to reduce user errors and improve task completion across key workflows.",
     image: "/lovable-uploads/cvs-health-card.png",
-    link: "/case-study/mindful-wellness",
+    link: "/case-study/cvs-health",
+    id: "project-cvs-health",
   },
   {
     brand: "Viveka Health",
@@ -36,6 +37,26 @@ const projects = [
 ];
 
 const Work: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.slice(1);
+    const tryScroll = () => {
+      const el = document.getElementById(id);
+      if (!el) return false;
+      const top = el.getBoundingClientRect().top + window.scrollY - 96;
+      if (window.__lenis) {
+        window.__lenis.scrollTo(top, { immediate: false });
+      } else {
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+      return true;
+    };
+    const t = setTimeout(() => { if (!tryScroll()) setTimeout(tryScroll, 200); }, 100);
+    return () => clearTimeout(t);
+  }, [location.hash]);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Header */}
@@ -58,7 +79,7 @@ const Work: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16">
             {projects.map((project, index) => (
               <FadeIn key={project.brand} delay={index * 50} duration={500} threshold={0.05}>
-                <Link to={project.link} className="group block">
+                <Link to={project.link} id={(project as any).id} className="group block scroll-mt-24">
                   <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
                     <img
                       src={project.image}
