@@ -42,7 +42,9 @@ const Index = () => {
 
   return (
     <main className="relative bg-background">
+      {showLoader && <MinoLoader />}
       <ScrollAnimations />
+
       <Hero />
       <IntroBlurb />
       <Projects />
