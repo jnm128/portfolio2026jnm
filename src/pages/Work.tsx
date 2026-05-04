@@ -79,7 +79,7 @@ const Work: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16">
             {projects.map((project, index) => (
               <FadeIn key={project.brand} delay={index * 50} duration={500} threshold={0.05}>
-                <Link to={project.link} className="group block">
+                <Link to={project.link} id={(project as any).id} className="group block scroll-mt-24">
                   <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
                     <img
                       src={project.image}
