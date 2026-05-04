@@ -186,72 +186,59 @@ const AboutPage = () => {
                 </div>
               </FadeIn>
 
-              {/* Favorite Books */}
+              {/* Favorite Books — Carousel */}
               <FadeIn delay={300}>
                 <div className="py-10">
                   <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
                     Favorite Books
                   </h2>
 
-                  {/* Fanned book row */}
-                  <div className="relative flex justify-center items-end pt-20 pb-12 md:pt-24 md:pb-16 px-6 md:px-12">
-                    {favoriteBooks.map((book, i) => {
-                      const center = (favoriteBooks.length - 1) / 2;
-                      const offset = i - center;
-                      const rotate = offset * 5; // deg
-                      const translateY = Math.abs(offset) * 6; // px
-                      const isActive = i === activeIndex;
-                      return (
-                        <button
-                          key={i}
-                          onClick={() => setActiveIndex(i)}
-                          aria-label={book.title}
-                          aria-pressed={isActive}
-                          style={{
-                            transform: isActive
-                              ? 'rotate(0deg) translateY(-24px) scale(1.05)'
-                              : `rotate(${rotate}deg) translateY(${translateY}px)`,
-                            zIndex: isActive ? 50 : 10 + (10 - Math.abs(offset)),
-                            transformOrigin: 'bottom center',
-                          }}
-                          className="relative -mx-3 md:-mx-4 w-20 md:w-28 aspect-[3/4] rounded-md overflow-hidden ring-1 ring-background/40 shadow-[0_10px_24px_-10px_rgba(0,0,0,0.5)] transition-all duration-300 ease-out will-change-transform focus:outline-none"
-                        >
-                          <img src={book.cover} alt={book.title} className="w-full h-full object-cover rounded-md pointer-events-none" />
-                        </button>
-                      );
-                    })}
+                  <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                    <div className="w-32 md:w-40 shrink-0 rounded-lg overflow-hidden ring-1 ring-background/40 transition-opacity duration-300">
+                      <img
+                        key={activeBook.cover}
+                        src={activeBook.cover}
+                        alt={activeBook.title}
+                        className="w-full h-auto object-cover animate-fade-in"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-3 mb-1">
+                        <p className="text-lg md:text-xl font-serif text-background">
+                          {activeBook.title}
+                        </p>
+                        {activeBook.isCurrent && (
+                          <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-background/80 border border-background/30 rounded-full px-2 py-0.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-background animate-pulse" />
+                            Currently Reading
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-sm text-background/70 mb-4">
+                        by {activeBook.author}
+                      </p>
+                      <p className="text-sm text-background/70 leading-relaxed font-serif">
+                        {activeBook.description}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Active book detail */}
-                  <div className="mt-8 pt-8 border-t border-background/15">
-                    <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-                      <div className="w-20 md:w-24 shrink-0 rounded-lg overflow-hidden ring-1 ring-background/40">
-                        <img
-                          src={activeBook.cover}
-                          alt={activeBook.title}
-                          className="w-full h-auto object-cover"
-                        />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex flex-wrap items-center gap-3 mb-1">
-                          <p className="text-lg md:text-xl font-serif text-background">
-                            {activeBook.title}
-                          </p>
-                          {activeBook.isCurrent && (
-                            <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-background/80 border border-background/30 rounded-full px-2 py-0.5">
-                              <span className="w-1.5 h-1.5 rounded-full bg-background animate-pulse" />
-                              Currently Reading
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-sm text-background/70 mb-4">
-                          by {activeBook.author}
-                        </p>
-                        <p className="text-sm text-background/70 leading-relaxed font-serif">
-                          {activeBook.description}
-                        </p>
-                      </div>
-                    </div>
+                  {/* Dot indicators */}
+                  <div className="flex items-center justify-center gap-2 mt-8" role="tablist" aria-label="Favorite books">
+                    {favoriteBooks.map((book, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setActiveIndex(i)}
+                        aria-label={`View ${book.title}`}
+                        aria-selected={i === activeIndex}
+                        role="tab"
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          i === activeIndex
+                            ? 'w-6 bg-background'
+                            : 'w-1.5 bg-background/30 hover:bg-background/50'
+                        }`}
+                      />
+                    ))}
                   </div>
                 </div>
               </FadeIn>
