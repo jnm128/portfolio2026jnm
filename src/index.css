@@ -118,13 +118,13 @@
   }
 
   .dark {
-    --background: 26 24% 6%;           /* #130F0C */
+    --background: 26 18% 11%;          /* #211B16 — softened espresso */
     --foreground: 36 24% 92%;          /* #F0ECE6 */
     --title: 36 24% 92%;               /* same as foreground in dark — keep titles legible */
 
-    --section: 25 24% 10%;             /* #1F1813 */
+    --section: 25 20% 14%;             /* slightly lighter section */
 
-    --card: 26 25% 14%;                /* #2C221A */
+    --card: 26 22% 18%;                /* card surface */
     --card-foreground: 36 24% 92%;
 
     --popover: 26 25% 14%;
@@ -152,9 +152,9 @@
     --input: 25 22% 21%;
     --ring: 204 41% 63%;
 
-    --surface-1: 26 24% 6%;
-    --surface-2: 25 24% 10%;
-    --surface-3: 26 25% 14%;
+    --surface-1: 26 18% 11%;
+    --surface-2: 25 20% 14%;
+    --surface-3: 26 22% 18%;
     --surface-4: 25 22% 21%;
     --surface-5: 33 18% 75%;
     --surface-6: 36 24% 92%;
