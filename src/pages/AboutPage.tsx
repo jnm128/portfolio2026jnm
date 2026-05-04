@@ -47,7 +47,7 @@ const linkedinPosts = [
 ];
 
 const AboutPage = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(Math.floor(favoriteBooks.length / 2));
   const activeBook = favoriteBooks[activeIndex];
   return (
 
@@ -194,7 +194,7 @@ const AboutPage = () => {
                   </h2>
 
                   {/* Fanned book row */}
-                  <div className="relative flex justify-center items-end pt-12 pb-6 md:pt-16 md:pb-10 px-2 overflow-hidden">
+                  <div className="relative flex justify-center items-end pt-20 pb-12 md:pt-24 md:pb-16 px-6 md:px-12">
                     {favoriteBooks.map((book, i) => {
                       const center = (favoriteBooks.length - 1) / 2;
                       const offset = i - center;
@@ -216,9 +216,9 @@ const AboutPage = () => {
                             zIndex: isActive ? 50 : 10 + (10 - Math.abs(offset)),
                             transformOrigin: 'bottom center',
                           }}
-                          className="relative -mx-3 md:-mx-4 w-20 md:w-28 aspect-[3/4] rounded-md overflow-hidden bg-background ring-1 ring-background/10 shadow-[0_8px_20px_-6px_rgba(0,0,0,0.45)] transition-all duration-300 ease-out will-change-transform p-1.5 focus:outline-none"
+                          className="relative -mx-3 md:-mx-4 w-20 md:w-28 aspect-[3/4] rounded-md overflow-hidden ring-1 ring-background/15 shadow-[0_10px_24px_-10px_rgba(0,0,0,0.5)] transition-all duration-300 ease-out will-change-transform focus:outline-none"
                         >
-                          <img src={book.cover} alt={book.title} className="w-full h-full object-cover rounded-sm pointer-events-none" />
+                          <img src={book.cover} alt={book.title} className="w-full h-full object-cover rounded-md pointer-events-none" />
                         </button>
                       );
                     })}
