@@ -194,12 +194,12 @@ const AboutPage = () => {
                   </h2>
 
                   <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-                    <div className="w-32 md:w-40 shrink-0 rounded-lg overflow-hidden ring-1 ring-background/40 transition-opacity duration-300">
+                    <div className="w-32 md:w-40 aspect-[3/4] shrink-0 rounded-lg overflow-hidden ring-1 ring-background/40 bg-background/5 transition-opacity duration-300">
                       <img
                         key={activeBook.cover}
                         src={activeBook.cover}
                         alt={activeBook.title}
-                        className="w-full h-auto object-cover animate-fade-in"
+                        className="w-full h-full object-cover animate-fade-in"
                       />
                     </div>
                     <div className="flex-1 min-w-0">
