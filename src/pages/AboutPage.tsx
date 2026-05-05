@@ -160,8 +160,7 @@ const AboutPage = () => {
             <FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-hint mb-4">Skill Set</p>
-                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">What I bring to the room</h2>
+                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">Skill Set</h2>
                   <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-md">
                     A blend of strategy, design, and research — focused on creating products that feel as good as they perform.
                   </p>
