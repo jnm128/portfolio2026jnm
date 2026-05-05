@@ -237,7 +237,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               aria-current={location.pathname.startsWith('/work') ? 'page' : undefined}
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
+                useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-primary hover:opacity-70"
               )}
             >
               Work
@@ -248,7 +248,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               aria-current={location.pathname === '/about' ? 'page' : undefined}
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
+                useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-primary hover:opacity-70"
               )}
             >
               About
@@ -298,7 +298,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               aria-current={location.pathname === '/book-club' ? 'page' : undefined}
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
+                useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-primary hover:opacity-70"
               )}
             >
               Community
@@ -309,7 +309,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               aria-current={location.pathname === '/contact' ? 'page' : undefined}
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
+                useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-primary hover:opacity-70"
               )}
             >
               Contact
