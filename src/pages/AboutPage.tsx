@@ -132,50 +132,81 @@ const AboutPage = () => {
 
         {/* How I Work + Skill Set + Testimonials */}
         <section className="bg-background py-20 md:py-32">
-          <div className="max-w-3xl mx-auto px-5 md:px-16 text-center space-y-24 md:space-y-32">
+          <div className="max-w-[1600px] mx-auto px-5 md:px-16 space-y-24 md:space-y-32">
+
             {/* How I Work */}
             <FadeIn>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-hint mb-4">How I Work</p>
-                <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">A process, not a formula</h2>
-                <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-xl mx-auto mb-12">
-                  Every project moves through the same rhythm — guided by curiosity, shaped by research, refined through iteration.
-                </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8 text-left md:text-center">
-                  {processSteps.map((step) => (
-                    <div key={step.num}>
-                      <p className="font-serif italic text-hint mb-3">{step.num}</p>
-                      <h3 className="text-lg font-serif text-title mb-2">{step.title}</h3>
-                      <p className="text-sm text-foreground/80 font-serif leading-relaxed">{step.text}</p>
-                    </div>
-                  ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-hint mb-4">How I Work</p>
+                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">A process, not a formula</h2>
+                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-md">
+                    Every project moves through the same rhythm — guided by curiosity, shaped by research, refined through iteration.
+                  </p>
                 </div>
+                <ul className="space-y-0">
+                  {processSteps.map((step, i) => (
+                    <li
+                      key={step.num}
+                      className={`py-8 md:py-10 ${i === 0 ? 'border-t border-border' : ''} ${i !== processSteps.length - 1 ? 'border-b border-border' : ''}`}
+                    >
+                      <div className="flex items-baseline gap-6">
+                        <span className="text-sm font-serif italic text-hint tracking-wider w-10 shrink-0">{step.num}</span>
+                        <div>
+                          <p className="text-lg font-serif text-title">{step.title}</p>
+                          <p className="text-sm text-foreground font-serif mt-1 leading-relaxed">{step.text}</p>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </FadeIn>
 
             {/* Skill Set */}
             <FadeIn>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-hint mb-4">Skill Set</p>
-                <h2 className="text-3xl md:text-5xl font-serif text-title mb-12">What I bring to the room</h2>
-                <div className="space-y-10 max-w-xl mx-auto">
-                  {skills.map((skill, i) => (
-                    <div key={skill.title} className={i !== 0 ? 'pt-10 border-t border-border' : ''}>
-                      <h3 className="text-xl md:text-2xl font-serif text-title mb-3">{skill.title}</h3>
-                      <p className="text-base text-foreground font-serif leading-relaxed">{skill.text}</p>
-                    </div>
-                  ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-hint mb-4">Skill Set</p>
+                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">What I bring to the room</h2>
+                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-md">
+                    A blend of strategy, design, and research — focused on creating products that feel as good as they perform.
+                  </p>
                 </div>
+                <ul className="space-y-0">
+                  {skills.map((skill, i) => {
+                    const numerals = ['I', 'II', 'III'];
+                    return (
+                      <li
+                        key={skill.title}
+                        className={`py-8 md:py-10 ${i === 0 ? 'border-t border-border' : ''} ${i !== skills.length - 1 ? 'border-b border-border' : ''}`}
+                      >
+                        <div className="flex items-baseline gap-6">
+                          <span className="text-sm font-serif italic text-hint tracking-wider w-10 shrink-0">{numerals[i]}</span>
+                          <div>
+                            <p className="text-lg font-serif text-title">{skill.title}</p>
+                            <p className="text-sm text-foreground font-serif mt-1 leading-relaxed">{skill.text}</p>
+                          </div>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </FadeIn>
 
             {/* Testimonials */}
             <FadeIn>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-hint mb-4">Testimonials</p>
-                <h2 className="text-3xl md:text-5xl font-serif text-title mb-12">Kind words from collaborators</h2>
-                <div className="max-w-2xl mx-auto">
-                  <Quote className="w-8 h-8 text-hint/60 mx-auto mb-6" aria-hidden="true" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-hint mb-4">Testimonials</p>
+                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">Kind words from collaborators</h2>
+                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-md">
+                    A few reflections from the teammates and partners I've had the joy of building alongside.
+                  </p>
+                </div>
+                <div className="border-t border-border pt-10">
+                  <Quote className="w-8 h-8 text-hint/60 mb-6" aria-hidden="true" />
                   <p
                     key={quoteIndex}
                     className="text-xl md:text-2xl font-serif text-title leading-relaxed italic mb-6 animate-fade-in"
@@ -186,7 +217,7 @@ const AboutPage = () => {
                     — {activeQuote.name}, <span className="text-hint">{activeQuote.role}</span>
                   </p>
 
-                  <div className="flex items-center justify-center gap-4 mt-10">
+                  <div className="flex items-center gap-4 mt-10">
                     <button
                       onClick={() => setQuoteIndex((quoteIndex - 1 + testimonials.length) % testimonials.length)}
                       aria-label="Previous testimonial"
