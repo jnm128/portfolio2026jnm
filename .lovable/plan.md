@@ -1,13 +1,39 @@
-## Differentiate the Blue theme swatch
+## Goals
 
-In `src/components/ThemeToggle.tsx`, the first swatch currently uses the cream background color `#F5F2EE`, which looks nearly identical to the second (Neutral, `#E6DFD2`).
+1. Headshot on About hero loads cleanly (no layout flash, smooth fade-in).
+2. A consistent loading animation (shimmer/pulse placeholder + fade-in) is applied to all `<img>` elements across the About page.
+3. On mobile, the active book cover in the Favorite Books carousel is centered horizontally (currently left-aligned in the flex-col stack).
 
-Swap the Blue swatch's display color to the slate-blue accent that defines the Blue theme, so the picker reads as three clearly distinct dots.
+## Implementation
 
-### Change
-- `SWATCHES[0].color`: `#F5F2EE` → `#4F6A80` (the Blue theme's slate accent token).
+### 1. Reusable image component
+Create `src/components/ui-custom/SmartImage.tsx`:
+- Wraps `<img>` with a `relative` container.
+- Tracks `loaded` state via `onLoad`.
+- While loading: shows an absolutely-positioned placeholder using `bg-muted` + `animate-pulse` (and a subtle gradient sheen).
+- On load: image fades in (`opacity-0` -> `opacity-100`, `transition-opacity duration-700`).
+- Forwards `className`, `src`, `alt`, `loading`, sizing props.
+- Inherits container shape via `rounded-[inherit]` so it works inside any `rounded-*` wrapper.
 
-Neutral (`#E6DFD2`) and Dark (`#211B16`) stay as-is.
+### 2. Apply across `src/pages/AboutPage.tsx`
+Swap raw `<img>` tags for `SmartImage` in:
+- Hero headshot (set `loading="eager"` + `fetchPriority="high"`).
+- Speaking section (Miami + UF images).
+- Favorite Books active cover.
+- Work Playlist song cover.
 
-### Files modified
-- `src/components/ThemeToggle.tsx`
+The headshot wrapper already has `aspect-[5/6]`, so the placeholder fills correctly with no CLS.
+
+### 3. Mobile centering for active book
+In the Favorite Books detail block, the wrapper is `flex flex-col md:flex-row ... items-start`. Change to `items-center md:items-start` so the cover (and only on mobile) sits centered above the text. Text block keeps its left alignment naturally; if needed, wrap the cover div with `mx-auto md:mx-0` to guarantee horizontal centering on mobile only.
+
+## Files
+
+- New: `src/components/ui-custom/SmartImage.tsx`
+- Edit: `src/pages/AboutPage.tsx` (replace 4 `<img>` usages, adjust mobile alignment classes on book detail row)
+
+## Notes
+
+- Uses existing Tailwind `animate-pulse`; no config changes.
+- No new dependencies.
+- Behavior degrades gracefully if `onLoad` fires before mount (cached): placeholder simply never renders.
