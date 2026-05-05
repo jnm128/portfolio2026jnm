@@ -128,8 +128,7 @@ const AboutPage = () => {
             <FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-hint mb-4">How I Work</p>
-                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">A process, not a formula</h2>
+                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">How I Work</h2>
                   <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-md">
                     Every project moves through the same rhythm — guided by curiosity, shaped by research, refined through iteration.
                   </p>
