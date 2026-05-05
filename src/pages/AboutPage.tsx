@@ -47,9 +47,30 @@ const linkedinPosts = [
   },
 ];
 
+const processSteps = [
+  { num: '01', title: 'Discover', text: 'Research, listen, and frame the real problem before solving it.' },
+  { num: '02', title: 'Define', text: 'Synthesize insights into clear opportunities and direction.' },
+  { num: '03', title: 'Design', text: 'Explore, prototype, and validate ideas with real users.' },
+  { num: '04', title: 'Deliver', text: 'Ship, measure, and iterate toward meaningful impact.' },
+];
+
+const skills = [
+  { title: 'Product Design', text: 'Interaction design, design systems, and visual craft for web & mobile.' },
+  { title: 'Product Strategy', text: 'Aligning user needs with business goals through roadmaps and prioritization.' },
+  { title: 'UX Research & Testing', text: 'Interviews, usability testing, synthesis, and behavioral insight.' },
+];
+
+const testimonials = [
+  { quote: 'Joanna brings calm and clarity to complex problems.', name: 'Sarah K.', role: 'Product Lead' },
+  { quote: 'Her research turns assumptions into actionable direction.', name: 'Marcus T.', role: 'Engineering Manager' },
+  { quote: 'A rare blend of strategic thinking and beautiful craft.', name: 'Elena R.', role: 'Design Director' },
+];
+
 const AboutPage = () => {
   const [activeIndex, setActiveIndex] = useState(Math.floor(favoriteBooks.length / 2));
+  const [quoteIndex, setQuoteIndex] = useState(0);
   const activeBook = favoriteBooks[activeIndex];
+  const activeQuote = testimonials[quoteIndex];
   return (
 
     <main className="relative bg-background">
