@@ -168,7 +168,13 @@ const AboutPage = () => {
             <FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
                 <div>
-                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">Skill Set</h2>
+                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">
+                    What I bring to the{' '}
+                    <span key={meetingWords[meetingIndex]} className="inline-block animate-fade-in italic">
+                      {meetingWords[meetingIndex]}
+                    </span>
+                    {' '}Room
+                  </h2>
                   <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-md">
                     A blend of strategy, design, and research — focused on creating products that feel as good as they perform.
                   </p>
