@@ -88,7 +88,7 @@ const ScrollAnimations = () => {
     });
 
     return () => {
-      observer.disconnect();
+      
       packageObserver.disconnect();
       projectObserver.disconnect();
       dividerObserver.disconnect();
