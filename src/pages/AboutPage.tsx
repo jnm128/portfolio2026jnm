@@ -185,7 +185,7 @@ const AboutPage = () => {
                     return (
                       <li
                         key={skill.title}
-                        className={`py-8 md:py-10 ${i === 0 ? 'border-t border-border' : ''} ${i !== skills.length - 1 ? 'border-b border-border' : ''}`}
+                        className={`py-8 md:py-10 ${i !== skills.length - 1 ? 'border-b border-border' : ''}`}
                       >
                         <div className="flex items-baseline gap-6">
                           <span className="text-sm font-serif italic text-hint tracking-wider w-10 shrink-0">{numerals[i]}</span>
