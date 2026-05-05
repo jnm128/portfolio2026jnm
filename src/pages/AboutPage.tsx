@@ -145,7 +145,7 @@ const AboutPage = () => {
                   {processSteps.map((step, i) => (
                     <li
                       key={step.num}
-                      className={`py-8 md:py-10 ${i === 0 ? 'border-t border-border' : ''} ${i !== processSteps.length - 1 ? 'border-b border-border' : ''}`}
+                      className={`py-8 md:py-10 ${i !== processSteps.length - 1 ? 'border-b border-border' : ''}`}
                     >
                       <div className="flex items-baseline gap-6">
                         <span className="text-sm font-serif italic text-hint tracking-wider w-10 shrink-0">{step.num}</span>
