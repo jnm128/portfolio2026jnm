@@ -60,17 +60,9 @@ const skills = [
   { title: 'UX Research & Testing', text: 'Interviews, usability testing, synthesis, and behavioral insight.' },
 ];
 
-const testimonials = [
-  { quote: 'Joanna brings calm and clarity to complex problems.', name: 'Sarah K.', role: 'Product Lead' },
-  { quote: 'Her research turns assumptions into actionable direction.', name: 'Marcus T.', role: 'Engineering Manager' },
-  { quote: 'A rare blend of strategic thinking and beautiful craft.', name: 'Elena R.', role: 'Design Director' },
-];
-
 const AboutPage = () => {
   const [activeIndex, setActiveIndex] = useState(Math.floor(favoriteBooks.length / 2));
-  const [quoteIndex, setQuoteIndex] = useState(0);
   const activeBook = favoriteBooks[activeIndex];
-  const activeQuote = testimonials[quoteIndex];
   return (
 
     <main className="relative bg-background">
