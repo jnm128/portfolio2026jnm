@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Leaf, MapPin, Linkedin } from 'lucide-react';
+import { Leaf, MapPin } from 'lucide-react';
 
 interface FooterProps {
   className?: string;
@@ -59,11 +59,9 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               href="https://www.linkedin.com/in/joannaminott"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="text-background/60 hover:text-background transition-colors inline-flex items-center gap-1.5"
+              className="text-background/60 hover:text-background transition-colors"
             >
-              <Linkedin className="w-4 h-4" />
-              <span>LinkedIn</span>
+              LinkedIn
             </a>
           </nav>
         </div>
