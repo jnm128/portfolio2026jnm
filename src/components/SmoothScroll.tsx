@@ -25,7 +25,7 @@ const SmoothScroll = () => {
         wheelMultiplier: 0.8,
         touchMultiplier: 1.5,
         smoothWheel: true,
-        syncTouch: false,
+        syncTouch: true,
       });
       window.__lenis = lenis;
 
