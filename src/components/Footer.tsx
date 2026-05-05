@@ -40,7 +40,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
   };
 
   return (
-    <footer className={cn('pt-16 md:pt-24 pb-8 md:pb-12 bg-foreground text-background overflow-hidden', className)}>
+    <footer data-theme="dark" className={cn('pt-16 md:pt-24 pb-8 md:pb-12 bg-foreground text-background overflow-hidden', className)}>
       <div className="container mx-auto px-5 md:px-16 max-w-[1600px]">
         {/* Top — meta + nav */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-12 md:mb-16">
