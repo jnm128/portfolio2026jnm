@@ -105,13 +105,13 @@ const AboutPage = () => {
                   <h1 className="hidden md:block text-3xl md:text-5xl font-serif text-title mb-4">
                     About
                   </h1>
-                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed mb-6">
+                  <p className="text-base md:text-lg font-serif leading-relaxed mb-6 text-stone-600">
                     Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences.
                   </p>
-                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed mb-6">
+                  <p className="text-base md:text-lg font-serif leading-relaxed mb-6 text-stone-600">
                     She blends product strategy, behavior-driven design, and emotional insight to create solutions that help people feel supported, empowered, and understood.
                   </p>
-                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed mb-6">
+                  <p className="text-base md:text-lg font-serif leading-relaxed mb-6 text-stone-600">
                     Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.
                   </p>
 
@@ -137,7 +137,7 @@ const AboutPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
                 <div>
                   <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">How I Work</h2>
-                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-md">
+                  <p className="text-base md:text-lg font-serif leading-relaxed max-w-md text-stone-600">
                     Every project moves through the same rhythm — guided by curiosity, shaped by research, refined through iteration.
                   </p>
                 </div>
@@ -151,7 +151,7 @@ const AboutPage = () => {
                         <span className="text-sm font-serif italic text-hint tracking-wider w-10 shrink-0">{step.num}</span>
                         <div>
                           <p className="text-lg font-serif text-title">{step.title}</p>
-                          <p className="text-sm text-foreground font-serif mt-1 leading-relaxed">{step.text}</p>
+                          <p className="text-sm font-serif mt-1 leading-relaxed text-stone-600">{step.text}</p>
                         </div>
                       </div>
                     </li>
@@ -176,7 +176,7 @@ const AboutPage = () => {
                     </span>
                     {' '}Room
                   </h2>
-                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-md">
+                  <p className="text-base md:text-lg font-serif leading-relaxed max-w-md text-stone-600">
                     A blend of strategy, design, and research — focused on creating products that feel as good as they perform.
                   </p>
                 </div>
@@ -192,7 +192,7 @@ const AboutPage = () => {
                           <span className="text-sm font-serif italic text-hint tracking-wider w-10 shrink-0">{numerals[i]}</span>
                           <div>
                             <p className="text-lg font-serif text-title">{skill.title}</p>
-                            <p className="text-sm text-foreground font-serif mt-1 leading-relaxed">{skill.text}</p>
+                            <p className="text-sm font-serif mt-1 leading-relaxed text-stone-600">{skill.text}</p>
                           </div>
                         </div>
                       </li>
