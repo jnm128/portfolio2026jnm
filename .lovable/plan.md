@@ -1,28 +1,14 @@
-## Skill Set heading: rotating word like homepage "Intention"
+## Fix choppy mobile scrolling & animations
 
-### Changes in `src/pages/AboutPage.tsx`
+**1. `src/components/SmoothScroll.tsx`** — Disable Lenis on touch devices so iOS/Android use native momentum scrolling (Lenis `syncTouch` is the main cause of the choppiness).
+- Detect `window.matchMedia('(pointer: coarse)').matches`
+- If touch: skip Lenis entirely (native scroll)
+- If desktop: keep current Lenis config
 
-1. **Imports**: add `useEffect` to the React import.
-2. **Add rotating words array** at the top of the file:
-   ```ts
-   const meetingWords = ['Meeting', 'Teams', 'Google Meet', 'Zoom'];
-   ```
-3. **In `AboutPage` component**, add state + interval (mirrors `AboutSection.tsx`):
-   ```tsx
-   const [meetingIndex, setMeetingIndex] = useState(0);
-   useEffect(() => {
-     const id = setInterval(() => setMeetingIndex(i => (i + 1) % meetingWords.length), 2200);
-     return () => clearInterval(id);
-   }, []);
-   ```
-4. **Replace the Skill Set heading** (line 163) with:
-   ```tsx
-   <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">
-     What I bring to the{' '}
-     <span key={meetingWords[meetingIndex]} className="inline-block animate-fade-in italic">
-       {meetingWords[meetingIndex]}
-     </span>
-     {' '}Room
-   </h2>
-   ```
-   The italic rotating word cycles through Meeting → Teams → Google Meet → Zoom → back to Meeting every 2.2s, matching the homepage "Intention" treatment.
+**2. `src/components/Hero.tsx`** — Skip the per-scroll padding/border-radius animation on mobile to eliminate layout thrash on every scroll frame.
+- In the scroll handler, early-return when `window.innerWidth < 768`
+- Reset inline styles once on mount for mobile so the hero renders at its final state
+
+**3. `src/index.css`** — Add GPU hint to the hero image wrapper and ensure `-webkit-overflow-scrolling: touch` momentum is preserved when Lenis isn't attached.
+
+No other components are touched. No visual change on desktop.

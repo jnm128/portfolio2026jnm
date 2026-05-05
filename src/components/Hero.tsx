@@ -46,6 +46,20 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   }, []);
 
   useEffect(() => {
+    const isMd = window.innerWidth >= 768;
+    // On mobile, skip the scroll-driven padding/border-radius animation entirely
+    // to avoid layout thrashing and choppy scroll. Render the final state once.
+    if (!isMd) {
+      const container = containerRef.current;
+      const wrapper = imageWrapperRef.current;
+      if (container) {
+        container.style.paddingLeft = '';
+        container.style.paddingRight = '';
+      }
+      if (wrapper) wrapper.style.borderRadius = '';
+      return;
+    }
+
     let ticking = false;
     const handleScroll = () => {
       if (ticking) return;
@@ -55,9 +69,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         const container = containerRef.current;
         const wrapper = imageWrapperRef.current;
         if (container) {
-          const isMd = window.innerWidth >= 768;
-          const maxPad = isMd ? 64 : 32;
-          const pad = maxPad * (1 - progress);
+          const pad = 64 * (1 - progress);
           container.style.paddingLeft = `${pad}px`;
           container.style.paddingRight = `${pad}px`;
         }

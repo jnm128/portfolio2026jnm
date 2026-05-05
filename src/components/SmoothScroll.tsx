@@ -14,18 +14,21 @@ const SmoothScroll = () => {
     if (typeof window === 'undefined') return;
 
     const mql = window.matchMedia(REDUCED_MOTION_QUERY);
+    const touchMql = window.matchMedia('(pointer: coarse)');
     let lenis: Lenis | null = null;
     let rafId = 0;
 
     const start = () => {
       if (lenis) return;
+      // On touch devices, use native momentum scrolling — Lenis syncTouch causes choppiness.
+      if (touchMql.matches) return;
       lenis = new Lenis({
         duration: 1.4,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         wheelMultiplier: 0.8,
         touchMultiplier: 1.5,
         smoothWheel: true,
-        syncTouch: true,
+        syncTouch: false,
       });
       window.__lenis = lenis;
 
