@@ -17,7 +17,7 @@ const FadeIn: React.FC<FadeInProps> = ({
   className,
   direction = 'up',
   delay = 0,
-  duration = 700,
+  duration = 1100,
   threshold = 0.1,
   once = true,
 }) => {
@@ -38,9 +38,9 @@ const FadeIn: React.FC<FadeInProps> = ({
           } else if (!entry.isIntersecting && !once && hasAnimated.current) {
             element.style.opacity = '0';
             element.style.transform = direction === 'up' 
-              ? 'translateY(20px)' 
+              ? 'translateY(32px)' 
               : direction === 'down' 
-                ? 'translateY(-20px)' 
+                ? 'translateY(-32px)' 
                 : 'translateY(0)';
             hasAnimated.current = false;
           }
@@ -60,11 +60,11 @@ const FadeIn: React.FC<FadeInProps> = ({
       style={{
         opacity: 0,
         transform: direction === 'up' 
-          ? 'translateY(20px)' 
+          ? 'translateY(32px)' 
           : direction === 'down' 
-            ? 'translateY(-20px)' 
+            ? 'translateY(-32px)' 
             : 'translateY(0)',
-        transition: `opacity ${duration}ms cubic-bezier(0.16, 1, 0.3, 1), transform ${duration}ms cubic-bezier(0.16, 1, 0.3, 1)`,
+        transition: `opacity ${duration}ms cubic-bezier(0.22, 1, 0.36, 1), transform ${duration}ms cubic-bezier(0.22, 1, 0.36, 1)`,
         transitionDelay: `${delay}ms`,
       }}
     >
