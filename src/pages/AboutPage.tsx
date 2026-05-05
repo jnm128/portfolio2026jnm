@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
-import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ExternalLink, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import SmartImage from '@/components/ui-custom/SmartImage';
 import speakingMiami from '@/assets/speaking-miami.jpg';
 import speakingUF from '@/assets/speaking-uf.jpg';
@@ -47,9 +47,30 @@ const linkedinPosts = [
   },
 ];
 
+const processSteps = [
+  { num: '01', title: 'Discover', text: 'Research, listen, and frame the real problem before solving it.' },
+  { num: '02', title: 'Define', text: 'Synthesize insights into clear opportunities and direction.' },
+  { num: '03', title: 'Design', text: 'Explore, prototype, and validate ideas with real users.' },
+  { num: '04', title: 'Deliver', text: 'Ship, measure, and iterate toward meaningful impact.' },
+];
+
+const skills = [
+  { title: 'Product Design', text: 'Interaction design, design systems, and visual craft for web & mobile.' },
+  { title: 'Product Strategy', text: 'Aligning user needs with business goals through roadmaps and prioritization.' },
+  { title: 'UX Research & Testing', text: 'Interviews, usability testing, synthesis, and behavioral insight.' },
+];
+
+const testimonials = [
+  { quote: 'Joanna brings calm and clarity to complex problems.', name: 'Sarah K.', role: 'Product Lead' },
+  { quote: 'Her research turns assumptions into actionable direction.', name: 'Marcus T.', role: 'Engineering Manager' },
+  { quote: 'A rare blend of strategic thinking and beautiful craft.', name: 'Elena R.', role: 'Design Director' },
+];
+
 const AboutPage = () => {
   const [activeIndex, setActiveIndex] = useState(Math.floor(favoriteBooks.length / 2));
+  const [quoteIndex, setQuoteIndex] = useState(0);
   const activeBook = favoriteBooks[activeIndex];
+  const activeQuote = testimonials[quoteIndex];
   return (
 
     <main className="relative bg-background">
@@ -106,6 +127,98 @@ const AboutPage = () => {
                 </div>
               </div>
           </FadeIn>
+          </div>
+        </section>
+
+        {/* How I Work + Skill Set + Testimonials */}
+        <section className="bg-background py-20 md:py-32">
+          <div className="max-w-3xl mx-auto px-5 md:px-16 text-center space-y-24 md:space-y-32">
+            {/* How I Work */}
+            <FadeIn>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-hint mb-4">How I Work</p>
+                <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">A process, not a formula</h2>
+                <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-xl mx-auto mb-12">
+                  Every project moves through the same rhythm — guided by curiosity, shaped by research, refined through iteration.
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8 text-left md:text-center">
+                  {processSteps.map((step) => (
+                    <div key={step.num}>
+                      <p className="font-serif italic text-hint mb-3">{step.num}</p>
+                      <h3 className="text-lg font-serif text-title mb-2">{step.title}</h3>
+                      <p className="text-sm text-foreground/80 font-serif leading-relaxed">{step.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Skill Set */}
+            <FadeIn>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-hint mb-4">Skill Set</p>
+                <h2 className="text-3xl md:text-5xl font-serif text-title mb-12">What I bring to the room</h2>
+                <div className="space-y-10 max-w-xl mx-auto">
+                  {skills.map((skill, i) => (
+                    <div key={skill.title} className={i !== 0 ? 'pt-10 border-t border-border' : ''}>
+                      <h3 className="text-xl md:text-2xl font-serif text-title mb-3">{skill.title}</h3>
+                      <p className="text-base text-foreground font-serif leading-relaxed">{skill.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Testimonials */}
+            <FadeIn>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-hint mb-4">Testimonials</p>
+                <h2 className="text-3xl md:text-5xl font-serif text-title mb-12">Kind words from collaborators</h2>
+                <div className="max-w-2xl mx-auto">
+                  <Quote className="w-8 h-8 text-hint/60 mx-auto mb-6" aria-hidden="true" />
+                  <p
+                    key={quoteIndex}
+                    className="text-xl md:text-2xl font-serif text-title leading-relaxed italic mb-6 animate-fade-in"
+                  >
+                    "{activeQuote.quote}"
+                  </p>
+                  <p className="text-sm text-foreground font-serif">
+                    — {activeQuote.name}, <span className="text-hint">{activeQuote.role}</span>
+                  </p>
+
+                  <div className="flex items-center justify-center gap-4 mt-10">
+                    <button
+                      onClick={() => setQuoteIndex((quoteIndex - 1 + testimonials.length) % testimonials.length)}
+                      aria-label="Previous testimonial"
+                      className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:opacity-70 transition-opacity"
+                    >
+                      <ChevronLeft className="w-4 h-4 text-title" />
+                    </button>
+                    <div className="flex items-center gap-2" role="tablist" aria-label="Testimonials">
+                      {testimonials.map((_, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setQuoteIndex(i)}
+                          aria-label={`View testimonial ${i + 1}`}
+                          aria-selected={i === quoteIndex}
+                          role="tab"
+                          className={`h-1.5 rounded-full transition-all duration-300 ${
+                            i === quoteIndex ? 'w-6 bg-title' : 'w-1.5 bg-border hover:bg-hint/50'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <button
+                      onClick={() => setQuoteIndex((quoteIndex + 1) % testimonials.length)}
+                      aria-label="Next testimonial"
+                      className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:opacity-70 transition-opacity"
+                    >
+                      <ChevronRight className="w-4 h-4 text-title" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </section>
 

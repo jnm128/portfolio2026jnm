@@ -1,57 +1,66 @@
-## Audit findings
+## Add "How I Work", "Skill Set" & "Testimonials" sections to About page
 
-### A. Color contrast (WCAG AA)
+Insert a new airy, center-aligned editorial block in `src/pages/AboutPage.tsx` between the Hero/Intro section (ends line 110) and the dark "Beyond the Pixels" section (starts line 113).
 
-Computed contrast ratios for all three themes against `--background`:
+### Layout
 
-| Token | Blue | Neutral | Dark |
-|---|---|---|---|
-| `text-foreground` | 5.12 ✅ | 6.22 ✅ | 14.44 ✅ |
-| `text-title` | 16.02 ✅ | 13.28 ✅ | 14.44 ✅ |
-| `text-muted-foreground` | 10.92 ✅ | 6.81 ✅ | 9.51 ✅ |
-| `text-hint` | **4.17 ❌** | **3.45 ❌** | **3.66 ❌** |
-| CTA (accent-fg on accent) | 5.12 ✅ | 7.10 ✅ | 7.49 ✅ |
+The new block lives on the cream `bg-background` so it visually flows from the hero before transitioning into the dark section. Three stacked sub-sections, all centered with `text-center` and `max-w-3xl mx-auto`, with generous vertical rhythm (`py-20 md:py-32`, `space-y-24 md:space-y-32`):
 
-**Only failure:** `--hint` (currently `30 8% 45%` shared across themes) fails AA on all three themes.
+```text
+┌─────────────────────────────────────┐
+│        — How I Work — (eyebrow)     │
+│      A process, not a formula       │
+│   short paragraph (1–2 sentences)   │
+│                                     │
+│   01 Discover   02 Define   03 ...  │
+│   short blurb   short blurb  ...    │
+└─────────────────────────────────────┘
+┌─────────────────────────────────────┐
+│        — Skill Set — (eyebrow)      │
+│         What I bring to the room    │
+│                                     │
+│   Product Design                    │
+│   Product Strategy                  │
+│   UX Research & Testing             │
+│   (each: title + 1-line description)│
+└─────────────────────────────────────┘
+┌─────────────────────────────────────┐
+│       — Testimonials — (eyebrow)    │
+│       Kind words from collaborators │
+│                                     │
+│   "Large pull-quote here..."        │
+│   — Name, Role                      │
+│   (rotating, prev/next chevrons)    │
+└─────────────────────────────────────┘
+```
 
-**Fix:** make `--hint` per-theme:
-- Blue: `30 8% 36%` → 5.90:1
-- Neutral: `30 8% 30%` → 6.27:1
-- Dark: `30 8% 62%` → 6.45:1
+### Content
 
-(Removes the "shared hint across themes" rule from memory.)
+**How I Work** — 4 steps (numbered 01–04), shown as a centered grid (`grid-cols-2 md:grid-cols-4 gap-8`):
+- 01 Discover — research, listen, frame the real problem
+- 02 Define — synthesize insights into clear opportunities
+- 03 Design — explore, prototype, validate with users
+- 04 Deliver — ship, measure, iterate
 
-### B. Heading hierarchy
-- `AboutPage.tsx`: two `<h1>` tags. Keep mobile h1, change desktop one to a styled `<p>` (visual identical).
-- `AboutPage.tsx` & `BookClub.tsx`: small uppercase eyebrows currently `<h2>` mixed with section headings — demote eyebrows to `<h3>` so each section has exactly one `<h2>`.
+**Skill Set** — 3 capability cards stacked vertically, centered:
+- Product Design — interaction design, design systems, visual craft for web & mobile
+- Product Strategy — aligning user needs with business goals; roadmaps & prioritization
+- UX Research & Testing — interviews, usability testing, synthesis, behavioral insight
 
-### C. Image optimization & alt text
-- `About.tsx` (homepage) and `BioBlurb.tsx` still load the original 1.8 MB unoptimized headshot. Switch to `/lovable-uploads/headshot-joanna.{webp,jpg}` via `SmartImage`.
-- Generic `alt="Joanna Minott"` → `"Portrait of Joanna Minott"` in About, AboutPage, BioBlurb.
-- `Hero.tsx` line 152: hidden placeholder image with `alt="Hero placeholder"` → `alt=""` (decorative).
-- Convert remaining raw `<img>` tags on Work, Projects, Community, Gap, BookClub, CaseStudyNav, and case study pages to `SmartImage` for consistent loading shimmer + fade-in.
+**Testimonials** — single rotating quote (matches existing testimonial pattern in the project). 3 placeholder quotes with prev/next circular chevron buttons (reuse the same minimalist arrow style already used for the books carousel). Quotes:
+- "Joanna brings calm and clarity to complex problems." — Product Lead
+- "Her research turns assumptions into actionable direction." — Engineering Manager
+- "A rare blend of strategic thinking and beautiful craft." — Design Director
 
-### D. Navigation a11y
-- Header `<Link>`s do not announce active route. Add `aria-current="page"` based on `useLocation().pathname` for desktop and mobile nav.
+### Technical notes
 
-### E. Misc
-- `SmartImage`: add `aria-hidden="true"` to placeholder div.
-- Delete `public/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg` after refs are migrated.
+- Wrap each sub-section in `<FadeIn>` for the standard scroll-in entrance.
+- Use existing tokens only: `text-title` for headings, `text-foreground` for body, `text-hint` for eyebrows, `border-border` for dividers. No literal colors.
+- Eyebrow style: `text-xs uppercase tracking-widest text-hint` (consistent with existing pattern).
+- Section headings: `text-3xl md:text-5xl font-serif text-title` to match "Beyond the Pixels".
+- Testimonial uses `useState` for active index; reuse the chevron button styling from the existing books carousel but with `border-border`/`text-title` token swap for the cream background.
+- Numbered step labels: `font-serif italic text-hint` (matches the numeral style used in `AboutSection.tsx`).
+- All three blocks are centered with `text-center mx-auto` and use airy spacing (`py-20 md:py-32` outer, `mb-6` between eyebrow/headline, `mb-12` before content grid).
 
-## Files to edit
-
-- `src/index.css` — per-theme `--hint` values (Blue/Neutral/Dark blocks).
-- `mem://design/visual-aesthetic` — remove "shared hint" claim.
-- `src/pages/AboutPage.tsx` — h1 dedupe, eyebrows → h3, alt text.
-- `src/pages/BookClub.tsx` — eyebrows → h3, alt text.
-- `src/components/About.tsx`, `src/components/BioBlurb.tsx` — optimized headshot via `SmartImage`, alt text.
-- `src/components/Hero.tsx` — placeholder `alt=""`.
-- `src/components/Header.tsx` — `aria-current` on nav links.
-- `src/components/ui-custom/SmartImage.tsx` — `aria-hidden` on placeholder.
-- `src/components/Projects.tsx`, `Community.tsx`, `Gap.tsx`, `CaseStudyNav.tsx`, `pages/Work.tsx`, `pages/CaseStudy*.tsx`, `pages/BookClub.tsx` — raw `<img>` → `SmartImage`.
-- Delete: `public/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg`.
-
-## Out of scope
-
-- Re-encoding all other 1+ MB PNGs in `lovable-uploads/`. Worth a follow-up pass.
-- Keyboard-trap testing on portals (already correct per memory).
+### Files modified
+- `src/pages/AboutPage.tsx` — insert new `<section>` between lines 110 and 113; add testimonial state alongside the existing `activeIndex` state.
