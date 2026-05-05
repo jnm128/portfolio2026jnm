@@ -309,7 +309,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               aria-current={location.pathname === '/contact' ? 'page' : undefined}
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
-                useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
+                useDarkTheme && !isMobileMenuOpen ? "text-background hover:text-background/70" : "text-title hover:text-title/70"
               )}
             >
               Contact
