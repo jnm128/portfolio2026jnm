@@ -97,13 +97,13 @@ const AboutPage = () => {
                   <h1 className="hidden md:block text-3xl md:text-5xl font-serif text-title mb-4">
                     About
                   </h1>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
+                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed mb-6">
                     Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences.
                   </p>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
+                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed mb-6">
                     She blends product strategy, behavior-driven design, and emotional insight to create solutions that help people feel supported, empowered, and understood.
                   </p>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
+                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed mb-6">
                     Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.
                   </p>
 
@@ -128,8 +128,7 @@ const AboutPage = () => {
             <FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-hint mb-4">How I Work</p>
-                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">A process, not a formula</h2>
+                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">How I Work</h2>
                   <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-md">
                     Every project moves through the same rhythm — guided by curiosity, shaped by research, refined through iteration.
                   </p>
@@ -161,8 +160,7 @@ const AboutPage = () => {
             <FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-hint mb-4">Skill Set</p>
-                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">What I bring to the room</h2>
+                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">Skill Set</h2>
                   <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-md">
                     A blend of strategy, design, and research — focused on creating products that feel as good as they perform.
                   </p>
