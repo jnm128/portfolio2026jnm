@@ -1,39 +1,57 @@
-## Goals
+## Audit findings
 
-1. Headshot on About hero loads cleanly (no layout flash, smooth fade-in).
-2. A consistent loading animation (shimmer/pulse placeholder + fade-in) is applied to all `<img>` elements across the About page.
-3. On mobile, the active book cover in the Favorite Books carousel is centered horizontally (currently left-aligned in the flex-col stack).
+### A. Color contrast (WCAG AA)
 
-## Implementation
+Computed contrast ratios for all three themes against `--background`:
 
-### 1. Reusable image component
-Create `src/components/ui-custom/SmartImage.tsx`:
-- Wraps `<img>` with a `relative` container.
-- Tracks `loaded` state via `onLoad`.
-- While loading: shows an absolutely-positioned placeholder using `bg-muted` + `animate-pulse` (and a subtle gradient sheen).
-- On load: image fades in (`opacity-0` -> `opacity-100`, `transition-opacity duration-700`).
-- Forwards `className`, `src`, `alt`, `loading`, sizing props.
-- Inherits container shape via `rounded-[inherit]` so it works inside any `rounded-*` wrapper.
+| Token | Blue | Neutral | Dark |
+|---|---|---|---|
+| `text-foreground` | 5.12 ✅ | 6.22 ✅ | 14.44 ✅ |
+| `text-title` | 16.02 ✅ | 13.28 ✅ | 14.44 ✅ |
+| `text-muted-foreground` | 10.92 ✅ | 6.81 ✅ | 9.51 ✅ |
+| `text-hint` | **4.17 ❌** | **3.45 ❌** | **3.66 ❌** |
+| CTA (accent-fg on accent) | 5.12 ✅ | 7.10 ✅ | 7.49 ✅ |
 
-### 2. Apply across `src/pages/AboutPage.tsx`
-Swap raw `<img>` tags for `SmartImage` in:
-- Hero headshot (set `loading="eager"` + `fetchPriority="high"`).
-- Speaking section (Miami + UF images).
-- Favorite Books active cover.
-- Work Playlist song cover.
+**Only failure:** `--hint` (currently `30 8% 45%` shared across themes) fails AA on all three themes.
 
-The headshot wrapper already has `aspect-[5/6]`, so the placeholder fills correctly with no CLS.
+**Fix:** make `--hint` per-theme:
+- Blue: `30 8% 36%` → 5.90:1
+- Neutral: `30 8% 30%` → 6.27:1
+- Dark: `30 8% 62%` → 6.45:1
 
-### 3. Mobile centering for active book
-In the Favorite Books detail block, the wrapper is `flex flex-col md:flex-row ... items-start`. Change to `items-center md:items-start` so the cover (and only on mobile) sits centered above the text. Text block keeps its left alignment naturally; if needed, wrap the cover div with `mx-auto md:mx-0` to guarantee horizontal centering on mobile only.
+(Removes the "shared hint across themes" rule from memory.)
 
-## Files
+### B. Heading hierarchy
+- `AboutPage.tsx`: two `<h1>` tags. Keep mobile h1, change desktop one to a styled `<p>` (visual identical).
+- `AboutPage.tsx` & `BookClub.tsx`: small uppercase eyebrows currently `<h2>` mixed with section headings — demote eyebrows to `<h3>` so each section has exactly one `<h2>`.
 
-- New: `src/components/ui-custom/SmartImage.tsx`
-- Edit: `src/pages/AboutPage.tsx` (replace 4 `<img>` usages, adjust mobile alignment classes on book detail row)
+### C. Image optimization & alt text
+- `About.tsx` (homepage) and `BioBlurb.tsx` still load the original 1.8 MB unoptimized headshot. Switch to `/lovable-uploads/headshot-joanna.{webp,jpg}` via `SmartImage`.
+- Generic `alt="Joanna Minott"` → `"Portrait of Joanna Minott"` in About, AboutPage, BioBlurb.
+- `Hero.tsx` line 152: hidden placeholder image with `alt="Hero placeholder"` → `alt=""` (decorative).
+- Convert remaining raw `<img>` tags on Work, Projects, Community, Gap, BookClub, CaseStudyNav, and case study pages to `SmartImage` for consistent loading shimmer + fade-in.
 
-## Notes
+### D. Navigation a11y
+- Header `<Link>`s do not announce active route. Add `aria-current="page"` based on `useLocation().pathname` for desktop and mobile nav.
 
-- Uses existing Tailwind `animate-pulse`; no config changes.
-- No new dependencies.
-- Behavior degrades gracefully if `onLoad` fires before mount (cached): placeholder simply never renders.
+### E. Misc
+- `SmartImage`: add `aria-hidden="true"` to placeholder div.
+- Delete `public/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg` after refs are migrated.
+
+## Files to edit
+
+- `src/index.css` — per-theme `--hint` values (Blue/Neutral/Dark blocks).
+- `mem://design/visual-aesthetic` — remove "shared hint" claim.
+- `src/pages/AboutPage.tsx` — h1 dedupe, eyebrows → h3, alt text.
+- `src/pages/BookClub.tsx` — eyebrows → h3, alt text.
+- `src/components/About.tsx`, `src/components/BioBlurb.tsx` — optimized headshot via `SmartImage`, alt text.
+- `src/components/Hero.tsx` — placeholder `alt=""`.
+- `src/components/Header.tsx` — `aria-current` on nav links.
+- `src/components/ui-custom/SmartImage.tsx` — `aria-hidden` on placeholder.
+- `src/components/Projects.tsx`, `Community.tsx`, `Gap.tsx`, `CaseStudyNav.tsx`, `pages/Work.tsx`, `pages/CaseStudy*.tsx`, `pages/BookClub.tsx` — raw `<img>` → `SmartImage`.
+- Delete: `public/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg`.
+
+## Out of scope
+
+- Re-encoding all other 1+ MB PNGs in `lovable-uploads/`. Worth a follow-up pass.
+- Keyboard-trap testing on portals (already correct per memory).
