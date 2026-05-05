@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Leaf, MapPin } from 'lucide-react';
+import { Leaf, MapPin, Linkedin } from 'lucide-react';
 
 interface FooterProps {
   className?: string;
@@ -50,11 +50,21 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               UX designer crafting calm, intuitive experiences — and building space for designers to think deeply.
             </p>
           </div>
-          <nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+          <nav className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
             <a href="/work" className="text-background/60 hover:text-background transition-colors">Work</a>
             <a href="/about" className="text-background/60 hover:text-background transition-colors">About</a>
             <a href="/book-club" className="text-background/60 hover:text-background transition-colors">Community</a>
-            <a href="/contact" className="text-background/60 hover:text-background transition-colors">Get in Touch</a>
+            <a href="/contact" className="text-background/60 hover:text-background transition-colors">Contact</a>
+            <a
+              href="https://www.linkedin.com/in/joannaminott"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-background/60 hover:text-background transition-colors inline-flex items-center gap-1.5"
+            >
+              <Linkedin className="w-4 h-4" />
+              <span>LinkedIn</span>
+            </a>
           </nav>
         </div>
 
@@ -76,15 +86,17 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <p className="text-xs text-background/50">
             &copy; {new Date().getFullYear()} Joanna Minott. All rights reserved.
           </p>
-          <p className="flex items-center gap-2 text-xs text-background/50">
-            <MapPin className="w-3 h-3" />
-            <span>Miami, FL</span>
-            <span className="text-background/30">·</span>
-            <span>{time} local</span>
-          </p>
-          <p className="flex items-center gap-1 text-xs text-background/40">
-            made with <Leaf className="w-3 h-3" /> matcha
-          </p>
+          <div className="flex flex-col items-start md:items-end gap-1">
+            <p className="flex items-center gap-1 text-xs text-background/40">
+              made with <Leaf className="w-3 h-3" /> matcha
+            </p>
+            <p className="flex items-center gap-2 text-xs text-background/50">
+              <MapPin className="w-3 h-3" />
+              <span>Miami, FL</span>
+              <span className="text-background/30">·</span>
+              <span>{time} local</span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
