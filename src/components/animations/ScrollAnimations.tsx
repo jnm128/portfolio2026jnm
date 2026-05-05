@@ -3,30 +3,6 @@ import { useEffect } from 'react';
 
 const ScrollAnimations = () => {
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const element = entry.target as HTMLElement;
-          
-          if (entry.isIntersecting) {
-            element.classList.add('animate-fade-in-up');
-            element.classList.remove('opacity-0', 'translate-y-10');
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      }
-    );
-
-    // Observe all sections
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach((section) => {
-      section.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
-      observer.observe(section);
-    });
-
     // Observe package cards for natural fall animation
     const packageObserver = new IntersectionObserver(
       (entries) => {
@@ -112,7 +88,7 @@ const ScrollAnimations = () => {
     });
 
     return () => {
-      observer.disconnect();
+      
       packageObserver.disconnect();
       projectObserver.disconnect();
       dividerObserver.disconnect();

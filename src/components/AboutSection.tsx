@@ -47,18 +47,19 @@ const AboutSection: React.FC = () => {
               <h3 className="text-sm font-medium uppercase tracking-widest text-background/50 mb-6">Design Philosophy</h3>
               <ul className="space-y-0">
                 {designPhilosophy.map((p, i) => (
-                  <li
-                    key={p.title}
-                    className={`py-10 md:py-12 ${i === 0 ? 'border-t border-background/15' : ''} ${i !== designPhilosophy.length - 1 ? 'border-b border-background/15' : ''}`}
-                  >
-                    <div className="flex items-baseline gap-4">
-                      <span className="text-sm font-serif italic text-background/50 tracking-wider w-8 shrink-0">{p.numeral}</span>
-                      <div>
-                        <p className="text-lg font-serif text-background">{p.title}</p>
-                        <p className="text-sm text-background/70 font-serif mt-1">{p.description}</p>
+                  <FadeIn key={p.title} delay={i * 180} duration={500} threshold={0.05}>
+                    <li
+                      className={`py-10 md:py-12 ${i === 0 ? 'border-t border-background/15' : ''} ${i !== designPhilosophy.length - 1 ? 'border-b border-background/15' : ''}`}
+                    >
+                      <div className="flex items-baseline gap-4">
+                        <span className="text-sm font-serif italic text-background/50 tracking-wider w-8 shrink-0">{p.numeral}</span>
+                        <div>
+                          <p className="text-lg font-serif text-background">{p.title}</p>
+                          <p className="text-sm text-background/70 font-serif mt-1">{p.description}</p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
+                    </li>
+                  </FadeIn>
                 ))}
               </ul>
             </FadeIn>

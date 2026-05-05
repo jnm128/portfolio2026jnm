@@ -78,7 +78,7 @@ const CaseStudyNav: React.FC<CaseStudyNavProps> = ({ currentSlug, variant = 'lig
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
           {more.map((project, index) => (
-            <FadeIn key={project.slug} delay={index * 50} duration={500} threshold={0.05}>
+            <FadeIn key={project.slug} delay={index * 180} duration={500} threshold={0.05}>
               <Link to={project.path} className="group block">
                 <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
                   <img
