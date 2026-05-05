@@ -130,11 +130,9 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* How I Work + Skill Set + Testimonials */}
-        <section className="bg-background py-20 md:py-32">
-          <div className="max-w-[1600px] mx-auto px-5 md:px-16 space-y-24 md:space-y-32">
-
-            {/* How I Work */}
+        {/* How I Work */}
+        <section className="bg-section py-24 md:py-40">
+          <div className="max-w-[1600px] mx-auto px-5 md:px-16">
             <FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
                 <div>
@@ -162,8 +160,12 @@ const AboutPage = () => {
                 </ul>
               </div>
             </FadeIn>
+          </div>
+        </section>
 
-            {/* Skill Set */}
+        {/* Skill Set */}
+        <section className="bg-card py-24 md:py-40">
+          <div className="max-w-[1600px] mx-auto px-5 md:px-16">
             <FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
                 <div>
@@ -192,62 +194,6 @@ const AboutPage = () => {
                     );
                   })}
                 </ul>
-              </div>
-            </FadeIn>
-
-            {/* Testimonials */}
-            <FadeIn>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-hint mb-4">Testimonials</p>
-                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">Kind words from collaborators</h2>
-                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-md">
-                    A few reflections from the teammates and partners I've had the joy of building alongside.
-                  </p>
-                </div>
-                <div className="border-t border-border pt-10">
-                  <Quote className="w-8 h-8 text-hint/60 mb-6" aria-hidden="true" />
-                  <p
-                    key={quoteIndex}
-                    className="text-xl md:text-2xl font-serif text-title leading-relaxed italic mb-6 animate-fade-in"
-                  >
-                    "{activeQuote.quote}"
-                  </p>
-                  <p className="text-sm text-foreground font-serif">
-                    — {activeQuote.name}, <span className="text-hint">{activeQuote.role}</span>
-                  </p>
-
-                  <div className="flex items-center gap-4 mt-10">
-                    <button
-                      onClick={() => setQuoteIndex((quoteIndex - 1 + testimonials.length) % testimonials.length)}
-                      aria-label="Previous testimonial"
-                      className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:opacity-70 transition-opacity"
-                    >
-                      <ChevronLeft className="w-4 h-4 text-title" />
-                    </button>
-                    <div className="flex items-center gap-2" role="tablist" aria-label="Testimonials">
-                      {testimonials.map((_, i) => (
-                        <button
-                          key={i}
-                          onClick={() => setQuoteIndex(i)}
-                          aria-label={`View testimonial ${i + 1}`}
-                          aria-selected={i === quoteIndex}
-                          role="tab"
-                          className={`h-1.5 rounded-full transition-all duration-300 ${
-                            i === quoteIndex ? 'w-6 bg-title' : 'w-1.5 bg-border hover:bg-hint/50'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    <button
-                      onClick={() => setQuoteIndex((quoteIndex + 1) % testimonials.length)}
-                      aria-label="Next testimonial"
-                      className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:opacity-70 transition-opacity"
-                    >
-                      <ChevronRight className="w-4 h-4 text-title" />
-                    </button>
-                  </div>
-                </div>
               </div>
             </FadeIn>
           </div>
