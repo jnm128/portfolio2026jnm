@@ -97,13 +97,13 @@ const AboutPage = () => {
                   <h1 className="hidden md:block text-3xl md:text-5xl font-serif text-title mb-4">
                     About
                   </h1>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
+                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed mb-6">
                     Joanna Minott is a user experience designer who transforms complex systems into calm, intuitive, people-first experiences.
                   </p>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
+                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed mb-6">
                     She blends product strategy, behavior-driven design, and emotional insight to create solutions that help people feel supported, empowered, and understood.
                   </p>
-                  <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
+                  <p className="text-base md:text-lg text-foreground font-serif leading-relaxed mb-6">
                     Her work focuses on aligning business goals with human needs to drive clarity, efficiency, and meaningful impact at scale.
                   </p>
 
