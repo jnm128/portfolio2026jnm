@@ -130,40 +130,8 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* How I Work */}
-        <section className="bg-section py-24 md:py-40">
-          <div className="max-w-[1600px] mx-auto px-5 md:px-16">
-            <FadeIn>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-                <div>
-                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">How I Work</h2>
-                  <p className="text-base md:text-lg font-serif leading-relaxed max-w-md text-foreground">
-                    Every project moves through the same rhythm — guided by curiosity, shaped by research, refined through iteration.
-                  </p>
-                </div>
-                <ul className="space-y-0">
-                  {processSteps.map((step, i) => (
-                    <li
-                      key={step.num}
-                      className={`py-8 md:py-10 ${i !== processSteps.length - 1 ? 'border-b border-border' : ''}`}
-                    >
-                      <div className="flex items-baseline gap-6">
-                        <span className="text-sm font-serif italic text-hint tracking-wider w-10 shrink-0">{step.num}</span>
-                        <div>
-                          <p className="text-lg font-serif text-title">{step.title}</p>
-                          <p className="text-sm font-serif mt-1 leading-relaxed text-foreground">{step.text}</p>
-                        </div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-          </div>
-        </section>
-
         {/* Skill Set */}
-        <section className="bg-card py-24 md:py-40">
+        <section className="bg-section py-24 md:py-40">
           <div className="max-w-[1600px] mx-auto px-5 md:px-16">
             <FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
