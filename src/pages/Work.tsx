@@ -87,7 +87,7 @@ const Work: React.FC = () => {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                     <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 px-4 py-2 bg-background rounded-full shadow-sm">
-                      <span className="text-sm font-medium text-foreground">{project.brand}</span>
+                      <span className="text-sm font-medium text-primary">{project.brand}</span>
                       <span className="text-sm text-hint">·</span>
                       <span className="text-sm text-hint">{project.year}</span>
                     </div>
