@@ -71,7 +71,8 @@ const AboutPage = () => {
                     <SmartImage
                       alt="Joanna Minott"
                       className="w-full h-full object-cover"
-                      src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
+                      src="/lovable-uploads/headshot-joanna.jpg"
+                      webpSrc="/lovable-uploads/headshot-joanna.webp"
                       loading="eager"
                       fetchPriority="high"
                     />
