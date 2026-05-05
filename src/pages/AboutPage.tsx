@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
 import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import SmartImage from '@/components/ui-custom/SmartImage';
 import speakingMiami from '@/assets/speaking-miami.jpg';
 import speakingUF from '@/assets/speaking-uf.jpg';
 import arirangCover from '@/assets/arirang-cover.png';
@@ -67,10 +68,12 @@ const AboutPage = () => {
                 {/* Profile Image — first in DOM, appears on right on desktop */}
                 <div className="relative w-full max-w-md aspect-[5/6] mx-auto md:ml-auto md:order-last md:col-span-3">
                   <div className="rounded-2xl overflow-hidden h-full">
-                    <img
+                    <SmartImage
                       alt="Joanna Minott"
                       className="w-full h-full object-cover"
                       src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg"
+                      loading="eager"
+                      fetchPriority="high"
                     />
                   </div>
                 </div>
@@ -154,7 +157,7 @@ const AboutPage = () => {
                   <div className="border-t border-background/15 py-10">
                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="group flex flex-col md:flex-row gap-6 items-start">
                       <div className="w-full md:w-96 shrink-0 rounded-lg overflow-hidden aspect-[16/10] ring-1 ring-background/40">
-                        <img
+                        <SmartImage
                           src={speakingMiami}
                           alt="Alumni panel at the University of Miami"
                           className="w-full h-full object-cover"
@@ -170,7 +173,7 @@ const AboutPage = () => {
                   <div className="border-t border-background/15 py-10">
                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="group flex flex-col md:flex-row gap-6 items-start">
                       <div className="w-full md:w-96 shrink-0 rounded-lg overflow-hidden aspect-[16/10] ring-1 ring-background/40">
-                        <img
+                        <SmartImage
                           src={speakingUF}
                           alt="Guest speaker at University of Florida's Gator Design student org"
                           className="w-full h-full object-cover"
@@ -193,13 +196,13 @@ const AboutPage = () => {
                     Favorite Books
                   </h2>
 
-                  <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-                    <div className="w-32 md:w-40 aspect-[3/4] shrink-0 rounded-lg overflow-hidden ring-1 ring-background/40 bg-background/5 transition-opacity duration-300">
-                      <img
+                  <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
+                    <div className="w-32 md:w-40 aspect-[3/4] shrink-0 mx-auto md:mx-0 rounded-lg overflow-hidden ring-1 ring-background/40 bg-background/5">
+                      <SmartImage
                         key={activeBook.cover}
                         src={activeBook.cover}
                         alt={activeBook.title}
-                        className="w-full h-full object-cover animate-fade-in"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -267,7 +270,7 @@ const AboutPage = () => {
                   </h2>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 shrink-0 rounded overflow-hidden ring-1 ring-background/40">
-                      <img
+                      <SmartImage
                         src={songOnRepeat.cover}
                         alt={songOnRepeat.title}
                         className="w-full h-full object-cover"
