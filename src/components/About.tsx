@@ -51,11 +51,11 @@ const About: React.FC<AboutProps> = ({
               {/* Expertise Tags — alternating Caramel & Matcha */}
               <div className="flex flex-wrap gap-2 mb-8">
                 <span className="bg-brand-caramel text-brand-chai rounded-full px-3 py-1 text-xs font-medium">4+ Years</span>
-                <span className="bg-section text-title rounded-full px-3 py-1 text-xs font-medium">Healthcare</span>
+                <span className="bg-brand-matcha text-brand-foam rounded-full px-3 py-1 text-xs font-medium">Healthcare</span>
                 <span className="bg-brand-caramel text-brand-chai rounded-full px-3 py-1 text-xs font-medium">B2B & B2C</span>
-                <span className="bg-section text-title rounded-full px-3 py-1 text-xs font-medium">Mobile & Web</span>
+                <span className="bg-brand-matcha text-brand-foam rounded-full px-3 py-1 text-xs font-medium">Mobile & Web</span>
                 <span className="bg-brand-caramel text-brand-chai rounded-full px-3 py-1 text-xs font-medium">Enterprise Systems</span>
-                <span className="bg-section text-title rounded-full px-3 py-1 text-xs font-medium">Based in Miami, FL</span>
+                <span className="bg-brand-matcha text-brand-foam rounded-full px-3 py-1 text-xs font-medium">Based in Miami, FL</span>
                 <span className="bg-brand-caramel text-brand-chai rounded-full px-3 py-1 text-xs font-medium">Remote</span>
               </div>
 

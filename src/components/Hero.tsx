@@ -121,7 +121,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             <button
               key="services-cta"
               onClick={() => setServicesOpen(true)}
-              className="inline-flex items-center bg-primary text-primary-foreground px-6 py-3 rounded-full text-base font-medium hover:opacity-90 transition-opacity mb-6 animate-fade-in"
+              className="inline-flex items-center bg-foreground text-background px-6 py-3 rounded-full text-base font-medium hover:opacity-90 transition-opacity mb-6 animate-fade-in"
             >
               View Services
             </button>
@@ -129,7 +129,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             <button
               key="community-cta"
               onClick={() => setCommunityOpen(true)}
-              className="inline-flex items-center bg-primary text-primary-foreground px-6 py-3 rounded-full text-base font-medium hover:opacity-90 transition-opacity mb-6 animate-fade-in"
+              className="inline-flex items-center bg-foreground text-background px-6 py-3 rounded-full text-base font-medium hover:opacity-90 transition-opacity mb-6 animate-fade-in"
             >
               View Community
             </button>
@@ -137,7 +137,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             <button
               key="resume-cta"
               onClick={() => setPanelOpen(true)}
-              className="inline-flex items-center bg-primary text-primary-foreground px-6 py-3 rounded-full text-base font-medium hover:opacity-90 transition-opacity mb-6 animate-fade-in"
+              className="inline-flex items-center bg-foreground text-background px-6 py-3 rounded-full text-base font-medium hover:opacity-90 transition-opacity mb-6 animate-fade-in"
             >
               View Resume
             </button>
