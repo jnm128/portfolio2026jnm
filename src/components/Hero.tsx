@@ -113,7 +113,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <h1 className="text-3xl md:text-5xl font-serif text-title mb-2">Joanna Minott, <span className="text-muted-foreground">UX Designer</span></h1>
           <p
             key={audience}
-            className="text-base font-serif mb-4 max-w-2xl animate-fade-in font-normal text-stone-600 md:text-lg"
+            className="text-base font-serif mb-4 max-w-2xl animate-fade-in font-normal text-foreground md:text-lg"
           >
             {taglines[audience]}
           </p>
