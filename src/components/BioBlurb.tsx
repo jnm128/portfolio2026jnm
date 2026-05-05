@@ -13,7 +13,7 @@ const BioBlurb: React.FC<BioBlurbProps> = ({ className }) => {
         <FadeIn>
           <div className="flex items-start gap-4 text-left">
             <div className="w-14 h-14 md:w-16 md:h-16 aspect-square rounded-full overflow-hidden flex-shrink-0">
-              <img alt="Joanna Minott" className="w-full h-full object-contain" src="/lovable-uploads/eb1b0dd0-17c0-45f1-9ebe-cc16e594b15b.png" />
+              <img alt="Portrait of Joanna Minott" className="w-full h-full object-contain" src="/lovable-uploads/eb1b0dd0-17c0-45f1-9ebe-cc16e594b15b.png" loading="lazy" decoding="async" />
             </div>
             <div className="flex flex-col gap-0">
               <p className="text-base md:text-xl text-foreground leading-relaxed font-serif">
