@@ -149,7 +149,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                 )} 
               />
             ))}
-            <img src={heroImages[0]} alt="Hero placeholder" className="w-full h-full object-cover invisible" />
+            <img src={heroImages[0]} alt="" aria-hidden="true" className="w-full h-full object-cover invisible" />
             <div className="absolute bottom-4 right-8 md:right-12 flex gap-2">
               {heroImages.map((_, index) => (
                 <button 

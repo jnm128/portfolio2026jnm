@@ -69,7 +69,7 @@ const AboutPage = () => {
                 <div className="relative w-full max-w-md aspect-[5/6] mx-auto md:ml-auto md:order-last md:col-span-3">
                   <div className="rounded-2xl overflow-hidden h-full">
                     <SmartImage
-                      alt="Joanna Minott"
+                      alt="Portrait of Joanna Minott"
                       className="w-full h-full object-cover"
                       src="/lovable-uploads/headshot-joanna.jpg"
                       webpSrc="/lovable-uploads/headshot-joanna.webp"
