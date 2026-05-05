@@ -169,7 +169,8 @@ const AboutPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
                 <div>
                   <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">
-                    What I bring to the{' '}
+                    What I bring to the
+                    <br />
                     <span key={meetingWords[meetingIndex]} className="inline-block animate-fade-in italic">
                       {meetingWords[meetingIndex]}
                     </span>
