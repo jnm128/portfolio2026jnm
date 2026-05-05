@@ -68,6 +68,19 @@
     --sidebar-ring: 209 24% 41%;
   }
 
+  /* Inline dark sections — flip --foreground/--background so existing
+     bg-foreground / text-background markup renders as slate blue + cream.
+     Keeps body-level --foreground (warm brown) untouched. */
+  [data-theme="dark"] {
+    --foreground: 209 24% 41%;       /* #4F6A80 slate blue surface */
+    --background: 30 23% 95%;        /* cream text on dark */
+    --title: 30 23% 95%;
+    --primary: 30 23% 95%;           /* cream pill button */
+    --primary-foreground: 209 24% 41%;
+    --muted-foreground: 30 23% 80%;
+    --border: 30 23% 95%;
+  }
+
   /* Neutral theme — warm tan, brown body text, no slate blue */
   :root[data-theme="neutral"] {
     --background: 36 26% 86%;          /* #E6DFD2 warm tan */
