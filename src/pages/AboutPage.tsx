@@ -130,6 +130,98 @@ const AboutPage = () => {
           </div>
         </section>
 
+        {/* How I Work + Skill Set + Testimonials */}
+        <section className="bg-background py-20 md:py-32">
+          <div className="max-w-3xl mx-auto px-5 md:px-16 text-center space-y-24 md:space-y-32">
+            {/* How I Work */}
+            <FadeIn>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-hint mb-4">How I Work</p>
+                <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">A process, not a formula</h2>
+                <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-xl mx-auto mb-12">
+                  Every project moves through the same rhythm — guided by curiosity, shaped by research, refined through iteration.
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8 text-left md:text-center">
+                  {processSteps.map((step) => (
+                    <div key={step.num}>
+                      <p className="font-serif italic text-hint mb-3">{step.num}</p>
+                      <h3 className="text-lg font-serif text-title mb-2">{step.title}</h3>
+                      <p className="text-sm text-foreground/80 font-serif leading-relaxed">{step.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Skill Set */}
+            <FadeIn>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-hint mb-4">Skill Set</p>
+                <h2 className="text-3xl md:text-5xl font-serif text-title mb-12">What I bring to the room</h2>
+                <div className="space-y-10 max-w-xl mx-auto">
+                  {skills.map((skill, i) => (
+                    <div key={skill.title} className={i !== 0 ? 'pt-10 border-t border-border' : ''}>
+                      <h3 className="text-xl md:text-2xl font-serif text-title mb-3">{skill.title}</h3>
+                      <p className="text-base text-foreground font-serif leading-relaxed">{skill.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Testimonials */}
+            <FadeIn>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-hint mb-4">Testimonials</p>
+                <h2 className="text-3xl md:text-5xl font-serif text-title mb-12">Kind words from collaborators</h2>
+                <div className="max-w-2xl mx-auto">
+                  <Quote className="w-8 h-8 text-hint/60 mx-auto mb-6" aria-hidden="true" />
+                  <p
+                    key={quoteIndex}
+                    className="text-xl md:text-2xl font-serif text-title leading-relaxed italic mb-6 animate-fade-in"
+                  >
+                    "{activeQuote.quote}"
+                  </p>
+                  <p className="text-sm text-foreground font-serif">
+                    — {activeQuote.name}, <span className="text-hint">{activeQuote.role}</span>
+                  </p>
+
+                  <div className="flex items-center justify-center gap-4 mt-10">
+                    <button
+                      onClick={() => setQuoteIndex((quoteIndex - 1 + testimonials.length) % testimonials.length)}
+                      aria-label="Previous testimonial"
+                      className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:opacity-70 transition-opacity"
+                    >
+                      <ChevronLeft className="w-4 h-4 text-title" />
+                    </button>
+                    <div className="flex items-center gap-2" role="tablist" aria-label="Testimonials">
+                      {testimonials.map((_, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setQuoteIndex(i)}
+                          aria-label={`View testimonial ${i + 1}`}
+                          aria-selected={i === quoteIndex}
+                          role="tab"
+                          className={`h-1.5 rounded-full transition-all duration-300 ${
+                            i === quoteIndex ? 'w-6 bg-title' : 'w-1.5 bg-border hover:bg-hint/50'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <button
+                      onClick={() => setQuoteIndex((quoteIndex + 1) % testimonials.length)}
+                      aria-label="Next testimonial"
+                      className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:opacity-70 transition-opacity"
+                    >
+                      <ChevronRight className="w-4 h-4 text-title" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
         {/* Writing, Current Read & Song on Repeat — Combined Dark Section */}
         <section className="bg-foreground text-background py-16 md:py-24" data-theme="dark">
           <div className="max-w-4xl mx-auto px-5 md:px-16">
