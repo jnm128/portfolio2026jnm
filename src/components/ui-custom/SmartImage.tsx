@@ -3,29 +3,40 @@ import { cn } from '@/lib/utils';
 
 interface SmartImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   wrapperClassName?: string;
+  webpSrc?: string;
 }
 
-const SmartImage = ({ className, wrapperClassName, onLoad, alt, ...props }: SmartImageProps) => {
+const SmartImage = ({ className, wrapperClassName, webpSrc, onLoad, alt, src, ...props }: SmartImageProps) => {
   const [loaded, setLoaded] = useState(false);
+
+  const imgEl = (
+    <img
+      {...props}
+      src={src}
+      alt={alt}
+      onLoad={(e) => {
+        setLoaded(true);
+        onLoad?.(e);
+      }}
+      className={cn(
+        'transition-opacity duration-700',
+        loaded ? 'opacity-100' : 'opacity-0',
+        className
+      )}
+    />
+  );
 
   return (
     <div className={cn('relative w-full h-full overflow-hidden rounded-[inherit]', wrapperClassName)}>
       {!loaded && (
         <div className="absolute inset-0 bg-muted animate-pulse rounded-[inherit]" />
       )}
-      <img
-        {...props}
-        alt={alt}
-        onLoad={(e) => {
-          setLoaded(true);
-          onLoad?.(e);
-        }}
-        className={cn(
-          'transition-opacity duration-700',
-          loaded ? 'opacity-100' : 'opacity-0',
-          className
-        )}
-      />
+      {webpSrc ? (
+        <picture>
+          <source srcSet={webpSrc} type="image/webp" />
+          {imgEl}
+        </picture>
+      ) : imgEl}
     </div>
   );
 };
