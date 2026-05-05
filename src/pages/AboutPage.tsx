@@ -124,7 +124,7 @@ const AboutPage = () => {
               {/* Writing / LinkedIn Posts */}
               <FadeIn delay={250}>
                 <div>
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6">
+                  <h3 className="text-sm font-medium uppercase tracking-widest text-background mb-6">
                     Writing
                   </h2>
                   {linkedinPosts.map((post, i) => (
@@ -152,7 +152,7 @@ const AboutPage = () => {
               {/* Speaking Engagements */}
               <FadeIn delay={280}>
                 <div>
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pt-10">
+                  <h3 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pt-10">
                     Speaking
                   </h2>
                   <div className="border-t border-background/15 py-10">
@@ -193,7 +193,7 @@ const AboutPage = () => {
               {/* Favorite Books — Carousel */}
               <FadeIn delay={300}>
                 <div className="py-10">
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
+                  <h3 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
                     Favorite Books
                   </h2>
 
@@ -266,7 +266,7 @@ const AboutPage = () => {
               {/* Song on Repeat */}
               <FadeIn delay={400}>
                 <div className="py-10">
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
+                  <h3 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
                     Work Playlist
                   </h2>
                   <div className="flex items-center gap-4">
