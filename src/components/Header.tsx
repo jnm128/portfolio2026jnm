@@ -234,6 +234,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           <nav className="hidden md:flex items-center gap-10">
             <Link
               to="/work"
+              aria-current={location.pathname.startsWith('/work') ? 'page' : undefined}
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
                 useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
@@ -244,6 +245,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
             <Link
               to="/about"
+              aria-current={location.pathname === '/about' ? 'page' : undefined}
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
                 useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
@@ -293,6 +295,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
             <Link
               to="/book-club"
+              aria-current={location.pathname === '/book-club' ? 'page' : undefined}
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
                 useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
@@ -303,6 +306,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 
             <Link
               to="/contact"
+              aria-current={location.pathname === '/contact' ? 'page' : undefined}
               className={cn(
                 "text-sm font-medium transition-colors duration-300",
                 useDarkTheme && !isMobileMenuOpen ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
@@ -390,10 +394,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         )}
       >
         <nav className="flex flex-col items-center gap-6" style={{ paddingTop: headerHeight + 24 }}>
-          <Link to="/work" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Work</Link>
-          <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">About</Link>
-          <Link to="/book-club" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Community</Link>
-          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Contact</Link>
+          <Link to="/work" aria-current={location.pathname.startsWith('/work') ? 'page' : undefined} onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Work</Link>
+          <Link to="/about" aria-current={location.pathname === '/about' ? 'page' : undefined} onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">About</Link>
+          <Link to="/book-club" aria-current={location.pathname === '/book-club' ? 'page' : undefined} onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Community</Link>
+          <Link to="/contact" aria-current={location.pathname === '/contact' ? 'page' : undefined} onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors">Contact</Link>
           
         </nav>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
+import SmartImage from './ui-custom/SmartImage';
 import { Circle } from 'lucide-react';
 interface AboutProps {
   className?: string;
@@ -26,7 +27,13 @@ const About: React.FC<AboutProps> = ({
             {/* Profile Image */}
             <div className="relative w-full max-w-lg aspect-[5/6]">
               <div className="rounded-2xl overflow-hidden h-full">
-                <img alt="Joanna Minott" className="w-full h-full object-cover" src="/lovable-uploads/fff4e4ff-c16e-4ddc-be87-6d94481be7c8.jpg" />
+                <SmartImage
+                  alt="Portrait of Joanna Minott"
+                  className="w-full h-full object-cover"
+                  src="/lovable-uploads/headshot-joanna.jpg"
+                  webpSrc="/lovable-uploads/headshot-joanna.webp"
+                  loading="lazy"
+                />
               </div>
             </div>
             

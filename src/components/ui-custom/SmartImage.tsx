@@ -29,7 +29,7 @@ const SmartImage = ({ className, wrapperClassName, webpSrc, onLoad, alt, src, ..
   return (
     <div className={cn('relative w-full h-full overflow-hidden rounded-[inherit]', wrapperClassName)}>
       {!loaded && (
-        <div className="absolute inset-0 bg-muted animate-pulse rounded-[inherit]" />
+        <div aria-hidden="true" className="absolute inset-0 bg-muted animate-pulse rounded-[inherit]" />
       )}
       {webpSrc ? (
         <picture>

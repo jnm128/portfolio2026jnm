@@ -69,7 +69,7 @@ const AboutPage = () => {
                 <div className="relative w-full max-w-md aspect-[5/6] mx-auto md:ml-auto md:order-last md:col-span-3">
                   <div className="rounded-2xl overflow-hidden h-full">
                     <SmartImage
-                      alt="Joanna Minott"
+                      alt="Portrait of Joanna Minott"
                       className="w-full h-full object-cover"
                       src="/lovable-uploads/headshot-joanna.jpg"
                       webpSrc="/lovable-uploads/headshot-joanna.webp"
@@ -124,9 +124,9 @@ const AboutPage = () => {
               {/* Writing / LinkedIn Posts */}
               <FadeIn delay={250}>
                 <div>
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6">
+                  <h3 className="text-sm font-medium uppercase tracking-widest text-background mb-6">
                     Writing
-                  </h2>
+                  </h3>
                   {linkedinPosts.map((post, i) => (
                     <div
                       key={i}
@@ -152,9 +152,9 @@ const AboutPage = () => {
               {/* Speaking Engagements */}
               <FadeIn delay={280}>
                 <div>
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pt-10">
+                  <h3 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pt-10">
                     Speaking
-                  </h2>
+                  </h3>
                   <div className="border-t border-background/15 py-10">
                     <a href="https://www.linkedin.com/in/joannaminott" target="_blank" rel="noopener noreferrer" className="group flex flex-col md:flex-row gap-6 items-start">
                       <div className="w-full md:w-96 shrink-0 rounded-lg overflow-hidden aspect-[16/10] ring-1 ring-background/40">
@@ -193,9 +193,9 @@ const AboutPage = () => {
               {/* Favorite Books — Carousel */}
               <FadeIn delay={300}>
                 <div className="py-10">
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
+                  <h3 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
                     Favorite Books
-                  </h2>
+                  </h3>
 
                   <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
                     <div className="w-32 md:w-40 aspect-[3/4] shrink-0 mx-auto md:mx-0 rounded-lg overflow-hidden ring-1 ring-background/40 bg-background/5">
@@ -266,9 +266,9 @@ const AboutPage = () => {
               {/* Song on Repeat */}
               <FadeIn delay={400}>
                 <div className="py-10">
-                  <h2 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
+                  <h3 className="text-sm font-medium uppercase tracking-widest text-background mb-6 pb-6 border-b border-background/15">
                     Work Playlist
-                  </h2>
+                  </h3>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 shrink-0 rounded overflow-hidden ring-1 ring-background/40">
                       <SmartImage
