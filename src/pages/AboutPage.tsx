@@ -60,9 +60,17 @@ const skills = [
   { title: 'UX Research & Testing', text: 'Interviews, usability testing, synthesis, and behavioral insight.' },
 ];
 
+const meetingWords = ['Meeting', 'Teams', 'Google Meet', 'Zoom'];
+
 const AboutPage = () => {
   const [activeIndex, setActiveIndex] = useState(Math.floor(favoriteBooks.length / 2));
+  const [meetingIndex, setMeetingIndex] = useState(0);
   const activeBook = favoriteBooks[activeIndex];
+
+  useEffect(() => {
+    const id = setInterval(() => setMeetingIndex(i => (i + 1) % meetingWords.length), 2200);
+    return () => clearInterval(id);
+  }, []);
   return (
 
     <main className="relative bg-background">
