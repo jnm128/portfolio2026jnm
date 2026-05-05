@@ -20,9 +20,13 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ className }) => {
       role="radiogroup"
       aria-label="Color theme"
       className={cn(
-        'fixed bottom-6 right-6 z-50 flex items-center gap-4',
+        'fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[60] flex items-center gap-4',
         className,
       )}
+      style={{
+        paddingBottom: 'env(safe-area-inset-bottom)',
+        paddingRight: 'env(safe-area-inset-right)',
+      }}
     >
       <div className="relative flex items-center gap-5">
         {SWATCHES.map(({ mode, label, color }) => {
