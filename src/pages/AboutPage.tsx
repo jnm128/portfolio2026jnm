@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from '@/components/Footer';
 import ScrollAnimations from '@/components/animations/ScrollAnimations';
 import FadeIn from '@/components/animations/FadeIn';
@@ -60,9 +60,17 @@ const skills = [
   { title: 'UX Research & Testing', text: 'Interviews, usability testing, synthesis, and behavioral insight.' },
 ];
 
+const meetingWords = ['Meeting', 'Teams', 'Google Meet', 'Zoom'];
+
 const AboutPage = () => {
   const [activeIndex, setActiveIndex] = useState(Math.floor(favoriteBooks.length / 2));
+  const [meetingIndex, setMeetingIndex] = useState(0);
   const activeBook = favoriteBooks[activeIndex];
+
+  useEffect(() => {
+    const id = setInterval(() => setMeetingIndex(i => (i + 1) % meetingWords.length), 2200);
+    return () => clearInterval(id);
+  }, []);
   return (
 
     <main className="relative bg-background">
@@ -160,7 +168,13 @@ const AboutPage = () => {
             <FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
                 <div>
-                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">Skill Set</h2>
+                  <h2 className="text-3xl md:text-5xl font-serif text-title mb-6">
+                    What I bring to the{' '}
+                    <span key={meetingWords[meetingIndex]} className="inline-block animate-fade-in italic">
+                      {meetingWords[meetingIndex]}
+                    </span>
+                    {' '}Room
+                  </h2>
                   <p className="text-base md:text-lg text-foreground font-serif leading-relaxed max-w-md">
                     A blend of strategy, design, and research — focused on creating products that feel as good as they perform.
                   </p>
