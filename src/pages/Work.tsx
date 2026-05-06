@@ -120,7 +120,7 @@ const Work: React.FC = () => {
 
       {/* Project Cards */}
       <section className="bg-background">
-        <div className="max-w-[1600px] mx-auto px-5 md:px-16 py-16 md:py-24">
+        <div className="max-w-[1600px] mx-auto px-5 md:px-16 pt-8 md:pt-10 pb-16 md:pb-24">
           {visibleProjects.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16">
               {visibleProjects.map((project, index) => (
