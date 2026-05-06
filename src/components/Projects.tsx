@@ -72,8 +72,6 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                   )}
                   <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 px-4 py-2 bg-background rounded-full shadow-sm">
                     <span className="text-sm font-medium text-foreground">{project.brand}</span>
-                    <span className="text-sm text-hint">·</span>
-                    <span className="text-sm text-hint">{project.year}</span>
                   </div>
                 </div>
                 <p className="mt-4 text-base text-hint leading-relaxed">
