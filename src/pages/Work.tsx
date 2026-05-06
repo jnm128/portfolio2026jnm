@@ -57,6 +57,8 @@ const TABS: { id: Category; label: string }[] = [
 
 const Work: React.FC = () => {
   const location = useLocation();
+  const [activeTab, setActiveTab] = useState<Category>('modernization');
+  const visibleProjects = projects.filter(p => p.category === activeTab);
 
   useEffect(() => {
     if (!location.hash) return;
