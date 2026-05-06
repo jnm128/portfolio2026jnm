@@ -2,6 +2,7 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLockBodyScroll } from '@/hooks/use-lock-body-scroll';
 
 interface WorkExperiencePanelProps {
   open: boolean;
@@ -23,6 +24,7 @@ const education = [
 ];
 
 const WorkExperiencePanel: React.FC<WorkExperiencePanelProps> = ({ open, onClose }) => {
+  useLockBodyScroll(open);
   return createPortal(
     <>
       {/* Backdrop for click-outside-to-close */}

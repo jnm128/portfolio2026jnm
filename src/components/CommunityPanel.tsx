@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLockBodyScroll } from '@/hooks/use-lock-body-scroll';
 
 interface CommunityPanelProps {
   open: boolean;
@@ -28,6 +29,7 @@ const involvement = [
 ];
 
 const CommunityPanel: React.FC<CommunityPanelProps> = ({ open, onClose }) => {
+  useLockBodyScroll(open);
   return createPortal(
     <>
       <div

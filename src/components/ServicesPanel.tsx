@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLockBodyScroll } from '@/hooks/use-lock-body-scroll';
 
 interface ServicesPanelProps {
   open: boolean;
@@ -36,6 +37,7 @@ const Section: React.FC<{ label: string; eyebrow: string; items: typeof freelanc
 );
 
 const ServicesPanel: React.FC<ServicesPanelProps> = ({ open, onClose }) => {
+  useLockBodyScroll(open);
   return createPortal(
     <>
       <div
