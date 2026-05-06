@@ -1,10 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
 import Footer from '@/components/Footer';
 import { cn } from '@/lib/utils';
 
-const projects = [
+type Category = 'modernization' | 'zero-to-one';
+
+const projects: Array<{
+  brand: string;
+  year: string;
+  description: string;
+  image: string;
+  link: string;
+  id?: string;
+  category: Category;
+}> = [
   {
     brand: "CVS Health",
     year: "2024",
@@ -12,6 +22,7 @@ const projects = [
     image: "/lovable-uploads/cvs-health-card.png",
     link: "/case-study/cvs-health",
     id: "project-cvs-health",
+    category: "modernization",
   },
   {
     brand: "Viveka Health",
@@ -19,6 +30,7 @@ const projects = [
     description: "Building cost transparency between families, insurance, and businesses — improving cost clarity and reducing support tickets.",
     image: "/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png",
     link: "/case-study/artisan-marketplace",
+    category: "modernization",
   },
   {
     brand: "Tappt Health",
@@ -26,6 +38,7 @@ const projects = [
     description: "Modernizing medicine adherence from web to native mobile, improving patient engagement and daily active usage.",
     image: "/lovable-uploads/tappt-health-project.png",
     link: "/case-study/creative-studio",
+    category: "modernization",
   },
   {
     brand: "Mindful Wellness",
@@ -33,11 +46,19 @@ const projects = [
     description: "Designing a calming meditation experience that helps users build sustainable mindfulness habits through guided sessions.",
     image: "/lovable-uploads/mindful-wellness-card.png",
     link: "/case-study/mindful-wellness",
+    category: "modernization",
   }
+];
+
+const TABS: { id: Category; label: string }[] = [
+  { id: 'modernization', label: 'Modernizations' },
+  { id: 'zero-to-one', label: '0 to 1' },
 ];
 
 const Work: React.FC = () => {
   const location = useLocation();
+  const [activeTab, setActiveTab] = useState<Category>('modernization');
+  const visibleProjects = projects.filter(p => p.category === activeTab);
 
   useEffect(() => {
     if (!location.hash) return;
@@ -70,36 +91,64 @@ const Work: React.FC = () => {
               A collection of projects spanning product design, brand identity, and digital experiences — each crafted with intention and care.
             </p>
           </FadeIn>
+
+          {/* Tabs */}
+          <div className="mt-12 flex items-center gap-8 border-b border-border">
+            {TABS.map(tab => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveTab(tab.id)}
+                  className={cn(
+                    'pb-3 -mb-px text-sm uppercase tracking-widest transition-opacity',
+                    isActive
+                      ? 'text-title border-b border-title'
+                      : 'text-hint hover:opacity-70'
+                  )}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* Project Cards */}
       <section className="bg-background">
         <div className="max-w-[1600px] mx-auto px-5 md:px-16 py-16 md:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16">
-            {projects.map((project, index) => (
-              <FadeIn key={project.brand} delay={index * 50} duration={500} threshold={0.05}>
-                <Link to={project.link} id={(project as any).id} className="group block scroll-mt-24">
-                  <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
-                    <img
-                      src={project.image}
-                      alt={`${project.brand} case study`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                    />
-                    <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 px-4 py-2 bg-background rounded-full shadow-sm">
-                      <span className="text-sm font-medium text-foreground">{project.brand}</span>
-                      <span className="text-sm text-hint">·</span>
-                      <span className="text-sm text-hint">{project.year}</span>
+          {visibleProjects.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16">
+              {visibleProjects.map((project, index) => (
+                <FadeIn key={project.brand} delay={index * 50} duration={500} threshold={0.05}>
+                  <Link to={project.link} id={project.id} className="group block scroll-mt-24">
+                    <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
+                      <img
+                        src={project.image}
+                        alt={`${project.brand} case study`}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                      <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 px-4 py-2 bg-background rounded-full shadow-sm">
+                        <span className="text-sm font-medium text-foreground">{project.brand}</span>
+                        <span className="text-sm text-hint">·</span>
+                        <span className="text-sm text-hint">{project.year}</span>
+                      </div>
                     </div>
-                  </div>
-                  <p className="mt-4 text-base text-hint leading-relaxed">
-                    {project.description}
-                  </p>
-                </Link>
-              </FadeIn>
-            ))}
-          </div>
-          <p className="text-xs uppercase tracking-widest text-muted-foreground text-center mt-16">More coming soon...</p>
+                    <p className="mt-4 text-base text-hint leading-relaxed">
+                      {project.description}
+                    </p>
+                  </Link>
+                </FadeIn>
+              ))}
+            </div>
+          ) : (
+            <p className="text-xs uppercase tracking-widest text-muted-foreground text-center py-16">More coming soon…</p>
+          )}
+          {visibleProjects.length > 0 && (
+            <p className="text-xs uppercase tracking-widest text-muted-foreground text-center mt-16">More coming soon...</p>
+          )}
         </div>
       </section>
 
