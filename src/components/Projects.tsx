@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import FadeIn from './animations/FadeIn';
 import cvsHeroVideo from '@/assets/cvs-hero.mp4';
+import tapptHeroVideo from '@/assets/tappt-hero.mp4';
 
 interface ProjectsProps {
   className?: string;
@@ -30,6 +31,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       year: "2022",
       description: "Modernizing medicine adherence from web to native mobile, improving patient engagement and daily active usage.",
       image: "/lovable-uploads/tappt-health-project.png",
+      video: tapptHeroVideo,
       link: "/case-study/creative-studio",
     },
     {

@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
 import SplitSection from '@/components/SplitSection';
 import ImageLightbox from '@/components/ImageLightbox';
+import tapptHeroVideo from '@/assets/tappt-hero.mp4';
 
 const CaseStudyCreativeStudio = () => {
   const navigate = useNavigate();
@@ -55,9 +56,14 @@ const CaseStudyCreativeStudio = () => {
 
           <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-12">
-              <img 
-                src="/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
-                alt="Creative Studio Brand Identity" 
+              <video
+                src={tapptHeroVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                aria-label="Tappt Health case study"
                 className="w-full object-cover aspect-[16/9] md:aspect-[21/9]"
               />
             </div>
