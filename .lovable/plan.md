@@ -1,19 +1,35 @@
-# Airy Ease-In Reveal for Cards & Rows
+## Problem
 
-Make the staggered reveal feel softer and more "floaty" by lengthening the duration, gentling the easing curve, and increasing the rise distance.
+The current `useLockBodyScroll` hook applies `position: fixed` to `body`, which interferes with the slide-out panels' internal `overflow-y-auto` scrolling. Users can't scroll the Resume drawer content.
 
-## Changes
+## Fix
 
-**1. `src/components/animations/FadeIn.tsx`** — tune the default motion to feel airy:
-- `duration` default `700` → `1100` (slower, breathier)
-- Easing `cubic-bezier(0.16, 1, 0.3, 1)` → `cubic-bezier(0.22, 1, 0.36, 1)` (smoother ease-out, less abrupt landing)
-- Initial `translateY(20px)` → `translateY(32px)` so each item drifts up further
+Replace the `position: fixed` strategy with a simpler `overflow: hidden` lock on `<html>` and `<body>`. This prevents page scroll while leaving the portal-rendered drawer (which is `fixed` + `overflow-y-auto`) free to scroll its own content.
 
-**2. Per-instance overrides for the staggered surfaces** (so the bumped duration reads as graceful, not slow):
-- `src/components/Projects.tsx` — change `duration={500}` → `duration={1100}`; keep `delay={index * 180}`.
-- `src/components/CaseStudyNav.tsx` — change `duration={500}` → `duration={1100}`; keep `delay={index * 180}`.
-- `src/components/AboutSection.tsx` (Design, Tech & Intention list) — change `duration={500}` → `duration={1100}`; keep `delay={i * 180}`.
+### File: `src/hooks/use-lock-body-scroll.ts`
 
-## Result
+```ts
+import { useEffect } from 'react';
 
-Each card/row floats up with a soft, lingering ease — they appear sequentially (180ms apart) and each takes ~1.1s to settle, giving the page that calm, editorial entrance.
+export function useLockBodyScroll(locked: boolean) {
+  useEffect(() => {
+    if (!locked) return;
+    const html = document.documentElement;
+    const body = document.body;
+    const prevHtml = html.style.overflow;
+    const prevBody = body.style.overflow;
+    const prevPad = body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - html.clientWidth;
+    html.style.overflow = 'hidden';
+    body.style.overflow = 'hidden';
+    if (scrollbarWidth > 0) body.style.paddingRight = `${scrollbarWidth}px`;
+    return () => {
+      html.style.overflow = prevHtml;
+      body.style.overflow = prevBody;
+      body.style.paddingRight = prevPad;
+    };
+  }, [locked]);
+}
+```
+
+No changes needed to `WorkExperiencePanel`, `CommunityPanel`, or `ServicesPanel` — they already call the hook and have `overflow-y-auto` on the drawer container.
