@@ -93,19 +93,21 @@ const Work: React.FC = () => {
           </FadeIn>
 
           {/* Tabs */}
-          <div className="mt-12 flex items-center gap-8 border-b border-border">
+          <div role="tablist" aria-label="Filter projects" className="mt-12 flex flex-wrap gap-x-5 gap-y-2">
             {TABS.map(tab => {
               const isActive = activeTab === tab.id;
               return (
                 <button
                   key={tab.id}
                   type="button"
+                  role="tab"
+                  aria-selected={isActive}
                   onClick={() => setActiveTab(tab.id)}
                   className={cn(
-                    'pb-3 -mb-px text-sm uppercase tracking-widest transition-opacity',
+                    'text-xs uppercase tracking-widest pb-1 border-b-2 transition-colors',
                     isActive
-                      ? 'text-title border-b border-title'
-                      : 'text-hint hover:opacity-70'
+                      ? 'text-foreground border-foreground'
+                      : 'text-muted-foreground border-transparent hover:text-foreground hover:opacity-70'
                   )}
                 >
                   {tab.label}
