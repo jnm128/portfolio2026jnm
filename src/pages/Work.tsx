@@ -1,10 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
 import Footer from '@/components/Footer';
 import { cn } from '@/lib/utils';
 
-const projects = [
+type Category = 'modernization' | 'zero-to-one';
+
+const projects: Array<{
+  brand: string;
+  year: string;
+  description: string;
+  image: string;
+  link: string;
+  id?: string;
+  category: Category;
+}> = [
   {
     brand: "CVS Health",
     year: "2024",
@@ -12,6 +22,7 @@ const projects = [
     image: "/lovable-uploads/cvs-health-card.png",
     link: "/case-study/cvs-health",
     id: "project-cvs-health",
+    category: "modernization",
   },
   {
     brand: "Viveka Health",
@@ -19,6 +30,7 @@ const projects = [
     description: "Building cost transparency between families, insurance, and businesses — improving cost clarity and reducing support tickets.",
     image: "/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png",
     link: "/case-study/artisan-marketplace",
+    category: "modernization",
   },
   {
     brand: "Tappt Health",
@@ -26,6 +38,7 @@ const projects = [
     description: "Modernizing medicine adherence from web to native mobile, improving patient engagement and daily active usage.",
     image: "/lovable-uploads/tappt-health-project.png",
     link: "/case-study/creative-studio",
+    category: "modernization",
   },
   {
     brand: "Mindful Wellness",
@@ -33,7 +46,13 @@ const projects = [
     description: "Designing a calming meditation experience that helps users build sustainable mindfulness habits through guided sessions.",
     image: "/lovable-uploads/mindful-wellness-card.png",
     link: "/case-study/mindful-wellness",
+    category: "modernization",
   }
+];
+
+const TABS: { id: Category; label: string }[] = [
+  { id: 'modernization', label: 'Modernizations' },
+  { id: 'zero-to-one', label: '0 to 1' },
 ];
 
 const Work: React.FC = () => {
