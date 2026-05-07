@@ -3,6 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
 import Footer from '@/components/Footer';
 import { cn } from '@/lib/utils';
+import cvsHeroVideo from '@/assets/cvs-hero.mp4';
+import tapptHeroVideo from '@/assets/tappt-hero.mp4';
+import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
+import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
 
 type Category = 'modernization' | 'zero-to-one';
 
@@ -11,6 +15,7 @@ const projects: Array<{
   year: string;
   description: string;
   image: string;
+  video?: string;
   link: string;
   id?: string;
   category: Category;
@@ -20,6 +25,7 @@ const projects: Array<{
     year: "2024",
     description: "Shipping colleague-facing design experience to reduce user errors and improve task completion across key workflows.",
     image: "/lovable-uploads/cvs-health-card.png",
+    video: cvsHeroVideo,
     link: "/case-study/cvs-health",
     id: "project-cvs-health",
     category: "modernization",
@@ -29,6 +35,7 @@ const projects: Array<{
     year: "2023",
     description: "Building cost transparency between families, insurance, and businesses — improving cost clarity and reducing support tickets.",
     image: "/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png",
+    video: vivekaHeroVideo,
     link: "/case-study/artisan-marketplace",
     category: "modernization",
   },
@@ -37,14 +44,16 @@ const projects: Array<{
     year: "2022",
     description: "Modernizing medicine adherence from web to native mobile, improving patient engagement and daily active usage.",
     image: "/lovable-uploads/tappt-health-project.png",
+    video: tapptHeroVideo,
     link: "/case-study/creative-studio",
     category: "modernization",
   },
   {
-    brand: "Mindful Wellness",
-    year: "2021",
-    description: "Designing a calming meditation experience that helps users build sustainable mindfulness habits through guided sessions.",
+    brand: "Gordon Center",
+    year: "2024",
+    description: "User testing and UX design enhancements to the Gordon Center's Essential Cardiac Auscultation web e-learning platform for medical students.",
     image: "/lovable-uploads/mindful-wellness-card.png",
+    video: gordonHeroVideo,
     link: "/case-study/mindful-wellness",
     category: "modernization",
   }
