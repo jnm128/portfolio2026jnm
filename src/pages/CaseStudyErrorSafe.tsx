@@ -70,7 +70,7 @@ const CaseStudyErrorSafe = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <h1 className="text-4xl md:text-6xl font-serif text-title leading-tight mb-2">
+            <h1 className="text-3xl md:text-5xl font-serif text-title leading-tight mb-2">
               Error Safe — Injury reporting management system
             </h1>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
