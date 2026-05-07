@@ -28,7 +28,7 @@ const CaseStudyArtisanMarketplace = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <h1 className="text-3xl md:text-5xl font-serif text-title leading-tight mb-2">
+            <h1 className="text-4xl md:text-6xl font-serif text-title leading-tight mb-2">
               Artisan Marketplace
             </h1>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
@@ -47,8 +47,8 @@ const CaseStudyArtisanMarketplace = () => {
                 { label: 'Timeline', value: '12 weeks' },
               ].map((item) => (
                 <div key={item.label}>
-                  <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{item.label}</p>
-                  <p className="text-sm font-medium">{item.value}</p>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{item.label}</p>
+                  <p className="text-sm md:text-base font-medium">{item.value}</p>
                 </div>
               ))}
             </div>
@@ -76,7 +76,7 @@ const CaseStudyArtisanMarketplace = () => {
         <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Problem Space">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               How can local artisans compete in a digital-first marketplace while preserving the story behind their craft?
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
