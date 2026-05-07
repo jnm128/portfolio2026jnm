@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import FadeIn from './animations/FadeIn';
 import cvsHeroVideo from '@/assets/cvs-hero.mp4';
 import tapptHeroVideo from '@/assets/tappt-hero.mp4';
+import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
 
 interface ProjectsProps {
   className?: string;
@@ -39,6 +40,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       year: "2024",
       description: "User testing and UX design enhancements to the Gordon Center's Essential Cardiac Auscultation web e-learning platform for medical students.",
       image: "/lovable-uploads/mindful-wellness-card.png",
+      video: gordonHeroVideo,
       link: "/case-study/mindful-wellness",
     }
   ];
