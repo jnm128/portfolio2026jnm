@@ -83,7 +83,6 @@ const CaseStudyErrorSafe = () => {
               {[
                 { label: 'Project Type', value: 'Graduate project — Human Centered Design' },
                 { label: 'Industry', value: 'SaaS, Healthcare, HIPAA, Employee Admin' },
-                { label: 'Category', value: 'UX Design, Product Design' },
                 { label: 'My Role', value: 'UX Designer (Team of 5)' },
                 { label: 'Responsibilities', value: 'Strategy, IA, Dashboards, Tokens' },
                 { label: 'Timeline', value: '6 weeks / 2023' },

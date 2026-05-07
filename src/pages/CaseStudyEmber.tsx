@@ -74,7 +74,6 @@ const CaseStudyEmber = () => {
               {[
                 { label: 'Project Type', value: 'MFA Capstone — University of Miami' },
                 { label: 'Industry', value: 'Mental Health, Self-development' },
-                { label: 'Category', value: 'Product Design, UX Design' },
                 { label: 'My Role', value: 'Product & UX Designer' },
                 { label: 'Team', value: 'Team of 1' },
                 { label: 'Timeline', value: '14 weeks / 2024' },
