@@ -70,7 +70,7 @@ const CaseStudyErrorSafe = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <h1 className="text-4xl md:text-6xl font-serif text-title leading-tight mb-2">
+            <h1 className="text-3xl md:text-5xl font-serif text-title leading-tight mb-2">
               Error Safe — Injury reporting management system
             </h1>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
@@ -89,8 +89,8 @@ const CaseStudyErrorSafe = () => {
                 { label: 'Timeline', value: '6 weeks / 2023' },
               ].map((item) => (
                 <div key={item.label}>
-                  <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{item.label}</p>
-                  <p className="text-sm md:text-base font-medium">{item.value}</p>
+                  <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{item.label}</p>
+                  <p className="text-sm font-medium">{item.value}</p>
                 </div>
               ))}
             </div>
@@ -121,7 +121,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Project Overview">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               Human-centered solutions to improve transparency and reliability in the accident reporting process.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
@@ -139,7 +139,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Problem Space">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               Low levels of healthcare work-related accident reporting are caused by a lack of staff awareness and a rigid reporting process.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -154,7 +154,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Project Approach">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               Navigating ambiguity to design a simplified reporting system that improves transparency in the error reporting process.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -184,7 +184,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Research">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               The existing process for submitting OSHA 300 reports is lengthy and complex.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -213,7 +213,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Key Players">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               Pinpointing the people responsible for moving a report into a case.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -228,7 +228,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Research Findings">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               Designing a software for multiple roles.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -258,7 +258,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="User Personas">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               Prioritizing use cases for Nurse Administrative roles.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -287,7 +287,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="User Journey">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               Presenting key information across 25 software requirements without overwhelming users.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -316,7 +316,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="User Empathy">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               I enhanced the system's trust, readability, and accessibility through visual design tokens.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
@@ -334,7 +334,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Exploring Solutions">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               Nurse administrators lack visibility into company-wide incident analytics that would inform their next actions.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -349,7 +349,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Defining Requirements">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               Tooltip micro-interactions and dashboard best practices help new users recall and understand key information.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -364,7 +364,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="User Testing">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               Walking through the first iteration of the prototype solution.
             </h2>
             <FullImage src={img.testing} alt="User testing setup" />
@@ -379,7 +379,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Design Iterations">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-10 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-10 leading-tight">
               Four iterations that significantly reduced cognitive load for nurse admins.
             </h2>
 
@@ -424,7 +424,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Impact">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               A comprehensive system that supports nursing administrators in their daily tasks and keeps them ahead of accident reporting.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -456,7 +456,7 @@ const CaseStudyErrorSafe = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Learnings">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
               Designing data-intensive products means managing both inputs and outputs.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-10">
