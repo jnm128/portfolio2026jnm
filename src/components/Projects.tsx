@@ -5,6 +5,7 @@ import FadeIn from './animations/FadeIn';
 import cvsHeroVideo from '@/assets/cvs-hero.mp4';
 import tapptHeroVideo from '@/assets/tappt-hero.mp4';
 import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
+import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
 
 interface ProjectsProps {
   className?: string;
@@ -25,6 +26,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       year: "2023",
       description: "Building cost transparency between families, insurance, and businesses — improving cost clarity and reducing support tickets.",
       image: "/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png",
+      video: vivekaHeroVideo,
       link: "/case-study/artisan-marketplace",
     },
     {

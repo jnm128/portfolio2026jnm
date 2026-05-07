@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
 import SplitSection from '@/components/SplitSection';
 import ImageLightbox from '@/components/ImageLightbox';
+import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
 
 const CaseStudyArtisanMarketplace = () => {
   const navigate = useNavigate();
@@ -55,9 +56,14 @@ const CaseStudyArtisanMarketplace = () => {
 
           <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-12">
-              <img 
-                src="/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png" 
-                alt="Artisan Marketplace Platform" 
+              <video
+                src={vivekaHeroVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                aria-label="Viveka Health Platform"
                 className="w-full object-cover aspect-[16/9] md:aspect-[21/9]"
               />
             </div>
