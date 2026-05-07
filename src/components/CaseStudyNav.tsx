@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FadeIn from './animations/FadeIn';
+import cvsHeroVideo from '@/assets/cvs-hero.mp4';
+import tapptHeroVideo from '@/assets/tappt-hero.mp4';
+import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
+import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
 
 const caseStudies = [
   {
@@ -10,6 +14,7 @@ const caseStudies = [
     brand: 'Gordon Center',
     year: '2024',
     image: '/lovable-uploads/mindful-wellness-card.png',
+    video: gordonHeroVideo,
     description:
       "User testing and UX design enhancements to the Gordon Center's Essential Cardiac Auscultation web e-learning platform for medical students.",
   },
@@ -20,6 +25,7 @@ const caseStudies = [
     brand: 'Viveka Health',
     year: '2023',
     image: '/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png',
+    video: vivekaHeroVideo,
     description:
       'Building cost transparency between families, insurance, and businesses — improving cost clarity and reducing support tickets.',
   },
@@ -30,6 +36,7 @@ const caseStudies = [
     brand: 'Tappt Health',
     year: '2022',
     image: '/lovable-uploads/tappt-health-project.png',
+    video: tapptHeroVideo,
     description:
       'Modernizing medicine adherence from web to native mobile, improving patient engagement and daily active usage.',
   },
@@ -40,6 +47,7 @@ const caseStudies = [
     brand: 'CVS Health',
     year: '2024',
     image: '/lovable-uploads/cvs-health-card.png',
+    video: cvsHeroVideo,
     description:
       'Shipping colleague-facing design experience to reduce user errors and improve task completion across key workflows.',
   },
@@ -81,11 +89,24 @@ const CaseStudyNav: React.FC<CaseStudyNavProps> = ({ currentSlug, variant = 'lig
             <FadeIn key={project.slug} delay={index * 180} duration={500} threshold={0.05}>
               <Link to={project.path} className="group block">
                 <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
-                  <img
-                    src={project.image}
-                    alt={`${project.brand} case study`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
+                  {project.video ? (
+                    <video
+                      src={project.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      aria-label={`${project.brand} case study`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={`${project.brand} case study`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  )}
                   <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 px-4 py-2 bg-background rounded-full shadow-sm">
                     <span className="text-sm font-medium text-foreground">{project.brand}</span>
                   </div>
