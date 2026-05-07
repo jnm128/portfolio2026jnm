@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FadeIn from './animations/FadeIn';
+import cvsHeroVideo from '@/assets/cvs-hero.mp4';
+import tapptHeroVideo from '@/assets/tappt-hero.mp4';
+import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
+import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
 
 const caseStudies = [
   {
@@ -10,6 +14,7 @@ const caseStudies = [
     brand: 'Gordon Center',
     year: '2024',
     image: '/lovable-uploads/mindful-wellness-card.png',
+    video: gordonHeroVideo,
     description:
       "User testing and UX design enhancements to the Gordon Center's Essential Cardiac Auscultation web e-learning platform for medical students.",
   },
@@ -20,6 +25,7 @@ const caseStudies = [
     brand: 'Viveka Health',
     year: '2023',
     image: '/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png',
+    video: vivekaHeroVideo,
     description:
       'Building cost transparency between families, insurance, and businesses — improving cost clarity and reducing support tickets.',
   },
@@ -30,6 +36,7 @@ const caseStudies = [
     brand: 'Tappt Health',
     year: '2022',
     image: '/lovable-uploads/tappt-health-project.png',
+    video: tapptHeroVideo,
     description:
       'Modernizing medicine adherence from web to native mobile, improving patient engagement and daily active usage.',
   },
@@ -40,6 +47,7 @@ const caseStudies = [
     brand: 'CVS Health',
     year: '2024',
     image: '/lovable-uploads/cvs-health-card.png',
+    video: cvsHeroVideo,
     description:
       'Shipping colleague-facing design experience to reduce user errors and improve task completion across key workflows.',
   },
