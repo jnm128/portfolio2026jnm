@@ -5,6 +5,8 @@ import cvsHeroVideo from '@/assets/cvs-hero.mp4';
 import tapptHeroVideo from '@/assets/tappt-hero.mp4';
 import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
 import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
+import emberHero from '@/assets/ember-hero.png';
+import errorSafeHero from '@/assets/error-safe-hero.png';
 
 const caseStudies = [
   {
@@ -50,6 +52,26 @@ const caseStudies = [
     video: cvsHeroVideo,
     description:
       'Shipping colleague-facing design experience to reduce user errors and improve task completion across key workflows.',
+  },
+  {
+    slug: 'ember',
+    title: 'Ember',
+    path: '/case-study/ember',
+    brand: 'Ember',
+    year: '2024',
+    image: emberHero,
+    description:
+      'MFA capstone — a self-development mobile app helping lost adults build consistent journaling, habit, and goal-setting practices.',
+  },
+  {
+    slug: 'error-safe',
+    title: 'Error Safe',
+    path: '/case-study/error-safe',
+    brand: 'Error Safe',
+    year: '2024',
+    image: errorSafeHero,
+    description:
+      'Streamlining work-related injury reporting and employee management for nurse administrators in elder-care organizations.',
   },
 ];
 
