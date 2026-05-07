@@ -61,7 +61,7 @@ const CaseStudyEmber = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <h1 className="text-3xl md:text-5xl font-serif text-title leading-tight mb-2">
+            <h1 className="text-4xl md:text-6xl font-serif text-title leading-tight mb-2">
               Ember mobile app
             </h1>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
@@ -80,8 +80,8 @@ const CaseStudyEmber = () => {
                 { label: 'Timeline', value: '14 weeks / 2024' },
               ].map((item) => (
                 <div key={item.label}>
-                  <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{item.label}</p>
-                  <p className="text-sm font-medium">{item.value}</p>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{item.label}</p>
+                  <p className="text-sm md:text-base font-medium">{item.value}</p>
                 </div>
               ))}
             </div>
@@ -112,7 +112,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Project Overview">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               Creating a mindful digital experience for my MFA Interactive Media capstone project at the University of Miami.
             </h2>
 
@@ -142,7 +142,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Prototype">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               I prototyped key interactions of a robust app that meets users where they are and guides them toward personal growth.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -160,7 +160,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Problem Space">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               How might we help people achieve their goals while incorporating mindfulness practices to reduce mental stress and empower their path to personal growth?
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
@@ -178,7 +178,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Project Approach">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               Over 14 weeks, I led the end-to-end human-centered design process for a mobile app aimed at increasing consistency in self-development practices.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
@@ -210,7 +210,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Research">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               Exploring the current struggles in journaling and goal setting among adults.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
@@ -229,7 +229,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Research Findings">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               Young adults face pressure from many parts of their lives, making it hard to keep growing personally.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -261,7 +261,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="User Personas">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               I identified three archetypes — and focused the MVP on the “lost” user.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
@@ -282,7 +282,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="User Journey">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               The biggest design challenge was influencing user behavior without overwhelming new users.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
@@ -303,7 +303,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="User Empathy">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               I refined the app's tone of voice and language across all interactions to ensure Ember consistently provided a nurturing, supportive experience.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -349,7 +349,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Defining Requirements">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               I prototyped key interactions of a robust app that not only meets users where they are but guides them toward personal growth.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-8">
@@ -364,7 +364,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="User Testing">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               I led 6 virtual user testing sessions to validate the core features and inform iteration.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-6">
@@ -385,7 +385,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Design Feedback + Iterations">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               User testing surfaced 20 insights — three changed the direction of the MVP.
             </h2>
             <div className="space-y-10">
@@ -427,7 +427,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Solutions">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-10 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-10 leading-tight">
               Three feature solutions that bring Ember to life.
             </h2>
 
@@ -464,7 +464,7 @@ const CaseStudyEmber = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-5 md:px-16">
           <SplitSection label="Metrics + Learnings">
-            <h2 className="text-2xl md:text-4xl font-serif font-medium mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6 leading-tight">
               As an MFA Capstone, this project came with time and budget constraints — and a focused set of next steps.
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-serif leading-relaxed mb-10">
