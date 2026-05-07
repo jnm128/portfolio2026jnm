@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
 import SplitSection from '@/components/SplitSection';
 import ImageLightbox from '@/components/ImageLightbox';
+import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
 
 const CaseStudyMindfulWellness = () => {
   const navigate = useNavigate();
@@ -55,9 +56,14 @@ const CaseStudyMindfulWellness = () => {
 
           <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-12">
-              <img 
-                src="/lovable-uploads/34a58283-8b82-48f9-88f4-2c88b069921d.png" 
-                alt="Gordon Center Essential Cardiac Auscultation Platform" 
+              <video
+                src={gordonHeroVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                aria-label="Gordon Center Essential Cardiac Auscultation Platform"
                 className="w-full object-cover aspect-[16/9] md:aspect-[21/9]"
               />
             </div>
