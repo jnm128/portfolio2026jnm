@@ -158,9 +158,8 @@ const Work: React.FC = () => {
                   <Link to={project.link} id={project.id} className="group block scroll-mt-24">
                     <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
                       {project.video ? (
-                        <video
+                        <SmartVideo
                           src={project.video}
-                          poster={project.image || undefined}
                           autoPlay
                           loop
                           muted
