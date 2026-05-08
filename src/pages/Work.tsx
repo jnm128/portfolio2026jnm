@@ -161,11 +161,12 @@ const Work: React.FC = () => {
                       {project.video ? (
                         <video
                           src={project.video}
+                          poster={project.image || undefined}
                           autoPlay
                           loop
                           muted
                           playsInline
-                          preload="auto"
+                          preload="metadata"
                           aria-label={`${project.brand} case study`}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                         />
