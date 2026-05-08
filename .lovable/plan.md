@@ -1,31 +1,31 @@
-## Standardize font sizes on 0-to-1 case studies
+## Goal
+Make the Ember hero video load quickly on the web. Today it's 6.3 MB, 1920×1080, 60fps, h264 — oversized for a looping background card.
 
-### Problem
-Ember and Error Safe case studies use a different typography scale than the CVS Health modernization case study (the most visually established reference). The user reports the 0-to-1 pages look larger.
+## Plan
 
-### Audit results
-| Element | CVS (modernization) | Ember / Error Safe (0-to-1) |
-|---------|---------------------|----------------------------|
-| Hero h1 | `text-4xl md:text-6xl` | `text-3xl md:text-5xl` |
-| Metadata labels | `text-xs` | `text-[10px]` |
-| Metadata values | `text-sm md:text-base` | `text-sm` |
-| Section headings | `text-2xl md:text-3xl` | `text-2xl md:text-4xl` |
-| Body text | `text-base md:text-lg` | `text-base md:text-lg` ✓ |
+1. **Re-encode `src/assets/ember-hero.mp4`** with ffmpeg to a web-optimized version:
+   - Scale to 1280×720 (still crisp at card + hero sizes)
+   - 30 fps
+   - h264, CRF ~26, `-preset slow`, `-pix_fmt yuv420p`
+   - `-movflags +faststart` so the browser can begin playback before full download
+   - Strip audio (`-an`) — it's muted anyway
+   - Target ~1–1.5 MB (≈75–80% smaller)
 
-The section headings (`text-4xl` vs `text-3xl`) are the biggest driver of the "larger" perception. The hero h1 is actually smaller on 0-to-1, so that gets bumped up for consistency.
+2. **Generate a poster image** (`src/assets/ember-hero-poster.jpg`) from the first frame so the card shows something instantly while the video buffers.
 
-### Changes
+3. **Update the `<video>` tags** in `src/pages/CaseStudyEmber.tsx`, `src/pages/Work.tsx`, and `src/components/CaseStudyNav.tsx`:
+   - Add `poster={emberHeroPoster}`
+   - Change `preload="auto"` → `preload="metadata"` on the Work + CaseStudyNav cards (the small thumbnails) so the browser only fetches the video when it's needed; keep `preload="auto"` on the dedicated case-study hero.
 
-**`src/pages/CaseStudyEmber.tsx`**
-1. Hero h1: `text-3xl md:text-5xl` → `text-4xl md:text-6xl`
-2. Back button: add `text-sm`
-3. Metadata labels: `text-[10px]` → `text-xs`
-4. Metadata values: `text-sm` → `text-sm md:text-base`
-5. All section h2 headings (≈12 occurrences): `text-2xl md:text-4xl` → `text-2xl md:text-3xl`
-6. All sub-section h3 headings (≈8 occurrences): `text-lg md:text-xl` → keep as-is (matches CVS sub-headings)
+4. **Apply the same treatment to `error-safe-hero.mp4`** for consistency (also a looping card video). Sizes: 2.3 MB → ~700 KB target, plus poster.
 
-**`src/pages/CaseStudyErrorSafe.tsx`**
-Same 6 changes as Ember, applied to its equivalent headings and metadata blocks.
+No design / layout changes — videos still autoplay, loop, muted, playsInline.
 
-### Out of scope
-No layout, padding, imagery, or content changes. No changes to CreativeStudio, ArtisanMarketplace, MindfulWellness, or Work listing page.
+## Technical details
+```bash
+ffmpeg -i ember-hero.mp4 -vf "scale=1280:-2,fps=30" \
+  -c:v libx264 -crf 26 -preset slow -pix_fmt yuv420p \
+  -movflags +faststart -an ember-hero.optimized.mp4
+ffmpeg -i ember-hero.mp4 -vf "scale=1280:-2" -frames:v 1 -q:v 4 ember-hero-poster.jpg
+```
+Then overwrite the originals so existing imports keep working.
