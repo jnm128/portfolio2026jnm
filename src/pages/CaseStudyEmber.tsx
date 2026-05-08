@@ -7,6 +7,7 @@ import FadeIn from '@/components/animations/FadeIn';
 import SplitSection from '@/components/SplitSection';
 import ImageLightbox from '@/components/ImageLightbox';
 import emberHeroVideo from '@/assets/ember-hero.mp4';
+import emberHeroPoster from '@/assets/ember-hero-poster.jpg';
 
 const CDN = 'https://cdn.prod.website-files.com';
 const img = {
