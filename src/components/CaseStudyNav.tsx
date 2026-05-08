@@ -6,7 +6,9 @@ import tapptHeroVideo from '@/assets/tappt-hero.mp4';
 import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
 import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
 import emberHeroVideo from '@/assets/ember-hero.mp4';
+import emberHeroPoster from '@/assets/ember-hero-poster.jpg';
 import errorSafeHeroVideo from '@/assets/error-safe-hero.mp4';
+import errorSafeHeroPoster from '@/assets/error-safe-hero-poster.jpg';
 
 const caseStudies = [
   {
