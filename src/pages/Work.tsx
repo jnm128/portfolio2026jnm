@@ -8,7 +8,7 @@ import tapptHeroVideo from '@/assets/tappt-hero.mp4';
 import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
 import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
 import emberHeroVideo from '@/assets/ember-hero.mp4';
-import errorSafeHero from '@/assets/error-safe-hero.png';
+import errorSafeHeroVideo from '@/assets/error-safe-hero.mp4';
 
 type Category = 'modernization' | 'zero-to-one';
 
@@ -72,7 +72,8 @@ const projects: Array<{
     brand: "Error Safe",
     year: "2024",
     description: "Streamlining work-related injury reporting and employee management for nurse administrators in elder-care organizations.",
-    image: errorSafeHero,
+    image: '',
+    video: errorSafeHeroVideo,
     link: "/case-study/error-safe",
     category: "zero-to-one",
   }
