@@ -8,7 +8,9 @@ import tapptHeroVideo from '@/assets/tappt-hero.mp4';
 import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
 import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
 import emberHeroVideo from '@/assets/ember-hero.mp4';
+import emberHeroPoster from '@/assets/ember-hero-poster.jpg';
 import errorSafeHeroVideo from '@/assets/error-safe-hero.mp4';
+import errorSafeHeroPoster from '@/assets/error-safe-hero-poster.jpg';
 
 type Category = 'modernization' | 'zero-to-one';
 
@@ -63,7 +65,7 @@ const projects: Array<{
     brand: "Ember",
     year: "2024",
     description: "MFA capstone — a self-development mobile app helping lost adults build consistent journaling, habit, and goal-setting practices.",
-    image: '',
+    image: emberHeroPoster,
     video: emberHeroVideo,
     link: "/case-study/ember",
     category: "zero-to-one",
@@ -72,7 +74,7 @@ const projects: Array<{
     brand: "Error Safe",
     year: "2024",
     description: "Streamlining work-related injury reporting and employee management for nurse administrators in elder-care organizations.",
-    image: '',
+    image: errorSafeHeroPoster,
     video: errorSafeHeroVideo,
     link: "/case-study/error-safe",
     category: "zero-to-one",
@@ -159,11 +161,12 @@ const Work: React.FC = () => {
                       {project.video ? (
                         <video
                           src={project.video}
+                          poster={project.image || undefined}
                           autoPlay
                           loop
                           muted
                           playsInline
-                          preload="auto"
+                          preload="metadata"
                           aria-label={`${project.brand} case study`}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                         />

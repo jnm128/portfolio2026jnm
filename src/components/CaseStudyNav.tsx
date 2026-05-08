@@ -6,7 +6,9 @@ import tapptHeroVideo from '@/assets/tappt-hero.mp4';
 import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
 import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
 import emberHeroVideo from '@/assets/ember-hero.mp4';
+import emberHeroPoster from '@/assets/ember-hero-poster.jpg';
 import errorSafeHeroVideo from '@/assets/error-safe-hero.mp4';
+import errorSafeHeroPoster from '@/assets/error-safe-hero-poster.jpg';
 
 const caseStudies = [
   {
@@ -59,7 +61,7 @@ const caseStudies = [
     path: '/case-study/ember',
     brand: 'Ember',
     year: '2024',
-    image: '',
+    image: emberHeroPoster,
     video: emberHeroVideo,
     description:
       'MFA capstone — a self-development mobile app helping lost adults build consistent journaling, habit, and goal-setting practices.',
@@ -70,7 +72,7 @@ const caseStudies = [
     path: '/case-study/error-safe',
     brand: 'Error Safe',
     year: '2024',
-    image: '',
+    image: errorSafeHeroPoster,
     video: errorSafeHeroVideo,
     description:
       'Streamlining work-related injury reporting and employee management for nurse administrators in elder-care organizations.',
@@ -116,11 +118,12 @@ const CaseStudyNav: React.FC<CaseStudyNavProps> = ({ currentSlug, variant = 'lig
                   {project.video ? (
                     <video
                       src={project.video}
+                      poster={project.image || undefined}
                       autoPlay
                       loop
                       muted
                       playsInline
-                      preload="auto"
+                      preload="metadata"
                       aria-label={`${project.brand} case study`}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                     />
