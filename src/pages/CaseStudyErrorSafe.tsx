@@ -7,7 +7,7 @@ import FadeIn from '@/components/animations/FadeIn';
 import SplitSection from '@/components/SplitSection';
 import ImageLightbox from '@/components/ImageLightbox';
 import errorSafeHeroVideo from '@/assets/error-safe-hero.mp4';
-import errorSafeHeroPoster from '@/assets/error-safe-hero-poster.jpg';
+import SmartVideo from '@/components/ui-custom/SmartVideo';
 
 const CDN = 'https://cdn.prod.website-files.com';
 const img = {
@@ -99,7 +99,7 @@ const CaseStudyErrorSafe = () => {
 
           <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-12 bg-card">
-              <video src={errorSafeHeroVideo} poster={errorSafeHeroPoster} autoPlay loop muted playsInline preload="auto" aria-label="Error Safe injury reporting platform hero" className="w-full object-cover aspect-[16/9] md:aspect-[21/9]" />
+              <SmartVideo src={errorSafeHeroVideo} autoPlay loop muted playsInline preload="auto" aria-label="Error Safe injury reporting platform hero" wrapperClassName="aspect-[16/9] md:aspect-[21/9]" className="w-full h-full object-cover" />
             </div>
           </FadeIn>
 

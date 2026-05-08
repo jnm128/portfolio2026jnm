@@ -8,9 +8,8 @@ import tapptHeroVideo from '@/assets/tappt-hero.mp4';
 import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
 import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
 import emberHeroVideo from '@/assets/ember-hero.mp4';
-import emberHeroPoster from '@/assets/ember-hero-poster.jpg';
 import errorSafeHeroVideo from '@/assets/error-safe-hero.mp4';
-import errorSafeHeroPoster from '@/assets/error-safe-hero-poster.jpg';
+import SmartVideo from '@/components/ui-custom/SmartVideo';
 
 type Category = 'modernization' | 'zero-to-one';
 
@@ -65,7 +64,7 @@ const projects: Array<{
     brand: "Ember",
     year: "2024",
     description: "MFA capstone — a self-development mobile app helping lost adults build consistent journaling, habit, and goal-setting practices.",
-    image: emberHeroPoster,
+    image: '',
     video: emberHeroVideo,
     link: "/case-study/ember",
     category: "zero-to-one",
@@ -74,7 +73,7 @@ const projects: Array<{
     brand: "Error Safe",
     year: "2024",
     description: "Streamlining work-related injury reporting and employee management for nurse administrators in elder-care organizations.",
-    image: errorSafeHeroPoster,
+    image: '',
     video: errorSafeHeroVideo,
     link: "/case-study/error-safe",
     category: "zero-to-one",
@@ -159,9 +158,8 @@ const Work: React.FC = () => {
                   <Link to={project.link} id={project.id} className="group block scroll-mt-24">
                     <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
                       {project.video ? (
-                        <video
+                        <SmartVideo
                           src={project.video}
-                          poster={project.image || undefined}
                           autoPlay
                           loop
                           muted
