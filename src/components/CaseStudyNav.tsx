@@ -115,9 +115,8 @@ const CaseStudyNav: React.FC<CaseStudyNavProps> = ({ currentSlug, variant = 'lig
               <Link to={project.path} className="group block">
                 <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
                   {project.video ? (
-                    <video
+                    <SmartVideo
                       src={project.video}
-                      poster={project.image || undefined}
                       autoPlay
                       loop
                       muted
