@@ -99,7 +99,7 @@ const CaseStudyErrorSafe = () => {
 
           <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-12 bg-card">
-              <video src={errorSafeHeroVideo} autoPlay loop muted playsInline preload="auto" aria-label="Error Safe injury reporting platform hero" className="w-full object-cover aspect-[16/9] md:aspect-[21/9]" />
+              <video src={errorSafeHeroVideo} poster={errorSafeHeroPoster} autoPlay loop muted playsInline preload="auto" aria-label="Error Safe injury reporting platform hero" className="w-full object-cover aspect-[16/9] md:aspect-[21/9]" />
             </div>
           </FadeIn>
 
