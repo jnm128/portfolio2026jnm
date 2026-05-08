@@ -64,7 +64,7 @@ const projects: Array<{
     brand: "Ember",
     year: "2024",
     description: "MFA capstone — a self-development mobile app helping lost adults build consistent journaling, habit, and goal-setting practices.",
-    image: emberHeroPoster,
+    image: '',
     video: emberHeroVideo,
     link: "/case-study/ember",
     category: "zero-to-one",
