@@ -7,7 +7,7 @@ import cvsHeroVideo from '@/assets/cvs-hero.mp4';
 import tapptHeroVideo from '@/assets/tappt-hero.mp4';
 import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
 import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
-import emberHero from '@/assets/ember-hero.png';
+import emberHeroVideo from '@/assets/ember-hero.mp4';
 import errorSafeHero from '@/assets/error-safe-hero.png';
 
 type Category = 'modernization' | 'zero-to-one';
@@ -63,7 +63,8 @@ const projects: Array<{
     brand: "Ember",
     year: "2024",
     description: "MFA capstone — a self-development mobile app helping lost adults build consistent journaling, habit, and goal-setting practices.",
-    image: emberHero,
+    image: '',
+    video: emberHeroVideo,
     link: "/case-study/ember",
     category: "zero-to-one",
   },
