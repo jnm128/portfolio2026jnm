@@ -76,6 +76,16 @@ const caseStudies = [
     description:
       'Streamlining work-related injury reporting and employee management for nurse administrators in elder-care organizations.',
   },
+  {
+    slug: 'arsht-rewards',
+    title: 'Adrienne Arsht Center',
+    path: '/case-study/arsht-rewards',
+    brand: 'Adrienne Arsht Center',
+    year: '2022',
+    image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1600&q=80',
+    description:
+      "Designing 'Arsht Rewards' — a customer loyalty program lifting attendance for free events through point incentives and member engagement.",
+  },
 ];
 
 interface CaseStudyNavProps {
