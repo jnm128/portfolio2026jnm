@@ -6,7 +6,7 @@ import tapptHeroVideo from '@/assets/tappt-hero.mp4';
 import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
 import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
 import emberHeroVideo from '@/assets/ember-hero.mp4';
-import errorSafeHero from '@/assets/error-safe-hero.png';
+import errorSafeHeroVideo from '@/assets/error-safe-hero.mp4';
 
 const caseStudies = [
   {
@@ -70,7 +70,8 @@ const caseStudies = [
     path: '/case-study/error-safe',
     brand: 'Error Safe',
     year: '2024',
-    image: errorSafeHero,
+    image: '',
+    video: errorSafeHeroVideo,
     description:
       'Streamlining work-related injury reporting and employee management for nurse administrators in elder-care organizations.',
   },

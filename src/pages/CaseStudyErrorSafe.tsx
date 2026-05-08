@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
 import SplitSection from '@/components/SplitSection';
 import ImageLightbox from '@/components/ImageLightbox';
-import errorSafeHero from '@/assets/error-safe-hero.png';
+import errorSafeHeroVideo from '@/assets/error-safe-hero.mp4';
 
 const CDN = 'https://cdn.prod.website-files.com';
 const img = {
@@ -98,7 +98,7 @@ const CaseStudyErrorSafe = () => {
 
           <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-12 bg-card">
-              <img src={errorSafeHero} alt="Error Safe injury reporting platform hero" className="w-full object-cover aspect-[16/9] md:aspect-[21/9]" />
+              <video src={errorSafeHeroVideo} autoPlay loop muted playsInline preload="auto" aria-label="Error Safe injury reporting platform hero" className="w-full object-cover aspect-[16/9] md:aspect-[21/9]" />
             </div>
           </FadeIn>
 
