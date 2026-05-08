@@ -71,7 +71,7 @@ const caseStudies = [
     path: '/case-study/error-safe',
     brand: 'Error Safe',
     year: '2024',
-    image: errorSafeHeroPoster,
+    image: '',
     video: errorSafeHeroVideo,
     description:
       'Streamlining work-related injury reporting and employee management for nurse administrators in elder-care organizations.',
