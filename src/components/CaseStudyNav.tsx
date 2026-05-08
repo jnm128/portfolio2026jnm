@@ -62,6 +62,7 @@ const caseStudies = [
     brand: 'Ember',
     year: '2024',
     image: emberHeroPoster,
+    video: emberHeroVideo,
     description:
       'MFA capstone — a self-development mobile app helping lost adults build consistent journaling, habit, and goal-setting practices.',
   },
@@ -71,7 +72,7 @@ const caseStudies = [
     path: '/case-study/error-safe',
     brand: 'Error Safe',
     year: '2024',
-    image: '',
+    image: errorSafeHeroPoster,
     video: errorSafeHeroVideo,
     description:
       'Streamlining work-related injury reporting and employee management for nurse administrators in elder-care organizations.',
