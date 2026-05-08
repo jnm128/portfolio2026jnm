@@ -73,7 +73,7 @@ const projects: Array<{
     brand: "Error Safe",
     year: "2024",
     description: "Streamlining work-related injury reporting and employee management for nurse administrators in elder-care organizations.",
-    image: errorSafeHeroPoster,
+    image: '',
     video: errorSafeHeroVideo,
     link: "/case-study/error-safe",
     category: "zero-to-one",
