@@ -61,8 +61,7 @@ const caseStudies = [
     path: '/case-study/ember',
     brand: 'Ember',
     year: '2024',
-    image: '',
-    video: emberHeroVideo,
+    image: emberHeroPoster,
     description:
       'MFA capstone — a self-development mobile app helping lost adults build consistent journaling, habit, and goal-setting practices.',
   },
