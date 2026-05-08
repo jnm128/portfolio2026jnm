@@ -61,6 +61,14 @@ const projects: Array<{
     category: "modernization",
   },
   {
+    brand: "Adrienne Arsht Center",
+    year: "2022",
+    description: "Designing 'Arsht Rewards' — a customer loyalty program lifting attendance for free events through point incentives and member engagement.",
+    image: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1600&q=80",
+    link: "/case-study/arsht-rewards",
+    category: "zero-to-one",
+  },
+  {
     brand: "Ember",
     year: "2024",
     description: "MFA capstone — a self-development mobile app helping lost adults build consistent journaling, habit, and goal-setting practices.",
