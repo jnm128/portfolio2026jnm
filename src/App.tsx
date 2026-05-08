@@ -12,7 +12,6 @@ import CaseStudyCreativeStudio from "./pages/CaseStudyCreativeStudio";
 import CaseStudyCVS from "./pages/CaseStudyCVS";
 import CaseStudyEmber from "./pages/CaseStudyEmber";
 import CaseStudyErrorSafe from "./pages/CaseStudyErrorSafe";
-import CaseStudyArshtRewards from "./pages/CaseStudyArshtRewards";
 import Contact from "./pages/Contact";
 import BookClub from "./pages/BookClub";
 import WorkExperience from "./pages/WorkExperience";
@@ -52,7 +51,6 @@ const App = () => (
             <Route path="/case-study/cvs-health" element={<CaseStudyCVS />} />
             <Route path="/case-study/ember" element={<CaseStudyEmber />} />
             <Route path="/case-study/error-safe" element={<CaseStudyErrorSafe />} />
-            <Route path="/case-study/arsht-rewards" element={<CaseStudyArshtRewards />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
