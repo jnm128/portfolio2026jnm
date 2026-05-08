@@ -7,7 +7,7 @@ import FadeIn from '@/components/animations/FadeIn';
 import SplitSection from '@/components/SplitSection';
 import ImageLightbox from '@/components/ImageLightbox';
 import errorSafeHeroVideo from '@/assets/error-safe-hero.mp4';
-import errorSafeHeroPoster from '@/assets/error-safe-hero-poster.jpg';
+import SmartVideo from '@/components/ui-custom/SmartVideo';
 
 const CDN = 'https://cdn.prod.website-files.com';
 const img = {
