@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import FadeIn from '@/components/animations/FadeIn';
 import SplitSection from '@/components/SplitSection';
 import ImageLightbox from '@/components/ImageLightbox';
-import emberHero from '@/assets/ember-hero.png';
+import emberHeroVideo from '@/assets/ember-hero.mp4';
 
 const CDN = 'https://cdn.prod.website-files.com';
 const img = {
@@ -89,7 +89,7 @@ const CaseStudyEmber = () => {
 
           <FadeIn delay={200}>
             <div className="overflow-hidden rounded-2xl mt-12 bg-card">
-              <img src={emberHero} alt="Ember mobile app hero" className="w-full object-cover aspect-[16/9] md:aspect-[21/9]" />
+              <video src={emberHeroVideo} autoPlay loop muted playsInline preload="auto" aria-label="Ember mobile app hero" className="w-full object-cover aspect-[16/9] md:aspect-[21/9]" />
             </div>
           </FadeIn>
 

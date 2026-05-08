@@ -5,7 +5,7 @@ import cvsHeroVideo from '@/assets/cvs-hero.mp4';
 import tapptHeroVideo from '@/assets/tappt-hero.mp4';
 import gordonHeroVideo from '@/assets/gordon-center-hero.mp4';
 import vivekaHeroVideo from '@/assets/viveka-hero.mp4';
-import emberHero from '@/assets/ember-hero.png';
+import emberHeroVideo from '@/assets/ember-hero.mp4';
 import errorSafeHero from '@/assets/error-safe-hero.png';
 
 const caseStudies = [
@@ -59,7 +59,8 @@ const caseStudies = [
     path: '/case-study/ember',
     brand: 'Ember',
     year: '2024',
-    image: emberHero,
+    image: '',
+    video: emberHeroVideo,
     description:
       'MFA capstone — a self-development mobile app helping lost adults build consistent journaling, habit, and goal-setting practices.',
   },
