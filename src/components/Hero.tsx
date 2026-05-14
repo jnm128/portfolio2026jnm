@@ -29,20 +29,12 @@ const taglines: Record<Audience, string> = {
 };
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [panelOpen, setPanelOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [communityOpen, setCommunityOpen] = useState(false);
   const [audience, setAudience] = useState<Audience>('recruiters');
   const containerRef = useRef<HTMLDivElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % heroImages.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const isMd = window.innerWidth >= 768;
