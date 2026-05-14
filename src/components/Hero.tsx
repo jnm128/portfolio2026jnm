@@ -5,12 +5,11 @@ import FadeIn from './animations/FadeIn';
 import WorkExperiencePanel from './WorkExperiencePanel';
 import ServicesPanel from './ServicesPanel';
 import CommunityPanel from './CommunityPanel';
+import heroVideo from '@/assets/hero.mp4';
 
 interface HeroProps {
   className?: string;
 }
-
-const heroImages = ["/lovable-uploads/354aef4d-0714-40c3-9ba3-cc875ac0bc73.png"];
 
 type Audience = 'recruiters' | 'founders' | 'designers';
 
