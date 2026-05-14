@@ -5,12 +5,11 @@ import FadeIn from './animations/FadeIn';
 import WorkExperiencePanel from './WorkExperiencePanel';
 import ServicesPanel from './ServicesPanel';
 import CommunityPanel from './CommunityPanel';
+import heroVideo from '@/assets/hero.mp4';
 
 interface HeroProps {
   className?: string;
 }
-
-const heroImages = ["/lovable-uploads/354aef4d-0714-40c3-9ba3-cc875ac0bc73.png"];
 
 type Audience = 'recruiters' | 'founders' | 'designers';
 
@@ -30,20 +29,12 @@ const taglines: Record<Audience, string> = {
 };
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [panelOpen, setPanelOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [communityOpen, setCommunityOpen] = useState(false);
   const [audience, setAudience] = useState<Audience>('recruiters');
   const containerRef = useRef<HTMLDivElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % heroImages.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const isMd = window.innerWidth >= 768;
@@ -150,30 +141,16 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       <div ref={containerRef} className="mx-auto max-w-[1600px] px-5 md:px-16">
         <PopIn>
           <div ref={imageWrapperRef} className="relative rounded-3xl overflow-hidden h-[50vh] md:h-[60vh] lg:h-[90vh]">
-            {heroImages.map((image, index) => (
-              <img 
-                key={image} 
-                src={image} 
-                alt={`Hero slide ${index + 1}`} 
-                className={cn(
-                  "w-full h-full object-cover transition-opacity duration-1000 absolute inset-0", 
-                  index === currentIndex ? "opacity-100" : "opacity-0"
-                )} 
-              />
-            ))}
-            <img src={heroImages[0]} alt="" aria-hidden="true" className="w-full h-full object-cover invisible" />
-            <div className="absolute bottom-4 right-8 md:right-12 flex gap-2">
-              {heroImages.map((_, index) => (
-                <button 
-                  key={index} 
-                  onClick={() => setCurrentIndex(index)} 
-                  className={cn(
-                    "w-2 h-2 rounded-full transition-all", 
-                    index === currentIndex ? "bg-background" : "bg-background/40"
-                  )} 
-                />
-              ))}
-            </div>
+            <video
+              src={heroVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              aria-label="Hero showreel"
+              className="w-full h-full object-cover"
+            />
           </div>
         </PopIn>
       </div>
