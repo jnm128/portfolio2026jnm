@@ -24,9 +24,9 @@ const applyTheme = (theme: ThemeMode) => {
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<ThemeMode>(() => {
-    if (typeof window === 'undefined') return 'neutral';
+    if (typeof window === 'undefined') return 'dark';
     const stored = window.localStorage.getItem(STORAGE_KEY) as ThemeMode | null;
-    return stored ?? 'neutral';
+    return stored ?? 'dark';
   });
 
   useEffect(() => {
